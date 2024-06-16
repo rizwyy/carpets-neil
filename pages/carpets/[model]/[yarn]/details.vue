@@ -117,7 +117,7 @@ import cheerio from "cheerio";
 
 // COOKIES
 import { useCookie } from "#app";
-const myCookie = useCookie("myCookieName");
+const productsCookieData = useCookie("productsCookieData");
 
 // LAYOUTS
 import Mobile from "~/layouts/Mobile.vue";
@@ -131,86 +131,245 @@ const userStore = useUserStore();
 const bodyContent = ref("");
 const isChecked = ref(false);
 
-const product = { name: "", price: "", link: "", img: "" };
+// const products = [];
+// const productNames = ref([]);
+// const productPrices = ref([]);
+// const productLinks = ref([]);
+// const productImgLinks = ref([]);
+// const product = { name: "", price: "", link: "", img: "" };
 
 // FUNCTIONS
-const setCookie = () => {
-  console.log("setCookie() starting");
-  myCookie.value = toRaw(userStore.products);
-  console.log("Cookie set:", toRaw(myCookie.value));
-};
+// const setCookie = () => {
+//   console.log("setCookie() starting");
+//   productsCookieData.value = toRaw(userStore.products);
+//   console.log("Cookie set:", toRaw(productsCookieData.value));
+// };
+// function scriptRemover(htmlString) {
+//   return htmlString.replace(
+//     /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+//     ""
+//   );
+// }
+// function removeGenericPageHeader(htmlString) {
+//   return htmlString.replace(
+//     /<div id="GenericPageHeader"[^>]*>[\s\S]*?<\/div>/gi,
+//     ""
+//   );
+// }
 
-function extractBodyContent(htmlString) {
-  console.log("extractBodyContent() starting");
-  if (!htmlString) {
-    console.error("HTML string is empty or null");
-    return null;
-  }
+// function extractBodyContent(htmlString) {
+//   console.log("extractBodyContent() starting");
 
-  // Use regular expressions to extract content between <body> and </body>
-  const bodyRegex = /<body[^>]*>[\s\S]*?<\/body>/i; // Use non-greedy matching with ? to match the first occurrence
-  const match = htmlString.match(bodyRegex);
+//   if (!htmlString) {
+//     console.error("HTML string is empty or null");
+//     return null;
+//   }
 
-  if (match) {
-    // Return the matched content
-    const content = match[0];
-    bodyContent.value = content;
-  } else {
-    console.error("No <body> tag found in the HTML string");
-    return null;
-  }
-}
+//   // Use regular expressions to extract content between <body> and </body>
+//   const bodyRegex = /<body[^>]*>[\s\S]*?<\/body>/i; // Use non-greedy matching with ? to match the first occurrence
+//   const match = htmlString.match(bodyRegex);
 
-async function scrape(retries = 3) {
-  try {
-    console.log("scrape() starting");
-    const response = await fetch("/api/proxy");
+//   if (match) {
+//     // Return the matched content
+//     const content = match[0];
+//     const bodyHTML = scriptRemover(content);
+//     const pureHTML = removeGenericPageHeader(bodyHTML);
+//     bodyContent.value = pureHTML;
+//   } else {
+//     console.error("No <body> tag found in the HTML string");
+//     return null;
+//   }
+// }
 
-    // Check if the fetch was successful
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+// function extractValues(array) {
+//   const values = [];
+//   const seenValues = new Set();
 
-    const htmlString = await response.text();
-    extractBodyContent(htmlString);
+//   for (let i = 0; i < array.length; i++) {
+//     const value = array[i].children[0].data.trim(); // Trim whitespace characters like \n, \t, etc.
+//     if (!seenValues.has(value)) {
+//       seenValues.add(value);
+//       values.push(value);
+//     }
+//   }
 
-    const $ = cheerio.load(bodyContent.value);
-    const $p = $("h2 a"); //element containing name and link
-    const $c = $("span.woocommerce-Price-amount bdi"); //element containing price and currency details
-    const $i = $("a.woocommerce-LoopProduct-link img.woo-entry-image-main");
-    console.log($i.eq(0).attr("data-src"));
+//   return values;
+// }
+// function extractImageLinks(array) {
+//   const links = [];
+//   const seenLinks = new Set();
 
-    for (let i = 0; i < $p.length; i++) {
-      const nameData = $p[i].children[0].data;
-      const priceData = $c[i].children[1].data;
-      const linkData = $p[i].attribs.href;
-      const imgData = $i.eq(i).attr("data-src");
+//   for (let i = 0; i < array.length; i++) {
+//     const link = array[i].attribs["src"];
+//     if (!seenLinks.has(link)) {
+//       seenLinks.add(link);
+//       links.push(link);
+//     }
+//   }
 
-      const product = {
-        name: nameData,
-        price: priceData,
-        link: linkData,
-        img: imgData,
-      }; // Create a new product object
-      userStore.products.push(product); // Add the product object to the array
-    }
+//   return links;
+// }
+// function extractValuesFromProductItems(array) {
+//   const values = [];
 
-    console.log(userStore.products);
-    setCookie();
-  } catch (error) {
-    console.error("An error occurred during the scrape process:", error);
+//   for (let i = 0; i < array.length; i++) {
+//     const value =
+//       array[i].children[0].next.children[0].children[2].next.children[0].next
+//         .children[0].data;
+//     values.push(value);
+//   }
 
-    // Retry mechanism
-    if (retries > 0) {
-      console.log(`Retrying... attempts left: ${retries}`);
-      await scrape(retries - 1);
-    } else {
-      console.error(
-        "Max retries reached. Could not complete the scrape process."
-      );
-    }
-  }
-}
+//   return values;
+// }
+
+// // FN TO EXTRACT NAMES
+// const extractTextByClass = (htmlString, className) => {
+//   const parser = new DOMParser();
+//   const doc = parser.parseFromString(htmlString, "text/html");
+//   const elements = doc.querySelectorAll(`.${className}`);
+//   const extractedTexts = [];
+
+//   elements.forEach((element) => {
+//     extractedTexts.push(element.textContent);
+//   });
+
+//   return extractedTexts;
+// };
+// // FN TO EXTRACT LINKS
+// const extractHrefByClass = (htmlString, className) => {
+//   const parser = new DOMParser();
+//   const doc = parser.parseFromString(htmlString, "text/html");
+//   const elements = doc.querySelectorAll(`.${className}`);
+//   const hrefs = [];
+
+//   elements.forEach((element) => {
+//     if (element.tagName.toLowerCase() === "a") {
+//       hrefs.push(element.getAttribute("href"));
+//     }
+//   });
+
+//   return hrefs;
+// };
+// // FN TO EXTRACT IMAGE LINKS
+// const extractSrcByClass = (htmlString, className) => {
+//   const parser = new DOMParser();
+//   const doc = parser.parseFromString(htmlString, "text/html");
+//   const elements = doc.querySelectorAll(`.${className}`);
+//   const srcs = [];
+
+//   elements.forEach((element) => {
+//     const src = element.getAttribute("src");
+//     if (src) {
+//       srcs.push(src);
+//     }
+//   });
+
+//   return srcs;
+// };
+// // REMOVE SRCSET
+// const filterStringsStartingWithData = (arrayOfStrings) => {
+//   productImgLinks.value = arrayOfStrings.filter(
+//     (str) => !str.startsWith("data")
+//   );
+// };
+// // MAKE ALL ARRAYS SAME
+// const adjustArraysLength = (array1, array2, array3) => {
+//   // Find the minimum length among the three arrays
+//   const minLength = Math.min(array1.length, array2.length, array3.length);
+
+//   // Adjust the length of each array to the minimum length
+//   const adjustedArray1 = array1.slice(0, minLength);
+//   const adjustedArray2 = array2.slice(0, minLength);
+//   const adjustedArray3 = array3.slice(0, minLength);
+
+//   productNames.value = adjustedArray1;
+//   productLinks.value = adjustedArray2;
+//   productImgLinks.value = adjustedArray3;
+// };
+// //CREATE PRODUCT LINKS
+// const createProductItems = (productNames, productImgLinks, productLinks) => {
+//   const productItems = [];
+
+//   // Iterate over each array
+//   for (
+//     let i = 0;
+//     i <
+//     Math.min(productNames.length, productImgLinks.length, productLinks.length);
+//     i++
+//   ) {
+//     // Create a product item object
+//     const productItem = {
+//       name: productNames[i],
+//       link: productLinks[i],
+//       src: productImgLinks[i],
+//     };
+
+//     // Push the product item object to the array
+//     productItems.push(productItem);
+//   }
+
+//   return productItems;
+// };
+// // SCRAPE FUNCTION
+// async function scrape(retries = 1) {
+//   try {
+//     console.log("scrape() starting");
+//     const response = await fetch("/api/proxy");
+
+//     // Check if the fetch was successful
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+
+//     const htmlString = await response.text();
+//     // Parse the HTML string
+//     const parser = new DOMParser();
+//     const doc = parser.parseFromString(htmlString, "text/html");
+
+//     const bodyContent = doc.body.innerHTML;
+
+//     productNames.value = extractTextByClass(
+//       bodyContent,
+//       "product-content__category"
+//     );
+//     productLinks.value = extractHrefByClass(
+//       bodyContent,
+//       "woocommerce-loop-product__link"
+//     );
+//     productImgLinks.value = extractSrcByClass(
+//       bodyContent,
+//       "size-woocommerce_thumbnail"
+//     );
+//     filterStringsStartingWithData(productImgLinks.value);
+//     adjustArraysLength(
+//       productNames.value,
+//       productLinks.value,
+//       productImgLinks.value
+//     );
+
+//     const productItems = createProductItems(
+//       productNames.value,
+//       productImgLinks.value,
+//       productLinks.value
+//     );
+//     const firstTwentyItems = productItems.slice(0, 9);
+
+//     userStore.products = firstTwentyItems;
+//     setCookie();
+//   } catch (error) {
+//     console.error("An error occurred during the scrape process:", error);
+
+//     // Retry mechanism
+//     if (retries > 0) {
+//       console.log(`Retrying... attempts left: ${retries}`);
+//       await scrape(retries - 1);
+//     } else {
+//       console.error(
+//         "Max retries reached. Could not complete the scrape process."
+//       );
+//     }
+//   }
+// }
 
 function clickAtCheckBox() {
   isChecked.value = !isChecked.value;
@@ -218,7 +377,6 @@ function clickAtCheckBox() {
 }
 
 // FUNCTION CALLS
-scrape();
 </script>
 <style scoped>
 .font-outfit-300 {

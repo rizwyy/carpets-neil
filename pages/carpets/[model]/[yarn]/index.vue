@@ -137,7 +137,7 @@ import { useCookie } from "#app";
 import useUserStore from "./../../../../stores/user";
 const userStore = useUserStore();
 const route = useRoute();
-const myCookie = useCookie("myCookieName");
+// const myCookie = useCookie("myCookieName");
 const colors = ["000", "ff9", "ececec", "f1f1f1"];
 
 const setCookie = () => {
@@ -145,9 +145,6 @@ const setCookie = () => {
   myCookie.value = fullPath;
   console.log("Cookie set:", toRaw(myCookie.value));
 };
-onMounted(() => {
-  setCookie();
-});
 </script>
 
 <style lang="scss" scoped></style>
