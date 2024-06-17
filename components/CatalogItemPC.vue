@@ -63,5 +63,6 @@ const route = useRoute();
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
+  font-style: normal;
 }
 </style>
