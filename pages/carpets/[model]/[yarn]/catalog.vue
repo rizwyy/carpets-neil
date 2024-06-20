@@ -37,6 +37,16 @@ const fetchImageSrc = async (url) => {
   }
 };
 
+const loadProductItems = async () => {
+  // Example product items with URLs to fetch
+
+  for (const item of productsCookieData.value) {
+    item.src = await fetchImageSrc(item.src);
+  }
+
+  console.log(productsCookieData.value);
+};
+
 //
 const products = [];
 const productNames = ref([]);
@@ -55,6 +65,8 @@ const extractTextByClass = (htmlString, className) => {
   elements.forEach((element) => {
     extractedTexts.push(element.textContent);
   });
+
+  return extractedTexts;
 };
 // FN TO EXTRACT LINKS
 const extractHrefByClass = (htmlString, className) => {
@@ -71,7 +83,7 @@ const extractHrefByClass = (htmlString, className) => {
 
   return hrefs;
 };
-// FN TO EXTRACT IMAGE LINKSs
+// FN TO EXTRACT IMAGE LINKS
 const extractSrcByClass = (htmlString, className) => {
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlString, "text/html");
@@ -122,7 +134,8 @@ const adjustArraysLength = (array1, array2, array3, array4) => {
     array3.length,
     array4.length
   );
-  console.log("minLength:", minLength); // Adjust the length of each array to the minimum length
+  console.log(minLength);
+  // Adjust the length of each array to the minimum length
   const adjustedArray1 = array1.slice(0, minLength);
   const adjustedArray2 = array2.slice(0, minLength);
   const adjustedArray3 = array3.slice(0, minLength);
@@ -240,6 +253,7 @@ async function scrape(retries = 3) {
     );
     const cleanedProductsArray = cleanAndRemoveDuplicates(productItems);
     const slicedArray = cleanedProductsArray.slice(0, 30);
+    console.log(slicedArray);
 
     isLoading.value = false;
     userStore.products = slicedArray;
@@ -284,6 +298,16 @@ function getValidCookieData() {
 
 onMounted(() => {
   userStore.products = scrape();
+
+  // loadProductItems();
+  // if (toRaw(productsCookieData.value)) {
+  //   isLoading.value = false;
+  //   console.log(productsCookieData);
+  //   cookieData.value = toRaw(productsCookieData.value);
+  // } else {
+  //   console.error("CALLING FETCH FUNCTION");
+  //   scrapeProducts();
+  // }
 });
 userStore.products = toRaw(productsCookieData.value);
 if (userStore.products === toRaw(productsCookieData.value)) {
@@ -296,6 +320,9 @@ if (userStore.products === toRaw(productsCookieData.value)) {
 
 <template>
   <Desktop>
+    <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
+      <h1>Catalog</h1>
+    </div>
     <div
       v-if="isLoading"
       class="h-[70vh] w-screen flex flex-col items-center justify-center"
