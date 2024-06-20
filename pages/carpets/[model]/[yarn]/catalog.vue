@@ -71,7 +71,7 @@ const extractHrefByClass = (htmlString, className) => {
 
   return hrefs;
 };
-// FN TO EXTRACT IMAGE LINKS
+// FN TO EXTRACT IMAGE LINKSs
 const extractSrcByClass = (htmlString, className) => {
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlString, "text/html");
