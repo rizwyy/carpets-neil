@@ -22,11 +22,14 @@ const route = useRoute();
     <div
       class="detailsContainer h-max w-full flex flex-col gap-[.4vh] items-start pt-[.8vh] pl-[1vw]"
     >
-      <div class="h-max w-max flex flex-col gap-[0vh]">
-        <span class="text-[2.4vh] text-[#111]">{{ name }}</span>
-      </div>
       <div class="h-max w-full flex items-center justify-between">
-        <span class="text-[1.6vh] w-[50%] text-[#999]">{{ color }}</span>
+        <span class="inline-block text-[2.4vh] text-[#111]">{{ name }}</span>
+      </div>
+      <span
+        class="inline-block flex justify-start text-[1.6vh] w-[50%] text-[#999]"
+        >{{ color }}</span
+      >
+      <div class="h-max w-max flex flex-col gap-[0vh]">
         <div class="text-[#999] w-max flex justify-between gap-[1.2vw]">
           <span class="flex-1 text-[2vh]"> From </span>
           <span
