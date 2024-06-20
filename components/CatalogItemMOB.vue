@@ -16,7 +16,7 @@ const route = useRoute();
       <img
         class="object-cover h-full w-full"
         :src="`/carpets/${color}.jpg`"
-        alt="#"
+        :alt="color"
       />
     </div>
     <div
@@ -26,11 +26,11 @@ const route = useRoute();
         <span class="text-[2.4vh] text-[#111]">{{ name }}</span>
       </div>
       <div class="h-max w-full flex items-center justify-between">
-        <span class="text-[1.8vh] w-[50%] text-[#999]">{{ color }}</span>
+        <span class="text-[1.6vh] w-[50%] text-[#999]">{{ color }}</span>
         <div class="text-[#999] w-max flex justify-between gap-[1.2vw]">
-          <span class="flex-1 text-[2.2vh]"> From </span>
+          <span class="flex-1 text-[2vh]"> From </span>
           <span
-            class="font-[500] flex-grow flex items-center text-[#111] text-[2.2vh]"
+            class="font-[500] flex-grow flex items-center text-[#111] text-[2vh]"
             >{{ currency }}{{ price }}</span
           >
         </div>
