@@ -1,30 +1,28 @@
 <template>
   <!-- MOBILE -->
   <Mobile>
-    <NavBarD3MOB />
-    <HeroLayout5 />
+    <NavBarMOB />
+    <!-- TYPO -->
+    <div
+      class="font-outfit-400 h-max w-screen bg-opacity-[.4] backdrop-blur-[4px] bg-[#d1d1d1] flex flex-col justify-center items-center z-[99] py-[2vh] gap-[2vh] text-[2vh]"
+    >
+      <span>DREAM IT, STYLE IT, FIND IT AT WOLTIZ</span>
+    </div>
+    <!-- SEARCH BAR COMP -->
+    <div class="h-max w-screen flex justify-center">
+      <SearchBarMOB />
+    </div>
+    <HeroLayoutMOB />
   </Mobile>
 </template>
 
 <script setup>
-import NavBarD3MOB from "./../components/NavBar-D3-MOB.vue";
-import HeroLayout5 from "./../components/HeroLayout-5.vue";
+import NavBarMOB from "./../components/MOBILE/NavBarMOB.vue";
+import SearchBarMOB from "./../components/MOBILE/SearchBarMOB.vue";
+import HeroLayoutMOB from "./../components/MOBILE/HeroLayoutMOB.vue";
 import useUserStore from "../stores/user";
 const userStore = useUserStore();
 import Mobile from "../layouts/Mobile.vue";
-
-// function proxiesToObjects(proxies) {
-//   return proxies.map((proxy) => JSON.parse(JSON.stringify(proxy)));
-// }
-// const proxyObjects = Object.values(userStore.inventory).flat();
-// const allItems = proxiesToObjects(proxyObjects);
-
-// function getItemById(array, id) {
-//   return array.find((item) => item.id === id);
-// }
-// function doesIdExist(array, id) {
-//   return array.some((item) => item.id === id);
-// }
 </script>
 
 <style scoped>

@@ -5,6 +5,10 @@
     >
       Carpets
     </div>
+    <div class="h-max w-max flex items-center justify-center pb-[4vh]">
+      <SearchBarMOB />
+    </div>
+
     <div
       class="h-max w-full relative flex flex-col gap-[1vh] items-center px-[2vw] bg-[#f1f1f1] z-[999] font-outfit-300"
     >
@@ -23,7 +27,7 @@
           <span class="text-[2.8vh] text-[#f1f1f1]">Wall-to-Wall </span>
           <a
             class="underline underline-offset-[.4vh] text-[#fff9] text-[1.6vh]"
-            href="/carpets/wall-to-wall"
+            href="/flooring/carpets/wall-to-wall"
             >shop now</a
           >
         </div>
@@ -89,6 +93,7 @@
 </template>
 
 <script setup>
+import SearchBarMOB from "~/components/MOBILE/SearchBarMOB.vue";
 import useUserStore from "./../../stores/user";
 const userStore = useUserStore();
 </script>
