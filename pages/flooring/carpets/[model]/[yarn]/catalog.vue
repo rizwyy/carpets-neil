@@ -1,10 +1,10 @@
 <script setup>
 // COMPONENTS IMPORTS
-import Mobile from "./../../../../layouts/Mobile.vue";
-import Desktop from "./../../../../layouts/Desktop.vue";
+import Mobile from "./../../../../../layouts/Mobile.vue";
+import Desktop from "./../../../../../layouts/Desktop.vue";
 
-import CatalogItemMOB from "../../../../components/CatalogItemMOB.vue";
-import CatalogItemPC from "../../../../components/CatalogItemPC.vue";
+import CatalogItemMOB from "../../../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
+import CatalogItemPC from "../../../../../components/DESKTOP/CatalogItemPC.vue";
 // PACKAGES
 // COOKIES
 import { useCookie } from "#app";

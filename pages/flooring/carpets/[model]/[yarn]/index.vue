@@ -134,7 +134,7 @@
 
 <script setup>
 import { useCookie } from "#app";
-import useUserStore from "./../../../../stores/user";
+import useUserStore from "./../../../../../stores/user";
 const userStore = useUserStore();
 const route = useRoute();
 // const myCookie = useCookie("myCookieName");
