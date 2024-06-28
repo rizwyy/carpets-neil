@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { watchEffect } from "vue";
 
 const useUserStore = defineStore("user", {
   state: () => ({
@@ -82,12 +81,12 @@ const useUserStore = defineStore("user", {
         },
       ],
     },
-    products: [],
-    wishList: [],
-    cartItems: [],
-    subTotal: 0,
-    currentProduct: null,
-    currentProductObj: null,
+    preference: {
+      type: [],
+      color: [],
+      yarn: [],
+      pile: [],
+    },
   }),
 });
 export default useUserStore;

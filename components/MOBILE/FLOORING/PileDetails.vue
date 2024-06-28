@@ -1,14 +1,19 @@
 <template>
   <div
+    v-show="
+      userStore.preference.type.length > 0 &&
+      userStore.preference.color.length > 0
+    "
     class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
+      @click="() => console.log(selectedPiles.value)"
       class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
     >
-      <span>Choose Your Type</span>
+      <span>Choose Your Pile</span>
       <button
-        @click="clearAllSelections"
-        v-if="selectedTypes.length"
+        @click="clearPileSelections"
+        v-if="selectedPiles.length"
         class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-xs rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -25,16 +30,16 @@
       </button>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Solid -->
+      <!-- Cut Pile -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Solid') },
+          { selected: selectedPiles.includes('CutPile') },
         ]"
-        @click="toggleSelect('Solid')"
+        @click="toggleSelect('CutPile')"
       >
         <div
-          v-if="selectedTypes.includes('Solid')"
+          v-if="selectedPiles.includes('CutPile')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -48,22 +53,22 @@
         ></div>
         <img
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/solidCarpet.jpg"
-          alt=""
+          src="/carpets/pile-cut-carpet.jpeg"
+          alt="#"
         />
-        <span>Solid</span>
+        <span>Cut Pile</span>
       </div>
 
-      <!-- Textured -->
+      <!-- Loop Pile -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Textured') },
+          { selected: selectedPiles.includes('LoopPile') },
         ]"
-        @click="toggleSelect('Textured')"
+        @click="toggleSelect('LoopPile')"
       >
         <div
-          v-if="selectedTypes.includes('Textured')"
+          v-if="selectedPiles.includes('LoopPile')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -77,23 +82,23 @@
         ></div>
         <img
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/texturedCarpet.jpeg"
+          src="/carpets/loop-pile-carpet.jpeg"
           alt=""
         />
-        <span>Textured</span>
+        <span>Loop Pile</span>
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Designed -->
+      <!-- CutLoopPile -->
       <div
         :class="[
           'h-[14vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Designed') },
+          { selected: selectedPiles.includes('CutLoopPile') },
         ]"
-        @click="toggleSelect('Designed')"
+        @click="toggleSelect('CutLoopPile')"
       >
         <div
-          v-if="selectedTypes.includes('Designed')"
+          v-if="selectedPiles.includes('CutLoopPile')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -110,19 +115,19 @@
           src="/designedCarpet.jpg"
           alt=""
         />
-        <span>Designed</span>
+        <span>Cut Loop Pile</span>
       </div>
 
-      <!-- Customized -->
+      <!-- MultiLoopPile -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Customized') },
+          { selected: selectedPiles.includes('MultiLoopPile') },
         ]"
-        @click="toggleSelect('Customized')"
+        @click="toggleSelect('MultiLoopPile')"
       >
         <div
-          v-if="selectedTypes.includes('Customized')"
+          v-if="selectedPiles.includes('MultiLoopPile')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -139,7 +144,7 @@
           src="/10001.jpg"
           alt=""
         />
-        <span>Customized</span>
+        <span>Multi Loop Pile</span>
       </div>
     </div>
   </div>
@@ -151,19 +156,19 @@ import { ref } from "vue";
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-const selectedTypes = ref([]);
+const selectedPiles = ref([]);
 
-function clearAllSelections() {
-  selectedTypes.value = [];
-  userStore.preference.type = [];
+function clearPileSelections() {
+  selectedPiles.value = [];
+  userStore.preference.pile = [];
 }
 const toggleSelect = (type) => {
-  if (selectedTypes.value.includes(type)) {
-    selectedTypes.value = selectedTypes.value.filter((t) => t !== type);
-    userStore.preference.type = toRaw(selectedTypes.value);
+  if (selectedPiles.value.includes(type)) {
+    selectedPiles.value = selectedPiles.value.filter((t) => t !== type);
+    userStore.preference.pile = toRaw(selectedPiles.value);
   } else {
-    selectedTypes.value.push(type);
-    userStore.preference.type = toRaw(selectedTypes.value);
+    selectedPiles.value.push(type);
+    userStore.preference.pile = toRaw(selectedPiles.value);
   }
 };
 </script>

@@ -2,7 +2,7 @@
   <div
     class="relative h-max w-screen flex flex-col items-center justify-center mt-[2vh]"
   >
-    <div class="h-max w-full flex items-center pl-[8vw]">
+    <div class="div_searchBar h-max w-full flex items-center pl-[8vw] pr-[8vw]">
       <input
         v-model="query"
         @input="onInput"
@@ -10,11 +10,11 @@
         @blur="onBlur"
         type="text"
         placeholder="Search..."
-        class="w-full flex-grow py-[1vh] border-b-[1px] border-black rounded-sm pl-[4vw] outline-none focus:outline-none"
+        class="input_searchBar w-full flex-grow py-[1vh] border-b-[1px] border-black rounded-sm pl-[4vw] outline-none focus:outline-none"
       />
       <button
         @click="onSearch"
-        class="flex items-center justify-center bg-white text-black pr-[8vw]"
+        class="flex items-center justify-center bg-white text-black pr-[2vw]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,17 +48,28 @@
 </template>
 
 <script setup>
+import gsap from "gsap";
 import { ref } from "vue";
-
 const query = ref("");
-const results = ref(["Carpet", "Furniture", "Blinds & Curtains", "Result 4"]);
+const results = ref([
+  "Carpet",
+  "Furniture",
+  "Blinds & Curtains",
+  "Beige Carpets",
+  "Grey Carpets",
+  "Grey Carpets",
+]);
 const filteredResults = ref([]);
 const isActive = ref(false);
 
 const onInput = () => {
-  filteredResults.value = results.value.filter((result) =>
-    result.toLowerCase().includes(query.value.toLowerCase())
-  );
+  if (query.value.trim() === "") {
+    filteredResults.value = [];
+  } else {
+    filteredResults.value = results.value.filter((result) =>
+      result.toLowerCase().includes(query.value.toLowerCase())
+    );
+  }
 };
 
 const onFocus = () => {
@@ -82,7 +93,3 @@ const onSearch = () => {
   console.log("Search:", query.value);
 };
 </script>
-
-<style scoped>
-/* You can add any additional styling here */
-</style>

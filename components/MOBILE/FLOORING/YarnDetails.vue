@@ -1,14 +1,17 @@
 <template>
   <div
-    class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+    v-show="
+      userStore.preference.type.length > 0 &&
+      userStore.preference.color.length > 0 &&
+      userStore.preference.pile.length > 0
+    "
+    class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
-    <div
-      class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
-    >
-      <span>Choose Your Type</span>
+    <div class="h-max w-full flex justify-between text-[3.4vh] z-[9]">
+      <span>Choose Your Yarn</span>
       <button
-        @click="clearAllSelections"
-        v-if="selectedTypes.length"
+        @click="clearYarnSelections"
+        v-if="selectedYarns.length"
         class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-xs rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -25,16 +28,16 @@
       </button>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Solid -->
+      <!-- Wool -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Solid') },
+          { selected: selectedYarns.includes('Wool') },
         ]"
-        @click="toggleSelect('Solid')"
+        @click="toggleSelect('Wool')"
       >
         <div
-          v-if="selectedTypes.includes('Solid')"
+          v-if="selectedYarns.includes('Wool')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -48,22 +51,21 @@
         ></div>
         <img
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/solidCarpet.jpg"
-          alt=""
+          src="/wool-carpet.jpeg"
+          alt="#"
         />
-        <span>Solid</span>
+        <span>Wool</span>
       </div>
-
-      <!-- Textured -->
+      <!-- Wool-Blend -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Textured') },
+          { selected: selectedYarns.includes('Wool-Blend') },
         ]"
-        @click="toggleSelect('Textured')"
+        @click="toggleSelect('Wool-Blend')"
       >
         <div
-          v-if="selectedTypes.includes('Textured')"
+          v-if="selectedYarns.includes('Wool-Blend')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -77,52 +79,23 @@
         ></div>
         <img
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/texturedCarpet.jpeg"
-          alt=""
+          src="/wool-carpet.jpeg"
+          alt="#"
         />
-        <span>Textured</span>
+        <span>Wool-Blend</span>
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Designed -->
-      <div
-        :class="[
-          'h-[14vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Designed') },
-        ]"
-        @click="toggleSelect('Designed')"
-      >
-        <div
-          v-if="selectedTypes.includes('Designed')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
-            >Selected</span
-          >
-        </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <img
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/designedCarpet.jpg"
-          alt=""
-        />
-        <span>Designed</span>
-      </div>
-
-      <!-- Customized -->
+      <!-- nylon carpets -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Customized') },
+          { selected: selectedYarns.includes('Nylon') },
         ]"
-        @click="toggleSelect('Customized')"
+        @click="toggleSelect('Nylon')"
       >
         <div
-          v-if="selectedTypes.includes('Customized')"
+          v-if="selectedYarns.includes('Nylon')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -136,34 +109,61 @@
         ></div>
         <img
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/10001.jpg"
-          alt=""
+          src="/carpets/nylon-carpet.jpeg"
+          alt="#"
         />
-        <span>Customized</span>
+        <span>Nylon</span>
+      </div>
+      <!-- Poly Propene Carpets -->
+      <div
+        :class="[
+          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedYarns.includes('polypropylene') },
+        ]"
+        @click="toggleSelect('polypropylene')"
+      >
+        <div
+          v-if="selectedYarns.includes('polypropylene')"
+          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+        >
+          <!-- Selected indicator without text -->
+          <span
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            >Selected</span
+          >
+        </div>
+        <div
+          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+        ></div>
+        <img
+          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/carpets/polypropylene-carpet.jpeg"
+          alt="#"
+        />
+        <span>Polypropylene</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
 // PINIA
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
+import { ref } from "vue";
 
-const selectedTypes = ref([]);
-
-function clearAllSelections() {
-  selectedTypes.value = [];
-  userStore.preference.type = [];
+const selectedYarns = ref([]);
+function clearYarnSelections() {
+  selectedYarns.value = [];
+  userStore.preference.yarn = [];
 }
-const toggleSelect = (type) => {
-  if (selectedTypes.value.includes(type)) {
-    selectedTypes.value = selectedTypes.value.filter((t) => t !== type);
-    userStore.preference.type = toRaw(selectedTypes.value);
+const toggleSelect = (yarn) => {
+  if (selectedYarns.value.includes(yarn)) {
+    selectedYarns.value = selectedYarns.value.filter((t) => t !== yarn);
+    userStore.preference.yarn = toRaw(selectedYarns.value);
   } else {
-    selectedTypes.value.push(type);
-    userStore.preference.type = toRaw(selectedTypes.value);
+    selectedYarns.value.push(yarn);
+    userStore.preference.yarn = toRaw(selectedYarns.value);
   }
 };
 </script>
