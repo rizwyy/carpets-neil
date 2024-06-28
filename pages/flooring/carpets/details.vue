@@ -1,3 +1,23 @@
+<script setup>
+import TypeDetails from "./../../../components/MOBILE/FLOORING/TypeDetails.vue";
+import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
+import YarnDetails from "../../../components/MOBILE/FLOORING/YarnDetails.vue";
+import PileDetails from "~/components/MOBILE/FLOORING/PileDetails.vue";
+
+import useUserStore from "../../../stores/user";
+const userStore = useUserStore();
+
+const route = useRoute();
+// COOKIES
+import { useCookie } from "#app";
+const userPreference = useCookie("userPreference");
+
+function setUserPreferenceCookie() {
+  userPreference.value = userStore.preference;
+  console.log("COOKIE SET::", toRaw(userPreference.value));
+  navigateTo(`flooring/`);
+}
+</script>
 <template>
   <div
     class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center"
@@ -13,6 +33,7 @@
     <YarnDetails />
 
     <button
+      @click="setUserPreferenceCookie"
       v-show="
         userStore.preference.type.length > 0 &&
         userStore.preference.color.length > 0 &&
@@ -34,16 +55,6 @@
     </button>
   </div>
 </template>
-
-<script setup>
-import TypeDetails from "./../../../components/MOBILE/FLOORING/TypeDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import YarnDetails from "../../../components/MOBILE/FLOORING/YarnDetails.vue";
-
-import useUserStore from "../../../stores/user";
-import PileDetails from "~/components/MOBILE/FLOORING/PileDetails.vue";
-const userStore = useUserStore();
-</script>
 
 <style scoped>
 .font-outfit {
