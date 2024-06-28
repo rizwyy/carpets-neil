@@ -157,11 +157,20 @@ function clearYarnSelections() {
   selectedYarns.value = [];
   userStore.preference.yarn = [];
 }
+function scrollToBottom() {
+  setTimeout(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  }, 200);
+}
 const toggleSelect = (yarn) => {
   if (selectedYarns.value.includes(yarn)) {
     selectedYarns.value = selectedYarns.value.filter((t) => t !== yarn);
     userStore.preference.yarn = toRaw(selectedYarns.value);
   } else {
+    scrollToBottom();
     selectedYarns.value.push(yarn);
     userStore.preference.yarn = toRaw(selectedYarns.value);
   }

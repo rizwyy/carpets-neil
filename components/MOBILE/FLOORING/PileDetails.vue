@@ -162,11 +162,18 @@ function clearPileSelections() {
   selectedPiles.value = [];
   userStore.preference.pile = [];
 }
+function scrollToBottom() {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+}
 const toggleSelect = (type) => {
   if (selectedPiles.value.includes(type)) {
     selectedPiles.value = selectedPiles.value.filter((t) => t !== type);
     userStore.preference.pile = toRaw(selectedPiles.value);
   } else {
+    scrollToBottom();
     selectedPiles.value.push(type);
     userStore.preference.pile = toRaw(selectedPiles.value);
   }

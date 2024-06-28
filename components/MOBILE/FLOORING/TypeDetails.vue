@@ -157,11 +157,18 @@ function clearAllSelections() {
   selectedTypes.value = [];
   userStore.preference.type = [];
 }
+function scrollToBottom() {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+}
 const toggleSelect = (type) => {
   if (selectedTypes.value.includes(type)) {
     selectedTypes.value = selectedTypes.value.filter((t) => t !== type);
     userStore.preference.type = toRaw(selectedTypes.value);
   } else {
+    scrollToBottom();
     selectedTypes.value.push(type);
     userStore.preference.type = toRaw(selectedTypes.value);
   }

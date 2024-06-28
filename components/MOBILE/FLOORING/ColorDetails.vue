@@ -162,12 +162,18 @@ function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
 }
-
+function scrollToBottom() {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+}
 const toggleSelect = (color) => {
   if (selectedColors.value.includes(color)) {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
     userStore.preference.color = toRaw(selectedColors.value);
   } else {
+    scrollToBottom();
     selectedColors.value.push(color);
     userStore.preference.color = toRaw(selectedColors.value);
   }
