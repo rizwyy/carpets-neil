@@ -158,10 +158,12 @@ function clearAllSelections() {
   userStore.preference.type = [];
 }
 function scrollToBottom() {
-  window.scrollTo({
-    top: document.documentElement.scrollHeight,
-    behavior: "smooth",
-  });
+  setTimeout(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  }, 200);
 }
 const toggleSelect = (type) => {
   if (selectedTypes.value.includes(type)) {

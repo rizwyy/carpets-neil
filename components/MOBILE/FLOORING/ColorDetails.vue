@@ -163,10 +163,12 @@ function clearColorSelections() {
   userStore.preference.color = [];
 }
 function scrollToBottom() {
-  window.scrollTo({
-    top: document.documentElement.scrollHeight,
-    behavior: "smooth",
-  });
+  setTimeout(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  }, 200);
 }
 const toggleSelect = (color) => {
   if (selectedColors.value.includes(color)) {

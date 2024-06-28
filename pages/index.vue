@@ -26,6 +26,9 @@ import Mobile from "../layouts/Mobile.vue";
 </script>
 
 <style scoped>
+html {
+  scroll-behavior: smooth;
+}
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
