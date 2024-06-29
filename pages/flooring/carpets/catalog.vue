@@ -6,13 +6,9 @@ import Desktop from "./../../../layouts/Desktop.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
 // PACKAGES
-// COOKIES
-import { useCookie } from "#app";
-const productsCookieData = useCookie("productsCookieData");
 
 // PINIA
 import useUserStore from "../../../stores/user";
-
 const userStore = useUserStore();
 
 // REACTIVES
@@ -20,302 +16,34 @@ const cookieData = ref([]);
 const isLoading = ref(true);
 const route = useRoute();
 
-// FUNCTION CALLS
-const fetchImageSrc = async (url) => {
-  try {
-    const response = await fetch(
-      `/api/proxy-img?url=${encodeURIComponent(url)}`
-    );
-    if (response.ok) {
-      return await response.text();
-    } else {
-      throw new Error("Failed to fetch the image");
-    }
-  } catch (error) {
-    console.error(error);
-    return "https://via.placeholder.com/600x600"; // Fallback image
-  }
-};
-
-const loadProductItems = async () => {
-  // Example product items with URLs to fetch
-
-  for (const item of productsCookieData.value) {
-    item.src = await fetchImageSrc(item.src);
-  }
-
-  console.log(productsCookieData.value);
-};
-
 //
 const products = [];
-const productNames = ref([]);
-const productPrices = ref([]);
-const productLinks = ref([]);
-const productColor = ref([]);
-const productImgLinks = ref([]);
-const product = { name: "", price: "", link: "", color: "" };
-// FN TO EXTRACT NAMES
-const extractTextByClass = (htmlString, className) => {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, "text/html");
-  const elements = doc.querySelectorAll(`.${className}`);
-  const extractedTexts = [];
 
-  elements.forEach((element) => {
-    extractedTexts.push(element.textContent);
-  });
+async function fetchCarpetsDataFromSupabase() {
+  console.log("start");
 
-  return extractedTexts;
-};
-// FN TO EXTRACT LINKS
-const extractHrefByClass = (htmlString, className) => {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, "text/html");
-  const elements = doc.querySelectorAll(`.${className}`);
-  const hrefs = [];
-
-  elements.forEach((element) => {
-    if (element.tagName.toLowerCase() === "a") {
-      hrefs.push(element.getAttribute("href"));
-    }
-  });
-
-  return hrefs;
-};
-// FN TO EXTRACT IMAGE LINKS
-const extractSrcByClass = (htmlString, className) => {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, "text/html");
-  const elements = doc.querySelectorAll(`.${className}`);
-  const srcs = [];
-
-  elements.forEach((element) => {
-    const src = element.getAttribute("src");
-    if (src) {
-      srcs.push(src);
-    }
-  });
-
-  return srcs;
-};
-// REMOVE SRCSET
-const filterStringsStartingWithData = (arrayOfStrings) => {
-  productImgLinks.value = arrayOfStrings.filter(
-    (str) => !str.startsWith("data")
-  );
-};
-// REMOVE DUPLICATED PRODUCT ITEMS
-function cleanAndRemoveDuplicates(productArray) {
-  // Clean up the name fields by trimming white spaces
-  productArray.forEach((product) => {
-    product.name = product.name.trim();
-  });
-
-  // Use a Set to track unique products based on their stringified content
-  const uniqueProducts = new Map();
-
-  productArray.forEach((product) => {
-    const productKey = `${product.name}-${product.link}-${product.color}`;
-    if (!uniqueProducts.has(productKey)) {
-      uniqueProducts.set(productKey, product);
-    }
-  });
-
-  // Convert the map values back to an array
-  return Array.from(uniqueProducts.values());
-}
-// MAKE ALL ARRAYS SAME
-const adjustArraysLength = (array1, array2, array3, array4) => {
-  // Find the minimum length among the three arrays
-  const minLength = Math.min(
-    array1.length,
-    array2.length,
-    array3.length,
-    array4.length
-  );
-  console.log(minLength);
-  // Adjust the length of each array to the minimum length
-  const adjustedArray1 = array1.slice(0, minLength);
-  const adjustedArray2 = array2.slice(0, minLength);
-  const adjustedArray3 = array3.slice(0, minLength);
-  const adjustedArray4 = array4.slice(0, minLength);
-
-  productNames.value = adjustedArray1;
-  productLinks.value = adjustedArray2;
-  productColor.value = adjustedArray3;
-  productPrices.value = adjustedArray4;
-};
-//CREATE PRODUCT LINKS
-const createProductItems = (
-  productNames,
-  productLinks,
-  productColor,
-  productPrices
-) => {
-  const productItems = [];
-
-  // Iterate over each array
-  for (
-    let i = 0;
-    i <
-    Math.min(
-      productNames.length,
-      productLinks.length,
-      productColor.length,
-      productPrices.length
-    );
-    i++
-  ) {
-    // Create a product item object
-    const productItem = {
-      name: productNames[i],
-      price: productPrices[i],
-      link: productLinks[i],
-      color: productColor[i],
-    };
-
-    // Push the product item object to the array
-    productItems.push(productItem);
-  }
-  return productItems;
-};
-function cleanColorNames(colorArray) {
-  return colorArray.map((color) => color.trim());
-}
-
-function parsePriceString(priceString) {
-  // Use a regular expression to extract the numeric value and the currency
-  const regex = /([\d,]+\.?\d*)\s*([^\d\s]+)/;
-  const match = priceString.match(regex);
-
-  if (match) {
-    const value = parseFloat(match[1].replace(",", "")); // Convert the string to a float
-    const currency = match[2];
-
-    return { value, currency };
-  }
-
-  // Return null or throw an error if the string doesn't match the expected format
-  return null;
-}
-
-function parsePriceArray(priceArray) {
-  return priceArray.map((priceString) => parsePriceString(priceString));
-}
-// SCRAPE FUNCTION
-async function scrape(retries = 3) {
   try {
-    console.log("scrape() starting");
-    const response = await fetch("/api/proxy");
-
-    // Check if the fetch was successful
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const htmlString = await response.text();
-    // Parse the HTML string
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, "text/html");
-
-    const bodyContent = doc.body.innerHTML;
-
-    productNames.value = extractTextByClass(
-      bodyContent,
-      "product-content__category"
-    );
-    productPrices.value = extractTextByClass(bodyContent, "from-price");
-    productPrices.value = parsePriceArray(productPrices.value);
-    productLinks.value = extractHrefByClass(
-      bodyContent,
-      "woocommerce-loop-product__link"
+    const { data, error } = await useAsyncData("carpetsFetch", () =>
+      client
+        .from("carpets")
+        .select("*")
+        .then((res) => {
+          if (res.error) throw res.error;
+          console.log("fetchCarpetsData::", res);
+          return res.data;
+        })
     );
 
-    productColor.value = extractTextByClass(
-      bodyContent,
-      "product-content__title"
-    );
-    productColor.value = cleanColorNames(productColor.value);
-
-    adjustArraysLength(
-      productNames.value,
-      productLinks.value,
-      productColor.value,
-      productPrices.value
-    );
-
-    const productItems = createProductItems(
-      productNames.value,
-      productLinks.value,
-      productColor.value,
-      productPrices.value
-    );
-    const cleanedProductsArray = cleanAndRemoveDuplicates(productItems);
-    const slicedArray = cleanedProductsArray.slice(0, 30);
-    console.log(slicedArray);
-
-    isLoading.value = false;
-    userStore.products = slicedArray;
+    console.log("Fetch successful:", data);
+    return data;
   } catch (error) {
-    console.error("An error occurred during the scrape process:", error);
-
-    // Retry mechanism
-    if (retries > 0) {
-      console.log(`Retrying... attempts left: ${retries}`);
-      await scrape(retries - 1);
-    } else {
-      console.error(
-        "Max retries reached. Could not complete the scrape process."
-      );
-    }
-  }
-}
-// TEST
-
-function getValidCookieData() {
-  const rawCookieData = toRaw(cookieData.value);
-  const rawMyCookie = toRaw(productsCookieData.value);
-
-  if (!Array.isArray(rawCookieData) && !Array.isArray(rawMyCookie)) {
-    console.error("Both variables are not arrays");
-    return;
-  }
-
-  const validArray =
-    Array.isArray(rawCookieData) && rawCookieData.length > 1
-      ? rawCookieData
-      : Array.isArray(rawMyCookie) && rawMyCookie.length > 1
-      ? rawMyCookie
-      : null;
-
-  if (validArray) {
-    return validArray;
-  } else {
-    console.warn("FETCH FUNCTION MUST BE CALLED");
+    console.error("Error during fetch:", error.message);
   }
 }
 
 onMounted(() => {
-  userStore.products = scrape();
-
-  // loadProductItems();
-  // if (toRaw(productsCookieData.value)) {
-  //   isLoading.value = false;
-  //   console.log(productsCookieData);
-  //   cookieData.value = toRaw(productsCookieData.value);
-  // } else {
-  //   console.error("CALLING FETCH FUNCTION");
-  //   scrapeProducts();
-  // }
+  userStore.products = fetchCarpetsDataFromSupabase();
 });
-userStore.products = toRaw(productsCookieData.value);
-if (userStore.products === toRaw(productsCookieData.value)) {
-  productsCookieData.value = null;
-  console.log("OK");
-} else {
-  console.log("NO");
-}
 </script>
 
 <template>
