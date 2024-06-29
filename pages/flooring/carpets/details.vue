@@ -15,7 +15,7 @@ const userPreference = useCookie("userPreference");
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
   console.log("COOKIE SET::", toRaw(userPreference.value));
-  navigateTo(`flooring/`);
+  navigateTo(`catalog`);
 }
 </script>
 <template>

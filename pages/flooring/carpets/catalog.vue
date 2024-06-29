@@ -6,43 +6,48 @@ import Desktop from "./../../../layouts/Desktop.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
 // PACKAGES
-
 // PINIA
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
-
+// SUPABASE
+const client = useSupabaseClient();
 // REACTIVES
 const cookieData = ref([]);
+const products = ref([]); // Create a ref variable
 const isLoading = ref(true);
+const isRetry = ref(true);
 const route = useRoute();
 
 //
-const products = [];
 
-async function fetchCarpetsDataFromSupabase() {
+async function fetchCarpetsData() {
   console.log("start");
 
   try {
-    const { data, error } = await useAsyncData("carpetsFetch", () =>
-      client
-        .from("carpets")
-        .select("*")
-        .then((res) => {
-          if (res.error) throw res.error;
-          console.log("fetchCarpetsData::", res);
-          return res.data;
-        })
-    );
+    const { data, error } = await client
+      .from("carpets")
+      .select(
+        "product_name, product_link, product_colour, product_price, product_currency"
+      );
 
-    console.log("Fetch successful:", data);
-    return data;
+    if (error) throw error;
+
+    console.log("DATA KITTY::", data);
+
+    // Store data in userStore and ref variable
+    userStore.products = data;
+    products.value = data;
+    isLoading.value = false; // Set loading state to false
   } catch (error) {
-    console.error("Error during fetch:", error.message);
+    console.error("Error during fetch:", error);
+    isRetry.value = true; // Set retry state to true
+    isLoading.value = false; // Set loading state to false
+    console.log("end");
+    return null;
   }
 }
-
 onMounted(() => {
-  userStore.products = fetchCarpetsDataFromSupabase();
+  fetchCarpetsData();
 });
 </script>
 
@@ -51,6 +56,7 @@ onMounted(() => {
     <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
       <h1>Catalog</h1>
     </div>
+    <button @click="fetchCarpetsData" v-show="isRetry">RETRY</button>
     <div
       v-if="isLoading"
       class="h-[70vh] w-screen flex flex-col items-center justify-center"
@@ -100,12 +106,12 @@ onMounted(() => {
     <div v-else class="mx-auto w-[60vw] h-max">
       <div class="h-max w-full grid grid-cols-4 gap-x-[8vw] gap-y-[4vh]">
         <CatalogItemPC
-          v-for="item in userStore.products"
-          :name="item.name"
-          :price="item.price.value"
-          :key="item.link"
-          :currency="item.price.currency"
-          :color="item.color"
+          v-for="item in products"
+          :name="item.product_name"
+          :price="item.product_price"
+          :key="item.product_name"
+          :currency="item.product_currency"
+          :color="item.product_colour"
         />
       </div>
     </div>
@@ -172,12 +178,12 @@ onMounted(() => {
             {{ item.name }}
           </div>
           <CatalogItemMOB
-            v-for="item in userStore.products"
-            :name="item.name"
-            :price="item.price.value"
-            :key="item.link"
-            :currency="item.price.currency"
-            :color="item.color"
+            v-for="item in products"
+            :name="item.product_name"
+            :price="item.product_price"
+            :key="item.product_name"
+            :currency="item.product_currency"
+            :color="item.product_colour"
           />
         </div>
       </div>

@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       SUPABASE_KEY: process.env.SUPABASE_KEY,
     },
   },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
