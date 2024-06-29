@@ -6,7 +6,6 @@ import PileDetails from "~/components/MOBILE/FLOORING/PileDetails.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
-
 const route = useRoute();
 // COOKIES
 import { useCookie } from "#app";
@@ -15,7 +14,7 @@ const userPreference = useCookie("userPreference");
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
   console.log("COOKIE SET::", toRaw(userPreference.value));
-  navigateTo(`flooring/`);
+  navigateTo(`catalog`);
 }
 </script>
 <template>

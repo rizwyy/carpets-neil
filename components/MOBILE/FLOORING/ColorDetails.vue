@@ -68,12 +68,12 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-red-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('Red') }"
-        @click="toggleSelect('Red')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('Green') }"
+        @click="toggleSelect('Green')"
       >
-        <span v-if="!selectedColors.includes('Red')">Red</span>
-        <template v-if="selectedColors.includes('Red')">
+        <span v-if="!selectedColors.includes('Green')">Green</span>
+        <template v-if="selectedColors.includes('Green')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span
@@ -81,12 +81,12 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('Green') }"
-        @click="toggleSelect('Green')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-yellow-600 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('Gold') }"
+        @click="toggleSelect('Gold')"
       >
-        <span v-if="!selectedColors.includes('Green')">Green</span>
-        <template v-if="selectedColors.includes('Green')">
+        <span v-if="!selectedColors.includes('Gold')">Gold</span>
+        <template v-if="selectedColors.includes('Gold')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span
@@ -109,12 +109,12 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-[#444] bg-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('White') }"
-        @click="toggleSelect('White')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('Pink') }"
+        @click="toggleSelect('Pink')"
       >
-        <span v-if="!selectedColors.includes('White')">White</span>
-        <template v-if="selectedColors.includes('White')">
+        <span v-if="!selectedColors.includes('Pink')">Pink</span>
+        <template v-if="selectedColors.includes('Pink')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span
@@ -135,12 +135,14 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('Pink') }"
-        @click="toggleSelect('Pink')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-black bg-gradient-to-tr from-[#d60270] via-[#b8e4b8] to-[#00a3e8] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('MultiColoured') }"
+        @click="toggleSelect('MultiColoured')"
       >
-        <span v-if="!selectedColors.includes('Pink')">Pink</span>
-        <template v-if="selectedColors.includes('Pink')">
+        <span v-if="!selectedColors.includes('MultiColoured')"
+          >Multi Coloured</span
+        >
+        <template v-if="selectedColors.includes('MultiColoured')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span
