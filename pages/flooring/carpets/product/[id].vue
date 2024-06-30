@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoaded">
+  <div v-if="isLoaded" class="h-max w-screen overflow-x-hidden">
     <NavBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col items-center gap-[2vh]"
@@ -58,12 +58,12 @@
       >
         <button
           @click="() => openWhatsApp('918943564762', productLink)"
-          class="py-[2.8vh] px-[4.8vw] shadow-lg w-[42%] bg-[#ececec] text-black text-[2vh] rounded-md"
+          class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
         >
           ENQUIRE BY WHATSAPP
         </button>
         <button
-          class="py-[2.8vh] px-[4.8vw] w-[42%] bg-black text-white text-[2vh] rounded-md shadow-lg"
+          class="py-[2.8vh] px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
         >
           ENQUIRE BY <br />
           EMAIL
@@ -96,7 +96,7 @@
           </div>
 
           <div class="h-max w-screen px-[4vw] pt-[4vh] flex justify-start">
-            <p>Total Price: BHD {{ totalPrice }}</p>
+            <p>Total Cost: BHD {{ totalPrice }}</p>
           </div>
         </div>
       </div>
