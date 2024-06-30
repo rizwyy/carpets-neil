@@ -6,7 +6,7 @@
     >
       <!-- R1 - IMAGE-->
       <div
-        class="product-image_container h-max w-full flex items-center justify-start px-[4vw]"
+        class="product-image_container h-max w-full flex items-center justify-start px-[0vw]"
       >
         <img
           class="object-cover h-[32vh] w-[98%]"
@@ -57,7 +57,13 @@
         class="actionBtn-container h-max w-screen flex justify-center gap-[4vw]"
       >
         <button
-          @click="() => openWhatsApp('918943564762', productLink)"
+          @click="
+            () =>
+              openWhatsApp(
+                '9173060 14762',
+                `Hi, I would like to order ${productName}                                                              ${productLink}`
+              )
+          "
           class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
         >
           ENQUIRE BY WHATSAPP
