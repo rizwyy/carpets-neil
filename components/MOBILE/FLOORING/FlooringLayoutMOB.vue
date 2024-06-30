@@ -76,7 +76,7 @@ function toggleExpansion() {
       >
         <div class="h-max w-screen flex justify-center gap-[2vw] z-[9]">
           <a
-            href="carpets/details"
+            href="flooring/carpets/details"
             @click="setCategory('Wall to Wall')"
             class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
           >
@@ -97,7 +97,8 @@ function toggleExpansion() {
               alt="#"
             />
           </a>
-          <div
+          <a
+            href="flooring/carpets/details"
             @click="setCategory('Carpet Tiles')"
             class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
           >
@@ -117,10 +118,11 @@ function toggleExpansion() {
               src="/10003.jpg"
               alt="#"
             />
-          </div>
+          </a>
         </div>
         <div class="h-max w-screen flex justify-center gap-[2vw] z-[9]">
-          <div
+          <a
+            href="flooring/carpets/details"
             @click="setCategory('Area Rugs')"
             class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
           >
@@ -141,8 +143,9 @@ function toggleExpansion() {
               src="/10009.jpg"
               alt="#"
             />
-          </div>
-          <div
+          </a>
+          <a
+            href="flooring/carpets/details"
             @click="setCategory('Runners')"
             class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
           >
@@ -163,7 +166,7 @@ function toggleExpansion() {
               src="/10006.jpg"
               alt="#"
             />
-          </div>
+          </a>
         </div>
       </div>
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
