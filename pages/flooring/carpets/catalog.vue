@@ -6,6 +6,7 @@ import Desktop from "./../../../layouts/Desktop.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
 // PACKAGES
+import { useRouter } from "vue-router";
 // PINIA
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -17,6 +18,7 @@ const products = ref([]); // Create a ref variable
 const isLoading = ref(true);
 const isRetry = ref(true);
 const route = useRoute();
+const router = useRouter();
 
 //
 
@@ -26,9 +28,7 @@ async function fetchCarpetsData() {
   try {
     const { data, error } = await client
       .from("carpets")
-      .select(
-        "product_name, product_link, product_colour, product_price, product_currency"
-      );
+      .select("id,name, link, color, price, currency");
 
     if (error) throw error;
 
@@ -107,11 +107,11 @@ onMounted(() => {
       <div class="h-max w-full grid grid-cols-4 gap-x-[8vw] gap-y-[4vh]">
         <CatalogItemPC
           v-for="item in products"
-          :name="item.product_name"
-          :price="item.product_price"
-          :key="item.product_name"
-          :currency="item.product_currency"
-          :color="item.product_colour"
+          :name="item.name"
+          :price="item.price"
+          :key="item.id"
+          :currency="item.currency"
+          :color="item.color"
         />
       </div>
     </div>
@@ -170,21 +170,18 @@ onMounted(() => {
 
       <div v-else class="container h-max w-full px-[2vw]">
         <div class="grid grid-cols-2 gap-[4vw] w-full">
-          <div
-            v-for="item in items"
-            :key="item.id"
-            class="bg-gray-200 p-4 border rounded text-center"
-          >
-            {{ item.name }}
-          </div>
-          <CatalogItemMOB
+          <a
             v-for="item in products"
-            :name="item.product_name"
-            :price="item.product_price"
-            :key="item.product_name"
-            :currency="item.product_currency"
-            :color="item.product_colour"
-          />
+            :key="item.id"
+            :href="`product/${item.id}`"
+          >
+            <CatalogItemMOB
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="item.color"
+            />
+          </a>
         </div>
       </div>
     </div>
