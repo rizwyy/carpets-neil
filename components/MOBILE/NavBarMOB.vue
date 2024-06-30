@@ -7,8 +7,8 @@
       <span
         ><svg
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          width="32"
+          height="32"
           viewBox="0 0 24 24"
         >
           <path
@@ -23,11 +23,11 @@
     </div>
     <a
       href="/"
-      class="h-max w-max absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[5vw] text-[#333] tracking-[-.1vw]"
+      class="h-max w-max absolute top-[50%] left-[50%] translate-x-[-58%] translate-y-[-50%] font-[300] text-[5vh] text-[#333] tracking-[-.1vw]"
     >
-      WOLTIZ / FLOORS
+      WOLTIZ
     </a>
-    <div class="h-max w-max text-[4vw]">DESIGNER</div>
+    <div class="h-max w-max text-[2vh] font-[500]">DESIGNER</div>
   </div>
 </template>
 

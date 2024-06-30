@@ -2,7 +2,7 @@
 // COMPONENTS IMPORTS
 import Mobile from "./../../../layouts/Mobile.vue";
 import Desktop from "./../../../layouts/Desktop.vue";
-
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
 // PACKAGES
@@ -53,74 +53,73 @@ onMounted(() => {
 
 <template>
   <Desktop>
-    <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
-      <h1>Catalog</h1>
-    </div>
-    <button @click="fetchCarpetsData" v-show="isRetry">RETRY</button>
-    <div
-      v-if="isLoading"
-      class="h-[70vh] w-screen flex flex-col items-center justify-center"
-    >
-      Getting Your Options
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="42"
-        height="42"
-        viewBox="0 0 24 24"
+    <div class="h-max w-screen overflow-x-hidden max-w-[98vw]">
+      <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
+        <h1>Catalog</h1>
+      </div>
+      <div
+        v-if="isLoading"
+        class="h-[70vh] w-screen flex flex-col items-center justify-center"
       >
-        <circle cx="18" cy="12" r="0" fill="currentColor">
-          <animate
-            attributeName="r"
-            begin=".67"
-            calcMode="spline"
-            dur="1.5s"
-            keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-            repeatCount="indefinite"
-            values="0;2;0;0"
+        Getting Your Options
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="18" cy="12" r="0" fill="currentColor">
+            <animate
+              attributeName="r"
+              begin=".67"
+              calcMode="spline"
+              dur="1.5s"
+              keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+              repeatCount="indefinite"
+              values="0;2;0;0"
+            />
+          </circle>
+          <circle cx="12" cy="12" r="0" fill="currentColor">
+            <animate
+              attributeName="r"
+              begin=".33"
+              calcMode="spline"
+              dur="1.5s"
+              keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+              repeatCount="indefinite"
+              values="0;2;0;0"
+            />
+          </circle>
+          <circle cx="6" cy="12" r="0" fill="currentColor">
+            <animate
+              attributeName="r"
+              begin="0"
+              calcMode="spline"
+              dur="1.5s"
+              keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+              repeatCount="indefinite"
+              values="0;2;0;0"
+            />
+          </circle>
+        </svg>
+      </div>
+      <div v-else class="mx-auto w-[60vw] h-max">
+        <div class="h-max w-full grid grid-cols-4 gap-x-[8vw] gap-y-[4vh]">
+          <CatalogItemPC
+            v-for="item in products"
+            :name="item.name"
+            :price="item.price"
+            :key="item.id"
+            :currency="item.currency"
+            :color="item.color"
           />
-        </circle>
-        <circle cx="12" cy="12" r="0" fill="currentColor">
-          <animate
-            attributeName="r"
-            begin=".33"
-            calcMode="spline"
-            dur="1.5s"
-            keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-            repeatCount="indefinite"
-            values="0;2;0;0"
-          />
-        </circle>
-        <circle cx="6" cy="12" r="0" fill="currentColor">
-          <animate
-            attributeName="r"
-            begin="0"
-            calcMode="spline"
-            dur="1.5s"
-            keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-            repeatCount="indefinite"
-            values="0;2;0;0"
-          />
-        </circle>
-      </svg>
-    </div>
-    <div v-else class="mx-auto w-[60vw] h-max">
-      <div class="h-max w-full grid grid-cols-4 gap-x-[8vw] gap-y-[4vh]">
-        <CatalogItemPC
-          v-for="item in products"
-          :name="item.name"
-          :price="item.price"
-          :key="item.id"
-          :currency="item.currency"
-          :color="item.color"
-        />
+        </div>
       </div>
     </div>
   </Desktop>
   <Mobile>
+    <NavBarMOB />
     <div class="h-screen w-screen">
-      <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
-        <h1>Catalog</h1>
-      </div>
       <div
         v-if="isLoading"
         class="h-[70vh] w-screen flex flex-col items-center justify-center"

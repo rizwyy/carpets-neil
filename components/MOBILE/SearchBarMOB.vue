@@ -57,19 +57,14 @@ const results = ref([
   "Blinds & Curtains",
   "Beige Carpets",
   "Grey Carpets",
-  "Grey Carpets",
 ]);
 const filteredResults = ref([]);
 const isActive = ref(false);
 
 const onInput = () => {
-  if (query.value.trim() === "") {
-    filteredResults.value = [];
-  } else {
-    filteredResults.value = results.value.filter((result) =>
-      result.toLowerCase().includes(query.value.toLowerCase())
-    );
-  }
+  filteredResults.value = results.value.filter((result) =>
+    result.toLowerCase().includes(query.value.toLowerCase())
+  );
 };
 
 const onFocus = () => {

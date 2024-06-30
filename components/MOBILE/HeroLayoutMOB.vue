@@ -23,7 +23,7 @@
           ></div>
           <img
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/40001.jpg"
+            src="/10001.jpg"
             alt="#"
           />
         </div>
