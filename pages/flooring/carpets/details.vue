@@ -29,9 +29,13 @@ function setUserPreferenceCookie() {
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center"
     >
       <div
-        class="h-max px-[4vw] pt-[6vh] pb-[4vh] w-full justify-start text-[3.8vh]"
+        class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
-        Specify Your Needs
+        <span class="text-[2.4vh] underline-offset-[.4vh] text-[#666] flex">
+          Carpets >
+          {{ userPreference.category }}
+        </span>
+        <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <TypeDetails />
       <ColorDetails />

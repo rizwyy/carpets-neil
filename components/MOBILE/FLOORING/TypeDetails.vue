@@ -5,7 +5,7 @@
     <div
       class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
     >
-      <span>Choose Your Type</span>
+      <span> Choose Your Type </span>
       <button
         @click="clearAllSelections"
         v-if="selectedTypes.length"
@@ -150,6 +150,9 @@ import { ref } from "vue";
 // PINIA
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
+// COOKIES
+import { useCookie } from "#app";
+const userPreference = useCookie("userPreference");
 
 const selectedTypes = ref([]);
 

@@ -62,7 +62,7 @@
               () =>
                 openWhatsApp(
                   '9173060 14762',
-                  `Hi, I would like to order ${productName}                                                              ${productLink}`
+                  'test'`Hi, I would like to order ${productName}                                                              ${productLink}`
                 )
             "
             class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
@@ -70,6 +70,14 @@
             ENQUIRE BY WHATSAPP
           </button>
           <button
+            @click="
+              () =>
+                openEmail(
+                  'riswinmo@gmail.com',
+                  'test',
+                  `Hi, I would like to order ${productName}                                                                                                                            ${productLink}`
+                )
+            "
             class="py-[2.8vh] px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
           >
             ENQUIRE BY <br />
@@ -211,6 +219,16 @@ function generateWhatsAppLink(phone, message) {
 }
 function openWhatsApp(phone, message) {
   const link = generateWhatsAppLink(phone, message);
+  window.open(link, "_blank"); // Opens link in a new window/tab
+}
+function generateEmailLink(email, subject, body) {
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(body);
+  return `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+}
+
+function openEmail(email, subject, body) {
+  const link = generateEmailLink(email, subject, body);
   window.open(link, "_blank"); // Opens link in a new window/tab
 }
 async function fetchProductDetails(id) {

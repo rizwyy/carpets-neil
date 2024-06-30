@@ -83,6 +83,7 @@ const useUserStore = defineStore("user", {
     },
     products: [],
     preference: {
+      category: "",
       type: [],
       color: [],
       yarn: [],
