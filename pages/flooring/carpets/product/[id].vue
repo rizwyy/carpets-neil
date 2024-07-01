@@ -62,7 +62,7 @@
               () =>
                 openWhatsApp(
                   '9173060 14762',
-                  'test'`Hi, I would like to order ${productName}                                                              ${productLink}`
+                  `Hi, I would like to order ${productName}                                                              ${productLink}`
                 )
             "
             class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
@@ -75,7 +75,7 @@
                 openEmail(
                   'riswinmo@gmail.com',
                   'test',
-                  `Hi, I would like to order ${productName}                                                                                                                            ${productLink}`
+                  `Hi, I would like to order ${productName}                                                              ${productLink}`
                 )
             "
             class="py-[2.8vh] px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
