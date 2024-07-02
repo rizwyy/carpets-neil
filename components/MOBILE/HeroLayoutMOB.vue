@@ -21,7 +21,7 @@
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full opacity-[.8] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
           ></div>
-          <img
+          <NuxtImg
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
@@ -48,7 +48,7 @@
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/60001.avif"
             alt="#"
@@ -78,7 +78,7 @@
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10004.jpg"
             alt="#"
@@ -106,7 +106,7 @@
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/70001.jpg"
             alt="#"
@@ -136,7 +136,7 @@
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/80001.jpeg"
             alt="#"
@@ -164,7 +164,7 @@
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"

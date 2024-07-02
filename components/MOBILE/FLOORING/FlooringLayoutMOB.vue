@@ -77,14 +77,17 @@ function toggleExpansion() {
 <template>
   <Mobile>
     <div
-      class="FAQSection h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
+      class="HowWoltizWorks-section h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
       <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
         How Woltiz Works - Video
       </div>
     </div>
     <div class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] text-[2.8vh]">
-      <span>Shop by Categories</span>
+      <span
+        >Choose your Flooring / <br />
+        Select your Flooring</span
+      >
     </div>
     <div class="h-max w-screen flex flex-col gap-[1vh]">
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[1]">
@@ -128,7 +131,9 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10004.jpg"
             alt="#"
@@ -163,7 +168,9 @@ function toggleExpansion() {
               <div
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
               ></div>
-              <img
+              <NuxtImg
+                loading="lazy"
+                placeholder
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
                 src="/wall-to-wall.jpg"
                 alt="#"
@@ -188,7 +195,9 @@ function toggleExpansion() {
               <div
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] to-[#00000] from-[14%]"
               ></div>
-              <img
+              <NuxtImg
+                loading="lazy"
+                placeholder
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
                 src="/10003.jpg"
                 alt="#"
@@ -218,14 +227,16 @@ function toggleExpansion() {
               <div
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
               ></div>
-              <img
+              <NuxtImg
+                loading="lazy"
+                placeholder
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
                 src="/10009.jpg"
                 alt="#"
               />
             </a>
             <a
-              href="flooring/carpets/details"
+              href="/flooring/carpets/details"
               @click="setCategory('Runners')"
               class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
@@ -244,7 +255,9 @@ function toggleExpansion() {
               <div
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
               ></div>
-              <img
+              <NuxtImg
+                loading="lazy"
+                placeholder
                 class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
                 src="/10006.jpg"
                 alt="#"
@@ -277,7 +290,9 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/40001.jpg"
             alt="#"
@@ -305,9 +320,11 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/60001.avif"
+            src="/80001.jpeg"
             alt="#"
           />
         </div>
@@ -335,9 +352,11 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/60001.avif"
+            src="/10001.jpg"
             alt="#"
           />
         </div>
@@ -363,7 +382,9 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/70001.jpg"
             alt="#"
@@ -393,7 +414,9 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/80001.jpeg"
             alt="#"
@@ -421,7 +444,9 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <img
+          <NuxtImg
+            loading="lazy"
+            placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"

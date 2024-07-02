@@ -29,12 +29,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Solid') },
+          { selected: selectedTypes.includes('Plain') },
         ]"
-        @click="toggleSelect('Solid')"
+        @click="toggleSelect('Plain')"
       >
         <div
-          v-if="selectedTypes.includes('Solid')"
+          v-if="selectedTypes.includes('Plain')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -46,12 +46,12 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/solidCarpet.jpg"
           alt=""
         />
-        <span>Solid</span>
+        <span>Plain</span>
       </div>
 
       <!-- Textured -->
@@ -75,7 +75,7 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/texturedCarpet.jpeg"
           alt=""
@@ -88,12 +88,12 @@
       <div
         :class="[
           'h-[14vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Designed') },
+          { selected: selectedTypes.includes('Patterned') },
         ]"
-        @click="toggleSelect('Designed')"
+        @click="toggleSelect('Patterned')"
       >
         <div
-          v-if="selectedTypes.includes('Designed')"
+          v-if="selectedTypes.includes('Patterned')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -105,24 +105,24 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/designedCarpet.jpg"
           alt=""
         />
-        <span>Designed</span>
+        <span>Patterned</span>
       </div>
 
       <!-- Customized -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Customized') },
+          { selected: selectedTypes.includes('Stripped') },
         ]"
-        @click="toggleSelect('Customized')"
+        @click="toggleSelect('Stripped')"
       >
         <div
-          v-if="selectedTypes.includes('Customized')"
+          v-if="selectedTypes.includes('Stripped')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -134,12 +134,12 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/10001.jpg"
           alt=""
         />
-        <span>Customized</span>
+        <span>Stripped</span>
       </div>
     </div>
   </div>

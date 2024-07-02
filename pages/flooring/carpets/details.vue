@@ -1,7 +1,8 @@
 <script setup>
 import TypeDetails from "./../../../components/MOBILE/FLOORING/TypeDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import YarnDetails from "../../../components/MOBILE/FLOORING/YarnDetails.vue";
+import MaterialDetails from "../../../components/MOBILE/FLOORING/MaterialDetails.vue";
+import BudgetDetails from "../../../components/MOBILE/FLOORING/BudgetDetails.vue";
 import PileDetails from "~/components/MOBILE/FLOORING/PileDetails.vue";
 
 import Mobile from "./../../../layouts/Mobile.vue";
@@ -21,6 +22,15 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
   navigateTo(`catalog`);
 }
+
+onMounted(() => {
+  userStore.preference.category = userPreference.value.category;
+  if (userStore.preference.category === "") {
+    console.log("CATEGORY NOT DEFINED");
+  } else {
+    console.log(`CATEGORY RETRIEVED:${userStore.preference.category} `);
+  }
+});
 </script>
 <template>
   <Mobile>
@@ -31,25 +41,29 @@ function setUserPreferenceCookie() {
       <div
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
-        <span class="text-[2.4vh] underline-offset-[.4vh] text-[#666] flex">
+        <a
+          href="/flooring/carpets/details"
+          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+        >
           Carpets >
           {{ userPreference.category }}
-        </span>
+        </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <TypeDetails />
       <ColorDetails />
-      <PileDetails />
-      <YarnDetails />
+      <BudgetDetails />
+      <!-- <PileDetails /> -->
+      <MaterialDetails />
 
       <button
         @click="setUserPreferenceCookie"
         v-show="
           userStore.preference.type.length > 0 &&
           userStore.preference.color.length > 0 &&
-          userStore.preference.yarn.length > 0
+          userStore.preference.material.length > 0
         "
-        class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-blue-600 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
+        class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-600 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
       >
         BROWSE CATALOG<svg
           xmlns="http://www.w3.org/2000/svg"

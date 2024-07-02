@@ -9,7 +9,7 @@
         <div
           class="product-image_container h-max w-full flex items-center justify-start px-[0vw]"
         >
-          <img
+          <NuxtImg
             class="object-cover h-[32vh] w-[98%]"
             :src="`/carpets/${productColor}.jpg`"
             :alt="color"

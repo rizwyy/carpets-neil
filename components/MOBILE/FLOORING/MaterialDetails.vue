@@ -3,15 +3,15 @@
     v-show="
       userStore.preference.type.length > 0 &&
       userStore.preference.color.length > 0 &&
-      userStore.preference.pile.length > 0
+      userStore.preference.budget.length > 0
     "
     class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div class="h-max w-full flex justify-between text-[3.4vh] z-[9]">
-      <span>Choose Your Yarn</span>
+      <span>Choose your Material</span>
       <button
-        @click="clearYarnSelections"
-        v-if="selectedYarns.length"
+        @click="clearmaterialSelections"
+        v-if="selectedmaterials.length"
         class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-xs rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -32,12 +32,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedYarns.includes('Wool') },
+          { selected: selectedmaterials.includes('Wool') },
         ]"
         @click="toggleSelect('Wool')"
       >
         <div
-          v-if="selectedYarns.includes('Wool')"
+          v-if="selectedmaterials.includes('Wool')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -60,12 +60,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedYarns.includes('Wool-Blend') },
+          { selected: selectedmaterials.includes('Wool-Blend') },
         ]"
         @click="toggleSelect('Wool-Blend')"
       >
         <div
-          v-if="selectedYarns.includes('Wool-Blend')"
+          v-if="selectedmaterials.includes('Wool-Blend')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -90,12 +90,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedYarns.includes('Nylon') },
+          { selected: selectedmaterials.includes('Nylon') },
         ]"
         @click="toggleSelect('Nylon')"
       >
         <div
-          v-if="selectedYarns.includes('Nylon')"
+          v-if="selectedmaterials.includes('Nylon')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -118,12 +118,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedYarns.includes('polypropylene') },
+          { selected: selectedmaterials.includes('polypropylene') },
         ]"
         @click="toggleSelect('polypropylene')"
       >
         <div
-          v-if="selectedYarns.includes('polypropylene')"
+          v-if="selectedmaterials.includes('polypropylene')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -152,10 +152,10 @@ import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 import { ref } from "vue";
 
-const selectedYarns = ref([]);
-function clearYarnSelections() {
-  selectedYarns.value = [];
-  userStore.preference.yarn = [];
+const selectedmaterials = ref([]);
+function clearmaterialSelections() {
+  selectedmaterials.value = [];
+  userStore.preference.material = [];
 }
 function scrollToBottom() {
   setTimeout(() => {
@@ -165,14 +165,16 @@ function scrollToBottom() {
     });
   }, 200);
 }
-const toggleSelect = (yarn) => {
-  if (selectedYarns.value.includes(yarn)) {
-    selectedYarns.value = selectedYarns.value.filter((t) => t !== yarn);
-    userStore.preference.yarn = toRaw(selectedYarns.value);
+const toggleSelect = (material) => {
+  if (selectedmaterials.value.includes(material)) {
+    selectedmaterials.value = selectedmaterials.value.filter(
+      (t) => t !== material
+    );
+    userStore.preference.material = toRaw(selectedmaterials.value);
   } else {
     scrollToBottom();
-    selectedYarns.value.push(yarn);
-    userStore.preference.yarn = toRaw(selectedYarns.value);
+    selectedmaterials.value.push(material);
+    userStore.preference.material = toRaw(selectedmaterials.value);
   }
 };
 </script>

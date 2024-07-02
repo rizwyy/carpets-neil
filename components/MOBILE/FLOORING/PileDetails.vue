@@ -51,7 +51,7 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/carpets/pile-cut-carpet.jpeg"
           alt="#"
@@ -80,7 +80,7 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/carpets/loop-pile-carpet.jpeg"
           alt=""
@@ -110,7 +110,7 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/designedCarpet.jpg"
           alt=""
@@ -139,7 +139,7 @@
         <div
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
-        <img
+        <NuxtImg
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/10001.jpg"
           alt=""

@@ -12,8 +12,8 @@ const route = useRoute();
 
 <template>
   <div class="h-max w-[46vw] flex flex-col items-center">
-    <div class="imgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
-      <img
+    <div class="NuxtImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
+      <NuxtImg
         class="object-cover h-full w-full"
         :src="`/carpets/${color}.jpg`"
         :alt="color"

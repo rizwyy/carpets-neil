@@ -27,20 +27,23 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gray-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('Grey') }"
-        @click="toggleSelect('Grey')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('MultiColored') }"
+        @click="toggleSelect('MultiColored')"
       >
-        <span v-if="!selectedColors.includes('Grey')">Grey</span>
-        <template v-if="selectedColors.includes('Grey')">
+        <span v-if="!selectedColors.includes('MultiColored')"
+          >Multi Colored</span
+        >
+        <template v-if="selectedColors.includes('MultiColored')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span
           >
         </template>
       </div>
+
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-[#333] bg-beige-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-[#333] bg-[#F5F5DC] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Beige') }"
         @click="toggleSelect('Beige')"
       >
@@ -68,12 +71,12 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-red-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('Red') }"
-        @click="toggleSelect('Red')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gray-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('Grey') }"
+        @click="toggleSelect('Grey')"
       >
-        <span v-if="!selectedColors.includes('Red')">Red</span>
-        <template v-if="selectedColors.includes('Red')">
+        <span v-if="!selectedColors.includes('Grey')">Grey</span>
+        <template v-if="selectedColors.includes('Grey')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span

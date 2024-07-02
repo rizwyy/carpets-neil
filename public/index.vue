@@ -13,7 +13,7 @@
           <div
             class="h-full w-full bg-black absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
-          <img
+          <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/10001.jpg"
             alt=""
@@ -31,7 +31,7 @@
           <div
             class="h-full w-full bg-black absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
-          <img
+          <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/10001.jpg"
             alt=""
@@ -51,7 +51,7 @@
           <div
             class="h-full w-full bg-black absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
-          <img
+          <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/10001.jpg"
             alt=""
@@ -69,7 +69,7 @@
           <div
             class="h-full w-full bg-black absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
-          <img
+          <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/10001.jpg"
             alt=""

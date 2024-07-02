@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@pinia/nuxt",
     "@nuxtjs/supabase",
+    "@nuxt/image"
   ],
   supabase: {
     redirect: false,
