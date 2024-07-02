@@ -33,12 +33,6 @@ function gsap_carpetsContainer_open() {
     autoAlpha: 1,
     duration: 0.4,
   });
-  gsap.to(".categoryItem", {
-    autoAlpha: 1,
-    stagger: 0.2,
-    duration: 0.4,
-    ease: "slide.in",
-  });
   gsap.to(".arrowDownSvg", {
     rotate: "180deg",
   });
