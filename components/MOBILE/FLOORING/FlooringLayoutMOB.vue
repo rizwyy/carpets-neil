@@ -45,12 +45,15 @@ function gsap_carpetsContainer_open() {
 function gsap_carpetsContainer_close() {
   const element = document.querySelector(".carpetsCategory-container");
   gsap.to(".whitespaceContainer", {
-    delay: 0.2,
     height: "0vh",
     duration: 0.4,
     ease: "slide.in",
   });
   // Animate with GSAP
+  gsap.to(element, {
+    autoAlpha: 0,
+    duration: 0.2,
+  });
   gsap.to(element, {
     autoAlpha: 0,
     duration: 0.4,
@@ -61,6 +64,7 @@ function gsap_carpetsContainer_close() {
   gsap.to(".categoryItem", {
     autoAlpha: 0,
     stagger: 0.2,
+    duration: 0,
   });
   gsap.to(".arrowDownSvg", {
     rotate: "0deg",
