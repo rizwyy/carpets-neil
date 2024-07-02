@@ -29,6 +29,7 @@ function gsap_carpetsContainer_open() {
     ease: "slide.out",
   });
   gsap.to(".carpetsCategory-container", {
+    delay: 0.2,
     autoAlpha: 1,
     duration: 0.4,
   });
@@ -61,11 +62,7 @@ function gsap_carpetsContainer_close() {
       element.style.display = "none"; // Set display to none after animation completes
     },
   });
-  gsap.to(".categoryItem", {
-    autoAlpha: 0,
-    stagger: 0.2,
-    duration: 0,
-  });
+
   gsap.to(".arrowDownSvg", {
     rotate: "0deg",
   });
@@ -155,7 +152,7 @@ function toggleExpansion() {
             <a
               href="flooring/carpets/details"
               @click="setCategory('Wall to Wall')"
-              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
               <div
                 class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
@@ -181,7 +178,7 @@ function toggleExpansion() {
             <a
               href="flooring/carpets/details"
               @click="setCategory('Carpet Tiles')"
-              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
               <div
                 class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
@@ -210,7 +207,7 @@ function toggleExpansion() {
             <a
               href="flooring/carpets/details"
               @click="setCategory('Area Rugs')"
-              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
               <div
                 class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
@@ -236,7 +233,7 @@ function toggleExpansion() {
             <a
               href="flooring/carpets/details"
               @click="setCategory('Runners')"
-              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
               <div
                 class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
@@ -263,7 +260,7 @@ function toggleExpansion() {
         </div>
       </div>
 
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
+      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
         >
@@ -321,7 +318,7 @@ function toggleExpansion() {
           />
         </div>
       </div>
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
+      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
         >
@@ -379,7 +376,7 @@ function toggleExpansion() {
           />
         </div>
       </div>
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
+      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
         >
