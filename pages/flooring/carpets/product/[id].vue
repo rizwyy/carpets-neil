@@ -123,12 +123,12 @@
     </div>
     <div
       v-else
-      class="h-[70vh] w-screen flex flex-col items-center justify-center"
+      class="h-[90vh] w-screen flex flex-col items-center justify-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="42"
-        height="42"
+        width="48"
+        height="48"
         viewBox="0 0 24 24"
       >
         <circle cx="18" cy="12" r="0" fill="currentColor">

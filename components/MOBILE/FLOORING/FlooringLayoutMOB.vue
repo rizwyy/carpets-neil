@@ -5,6 +5,7 @@ import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
 
 import useUserStore from "../../../stores/user";
+import gsap from "gsap";
 const userStore = useUserStore();
 
 function setUserPreferenceCookie() {
@@ -18,8 +19,63 @@ const setCategory = (category) => {
   console.log("COOKIE SET::", toRaw(userPreference.value));
 };
 const isExpanded = ref(false);
+function gsap_carpetsContainer_open() {
+  const element = document.querySelector(".carpetsCategory-container");
+  element.style.display = "block";
+
+  gsap.to(".whitespaceContainer", {
+    height: "42vh",
+    duration: 1,
+    ease: "slide.out",
+  });
+  gsap.to(".carpetsCategory-container", {
+    autoAlpha: 1,
+    duration: 0.4,
+  });
+  gsap.to(".categoryItem", {
+    autoAlpha: 1,
+    stagger: 0.2,
+    duration: 0.4,
+    ease: "slide.in",
+  });
+  gsap.to(".arrowDownSvg", {
+    rotate: "180deg",
+  });
+}
+function gsap_carpetsContainer_close() {
+  const element = document.querySelector(".carpetsCategory-container");
+  gsap.to(".whitespaceContainer", {
+    delay: 0.2,
+    height: "0vh",
+    duration: 0.4,
+    ease: "slide.in",
+  });
+  // Animate with GSAP
+  gsap.to(element, {
+    autoAlpha: 0,
+    duration: 0.4,
+    onComplete: () => {
+      element.style.display = "none"; // Set display to none after animation completes
+    },
+  });
+  gsap.to(".categoryItem", {
+    autoAlpha: 0,
+    stagger: 0.2,
+  });
+  gsap.to(".arrowDownSvg", {
+    rotate: "0deg",
+  });
+}
+
 function toggleExpansion() {
-  isExpanded.value = !isExpanded.value;
+  if (isExpanded.value) {
+    gsap_carpetsContainer_close();
+    isExpanded.value = false;
+  } else {
+    gsap_carpetsContainer_open();
+    isExpanded.value = true;
+  }
+  console.log(isExpanded.value);
 }
 </script>
 
@@ -36,7 +92,7 @@ function toggleExpansion() {
       <span>Shop by Categories</span>
     </div>
     <div class="h-max w-screen flex flex-col gap-[1vh]">
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
+      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[1]">
         <div
           @click="toggleExpansion"
           class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
@@ -48,6 +104,21 @@ function toggleExpansion() {
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <svg
+              v-if="isExpanded"
+              class="rotate-[180deg]"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fff"
+                d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062"
+              />
+            </svg>
+            <svg
+              v-else
+              class=""
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
@@ -70,105 +141,124 @@ function toggleExpansion() {
         </div>
       </div>
       <!-- HTI -->
-      <div
-        v-show="isExpanded"
-        class="carpetsCategory-container h-max w-screen flex flex-col justify-evenly gap-[1vh]"
-      >
-        <div class="h-max w-screen flex justify-center gap-[2vw] z-[9]">
-          <a
-            href="flooring/carpets/details"
-            @click="setCategory('Wall to Wall')"
-            class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
+      <div class="whitespaceContainer h-[0vh] w-screen">
+        <div
+          class="carpetsCategory-container invisible opacity-0 hidden h-max w-screen flex flex-col justify-center z-[-1]"
+        >
+          <div
+            class="h-max w-screen flex justify-center gap-[4vw] z-[9] my-[.4vh]"
           >
-            <span class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
-              >Wall to Wall
-            </span>
-            <span
-              class="text-[#fff9] text-[1.4vh] font-[500] underline underline-offset-[.4vh]"
-              >View All</span
+            <a
+              href="flooring/carpets/details"
+              @click="setCategory('Wall to Wall')"
+              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
+              <div
+                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              >
+                <span
+                  class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+                  >Wall to Wall
+                </span>
+                <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                  >View All</span
+                >
+              </div>
 
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-            ></div>
-            <img
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/wall-to-wall.jpg"
-              alt="#"
-            />
-          </a>
-          <a
-            href="flooring/carpets/details"
-            @click="setCategory('Carpet Tiles')"
-            class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
+              <div
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
+              ></div>
+              <img
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+                src="/wall-to-wall.jpg"
+                alt="#"
+              />
+            </a>
+            <a
+              href="flooring/carpets/details"
+              @click="setCategory('Carpet Tiles')"
+              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+            >
+              <div
+                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              >
+                <span
+                  class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+                  >Carpet Tiles
+                </span>
+                <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                  >View All</span
+                >
+              </div>
+              <div
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] to-[#00000] from-[14%]"
+              ></div>
+              <img
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+                src="/10003.jpg"
+                alt="#"
+              />
+            </a>
+          </div>
+          <div
+            class="h-max w-screen flex justify-center gap-[4vw] z-[9] my-[1vh]"
           >
-            <span
-              class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-              >Carpet Tiles</span
+            <a
+              href="flooring/carpets/details"
+              @click="setCategory('Area Rugs')"
+              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
-            <span
-              class="text-[#fff9] text-[1.4vh] font-[500] underline underline-offset-[.4vh]"
-              >View All</span
-            >
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-            ></div>
-            <img
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/10003.jpg"
-              alt="#"
-            />
-          </a>
-        </div>
-        <div class="h-max w-screen flex justify-center gap-[2vw] z-[9]">
-          <a
-            href="flooring/carpets/details"
-            @click="setCategory('Area Rugs')"
-            class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
-          >
-            <span
-              class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-              >Area Rugs</span
-            >
-            <span
-              class="text-[#fff9] text-[1.4vh] font-[500] underline underline-offset-[.4vh]"
-              >View All</span
-            >
+              <div
+                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              >
+                <span
+                  class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+                  >Area Rugs</span
+                >
+                <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                  >View All</span
+                >
+              </div>
 
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-            ></div>
-            <img
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/10009.jpg"
-              alt="#"
-            />
-          </a>
-          <a
-            href="flooring/carpets/details"
-            @click="setCategory('Runners')"
-            class="h-[14vh] rounded-md w-[45%] overflow-hidden relative flex flex-col justify-end px-[2vw] pt-[1.8vh] pb-[.8vh]"
-          >
-            <span
-              class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-              >Runners
-            </span>
-            <span
-              class="text-[#fff9] text-[1.4vh] font-[500] underline underline-offset-[.4vh]"
-              >View All</span
+              <div
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
+              ></div>
+              <img
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+                src="/10009.jpg"
+                alt="#"
+              />
+            </a>
+            <a
+              href="flooring/carpets/details"
+              @click="setCategory('Runners')"
+              class="h-[20vh] categoryItem invisible opacity-0 rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
             >
+              <div
+                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              >
+                <span
+                  class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+                  >Runners
+                </span>
+                <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                  >View All</span
+                >
+              </div>
 
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
-            ></div>
-            <img
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/10006.jpg"
-              alt="#"
-            />
-          </a>
+              <div
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
+              ></div>
+              <img
+                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+                src="/10006.jpg"
+                alt="#"
+              />
+            </a>
+          </div>
         </div>
       </div>
+
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
