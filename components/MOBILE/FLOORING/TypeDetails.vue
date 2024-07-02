@@ -47,6 +47,8 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          placeholder
+          loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/solidCarpet.jpg"
           alt=""
@@ -76,6 +78,8 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          placeholder
+          loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/texturedCarpet.jpeg"
           alt=""
@@ -106,6 +110,8 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          placeholder
+          loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/designedCarpet.jpg"
           alt=""
@@ -135,6 +141,8 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          placeholder
+          loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/10001.jpg"
           alt=""
