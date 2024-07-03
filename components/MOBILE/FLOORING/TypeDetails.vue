@@ -154,6 +154,15 @@
         <span>Stripped</span>
       </div>
     </div>
+    <div class="h-max w-full flex justify-start">
+      <button
+        class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1"
+      >
+        <span class="flex w-full bg-gray-900 text-white rounded p-2">
+          Gradient border
+        </span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -164,8 +173,8 @@ import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 // COOKIES
 import { useCookie } from "#app";
+import gsap from "gsap";
 const userPreference = useCookie("userPreference");
-
 const selectedTypes = ref([]);
 
 function clearAllSelections() {
@@ -190,6 +199,16 @@ const toggleSelect = (type) => {
     userStore.preference.type = toRaw(selectedTypes.value);
   }
 };
+onMounted(() => {
+  gsap.to(".rainbowBorder", {
+    duration: 1,
+    borderColor:
+      "linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1",
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut",
+  });
+});
 </script>
 
 <style scoped>

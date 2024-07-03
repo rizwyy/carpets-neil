@@ -83,10 +83,7 @@ function toggleExpansion() {
       </div>
     </div>
     <div class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] text-[2.8vh]">
-      <span
-        >Choose your Flooring / <br />
-        Select your Flooring</span
-      >
+      <span>Choose your Flooring</span>
     </div>
     <div class="h-max w-screen flex flex-col gap-[1vh]">
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[1]">
