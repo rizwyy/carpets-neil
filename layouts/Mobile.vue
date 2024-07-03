@@ -5,4 +5,10 @@
 </template>
 
 <script setup></script>
-<style scoped></style>
+<style scoped>
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #fff; /* Set to your preferred light background color */
+  }
+}
+</style>
