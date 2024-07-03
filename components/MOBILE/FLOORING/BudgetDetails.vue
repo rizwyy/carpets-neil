@@ -73,7 +73,7 @@
           <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
         </div>
       </div>
-      <!-- NOT AVAILABLE ELITE -->
+      <!-- NOT AVAILABLE VALUE -->
       <div
         v-else
         :class="[
@@ -84,7 +84,8 @@
           class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
         >
           <span class="text-[2vh] font-[500] text-white"
-            >VALUE NOT AVAILABLE</span
+            >NOT ELIGIBLE WITH
+            {{ userStore.preference.material.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -139,7 +140,8 @@
           class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
         >
           <span class="text-[2vh] font-[500] text-white"
-            >ESSENTIAL NOT AVAILABLE</span
+            >NOT ELIGIBLE WITH
+            {{ userStore.preference.material.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -192,7 +194,8 @@
           class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
         >
           <span class="text-[2vh] font-[500] text-white"
-            >PREMIER NOT AVAILABLE</span
+            >NOT ELIGIBLE WITH
+            {{ userStore.preference.material.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -244,7 +247,8 @@
           class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
         >
           <span class="text-[2vh] font-[500] text-white"
-            >SIGNATURE NOT AVAILABLE</span
+            >NOT ELIGIBLE WITH
+            {{ userStore.preference.material.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -297,7 +301,8 @@
           class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
         >
           <span class="text-[2vh] font-[500] text-white"
-            >ELITE NOT AVAILABLE</span
+            >NOT ELIGIBLE WITH
+            {{ userStore.preference.material.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -320,12 +325,20 @@ function clearBudgetSelections() {
 const isMaterialSelected = (material) => {
   return userStore.preference.material.toLowerCase() === material.toLowerCase();
 };
-
+function scrollToBottom() {
+  setTimeout(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  }, 200);
+}
 const toggleSelect = (type) => {
   if (selectedBudget.value === type) {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
+    scrollToBottom();
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
