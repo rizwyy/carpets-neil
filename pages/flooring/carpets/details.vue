@@ -52,16 +52,17 @@ onMounted(() => {
       </div>
       <TypeDetails />
       <ColorDetails />
+      <MaterialDetails />
       <BudgetDetails />
       <!-- <PileDetails /> -->
-      <MaterialDetails />
 
       <button
         @click="setUserPreferenceCookie"
         v-show="
           userStore.preference.type.length > 0 &&
           userStore.preference.color.length > 0 &&
-          userStore.preference.material.length > 0
+          userStore.preference.material !== '' &&
+          userStore.preference.budget !== ''
         "
         class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-600 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
       >

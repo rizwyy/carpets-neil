@@ -86,8 +86,8 @@ const useUserStore = defineStore("user", {
       category: "",
       type: [],
       color: [],
-      budget: [],
-      material: [],
+      budget: "",
+      material: "",
     },
   }),
 });

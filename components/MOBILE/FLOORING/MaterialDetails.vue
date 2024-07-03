@@ -2,8 +2,7 @@
   <div
     v-show="
       userStore.preference.type.length > 0 &&
-      userStore.preference.color.length > 0 &&
-      userStore.preference.budget.length > 0
+      userStore.preference.color.length > 0
     "
     class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
@@ -11,7 +10,7 @@
       <span>Choose your Material</span>
       <button
         @click="clearmaterialSelections"
-        v-if="selectedmaterials.length"
+        v-if="selectedmaterial"
         class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-xs rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -32,12 +31,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterials.includes('Wool') },
+          { selected: selectedmaterial === 'Wool' },
         ]"
         @click="toggleSelect('Wool')"
       >
         <div
-          v-if="selectedmaterials.includes('Wool')"
+          v-if="selectedmaterial === 'Wool'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -50,6 +49,7 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          quality="50"
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
@@ -58,16 +58,16 @@
         />
         <span>Wool</span>
       </div>
-      <!-- Wool-Blend -->
+      <!-- Sisal -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterials.includes('Wool-Blend') },
+          { selected: selectedmaterial === 'Sisal' },
         ]"
-        @click="toggleSelect('Wool-Blend')"
+        @click="toggleSelect('Sisal')"
       >
         <div
-          v-if="selectedmaterials.includes('Wool-Blend')"
+          v-if="selectedmaterial === 'Sisal'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -80,13 +80,14 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          quality="50"
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/wool-carpet.jpeg"
           alt="#"
         />
-        <span>Wool-Blend</span>
+        <span>Sisal</span>
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -94,12 +95,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterials.includes('Nylon') },
+          { selected: selectedmaterial === 'Nylon' },
         ]"
         @click="toggleSelect('Nylon')"
       >
         <div
-          v-if="selectedmaterials.includes('Nylon')"
+          v-if="selectedmaterial === 'Nylon'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -112,6 +113,7 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          quality="50"
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
@@ -124,12 +126,12 @@
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterials.includes('polypropylene') },
+          { selected: selectedmaterial === 'polypropylene' },
         ]"
         @click="toggleSelect('polypropylene')"
       >
         <div
-          v-if="selectedmaterials.includes('polypropylene')"
+          v-if="selectedmaterial === 'polypropylene'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -142,6 +144,7 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          quality="50"
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
@@ -160,10 +163,10 @@ import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 import { ref } from "vue";
 
-const selectedmaterials = ref([]);
+const selectedmaterial = ref("");
 function clearmaterialSelections() {
-  selectedmaterials.value = [];
-  userStore.preference.material = [];
+  selectedmaterial.value = "";
+  userStore.preference.material = "";
 }
 function scrollToBottom() {
   setTimeout(() => {
@@ -174,15 +177,13 @@ function scrollToBottom() {
   }, 200);
 }
 const toggleSelect = (material) => {
-  if (selectedmaterials.value.includes(material)) {
-    selectedmaterials.value = selectedmaterials.value.filter(
-      (t) => t !== material
-    );
-    userStore.preference.material = toRaw(selectedmaterials.value);
+  if (selectedmaterial.value === material) {
+    selectedmaterial.value = "";
+    userStore.preference.material = "";
   } else {
     scrollToBottom();
-    selectedmaterials.value.push(material);
-    userStore.preference.material = toRaw(selectedmaterials.value);
+    selectedmaterial.value = material;
+    userStore.preference.material = toRaw(selectedmaterial.value);
   }
 };
 </script>

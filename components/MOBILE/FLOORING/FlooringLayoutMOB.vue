@@ -5,7 +5,6 @@ import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
 
 import useUserStore from "../../../stores/user";
-import gsap from "gsap";
 const userStore = useUserStore();
 
 function setUserPreferenceCookie() {
@@ -19,58 +18,58 @@ const setCategory = (category) => {
   console.log("COOKIE SET::", toRaw(userPreference.value));
 };
 const isExpanded = ref(false);
-function gsap_carpetsContainer_open() {
-  const element = document.querySelector(".carpetsCategory-container");
-  element.style.display = "block";
+// function gsap_carpetsContainer_open() {
+//   const element = document.querySelector(".carpetsCategory-container");
+//   element.style.display = "block";
 
-  gsap.to(".whitespaceContainer", {
-    height: "42vh",
-    duration: 1,
-    ease: "slide.out",
-  });
-  gsap.to(".carpetsCategory-container", {
-    delay: 0.2,
-    autoAlpha: 1,
-    duration: 0.4,
-  });
-  gsap.to(".arrowDownSvg", {
-    rotate: "180deg",
-  });
-}
-function gsap_carpetsContainer_close() {
-  const element = document.querySelector(".carpetsCategory-container");
-  gsap.to(".whitespaceContainer", {
-    height: "0vh",
-    duration: 0.4,
-    ease: "slide.in",
-  });
-  // Animate with GSAP
-  gsap.to(element, {
-    autoAlpha: 0,
-    duration: 0.2,
-  });
-  gsap.to(element, {
-    autoAlpha: 0,
-    duration: 0.4,
-    onComplete: () => {
-      element.style.display = "none"; // Set display to none after animation completes
-    },
-  });
+//   gsap.to(".whitespaceContainer", {
+//     height: "42vh",
+//     duration: 1,
+//     ease: "slide.out",
+//   });
+//   gsap.to(".carpetsCategory-container", {
+//     delay: 0.2,
+//     autoAlpha: 1,
+//     duration: 0.4,
+//   });
+//   gsap.to(".arrowDownSvg", {
+//     rotate: "180deg",
+//   });
+// }
+// function gsap_carpetsContainer_close() {
+//   const element = document.querySelector(".carpetsCategory-container");
+//   gsap.to(".whitespaceContainer", {
+//     height: "0vh",
+//     duration: 0.4,
+//     ease: "slide.in",
+//   });
+//   // Animate with GSAP
+//   gsap.to(element, {
+//     autoAlpha: 0,
+//     duration: 0.2,
+//   });
+//   gsap.to(element, {
+//     autoAlpha: 0,
+//     duration: 0.4,
+//     onComplete: () => {
+//       element.style.display = "none"; // Set display to none after animation completes
+//     },
+//   });
 
-  gsap.to(".arrowDownSvg", {
-    rotate: "0deg",
-  });
-}
-
+//   gsap.to(".arrowDownSvg", {
+//     rotate: "0deg",
+//   });
+// }
+const scrollToBottom = () => {
+  window.scrollBy({ top: window.innerHeight * 0.2, behavior: "smooth" });
+};
 function toggleExpansion() {
   if (isExpanded.value) {
-    gsap_carpetsContainer_close();
     isExpanded.value = false;
   } else {
-    gsap_carpetsContainer_open();
     isExpanded.value = true;
+    scrollToBottom();
   }
-  console.log(isExpanded.value);
 }
 </script>
 
@@ -141,129 +140,130 @@ function toggleExpansion() {
         </div>
       </div>
       <!-- HTI -->
-      <div class="whitespaceContainer h-[0vh] w-screen">
+      <div
+        v-show="isExpanded"
+        class="carpetsCategory-container h-max w-screen flex flex-col justify-center"
+      >
         <div
-          class="carpetsCategory-container invisible opacity-0 hidden h-max w-screen flex flex-col justify-center z-[-1]"
+          class="h-max w-screen flex justify-center gap-[4vw] my-[.4vh] z-[9]"
         >
-          <div
-            class="h-max w-screen flex justify-center gap-[4vw] z-[9] my-[.4vh]"
+          <a
+            href="/flooring/carpets/details"
+            @click="setCategory('Wall to Wall')"
+            class="h-[20vh] categoryItem rounded-full z-[9] w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
           >
-            <a
-              href="flooring/carpets/details"
-              @click="setCategory('Wall to Wall')"
-              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+            <div
+              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
-              <div
-                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              <span
+                class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+                >Wall to Wall
+              </span>
+              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                >View All</span
               >
-                <span
-                  class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
-                  >Wall to Wall
-                </span>
-                <span class="text-[#ececec] text-[1.4vh] font-[500]"
-                  >View All</span
-                >
-              </div>
+            </div>
 
-              <div
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-              ></div>
-              <NuxtImg
-                loading="lazy"
-                placeholder
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-                src="/wall-to-wall.jpg"
-                alt="#"
-              />
-            </a>
-            <a
-              href="flooring/carpets/details"
-              @click="setCategory('Carpet Tiles')"
-              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
-            >
-              <div
-                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
-              >
-                <span
-                  class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
-                  >Carpet Tiles
-                </span>
-                <span class="text-[#ececec] text-[1.4vh] font-[500]"
-                  >View All</span
-                >
-              </div>
-              <div
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] to-[#00000] from-[14%]"
-              ></div>
-              <NuxtImg
-                loading="lazy"
-                placeholder
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-                src="/10003.jpg"
-                alt="#"
-              />
-            </a>
-          </div>
-          <div
-            class="h-max w-screen flex justify-center gap-[4vw] z-[9] my-[1vh]"
+            <div
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              loading="lazy"
+              placeholder
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+              src="/wall-to-wall.jpg"
+              alt="#"
+            />
+          </a>
+          <a
+            href="flooring/carpets/details"
+            @click="setCategory('Carpet Tiles')"
+            class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
           >
-            <a
-              href="flooring/carpets/details"
-              @click="setCategory('Area Rugs')"
-              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+            <div
+              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
-              <div
-                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              <span
+                class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+                >Carpet Tiles
+              </span>
+              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                >View All</span
               >
-                <span
-                  class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-                  >Area Rugs</span
-                >
-                <span class="text-[#ececec] text-[1.4vh] font-[500]"
-                  >View All</span
-                >
-              </div>
-
-              <div
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-              ></div>
-              <NuxtImg
-                loading="lazy"
-                placeholder
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-                src="/10009.jpg"
-                alt="#"
-              />
-            </a>
-            <a
-              href="/flooring/carpets/details"
-              @click="setCategory('Runners')"
-              class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+            </div>
+            <div
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] to-[#00000] from-[14%]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              loading="lazy"
+              placeholder
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+              src="/10003.jpg"
+              alt="#"
+            />
+          </a>
+        </div>
+        <div class="h-max w-screen flex justify-center gap-[4vw] my-[1vh]">
+          <a
+            href="flooring/carpets/details"
+            @click="setCategory('Area Rugs')"
+            class="h-[20vh] categoryItem rounded-full cursor-pointer w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+          >
+            <div
+              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
-              <div
-                class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+              <span
+                class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+                >Area Rugs</span
               >
-                <span
-                  class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-                  >Runners
-                </span>
-                <span class="text-[#ececec] text-[1.4vh] font-[500]"
-                  >View All</span
-                >
-              </div>
+              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                >View All</span
+              >
+            </div>
 
-              <div
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
-              ></div>
-              <NuxtImg
-                loading="lazy"
-                placeholder
-                class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-                src="/10006.jpg"
-                alt="#"
-              />
-            </a>
-          </div>
+            <div
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              loading="lazy"
+              placeholder
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+              src="/10009.jpg"
+              alt="#"
+            />
+          </a>
+          <a
+            href="/flooring/carpets/details"
+            @click="setCategory('Runners')"
+            class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
+          >
+            <div
+              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
+            >
+              <span
+                class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+                >Runners
+              </span>
+              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+                >View All</span
+              >
+            </div>
+
+            <div
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              loading="lazy"
+              placeholder
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+              src="/10006.jpg"
+              alt="#"
+            />
+          </a>
         </div>
       </div>
 
@@ -290,13 +290,14 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <NuxtImg
+          <!-- <NuxtImg 
+           quality="50"
             loading="lazy"
             placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/40001.jpg"
             alt="#"
-          />
+          /> -->
         </div>
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
@@ -320,13 +321,13 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <NuxtImg
+          <!-- <NuxtImg
             loading="lazy"
             placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/80001.jpeg"
             alt="#"
-          />
+          /> -->
         </div>
       </div>
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
@@ -352,13 +353,13 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <NuxtImg
+          <!-- <NuxtImg
             loading="lazy"
             placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
-          />
+          /> -->
         </div>
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
@@ -382,13 +383,13 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <NuxtImg
+          <!-- <NuxtImg
             loading="lazy"
             placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/70001.jpg"
             alt="#"
-          />
+          /> -->
         </div>
       </div>
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
@@ -414,13 +415,13 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <NuxtImg
+          <!-- <NuxtImg
             loading="lazy"
             placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/80001.jpeg"
             alt="#"
-          />
+          /> -->
         </div>
         <div
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
@@ -444,13 +445,13 @@ function toggleExpansion() {
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
-          <NuxtImg
+          <!-- <NuxtImg
             loading="lazy"
             placeholder
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
-          />
+          /> -->
         </div>
       </div>
     </div>

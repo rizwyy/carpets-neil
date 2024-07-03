@@ -23,7 +23,7 @@ const router = useRouter();
 //
 
 async function fetchCarpetsData() {
-  console.log("start");
+  console.log("START SUPABASE");
 
   try {
     const { data, error } = await client
@@ -32,7 +32,7 @@ async function fetchCarpetsData() {
 
     if (error) throw error;
 
-    console.log("DATA KITTY::", data);
+    console.log("SUPABASE:", data);
 
     // Store data in userStore and ref variable
     userStore.products = data;
@@ -42,7 +42,6 @@ async function fetchCarpetsData() {
     console.error("Error during fetch:", error);
     isRetry.value = true; // Set retry state to true
     isLoading.value = false; // Set loading state to false
-    console.log("end");
     return null;
   }
 }
@@ -53,7 +52,7 @@ onMounted(() => {
 
 <template>
   <Desktop>
-    <div class="h-max w-screen overflow-x-hidden max-w-[98vw]">
+    <div class="h-max w-screen overflow-x-hidden max-w-[98vw] font-outfit">
       <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
         <h1>Catalog</h1>
       </div>
@@ -119,7 +118,7 @@ onMounted(() => {
   </Desktop>
   <Mobile>
     <NavBarMOB />
-    <div class="h-screen w-screen">
+    <div class="h-screen w-screen font-outfit">
       <div
         v-if="isLoading"
         class="h-[70vh] w-screen flex flex-col items-center justify-center"
@@ -188,22 +187,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.font-outfit-300 {
+.font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-.font-outfit-400 {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-.font-outfit-500 {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
   font-style: normal;
 }
 </style>

@@ -2,18 +2,19 @@
   <div
     v-show="
       userStore.preference.type.length > 0 &&
-      userStore.preference.color.length > 0
+      userStore.preference.color.length > 0 &&
+      userStore.preference.material !== ''
     "
-    class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+    class="h-max w-[100vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
-      @click="() => console.log(selectedBudgets.value)"
-      class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+      @click="() => console.log(selectedBudget.value)"
+      class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
     >
       <span>Choose Your Budget</span>
       <button
         @click="clearBudgetSelections"
-        v-if="selectedBudgets.length"
+        v-if="selectedBudget.length"
         class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-xs rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -29,156 +30,276 @@
         </svg>
       </button>
     </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+
+    <!-- NEW DESIGN -->
+    <div
+      class="h-max w-full flex flex-col justify-center items-center gap-[1vh] z-[9]"
+    >
       <!-- VALUE -->
       <div
+        v-if="isMaterialSelected('polypropylene')"
         :class="[
-          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  rounded-md  flex-col items-start justify-between flex text-[#f1f1f1] px-[1.6vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedBudgets.includes('Value') },
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedBudget === 'Value' },
         ]"
         @click="toggleSelect('Value')"
       >
         <div
-          v-if="selectedBudgets.includes('Value')"
+          v-if="selectedBudget === 'Value'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
-            >Selected</span
+          <div
+            class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
+            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              Selected
+            </span>
+          </div>
         </div>
 
         <div
-          class="h-full w-full bg-gradient-to-tr from-[#000] to-[#A8D5BA] from-[14%] absolute bottom-0 left-0 z-[-1]"
+          class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
         ></div>
 
-        <span class="text-[2.4vh]">Value</span
-        ><span class="font-[400] text-[2vh] text-left"
-          >BD. 5.99 m<sup>2</sup> to <br />
-          BD. 9.99 m<sup>2</sup>
-        </span>
+        <div
+          class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+        >
+          <span> Value </span>
+        </div>
+        <div
+          class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+        >
+          <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
+        </div>
       </div>
-
+      <!-- NOT AVAILABLE ELITE -->
+      <div
+        v-else
+        :class="[
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+        ]"
+      >
+        <div
+          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
+        >
+          <span class="text-[2vh] font-[500] text-white"
+            >VALUE NOT AVAILABLE</span
+          >
+        </div>
+      </div>
       <!-- ESSENTIAL -->
       <div
+        v-if="
+          isMaterialSelected('nylon') || isMaterialSelected('polypropylene')
+        "
         :class="[
-          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  rounded-md  flex-col items-start justify-between flex text-[#f1f1f1] px-[1.6vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedBudgets.includes('Essential') },
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedBudget === 'Essential' },
         ]"
         @click="toggleSelect('Essential')"
       >
         <div
-          v-if="selectedBudgets.includes('Essential')"
+          v-if="selectedBudget === 'Essential'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
-            >Selected</span
+          <div
+            class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
+            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              Selected
+            </span>
+          </div>
         </div>
 
         <div
-          class="h-full w-full bg-gradient-to-tr from-[#000] to-[#7FC7FF] from-[14%] absolute bottom-0 left-0 z-[-1]"
+          class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
         ></div>
 
-        <span class="text-[2.4vh]">Essential</span
-        ><span class="font-[400] text-[2vh] text-left"
-          >BD. 10 m<sup>2</sup> to <br />
-          BD. 19.99 m<sup>2</sup>
-        </span>
+        <div
+          class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+        >
+          <span> Essential </span>
+        </div>
+        <div
+          class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+        >
+          <span>BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span>
+        </div>
       </div>
-    </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Premier -->
+      <!-- NOT AVAILABLE ESSENTIALs -->
       <div
+        v-else
         :class="[
-          'h-[14vh]  border-[2px] border-[#f1f1f1]   w-full flex flex-col items-start justify-between  text-[#f1f1f1] px-[1.6vw]  py-[1.2vh] text-[2.4vh] relative cursor-pointer rounded-md',
-          { selected: selectedBudgets.includes('Premier') },
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+        ]"
+      >
+        <div
+          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
+        >
+          <span class="text-[2vh] font-[500] text-white"
+            >ESSENTIAL NOT AVAILABLE</span
+          >
+        </div>
+      </div>
+      <!-- PREMIER -->
+      <div
+        v-if="isMaterialSelected('nylon') || isMaterialSelected('sisal')"
+        :class="[
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedBudget === 'Premier' },
         ]"
         @click="toggleSelect('Premier')"
       >
         <div
-          v-if="selectedBudgets.includes('Premier')"
+          v-if="selectedBudget === 'Premier'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
-            >Selected</span
+          <div
+            class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
+            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              Selected
+            </span>
+          </div>
         </div>
 
         <div
-          class="h-full w-full bg-gradient-to-tr from-[#000] via-[#FFD700] to-[#000] to-[200%] absolute bottom-0 left-0 z-[-1]"
+          class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
         ></div>
 
-        <span class="text-[2.4vh]">Premier</span
-        ><span class="font-[400] text-[2vh] text-left"
-          >BD. 20 m<sup>2</sup> to <br />
-          BD. 24.99 m<sup>2</sup>
-        </span>
+        <div
+          class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+        >
+          <span> Premier </span>
+        </div>
+        <div
+          class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+        >
+          <span> BD. 20m<sup>2</sup> to BD. 24.99m<sup>2</sup></span>
+        </div>
       </div>
-
+      <!-- NOT AVAILABLE PREMIER -->
+      <div
+        v-else
+        :class="[
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+        ]"
+      >
+        <div
+          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
+        >
+          <span class="text-[2vh] font-[500] text-white"
+            >PREMIER NOT AVAILABLE</span
+          >
+        </div>
+      </div>
       <!-- SIGNATURE -->
       <div
+        v-if="isMaterialSelected('wool') || isMaterialSelected('sisal')"
         :class="[
-          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  rounded-md  flex-col items-start justify-between flex text-[#f1f1f1] px-[1.6vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedBudgets.includes('Signature') },
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedBudget === 'Signature' },
         ]"
         @click="toggleSelect('Signature')"
       >
         <div
-          v-if="selectedBudgets.includes('Signature')"
+          v-if="selectedBudget === 'Signature'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
-            >Selected</span
+          <div
+            class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
+            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              Selected
+            </span>
+          </div>
         </div>
         <div
-          class="h-full w-full bg-gradient-to-tr from-[#000] via-[#6A0DAD] to-[#000] to-[200%] absolute bottom-0 left-0 z-[-1]"
+          class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
         ></div>
 
-        <span class="text-[2.4vh]">Signature</span
-        ><span class="font-[400] text-[2vh] text-left text-left"
-          >BD. 25 m<sup>2</sup> to
-          <br />
-          BD. 29.99 m<sup>2</sup>
-        </span>
+        <div
+          class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+        >
+          <span> Signature </span>
+        </div>
+        <div
+          class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+        >
+          <span> BD. 25m<sup>2</sup> to BD. 29.99m<sup>2</sup></span>
+        </div>
       </div>
-    </div>
-    <!-- ELITE -->
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+      <!-- NOT AVAILABLE SIGNATURE -->
       <div
+        v-else
         :class="[
-          'h-[16vh] w-full shadow border-[2px] border-[#f1f1f1]  rounded-md  flex-col items-start justify-between flex text-[#f1f1f1] px-[1.6vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedBudgets.includes('Elite') },
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+        ]"
+      >
+        <div
+          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
+        >
+          <span class="text-[2vh] font-[500] text-white"
+            >SIGNATURE NOT AVAILABLE</span
+          >
+        </div>
+      </div>
+      <!-- ELITE -->
+      <div
+        v-if="isMaterialSelected('wool')"
+        :class="[
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedBudget === 'Elite' },
         ]"
         @click="toggleSelect('Elite')"
       >
         <div
-          v-if="selectedBudgets.includes('Elite')"
+          v-if="selectedBudget === 'Elite'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
-            >Selected</span
+          <div
+            class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
+            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              Selected
+            </span>
+          </div>
         </div>
 
         <div
-          class="h-full w-full bg-gradient-to-tr from-[#000] to-[#DC143C] from-[14%] absolute bottom-0 left-0 z-[-1]"
+          class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
         ></div>
 
-        <span class="text-[2.4vh]">Elite</span
-        ><span class="font-[400] text-[2vh] text-left"
-          >Over BD. 30 m<sup>2</sup>
-        </span>
+        <div
+          class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+        >
+          <span> Elite </span>
+        </div>
+        <div
+          class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+        >
+          <span> Over BD. 30 m<sup>2</sup></span>
+        </div>
+      </div>
+      <!-- NOT AVAILABLE ELITE -->
+      <div
+        v-else
+        :class="[
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+        ]"
+      >
+        <div
+          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
+        >
+          <span class="text-[2vh] font-[500] text-white"
+            >ELITE NOT AVAILABLE</span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -190,35 +311,30 @@ import { ref } from "vue";
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-const selectedBudgets = ref([]);
+const selectedBudget = ref("");
 
 function clearBudgetSelections() {
-  selectedBudgets.value = [];
-  userStore.preference.budget = [];
+  selectedBudget.value = "";
+  userStore.preference.budget = "";
 }
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
+const isMaterialSelected = (material) => {
+  return userStore.preference.material.toLowerCase() === material.toLowerCase();
+};
+
 const toggleSelect = (type) => {
-  if (selectedBudgets.value.includes(type)) {
-    selectedBudgets.value = selectedBudgets.value.filter((t) => t !== type);
-    userStore.preference.budget = toRaw(selectedBudgets.value);
+  if (selectedBudget.value === type) {
+    selectedBudget.value = "";
+    userStore.preference.budget = "";
   } else {
-    scrollToBottom();
-    selectedBudgets.value.push(type);
-    userStore.preference.budget = toRaw(selectedBudgets.value);
+    selectedBudget.value = type;
+    userStore.preference.budget = toRaw(selectedBudget.value);
   }
 };
 </script>
 
 <style scoped>
 .selected {
-  border-radius: 0px; /* Adjust this value as needed */
-  border: 2px solid black; /* Adjust border color as needed */
+  border-radius: full; /* Adjust this value as needed */
+  border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>
