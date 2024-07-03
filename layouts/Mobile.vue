@@ -1,7 +1,9 @@
 <template>
-  <section class="min-[990px]:hidden h-max w-max font-outfit bg-white">
+  <NuxtLayout
+    class="min-[990px]:hidden h-max w-max font-outfit bg-white z-[-1]"
+  >
     <slot />
-  </section>
+  </NuxtLayout>
 </template>
 
 <script setup></script>
