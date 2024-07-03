@@ -6,7 +6,9 @@
     <div
       class="font-outfit-400 h-max w-screen bg-[#f1f1f1] flex flex-col justify-center items-center z-[99] py-[2vh] gap-[2vh] font-[400] tracking-[.4vw] text-[2vh]"
     >
-      <span class="w-[90%]">DREAM IT, STYLE IT & FIND IT AT WOLTIZ</span>
+      <span class="w-[94%] whitespace-no-wrap text-center"
+        >DREAM IT, STYLE IT & FIND IT AT WOLTIZ</span
+      >
     </div>
     <!-- SEARCH BAR COMP -->
     <div class="h-max w-screen flex justify-center pt-[1.8vh] pb-[2.8vh]">
