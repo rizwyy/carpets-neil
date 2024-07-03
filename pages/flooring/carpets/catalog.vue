@@ -116,7 +116,7 @@ onMounted(() => {
       </div>
     </div>
   </Desktop>
-  <Mobile>
+  <section class="min-[990px]:hidden h-max w-max font-outfit bg-white z-[-1]">
     <NavBarMOB />
     <div class="h-screen w-screen font-outfit">
       <div
@@ -183,7 +183,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </Mobile>
+  </section>
 </template>
 
 <style scoped>
