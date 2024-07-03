@@ -55,7 +55,7 @@
         <div class="h-max w-screen flex flex-col">
           <!-- LEAD TIME -->
           <div
-            class="h-max w-screen flex justify-start items-center px-[6vw] py-[4vh] border-t-[#ececec] border-t-[.2vh]"
+            class="h-max w-screen flex justify-start items-center px-[6vw] py-[4vh] border-y-[#ececec] border-y-[.2vh]"
           >
             <span class="flex-[1] text-[2.4vh]">Project Lead Time</span>
             <select
@@ -73,7 +73,7 @@
 
           <div
             v-show="IsleadTimeInputed"
-            class="actionBtn-container h-max w-screen flex justify-center gap-[4vw] py-[4vh] border-b-[#ececec] border-[.2vh]"
+            class="actionBtn-container h-max w-screen flex justify-center gap-[4vw] py-[4vh] border-b-[#ececec] border-b-[.2vh]"
           >
             <button
               @click="
