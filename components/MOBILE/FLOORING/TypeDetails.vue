@@ -154,20 +154,16 @@
         <span>Stripped</span>
       </div>
     </div>
-    <!-- <div class="h-max w-full flex justify-start">
-      <button
-        class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1"
-      >
-        <span class="flex w-full bg-gray-900 text-white rounded p-2">
-          Gradient border
-        </span>
-      </button>
-    </div> -->
+    <div>
+      <RainBowBTN />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+import RainBowBTN from "./../../MOBILE/RainBowBTN.vue";
 // PINIA
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -199,21 +195,31 @@ const toggleSelect = (type) => {
     userStore.preference.type = toRaw(selectedTypes.value);
   }
 };
-onMounted(() => {
-  gsap.to(".rainbowBorder", {
-    duration: 1,
-    borderColor:
-      "linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1",
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut",
-  });
-});
+
+onMounted(() => {});
 </script>
 
 <style scoped>
 .selected {
   border-radius: 0px; /* Adjust this value as needed */
   border: 2px solid #333; /* Adjust border color as needed */
+}
+.rainbow-border {
+  --border-color-1: #ff0000; /* Red */
+  --border-color-2: #ffa500; /* Orange */
+  --border-color-3: #ffff00; /* Yellow */
+  --border-color-4: #00ff00; /* Green */
+  --border-color-5: #0000ff; /* Blue */
+  --border-color-6: #8a2be2; /* Indigo */
+  --border-width: 2px; /* Border width */
+  --border-gradient: linear-gradient(
+    to right,
+    var(--border-color-1),
+    var(--border-color-2),
+    var(--border-color-3),
+    var(--border-color-4),
+    var(--border-color-5),
+    var(--border-color-6)
+  );
 }
 </style>

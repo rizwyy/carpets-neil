@@ -52,44 +52,71 @@
             <span class="text-[1.8vh] text-[#555]">Excluding VAT</span>
           </div>
         </div>
-        <!-- R4 - ACTION BTN -->
+        <div class="h-max w-screen flex flex-col">
+          <!-- LEAD TIME -->
+          <div
+            class="h-max w-screen flex justify-start items-center px-[6vw] py-[4vh] border-t-[#ececec] border-t-[.2vh]"
+          >
+            <span class="flex-[1] text-[2.4vh]">Project Lead Time</span>
+            <select
+              v-model="selectedOption"
+              @change="updateLeadTime"
+              class="block flex-[1] w-[40vw] px-[2vw] h-[6vh] border border-black rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            >
+              <option value="now">ASAP (If Available)</option>
+              <option value="sixToEightWeeks">
+                6 - 8 Weeks (Made on Demand)
+              </option>
+            </select>
+          </div>
+          <!-- R4 - ACTION BTN -->
 
-        <div
-          class="actionBtn-container h-max w-screen flex justify-center gap-[4vw]"
-        >
-          <button
-            @click="
-              () =>
-                openWhatsApp(
-                  '9173060 14762',
-                  `Hi, I would like to order ${productName}                                                              ${productLink}`
-                )
-            "
-            class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
+          <div
+            v-show="IsleadTimeInputed"
+            class="actionBtn-container h-max w-screen flex justify-center gap-[4vw] py-[4vh] border-b-[#ececec] border-[.2vh]"
           >
-            ENQUIRE BY WHATSAPP
-          </button>
-          <button
-            @click="
-              () =>
-                openEmail(
-                  'riswinmo@gmail.com',
-                  'test',
-                  `Hi, I would like to order ${productName}                                                              ${productLink}`
-                )
-            "
-            class="py-[2.8vh] px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
-          >
-            ENQUIRE BY <br />
-            EMAIL
-          </button>
+            <button
+              @click="
+                () =>
+                  openWhatsApp(
+                    '9173060 14762',
+                    `Hi, I would like to order ${productName} ${
+                      leadTime === 'now'
+                        ? 'As Soon As Possible'
+                        : 'Within 6 to 8 Weeks'
+                    }                                                              ${productLink}`
+                  )
+              "
+              class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
+            >
+              ENQUIRE BY WHATSAPP
+            </button>
+            <button
+              @click="
+                () =>
+                  openEmail(
+                    'riswinmo@gmail.com',
+                    'test',
+                    `Hi, I would like to order the product:${productName}  ${
+                      leadTime === 'now'
+                        ? 'As Soon As Possible'
+                        : 'Within 6 to 8 Weeks'
+                    }                                                                 ${productLink}`
+                  )
+              "
+              class="py-[2.8vh] px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
+            >
+              ENQUIRE BY <br />
+              EMAIL
+            </button>
+          </div>
         </div>
         <!-- R5 -->
         <div
-          class="measurementSection_container h-max w-screen flex items-center justify-center py-[4vh] px-[4vw]"
+          class="measurementSection_container h-max w-screen flex items-center justify-center py-[0vh] px-[4vw]"
         >
           <div
-            class="h-max w-full flex flex-col gap-[2vh] bg-[#f1f1f1] py-[4vh] px-[4vw] rounded-md"
+            class="h-max w-full flex flex-col gap-[2vh] py-[3.2vh] pl-[0vw] pr-[4vw] rounded-md"
           >
             <div
               class="h-max w-screen flex justify-start px-[4vw] text-[3.2vh]"
@@ -104,7 +131,7 @@
                 in Square Feet:</label
               >
               <input
-                class="h-[8vh] px-[1vw] w-[24vw] text-center border-[1px] rounded-md border-black bg-inherit [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                class="h-[8vh] px-[1vw] w-[24vw] text-center border-[1px] rounded-md border-[#333] bg-inherit [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 id="sqft"
                 v-model.number="sqFeet"
                 type="number"
@@ -198,16 +225,28 @@ const fullText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat metus a augue commodo, eget varius nisl sagittis. Fusce gravida massa nec enim pulvinar, ac venenatis turpis lacinia. Nullam tempor, tortor nec consectetur egestas, urna odio scelerisque orci, ut egestas erat quam nec felis. Donec laoreet metus at felis ultrices, id vehicula metus varius. Maecenas a ligula metus. Phasellus a posuere mauris. Nulla facilisi. Cras et nunc tincidunt, volutpat quam eget, posuere nulla. Vestibulum at facilisis purus. Cras auctor, eros nec iaculis blandit, quam purus lacinia sem, et scelerisque libero orci ac dui. Pellentesque in enim euismod, sagittis enim id, viverra leo.";
 
 const truncatedText = fullText.split(" ").slice(0, 20).join(" ") + "...";
-const fullDisplayText = fullText.split(" ").slice(0, 50).join(" ") + "...";
 
 const isExpanded = ref(false);
-
+// Initialize ref variables
+const selectedOption = ref("option1");
+const leadTime = ref(null);
+const IsleadTimeInputed = ref(false);
 const displayedText = computed(() =>
   isExpanded.value ? fullText : truncatedText
 );
 const buttonText = computed(() =>
   isExpanded.value ? "View Less" : "View More"
 );
+
+// Method to update leadTime
+function updateLeadTime() {
+  leadTime.value = selectedOption.value;
+  if (toRaw(leadTime.value) === "sixToEightWeeks" || "now") {
+    IsleadTimeInputed.value = true;
+  } else {
+    IsleadTimeInputed.value = true;
+  }
+}
 
 function toggleText() {
   isExpanded.value = !isExpanded.value;

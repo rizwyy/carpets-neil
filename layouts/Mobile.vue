@@ -8,7 +8,7 @@
 <style scoped>
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #fff; /* Set to your preferred light background color */
+    background-color: #fff;
   }
 }
 </style>
