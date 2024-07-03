@@ -3,6 +3,7 @@ import TypeDetails from "./../../../components/MOBILE/FLOORING/TypeDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
 import MaterialDetails from "../../../components/MOBILE/FLOORING/MaterialDetails.vue";
 import BudgetDetails from "../../../components/MOBILE/FLOORING/BudgetDetails.vue";
+import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
 import PileDetails from "~/components/MOBILE/FLOORING/PileDetails.vue";
 
 import Mobile from "./../../../layouts/Mobile.vue";
@@ -51,6 +52,7 @@ onMounted(() => {
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <TypeDetails />
+      <CustomCarpetBTN />
       <ColorDetails />
       <MaterialDetails />
       <BudgetDetails />

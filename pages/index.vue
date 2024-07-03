@@ -1,4 +1,8 @@
 <template>
+  <Desktop>
+    <NavBarPC />
+    <HeroLayoutPC />
+  </Desktop>
   <!-- MOBILE -->
   <Mobile>
     <NavBarMOB />
