@@ -21,34 +21,7 @@
   </button>
 </template>
 
-<script setup>
-import gsap from "gsap";
-import { TextPlugin } from "gsap/dist/TextPlugin";
-gsap.registerPlugin(TextPlugin);
-function animateText_CustomCarpets() {
-  let tl = gsap.timeline();
-
-  tl.to(".font", {
-    duration: 3,
-    text: "Custom Carpets",
-    ease: "back.in",
-  });
-  tl.to(".font", {
-    ease: "back.out",
-    text: "Custom Rugs",
-    duration: 2,
-  });
-  tl.to(".font", {
-    duration: 2,
-    text: "Customize",
-    ease: "back.inOut",
-  });
-  tl.repeat(-1).yoyo(true);
-}
-onMounted(() => {
-  animateText_CustomCarpets();
-});
-</script>
+<script setup></script>
 
 <style scoped>
 .font {
