@@ -1,7 +1,7 @@
 <template>
   <div
     id="NavBarPC"
-    class="h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit-300"
+    class="h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit"
   >
     <div class="h-max w-max">
       <span
@@ -34,22 +34,10 @@
 <script setup></script>
 
 <style scoped>
-.font-outfit-300 {
+.font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
-  font-style: normal;
-}
-.font-outfit-400 {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-.font-outfit-500 {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
   font-style: normal;
 }
 </style>

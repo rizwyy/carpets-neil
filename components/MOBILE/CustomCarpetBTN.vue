@@ -23,7 +23,7 @@
 
 <script setup>
 import gsap from "gsap";
-import { TextPlugin } from "gsap/all";
+import { TextPlugin } from "gsap/dist/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 function animateText_CustomCarpets() {
   let tl = gsap.timeline();

@@ -26,6 +26,9 @@
 import NavBarMOB from "./../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "./../components/MOBILE/SearchBarMOB.vue";
 import HeroLayoutMOB from "./../components/MOBILE/HeroLayoutMOB.vue";
+// PC
+import NavBarPC from "./../components/DESKTOP/NavBarPC.vue";
+import HeroLayoutPC from "~/components/DESKTOP/HeroLayoutPC.vue";
 import useUserStore from "../stores/user";
 const userStore = useUserStore();
 import Mobile from "../layouts/Mobile.vue";

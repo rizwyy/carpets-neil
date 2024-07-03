@@ -72,7 +72,6 @@
           <!-- R4 - ACTION BTN -->
 
           <div
-            v-show="IsleadTimeInputed"
             class="actionBtn-container h-max w-screen flex justify-center gap-[4vw] py-[4vh] border-b-[#ececec] border-b-[.2vh]"
           >
             <button
@@ -87,8 +86,12 @@
                     }                                                              ${productLink}`
                   )
               "
-              class="py-[2.8vh] px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
+              class="py-[2.8vh] relative px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
             >
+              <div
+                v-show="!IsleadTimeInputed"
+                class="h-full w-full absolute top-0 left-0 bg-black bg-opacity-[.2] backdrop-blur-[1px] rounded-md"
+              ></div>
               ENQUIRE BY WHATSAPP
             </button>
             <button
@@ -104,10 +107,14 @@
                     }                                                                 ${productLink}`
                   )
               "
-              class="py-[2.8vh] px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
+              class="py-[2.8vh] relative px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
             >
               ENQUIRE BY <br />
               EMAIL
+              <div
+                v-show="!IsleadTimeInputed"
+                class="h-full w-full absolute top-0 left-0 bg-black bg-opacity-[.2] backdrop-blur-[1px] rounded-md"
+              ></div>
             </button>
           </div>
         </div>
@@ -257,8 +264,12 @@ function generateWhatsAppLink(phone, message) {
   return `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
 }
 function openWhatsApp(phone, message) {
-  const link = generateWhatsAppLink(phone, message);
-  window.open(link, "_blank"); // Opens link in a new window/tab
+  if (toRaw(!IsleadTimeInputed.value)) {
+    return;
+  } else {
+    const link = generateWhatsAppLink(phone, message);
+    window.open(link, "_blank"); // Opens link in a new window/tab
+  }
 }
 function generateEmailLink(email, subject, body) {
   const encodedSubject = encodeURIComponent(subject);
@@ -267,8 +278,12 @@ function generateEmailLink(email, subject, body) {
 }
 
 function openEmail(email, subject, body) {
-  const link = generateEmailLink(email, subject, body);
-  window.open(link, "_blank"); // Opens link in a new window/tab
+  if (toRaw(!IsleadTimeInputed.value)) {
+    return;
+  } else {
+    const link = generateEmailLink(email, subject, body);
+    window.open(link, "_blank"); // Opens link in a new window/tab
+  }
 }
 async function fetchProductDetails(id) {
   console.log(`Fetching details for product ID: ${id}`);
