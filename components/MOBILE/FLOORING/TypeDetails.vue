@@ -154,7 +154,7 @@
         <span>Stripped</span>
       </div>
     </div>
-    <div class="h-max w-full flex justify-start">
+    <!-- <div class="h-max w-full flex justify-start">
       <button
         class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1"
       >
@@ -162,7 +162,7 @@
           Gradient border
         </span>
       </button>
-    </div>
+    </div> -->
   </div>
 </template>
 
