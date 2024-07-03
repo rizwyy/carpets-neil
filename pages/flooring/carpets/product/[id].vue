@@ -79,7 +79,7 @@
               @click="
                 () =>
                   openWhatsApp(
-                    '9173060 14762',
+                    '97333008801',
                     `Hi, I would like to order ${productName} ${
                       leadTime === 'now'
                         ? 'As Soon As Possible'
@@ -95,8 +95,8 @@
               @click="
                 () =>
                   openEmail(
-                    'riswinmo@gmail.com',
-                    'test',
+                    '97333008801',
+                    `Order`,
                     `Hi, I would like to order the product:${productName}  ${
                       leadTime === 'now'
                         ? 'As Soon As Possible'
