@@ -1,10 +1,11 @@
 <script setup>
-const { name, desc, src, isAvailable, link } = defineProps([
+const { name, desc, src, isAvailable, link, loading } = defineProps([
   "name",
   "desc",
   "src",
   "isAvailable",
   "link",
+  "loading",
 ]);
 </script>
 <template>
@@ -21,7 +22,7 @@ const { name, desc, src, isAvailable, link } = defineProps([
       <span class="w-[60%] text-[2vh] text-[#ececec]">{{ desc }}</span>
       <a
         :href="link"
-        class="text-[2vh] text-[#fff9] underline underline-offset-[.4vh]"
+        class="text-[2vh] text-[#fff] font-[500] underline underline-offset-[.4vh]"
         >View All</a
       >
     </div>

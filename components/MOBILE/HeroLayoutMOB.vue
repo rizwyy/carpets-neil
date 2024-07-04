@@ -22,6 +22,7 @@
             class="absolute object-cover bottom-0 left-0 h-full w-full opacity-[.8] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
           ></div>
           <NuxtImg
+            preload
             loading="eager"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
