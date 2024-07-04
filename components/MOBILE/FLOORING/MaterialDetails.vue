@@ -28,7 +28,69 @@
           </svg>
         </button>
       </div>
-
+      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- nylon carpets -->
+        <div
+          :class="[
+            'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'Nylon' },
+          ]"
+          @click="toggleSelect('Nylon')"
+        >
+          <div
+            v-if="selectedmaterial === 'Nylon'"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            placeholder
+            loading="lazy"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/wool-carpet.jpeg"
+            alt="#"
+          />
+          <span class="text-[3.2vh]">Nylon</span>
+        </div>
+        <!-- Poly Propene Carpets -->
+        <div
+          :class="[
+            'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'polypropylene' },
+          ]"
+          @click="toggleSelect('polypropylene')"
+        >
+          <div
+            v-if="selectedmaterial === 'polypropylene'"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            quality="50"
+            placeholder
+            loading="lazy"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/carpets/polypropylene-carpet.jpeg"
+            alt="#"
+          />
+          <span class="text-[3.2vh]">Polypropylene</span>
+        </div>
+      </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- Wool -->
         <div
@@ -87,7 +149,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wool-carpet.jpeg"
+            src="/carpets/sisal.jpeg"
             alt="#"
           />
           <span class="text-[3.2vh]">Sisal</span>
@@ -244,7 +306,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets/sisal.jpeg"
+          src="/carpets-tile.jpeg"
           alt="#"
         />
         <span>Sisal</span>

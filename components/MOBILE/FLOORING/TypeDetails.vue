@@ -56,7 +56,7 @@
             src="/solidCarpet.jpg"
             alt=""
           />
-          <span>Plain</span>
+          <span class="text-[3.4vh]">Plain</span>
         </div>
 
         <!-- Textured -->
@@ -88,7 +88,7 @@
             src="/texturedCarpet.jpeg"
             alt=""
           />
-          <span>Textured</span>
+          <span class="text-[3.4vh]">Textured</span>
         </div>
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -121,7 +121,7 @@
             src="/designedCarpet.jpg"
             alt=""
           />
-          <span>Patterned</span>
+          <span class="text-[3.4vh]">Patterned</span>
         </div>
 
         <!-- Customized -->
@@ -153,7 +153,7 @@
             src="/10001.jpg"
             alt=""
           />
-          <span>Stripped</span>
+          <span class="text-[3.4vh]">Stripped</span>
         </div>
       </div>
       <div>

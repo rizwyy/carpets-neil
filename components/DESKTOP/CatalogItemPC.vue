@@ -19,26 +19,26 @@ const route = useRoute();
       />
     </div>
     <div
-      class="productDetails_PC pt-[1vh] h-max w-full flex flex-col items-start justify-start pl-[.6vw] pr-[.4vw]"
+      class="productDetails_PC pt-[1vh] h-max w-full flex flex-col items-start gap-[.4vh] justify-start pl-[.6vw] pr-[.4vw]"
     >
       <div class="h-max w-full flex justify-between items-center">
-        <span class="font-[600] text-[1.6vh]">{{ name }}</span>
-        <span class="text-[#888] text-[1.6vh]">{{ color }}</span>
+        <span class="font-[600] text-[2.4vh]">{{ name }}</span>
+        <span class="text-[#888] text-[2vh]">{{ color }}</span>
       </div>
       <div
         class="h-max w-full flex justify-between items-center pt-[.4vh] gap-[.2vw]"
       >
         <div
-          class="h-max w-max flex gap-[.2vw] items-center text-[#888] font-[400] text-[1.8vh]"
+          class="h-max w-max flex gap-[.2vw] items-center text-[#222] font-[400] text-[1.8vh]"
         >
-          <span class="text-[2vh] flex gap-[.4vw]"
+          <span class="text-[2vh] flex gap-[.4vw] font-[500]"
             ><span>From</span>{{ currency }}</span
           >
-          <span class="text-[2.2vh]">{{ price }}</span>
+          <span class="text-[2.4vh] font-[600]">{{ price }}</span>
         </div>
       </div>
       <div class="h-max w-full flex justify-start pt-[.4vh]">
-        <a class="text-[1.8vh] underline underline-offset-[.4vh]" href="#"
+        <a class="text-[2vh] underline underline-offset-[.4vh]" href=""
           >View Details</a
         >
       </div>

@@ -53,7 +53,7 @@ onMounted(() => {
 <template>
   <section class="max-[990px]:hidden h-max w-max">
     <div class="h-max w-screen overflow-x-hidden max-w-[98vw] font-outfit">
-      <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
+      <div class="h-max px-[2vw] text-[6vh] w-screen py-[6vh] px-[6vw]">
         <h1>Catalog</h1>
       </div>
       <div
@@ -104,14 +104,18 @@ onMounted(() => {
       </div>
       <div v-else class="mx-auto w-[80vw] h-max">
         <div class="h-max w-full grid grid-cols-3 gap-x-[8vw] gap-y-[4vh]">
-          <CatalogItemPC
+          <a
             v-for="item in products"
-            :name="item.name"
-            :price="item.price"
             :key="item.id"
-            :currency="item.currency"
-            :color="item.color"
-          />
+            :href="`product/${item.id}`"
+          >
+            <CatalogItemPC
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="item.color"
+            />
+          </a>
         </div>
       </div>
     </div>

@@ -92,7 +92,7 @@ function toggleExpansion() {
           class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="text-[3.8vh] font-[400] leading-[3.8vh] z-[1] text-[#f1f1f1]"
             >Carpet <br />
             Flooring</span
           >
@@ -153,7 +153,7 @@ function toggleExpansion() {
               class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
               <span
-                class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+                class="text-[2.4vh] font-[500] leading-[3.2vh] text-[#f1f1f1]"
                 >Wall to Wall
               </span>
               <span class="text-[#ececec] text-[1.4vh] font-[500]"
@@ -168,7 +168,6 @@ function toggleExpansion() {
               quality="50"
               preload
               loading="eager"
-              placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
               src="/wall-to-wall.webp"
               alt="#"
@@ -183,7 +182,7 @@ function toggleExpansion() {
               class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
               <span
-                class="text-[2.4vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+                class="text-[2.4vh] font-[500] leading-[3.2vh] text-[#f1f1f1]"
                 >Carpet Tiles
               </span>
               <span class="text-[#ececec] text-[1.4vh] font-[500]"
@@ -196,7 +195,6 @@ function toggleExpansion() {
             <NuxtImg
               preload
               loading="eager"
-              placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
               src="/carpet-tiles.webp"
               alt="carpet-tiles"
@@ -213,7 +211,7 @@ function toggleExpansion() {
               class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
               <span
-                class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+                class="text-[2.4vh] font-[500] leading-[3.2vh] z-[1] text-[#f1f1f1]"
                 >Area Rugs</span
               >
               <span class="text-[#ececec] text-[1.4vh] font-[500]"
@@ -227,7 +225,6 @@ function toggleExpansion() {
             <NuxtImg
               preload
               loading="eager"
-              placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
               src="/area-rugs.webp"
               alt="area-rug"
@@ -242,7 +239,7 @@ function toggleExpansion() {
               class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
             >
               <span
-                class="text-[2.4vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+                class="text-[2.4vh] font-[500] leading-[3.2vh] z-[1] text-[#f1f1f1]"
                 >Runners
               </span>
               <span class="text-[#ececec] text-[1.4vh] font-[500]"
@@ -256,7 +253,6 @@ function toggleExpansion() {
             <NuxtImg
               preload
               loading="eager"
-              placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
               src="/runners.webp"
               alt="#runners"
@@ -291,7 +287,7 @@ function toggleExpansion() {
           <!-- <NuxtImg 
            quality="50"
             loading="lazy"
-            placeholder
+            
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/40001.jpg"
             alt="#"
@@ -321,7 +317,7 @@ function toggleExpansion() {
           ></div>
           <!-- <NuxtImg
             loading="lazy"
-            placeholder
+            
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/80001.jpeg"
             alt="#"
@@ -353,7 +349,7 @@ function toggleExpansion() {
           ></div>
           <!-- <NuxtImg
             loading="lazy"
-            placeholder
+            
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
@@ -383,7 +379,7 @@ function toggleExpansion() {
           ></div>
           <!-- <NuxtImg
             loading="lazy"
-            placeholder
+            
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/70001.jpg"
             alt="#"

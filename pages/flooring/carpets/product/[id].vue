@@ -1,4 +1,151 @@
 <template>
+  <!-- DESKTOP -->
+  <NavBarPC />
+  <section
+    class="max-[990px]:hidden h-max min-h-screen max-w-screen overflow-x-hidden bg-[#f1f1f1] px-[6vw]"
+  >
+    <div class="h-full w-full flex">
+      <!-- LAYOUT -->
+      <!-- R1 -->
+      <div class="h-full w-[40%] pl-[4vw] pt-[1vh] bg-[#fff] rounded-md">
+        <NuxtImg
+          quality="100"
+          loading="eager"
+          class="object-contain h-[72vh] w-[100%]"
+          :src="`/carpets/${productColor}.jpg`"
+          :alt="color"
+        />
+      </div>
+      <!-- R2 -->
+      <div
+        class="h-full w-[60%] flex flex-col pt-[6.2vh] justify-between items-start"
+      >
+        <div
+          class="h-max w-full flex justify-between items-center px-[6vw] py-[4vh]"
+        >
+          <h1 class="text-[3.8vh]">{{ productName }}</h1>
+          <h1 class="text-[2.4vh] tracking-[.2vw] text-[#333]">
+            {{ productColor }}
+          </h1>
+        </div>
+        <div class="h-max w-full px-[6vw] flex flex-col gap-[.8vh] items-start">
+          <p class="text-[2.8vh] text-[#333]">{{ displayedText }}</p>
+          <button class="text-[1.8vh] font-[600]" @click="toggleText">
+            {{ buttonText }}
+          </button>
+        </div>
+        <!-- LEAD TIME -->
+        <div
+          class="h-max w-full flex justify-start items-center px-[6vw] py-[4vh] border-y-[#ececec] border-y-[.2vh]"
+        >
+          <div class="h-max w-max flex flex-col flex-[1.5]">
+            <span class="text-[2.4vh]">Project Lead Time</span>
+            <span
+              v-if="selectLeadMsg"
+              class="selectLeadTimeMsg text-[1.8vh] font-[600] text-red-500 flex items-center gap-[.4vw]"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M15.73 3H8.27L3 8.27v7.46L8.27 21h7.46L21 15.73V8.27zM19 14.9L14.9 19H9.1L5 14.9V9.1L9.1 5h5.8L19 9.1z"
+                />
+                <path fill="currentColor" d="M11 7h2v6h-2zm0 8h2v2h-2z" /></svg
+              >Please Select Lead Time</span
+            >
+          </div>
+          <select
+            v-model="selectedOption"
+            @change="updateLeadTime"
+            class="block flex-[1] w-[40vw] px-[2vw] h-[6vh] border border-black rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+          >
+            <option value="now">ASAP (If Available)</option>
+            <option value="sixToEightWeeks">
+              6 - 8 Weeks (Made on Demand)
+            </option>
+          </select>
+        </div>
+        <!-- ACTION BUTTONS -->
+        <div
+          class="actionBtn-container h-max w-max px-[6vw] flex justify-between py-[4vh] border-b-[#ececec] border-b-[.2vh]"
+        >
+          <button
+            @click="
+              () =>
+                openWhatsApp(
+                  '97333008801',
+                  `Hi, I would like to order ${productName} ${
+                    leadTime === 'now'
+                      ? 'As Soon As Possible'
+                      : 'Within 6 to 8 Weeks'
+                  }                                                              ${productLink}`
+                )
+            "
+            class="py-[2.8vh] relative px-[4.8vw] active:scale-[.95] shadow-lg w-[44%] bg-[#fff] font-[500] text-black text-[2vh] rounded-md"
+          >
+            ENQUIRE BY WHATSAPP
+          </button>
+          <button
+            @click="
+              () =>
+                openEmail(
+                  '97333008801',
+                  `Order`,
+                  `Hi, I would like to order the product:${productName}  ${
+                    leadTime === 'now'
+                      ? 'As Soon As Possible'
+                      : 'Within 6 to 8 Weeks'
+                  }                                                                 ${productLink}`
+                )
+            "
+            class="py-[2.8vh] relative px-[4.8vw] active:scale-[.95] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
+          >
+            ENQUIRE BY <br />
+            EMAIL
+          </button>
+        </div>
+        <!-- AREA CALCULATOR -->
+
+        <div
+          class="measurementSection_container h-max w-max flex items-center justify-center py-[vh] my-[4vh] px-[0vw] rounded-md px-[6vw]"
+        >
+          <div
+            class="h-max w-full flex flex-col gap-[2vh] bg-white py-[3.2vh] pr-[2vw] rounded-md"
+          >
+            <div class="h-max w-max flex justify-start px-[4vw] text-[3.8vh]">
+              <span>Area Calculator</span>
+            </div>
+            <div
+              class="h-max w-max flex gap-[4vw] items-center justify-start px-[4vw]"
+            >
+              <label class="text-[2.8vh]" for="sqft"
+                >Enter Your Area <br />
+                in Square Feet:</label
+              >
+              <input
+                class="h-[8vh] px-[1vw] w-[24vw] text-center border-[1px] rounded-md border-[#333] bg-inherit [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                id="sqft"
+                v-model.number="sqFeet"
+                type="number"
+                placeholder="Square Feet"
+              />
+            </div>
+
+            <div
+              class="h-max w-max text-[2.8vh] px-[4vw] pt-[4vh] flex justify-start"
+            >
+              <p>Total Cost: BHD {{ totalPrice }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <FooterPC />
+  <!-- MOBILE -->
   <section class="min-[990px]:hidden h-max w-max">
     <div v-if="isLoaded" class="h-max w-screen overflow-x-hidden">
       <NavBarMOB />
@@ -220,10 +367,10 @@
 import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
 
-import Desktop from "~/layouts/Desktop.vue";
-import Mobile from "~/layouts/Mobile.vue";
+import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import FooterMOB from "~/components/DESKTOP/FooterPC.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
 const client = useSupabaseClient();
 const route = useRoute();

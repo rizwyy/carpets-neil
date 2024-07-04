@@ -38,19 +38,19 @@ onMounted(() => {
   <section class="max-[990px]:hidden max-w-screen h-max">
     <NavBarPC />
     <div
-      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[12vh] items-center"
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
     >
       <div
-        class="h-max px-[6vw] pt-[6vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
         <a
           href="/flooring/carpets/details"
-          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Carpets >
           {{ userPreference.category }}
         </a>
-        <span class="text-[4vh]"> Specify Your Needs </span>
+        <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <TypeDetails />
       <!-- <CustomCarpetBTN /> -->
