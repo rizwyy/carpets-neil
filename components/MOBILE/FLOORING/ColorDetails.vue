@@ -203,7 +203,7 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
         :class="{ selected: selectedColors.includes('MultiColored') }"
         @click="toggleSelect('MultiColored')"
       >
@@ -219,10 +219,14 @@
       </div>
 
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-[#333] bg-[#F5F5DC] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Beige') }"
         @click="toggleSelect('Beige')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/snow.webp"
+        />
         <span v-if="!selectedColors.includes('Beige')">Beige</span>
         <template v-if="selectedColors.includes('Beige')">
           <span
@@ -232,10 +236,14 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-[brown] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Brown') }"
         @click="toggleSelect('Brown')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/brown.webp"
+        />
         <span v-if="!selectedColors.includes('Brown')">Brown</span>
         <template v-if="selectedColors.includes('Brown')">
           <span
@@ -247,10 +255,14 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gray-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Grey') }"
         @click="toggleSelect('Grey')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/silver.webp"
+        />
         <span v-if="!selectedColors.includes('Grey')">Grey</span>
         <template v-if="selectedColors.includes('Grey')">
           <span
@@ -260,10 +272,14 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Green') }"
         @click="toggleSelect('Green')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/green.webp"
+        />
         <span v-if="!selectedColors.includes('Green')">Green</span>
         <template v-if="selectedColors.includes('Green')">
           <span
@@ -288,10 +304,14 @@
     </div>
     <div class="color-selection flex justify-between gap-[4vw] z-[9]">
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-[#444] bg-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('White') }"
         @click="toggleSelect('White')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/polarBear.webp"
+        />
         <span v-if="!selectedColors.includes('White')">White</span>
         <template v-if="selectedColors.includes('White')">
           <span
@@ -301,10 +321,14 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-black rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Black') }"
         @click="toggleSelect('Black')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/black.webp"
+        />
         <span v-if="!selectedColors.includes('Black')">Black</span>
         <template v-if="selectedColors.includes('Black')">
           <span
@@ -314,12 +338,16 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-        :class="{ selected: selectedColors.includes('Pink') }"
-        @click="toggleSelect('Pink')"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        :class="{ selected: selectedColors.includes('Rose') }"
+        @click="toggleSelect('Rose')"
       >
-        <span v-if="!selectedColors.includes('Pink')">Pink</span>
-        <template v-if="selectedColors.includes('Pink')">
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/rose.webp"
+        />
+        <span v-if="!selectedColors.includes('Rose')">Rose</span>
+        <template v-if="selectedColors.includes('Rose')">
           <span
             class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
             >Selected</span
