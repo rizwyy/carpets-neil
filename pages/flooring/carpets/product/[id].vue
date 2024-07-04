@@ -109,7 +109,7 @@
         </div>
         <!-- AREA CALCULATOR -->
 
-        <div
+        <!-- <div
           class="measurementSection_container h-max w-max flex items-center justify-center py-[vh] my-[4vh] px-[0vw] rounded-md px-[6vw]"
         >
           <div
@@ -140,7 +140,7 @@
               <p>Total Cost: BHD {{ totalPrice }}</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -181,23 +181,23 @@
           </div>
         </div>
         <!-- R3 - PRICE -->
-        <div class="h-max w-screen flex items-center justify-between">
-          <div
+        <div class="h-max w-screen flex items-center justify-end">
+          <!-- <div
             class="checkBox_container flex items-center justify-center h-max w-max px-[6vw] gap-[2vw]"
           >
             <input type="checkbox" id="bookHomeMeasure" />
             <label class="text-[1.8vh]" for="bookHomeMeasure"
               >Book Home Measure</label
             >
-          </div>
-          <div
+          </div> -->
+          <!-- <div
             class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px-[6vw]"
           >
             <h1 class="text-[3vh]">
               BHD&nbsp;{{ Math.floor(productPrice * 0.48) }}
             </h1>
             <span class="text-[1.8vh] text-[#555]">Excluding VAT</span>
-          </div>
+          </div> -->
         </div>
         <div class="h-max w-screen flex flex-col">
           <!-- LEAD TIME -->
@@ -279,7 +279,7 @@
           </div>
         </div>
         <!-- R5 -->
-        <div
+        <!-- <div
           class="measurementSection_container h-max w-screen flex items-center justify-center py-[0vh] px-[4vw]"
         >
           <div
@@ -310,7 +310,7 @@
               <p>Total Cost: BHD {{ totalPrice }}</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <FooterMOB />
