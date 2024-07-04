@@ -1,32 +1,33 @@
 <template>
-  <Mobile>
+  <section class="h-max w-max min-[990px]:hidden">
     <div class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] text-[2.8vh]">
       <span>Shop by Categories</span>
     </div>
     <div class="h-max w-screen flex flex-col gap-[1vh]">
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
-        <div
+        <a
+          href="/flooring"
           class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]">
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
-            <a
+            <span
               class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw]"
-              href="/flooring"
-              >view all</a
+              >view all</span
             >
           </div>
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full opacity-[.8] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
           ></div>
           <NuxtImg
+            loading="eager"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
           />
-        </div>
+        </a>
         <div
           class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
         >
@@ -49,6 +50,8 @@
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
           <NuxtImg
+            quality="20"
+            loading="lazy"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/60001.avif"
             alt="#"
@@ -79,6 +82,8 @@
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
           <NuxtImg
+            quality="20"
+            loading="lazy"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10004.jpg"
             alt="#"
@@ -107,6 +112,8 @@
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
           <NuxtImg
+            quality="20"
+            loading="lazy"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/70001.jpg"
             alt="#"
@@ -137,6 +144,8 @@
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
           <NuxtImg
+            quality="20"
+            loading="lazy"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/80001.jpeg"
             alt="#"
@@ -165,6 +174,8 @@
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
           ></div>
           <NuxtImg
+            quality="20"
+            loading="lazy"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
@@ -196,7 +207,7 @@
         Footer
       </div>
     </div>
-  </Mobile>
+  </section>
 </template>
 
 <script setup>

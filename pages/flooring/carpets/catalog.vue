@@ -51,7 +51,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Desktop>
+  <section class="max-[990px]:hidden h-max w-max">
     <div class="h-max w-screen overflow-x-hidden max-w-[98vw] font-outfit">
       <div class="h-max px-[2vw] text-[6vh] w-screen py-[4vh]">
         <h1>Catalog</h1>
@@ -102,8 +102,8 @@ onMounted(() => {
           </circle>
         </svg>
       </div>
-      <div v-else class="mx-auto w-[60vw] h-max">
-        <div class="h-max w-full grid grid-cols-4 gap-x-[8vw] gap-y-[4vh]">
+      <div v-else class="mx-auto w-[80vw] h-max">
+        <div class="h-max w-full grid grid-cols-3 gap-x-[8vw] gap-y-[4vh]">
           <CatalogItemPC
             v-for="item in products"
             :name="item.name"
@@ -115,7 +115,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </Desktop>
+  </section>
   <section class="min-[990px]:hidden h-max w-max font-outfit bg-white z-[-1]">
     <NavBarMOB />
     <div class="h-screen w-screen font-outfit">

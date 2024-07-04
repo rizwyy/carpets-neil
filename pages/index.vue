@@ -4,7 +4,7 @@
     <HeroLayoutPC />
   </Desktop>
   <!-- MOBILE -->
-  <Mobile>
+  <section class="min-[990px]:hidden h-max w-max">
     <NavBarMOB />
     <!-- TYPO -->
     <div
@@ -19,7 +19,7 @@
       <SearchBarMOB />
     </div>
     <HeroLayoutMOB />
-  </Mobile>
+  </section>
 </template>
 
 <script setup>

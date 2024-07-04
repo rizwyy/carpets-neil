@@ -1,14 +1,9 @@
 <template>
-  <section class="min-[990px]:hidden h-max w-max font-outfit bg-white z-[-1]">
+  <div>
     <slot />
-  </section>
+  </div>
 </template>
 
 <script setup></script>
-<style scoped>
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #fff;
-  }
-}
-</style>
+
+<style lang="scss" scoped></style>

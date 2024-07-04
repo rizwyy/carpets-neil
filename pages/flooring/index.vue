@@ -1,10 +1,15 @@
 <template>
-  <Mobile>
+  <section class="h-max w-max min-[990px]:hidden">
     <NavBarMOB />
     <SearchBarMOB />
     <FlooringLayoutMOB />
-  </Mobile>
-  <Desktop> </Desktop>
+  </section>
+  <Desktop>
+    <NavBarPC />
+    <HowWoltizWorks />
+    <FlooringLayoutPC />
+    <FooterPC />
+  </Desktop>
 </template>
 
 <script setup>
@@ -13,6 +18,11 @@ import Mobile from "./../../layouts/Mobile.vue";
 import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "./../../components/MOBILE/SearchBarMOB.vue";
+
+import FlooringLayoutPC from "././../../components/DESKTOP/Flooring/FlooringLayout.vue";
+import HowWoltizWorks from "./../../components/HowWoltizWorks.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 
 // COOKIES
 import { useCookie } from "#app";

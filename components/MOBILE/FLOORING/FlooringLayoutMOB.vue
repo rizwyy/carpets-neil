@@ -74,7 +74,7 @@ function toggleExpansion() {
 </script>
 
 <template>
-  <Mobile>
+  <section class="h-max w-max min-[990px]:hidden">
     <div
       class="HowWoltizWorks-section h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
@@ -166,10 +166,11 @@ function toggleExpansion() {
             ></div>
             <NuxtImg
               quality="50"
-              loading="lazy"
+              preload
+              loading="eager"
               placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/wall-to-wall.jpg"
+              src="/wall-to-wall.webp"
               alt="#"
             />
           </a>
@@ -190,15 +191,15 @@ function toggleExpansion() {
               >
             </div>
             <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] to-[#00000] from-[14%]"
+              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-opacity-[.2] bg-black"
             ></div>
             <NuxtImg
-              quality="50"
-              loading="lazy"
+              preload
+              loading="eager"
               placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/10003.jpg"
-              alt="#"
+              src="/carpet-tiles.webp"
+              alt="carpet-tiles"
             />
           </a>
         </div>
@@ -224,12 +225,12 @@ function toggleExpansion() {
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
             ></div>
             <NuxtImg
-              quality="50"
-              loading="lazy"
+              preload
+              loading="eager"
               placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/10009.jpg"
-              alt="#"
+              src="/area-rugs.webp"
+              alt="area-rug"
             />
           </a>
           <a
@@ -253,12 +254,12 @@ function toggleExpansion() {
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
             ></div>
             <NuxtImg
-              quality="50"
-              loading="lazy"
+              preload
+              loading="eager"
               placeholder
               class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/10006.jpg"
-              alt="#"
+              src="/runners.webp"
+              alt="#runners"
             />
           </a>
         </div>
@@ -452,5 +453,5 @@ function toggleExpansion() {
         </div>
       </div>
     </div>
-  </Mobile>
+  </section>
 </template>

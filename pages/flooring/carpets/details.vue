@@ -4,9 +4,8 @@ import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue
 import MaterialDetails from "../../../components/MOBILE/FLOORING/MaterialDetails.vue";
 import BudgetDetails from "../../../components/MOBILE/FLOORING/BudgetDetails.vue";
 import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
-import PileDetails from "~/components/MOBILE/FLOORING/PileDetails.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
-import Mobile from "./../../../layouts/Mobile.vue";
 import Desktop from "./../../../layouts/Desktop.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 
@@ -16,6 +15,7 @@ const userStore = useUserStore();
 const route = useRoute();
 // COOKIES
 import { useCookie } from "#app";
+import Mobile from "./../../../layouts/Mobile.vue";
 const userPreference = useCookie("userPreference");
 
 function setUserPreferenceCookie() {
@@ -34,10 +34,52 @@ onMounted(() => {
 });
 </script>
 <template>
-  <Mobile>
+  <!-- DESKTOP -->
+  <section class="max-[990px]:hidden max-w-screen h-max">
+    <NavBarPC />
+    <div
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[12vh] items-center"
+    >
+      <div
+        class="h-max px-[6vw] pt-[6vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+      >
+        <a
+          href="/flooring/carpets/details"
+          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+        >
+          Carpets >
+          {{ userPreference.category }}
+        </a>
+        <span class="text-[4vh]"> Specify Your Needs </span>
+      </div>
+      <TypeDetails />
+      <!-- <CustomCarpetBTN /> -->
+      <ColorDetails />
+      <MaterialDetails />
+      <BudgetDetails />
+      <!-- <PileDetails /> -->
+
+      <a href="/flooring/carpets/catalog">
+        <button
+          @click="setUserPreferenceCookie"
+          v-show="
+            userStore.preference.type.length > 0 &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.material !== '' &&
+            userStore.preference.budget !== ''
+          "
+          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
+        >
+          BROWSE CATALOG
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- MOBILE -->
+  <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
     <div
-      class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center"
+      class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
       <div
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
@@ -57,31 +99,32 @@ onMounted(() => {
       <MaterialDetails />
       <BudgetDetails />
       <!-- <PileDetails /> -->
-
-      <button
-        @click="setUserPreferenceCookie"
-        v-show="
-          userStore.preference.type.length > 0 &&
-          userStore.preference.color.length > 0 &&
-          userStore.preference.material !== '' &&
-          userStore.preference.budget !== ''
-        "
-        class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-600 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
-      >
-        BROWSE CATALOG<svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
+      <a href="/flooring/carpets/catalog">
+        <button
+          @click="setUserPreferenceCookie"
+          v-show="
+            userStore.preference.type.length > 0 &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.material !== '' &&
+            userStore.preference.budget !== ''
+          "
+          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-600 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
         >
-          <path
-            fill="currentColor"
-            d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
-          />
-        </svg>
-      </button>
+          BROWSE CATALOG<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
+            />
+          </svg>
+        </button>
+      </a>
     </div>
-  </Mobile>
+  </section>
 </template>
 
 <style scoped>

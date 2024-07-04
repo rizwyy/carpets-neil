@@ -1,5 +1,5 @@
 <template>
-  <Mobile>
+  <section class="min-[990px]:hidden h-max w-max">
     <div v-if="isLoaded" class="h-max w-screen overflow-x-hidden">
       <NavBarMOB />
       <div
@@ -57,7 +57,28 @@
           <div
             class="h-max w-screen flex justify-start items-center px-[6vw] py-[4vh] border-y-[#ececec] border-y-[.2vh]"
           >
-            <span class="flex-[1] text-[2.4vh]">Project Lead Time</span>
+            <div class="h-max w-max flex flex-col flex-[1.5]">
+              <span class="text-[2.4vh]">Project Lead Time</span>
+              <span
+                v-if="selectLeadMsg"
+                class="selectLeadTimeMsg text-[1.8vh] font-[600] text-red-500 flex items-center gap-[.4vw]"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M15.73 3H8.27L3 8.27v7.46L8.27 21h7.46L21 15.73V8.27zM19 14.9L14.9 19H9.1L5 14.9V9.1L9.1 5h5.8L19 9.1z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M11 7h2v6h-2zm0 8h2v2h-2z"
+                  /></svg
+                >Please Select Lead Time</span
+              >
+            </div>
             <select
               v-model="selectedOption"
               @change="updateLeadTime"
@@ -86,12 +107,8 @@
                     }                                                              ${productLink}`
                   )
               "
-              class="py-[2.8vh] relative px-[4.8vw] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
+              class="py-[2.8vh] relative px-[4.8vw] active:scale-[.95] shadow-lg w-[44%] bg-[#ececec] text-black text-[2vh] rounded-md"
             >
-              <div
-                v-show="!IsleadTimeInputed"
-                class="h-full w-full absolute top-0 left-0 bg-black bg-opacity-[.2] backdrop-blur-[1px] rounded-md"
-              ></div>
               ENQUIRE BY WHATSAPP
             </button>
             <button
@@ -107,14 +124,10 @@
                     }                                                                 ${productLink}`
                   )
               "
-              class="py-[2.8vh] relative px-[4.8vw] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
+              class="py-[2.8vh] relative px-[4.8vw] active:scale-[.95] w-[44%] bg-black text-white text-[2vh] rounded-md shadow-lg"
             >
               ENQUIRE BY <br />
               EMAIL
-              <div
-                v-show="!IsleadTimeInputed"
-                class="h-full w-full absolute top-0 left-0 bg-black bg-opacity-[.2] backdrop-blur-[1px] rounded-md"
-              ></div>
             </button>
           </div>
         </div>
@@ -200,7 +213,7 @@
         </circle>
       </svg>
     </div>
-  </Mobile>
+  </section>
 </template>
 
 <script setup>
@@ -210,7 +223,7 @@ import { ref, onMounted } from "vue";
 import Desktop from "~/layouts/Desktop.vue";
 import Mobile from "~/layouts/Mobile.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
+import FooterMOB from "~/components/DESKTOP/FooterPC.vue";
 
 const client = useSupabaseClient();
 const route = useRoute();
@@ -227,6 +240,8 @@ const productLink = ref("");
 const productColor = ref("");
 const productPrice = ref("");
 const productCurrency = ref("");
+
+const selectLeadMsg = ref(false);
 
 const fullText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat metus a augue commodo, eget varius nisl sagittis. Fusce gravida massa nec enim pulvinar, ac venenatis turpis lacinia. Nullam tempor, tortor nec consectetur egestas, urna odio scelerisque orci, ut egestas erat quam nec felis. Donec laoreet metus at felis ultrices, id vehicula metus varius. Maecenas a ligula metus. Phasellus a posuere mauris. Nulla facilisi. Cras et nunc tincidunt, volutpat quam eget, posuere nulla. Vestibulum at facilisis purus. Cras auctor, eros nec iaculis blandit, quam purus lacinia sem, et scelerisque libero orci ac dui. Pellentesque in enim euismod, sagittis enim id, viverra leo.";
@@ -250,6 +265,7 @@ function updateLeadTime() {
   leadTime.value = selectedOption.value;
   if (toRaw(leadTime.value) === "sixToEightWeeks" || "now") {
     IsleadTimeInputed.value = true;
+    selectLeadMsg.value = false;
   } else {
     IsleadTimeInputed.value = true;
   }
@@ -265,6 +281,7 @@ function generateWhatsAppLink(phone, message) {
 }
 function openWhatsApp(phone, message) {
   if (toRaw(!IsleadTimeInputed.value)) {
+    selectLeadMsg.value = true;
     return;
   } else {
     const link = generateWhatsAppLink(phone, message);
@@ -279,6 +296,7 @@ function generateEmailLink(email, subject, body) {
 
 function openEmail(email, subject, body) {
   if (toRaw(!IsleadTimeInputed.value)) {
+    selectLeadMsg.value = true;
     return;
   } else {
     const link = generateEmailLink(email, subject, body);

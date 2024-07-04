@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[32vh] w-screen bg-[#fcfcfc] flex flex-col border-t-[1px] border-[#ececec] px-[6vw] py-[4vh] font-outfit text-[#666]"
+    class="h-[32vh] max-w-[100vw] bg-[#fcfcfc] flex flex-col border-t-[1px] border-[#ececec] px-[6vw] py-[8vh] font-outfit text-[#666]"
   >
     <div class="h-1/2 w-full"></div>
     <div class="h-1/2 w-full flex justify-between items-end">

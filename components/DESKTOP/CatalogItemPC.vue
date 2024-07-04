@@ -11,7 +11,7 @@ const route = useRoute();
 
 <template>
   <div class="h-max w-max flex flex-col items-start font-outfit-400">
-    <div class="h-[20vh] w-[12vw] overflow-hidden relative">
+    <div class="h-[28vh] w-[20vw] overflow-hidden relative">
       <img
         class="h-full w-full object-cover"
         :src="`/carpets/${color}.jpg`"
