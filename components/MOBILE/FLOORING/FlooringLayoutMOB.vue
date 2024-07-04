@@ -18,48 +18,7 @@ const setCategory = (category) => {
   console.log("COOKIE SET::", toRaw(userPreference.value));
 };
 const isExpanded = ref(false);
-// function gsap_carpetsContainer_open() {
-//   const element = document.querySelector(".carpetsCategory-container");
-//   element.style.display = "block";
 
-//   gsap.to(".whitespaceContainer", {
-//     height: "42vh",
-//     duration: 1,
-//     ease: "slide.out",
-//   });
-//   gsap.to(".carpetsCategory-container", {
-//     delay: 0.2,
-//     autoAlpha: 1,
-//     duration: 0.4,
-//   });
-//   gsap.to(".arrowDownSvg", {
-//     rotate: "180deg",
-//   });
-// }
-// function gsap_carpetsContainer_close() {
-//   const element = document.querySelector(".carpetsCategory-container");
-//   gsap.to(".whitespaceContainer", {
-//     height: "0vh",
-//     duration: 0.4,
-//     ease: "slide.in",
-//   });
-//   // Animate with GSAP
-//   gsap.to(element, {
-//     autoAlpha: 0,
-//     duration: 0.2,
-//   });
-//   gsap.to(element, {
-//     autoAlpha: 0,
-//     duration: 0.4,
-//     onComplete: () => {
-//       element.style.display = "none"; // Set display to none after animation completes
-//     },
-//   });
-
-//   gsap.to(".arrowDownSvg", {
-//     rotate: "0deg",
-//   });
-// }
 const scrollToBottom = () => {
   window.scrollBy({ top: window.innerHeight * 0.2, behavior: "smooth" });
 };

@@ -1,0 +1,18 @@
+<template>
+  <div
+    class="min-[990px]:hidden h-[30vh] max-w-[100vw] bg-[#fcfcfc] flex flex-col border-t-[1px] border-[#ececec] px-[6vw] py-[8vh] font-outfit text-[#666]"
+  >
+    <div class="h-1/2 w-full"></div>
+    <div class="h-1/2 w-full flex justify-between items-end">
+      <div class="h-max w-max flex flex-col">
+        <span>Terms and Condition</span>
+        <span>Privacy Policy</span>
+      </div>
+      <span>Woltiz</span>
+    </div>
+  </div>
+</template>
+
+<script setup></script>
+
+<style lang="scss" scoped></style>

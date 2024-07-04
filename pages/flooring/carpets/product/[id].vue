@@ -369,7 +369,7 @@ import { ref, onMounted } from "vue";
 
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import FooterMOB from "~/components/DESKTOP/FooterPC.vue";
+import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
 const client = useSupabaseClient();
