@@ -15,6 +15,7 @@ const route = useRoute();
     <div class="NuxtImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
       <NuxtImg
         placeholder
+        quality="80"
         loading="eager"
         class="object-cover h-full w-full"
         :src="`/carpets/${color}.jpg`"
