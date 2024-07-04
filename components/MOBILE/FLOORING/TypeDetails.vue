@@ -85,7 +85,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/texturedCarpet.jpeg"
+            src="/texturedCarpet.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Textured</span>
@@ -278,7 +278,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/designedCarpet.jpg"
+          src="/carpets/patterned.webp"
           alt=""
         />
         <span>Patterned</span>
