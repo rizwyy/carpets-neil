@@ -53,7 +53,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/solidCarpet.jpg"
+            src="/colors/snow.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Plain</span>
@@ -86,7 +86,7 @@
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/texturedCarpet.webp"
-            alt=""
+            alt="Textured"
           />
           <span class="text-[3.4vh]">Textured</span>
         </div>
@@ -116,6 +116,7 @@
           <NuxtImg
             quality="50"
             placeholder
+            preload
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/carpets/patterned.webp"
@@ -209,11 +210,12 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          preload
           quality="50"
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/solidCarpet.jpg"
+          src="/colors/snow.webp"
           alt=""
         />
         <span>Plain</span>
@@ -241,11 +243,12 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          preload
           quality="50"
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/texturedCarpet.jpeg"
+          src="/texturedCarpet.webp"
           alt=""
         />
         <span>Textured</span>
@@ -274,6 +277,7 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          preload
           quality="50"
           placeholder
           loading="eager"
@@ -306,6 +310,7 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
+          preload
           quality="50"
           placeholder
           loading="eager"
