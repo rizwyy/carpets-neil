@@ -289,7 +289,7 @@
         </template>
       </div>
       <div
-        class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-blue-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+        class="color-box h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
         :class="{ selected: selectedColors.includes('Blue') }"
         @click="toggleSelect('Blue')"
       >

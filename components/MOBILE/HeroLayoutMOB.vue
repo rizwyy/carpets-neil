@@ -3,7 +3,7 @@
     <div class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] text-[2.8vh]">
       <span>Shop by Categories</span>
     </div>
-    <div class="h-max w-screen flex flex-col gap-[1vh]">
+    <div class="h-max w-screen flex flex-col gap-[1vw]">
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
         <a
           href="/flooring"
