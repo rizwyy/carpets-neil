@@ -306,7 +306,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets-tile.jpeg"
+          src="/carpets/sisal.jpeg"
           alt="#"
         />
         <span>Sisal</span>
