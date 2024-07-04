@@ -27,7 +27,7 @@ function setUserPreferenceCookie() {
 onMounted(() => {
   userStore.preference.category = userPreference.value.category;
   if (userStore.preference.category === "") {
-    console.log("CATEGORY NOT DEFINED");
+    navigateTo("/flooring");
   } else {
     console.log(`CATEGORY RETRIEVED:${userStore.preference.category} `);
   }

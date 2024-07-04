@@ -293,6 +293,10 @@
         :class="{ selected: selectedColors.includes('Blue') }"
         @click="toggleSelect('Blue')"
       >
+        <NuxtImg
+          class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+          src="/colors/blue.webp"
+        />
         <span v-if="!selectedColors.includes('Blue')">Blue</span>
         <template v-if="selectedColors.includes('Blue')">
           <span
