@@ -1,5 +1,7 @@
 <template>
-  <section class="h-max max-w-[100vw] flex flex-col gap-[2.8vh] py-[6vh]">
+  <section
+    class="h-max max-w-[100vw] flex flex-col gap-[2.8vh] py-[6vh] font-outfit"
+  >
     <div class="h-max w-full flex flex-col justify-between px-[6vw] gap-[0vh]">
       <CategoryCardHeroPC
         @click="toggleExpansion"
@@ -186,4 +188,10 @@ function toggleExpansion() {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+</style>

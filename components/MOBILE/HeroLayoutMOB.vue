@@ -1,20 +1,24 @@
 <template>
-  <section class="h-max w-max min-[990px]:hidden">
-    <div class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] text-[2.8vh]">
+  <section class="h-max w-max min-[990px]:hidden font-outfit">
+    <div
+      class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] font-[400] text-[3.2vh]"
+    >
       <span>Shop by Categories</span>
     </div>
     <div class="h-max w-screen flex flex-col gap-[1vw]">
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
         <a
           href="/flooring"
-          class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
-          <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]">
+          <span
+            class="text-[3vh] font-[500] tracking-[.1vw] leading-[3.2vh] text-[#f1f1f1]"
+          >
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw]"
+              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[400]"
               >view all</span
             >
           </div>
@@ -214,3 +218,11 @@
 <script setup>
 import Mobile from "~/layouts/Mobile.vue";
 </script>
+
+<style>
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+</style>

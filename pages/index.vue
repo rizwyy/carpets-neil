@@ -8,16 +8,18 @@
     <NavBarMOB />
     <!-- TYPO -->
     <div
-      class="font-outfit-400 h-max w-screen bg-[#f1f1f1] flex flex-col justify-center items-center z-[99] py-[2vh] gap-[2vh] font-[400] tracking-[.4vw] text-[2vh]"
+      class="font-outfit-400 h-max w-screen bg-[#f2f3f4] flex flex-col justify-center items-center z-[99] pb-[2vh] gap-[1vh] pt-[3.2vh] font-[500] text-[2.4vh]"
     >
-      <span class="w-[94%] whitespace-no-wrap text-center"
-        >DREAM IT, STYLE IT & FIND IT AT WOLTIZ</span
+      <span
+        class="w-[94%] whitespace-no-wrap text-center font-arimo text-[#222]"
+        >FIND THE RIGHT DECOR, RIGHT AWAY</span
       >
+      <div class="h-max w-screen flex justify-center pt-[1.8vh] pb-[2.8vh]">
+        <SearchBarMOB />
+      </div>
     </div>
     <!-- SEARCH BAR COMP -->
-    <div class="h-max w-screen flex justify-center pt-[1.8vh] pb-[2.8vh]">
-      <SearchBarMOB />
-    </div>
+
     <HeroLayoutMOB />
   </section>
 </template>
@@ -37,6 +39,11 @@ import Mobile from "../layouts/Mobile.vue";
 <style scoped>
 .font-outfit {
   font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.font-arimo {
+  font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }

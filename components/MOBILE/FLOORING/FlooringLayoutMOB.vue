@@ -33,7 +33,7 @@ function toggleExpansion() {
 </script>
 
 <template>
-  <section class="h-max w-max min-[990px]:hidden">
+  <section class="h-max w-max min-[990px]:hidden font-outfit">
     <div
       class="HowWoltizWorks-section h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
