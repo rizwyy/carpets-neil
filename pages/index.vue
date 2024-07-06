@@ -8,11 +8,15 @@
     <NavBarMOB />
     <!-- TYPO -->
     <div
-      class="font-outfit-400 h-max w-screen bg-[#f2f3f4] flex flex-col justify-center items-center z-[99] pb-[2vh] gap-[1vh] pt-[3.2vh] font-[500] text-[2.4vh]"
+      class="h-max w-screen bg-gradient-to-b from-[#2d6a4f] via-[#081c15] to-[#52b788] from-[1%] flex flex-col justify-center items-center z-[99] pb-[2vh] gap-[.2vh] pt-[3.2vh]"
     >
       <span
-        class="w-[94%] whitespace-no-wrap text-center font-arimo text-[#222]"
-        >FIND THE RIGHT DECOR, RIGHT AWAY</span
+        class="w-[75%] whitespace-no-wrap bg-gradient-to-r text-center from-[#fff] to-[#ececec] bg-clip-text text-transparent font-[400] text-[5.8vh] leading-[5.8vh] py-[1vh] font-sans tracking-[-.1vw]"
+        >Find the right
+        <span class="font-domino text-[#1dbf73] font-[300] tracking-[-.5vw]">
+          decor</span
+        >
+        service, right away</span
       >
       <div class="h-max w-screen flex justify-center pt-[1.8vh] pb-[2.8vh]">
         <SearchBarMOB />
@@ -42,8 +46,13 @@ import Mobile from "../layouts/Mobile.vue";
   font-optical-sizing: auto;
   font-style: normal;
 }
-.font-arimo {
-  font-family: "Arimo", sans-serif;
+.font-sans {
+  font-family: "Fustat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.font-domino {
+  font-family: "Domine", serif;
   font-optical-sizing: auto;
   font-style: normal;
 }

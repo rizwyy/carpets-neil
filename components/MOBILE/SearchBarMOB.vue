@@ -3,7 +3,7 @@
     class="relative h-max w-screen flex flex-col items-center justify-center my-[1.8vh] px-[8vw] font-outfit"
   >
     <div
-      class="div_searchBar h-max w-full flex items-center bg-[#f7f5f2] px-[1vw] rounded-md shadow-md"
+      class="div_searchBar h-max w-full flex items-center bg-[#f7f5f2] px-[1vw] rounded-lg shadow-md"
     >
       <input
         v-model="query"
@@ -12,11 +12,11 @@
         @blur="onBlur"
         type="text"
         placeholder="Find your dream product..."
-        class="input_searchBar h-max w-full bg-[#f7f5f2] text-[2vh] font-[400] flex-grow py-[1.6vh] rounded-sm pl-[4vw] outline-none focus:outline-none"
+        class="input_searchBar h-max w-full bg-[#f7f5f2] text-[2vh] font-[400] flex-grow py-[1.8vh] rounded-sm pl-[4vw] outline-none focus:outline-none"
       />
       <button
         @click="onSearch"
-        class="flex h-full items-center justify-center px-[2.4vw] py-[1.2vh] rounded-full bg-slate-800"
+        class="flex h-full items-center justify-center px-[2.4vw] py-[1.2vh] rounded-full bg-[#013912]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
