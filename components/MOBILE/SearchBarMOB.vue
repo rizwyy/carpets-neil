@@ -36,14 +36,15 @@
       class="w-full bg-white border rounded-b-md mt-1 z-10"
     >
       <ul>
-        <li
+        <a
+          href="/flooring/carpets/details"
           v-for="(result, index) in filteredResults"
           :key="index"
-          class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+          class="px-4 py-2 hover:bg-gray-200 cursor-pointer block"
           @click="selectResult(result)"
         >
           {{ result }}
-        </li>
+        </a>
       </ul>
     </div>
   </div>
@@ -99,8 +100,8 @@ const selectResult = (result) => {
 };
 
 const onSearch = () => {
-  // Handle the search action
   console.log("Search:", query.value);
+  selectResult("Carpet");
 };
 </script>
 
