@@ -16,8 +16,11 @@ const route = useRoute();
 // COOKIES
 import Mobile from "./../../../layouts/Mobile.vue";
 import { useCookie } from "#app";
+import CategoryDetails from "~/components/MOBILE/FLOORING/CategoryDetails.vue";
 const userPreference = useCookie("userPreference");
 
+const isCategoryOpted = ref(false);
+const category = ref("");
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
   console.log("COOKIE SET::", toRaw(userPreference.value));
@@ -25,12 +28,14 @@ function setUserPreferenceCookie() {
 }
 
 onMounted(() => {
-  if (userPreference.value.category === "") {
-    userPreference.value.category = "Carpet-Tiles";
-  } else {
+  console.log(toRaw(userPreference));
+  if (toRaw(userPreference.value)) {
+    console.log(toRaw(userPreference.value.category));
+    isCategoryOpted.value = true;
     userStore.preference.category = toRaw(userPreference.value.category);
+  } else {
+    isCategoryOpted.value = false;
   }
-  console.log(userPreference.value.category);
   // if (toRaw(userPreference.value.category) === "") {
   //   toRaw(userPreference.value.category) = "Carpet-Tiles";
   // } else {
@@ -53,10 +58,11 @@ onMounted(() => {
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Carpets >
-          {{ userPreference.category }}
+          {{ userStore.preference.category }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
+      <CategoryDetails v-if="!isCategoryOpted" />
       <TypeDetails />
       <!-- <CustomCarpetBTN /> -->
       <ColorDetails />
@@ -94,10 +100,11 @@ onMounted(() => {
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Carpets >
-          {{ userPreference.category }}
+          {{ userStore.preference.category }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
+      <CategoryDetails v-if="!isCategoryOpted" />
       <TypeDetails />
       <CustomCarpetBTN />
       <ColorDetails />

@@ -79,9 +79,6 @@ const results = ref([
 ]);
 const filteredResults = ref([]);
 const isActive = ref(false);
-import { useCookie } from "#app";
-import SearchBarMOB from "./SearchBarMOB.vue";
-const userPreference = useCookie("userPreference");
 
 const onInput = () => {
   if (query.value.trim() === "") {
@@ -96,11 +93,7 @@ const onInput = () => {
 const onFocus = () => {
   isActive.value = true;
 };
-const setCategory = (category) => {
-  userStore.preference.category = category;
-  userPreference.value = userStore.preference;
-  console.log("COOKIE SET::", toRaw(userPreference.value));
-};
+
 const onBlur = () => {
   setTimeout(() => {
     isActive.value = false;
@@ -111,13 +104,13 @@ const selectResult = (result) => {
   query.value = result;
   filteredResults.value = [];
   isActive.value = false;
-  navigateTo("/flooring/carpets/details");
 };
 
 const onSearch = () => {
-  if (query.value === "") {
+  if (query.value.length < 3) {
     return;
   }
+
   selectResult("Carpet");
 };
 </script>
