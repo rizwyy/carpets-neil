@@ -14,8 +14,8 @@ const userStore = useUserStore();
 
 const route = useRoute();
 // COOKIES
-import { useCookie } from "#app";
 import Mobile from "./../../../layouts/Mobile.vue";
+import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
 
 function setUserPreferenceCookie() {
@@ -25,12 +25,17 @@ function setUserPreferenceCookie() {
 }
 
 onMounted(() => {
-  userStore.preference.category = userPreference.value.category;
-  if (userStore.preference.category === "") {
-    navigateTo("/flooring");
+  if (userPreference.value.category === "") {
+    userPreference.value.category = "Carpet-Tiles";
   } else {
-    console.log(`CATEGORY RETRIEVED:${userStore.preference.category} `);
+    userStore.preference.category = toRaw(userPreference.value.category);
   }
+  console.log(userPreference.value.category);
+  // if (toRaw(userPreference.value.category) === "") {
+  //   toRaw(userPreference.value.category) = "Carpet-Tiles";
+  // } else {
+  //   console.log(`CATEGORY RETRIEVED: `);
+  // }
 });
 </script>
 <template>

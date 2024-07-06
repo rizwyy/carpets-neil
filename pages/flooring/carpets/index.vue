@@ -1,12 +1,13 @@
 <template>
+  <NavBarMOB />
   <section class="h-max w-screen">
-    <div
-      class="h-max py-[4vh] flex items-end px-[4vw] text-[6vh] justify-start w-screen font-outfit-300"
-    >
-      Carpets
-    </div>
     <div class="h-max w-max flex items-center justify-center pb-[4vh]">
       <SearchBarMOB />
+    </div>
+    <div
+      class="h-max py-[4vh] flex items-end px-[4vw] text-[4vh] justify-start w-screen font-outfit-300"
+    >
+      Carpets
     </div>
 
     <div
@@ -95,6 +96,7 @@
 <script setup>
 import SearchBarMOB from "~/components/MOBILE/SearchBarMOB.vue";
 import useUserStore from "./../../stores/user";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 const userStore = useUserStore();
 </script>
 

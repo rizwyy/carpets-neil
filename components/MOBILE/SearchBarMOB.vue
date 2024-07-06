@@ -50,8 +50,9 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
 import { ref } from "vue";
+import useUserStore from "../../../stores/user";
+const userStore = useUserStore();
 const query = ref("");
 const results = ref([
   "Carpet",
@@ -62,17 +63,27 @@ const results = ref([
 ]);
 const filteredResults = ref([]);
 const isActive = ref(false);
+import { useCookie } from "#app";
+const userPreference = useCookie("userPreference");
 
 const onInput = () => {
-  filteredResults.value = results.value.filter((result) =>
-    result.toLowerCase().includes(query.value.toLowerCase())
-  );
+  if (query.value.trim() === "") {
+    filteredResults.value = [];
+  } else {
+    filteredResults.value = results.value.filter((result) =>
+      result.toLowerCase().includes(query.value.toLowerCase())
+    );
+  }
 };
 
 const onFocus = () => {
   isActive.value = true;
 };
-
+const setCategory = (category) => {
+  userStore.preference.category = category;
+  userPreference.value = userStore.preference;
+  console.log("COOKIE SET::", toRaw(userPreference.value));
+};
 const onBlur = () => {
   setTimeout(() => {
     isActive.value = false;
@@ -83,6 +94,8 @@ const selectResult = (result) => {
   query.value = result;
   filteredResults.value = [];
   isActive.value = false;
+  setCategory("Carpet-Tiles");
+  navigateTo("/flooring/carpets/details");
 };
 
 const onSearch = () => {
@@ -90,7 +103,8 @@ const onSearch = () => {
   console.log("Search:", query.value);
 };
 </script>
-<style>
+
+<style scoped>
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;

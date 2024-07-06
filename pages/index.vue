@@ -16,7 +16,8 @@
         <span class="font-domino text-[#1dbf73] font-[300] tracking-[-.5vw]">
           decor</span
         >
-        service, right away</span
+        right <br />
+        away</span
       >
       <div class="h-max w-screen flex justify-center pt-[1.8vh] pb-[2.8vh]">
         <SearchBarMOB />
