@@ -49,7 +49,7 @@ onMounted(() => {
         class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
         <a
-          href="/flooring/carpets/details"
+          href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Carpets >
@@ -90,7 +90,7 @@ onMounted(() => {
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
         <a
-          href="/flooring/carpets/details"
+          href="/flooring"
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Carpets >
