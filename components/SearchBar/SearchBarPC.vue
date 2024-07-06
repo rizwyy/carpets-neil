@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative h-max w-screen flex flex-col items-center justify-center my-[1.8vh] px-[8vw] font-outfit"
+    class="max-[990px]:hidden relative h-max w-screen flex flex-col items-center justify-center my-[1.8vh] px-[8vw] font-outfit"
   >
     <div
       class="div_searchBar h-max w-full flex items-center bg-[#f7f5f2] px-[1vw] rounded-lg shadow-md"
@@ -65,6 +65,7 @@ const results = ref([
 const filteredResults = ref([]);
 const isActive = ref(false);
 import { useCookie } from "#app";
+import SearchBarMOB from "./SearchBarMOB.vue";
 const userPreference = useCookie("userPreference");
 
 const onInput = () => {
@@ -105,7 +106,7 @@ const onSearch = () => {
 };
 </script>
 
-<style scoped>
+<style>
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;

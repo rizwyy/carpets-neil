@@ -94,7 +94,7 @@
 </template>
 
 <script setup>
-import SearchBarMOB from "~/components/MOBILE/SearchBarMOB.vue";
+import SearchBarMOB from "~/components/SearchBar/SearchBarMOB.vue";
 import useUserStore from "./../../stores/user";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 const userStore = useUserStore();

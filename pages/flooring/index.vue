@@ -17,7 +17,7 @@ import Desktop from "./../../layouts/Desktop.vue";
 import Mobile from "./../../layouts/Mobile.vue";
 import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
-import SearchBarMOB from "./../../components/MOBILE/SearchBarMOB.vue";
+import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
 
 import FlooringLayoutPC from "././../../components/DESKTOP/Flooring/FlooringLayout.vue";
 import HowWoltizWorks from "./../../components/HowWoltizWorks.vue";
