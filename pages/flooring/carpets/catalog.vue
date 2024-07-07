@@ -21,6 +21,14 @@ const route = useRoute();
 const router = useRouter();
 
 //
+function shuffleArray(array) {
+  const newArray = [...array]; // Create a copy of the original array
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
 
 async function fetchCarpetsData() {
   console.log("START SUPABASE");
@@ -36,7 +44,7 @@ async function fetchCarpetsData() {
 
     // Store data in userStore and ref variable
     userStore.products = data;
-    products.value = data;
+    products.value = shuffleArray(data);
     isLoading.value = false; // Set loading state to false
   } catch (error) {
     console.error("Error during fetch:", error);
