@@ -58,7 +58,7 @@
             quality="20"
             loading="lazy"
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/carpets/wall-to-wall.webp"
+            src="/wall-to-wall.webp"
             alt="#"
           />
         </div>

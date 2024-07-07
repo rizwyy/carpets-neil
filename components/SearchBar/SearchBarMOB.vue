@@ -16,7 +16,7 @@
       />
       <div
         @click="onSearch"
-        class="flex h-full items-center relative justify-center px-[2.4vw] py-[1.2vh] rounded-full bg-[#013912]"
+        class="flex h-full items-center relative justify-center px-[2.4vw] py-[1.2vh] rounded-full bg-[#172554]"
       >
         <div v-if="query === ''" class="h-full w-full">
           <svg
