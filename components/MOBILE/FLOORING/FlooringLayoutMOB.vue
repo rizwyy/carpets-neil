@@ -46,8 +46,8 @@ function toggleExpansion() {
     </div>
     <div class="h-max w-screen flex flex-col gap-[1vh]">
       <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[1]">
-        <div
-          @click="toggleExpansion"
+        <a
+          href="/flooring/carpets/details"
           class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
@@ -93,7 +93,7 @@ function toggleExpansion() {
             src="/10004.jpg"
             alt="#"
           />
-        </div>
+        </a>
       </div>
       <!-- HTI -->
       <div

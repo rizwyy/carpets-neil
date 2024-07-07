@@ -280,7 +280,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets/patterned.webp"
+          src="/area-rugs.webp"
           alt=""
         />
         <span>Area Rugs</span>
@@ -370,23 +370,5 @@ onMounted(() => {});
 .selected {
   border-radius: 0px; /* Adjust this value as needed */
   border: 2px solid #333; /* Adjust border color as needed */
-}
-.rainbow-border {
-  --border-color-1: #ff0000; /* Red */
-  --border-color-2: #ffa500; /* Orange */
-  --border-color-3: #ffff00; /* Yellow */
-  --border-color-4: #00ff00; /* Green */
-  --border-color-5: #0000ff; /* Blue */
-  --border-color-6: #8a2be2; /* Indigo */
-  --border-width: 2px; /* Border width */
-  --border-gradient: linear-gradient(
-    to right,
-    var(--border-color-1),
-    var(--border-color-2),
-    var(--border-color-3),
-    var(--border-color-4),
-    var(--border-color-5),
-    var(--border-color-6)
-  );
 }
 </style>

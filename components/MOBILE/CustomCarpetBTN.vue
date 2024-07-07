@@ -1,14 +1,54 @@
 <template>
-  <Desktop>
+  <div
+    class="max-[990px]:hidden h-[16vh] w-[60vw] relative overflow-hidden flex items-center gap-[2vw] justify-center w-[52vw] text-[#fff] shadow-xl rounded-md bg-gradient-to-br from-[#0e0725] via-[#222d52] to-[#e536ab] px-[.8vh] py-[.8vh]"
+  >
+    <span class="text-[3.4vh] font font-[600]">Custom Carpets</span>
+
+    <a
+      href="/flooring/carpets/custom-carpets"
+      class="absolute bottom-[1vh] right-[4vw] text-[#ececec] text-[2vh] font-[500] flex items-center gap-[.6vw]"
+      >View All<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z"
+        />
+      </svg>
+    </a>
+  </div>
+  <div class="h-max w-max min-[990px]:hidden">
     <div
-      class="h-[16vh] w-[60vw] relative overflow-hidden flex items-center gap-[2vw] justify-center w-[52vw] text-[#fff] shadow-xl rounded-md bg-gradient-to-br from-[#0e0725] via-[#222d52] to-[#e536ab] px-[.8vh] py-[.8vh]"
+      class="h-[12vh] w-[90vw] relative overflow-hidden block flex items-center gap-[2vw] justify-center w-[52vw] bg-[#ececec] shadow-xl backdrop-blur-[14px] overflow-hidden rounded-md px-[.8vh] py-[.8vh]"
     >
-      <span class="text-[3.4vh] font font-[600]">Custom Carpets</span>
+      <span class="text-[2.8vh] text-[#000] font font-[600] z-[9]"
+        >Custom Carpets</span
+      >
+      <div
+        class="h-full w-full absolute top-[0%] left-0 z-[-9] backdrop-blur-[14px]"
+      ></div>
+      <!--  -->
+      <div
+        class="h-[12vh] opacity-[.5] w-[24vw] rounded-2xl absolute top-[-52%] rotate-[60deg] left-[-6%] bg-orange-600 z-[-99]"
+      ></div>
+      <div
+        class="h-[10vh] w-[28vw] rounded-full absolute top-[-42%] left-[42%] bg-gradient-to-tr from-blue-100 to-blue-200 z-[-99]"
+      ></div>
+      <div
+        class="h-[10vh] w-[26vw] rounded-full absolute top-[-24%] left-[20%] bg-gradient-to-tr from-yellow-200 to-green-100 z-[-99]"
+      ></div>
+      <div
+        class="h-[10vh] w-[26vw] opacity-[.7] rounded-full absolute top-[-2vh] left-[70%] bg-gradient-to-tr from-blue-100 to-blue-500 z-[-99]"
+      ></div>
 
       <a
         href="/flooring/carpets/custom-carpets"
-        class="absolute bottom-[1vh] right-[4vw] text-[#ececec] text-[2vh] font-[500] flex items-center gap-[.6vw]"
-        >View All<svg
+        class="absolute bottom-[1vh] right-[4vw] z-[99] text-[#222] text-[1.6vh] font-[500] flex items-center gap-[.6vw]"
+      >
+        View All<svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
           height="18"
@@ -21,30 +61,7 @@
         </svg>
       </a>
     </div>
-  </Desktop>
-  <section class="h-max w-max min-[990px]:hidden">
-    <button
-      class="h-[12vh] w-[90vw] relative overflow-hidden flex items-center gap-[2vw] justify-center w-[52vw] text-[#fff] shadow-xl rounded-md bg-gradient-to-br from-[#0e0725] via-[#222d52] to-[#e536ab] px-[.8vh] py-[.8vh]"
-    >
-      <span class="text-[2.8vh] font font-[600]">Custom Carpets</span>
-
-      <a
-        href="/flooring/carpets/custom-carpets"
-        class="absolute bottom-[1vh] right-[4vw] text-[#ececec] text-[1.6vh] font-[500] flex items-center gap-[.6vw]"
-        >View All<svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z"
-          />
-        </svg>
-      </a>
-    </button>
-  </section>
+  </div>
 </template>
 
 <script setup>

@@ -104,7 +104,7 @@ onMounted(() => {
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
-      <CategoryDetails v-if="!isCategoryOpted" />
+      <CategoryDetails />
       <TypeDetails />
       <CustomCarpetBTN />
       <ColorDetails />

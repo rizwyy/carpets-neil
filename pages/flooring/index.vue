@@ -2,6 +2,8 @@
   <section class="h-max w-max min-[990px]:hidden">
     <NavBarMOB />
     <SearchBarMOB />
+    <BannerYouWin />
+
     <FlooringLayoutMOB />
   </section>
   <Desktop>
@@ -18,6 +20,7 @@ import Mobile from "./../../layouts/Mobile.vue";
 import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
+import BannerYouWin from "./../../components/BannerYouWin.vue";
 
 import FlooringLayoutPC from "././../../components/DESKTOP/Flooring/FlooringLayout.vue";
 import HowWoltizWorks from "./../../components/HowWoltizWorks.vue";
