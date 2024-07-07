@@ -11,7 +11,7 @@
       class="h-max w-screen bg-gradient-to-b from-[#2d6a4f] via-[#081c15] to-[#52b788] from-[1%] flex flex-col justify-center items-center z-[99] pb-[2vh] gap-[.2vh] pt-[3.2vh]"
     >
       <span
-        class="w-[75%] whitespace-no-wrap bg-gradient-to-r text-center from-[#fff] to-[#ececec] bg-clip-text text-transparent font-[350] text-[5.8vh] leading-[5.8vh] py-[1vh] font-sans tracking-[-.1vw]"
+        class="w-[75%] text-[#f1f1f1] font-[350] text-[5.8vh] leading-[5.8vh] py-[1vh] font-sans tracking-[-.1vw]"
         >Find the right
         <span class="font-domino text-[#1dbf73] font-[300] tracking-[-.5vw]">
           decor</span
