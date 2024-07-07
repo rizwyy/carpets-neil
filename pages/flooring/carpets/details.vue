@@ -27,21 +27,7 @@ function setUserPreferenceCookie() {
   navigateTo(`catalog`);
 }
 
-onMounted(() => {
-  console.log(toRaw(userPreference));
-  if (toRaw(userPreference.value)) {
-    console.log(toRaw(userPreference.value.category));
-    isCategoryOpted.value = true;
-    userStore.preference.category = toRaw(userPreference.value.category);
-  } else {
-    isCategoryOpted.value = false;
-  }
-  // if (toRaw(userPreference.value.category) === "") {
-  //   toRaw(userPreference.value.category) = "Carpet-Tiles";
-  // } else {
-  //   console.log(`CATEGORY RETRIEVED: `);
-  // }
-});
+onMounted(() => {});
 </script>
 <template>
   <!-- DESKTOP -->
