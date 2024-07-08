@@ -312,7 +312,9 @@
           </div>
         </div> -->
       </div>
-
+      <div class="h-max w-max border-b-[#ececec] border-b-[.2vh] py-[4vh]">
+        <PriceTiers />
+      </div>
       <FooterMOB />
     </div>
     <div
@@ -371,6 +373,7 @@ import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import PriceTiers from "~/components/MOBILE/FLOORING/PriceTiers.vue";
 
 const client = useSupabaseClient();
 const route = useRoute();
