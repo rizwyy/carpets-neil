@@ -13,7 +13,7 @@
         <button
           @click="clearAllSelections"
           v-if="selectedTypes.length"
-          class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-xs rounded-md flex gap-[1vw] items-center"
+          class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
           ><svg
@@ -44,7 +44,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -76,7 +76,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -109,7 +109,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -142,7 +142,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -176,7 +176,7 @@
       <button
         @click="clearAllSelections"
         v-if="selectedTypes.length"
-        class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-xs rounded-md flex gap-[1vw] items-center"
+        class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
           xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +206,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -240,7 +240,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -274,7 +274,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -307,7 +307,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
             >Selected</span
           >
         </div>

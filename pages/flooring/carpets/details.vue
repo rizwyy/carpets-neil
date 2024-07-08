@@ -40,23 +40,26 @@ onMounted(() => {});
       <div
         class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
+        <!-- DESKTOP -->
         <a
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Carpets >
+          <!-- DESKTOP -->
           {{ userStore.preference.category }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
-      <CategoryDetails v-if="!isCategoryOpted" />
+      <CategoryDetails />
+      <!-- MOBILE -->
       <TypeDetails />
-      <!-- <CustomCarpetBTN /> -->
+      <CustomCarpetBTN />
       <ColorDetails />
       <MaterialDetails />
       <BudgetDetails />
-      <!-- <PileDetails /> -->
 
+      <!-- DESKTOP -->
       <a href="/flooring/carpets/catalog">
         <button
           @click="setUserPreferenceCookie"
@@ -71,8 +74,15 @@ onMounted(() => {});
           BROWSE CATALOG
         </button>
       </a>
+      <!-- DESKTOP -->
     </div>
+    <!-- DESKTOP -->
   </section>
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
@@ -82,6 +92,7 @@ onMounted(() => {});
       <div
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
+        <!-- MOBILE -->
         <a
           href="/flooring"
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
@@ -92,6 +103,7 @@ onMounted(() => {});
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <CategoryDetails />
+      <!-- MOBILE -->
       <TypeDetails />
       <CustomCarpetBTN />
       <ColorDetails />
@@ -109,6 +121,7 @@ onMounted(() => {});
           "
           class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-600 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
         >
+          <!-- MOBILE -->
           BROWSE CATALOG<svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"
@@ -120,9 +133,11 @@ onMounted(() => {});
               d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
             />
           </svg>
+          <!-- MOBILE -->
         </button>
       </a>
     </div>
+    <!-- MOBILE -->
   </section>
 </template>
 

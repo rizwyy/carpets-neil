@@ -1,18 +1,21 @@
 <template>
+  <!-- DESKTOP -->
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
       v-show="
-        userStore.preference.type.length > 0 &&
+        userStore.preference.category !== '' &&
+        userStore.preference.type !== '' &&
         userStore.preference.color.length > 0
       "
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
+      <!-- DESKTOP -->
       <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
         <span>Choose your Material</span>
         <button
           @click="clearmaterialSelections"
           v-if="selectedmaterial"
-          class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-xs rounded-md flex gap-[1vw] items-center"
+          class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
           ><svg
@@ -27,6 +30,7 @@
             />
           </svg>
         </button>
+        <!-- DESKTOP -->
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- nylon carpets -->
@@ -41,9 +45,10 @@
             v-if="selectedmaterial === 'Nylon'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- DESKTOP -->
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -54,11 +59,12 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/colors/wool.webp"
+            src="/colors/snow.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Nylon</span>
         </div>
+        <!-- DESKTOP -->
         <!-- Poly Propene Carpets -->
         <div
           :class="[
@@ -73,7 +79,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -92,6 +98,7 @@
         </div>
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- DESKTOP -->
         <!-- Wool -->
         <div
           :class="[
@@ -106,7 +113,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -123,6 +130,7 @@
           />
           <span class="text-[3.2vh]">Wool</span>
         </div>
+        <!-- DESKTOP -->
         <!-- Sisal -->
         <div
           :class="[
@@ -137,7 +145,7 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
               >Selected</span
             >
           </div>
@@ -152,20 +160,28 @@
             src="/carpets/sisal.jpeg"
             alt="#"
           />
+          <!-- DESKTOP -->
           <span class="text-[3.2vh]">Sisal</span>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- MOBILE -->
   <div
     v-show="
-      userStore.preference.type.length > 0 &&
+      userStore.preference.category !== '' &&
+      userStore.preference.type !== '' &&
       userStore.preference.color.length > 0
     "
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div class="h-max w-full flex justify-between text-[3.4vh] z-[9]">
+      <!-- MOBILE -->
       <span>Choose your Material</span>
       <button
         @click="clearmaterialSelections"
@@ -186,6 +202,7 @@
       </button>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+      <!-- MOBILE -->
       <!-- Poly Propene Carpets -->
       <div
         :class="[
@@ -200,7 +217,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -217,6 +234,7 @@
         />
         <span>Polypropylene</span>
       </div>
+      <!-- MOBILE -->
       <!-- nylon carpets -->
       <div
         :class="[
@@ -231,7 +249,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -249,6 +267,7 @@
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+      <!-- MOBILE -->
       <!-- Sisal -->
       <div
         :class="[
@@ -263,7 +282,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -280,6 +299,7 @@
         />
         <span>Sisal</span>
       </div>
+      <!-- MOBILE -->
       <!-- Wool -->
       <div
         :class="[
@@ -294,7 +314,7 @@
         >
           <!-- Selected indicator without text -->
           <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-xs rounded-md"
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8vh] rounded-md"
             >Selected</span
           >
         </div>
@@ -309,6 +329,7 @@
           src="/carpets/nylon-carpet.jpeg"
           alt="#"
         />
+        <!-- MOBILE -->
         <span>Wool</span>
       </div>
     </div>

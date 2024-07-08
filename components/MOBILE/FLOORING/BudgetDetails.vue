@@ -17,7 +17,7 @@
         <button
           @click="clearBudgetSelections"
           v-if="selectedBudget.length"
-          class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-xs rounded-md flex gap-[1vw] items-center"
+          class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
           ><svg
@@ -55,7 +55,9 @@
             <div
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
-              <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              <span
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >
                 Selected
               </span>
             </div>
@@ -111,7 +113,9 @@
             <div
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
-              <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              <span
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >
                 Selected
               </span>
             </div>
@@ -165,7 +169,9 @@
             <div
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
-              <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              <span
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >
                 Selected
               </span>
             </div>
@@ -219,7 +225,9 @@
             <div
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
-              <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              <span
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >
                 Selected
               </span>
             </div>
@@ -272,7 +280,9 @@
             <div
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
-              <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+              <span
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >
                 Selected
               </span>
             </div>
@@ -367,7 +377,9 @@
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
-            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+            <span
+              class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >
               Selected
             </span>
           </div>
@@ -423,7 +435,9 @@
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
-            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+            <span
+              class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >
               Selected
             </span>
           </div>
@@ -477,7 +491,9 @@
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
-            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+            <span
+              class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >
               Selected
             </span>
           </div>
@@ -531,7 +547,9 @@
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
-            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+            <span
+              class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >
               Selected
             </span>
           </div>
@@ -584,7 +602,9 @@
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
-            <span class="bg-white text-gray-500 px-2 py-1 text-xs rounded-md">
+            <span
+              class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >
               Selected
             </span>
           </div>
