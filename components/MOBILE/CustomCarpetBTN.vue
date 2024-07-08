@@ -31,18 +31,11 @@
         class="h-full w-full absolute top-[0%] left-0 z-[-9] backdrop-blur-[14px]"
       ></div>
       <!--  -->
-      <div
-        class="h-[12vh] opacity-[.5] w-[24vw] rounded-2xl absolute top-[-52%] rotate-[60deg] left-[-6%] bg-orange-600 z-[-99]"
-      ></div>
-      <div
-        class="h-[10vh] w-[28vw] rounded-full absolute top-[-42%] left-[42%] bg-gradient-to-tr from-blue-100 to-blue-200 z-[-99]"
-      ></div>
-      <div
-        class="h-[10vh] w-[26vw] rounded-full absolute top-[-24%] left-[20%] bg-gradient-to-tr from-yellow-200 to-green-100 z-[-99]"
-      ></div>
-      <div
-        class="h-[10vh] w-[26vw] opacity-[.7] rounded-full absolute top-[-2vh] left-[70%] bg-gradient-to-tr from-blue-100 to-blue-500 z-[-99]"
-      ></div>
+      <NuxtImg
+        class="absolute h-full w-full object-cover scale-[1.2]"
+        src="/customCarpetsBG.png"
+        alt="bgImage"
+      />
 
       <a
         href="/flooring/carpets/custom-carpets"
