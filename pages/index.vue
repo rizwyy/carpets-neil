@@ -39,7 +39,6 @@ import NavBarPC from "./../components/DESKTOP/NavBarPC.vue";
 import HeroLayoutPC from "~/components/DESKTOP/HeroLayoutPC.vue";
 import useUserStore from "../stores/user";
 const userStore = useUserStore();
-import Mobile from "../layouts/Mobile.vue";
 </script>
 
 <style scoped>
