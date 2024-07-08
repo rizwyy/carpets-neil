@@ -6,8 +6,24 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@pinia/nuxt",
     "@nuxtjs/supabase",
-    "@nuxt/image"
+    "@nuxt/image",
   ],
+  tailwindcss: {
+    config: {
+      /* Extend the Tailwind config here */
+      content: ["content/**/**.md"],
+      theme: {
+        fontSize: {
+          bannerMOB: "5.8vh",
+          headingMOB: "5.8vh",
+          subHeadingMOB: "5.8vh",
+          viewAllMOB: "1.8vh",
+          inputMOB: "2vh",
+          clearAllMOB: "1.8vh",
+        },
+      },
+    },
+  },
   supabase: {
     redirect: false,
   },

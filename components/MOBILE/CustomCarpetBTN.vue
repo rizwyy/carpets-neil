@@ -39,7 +39,7 @@
 
       <a
         href="/flooring/carpets/custom-carpets"
-        class="absolute bottom-[1vh] right-[4vw] z-[99] text-[#222] text-[1.6vh] font-[500] flex items-center gap-[.6vw]"
+        class="absolute bottom-[1vh] right-[4vw] z-[99] text-[#222] text-viewAllMOB font-[500] flex items-center gap-[.6vw]"
       >
         View All<svg
           xmlns="http://www.w3.org/2000/svg"

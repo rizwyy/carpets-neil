@@ -4,13 +4,13 @@
       class="h-[24vh] w-[90%] relative rounded-md overflow-hidden shadow-md flex items-center justify-center"
     >
       <div
-        class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#fff] opacity-[.3]"
+        class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#f5f3f1] opacity-[.6]"
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg src="/runners.webp" class="h-full w-full object-cover" />
       </div>
-      <span class="font-outfit text-[3.2vh] font-[500] text-[#f1f1f1]"
-        >BANNER</span
+      <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
+        >Flooring.</span
       >
     </div>
   </div>

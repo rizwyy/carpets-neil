@@ -18,7 +18,7 @@
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[400]"
+              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-viewAllMOB font-[400]"
               >view all</span
             >
           </div>

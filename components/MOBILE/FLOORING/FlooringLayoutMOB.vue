@@ -115,7 +115,7 @@ function toggleExpansion() {
                 class="text-[2.4vh] font-[500] leading-[3.2vh] text-[#f1f1f1]"
                 >Wall to Wall
               </span>
-              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+              <span class="text-[#ececec] text-viewAllMOB font-[500]"
                 >View All</span
               >
             </div>
@@ -144,7 +144,7 @@ function toggleExpansion() {
                 class="text-[2.4vh] font-[500] leading-[3.2vh] text-[#f1f1f1]"
                 >Carpet Tiles
               </span>
-              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+              <span class="text-[#ececec] text-viewAllMOB font-[500]"
                 >View All</span
               >
             </div>
@@ -173,7 +173,7 @@ function toggleExpansion() {
                 class="text-[2.4vh] font-[500] leading-[3.2vh] z-[1] text-[#f1f1f1]"
                 >Area Rugs</span
               >
-              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+              <span class="text-[#ececec] text-viewAllMOB font-[500]"
                 >View All</span
               >
             </div>
@@ -201,7 +201,7 @@ function toggleExpansion() {
                 class="text-[2.4vh] font-[500] leading-[3.2vh] z-[1] text-[#f1f1f1]"
                 >Runners
               </span>
-              <span class="text-[#ececec] text-[1.4vh] font-[500]"
+              <span class="text-[#ececec] text-viewAllMOB font-[500]"
                 >View All</span
               >
             </div>
