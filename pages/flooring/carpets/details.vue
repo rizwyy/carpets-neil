@@ -18,13 +18,14 @@ import Mobile from "./../../../layouts/Mobile.vue";
 import { useCookie } from "#app";
 import CategoryDetails from "~/components/MOBILE/FLOORING/CategoryDetails.vue";
 const userPreference = useCookie("userPreference");
+const restrictedAccess = useCookie("restrictedAccess");
 
 const isCategoryOpted = ref(false);
 const category = ref("");
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
+  restrictedAccess.value = false;
   console.log("COOKIE SET::", toRaw(userPreference.value));
-  navigateTo(`catalog`);
 }
 
 onMounted(() => {});

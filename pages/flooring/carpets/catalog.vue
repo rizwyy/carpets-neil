@@ -5,6 +5,7 @@ import Desktop from "./../../../layouts/Desktop.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
+import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
 // PACKAGES
 import { useRouter } from "vue-router";
 // PINIA
@@ -13,10 +14,12 @@ const userStore = useUserStore();
 // SUPABASE
 const client = useSupabaseClient();
 // REACTIVES
-const cookieData = ref([]);
+const restrictedAccess = useCookie("restrictedAccess");
 const products = ref([]); // Create a ref variable
 const isLoading = ref(true);
-const isRetry = ref(true);
+const isRetry = ref(false);
+
+const isAccessRestricted = ref(false);
 const route = useRoute();
 const router = useRouter();
 
@@ -31,8 +34,6 @@ function shuffleArray(array) {
 }
 
 async function fetchCarpetsData() {
-  console.log("START SUPABASE");
-
   try {
     const { data, error } = await client
       .from("carpets")
@@ -48,13 +49,18 @@ async function fetchCarpetsData() {
     isLoading.value = false; // Set loading state to false
   } catch (error) {
     console.error("Error during fetch:", error);
-    isRetry.value = true; // Set retry state to true
     isLoading.value = false; // Set loading state to false
+    isRetry.value = true; // Set retry state to true
     return null;
   }
 }
 onMounted(() => {
-  fetchCarpetsData();
+  if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
+    isAccessRestricted.value = true;
+  } else {
+    isAccessRestricted.value = false;
+    fetchCarpetsData();
+  }
 });
 </script>
 
@@ -130,7 +136,22 @@ onMounted(() => {
   </section>
   <section class="min-[990px]:hidden h-max w-max font-outfit bg-white z-[-1]">
     <NavBarMOB />
-    <div class="h-screen w-screen font-outfit">
+    <div v-if="isAccessRestricted" class="h-screen w-screen">
+      <Unavailable />
+    </div>
+    <div
+      v-else-if="isRetry"
+      class="h-[88vh] w-screen bg-[#f1f1f1] flex items-center flex-col gap-[3vh] text-[4.2vh] px-[4vw] justify-center"
+    >
+      <span>Something went wrong!</span>
+      <a
+        href="/flooring/carpets/catalog"
+        class="rounded-md px-[8vw] shadow-2xl py-[1.8vh] text-[3.2vh] text-[#f1f1f1] font-outfit bg-[#2563eb]"
+      >
+        Reload
+      </a>
+    </div>
+    <div v-else class="h-screen w-screen font-outfit">
       <div
         v-if="isLoading"
         class="h-[70vh] w-screen flex flex-col items-center justify-center"

@@ -13,7 +13,7 @@
       <span
         class="w-[75%] text-[#001d3d] text-center font-[350] text-bannerMOB leading-[5.8vh] py-[1vh] font-sans tracking-[-.1vw]"
         >Find the right
-        <span class="font-domino text-[#fefae0] font-[300] tracking-[-.5vw]">
+        <span class="font-domino text-[#1e3a8a] font-[300] tracking-[-.5vw]">
           decor</span
         >
         right <br />
