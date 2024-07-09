@@ -1,6 +1,6 @@
 <template>
   <section
-    class="max-[990px]:hidden relative h-max w-full overflow-x-hidden py-[6vh]"
+    class="max-[990px]:hidden relative h-max w-full overflow-x-hidden py-[6vh] font-outfit"
   >
     <!-- 2 * 3 LAYOUT -->
     <section class="h-max w-full flex flex-col gap-[3.2vh] px-[6vw]">
