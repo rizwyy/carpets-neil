@@ -5,7 +5,7 @@
     <span
       class="w-[75%] text-[#fff] text-center font-[350] text-[4.4vw] leading-[8.4vh] py-[1vh] font-sans tracking-[-.1vw]"
       >Find the right
-      <span class="font-domino text-[#1e3a8a] font-[300] tracking-[-.2vw]">
+      <span class="font-domino text-[#1e3a8a] font-[300] tracking-[-.3vw]">
         decor</span
       >
       <br />
@@ -21,4 +21,20 @@
 import SearchBarPC from "../SearchBar/SearchBarPC.vue";
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.font-sans {
+  font-family: "Fustat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.font-domino {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+</style>
