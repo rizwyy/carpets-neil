@@ -19,7 +19,7 @@ export default defineNuxtConfig({
           subHeadingMOB: "5.8vh",
           viewAllMOB: "1.8vh",
           inputMOB: "2vh",
-          clearAllMOB: "1.8vh",
+          clearAllMOB: "1.6vh",
         },
       },
     },

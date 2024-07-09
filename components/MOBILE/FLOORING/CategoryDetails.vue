@@ -1,10 +1,11 @@
 <template>
+  <!-- DESKTOP -->
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
-        class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+        class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
         <span> Choose Your Category </span>
         <button
@@ -160,17 +161,18 @@
       <div></div>
     </div>
   </div>
+  <!-- MOBILE -->
   <div
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
-      class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+      class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
     >
       <span> Choose Your Category </span>
       <button
         @click="clearAllSelections"
         v-if="selectedCategory.length"
-        class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
+        class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
           xmlns="http://www.w3.org/2000/svg"

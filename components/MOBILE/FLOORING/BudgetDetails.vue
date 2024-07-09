@@ -39,14 +39,13 @@
       <!-- DESKTOP -->
       <!-- NEW DESIGN -->
       <div
-        class="h-max w-full flex flex-col justify-center items-start gap-[2vh] z-[9]"
+        class="h-max w-full flex flex-col justify-center items-center gap-[2vh] z-[9]"
       >
         <!-- VALUE -->
         <div
-          v-show="userStore.preference.category !== 'Area Rugs'"
-          v-if="isMaterialSelected('polypropylene')"
+          v-if="userStore.preference.category !== 'Area Rugs'"
           :class="[
-            'h-[12vh] budgetItemPC w-[50%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Value' },
           ]"
           @click="toggleSelect('Value')"
@@ -60,7 +59,7 @@
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
               <span
-                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vw] rounded-md"
               >
                 Selected
               </span>
@@ -86,7 +85,7 @@
         <div
           v-else
           :class="[
-            'h-[12vh] w-[50%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -101,10 +100,7 @@
         <!-- DESKTOP -->
         <!-- ESSENTIAL -->
         <div
-          v-show="userStore.preference.category !== 'Area Rugs'"
-          v-if="
-            isMaterialSelected('nylon') || isMaterialSelected('polypropylene')
-          "
+          v-if="userStore.preference.category !== 'Area Rugs'"
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Essential' },
@@ -161,10 +157,12 @@
         <!-- DESKTOP -->
         <!-- PREMIER -->
         <div
-          v-show="userStore.preference.category !== 'Area Rugs'"
-          v-if="isMaterialSelected('nylon') || isMaterialSelected('sisal')"
+          v-if="
+            userStore.preference.category !== 'Area Rugs' &&
+            userStore.preference.category !== 'Carpet Tiles'
+          "
           :class="[
-            'h-[12vh] budgetItemPC w-[70%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Premier' },
           ]"
           @click="toggleSelect('Premier')"
@@ -205,7 +203,7 @@
         <div
           v-else
           :class="[
-            'h-[12vh] w-[70%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -220,10 +218,12 @@
         <!-- DESKTOP -->
         <!-- SIGNATURE -->
         <div
-          v-show="userStore.preference.category !== 'Area Rugs'"
-          v-if="isMaterialSelected('wool') || isMaterialSelected('sisal')"
+          v-if="
+            userStore.preference.category !== 'Area Rugs' &&
+            userStore.preference.category !== 'Carpet Tiles'
+          "
           :class="[
-            'h-[12vh] budgetItemPC w-[80%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Signature' },
           ]"
           @click="toggleSelect('Signature')"
@@ -264,7 +264,7 @@
         <div
           v-else
           :class="[
-            'h-[12vh] w-[80%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -278,9 +278,9 @@
         </div>
         <!-- ELITE -->
         <div
-          v-if="isMaterialSelected('wool')"
+          v-if="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'h-[12vh] budgetItemPC w-[90%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Elite' },
           ]"
           @click="toggleSelect('Elite')"
@@ -322,7 +322,7 @@
         <div
           v-else
           :class="[
-            'h-[12vh] w-[90%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -386,8 +386,7 @@
       <!-- MOBILE -->
       <!-- VALUE -->
       <div
-        v-show="userStore.preference.category !== 'Area Rugs'"
-        v-if="isMaterialSelected('polypropylene')"
+        v-if="userStore.preference.category !== 'Area Rugs'"
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Value' },
@@ -445,10 +444,7 @@
       <!-- MOBILE -->
       <!-- ESSENTIAL -->
       <div
-        v-show="userStore.preference.category !== 'Area Rugs'"
-        v-if="
-          isMaterialSelected('nylon') || isMaterialSelected('polypropylene')
-        "
+        v-if="userStore.preference.category !== 'Area Rugs'"
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Essential' },
@@ -507,8 +503,10 @@
       <!-- PREMIER -->
       <!-- MOBILE -->
       <div
-        v-show="userStore.preference.category !== 'Area Rugs'"
-        v-if="isMaterialSelected('nylon') || isMaterialSelected('sisal')"
+        v-if="
+          userStore.preference.category !== 'Area Rugs' &&
+          userStore.preference.category !== 'Carpet Tiles'
+        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Premier' },
@@ -567,8 +565,10 @@
       <!-- SIGNATURE -->
       <!-- MOBILE -->
       <div
-        v-show="userStore.preference.category !== 'Area Rugs'"
-        v-if="isMaterialSelected('wool') || isMaterialSelected('sisal')"
+        v-if="
+          userStore.preference.category !== 'Area Rugs' &&
+          userStore.preference.category !== 'Carpet Tiles'
+        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Signature' },
@@ -626,7 +626,7 @@
       <!-- ELITE -->
       <!-- MOBILE -->
       <div
-        v-if="isMaterialSelected('wool')"
+        v-if="userStore.preference.category !== 'Carpet Tiles'"
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Elite' },
@@ -701,6 +701,9 @@ function clearBudgetSelections() {
 }
 const isMaterialSelected = (material) => {
   return userStore.preference.material.toLowerCase() === material.toLowerCase();
+};
+const isCategorySelected = (category) => {
+  return userStore.preference.category.toLowerCase() === category.toLowerCase();
 };
 function scrollToBottom() {
   setTimeout(() => {
