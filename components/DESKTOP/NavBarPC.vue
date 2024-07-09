@@ -5,11 +5,11 @@
     <div class="h-full w-max flex justify-between gap-[8vw] items-center">
       <a
         href="/"
-        class="h-max w-max block font-[300] text-[4.2vh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max block font-[300] text-[4.8vh] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
-      <div class="h-max w-max flex justify-center gap-[3.2vw]">
+      <div class="h-max w-max flex justify-center gap-[3.2vw] text-[2.4vh]">
         <a href="#">Home</a><a href="/about">About</a><a href="#">Contact</a
         ><a href="#">Shop</a>
       </div>
@@ -18,8 +18,8 @@
       <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
+          width="28"
+          height="28"
           viewBox="0 0 24 24"
         >
           <path
@@ -30,8 +30,8 @@
       ><button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="28"
+          height="28"
           viewBox="0 0 24 24"
         >
           <path

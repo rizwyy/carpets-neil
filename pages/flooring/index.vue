@@ -10,6 +10,7 @@
   <!-- DESKTOP -->
   <Desktop>
     <NavBarPC />
+    <BannerYouWin />
     <HowWoltizWorks />
     <FlooringLayoutPC />
     <FooterPC />

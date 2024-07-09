@@ -38,7 +38,7 @@
         <!-- DESKTOP -->
         <!-- LEAD TIME -->
         <div
-          class="h-max w-full flex justify-start items-center px-[6vw] py-[4vh] border-y-[#ececec] border-y-[.2vh]"
+          class="h-max w-full flex justify-start items-center px-[6vw] py-[4vh]"
         >
           <div class="h-max w-max flex flex-col flex-[1.5]">
             <span class="text-[2.4vh]">Project Lead Time</span>
@@ -74,7 +74,7 @@
         <!-- ACTION BUTTONS -->
         <!-- DESKTOP -->
         <div
-          class="actionBtn-container h-max w-max px-[6vw] flex justify-between py-[4vh] border-b-[#ececec] border-b-[.2vh]"
+          class="actionBtn-container h-max w-max px-[6vw] flex justify-between py-[4vh]"
         >
           <button
             @click="

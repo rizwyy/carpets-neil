@@ -16,39 +16,23 @@
           link="/flooring"
         />
         <CategoryCardHeroPC
-          name="Furniture"
+          name="Wall Covering"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        />
-        <CategoryCardHeroPC
-          name="Blinds & Curtains"
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        />
-      </div>
-      <div class="h-max w-full flex justify-between gap-[2vw]">
-        <CategoryCardHeroPC
-          name="3-D Printed Decor"
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          available
-        />
-        <CategoryCardHeroPC
-          name="Textiles"
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        />
-        <CategoryCardHeroPC
-          name="Surface Courier"
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          src="/wall-to-wall.webp"
         />
       </div>
     </section>
-    <div class="h-max w-screen px-[6vw]">
+    <div class="h-max w-screen px-[6vw] py-[8vh]">
       <FaqPC />
     </div>
+    <FooterPC />
   </section>
 </template>
 
 <script setup>
 import CategoryCardHeroPC from "./CategoryCard-HeroPC.vue";
 import FaqPC from "./FaqPC.vue";
+import FooterPC from "./FooterPC.vue";
 </script>
 
 <style lang="scss" scoped></style>

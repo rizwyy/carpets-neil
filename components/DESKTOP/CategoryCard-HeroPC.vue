@@ -18,7 +18,7 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
     <div
       class="z-[1] h-full w-full bg-gradient-to-r from-black to-[#0000] flex flex-col items-start justify-center px-[2vw] gap-[1vh]"
     >
-      <span class="text-[3.2vh] text-[#f1f1f1]">{{ name }}</span>
+      <span class="text-[3.8vh] font-[400] text-[#f1f1f1]">{{ name }}</span>
       <span class="w-[60%] text-[2vh] text-[#ececec]">{{ desc }}</span>
       <a
         :href="link"
