@@ -59,7 +59,7 @@
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
             >
               <span
-                class="bg-white text-gray-500 px-2 py-1 text-[1.8vw] rounded-md"
+                class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >
                 Selected
               </span>
