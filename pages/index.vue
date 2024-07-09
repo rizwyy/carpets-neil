@@ -1,7 +1,9 @@
 <template>
   <Desktop>
     <NavBarPC />
-    <div class="h-max max-w-screen overflow-x-hidden flex justify-center">
+    <div
+      class="max-[990px]:hidden h-max max-w-screen overflow-x-hidden flex justify-center"
+    >
       <HeroBannerPC />
     </div>
     <HeroLayoutPC />
