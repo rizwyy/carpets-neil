@@ -10,7 +10,7 @@
         WOLTIZ
       </a>
       <div class="h-max w-max flex justify-center gap-[3.2vw]">
-        <a href="#">Home</a><a href="#">About</a><a href="#">Contact</a
+        <a href="#">Home</a><a href="/about">About</a><a href="#">Contact</a
         ><a href="#">Shop</a>
       </div>
     </div>

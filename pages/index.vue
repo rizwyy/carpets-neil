@@ -26,6 +26,7 @@
     <!-- SEARCH BAR COMP -->
 
     <HeroLayoutMOB />
+    <FooterMOB />
   </section>
 </template>
 
@@ -34,6 +35,7 @@ import NavBarMOB from "./../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "./../components/SearchBar/SearchBarMOB.vue";
 import SearchBarPC from "./../components/SearchBar/SearchBarPC.vue";
 import HeroLayoutMOB from "./../components/MOBILE/HeroLayoutMOB.vue";
+import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 // PC
 import NavBarPC from "./../components/DESKTOP/NavBarPC.vue";
 import HeroLayoutPC from "~/components/DESKTOP/HeroLayoutPC.vue";

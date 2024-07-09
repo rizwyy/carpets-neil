@@ -59,8 +59,8 @@
     <div
       class="h-[66vh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
     >
-      <a href="/">Home</a><a href="/">About</a><a href="/">Contact</a
-      ><a href="/">Privacy Policy</a>
+      <a href="/">Home</a><a href="/about">About</a><span>Contact</span
+      ><a href="/privacy">Privacy Policy</a>
     </div>
     <div class="h-[20vh] w-screen flex flex-col">
       <div

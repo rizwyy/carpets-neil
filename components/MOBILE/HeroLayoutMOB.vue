@@ -80,14 +80,6 @@
         FAQ
       </div>
     </div>
-    <!-- FOOTER SECTION -->
-    <div
-      class="FooterSection h-max w-screen flex items-center justify-center bg-[#f1f1f1]"
-    >
-      <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
-        Footer
-      </div>
-    </div>
   </section>
 </template>
 

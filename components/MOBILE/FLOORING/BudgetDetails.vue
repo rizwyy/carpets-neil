@@ -9,6 +9,7 @@
       "
       class="max-[990px]:hidden h-full w-full text-center py-[4vh] flex flex-col gap-[2.4vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
+      <!-- DESKTOP -->
       <div
         @click="() => console.log(selectedBudget.value)"
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pl-[2vw]"
@@ -31,15 +32,18 @@
               d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
             />
           </svg>
+          <!-- DESKTOP -->
         </button>
       </div>
 
+      <!-- DESKTOP -->
       <!-- NEW DESIGN -->
       <div
         class="h-max w-full flex flex-col justify-center items-start gap-[2vh] z-[9]"
       >
         <!-- VALUE -->
         <div
+          v-show="userStore.preference.category !== 'Area Rugs'"
           v-if="isMaterialSelected('polypropylene')"
           :class="[
             'h-[12vh] budgetItemPC w-[50%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -94,8 +98,10 @@
             >
           </div>
         </div>
+        <!-- DESKTOP -->
         <!-- ESSENTIAL -->
         <div
+          v-show="userStore.preference.category !== 'Area Rugs'"
           v-if="
             isMaterialSelected('nylon') || isMaterialSelected('polypropylene')
           "
@@ -152,8 +158,10 @@
             >
           </div>
         </div>
+        <!-- DESKTOP -->
         <!-- PREMIER -->
         <div
+          v-show="userStore.preference.category !== 'Area Rugs'"
           v-if="isMaterialSelected('nylon') || isMaterialSelected('sisal')"
           :class="[
             'h-[12vh] budgetItemPC w-[70%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -181,6 +189,7 @@
             class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
+          <!-- DESKTOP -->
           <div
             class="text-[2.8vh] h-full h-full flex-1 flex justify-start items-center"
           >
@@ -208,8 +217,10 @@
             >
           </div>
         </div>
+        <!-- DESKTOP -->
         <!-- SIGNATURE -->
         <div
+          v-show="userStore.preference.category !== 'Area Rugs'"
           v-if="isMaterialSelected('wool') || isMaterialSelected('sisal')"
           :class="[
             'h-[12vh] budgetItemPC w-[80%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -232,6 +243,7 @@
               </span>
             </div>
           </div>
+          <!-- DESKTOP -->
           <div
             class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
           ></div>
@@ -248,6 +260,7 @@
           </div>
         </div>
         <!-- NOT AVAILABLE SIGNATURE -->
+        <!-- DESKTOP -->
         <div
           v-else
           :class="[
@@ -276,6 +289,7 @@
             v-if="selectedBudget === 'Elite'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- DESKTOP -->
             <!-- Selected indicator without text -->
             <div
               class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
@@ -297,6 +311,7 @@
           >
             <span> Elite </span>
           </div>
+          <!-- DESKTOP -->
           <div
             class="font-[400] text-[2.4vh] text-left h-full flex-[2] flex justify-end items-center"
           >
@@ -313,6 +328,7 @@
           <div
             class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
           >
+            <!-- DESKTOP -->
             <span class="text-[2vh] font-[500] text-[#fff9]"
               >NOT ELIGIBLE WITH
               {{ userStore.preference.material.toUpperCase() }}</span
@@ -322,6 +338,10 @@
       </div>
     </div>
   </div>
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>> -->
 
   <!-- MOBILE -->
   <div
@@ -333,6 +353,7 @@
     "
     class="min-[990px]:hidden h-max w-[100vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
+    <!-- MOBILE -->
     <div
       @click="() => console.log(selectedBudget.value)"
       class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
@@ -349,6 +370,7 @@
           height="14"
           viewBox="0 0 24 24"
         >
+          <!-- MOBILE -->
           <path
             fill="currentColor"
             d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
@@ -361,8 +383,10 @@
     <div
       class="h-max w-full flex flex-col justify-center items-center gap-[1vh] z-[9]"
     >
+      <!-- MOBILE -->
       <!-- VALUE -->
       <div
+        v-show="userStore.preference.category !== 'Area Rugs'"
         v-if="isMaterialSelected('polypropylene')"
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -402,6 +426,7 @@
         </div>
       </div>
       <!-- NOT AVAILABLE VALUE -->
+      <!-- MOBILE -->
       <div
         v-else
         :class="[
@@ -417,8 +442,10 @@
           >
         </div>
       </div>
+      <!-- MOBILE -->
       <!-- ESSENTIAL -->
       <div
+        v-show="userStore.preference.category !== 'Area Rugs'"
         v-if="
           isMaterialSelected('nylon') || isMaterialSelected('polypropylene')
         "
@@ -433,6 +460,7 @@
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
+          <!-- MOBILE -->
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
@@ -459,6 +487,7 @@
           <span>BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span>
         </div>
       </div>
+      <!-- MOBILE -->
       <!-- NOT AVAILABLE ESSENTIALs -->
       <div
         v-else
@@ -476,7 +505,9 @@
         </div>
       </div>
       <!-- PREMIER -->
+      <!-- MOBILE -->
       <div
+        v-show="userStore.preference.category !== 'Area Rugs'"
         v-if="isMaterialSelected('nylon') || isMaterialSelected('sisal')"
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -503,6 +534,7 @@
         <div
           class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
         ></div>
+        <!-- MOBILE -->
 
         <div
           class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
@@ -515,6 +547,7 @@
           <span> BD. 20m<sup>2</sup> to BD. 24.99m<sup>2</sup></span>
         </div>
       </div>
+      <!-- MOBILE -->
       <!-- NOT AVAILABLE PREMIER -->
       <div
         v-else
@@ -532,7 +565,9 @@
         </div>
       </div>
       <!-- SIGNATURE -->
+      <!-- MOBILE -->
       <div
+        v-show="userStore.preference.category !== 'Area Rugs'"
         v-if="isMaterialSelected('wool') || isMaterialSelected('sisal')"
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -544,6 +579,7 @@
           v-if="selectedBudget === 'Signature'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
+          <!-- MOBILE -->
           <!-- Selected indicator without text -->
           <div
             class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
@@ -570,6 +606,7 @@
           <span> BD. 25m<sup>2</sup> to BD. 29.99m<sup>2</sup></span>
         </div>
       </div>
+      <!-- MOBILE -->
       <!-- NOT AVAILABLE SIGNATURE -->
       <div
         v-else
@@ -587,6 +624,7 @@
         </div>
       </div>
       <!-- ELITE -->
+      <!-- MOBILE -->
       <div
         v-if="isMaterialSelected('wool')"
         :class="[
@@ -627,6 +665,7 @@
         </div>
       </div>
       <!-- NOT AVAILABLE ELITE -->
+      <!-- MOBILE -->
       <div
         v-else
         :class="[

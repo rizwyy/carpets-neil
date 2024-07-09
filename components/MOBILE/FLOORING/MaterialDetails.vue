@@ -101,6 +101,7 @@
         <!-- DESKTOP -->
         <!-- Wool -->
         <div
+          v-show="userStore.preference.category !== 'Wool'"
           :class="[
             'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Wool' },
@@ -302,6 +303,7 @@
       <!-- MOBILE -->
       <!-- Wool -->
       <div
+        v-show="userStore.preference.category !== 'Wool'"
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedmaterial === 'Wool' },
