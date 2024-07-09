@@ -1,6 +1,9 @@
 <template>
   <Desktop>
     <NavBarPC />
+    <div class="h-max max-w-screen overflow-x-hidden flex justify-center">
+      <HeroBannerPC />
+    </div>
     <HeroLayoutPC />
   </Desktop>
   <!-- MOBILE -->
@@ -32,6 +35,7 @@
 
 <script setup>
 import NavBarMOB from "./../components/MOBILE/NavBarMOB.vue";
+import HeroBannerPC from "./../components/DESKTOP/HeroBannerPC.vue";
 import SearchBarMOB from "./../components/SearchBar/SearchBarMOB.vue";
 import SearchBarPC from "./../components/SearchBar/SearchBarPC.vue";
 import HeroLayoutMOB from "./../components/MOBILE/HeroLayoutMOB.vue";

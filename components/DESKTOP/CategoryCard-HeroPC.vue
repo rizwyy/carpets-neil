@@ -9,7 +9,7 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
 ]);
 </script>
 <template>
-  <div class="h-[32vh] w-full relative overflow-hidden rounded-sm font-outfit">
+  <div class="h-[32vh] w-full relative overflow-hidden rounded-md font-outfit">
     <NuxtImg
       class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"
       :src="`/${src || '#'}`"

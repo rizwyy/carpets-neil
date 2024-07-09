@@ -33,6 +33,7 @@
 import CategoryCardHeroPC from "./CategoryCard-HeroPC.vue";
 import FaqPC from "./FaqPC.vue";
 import FooterPC from "./FooterPC.vue";
+import SearchBarPC from "../SearchBar/SearchBarPC.vue";
 </script>
 
 <style lang="scss" scoped></style>
