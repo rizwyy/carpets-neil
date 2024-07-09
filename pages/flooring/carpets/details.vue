@@ -51,10 +51,10 @@ onMounted(() => {});
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
+      <!-- DESKTOP -->
       <CategoryDetails />
-      <!-- MOBILE -->
-      <TypeDetails />
       <CustomCarpetBTN />
+      <TypeDetails />
       <ColorDetails />
       <MaterialDetails />
       <BudgetDetails />

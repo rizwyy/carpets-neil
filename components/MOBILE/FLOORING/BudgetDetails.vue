@@ -3,7 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
       v-show="
-        userStore.preference.type.length > 0 &&
+        userStore.preference.type !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.material !== ''
       "
@@ -326,7 +326,8 @@
   <!-- MOBILE -->
   <div
     v-show="
-      userStore.preference.type.length > 0 &&
+      userStore.preference.category !== '' &&
+      userStore.preference.type !== '' &&
       userStore.preference.color.length > 0 &&
       userStore.preference.material !== ''
     "

@@ -192,7 +192,9 @@
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- MOBILE -->
   <div
-    v-show="userStore.preference.type.length > 0"
+    v-show="
+      userStore.preference.category !== '' && userStore.preference.type !== ''
+    "
     class="min-[990px]:hidden container mx-auto p-[4vh] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
   >
     <div

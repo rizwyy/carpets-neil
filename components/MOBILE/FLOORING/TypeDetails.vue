@@ -1,4 +1,5 @@
 <template>
+  <!-- DESKTOP -->
   <div
     v-if="userStore.preference.category !== ''"
     class="max-[990px]:hidden h-max w-screen px-[6vw]"
@@ -10,9 +11,10 @@
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
         <span> Choose Your Type </span>
+        <!-- DESKTOP -->
         <button
           @click="clearAllSelections"
-          v-if="selectedTypes.length"
+          v-if="selectedType.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -28,18 +30,19 @@
             />
           </svg>
         </button>
+        <!-- DESKTOP -->
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- Solid -->
         <div
           :class="[
             'h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedTypes.includes('Plain') },
+            { selected: selectedType.includes('Plain') },
           ]"
           @click="toggleSelect('Plain')"
         >
           <div
-            v-if="selectedTypes.includes('Plain')"
+            v-if="selectedType.includes('Plain')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -51,6 +54,7 @@
           <div
             class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
+          <!-- DESKTOP -->
           <NuxtImg
             quality="50"
             placeholder
@@ -62,16 +66,18 @@
           <span class="text-[3.4vh]">Plain</span>
         </div>
 
+        <!-- DESKTOP -->
         <!-- Textured -->
         <div
+          v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
             'h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedTypes.includes('Textured') },
+            { selected: selectedType.includes('Textured') },
           ]"
           @click="toggleSelect('Textured')"
         >
           <div
-            v-if="selectedTypes.includes('Textured')"
+            v-if="selectedType.includes('Textured')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -96,15 +102,16 @@
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- Designed -->
+        <!-- DESKTOP -->
         <div
           :class="[
             'h-[28vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedTypes.includes('Patterned') },
+            { selected: selectedType.includes('Patterned') },
           ]"
           @click="toggleSelect('Patterned')"
         >
           <div
-            v-if="selectedTypes.includes('Patterned')"
+            v-if="selectedType.includes('Patterned')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -128,16 +135,17 @@
           <span class="text-[3.4vh]">Patterned</span>
         </div>
 
+        <!-- DESKTOP -->
         <!-- Customized -->
         <div
           :class="[
             'h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedTypes.includes('Stripped') },
+            { selected: selectedType.includes('Stripped') },
           ]"
           @click="toggleSelect('Stripped')"
         >
           <div
-            v-if="selectedTypes.includes('Stripped')"
+            v-if="selectedType.includes('Stripped')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -157,6 +165,7 @@
             src="/carpets/stripped.webp"
             alt=""
           />
+          <!-- DESKTOP -->
           <span class="text-[3.4vh]">Stripped</span>
         </div>
       </div>
@@ -165,6 +174,10 @@
       </div>
     </div>
   </div>
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- MOBILE -->
   <div
     v-if="userStore.preference.category !== ''"
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
@@ -175,9 +188,10 @@
       <span> Choose Your Type </span>
       <button
         @click="clearAllSelections"
-        v-if="selectedTypes.length"
+        v-if="selectedType.length"
         class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
       >
+        <!-- MOBILE -->
         Clear All<svg
           xmlns="http://www.w3.org/2000/svg"
           width="14"
@@ -192,16 +206,17 @@
       </button>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+      <!-- MOBILE -->
       <!-- Plain -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Plain') },
+          { selected: selectedType.includes('Plain') },
         ]"
         @click="toggleSelect('Plain')"
       >
         <div
-          v-if="selectedTypes.includes('Plain')"
+          v-if="selectedType.includes('Plain')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -225,17 +240,18 @@
         <span>Plain</span>
       </div>
 
+      <!-- MOBILE -->
       <!-- Textured -->
       <div
-        v-if="userStore.preference.category !== 'Carpet Tiles'"
+        v-show="userStore.preference.category !== 'Carpet Tiles'"
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Textured') },
+          { selected: selectedType.includes('Textured') },
         ]"
         @click="toggleSelect('Textured')"
       >
         <div
-          v-if="selectedTypes.includes('Textured')"
+          v-if="selectedType.includes('Textured')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -260,16 +276,17 @@
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+      <!-- MOBILE -->
       <!-- Designed -->
       <div
         :class="[
           'h-[14vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Patterned') },
+          { selected: selectedType.includes('Patterned') },
         ]"
         @click="toggleSelect('Patterned')"
       >
         <div
-          v-if="selectedTypes.includes('Patterned')"
+          v-if="selectedType.includes('Patterned')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -293,16 +310,17 @@
         <span>Patterned</span>
       </div>
 
+      <!-- MOBILE -->
       <!-- Customized -->
       <div
         :class="[
           'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedTypes.includes('Stripped') },
+          { selected: selectedType.includes('Stripped') },
         ]"
         @click="toggleSelect('Stripped')"
       >
         <div
-          v-if="selectedTypes.includes('Stripped')"
+          v-if="selectedType.includes('Stripped')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -329,6 +347,7 @@
     <div>
       <!-- <RainBowBTN /> -->
     </div>
+    <!-- MOBILE -->
   </div>
 </template>
 
@@ -345,11 +364,11 @@ import gsap from "gsap";
 import Mobile from "~/layouts/Mobile.vue";
 import Desktop from "~/layouts/Desktop.vue";
 const userPreference = useCookie("userPreference");
-const selectedTypes = ref([]);
+const selectedType = ref("");
 
 function clearAllSelections() {
-  selectedTypes.value = [];
-  userStore.preference.type = [];
+  selectedType.value = "";
+  userStore.preference.type = "";
 }
 function scrollToBottom() {
   setTimeout(() => {
@@ -360,13 +379,13 @@ function scrollToBottom() {
   }, 200);
 }
 const toggleSelect = (type) => {
-  if (selectedTypes.value.includes(type)) {
-    selectedTypes.value = selectedTypes.value.filter((t) => t !== type);
-    userStore.preference.type = toRaw(selectedTypes.value);
+  if (selectedType.value === type) {
+    selectedType.value = "";
+    userStore.preference.type = "";
   } else {
     scrollToBottom();
-    selectedTypes.value.push(type);
-    userStore.preference.type = toRaw(selectedTypes.value);
+    selectedType.value = type;
+    userStore.preference.type = toRaw(selectedType.value);
   }
 };
 

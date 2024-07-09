@@ -2,7 +2,7 @@
   <!-- DESKTOP -->
   <NavBarPC />
   <section
-    class="max-[990px]:hidden h-max min-h-screen max-w-screen overflow-x-hidden bg-[#f1f1f1] px-[6vw]"
+    class="max-[990px]:hidden h-max min-h-screen max-w-screen overflow-x-hidden bg-[#f1f1f1] px-[6vw] font-outfit"
   >
     <div v-if="isLoaded" class="h-full w-full flex">
       <!-- LAYOUT -->
@@ -147,6 +147,10 @@
     </div>
   </div>
 </div> -->
+        <div class="h-max w-full py-[8vh] px-[2vw]">
+          <!-- DESKTOP -->
+          <PriceTiers />
+        </div>
       </div>
     </div>
     <div v-else class="h-[80vh] w-[86vw] flex items-center justify-center">

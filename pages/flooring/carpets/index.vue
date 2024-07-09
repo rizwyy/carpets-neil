@@ -1,6 +1,8 @@
 <template>
+  <NavBarPC />
   <NavBarMOB />
-  <section class="h-max w-screen">
+  <div class="h-full w-full overflow-hidden"><UnderDev /></div>
+  <!-- <section class="h-max w-screen">
     <div class="h-max w-max flex items-center justify-center pb-[4vh]">
       <SearchBarMOB />
     </div>
@@ -90,13 +92,15 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script setup>
 import SearchBarMOB from "~/components/SearchBar/SearchBarMOB.vue";
 import useUserStore from "./../../stores/user";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import UnderDev from "~/components/MOBILE/UnderDev.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 const userStore = useUserStore();
 </script>
 

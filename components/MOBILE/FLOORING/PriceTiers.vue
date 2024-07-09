@@ -1,10 +1,10 @@
 <template>
   <!-- DESKTOP -->
   <div
-    class="max-[990px]:hidden h-max w-screen flex items-center px-[4vw] font-outfit overflow-hidden"
+    class="max-[990px]:hidden h-max w-[48vw] flex items-center px-[4vw] font-outfit"
   >
     <div
-      class="h-max w-full bg-[#fff] flex flex-col border-[1px] border-[#333] rounded-md text-[2.2vh]"
+      class="h-max w-full bg-[#fff] flex flex-col overflow-hidden border-[1px] border-[#333] rounded-md text-[2.2vh]"
     >
       <!-- DESKTOP -->
       <div
@@ -34,11 +34,11 @@
   <!-- --------------- -->
   <!-- --------------- -->
   <div
-    class="min-[990px]:hidden h-max w-screen flex items-center px-[4vw] font-outfit overflow-hidden"
+    class="min-[990px]:hidden h-max w-screen flex items-center px-[4vw] font-outfit"
   >
     <!-- MOBILE -->
     <div
-      class="h-max w-full bg-[#fff] flex flex-col border-[1px] border-[#333] rounded-md text-[2.2vh]"
+      class="h-max w-full bg-[#fff] flex flex-col border-[1px] overflow-hidden border-[#333] rounded-md text-[2.2vh]"
     >
       <!-- MOBILE -->
       <div

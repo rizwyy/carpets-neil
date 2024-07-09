@@ -1,4 +1,5 @@
 <template>
+  <!-- MOBILE -->
   <section class="h-max w-max min-[990px]:hidden">
     <NavBarMOB />
     <SearchBarMOB />
@@ -6,6 +7,7 @@
 
     <FlooringLayoutMOB />
   </section>
+  <!-- DESKTOP -->
   <Desktop>
     <NavBarPC />
     <HowWoltizWorks />
