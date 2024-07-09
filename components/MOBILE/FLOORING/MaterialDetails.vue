@@ -10,7 +10,7 @@
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <!-- DESKTOP -->
-      <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
+      <div class="h-max w-full flex justify-between text-[3.4vh] z-[9]">
         <span>Choose your Material</span>
         <button
           @click="clearmaterialSelections"
