@@ -9,7 +9,7 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
 ]);
 </script>
 <template>
-  <div class="h-[32vh] w-full relative overflow-hidden rounded-md font-outfit">
+  <div class="h-[42vh] w-full relative overflow-hidden rounded-md font-outfit">
     <NuxtImg
       class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"
       :src="`/${src || '#'}`"
@@ -18,11 +18,11 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
     <div
       class="z-[1] h-full w-full bg-gradient-to-r from-black to-[#0000] flex flex-col items-start justify-center px-[2vw] gap-[1vh]"
     >
-      <span class="text-[3.8vh] font-[400] text-[#f1f1f1]">{{ name }}</span>
+      <span class="text-[4.2vh] font-[400] text-[#f1f1f1]">{{ name }}</span>
       <span class="w-[60%] text-[2vh] text-[#ececec]">{{ desc }}</span>
       <a
         :href="link"
-        class="text-[2vh] text-[#fff] font-[500] underline underline-offset-[.4vh]"
+        class="text-[2.4vh] text-[#fff] font-[400] underline underline-offset-[.8vh]"
         >View All</a
       >
     </div>

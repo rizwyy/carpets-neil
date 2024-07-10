@@ -1,11 +1,11 @@
 <template>
   <section
-    class="max-[990px]:hidden relative h-max w-full overflow-x-hidden py-[6vh] font-outfit"
+    class="max-[990px]:hidden relative h-max w-full overflow-x-hidden py-[8h] font-outfit"
   >
     <!-- 2 * 3 LAYOUT -->
-    <section class="h-max w-full flex flex-col gap-[3.2vh] px-[6vw]">
-      <div class="h-max w-[50%] flex justify-start">
-        <span class="text-[3.8vh]">Shop By Categories</span>
+    <section class="h-max w-full flex flex-col gap-[6.2vh] px-[6vw]">
+      <div class="h-max w-full flex justify-center">
+        <span class="text-[2.8vw]">Shop By Categories</span>
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw]">
         <CategoryCardHeroPC

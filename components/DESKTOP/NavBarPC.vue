@@ -2,19 +2,7 @@
   <section
     class="max-[990px]:hidden h-max max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-[#f1f1f1] font-outfit"
   >
-    <div class="h-full w-max flex justify-between gap-[8vw] items-center">
-      <a
-        href="/"
-        class="h-max w-max block font-[300] text-[4.8vh] text-[#333] tracking-[-.1vw]"
-      >
-        WOLTIZ
-      </a>
-      <div class="h-max w-max flex justify-center gap-[3.2vw] text-[2.4vh]">
-        <a href="/">Home</a><a href="/about">About</a
-        ><a href="/about">Contact</a><a href="/flooring">Shop</a>
-      </div>
-    </div>
-    <div class="h-full w-max flex items-center justify-center gap-[2.8vw]">
+    <div class="h-full w-[35%] flex items-center justify-start">
       <button
         @click="
           giveAlert('Menu Page Under Development, Please come back later :(')
@@ -36,6 +24,19 @@
           />
         </svg>
       </button>
+    </div>
+    <div class="h-full w-[25%] flex justify-center items-center">
+      <a
+        href="/"
+        class="h-max w-max block font-[300] text-[2.8vw] text-[#333] tracking-[-.1vw]"
+      >
+        WOLTIZ
+      </a>
+    </div>
+    <div class="h-full w-[35%] flex justify-end gap-[8vw] items-center">
+      <a href="/designer" class="h-max w-max block text-[1.2vw] font-[500]"
+        >DESIGNER</a
+      >
     </div>
   </section>
 </template>
