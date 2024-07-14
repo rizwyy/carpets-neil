@@ -3,9 +3,7 @@
     class="h-max max-w-[100vw] flex flex-col gap-[2.8vh] py-[6vh] font-outfit"
   >
     <div class="h-max w-full flex justify-center">
-      <span class="text-[2.8vw] border-b-[.4vh] font-[350] border-[#333]"
-        >Shop By Flooring Category</span
-      >
+      <span class="text-[2.8vw] font-[350]">Shop By Flooring Category</span>
     </div>
     <div class="h-max w-full flex flex-col justify-between px-[6vw] gap-[0vh]">
       <a href="/flooring/carpets/details">

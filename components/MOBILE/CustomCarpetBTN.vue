@@ -36,7 +36,7 @@
     <div
       class="h-[12vh] w-[90vw] relative overflow-hidden block flex items-center gap-[2vw] justify-center w-[52vw] bg-[#ececec] shadow-xl backdrop-blur-[14px] overflow-hidden rounded-md px-[.8vh] py-[.8vh]"
     >
-      <span class="text-[2.8vh] text-[#000] font font-[600] z-[9]"
+      <span class="text-[3.2vh] text-[#000] font font-[500] z-[9]"
         >Custom Carpets</span
       >
       <div

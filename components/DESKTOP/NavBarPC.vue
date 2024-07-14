@@ -37,7 +37,7 @@
   </section>
   <div
     v-if="isMenuOpen"
-    class="menuPageMOB opacity-0 invisible font-outfit fixed top-0 left-0 h-screen w-screen bg-[#f5f3f1] z-[99]"
+    class="menuPageMOB opacity-0 invisible font-outfit fixed top-0 left-0 h-screen w-screen bg-[#f5f3f1] z-[9999]"
   >
     <div class="h-[14vh] w-screen px-[4vw] items-center flex justify-between">
       <a

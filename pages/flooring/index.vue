@@ -11,7 +11,7 @@
   <Desktop>
     <NavBarPC />
     <BannerYouWin />
-    <HowWoltizWorks />
+    <!-- <HowWoltizWorks /> -->
     <FlooringLayoutPC />
     <FooterPC />
   </Desktop>

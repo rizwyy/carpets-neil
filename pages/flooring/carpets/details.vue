@@ -102,6 +102,7 @@ onMounted(() => {});
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
+      <BannerYouWin />
       <CategoryDetails />
       <!-- MOBILE -->
       <TypeDetails />

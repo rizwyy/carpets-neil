@@ -5,6 +5,7 @@ import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
 
 import useUserStore from "../../../stores/user";
+import HowWoltizWorks from "~/components/HowWoltizWorks.vue";
 const userStore = useUserStore();
 
 function setUserPreferenceCookie() {
@@ -34,54 +35,24 @@ function toggleExpansion() {
 
 <template>
   <section class="h-max w-max min-[990px]:hidden font-outfit">
-    <div
-      class="HowWoltizWorks-section h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
-    >
-      <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
-        How Woltiz Works - Video
-      </div>
+    <div class="h-max w-screen py-[2vh] text-[#333] px-[3.2vw]">
+      <span class="text-[3.8vh] tracking-[-.1vw]">Shop By Category</span>
     </div>
-    <div class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] text-[2.8vh]">
-      <span>Choose your Flooring</span>
-    </div>
-    <div class="h-max w-screen flex flex-col gap-[1vh]">
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[1]">
+    <div class="h-max w-screen flex flex-col gap-[1.8vh]">
+      <div
+        class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[1]"
+      >
         <a
           href="/flooring/carpets/details"
-          class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-sm justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
             class="text-[3.8vh] font-[400] leading-[3.8vh] z-[1] text-[#f1f1f1]"
             >Carpet <br />
             Flooring</span
           >
-          <div class="h-max w-full px-[2vw] flex justify-end">
-            <svg
-              v-if="isExpanded"
-              class="rotate-[180deg]"
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fff"
-                d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062"
-              />
-            </svg>
-            <svg
-              v-else
-              class=""
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fff"
-                d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062"
-              />
-            </svg>
+          <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
+            <span class="text-[2vh] border-b-[1px]">View All</span>
           </div>
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
@@ -95,134 +66,12 @@ function toggleExpansion() {
           />
         </a>
       </div>
-      <!-- HTI -->
+
       <div
-        v-show="isExpanded"
-        class="carpetsCategory-container h-max w-screen flex flex-col justify-center"
+        class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
       >
         <div
-          class="h-max w-screen flex justify-center gap-[4vw] my-[.4vh] z-[9]"
-        >
-          <a
-            href="/flooring/carpets/details"
-            @click="setCategory('Wall to Wall')"
-            class="h-[20vh] categoryItem rounded-full z-[9] w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
-          >
-            <div
-              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
-            >
-              <span
-                class="text-[2.4vh] font-[500] leading-[3.2vh] text-[#f1f1f1]"
-                >Wall to Wall
-              </span>
-              <span class="text-[#ececec] text-viewAllMOB font-[500]"
-                >View All</span
-              >
-            </div>
-
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-            ></div>
-            <NuxtImg
-              quality="50"
-              preload
-              loading="eager"
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/wall-to-wall.webp"
-              alt="#"
-            />
-          </a>
-          <a
-            href="flooring/carpets/details"
-            @click="setCategory('Carpet Tiles')"
-            class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
-          >
-            <div
-              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
-            >
-              <span
-                class="text-[2.4vh] font-[500] leading-[3.2vh] text-[#f1f1f1]"
-                >Carpet Tiles
-              </span>
-              <span class="text-[#ececec] text-viewAllMOB font-[500]"
-                >View All</span
-              >
-            </div>
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-opacity-[.2] bg-black"
-            ></div>
-            <NuxtImg
-              preload
-              loading="eager"
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/carpet-tiles.webp"
-              alt="carpet-tiles"
-            />
-          </a>
-        </div>
-        <div class="h-max w-screen flex justify-center gap-[4vw] my-[1vh]">
-          <a
-            href="flooring/carpets/details"
-            @click="setCategory('Area Rugs')"
-            class="h-[20vh] categoryItem rounded-full cursor-pointer w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
-          >
-            <div
-              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
-            >
-              <span
-                class="text-[2.4vh] font-[500] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-                >Area Rugs</span
-              >
-              <span class="text-[#ececec] text-viewAllMOB font-[500]"
-                >View All</span
-              >
-            </div>
-
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] to-[#000] from-[14%]"
-            ></div>
-            <NuxtImg
-              preload
-              loading="eager"
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/area-rugs.webp"
-              alt="area-rug"
-            />
-          </a>
-          <a
-            href="/flooring/carpets/details"
-            @click="setCategory('Runners')"
-            class="h-[20vh] categoryItem rounded-full w-[40%] overflow-hidden relative flex flex-col items-center justify-center pt-[1.8vh] pb-[.8vh]"
-          >
-            <div
-              class="h-max w-full flex items-center py-[.4vh] bg-black bg-opacity-[.4] flex-col"
-            >
-              <span
-                class="text-[2.4vh] font-[500] leading-[3.2vh] z-[1] text-[#f1f1f1]"
-                >Runners
-              </span>
-              <span class="text-[#ececec] text-viewAllMOB font-[500]"
-                >View All</span
-              >
-            </div>
-
-            <div
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-t from-[#000] via-[#0000] from-[14%]"
-            ></div>
-            <NuxtImg
-              preload
-              loading="eager"
-              class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-              src="/runners.webp"
-              alt="#runners"
-            />
-          </a>
-        </div>
-      </div>
-
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
-        <div
-          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -253,7 +102,7 @@ function toggleExpansion() {
           /> -->
         </div>
         <div
-          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -283,9 +132,11 @@ function toggleExpansion() {
           /> -->
         </div>
       </div>
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
+      <div
+        class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      >
         <div
-          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -315,7 +166,7 @@ function toggleExpansion() {
           /> -->
         </div>
         <div
-          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -345,9 +196,11 @@ function toggleExpansion() {
           /> -->
         </div>
       </div>
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw] z-[9]">
+      <div
+        class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      >
         <div
-          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -377,7 +230,7 @@ function toggleExpansion() {
           /> -->
         </div>
         <div
-          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"

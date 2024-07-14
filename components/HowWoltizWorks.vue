@@ -1,10 +1,20 @@
 <template>
-  <div
-    class="HowWoltizWorks-section h-max w-full flex items-center font-outfit justify-center py-[10vh] bg-[#f1f1f1]"
-  >
-    <div class="h-[28vh] w-[75%] bg-white flex items-center justify-center">
+  <div class="h-max max-w-screen px-[4.8vw]">
+    <div
+      class="HowWoltizWorks-section relative h-max w-full flex flex-col gap-[4vh] items-center font-outfit justify-center py-[6vh] px-[2vw]"
+    >
+      <NuxtImg
+        src="/40004.jpg"
+        class="h-full w-full absolute top-0 left-0 z-[-9] object-cover"
+      />
+      <div
+        class="h-full w-full absolute top-0 left-0 z-[-1] bg-black opacity-[.4]"
+      ></div>
+      <span class="font-[400] text-bannerMOB text-[#f1f1f1]"
+        >You Win, We Win</span
+      >
       <button
-        class="rounded-md shadow-lg px-[2vw] py-[3vh] bg-[#e1dfea] text-[#333] flex items-center gap-[.4vw]"
+        class="rounded-md shadow-lg max-[990px]:px-[6vw] px-[2vw] py-[2vh] bg-[#fcfcfc] text-[#333] flex items-center gap-[.4vw]"
       >
         How Woltiz Works<svg
           xmlns="http://www.w3.org/2000/svg"

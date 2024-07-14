@@ -131,6 +131,11 @@ onMounted(() => {
             />
           </a>
         </div>
+        <div class="h-max max-w-screen flex justify-center py-[10vh]">
+          <button class="text-[2.4vh] border-b-[1px] border-black">
+            VIEW MORE
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -213,6 +218,11 @@ onMounted(() => {
               :color="item.color"
             />
           </a>
+        </div>
+        <div class="h-max max-w-screen flex justify-center py-[10vh]">
+          <button class="text-[2.4vh] border-b-[1px] border-black">
+            VIEW MORE
+          </button>
         </div>
       </div>
     </div>
