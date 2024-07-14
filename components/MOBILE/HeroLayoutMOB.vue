@@ -5,11 +5,11 @@
     >
       <span>Shop by Categories</span>
     </div>
-    <div class="h-max w-screen flex flex-col gap-[1vw]">
-      <div class="h-max w-screen flex justify-evenly gap-[1vw] px-[2vw]">
+    <div class="h-max w-screen flex flex-col gap-[1.6vh]">
+      <div class="h-max w-screen flex justify-evenly gap-[1.6vh] px-[2vw]">
         <a
           href="/flooring"
-          class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
             class="text-[3vh] font-[500] tracking-[.1vw] leading-[3.2vh] text-[#f1f1f1]"
@@ -18,8 +18,8 @@
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-viewAllMOB font-[400]"
-              >view all</span
+              class="border-b-[1px] z-[99] text-[#e1e9e5] text-viewAllMOB font-[400]"
+              >View All</span
             >
           </div>
           <div
@@ -34,7 +34,7 @@
           />
         </a>
         <div
-          class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] z-[1] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
