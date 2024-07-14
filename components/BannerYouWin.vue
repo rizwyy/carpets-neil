@@ -40,7 +40,7 @@
     class="min-[990px]:hidden h-max w-screen flex items-center justify-center my-[2vh] px-[3.2vw]"
   >
     <div
-      class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center py-[14vh]"
+      class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[1vh] items-center justify-center pt-[4vh]"
     >
       <div
         class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#f5f3f1] opacity-[.6]"
@@ -52,16 +52,16 @@
         >Flooring.</span
       >
       <button
-        class="rounded-md font-outfit shadow-lg px-[3vw] py-[2vh] bg-[#fff9] bg-opacity-[.6] backdrop-blur-[14px] text-[#000] flex items-center gap-[.8vw]"
+        class="rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
       >
         How Woltiz Works<svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
         >
           <path
-            fill="#222"
+            fill="#fcfcfc"
             d="m10 16.5l6-4.5l-6-4.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8"
           />
         </svg>
