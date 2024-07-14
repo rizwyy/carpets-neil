@@ -40,7 +40,7 @@
     class="min-[990px]:hidden h-max w-screen flex items-center justify-center my-[2vh] px-[3.2vw]"
   >
     <div
-      class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[1vh] items-center justify-center pt-[4vh]"
+      class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[0vh] items-center justify-center pt-[4.8vh] pb-[1vh]"
     >
       <div
         class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#f5f3f1] opacity-[.6]"
@@ -54,7 +54,7 @@
       <button
         class="rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
       >
-        How Woltiz Works<svg
+        See How Woltiz Works<svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
