@@ -43,7 +43,17 @@
       >
         <!-- VALUE -->
         <div
-          v-if="userStore.preference.category !== 'Area Rugs'"
+          v-if="
+            userStore.preference.category !== 'Area Rugs' &&
+            !(
+              userStore.preference.category === 'Wall to Wall' &&
+              userStore.preference.material === 'Nylon'
+            ) &&
+            !(
+              userStore.preference.category === 'Runners' &&
+              userStore.preference.material === 'Nylon'
+            )
+          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Value' },
@@ -100,7 +110,17 @@
         <!-- DESKTOP -->
         <!-- ESSENTIAL -->
         <div
-          v-if="userStore.preference.category !== 'Area Rugs'"
+          v-if="
+            userStore.preference.category !== 'Area Rugs' &&
+            !(
+              userStore.preference.category === 'Wall to Wall' &&
+              userStore.preference.material === 'Nylon'
+            ) &&
+            !(
+              userStore.preference.category === 'Runners' &&
+              userStore.preference.material === 'Nylon'
+            )
+          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Essential' },
@@ -159,7 +179,15 @@
         <div
           v-if="
             userStore.preference.category !== 'Area Rugs' &&
-            userStore.preference.category !== 'Carpet Tiles'
+            userStore.preference.category !== 'Carpet Tiles' &&
+            !(
+              userStore.preference.category === 'Wall to Wall' &&
+              userStore.preference.material === 'polypropylene'
+            ) &&
+            !(
+              userStore.preference.category === 'Runners' &&
+              userStore.preference.material === 'polypropylene'
+            )
           "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -220,7 +248,15 @@
         <div
           v-if="
             userStore.preference.category !== 'Area Rugs' &&
-            userStore.preference.category !== 'Carpet Tiles'
+            userStore.preference.category !== 'Carpet Tiles' &&
+            !(
+              userStore.preference.category === 'Wall to Wall' &&
+              userStore.preference.material === 'polypropylene'
+            ) &&
+            !(
+              userStore.preference.category === 'Runners' &&
+              userStore.preference.material === 'polypropylene'
+            )
           "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
@@ -278,7 +314,26 @@
         </div>
         <!-- ELITE -->
         <div
-          v-if="userStore.preference.category !== 'Carpet Tiles'"
+          v-if="
+            userStore.preference.category === 'Area Rugs' ||
+            (userStore.preference.category !== 'Carpet Tiles' &&
+              !(
+                userStore.preference.category === 'Wall to Wall' &&
+                userStore.preference.material === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.category === 'Runners' &&
+                userStore.preference.material === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.category === 'Wall to Wall' &&
+                userStore.preference.material === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.category === 'Runners' &&
+                userStore.preference.material === 'Nylon'
+              ))
+          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Elite' },
