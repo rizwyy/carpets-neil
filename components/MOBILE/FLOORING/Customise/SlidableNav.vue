@@ -1,6 +1,6 @@
 <template>
   <div
-    class="overflow-x-hidden bg-[#edf2f4] shadow-sm py-[2vh] h-max w-screen mt-[8vh] mb-[4vh] font-outfit"
+    class="overflow-x-hidden bg-[#fff] shadow-sm py-[2vh] h-max w-screen mt-[8vh] mb-[4vh] font-outfit"
   >
     <div class="h-max w-full px-[4vw] pb-[2vh] text-center">
       <span
