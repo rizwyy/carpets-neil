@@ -49,7 +49,9 @@
         <NuxtImg src="/runners.webp" class="h-full w-full object-cover" />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
-        >Flooring.</span
+        >{{
+          `${userStore.customPreference.category} Flooring` || "Flooring"
+        }}.</span
       >
       <button
         class="rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
@@ -70,7 +72,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import useUserStore from "../../../stores/user";
+const userStore = useUserStore();
+</script>
 
 <style scoped>
 .font-outfit {

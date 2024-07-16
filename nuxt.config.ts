@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       content: ["content/**/**.md"],
       theme: {
         fontSize: {
-          bannerMOB: "5.8vh",
+          bannerMOB: "5.4vh",
           headingMOB: "5.8vh",
           subHeadingMOB: "5.8vh",
           viewAllMOB: "1.8vh",
