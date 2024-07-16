@@ -10,68 +10,117 @@
     </div>
     <div class="relative w-full overflow-x-auto no-scrollbar select-none">
       <div
-        class="min-w-[140vw] h-full bg-[#00000] flex gap-[2vw] py-[2vh] items-center justify-between px-[8vw]"
+        class="min-w-[220vw] h-full bg-[#00000] flex gap-[2vw] py-[2vh] items-center justify-between px-[4vw]"
       >
         <button
           @click="selectCategory('Carpet')"
-          class="relative rounded-md shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
+          <NuxtImg
+            class="absolute h-full w-full left-0 top-0 object-cover"
+            src="/area-rugs.webp"
+            alt="#"
+          />
+          <div
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+          >
+            Carpets
+          </div>
           <div
             v-if="userStore.customPreference.category.includes('Carpet')"
-            class="h-full w-full absolute top-0 right-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-md font-[500]"
+            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
-            <span> Selected </span>
+            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
           </div>
           Carpet
         </button>
         <button
           @click="selectCategory('PVC')"
-          class="relative rounded-md shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[4.6vw] py-[.8vh]"
+          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
-          PVC
+          <NuxtImg
+            class="absolute h-full w-full left-0 top-0 object-cover"
+            src="/pvc-flooring.webp"
+            alt="#"
+          />
+          <div
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+          >
+            PVC
+          </div>
           <div
             v-if="userStore.customPreference.category.includes('PVC')"
-            class="h-full w-full absolute top-0 right-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-md font-[500]"
+            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
-            <span> Selected </span>
+            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
           </div>
+          Carpet
         </button>
         <button
           @click="selectCategory('Wooden')"
-          class="relative rounded-md shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
-          Wooden
+          <NuxtImg
+            class="absolute h-full w-full left-0 top-0 object-cover"
+            src="/50002.jpg"
+            alt="#"
+          />
+          <div
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+          >
+            Wooden
+          </div>
           <div
             v-if="userStore.customPreference.category.includes('Wooden')"
-            class="h-full w-full absolute top-0 right-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-md font-[500]"
+            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
-            <span> Selected </span>
+            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
           </div>
+          Carpet
         </button>
         <button
           @click="selectCategory('Raised')"
-          class="relative rounded-md shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
-          Raised
+          <NuxtImg
+            class="absolute h-full w-full left-0 top-0 object-cover"
+            src="/raised-flooring.webp"
+            alt="#"
+          />
+          <div
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+          >
+            Raised
+          </div>
           <div
             v-if="userStore.customPreference.category.includes('Raised')"
-            class="h-full w-full absolute top-0 right-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-md font-[500]"
+            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
-            <span> Selected </span>
+            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
           </div>
+          Carpet
         </button>
         <button
           @click="selectCategory('Active')"
-          href="/"
-          class="relative rounded-md shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
-          Active
+          <NuxtImg
+            class="absolute h-full w-full left-0 top-0 object-cover"
+            src="/40002.jpg"
+            alt="#"
+          />
+          <div
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+          >
+            Active
+          </div>
           <div
             v-if="userStore.customPreference.category.includes('Active')"
-            class="h-full w-full absolute top-0 right-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-md font-[500]"
+            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
-            <span> Selected </span>
+            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
           </div>
+          Carpet
         </button>
       </div>
     </div>

@@ -12,7 +12,9 @@
         <NuxtImg src="/runners.webp" class="h-full w-full object-cover" />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
-        >Flooring.</span
+        >{{
+          `${userStore.customPreference.category} Flooring` || "Flooring"
+        }}.</span
       >
       <button
         class="rounded-md shadow-lg max-[990px]:px-[6vw] px-[2vw] py-[2vh] bg-[#fcfcfc] text-[#333] flex items-center gap-[.4vw]"
@@ -43,10 +45,39 @@
       class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[0vh] items-center justify-center pt-[4.8vh] pb-[1vh]"
     >
       <div
-        class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#f5f3f1] opacity-[.6]"
+        class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#fff9] opacity-[.6]"
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
-        <NuxtImg src="/runners.webp" class="h-full w-full object-cover" />
+        <NuxtImg
+          v-if="userStore.customPreference.category === 'Carpet'"
+          src="/area-rugs.webp"
+          class="h-full w-full object-cover"
+        />
+        <NuxtImg
+          v-else-if="userStore.customPreference.category === 'PVC'"
+          src="/pvc-flooring.webp"
+          class="h-full w-full object-cover"
+        />
+        <NuxtImg
+          v-else-if="userStore.customPreference.category === 'Wooden'"
+          src="/50002.jpg"
+          class="h-full w-full object-cover"
+        />
+        <NuxtImg
+          v-else-if="userStore.customPreference.category === 'Raised'"
+          src="/raised-flooring.webp"
+          class="h-full w-full object-cover"
+        />
+        <NuxtImg
+          v-else-if="userStore.customPreference.category === 'Active'"
+          src="/40002.jpg"
+          class="h-full w-full object-cover"
+        />
+        <NuxtImg
+          v-else
+          src="/runners.webp"
+          class="h-full w-full object-cover"
+        />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
         >{{
