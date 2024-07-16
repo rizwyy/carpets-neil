@@ -33,7 +33,8 @@
     </a>
   </div>
   <div class="h-max w-max min-[990px]:hidden">
-    <div
+    <a
+      href="/flooring/customise"
       class="h-[12vh] w-[90vw] relative overflow-hidden block flex items-center gap-[2vw] justify-center w-[52vw] bg-[#ececec] shadow-xl backdrop-blur-[14px] overflow-hidden rounded-md px-[.8vh] py-[.8vh]"
     >
       <span class="text-[3.2vh] text-[#000] font font-[500] z-[9]"
@@ -65,7 +66,7 @@
           />
         </svg>
       </a>
-    </div>
+    </a>
   </div>
 </template>
 
