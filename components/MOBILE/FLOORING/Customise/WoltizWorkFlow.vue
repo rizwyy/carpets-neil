@@ -1,10 +1,12 @@
 <template>
   <div class="h-max w-screen flex flex-col gap-[2vh] pt-[8vh] font-outfit">
-    <div class="h-max w-full text-center flex flex-col gap-[1vh]">
-      <span class="text-[3.8vh]">Steps</span>
-      <span class="text-[1.8vh] text-[#666]">How do we do it.</span>
+    <div class="h-max w-full text-center items-center flex flex-col gap-[1vh]">
+      <span class="text-[3.8vh] w-[88%] tracking-[-.2vw]"
+        >Customization Journey</span
+      >
+      <span class="text-[1.8vh] text-[#666]">Breaking Down Our Approach.</span>
     </div>
-    <div class="h-max w-full flex flex-col gap-[4vh] py-[4vh] px-[4vw]">
+    <div class="h-max w-full flex flex-col gap-[7.2vh] py-[4vh] px-[4vw]">
       <!-- STEP 1 -->
       <div
         class="h-[24vh] w-full overflow-hidden py-[1vh] flex items-center justify-between gap-[2vw]"
@@ -21,7 +23,7 @@
         </div>
         <div class="h-full w-[50%] relative">
           <div
-            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#00000] opacity-[.5] z-[1]"
+            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#0000] opacity-[.2] z-[1]"
           ></div>
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
@@ -63,7 +65,7 @@
       >
         <div class="h-full w-[50%] relative">
           <div
-            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#00000] opacity-[.5] z-[1]"
+            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#0000] opacity-[.2] z-[1]"
           ></div>
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
@@ -124,7 +126,7 @@
         </div>
         <div class="h-full w-[50%] relative">
           <div
-            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#00000] opacity-[.5] z-[1]"
+            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#0000] opacity-[.2] z-[1]"
           ></div>
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
@@ -166,7 +168,7 @@
       >
         <div class="h-full w-[50%] relative">
           <div
-            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#00000] opacity-[.5] z-[1]"
+            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#0000] opacity-[.2] z-[1]"
           ></div>
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
@@ -227,7 +229,7 @@
         </div>
         <div class="h-full w-[50%] relative">
           <div
-            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#00000] opacity-[.5] z-[1]"
+            class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#0000] opacity-[.2] z-[1]"
           ></div>
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"

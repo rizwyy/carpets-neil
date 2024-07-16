@@ -7,7 +7,7 @@
         class="h-full w-full absolute top-0 left-0 z-[-1] bg-gradient-to-br from-[#14213d] via-[#0077b6] to-[#0077b6] opacity-[.8] blur-[2px]"
       ></div>
       <div class="h-max w-max text-[#f1f1f1]">
-        <span class="text-[3.8vh]"> Discuss Your Project.</span>
+        <span class="text-[3.8vh]"> Discuss Your Project</span>
       </div>
       <div
         class="h-max w-max flex flex-col gap-[3.2vh] items-center justify-center"
