@@ -14,7 +14,7 @@
       >
         <button
           @click="selectCategory('Carpet')"
-          class="relative h-[18vh] w-[58vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[15vh] w-[54vw] rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -60,7 +60,7 @@
         </button>
         <button
           @click="selectCategory('PVC')"
-          class="relative h-[18vh] w-[58vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[15vh] w-[54vw] rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -112,7 +112,7 @@
         </button>
         <button
           @click="selectCategory('Wooden')"
-          class="relative h-[18vh] w-[58vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[15vh] w-[54vw] rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -164,7 +164,7 @@
         </button>
         <button
           @click="selectCategory('Raised')"
-          class="relative h-[18vh] w-[58vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[15vh] w-[54vw] rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -210,7 +210,7 @@
         </button>
         <button
           @click="selectCategory('Active')"
-          class="relative h-[18vh] w-[58vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[15vh] w-[54vw] rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
