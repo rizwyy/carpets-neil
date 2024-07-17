@@ -9,16 +9,21 @@
     <div class="h-max w-full flex flex-col gap-[7.2vh] py-[4vh] px-[4vw]">
       <!-- STEP 1 -->
       <div
-        class="h-[24vh] w-full overflow-hidden py-[1vh] flex items-center justify-between gap-[2vw]"
+        class="h-[28vh] w-full overflow-hidden pb-[2vh] flex items-center justify-between gap-[2vw]"
       >
         <div
-          class="h-full w-[50%] flex flex-col items-start gap-[1vh] py-[1vh] px-[2vw]"
+          class="h-full w-[50%] flex flex-col items-start gap-[1vh] py-[.4vh] px-[2vw]"
         >
           <span class="text-[1.6vh] font-[500] text-[#666]">STEP 1</span>
           <span class="text-[2.8vh] font-[500]">Design</span>
           <span class="text-[2vh]"
             >You can upload the design or Browse Products from the
             Catalog.</span
+          >
+          <a
+            class="h-max w-max px-[2.4vw] py-[.8vh] rounded-sm shadow-md bg-[#6CB4EE] text-[#fff] text-[1.6vh] font-[500]"
+            href="#"
+            >Chat with us</a
           >
         </div>
         <div class="h-full w-[50%] relative">
@@ -61,7 +66,7 @@
       <!-- STEP 2 -->
 
       <div
-        class="h-[24vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
+        class="h-[28vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
       >
         <div class="h-full w-[50%] relative">
           <div
@@ -113,7 +118,7 @@
       <!-- STEP 3 -->
 
       <div
-        class="h-[24vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
+        class="h-[28vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
       >
         <div
           class="h-full w-[50%] flex flex-col items-start gap-[1vh] py-[1vh] px-[2vw]"
@@ -164,7 +169,7 @@
       <!-- STEP 4 -->
 
       <div
-        class="h-[24vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
+        class="h-[28vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
       >
         <div class="h-full w-[50%] relative">
           <div
@@ -215,7 +220,7 @@
       <!-- STEP 5 -->
 
       <div
-        class="h-[24vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
+        class="h-[28vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
       >
         <div
           class="h-full w-[50%] flex flex-col items-start gap-[1vh] py-[1vh] px-[2vw]"
@@ -265,7 +270,7 @@
         </div>
       </div>
       <div
-        class="h-[24vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
+        class="h-[28vh] w-full overflow-hiddenpy-[1vh] flex items-center justify-between gap-[2vw]"
       >
         <div class="h-full w-[50%] relative">
           <div

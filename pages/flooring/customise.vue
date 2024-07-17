@@ -1,5 +1,9 @@
 <template>
-  <NavBarPC />
+  <div class="max-[990px]:hidden">
+    <NavBarPC />
+    <BannerYouWin />
+    <SlidableNav />
+  </div>
 
   <div class="min-[990px]:hidden">
     <NavBarMOB />

@@ -44,7 +44,7 @@ function toggleExpansion() {
       >
         <a
           href="/flooring/carpets/details"
-          class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-sm justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-md justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
             class="text-[3.8vh] font-[400] leading-[3.8vh] z-[1] text-[#f1f1f1]"
@@ -71,7 +71,7 @@ function toggleExpansion() {
         class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
       >
         <div
-          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -102,7 +102,7 @@ function toggleExpansion() {
           /> -->
         </div>
         <div
-          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -136,7 +136,7 @@ function toggleExpansion() {
         class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
       >
         <div
-          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -166,7 +166,7 @@ function toggleExpansion() {
           /> -->
         </div>
         <div
-          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -200,7 +200,7 @@ function toggleExpansion() {
         class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
       >
         <div
-          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
@@ -230,7 +230,7 @@ function toggleExpansion() {
           /> -->
         </div>
         <div
-          class="h-[24vh] w-[50%] rounded-sm overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
             class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"

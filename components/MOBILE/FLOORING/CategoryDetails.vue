@@ -191,7 +191,7 @@
       <!-- Wall To Wall -->
       <div
         :class="[
-          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedCategory.includes('Wall to Wall') },
         ]"
         @click="toggleSelect('Wall to Wall')"
@@ -224,7 +224,7 @@
       <!-- Carpet Tiles -->
       <div
         :class="[
-          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedCategory.includes('Carpet Tiles') },
         ]"
         @click="toggleSelect('Carpet Tiles')"
@@ -258,7 +258,7 @@
       <!-- Area Rugs -->
       <div
         :class="[
-          'h-[14vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedCategory.includes('Area Rugs') },
         ]"
         @click="toggleSelect('Area Rugs')"
@@ -291,7 +291,7 @@
       <!-- Customized -->
       <div
         :class="[
-          'h-[14vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedCategory.includes('Runners') },
         ]"
         @click="toggleSelect('Runners')"
