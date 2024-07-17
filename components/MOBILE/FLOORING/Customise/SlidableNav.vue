@@ -5,16 +5,16 @@
     <div class="h-max w-full px-[4vw] pb-[2vh] text-center">
       <span
         class="text-[3.8vh] tracking-[-.3vw] text-transparent bg-clip-text bg-gradient-to-r from-[#14213d] via-[#3d5a80] to-[#00b4d8] from-[10%] to-[90%]"
-        >Personalize Your Order.</span
+        >Personalize Your Order</span
       >
     </div>
     <div class="relative w-full overflow-x-auto no-scrollbar select-none">
       <div
-        class="min-w-[220vw] h-full bg-[#00000] flex gap-[2vw] py-[2vh] items-center justify-between px-[4vw]"
+        class="w-max h-full bg-[#00000] flex gap-[4vw] py-[2vh] items-center justify-between px-[4vw]"
       >
         <button
           @click="selectCategory('Carpet')"
-          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[16vh] w-[54vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -22,21 +22,45 @@
             alt="#"
           />
           <div
-            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-tr from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex flex-col items-center justify-between px-[2vw] py-[1vh]"
           >
-            Carpets
+            <div class="h-max w-full flex justify-end">
+              <svg
+                v-if="!userStore.customPreference.category.includes('Carpet')"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"
+                />
+              </svg>
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4l8-8z"
+                />
+              </svg>
+            </div>
+            <div class="h-max w-full flex flex-col items-start justify-end">
+              <span class="text-[2.4vh]">Carpets</span>
+              <span class="text-[1.6vh] text-[#ecececec]"
+                >Mosque | Round | Tufted & more</span
+              >
+            </div>
           </div>
-          <div
-            v-if="userStore.customPreference.category.includes('Carpet')"
-            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
-          >
-            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
-          </div>
-          Carpet
         </button>
         <button
           @click="selectCategory('PVC')"
-          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[16vh] w-[54vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -44,21 +68,51 @@
             alt="#"
           />
           <div
-            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-tr from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex flex-col items-center justify-between px-[2vw] py-[1vh]"
           >
-            PVC
+            <div class="h-max w-full flex justify-end">
+              <svg
+                v-if="!userStore.customPreference.category.includes('PVC')"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"
+                />
+              </svg>
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4l8-8z"
+                />
+              </svg>
+            </div>
+            <div class="h-max w-full flex flex-col items-start justify-end">
+              <span class="text-[2.4vh]">PVC</span>
+              <span class="text-[1.6vh] text-[#ecececec]"
+                >Option | Option | Option & more</span
+              >
+            </div>
           </div>
-          <div
-            v-if="userStore.customPreference.category.includes('PVC')"
+          <!-- <div
+            v-if="userStore.customPreference.category.includes('Carpet')"
             class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
             <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
-          </div>
-          Carpet
+          </div> -->
         </button>
         <button
           @click="selectCategory('Wooden')"
-          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[16vh] w-[54vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -66,21 +120,51 @@
             alt="#"
           />
           <div
-            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-tr from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex flex-col items-center justify-between px-[2vw] py-[1vh]"
           >
-            Wooden
+            <div class="h-max w-full flex justify-end">
+              <svg
+                v-if="!userStore.customPreference.category.includes('Wooden')"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"
+                />
+              </svg>
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4l8-8z"
+                />
+              </svg>
+            </div>
+            <div class="h-max w-full flex flex-col items-start justify-end">
+              <span class="text-[2.4vh]">Wooden</span>
+              <span class="text-[1.6vh] text-[#ecececec]"
+                >Option | Option | Option & more</span
+              >
+            </div>
           </div>
-          <div
-            v-if="userStore.customPreference.category.includes('Wooden')"
+          <!-- <div
+            v-if="userStore.customPreference.category.includes('Carpet')"
             class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
           >
             <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
-          </div>
-          Carpet
+          </div> -->
         </button>
         <button
           @click="selectCategory('Raised')"
-          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[16vh] w-[54vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -88,21 +172,45 @@
             alt="#"
           />
           <div
-            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-tr from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex flex-col items-center justify-between px-[2vw] py-[1vh]"
           >
-            Raised
+            <div class="h-max w-full flex justify-end">
+              <svg
+                v-if="!userStore.customPreference.category.includes('Raised')"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"
+                />
+              </svg>
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4l8-8z"
+                />
+              </svg>
+            </div>
+            <div class="h-max w-full flex flex-col items-start justify-end">
+              <span class="text-[2.4vh]">Raised</span>
+              <span class="text-[1.6vh] text-[#ecececec]"
+                >Option | Option | Option & more</span
+              >
+            </div>
           </div>
-          <div
-            v-if="userStore.customPreference.category.includes('Raised')"
-            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
-          >
-            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
-          </div>
-          Carpet
         </button>
         <button
           @click="selectCategory('Active')"
-          class="relative h-[12vh] w-[38vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
+          class="relative h-[16vh] w-[54vw] rounded-lg overflow-hidden shadow-sm text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80] text-white px-[3.8vw] py-[.8vh]"
         >
           <NuxtImg
             class="absolute h-full w-full left-0 top-0 object-cover"
@@ -110,17 +218,41 @@
             alt="#"
           />
           <div
-            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-b from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex items-center justify-center text-[2.4vh]"
+            class="absolute h-full w-full left-0 top-0 bg-black z-[1] bg-gradient-to-tr from-[#222] via-[#0000] to-[#0000] bg-opacity-[.4] flex flex-col items-center justify-between px-[2vw] py-[1vh]"
           >
-            Active
+            <div class="h-max w-full flex justify-end">
+              <svg
+                v-if="!userStore.customPreference.category.includes('Active')"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"
+                />
+              </svg>
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4l8-8z"
+                />
+              </svg>
+            </div>
+            <div class="h-max w-full flex flex-col items-start justify-end">
+              <span class="text-[2.4vh]">Active</span>
+              <span class="text-[1.6vh] text-[#ecececec]"
+                >Option | Option | Option & more</span
+              >
+            </div>
           </div>
-          <div
-            v-if="userStore.customPreference.category.includes('Active')"
-            class="h-full w-full absolute top-0 left-0 bg-[#333] bg-opacity-[.5] backdrop-blur-[4px] text-white text-center flex items-center justify-center text-[1.8vh] rounded-lg font-[500] z-[9]"
-          >
-            <span class="text-[2vh] tracking-[.1vw]"> Selected </span>
-          </div>
-          Carpet
         </button>
       </div>
     </div>
