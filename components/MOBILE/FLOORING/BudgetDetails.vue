@@ -7,11 +7,10 @@
         userStore.preference.color.length > 0 &&
         userStore.preference.material !== ''
       "
-      class="max-[990px]:hidden h-full w-full text-center py-[4vh] flex flex-col gap-[2.4vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      class="max-[990px]:hidden h-full w-full text-center py-[4vh] flex flex-col gap-[8.4vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <!-- DESKTOP -->
       <div
-        @click="() => console.log(selectedBudget.value)"
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pl-[2vw]"
       >
         <span>Choose Your Budget</span>

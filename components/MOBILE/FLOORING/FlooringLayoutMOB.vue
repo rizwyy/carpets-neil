@@ -44,15 +44,15 @@ function toggleExpansion() {
       >
         <a
           href="/flooring/carpets/details"
-          class="h-[24vh] w-[100%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-md justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
+          class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-md justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="text-[3.8vh] font-[400] leading-[3.8vh] z-[1] text-[#f1f1f1]"
+            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Carpet <br />
             Flooring</span
           >
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
-            <span class="text-[2vh] border-b-[1px]">View All</span>
+            <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
           </div>
           <div
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
@@ -65,6 +65,37 @@ function toggleExpansion() {
             alt="#"
           />
         </a>
+        <div
+          class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+        >
+          <div
+            class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
+          >
+            COMING SOON!
+          </div>
+          <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+            >Active <br />
+            Flooring</span
+          >
+          <div class="h-max w-full px-[2vw] flex justify-end">
+            <!-- <a
+              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw]"
+              href="/active-floors"
+              >view all</a
+            > -->
+          </div>
+          <div
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
+          ></div>
+          <!-- <NuxtImg 
+           quality="50"
+            loading="lazy"
+            
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            src="/40001.jpg"
+            alt="#"
+          /> -->
+        </div>
       </div>
 
       <div

@@ -36,7 +36,7 @@
         <!-- Solid -->
         <div
           :class="[
-            'h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Plain') },
           ]"
           @click="toggleSelect('Plain')"
@@ -71,7 +71,7 @@
         <div
           v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Textured') },
           ]"
           @click="toggleSelect('Textured')"
@@ -105,7 +105,7 @@
         <!-- DESKTOP -->
         <div
           :class="[
-            'h-[28vh]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Patterned') },
           ]"
           @click="toggleSelect('Patterned')"
@@ -139,7 +139,7 @@
         <!-- Customized -->
         <div
           :class="[
-            'h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Stripped') },
           ]"
           @click="toggleSelect('Stripped')"
@@ -277,7 +277,7 @@
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
       <!-- MOBILE -->
-      <!-- Patterned -->
+      <!-- Textured -->
       <div
         :class="[
           'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',

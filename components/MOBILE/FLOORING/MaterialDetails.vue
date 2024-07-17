@@ -36,7 +36,7 @@
         <!-- Poly Propene Carpets -->
         <div
           :class="[
-            'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'polypropylene' },
           ]"
           @click="toggleSelect('polypropylene')"
@@ -67,7 +67,7 @@
         <!-- nylon carpets -->
         <div
           :class="[
-            'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Nylon' },
           ]"
           @click="toggleSelect('Nylon')"
@@ -102,7 +102,7 @@
         <div
           v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Sisal' },
           ]"
           @click="toggleSelect('Sisal')"
@@ -136,7 +136,7 @@
         <div
           v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'materialItem_PC h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Wool' },
           ]"
           @click="toggleSelect('Wool')"
