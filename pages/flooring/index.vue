@@ -13,14 +13,14 @@
     <NavBarPC />
     <BannerYouWin />
     <!-- <HowWoltizWorks /> -->
-    <FlooringLayout />
+    <!-- <FlooringLayout /> -->
     <FooterPC />
   </section>
 </template>
 
 <script setup>
 import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
-import FlooringLayout from "~/components/DESKTOP/FLOORING/FlooringLayout.vue";
+// import FlooringLayout from "~/components/DESKTOP/FLOORING/FlooringLayout.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
