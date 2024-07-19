@@ -60,16 +60,16 @@
           <span class="text-[3.4vh]">Real Wood Floor</span>
         </div>
 
-        <!-- Wood Imitated Floor -->
+        <!-- Wood Artificial Floor -->
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Wood Imitated Floor') },
+            { selected: selectedCategory.includes('Wood Artificial Floor') },
           ]"
-          @click="toggleSelect('Wood Imitated Floor')"
+          @click="toggleSelect('Wood Artificial Floor')"
         >
           <div
-            v-if="selectedCategory.includes('Wood Imitated Floor')"
+            v-if="selectedCategory.includes('Wood Artificial Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -87,9 +87,9 @@
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/wooden/wooden-1.webp"
-            alt="Wood Imitated Floor"
+            alt="Wood Artificial Floor"
           />
-          <span class="text-[3.4vh]">Wood Imitated Floor</span>
+          <span class="text-[3.4vh]">Wood Artificial Floor</span>
         </div>
       </div>
 
@@ -156,16 +156,16 @@
         <span>Real Wood</span>
       </div>
 
-      <!-- Wood Imitated Floor -->
+      <!-- Wood Artificial Floor -->
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedCategory.includes('Wood Imitated Floor') },
+          { selected: selectedCategory.includes('Wood Artificial Floor') },
         ]"
-        @click="toggleSelect('Wood Imitated Floor')"
+        @click="toggleSelect('Wood Artificial Floor')"
       >
         <div
-          v-if="selectedCategory.includes('Wood Imitated Floor')"
+          v-if="selectedCategory.includes('Wood Artificial Floor')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -186,7 +186,7 @@
           src="/wooden/wooden-1.webp"
           alt=""
         />
-        <span>Wood Imitated</span>
+        <span>Wood Artificial</span>
       </div>
     </div>
   </div>
