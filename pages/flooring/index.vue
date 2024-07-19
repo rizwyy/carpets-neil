@@ -13,7 +13,7 @@
     <NavBarPC />
     <BannerYouWin />
     <!-- <HowWoltizWorks /> -->
-    <FlooringLayoutPC />
+    <FlooringLayout />
     <FooterPC />
   </Desktop>
 </template>
@@ -27,7 +27,7 @@ import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import BannerYouWin from "./../../components/BannerYouWin.vue";
 
-import FlooringLayoutPC from "./../../components/DESKTOP/FLOORING/FlooringLayout.vue";
+import FlooringLayout from "~/components/DESKTOP/FLOORING/FlooringLayout.vue";
 import HowWoltizWorks from "./../../components/HowWoltizWorks.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";
