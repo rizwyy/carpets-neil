@@ -797,7 +797,7 @@
 <script setup>
 import { ref } from "vue";
 // PINIA
-import useUserStore from "../../../stores/user";
+import useUserStore from "../../../../stores/user";
 import Mobile from "~/layouts/Mobile.vue";
 import Desktop from "~/layouts/Desktop.vue";
 const userStore = useUserStore();

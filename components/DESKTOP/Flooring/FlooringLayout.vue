@@ -5,7 +5,7 @@
     <div class="h-max w-full flex justify-center">
       <span class="text-[2.8vw] font-[350]">Shop By Flooring Category</span>
     </div>
-    <div class="h-max w-full flex flex-col justify-between px-[6vw] gap-[0vh]">
+    <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
       <a href="/flooring/carpets/details">
         <CategoryCardHeroPC
           name="Carpet Flooring"
@@ -15,25 +15,39 @@
           src="10004.jpg"
         />
       </a>
+      <a href="/flooring/wooden/details">
+        <CategoryCardHeroPC
+          name="Wooden Flooring"
+          desc="Durable, stylish carpet flooring enhances comfort, warmth, and
+      aesthetic appeal in any space."
+          :isAvailable="true"
+          src="60002.jpg"
+        />
+      </a>
     </div>
     <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
       <CategoryCardHeroPC
-        name="Wooden Flooring"
+        name="Vinly Flooring"
         src="10003.jpg"
         link="/carpets/details"
       />
 
       <CategoryCardHeroPC
-        name="Flooring Accessories"
+        name="Gym Accessories"
         src=""
         link="/carpets/details"
       />
     </div>
     <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
+      <CategoryCardHeroPC name="Sports Flooring" link="/carpets/details" />
+
+      <CategoryCardHeroPC name="Kids Flooring" src="" link="/carpets/details" />
+    </div>
+    <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
       <CategoryCardHeroPC name="Raised Flooring" link="/carpets/details" />
 
       <CategoryCardHeroPC
-        name="Explore All Products"
+        name="Flooring Accessories"
         src=""
         link="/carpets/details"
       />

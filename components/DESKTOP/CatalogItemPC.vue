@@ -38,8 +38,8 @@ const route = useRoute();
         </div>
       </div>
       <div class="h-max w-full flex justify-start pt-[.4vh]">
-        <a class="text-[2vh] underline underline-offset-[.4vh]" href=""
-          >View Details</a
+        <span class="text-[2vh] underline underline-offset-[.4vh]"
+          >View Details</span
         >
       </div>
     </div>

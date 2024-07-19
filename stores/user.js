@@ -86,11 +86,13 @@ const useUserStore = defineStore("user", {
       category: "",
     },
     preference: {
+      flooring: "",
       category: "",
       type: "",
       color: [],
       budget: "",
       material: "",
+      surface: "",
     },
   }),
 });

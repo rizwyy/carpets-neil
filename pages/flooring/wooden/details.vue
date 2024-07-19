@@ -1,22 +1,19 @@
 <script setup>
-import TypeDetails from "../../../components/MOBILE/FLOORING/CARPETS/TypeDetails.vue";
+import WoodenCategoryDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenCategoryDetails.vue";
+import WoodenTypeDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenTypeDetails.vue";
+import WoodenFinishDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenFinishDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import MaterialDetails from "../../../components/MOBILE/FLOORING/CARPETS/MaterialDetails.vue";
-import BudgetDetails from "../../../components/MOBILE/FLOORING/CARPETS/BudgetDetails.vue";
-import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
-import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
-
-import Desktop from "./../../../layouts/Desktop.vue";
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue";
+import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
 const route = useRoute();
 // COOKIES
-import Mobile from "./../../../layouts/Mobile.vue";
 import { useCookie } from "#app";
-import CategoryDetails from "~/components/MOBILE/FLOORING/CARPETS/CategoryDetails.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -45,22 +42,23 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Carpets >
+          Wooden Flooring >
           <!-- DESKTOP -->
           {{ userStore.preference.category }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <CategoryDetails />
+      <WoodenCategoryDetails />
       <CustomCarpetBTN />
-      <TypeDetails />
-      <MaterialDetails />
+      <WoodenTypeDetails />
+      <WoodenDesignDetails />
       <ColorDetails />
-      <BudgetDetails />
+      <WoodenFinishDetails />
+      <WoodenBudgetDetails />
 
       <!-- DESKTOP -->
-      <a href="/flooring/carpets/catalog">
+      <a href="/flooring/wooden/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
@@ -98,21 +96,22 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Carpets >
+          Wooden Flooring >
           {{ userStore.preference.category }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <CategoryDetails />
+      <WoodenCategoryDetails />
       <!-- MOBILE -->
-      <TypeDetails />
-      <CustomCarpetBTN />
-      <MaterialDetails />
+      <WoodenTypeDetails />
+      <!-- <CustomCarpetBTN /> -->
+      <WoodenDesignDetails />
       <ColorDetails />
-      <BudgetDetails />
+      <WoodenFinishDetails />
+      <WoodenBudgetDetails />
       <!-- <PileDetails /> -->
-      <a href="/flooring/carpets/catalog">
+      <a href="/flooring/wooden/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="

@@ -1,21 +1,19 @@
 <template>
   <!-- DESKTOP -->
-  <div
-    v-if="userStore.preference.category !== ''"
-    class="max-[990px]:hidden h-max w-screen px-[6vw]"
-  >
+  <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
-      class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      v-show="
+        userStore.preference.category !== '' && userStore.preference.type !== ''
+      "
+      class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
-      <div
-        class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
-      >
-        <span> Choose Your Type </span>
-        <!-- DESKTOP -->
+      <!-- DESKTOP -->
+      <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
+        <span>Choose your Material</span>
         <button
-          @click="clearAllSelections"
-          v-if="selectedType.length"
-          class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
+          @click="clearmaterialSelections"
+          v-if="selectedmaterial"
+          class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
           ><svg
@@ -33,16 +31,16 @@
         <!-- DESKTOP -->
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- Solid -->
+        <!-- Poly Propene Carpets -->
         <div
           :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Plain') },
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'polypropylene' },
           ]"
-          @click="toggleSelect('Plain')"
+          @click="toggleSelect('polypropylene')"
         >
           <div
-            v-if="selectedType.includes('Plain')"
+            v-if="selectedmaterial === 'polypropylene'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -54,30 +52,61 @@
           <div
             class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
-          <!-- DESKTOP -->
           <NuxtImg
             quality="50"
             placeholder
-            loading="eager"
+            loading="lazy"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/carpets/Polypropylene.webp"
+            alt="#"
+          />
+          <span class="text-[3.2vh]">Polypropylene</span>
+        </div>
+        <!-- nylon carpets -->
+        <div
+          :class="[
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'Nylon' },
+          ]"
+          @click="toggleSelect('Nylon')"
+        >
+          <div
+            v-if="selectedmaterial === 'Nylon'"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- DESKTOP -->
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            placeholder
+            loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/colors/snow.webp"
-            alt=""
+            alt="#"
           />
-          <span class="text-[3.4vh]">Plain</span>
+          <span class="text-[3.2vh]">Nylon</span>
         </div>
-
         <!-- DESKTOP -->
-        <!-- Textured -->
+      </div>
+      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- Sisal -->
         <div
           v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Textured') },
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'Sisal' },
           ]"
-          @click="toggleSelect('Textured')"
+          @click="toggleSelect('Sisal')"
         >
           <div
-            v-if="selectedType.includes('Textured')"
+            v-if="selectedmaterial === 'Sisal'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -87,111 +116,76 @@
             >
           </div>
           <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
           <NuxtImg
             quality="50"
             placeholder
-            loading="eager"
+            loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/texturedCarpet.webp"
-            alt="Textured"
-          />
-          <span class="text-[3.4vh]">Textured</span>
-        </div>
-      </div>
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- Designed -->
-        <!-- DESKTOP -->
-        <div
-          :class="[
-            'h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Patterned') },
-          ]"
-          @click="toggleSelect('Patterned')"
-        >
-          <div
-            v-if="selectedType.includes('Patterned')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <!-- Selected indicator without text -->
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-          ></div>
-          <NuxtImg
-            quality="50"
-            placeholder
-            preload
-            loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/carpets/patterned.webp"
-            alt=""
-          />
-          <span class="text-[3.4vh]">Patterned</span>
-        </div>
-
-        <!-- DESKTOP -->
-        <!-- Customized -->
-        <div
-          :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Stripped') },
-          ]"
-          @click="toggleSelect('Stripped')"
-        >
-          <div
-            v-if="selectedType.includes('Stripped')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <!-- Selected indicator without text -->
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-          ></div>
-          <NuxtImg
-            quality="50"
-            placeholder
-            loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/carpets/stripped.webp"
-            alt=""
+            src="/carpets/sisal.jpeg"
+            alt="#"
           />
           <!-- DESKTOP -->
-          <span class="text-[3.4vh]">Stripped</span>
+          <span class="text-[3.2vh]">Sisal</span>
         </div>
-      </div>
-      <div>
-        <!-- <RainBowBTN /> -->
+        <!-- DESKTOP -->
+        <!-- Wool -->
+        <div
+          v-show="userStore.preference.category !== 'Carpet Tiles'"
+          :class="[
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'Wool' },
+          ]"
+          @click="toggleSelect('Wool')"
+        >
+          <div
+            v-if="selectedmaterial === 'Wool'"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            quality="50"
+            placeholder
+            loading="lazy"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/wool-carpet.jpeg"
+            alt="#"
+          />
+          <span class="text-[3.2vh]">Wool</span>
+        </div>
+        <!-- DESKTOP -->
       </div>
     </div>
   </div>
-  <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
-  <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
-  <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
+  <!-- -------------------------------- -->
   <!-- MOBILE -->
   <div
-    v-if="userStore.preference.category !== ''"
-    class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+    v-show="
+      userStore.preference.category !== '' && userStore.preference.type !== ''
+    "
+    class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
-    <div
-      class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
-    >
-      <span> Choose Your Type </span>
+    <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
+      <!-- MOBILE -->
+      <span>Choose your Material</span>
       <button
-        @click="clearAllSelections"
-        v-if="selectedType.length"
-        class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
+        @click="clearmaterialSelections"
+        v-if="selectedmaterial"
+        class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
-        <!-- MOBILE -->
         Clear All<svg
           xmlns="http://www.w3.org/2000/svg"
           width="14"
@@ -207,16 +201,16 @@
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
       <!-- MOBILE -->
-      <!-- Plain -->
+      <!-- Poly Propene Carpets -->
       <div
         :class="[
           'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedType.includes('Plain') },
+          { selected: selectedmaterial === 'polypropylene' },
         ]"
-        @click="toggleSelect('Plain')"
+        @click="toggleSelect('polypropylene')"
       >
         <div
-          v-if="selectedType.includes('Plain')"
+          v-if="selectedmaterial === 'polypropylene'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -229,98 +223,60 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
-          preload
           quality="50"
           placeholder
-          loading="eager"
+          loading="lazy"
+          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/carpets/Polypropylene.webp"
+          alt="#"
+        />
+        <span>Polypropylene</span>
+      </div>
+      <!-- MOBILE -->
+      <!-- nylon carpets -->
+      <div
+        :class="[
+          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedmaterial === 'Nylon' },
+        ]"
+        @click="toggleSelect('Nylon')"
+      >
+        <div
+          v-if="selectedmaterial === 'Nylon'"
+          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+        >
+          <!-- Selected indicator without text -->
+          <span
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >Selected</span
+          >
+        </div>
+        <div
+          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+        ></div>
+        <NuxtImg
+          placeholder
+          loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
           src="/colors/snow.webp"
-          alt=""
+          alt="#"
         />
-        <span>Plain</span>
-      </div>
-
-      <!-- MOBILE -->
-      <!-- Textured -->
-      <div
-        v-show="userStore.preference.category !== 'Carpet Tiles'"
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedType.includes('Textured') },
-        ]"
-        @click="toggleSelect('Textured')"
-      >
-        <div
-          v-if="selectedType.includes('Textured')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
-          >
-        </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          preload
-          quality="50"
-          placeholder
-          loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/texturedCarpet.webp"
-          alt=""
-        />
-        <span>Textured</span>
+        <span>Nylon</span>
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
       <!-- MOBILE -->
-      <!-- Textured -->
+      <!-- Sisal -->
       <div
-        :class="[
-          'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedType.includes('Patterned') },
-        ]"
-        @click="toggleSelect('Patterned')"
-      >
-        <div
-          v-if="selectedType.includes('Patterned')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
-          >
-        </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          preload
-          quality="50"
-          placeholder
-          loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets/patterned.webp"
-          alt=""
-        />
-        <span>Patterned</span>
-      </div>
-
-      <!-- MOBILE -->
-      <!-- Customized -->
-      <div
+        v-show="userStore.preference.category !== 'Carpet Tiles'"
         :class="[
           'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedType.includes('Stripped') },
+          { selected: selectedmaterial === 'Sisal' },
         ]"
-        @click="toggleSelect('Stripped')"
+        @click="toggleSelect('Sisal')"
       >
         <div
-          v-if="selectedType.includes('Stripped')"
+          v-if="selectedmaterial === 'Sisal'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -333,42 +289,65 @@
           class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
         ></div>
         <NuxtImg
-          preload
           quality="50"
           placeholder
-          loading="eager"
+          loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets/stripped.webp"
-          alt=""
+          src="/carpets/sisal.jpeg"
+          alt="#"
         />
-        <span>Stripped</span>
+        <span>Sisal</span>
+      </div>
+      <!-- MOBILE -->
+      <!-- Wool -->
+      <div
+        v-show="userStore.preference.category !== 'Carpet Tiles'"
+        :class="[
+          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedmaterial === 'Wool' },
+        ]"
+        @click="toggleSelect('Wool')"
+      >
+        <div
+          v-if="selectedmaterial === 'Wool'"
+          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+        >
+          <!-- Selected indicator without text -->
+          <span
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >Selected</span
+          >
+        </div>
+        <div
+          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+        ></div>
+        <NuxtImg
+          quality="50"
+          placeholder
+          loading="lazy"
+          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/carpets/nylon-carpet.jpeg"
+          alt="#"
+        />
+        <!-- MOBILE -->
+        <span>Wool</span>
       </div>
     </div>
-    <div>
-      <!-- <RainBowBTN /> -->
-    </div>
-    <!-- MOBILE -->
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-import RainBowBTN from "../CustomCarpetBTN.vue";
 // PINIA
-import useUserStore from "../../../stores/user";
-const userStore = useUserStore();
-// COOKIES
-import { useCookie } from "#app";
-import gsap from "gsap";
 import Mobile from "~/layouts/Mobile.vue";
+import useUserStore from "../../../../stores/user";
+const userStore = useUserStore();
+import { ref } from "vue";
 import Desktop from "~/layouts/Desktop.vue";
-const userPreference = useCookie("userPreference");
-const selectedType = ref("");
 
-function clearAllSelections() {
-  selectedType.value = "";
-  userStore.preference.type = "";
+const selectedmaterial = ref("");
+function clearmaterialSelections() {
+  selectedmaterial.value = "";
+  userStore.preference.material = "";
 }
 function scrollToBottom() {
   setTimeout(() => {
@@ -378,18 +357,16 @@ function scrollToBottom() {
     });
   }, 200);
 }
-const toggleSelect = (type) => {
-  if (selectedType.value === type) {
-    selectedType.value = "";
-    userStore.preference.type = "";
+const toggleSelect = (material) => {
+  if (selectedmaterial.value === material) {
+    selectedmaterial.value = "";
+    userStore.preference.material = "";
   } else {
     scrollToBottom();
-    selectedType.value = type;
-    userStore.preference.type = toRaw(selectedType.value);
+    selectedmaterial.value = material;
+    userStore.preference.material = toRaw(selectedmaterial.value);
   }
 };
-
-onMounted(() => {});
 </script>
 
 <style scoped>

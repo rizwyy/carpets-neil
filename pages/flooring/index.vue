@@ -6,6 +6,7 @@
     <BannerYouWin />
 
     <FlooringLayoutMOB />
+    <FooterMOB />
   </section>
   <!-- DESKTOP -->
   <Desktop>
@@ -23,9 +24,10 @@ import Mobile from "./../../layouts/Mobile.vue";
 import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
+import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import BannerYouWin from "./../../components/BannerYouWin.vue";
 
-import FlooringLayoutPC from "././../../components/DESKTOP/Flooring/FlooringLayout.vue";
+import FlooringLayoutPC from "./../../components/DESKTOP/FLOORING/FlooringLayout.vue";
 import HowWoltizWorks from "./../../components/HowWoltizWorks.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";

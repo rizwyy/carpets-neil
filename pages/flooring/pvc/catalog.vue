@@ -1,6 +1,7 @@
 <script setup>
 // COMPONENTS IMPORTS
-
+import Mobile from "./../../../layouts/Mobile.vue";
+import Desktop from "./../../../layouts/Desktop.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";

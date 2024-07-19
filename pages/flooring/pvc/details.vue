@@ -1,22 +1,25 @@
 <script setup>
-import TypeDetails from "../../../components/MOBILE/FLOORING/CARPETS/TypeDetails.vue";
+import PvcCategoryDetails from "../../../components/MOBILE/FLOORING/PVC/PvcCategoryDetails.vue";
+import PvcTypeDetails from "../../../components/MOBILE/FLOORING/PVC/PvcTypeDetails.vue";
+import PvcFinishDetails from "../../../components/MOBILE/FLOORING/PVC/PvcFinishDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import MaterialDetails from "../../../components/MOBILE/FLOORING/CARPETS/MaterialDetails.vue";
-import BudgetDetails from "../../../components/MOBILE/FLOORING/CARPETS/BudgetDetails.vue";
-import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
-import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import PvcDesignDetails from "../../../components/MOBILE/FLOORING/PVC/PvcDesignDetails.vue";
+import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetDetails.vue";
+// import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
 
-import Desktop from "./../../../layouts/Desktop.vue";
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-
+//  <WoodenCategoryDetails />
+//   <CustomCarpetBTN />
+//   <WoodenTypeDetails />
+//   <ColorDetails />
+//   <WoodenDesignDetails />
+//   <WoodenBudgetDetails />
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
 const route = useRoute();
 // COOKIES
-import Mobile from "./../../../layouts/Mobile.vue";
 import { useCookie } from "#app";
-import CategoryDetails from "~/components/MOBILE/FLOORING/CARPETS/CategoryDetails.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -45,22 +48,23 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Carpets >
+          PVC Flooring >
           <!-- DESKTOP -->
           {{ userStore.preference.category }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <CategoryDetails />
+      <PvcCategoryDetails />
       <CustomCarpetBTN />
-      <TypeDetails />
-      <MaterialDetails />
+      <PvcTypeDetails />
+      <PvcDesignDetails />
       <ColorDetails />
-      <BudgetDetails />
+      <PvcFinishDetails />
+      <PvcBudgetDetails />
 
       <!-- DESKTOP -->
-      <a href="/flooring/carpets/catalog">
+      <button @click="() => alert('CATALOG IS UNDER DEVELOPMENT')">
         <button
           @click="setUserPreferenceCookie"
           v-show="
@@ -73,7 +77,7 @@ onMounted(() => {});
         >
           BROWSE CATALOG
         </button>
-      </a>
+      </button>
       <!-- DESKTOP -->
     </div>
     <!-- DESKTOP -->
@@ -98,21 +102,22 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Carpets >
+          PVC Flooring >
           {{ userStore.preference.category }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <CategoryDetails />
+      <PvcCategoryDetails />
       <!-- MOBILE -->
-      <TypeDetails />
-      <CustomCarpetBTN />
-      <MaterialDetails />
+      <PvcTypeDetails />
+      <!-- <CustomCarpetBTN /> -->
+      <PvcDesignDetails />
       <ColorDetails />
-      <BudgetDetails />
+      <PvcFinishDetails />
+      <PvcBudgetDetails />
       <!-- <PileDetails /> -->
-      <a href="/flooring/carpets/catalog">
+      <button @click="() => alert('CATALOG IS UNDER DEVELOPMENT')">
         <button
           @click="setUserPreferenceCookie"
           v-show="
@@ -137,7 +142,7 @@ onMounted(() => {});
           </svg>
           <!-- MOBILE -->
         </button>
-      </a>
+      </button>
     </div>
     <!-- MOBILE -->
   </section>

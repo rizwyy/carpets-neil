@@ -1,14 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <NavBarPC />
-  <div
-    v-if="isAccessRestricted"
-    class="max-[990px]:hidden h-[80vh] max-w-screen overflow-hidden"
-  >
-    <Unavailable />
-  </div>
   <section
-    v-else
     class="max-[990px]:hidden h-max min-h-screen max-w-screen overflow-x-hidden bg-[#f1f1f1] px-[6vw] font-outfit"
   >
     <div v-if="isLoaded" class="h-full w-full flex">
@@ -212,11 +205,8 @@
   <!-- -------------------------- -->
   <!-- MOBILE -->
   <section class="min-[990px]:hidden h-max w-max">
-    <NavBarMOB />
-    <div v-if="isAccessRestricted" class="h-screen w-screen">
-      <Unavailable />
-    </div>
-    <div v-else-if="isLoaded" class="h-max w-screen overflow-x-hidden">
+    <div v-if="isLoaded" class="h-max w-screen overflow-x-hidden">
+      <NavBarMOB />
       <div
         class="h-max w-screen font-outfit flex flex-col items-center gap-[2vh]"
       >
@@ -393,6 +383,7 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
         <!-- MOBILE -->
         <PriceTiers />
       </div>
+      <FooterMOB />
       <!-- MOBILE -->
     </div>
     <div
@@ -440,7 +431,6 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
         </circle>
       </svg>
     </div>
-    <FooterMOB />
   </section>
 </template>
 
@@ -453,15 +443,12 @@ import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import PriceTiers from "~/components/MOBILE/FLOORING/PriceTiers.vue";
-import Unavailable from "~/components/MOBILE/Unavailable.vue";
 
 const client = useSupabaseClient();
 const route = useRoute();
 const productId = route.params.id;
 
 const isLoaded = ref(false);
-const restrictedAccess = useCookie("restrictedAccess");
-const isAccessRestricted = ref(false);
 
 // Reactive variables
 const sqFeet = ref(0);
@@ -568,12 +555,7 @@ const totalPrice = computed(() => {
 });
 // Fetch product details based on the productId
 onMounted(() => {
-  if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
-    isAccessRestricted.value = true;
-  } else {
-    isAccessRestricted.value = false;
-    fetchProductDetails(productId);
-  }
+  fetchProductDetails(productId);
 });
 </script>
 

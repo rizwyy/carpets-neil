@@ -1,7 +1,9 @@
 <script setup>
 // COMPONENTS IMPORTS
-
+import Mobile from "./../../../layouts/Mobile.vue";
+import Desktop from "./../../../layouts/Desktop.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
 import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
@@ -9,6 +11,7 @@ import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
 import { useRouter } from "vue-router";
 // PINIA
 import useUserStore from "../../../stores/user";
+import UnderDev from "~/components/MOBILE/UnderDev.vue";
 const userStore = useUserStore();
 // SUPABASE
 const client = useSupabaseClient();
@@ -54,19 +57,24 @@ async function fetchCarpetsData() {
   }
 }
 onMounted(() => {
-  if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
-    isAccessRestricted.value = true;
-  } else {
-    isAccessRestricted.value = false;
-    fetchCarpetsData();
-  }
+  console.log(
+    "%c NOTHING IS HAPPENING HERE!",
+    "color: white; background-color: red; font-size: 20px; padding: 5px;"
+  );
+  // if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
+  //   isAccessRestricted.value = true;
+  // } else {
+  //   isAccessRestricted.value = false;
+  //   fetchCarpetsData();
+  // }
 });
 </script>
 
 <template>
   <section class="max-[990px]:hidden h-max w-max">
-    <div class="h-max w-screen overflow-x-hidden max-w-[98vw] font-outfit">
-      <div class="h-max px-[2vw] text-[6vh] w-screen py-[6vh] px-[6vw]">
+    <NavBarPC />
+    <div class="h-max max-w-screen overflow-x-hidden font-outfit">
+      <!-- <div class="h-max px-[2vw] text-[6vh] w-screen py-[6vh] px-[6vw]">
         <h1>Catalog</h1>
       </div>
       <div
@@ -135,12 +143,15 @@ onMounted(() => {
             VIEW MORE
           </button>
         </div>
-      </div>
+      </div> -->
+      <!--  -->
+
+      <UnderDev />
     </div>
   </section>
   <section class="min-[990px]:hidden h-max w-max font-outfit bg-white z-[-1]">
     <NavBarMOB />
-    <div v-if="isAccessRestricted" class="h-screen w-screen">
+    <!-- <div v-if="isAccessRestricted" class="h-screen w-screen">
       <Unavailable />
     </div>
     <div
@@ -224,7 +235,10 @@ onMounted(() => {
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <!--  -->
+    <UnderDev />
   </section>
 </template>
 

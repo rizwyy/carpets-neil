@@ -153,7 +153,7 @@
 <script setup>
 import { ref } from "vue";
 // PINIA
-import useUserStore from "../../../stores/user";
+import useUserStore from "../../../../stores/user";
 const userStore = useUserStore();
 
 const selectedPiles = ref([]);
