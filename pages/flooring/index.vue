@@ -9,26 +9,23 @@
     <FooterMOB />
   </section>
   <!-- DESKTOP -->
-  <Desktop>
+  <section class="h-max w-max max-[990px]:hidden">
     <NavBarPC />
     <BannerYouWin />
     <!-- <HowWoltizWorks /> -->
     <FlooringLayout />
     <FooterPC />
-  </Desktop>
+  </section>
 </template>
 
 <script setup>
-import Desktop from "./../../layouts/Desktop.vue";
-import Mobile from "./../../layouts/Mobile.vue";
 import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
+import FlooringLayout from "~/components/DESKTOP/FLOORING/FlooringLayout.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import BannerYouWin from "./../../components/BannerYouWin.vue";
 
-import FlooringLayout from "~/components/DESKTOP/FLOORING/FlooringLayout.vue";
-import HowWoltizWorks from "./../../components/HowWoltizWorks.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 
