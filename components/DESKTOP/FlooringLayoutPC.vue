@@ -56,11 +56,11 @@
 </template>
 
 <script setup>
-import CategoryCardHeroPC from "./../CategoryCard-HeroPC.vue";
+import CategoryCardHeroPC from "./CategoryCard-HeroPC.vue";
 import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
 
-import useUserStore from "../../../stores/user";
+import useUserStore from "../../stores/user";
 const userStore = useUserStore();
 const isCarpetExpanded = ref(false);
 const setCategory = (category) => {
