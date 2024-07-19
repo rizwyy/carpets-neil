@@ -9,7 +9,7 @@
     <FooterMOB />
   </section>
   <!-- DESKTOP -->
-  <section class="h-max w-max max-[990px]:hidden">
+  <section class="h-max max-w-screen overflow-x-hidden max-[990px]:hidden">
     <NavBarPC />
     <BannerYouWin />
     <!-- <HowWoltizWorks /> -->
