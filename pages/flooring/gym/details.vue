@@ -44,12 +44,12 @@ onMounted(() => {});
         >
           Gym Flooring >
           <!-- DESKTOP -->
-          {{ userStore.preference.category }}
+          {{ userStore.preference.type }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <GymCategoryDetails />
+      <!-- <GymCategoryDetails /> -->
       <CustomCarpetBTN />
       <GymTypeDetails />
       <GymDesignDetails />
@@ -97,12 +97,12 @@ onMounted(() => {});
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Gym Flooring >
-          {{ userStore.preference.category }}
+          {{ userStore.preference.type }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <GymCategoryDetails />
+      <!-- <GymCategoryDetails /> -->
       <!-- MOBILE -->
       <GymTypeDetails />
       <!-- <CustomCarpetBTN /> -->

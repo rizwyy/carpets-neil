@@ -93,8 +93,8 @@ function toggleExpansion() {
       <div
         class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
       >
-        <a
-          href="/flooring/pvc/details"
+        <!-- href="/flooring/pvc/details" -->
+        <div
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
@@ -114,7 +114,7 @@ function toggleExpansion() {
             src="/pvc/pvc-flooring.webp"
             alt="#"
           />
-        </a>
+        </div>
         <div
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >

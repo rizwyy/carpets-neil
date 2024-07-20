@@ -93,6 +93,9 @@ const useUserStore = defineStore("user", {
       budget: "",
       material: "",
       surface: "",
+
+      segment: "",
+      variant: "",
     },
   }),
 });

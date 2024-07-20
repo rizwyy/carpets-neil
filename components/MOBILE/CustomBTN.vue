@@ -1,3 +1,8 @@
+<script setup>
+import Desktop from "~/layouts/Desktop.vue";
+import Mobile from "~/layouts/Mobile.vue";
+const { heading, link } = defineProps(["heading", "link"]);
+</script>
 <template>
   <div
     class="max-[990px]:hidden h-[16vh] relative overflow-hidden block flex items-center gap-[2vw] justify-center w-[58vw] bg-[#ececec] shadow-xl backdrop-blur-[14px] overflow-hidden rounded-md px-[.8vh] py-[.8vh]"
@@ -34,12 +39,12 @@
   </div>
   <div class="h-max w-max min-[990px]:hidden">
     <a
-      href="/flooring/customise"
+      :ref="link"
       class="h-[12vh] w-[90vw] relative overflow-hidden block flex items-center gap-[2vw] justify-center w-[52vw] bg-[#ececec] shadow-xl backdrop-blur-[14px] overflow-hidden rounded-md px-[.8vh] py-[.8vh]"
     >
-      <span class="text-[3.2vh] text-[#000] font font-[500] z-[9]"
-        >Custom Carpets</span
-      >
+      <span class="text-[3.2vh] text-[#000] font font-[500] z-[9]">{{
+        heading
+      }}</span>
       <div
         class="h-full w-full absolute top-[0%] left-0 z-[-9] backdrop-blur-[14px]"
       ></div>
@@ -69,11 +74,6 @@
     </a>
   </div>
 </template>
-
-<script setup>
-import Desktop from "~/layouts/Desktop.vue";
-import Mobile from "~/layouts/Mobile.vue";
-</script>
 
 <style scoped>
 .font {

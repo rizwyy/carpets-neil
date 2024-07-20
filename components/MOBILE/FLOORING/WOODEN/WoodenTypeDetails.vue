@@ -64,7 +64,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-7.webp"
+              src="/wooden/wooden-hardLaminated.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Solid Wood Floor</span>
@@ -75,12 +75,12 @@
           <div
             :class="[
               'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Engineered Wood ') },
+              { selected: selectedType.includes('Engineered Wood') },
             ]"
-            @click="toggleSelect('Engineered Wood ')"
+            @click="toggleSelect('Engineered Wood')"
           >
             <div
-              v-if="selectedType.includes('Engineered Wood ')"
+              v-if="selectedType.includes('Engineered Wood')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -98,9 +98,9 @@
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
               src="/wooden/engineeredWoodenFloor.webp"
-              alt="Engineered Wood "
+              alt="Engineered Wood"
             />
-            <span class="text-[3.4vh]">Engineered Wood </span>
+            <span class="text-[3.4vh]">Engineered Wood</span>
           </div>
         </div>
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -132,7 +132,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-3.webp"
+              src="/wooden/wooden-.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Bamboo Wood Floor</span>
@@ -165,7 +165,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-5.webp"
+              src="/wooden/wooden-laminated.webp"
               alt=""
             />
             <!-- DESKTOP -->
@@ -202,7 +202,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-5.webp"
+              src="/wooden/wooden-laminated.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Laminated Floor</span>
@@ -343,7 +343,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-7.webp"
+            src="/wooden/wooden-hardLaminated.webp"
             alt=""
           />
           <span>Solid Wood</span>
@@ -413,7 +413,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-3.webp"
+            src="/wooden/wooden-bamboo.webp"
             alt=""
           />
           <span>Bamboo Wood</span>
@@ -447,7 +447,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-5.webp"
+            src="/wooden/wooden-laminated.webp"
             alt=""
           />
           <span>Cork Floor</span>
@@ -484,7 +484,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-5.webp"
+            src="/wooden/wooden-laminated.webp"
             alt=""
           />
           <span>Laminated Floor</span>
@@ -586,7 +586,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-7.webp"
+            src="/wooden/wooden-hardLaminated.webp"
             alt=""
           />
           <span>Hard Laminated</span>
@@ -603,7 +603,6 @@
 <script setup>
 import { ref } from "vue";
 
-import RainBowBTN from "../../CustomCarpetBTN.vue";
 // PINIA
 import useUserStore from "../../../../stores/user";
 const userStore = useUserStore();

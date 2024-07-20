@@ -12,8 +12,8 @@
 
   <div class="min-[990px]:hidden">
     <NavBarMOB />
-    <BannerYouWin />
     <SlidableNav />
+    <BannerYouWin />
     <UploadContainer />
     <WoltizWorkFlow />
     <FaqMOB />

@@ -89,7 +89,7 @@
             src="/wooden/wooden-1.webp"
             alt="Wood Artificial Floor"
           />
-          <span class="text-[3.4vh]">Wood Artificial Floor</span>
+          <span class="text-[3.4vh]">Artificial Wood Floor</span>
         </div>
       </div>
 
@@ -186,7 +186,7 @@
           src="/wooden/wooden-1.webp"
           alt=""
         />
-        <span>Wood Artificial</span>
+        <span>Artificial Wood</span>
       </div>
     </div>
   </div>
@@ -195,7 +195,6 @@
 <script setup>
 import { ref } from "vue";
 
-import RainBowBTN from "../../CustomCarpetBTN.vue";
 // PINIA
 import useUserStore from "../../../../stores/user";
 const userStore = useUserStore();

@@ -16,7 +16,7 @@
         />
         <NuxtImg
           v-else-if="userStore.customPreference.category === 'PVC'"
-          src="/pvc-flooring.webp"
+          src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
@@ -80,11 +80,11 @@
         <NuxtImg
           v-if="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover object-bottom"
         />
         <NuxtImg
           v-else-if="userStore.customPreference.category === 'PVC'"
-          src="/pvc-flooring.webp"
+          src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg

@@ -3,8 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
       v-show="
-        userStore.preference.flooring === 'Wooden' &&
-        userStore.preference.category !== '' &&
+        userStore.preference.flooring === 'gym' &&
         userStore.preference.type !== ''
       "
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
@@ -174,8 +173,7 @@
   <!-- MOBILE -->
   <div
     v-show="
-      userStore.preference.flooring === 'Wooden' &&
-      userStore.preference.category !== '' &&
+      userStore.preference.flooring === 'gym' &&
       userStore.preference.type !== ''
     "
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"

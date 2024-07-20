@@ -3,7 +3,7 @@ import TypeDetails from "../../../components/MOBILE/FLOORING/CARPETS/TypeDetails
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
 import MaterialDetails from "../../../components/MOBILE/FLOORING/CARPETS/MaterialDetails.vue";
 import BudgetDetails from "../../../components/MOBILE/FLOORING/CARPETS/BudgetDetails.vue";
-import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
+import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
 import Desktop from "./../../../layouts/Desktop.vue";
@@ -53,7 +53,7 @@ onMounted(() => {});
       </div>
       <!-- DESKTOP -->
       <CategoryDetails />
-      <CustomCarpetBTN />
+      <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
       <TypeDetails />
       <MaterialDetails />
       <ColorDetails />
@@ -107,7 +107,7 @@ onMounted(() => {});
       <CategoryDetails />
       <!-- MOBILE -->
       <TypeDetails />
-      <CustomCarpetBTN />
+      <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
       <MaterialDetails />
       <ColorDetails />
       <BudgetDetails />

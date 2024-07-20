@@ -228,7 +228,7 @@ const toggleSelect = (category) => {
     selectedCategory.value = category;
     userStore.preference.category = toRaw(selectedCategory.value);
     userStore.preference.type = "";
-    userStore.preference.flooring = "Wooden";
+    userStore.preference.flooring = "gym";
   }
 };
 

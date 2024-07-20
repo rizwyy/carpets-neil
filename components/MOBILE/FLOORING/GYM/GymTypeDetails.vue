@@ -1,16 +1,13 @@
 <template>
   <!-- DESKTOP -->
-  <div
-    v-if="userStore.preference.category !== ''"
-    class="max-[990px]:hidden h-max w-screen px-[6vw]"
-  >
+  <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
-        <span> Choose Your Type </span>
+        <span> Choose Your Application </span>
         <!-- DESKTOP -->
         <button
           @click="clearAllSelections"
@@ -37,16 +34,16 @@
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-          <!-- Solid Wood Floor -->
+          <!-- Fitness -->
           <div
             :class="[
               'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Solid Wood Floor') },
+              { selected: selectedType.includes('Fitness') },
             ]"
-            @click="toggleSelect('Solid Wood Floor')"
+            @click="toggleSelect('Fitness')"
           >
             <div
-              v-if="selectedType.includes('Solid Wood Floor')"
+              v-if="selectedType.includes('Fitness')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -67,7 +64,7 @@
               src="/wooden/wooden-7.webp"
               alt=""
             />
-            <span class="text-[3.4vh]">Solid Wood Floor</span>
+            <span class="text-[3.4vh]">Fitness</span>
           </div>
 
           <!-- DESKTOP -->
@@ -75,12 +72,12 @@
           <div
             :class="[
               'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Engineered Wood ') },
+              { selected: selectedType.includes('Strength & Conditioning') },
             ]"
-            @click="toggleSelect('Engineered Wood ')"
+            @click="toggleSelect('Strength & Conditioning')"
           >
             <div
-              v-if="selectedType.includes('Engineered Wood ')"
+              v-if="selectedType.includes('Strength & Conditioning')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -98,23 +95,23 @@
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
               src="/wooden/engineeredWoodenFloor.webp"
-              alt="Engineered Wood "
+              alt="Strength & Conditioning"
             />
-            <span class="text-[3.4vh]">Engineered Wood </span>
+            <span class="text-[3.4vh]">Strength & Conditioning</span>
           </div>
         </div>
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-          <!-- Bamboo Wood Floor -->
+          <!-- Group Training -->
           <!-- DESKTOP -->
           <div
             :class="[
               'h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Bamboo Wood Floor') },
+              { selected: selectedType.includes('Group Training') },
             ]"
-            @click="toggleSelect('Bamboo Wood Floor')"
+            @click="toggleSelect('Group Training')"
           >
             <div
-              v-if="selectedType.includes('Bamboo Wood Floor')"
+              v-if="selectedType.includes('Group Training')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -135,20 +132,20 @@
               src="/wooden/wooden-3.webp"
               alt=""
             />
-            <span class="text-[3.4vh]">Bamboo Wood Floor</span>
+            <span class="text-[3.4vh]">Group Training</span>
           </div>
 
           <!-- DESKTOP -->
-          <!-- Cork Floor -->
+          <!-- Martial Arts -->
           <div
             :class="[
               'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Cork Floor') },
+              { selected: selectedType.includes('Martial Arts') },
             ]"
-            @click="toggleSelect('Cork Floor')"
+            @click="toggleSelect('Martial Arts')"
           >
             <div
-              v-if="selectedType.includes('Cork Floor')"
+              v-if="selectedType.includes('Martial Arts')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -169,111 +166,7 @@
               alt=""
             />
             <!-- DESKTOP -->
-            <span class="text-[3.4vh]">Cork Floor</span>
-          </div>
-        </div>
-      </div>
-      <div v-else class="h-max w-full flex flex-col gap-[2vh]">
-        <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-          <!-- Laminated Floor -->
-          <div
-            :class="[
-              'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Laminated Floor') },
-            ]"
-            @click="toggleSelect('Laminated Floor')"
-          >
-            <div
-              v-if="selectedType.includes('Laminated Floor')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-            >
-              <!-- Selected indicator without text -->
-              <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                >Selected</span
-              >
-            </div>
-            <div
-              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-            ></div>
-            <!-- DESKTOP -->
-            <NuxtImg
-              quality="50"
-              placeholder
-              loading="eager"
-              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-5.webp"
-              alt=""
-            />
-            <span class="text-[3.4vh]">Laminated Floor</span>
-          </div>
-
-          <!-- DESKTOP -->
-          <!-- SPC Floor -->
-          <div
-            :class="[
-              'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('SPC Floor') },
-            ]"
-            @click="toggleSelect('SPC Floor')"
-          >
-            <div
-              v-if="selectedType.includes('SPC Floor')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-            >
-              <!-- Selected indicator without text -->
-              <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                >Selected</span
-              >
-            </div>
-            <div
-              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-            ></div>
-            <NuxtImg
-              quality="50"
-              placeholder
-              loading="eager"
-              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-SPC.webp"
-              alt="SPC Floor"
-            />
-            <span class="text-[3.4vh]">SPC Floor</span>
-          </div>
-        </div>
-        <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-          <!-- WPC Floor -->
-          <!-- DESKTOP -->
-          <div
-            :class="[
-              'h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('WPC Floor') },
-            ]"
-            @click="toggleSelect('WPC Floor')"
-          >
-            <div
-              v-if="selectedType.includes('WPC Floor')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-            >
-              <!-- Selected indicator without text -->
-              <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                >Selected</span
-              >
-            </div>
-            <div
-              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-            ></div>
-            <NuxtImg
-              quality="50"
-              placeholder
-              preload
-              loading="eager"
-              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-wpc.webp"
-              alt=""
-            />
-            <span class="text-[3.4vh]">WPC Floor</span>
+            <span class="text-[3.4vh]">Martial Arts</span>
           </div>
         </div>
       </div>
@@ -284,13 +177,12 @@
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> -->
   <!-- MOBILE -->
   <div
-    v-if="userStore.preference.category !== ''"
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
-      class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+      class="h-max w-full flex items-center justify-between text-[3.2vh] tracking-[-.07vw] z-[9]"
     >
-      <span> Choose Your Type </span>
+      <span> Choose Your Application </span>
       <button
         @click="clearAllSelections"
         v-if="selectedType.length"
@@ -310,22 +202,19 @@
         </svg>
       </button>
     </div>
-    <div
-      v-if="userStore.preference.category === 'Real Wood Floor'"
-      class="h-max w-full flex flex-col gap-[1vh]"
-    >
+    <div class="h-max w-full flex flex-col gap-[1vh]">
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- MOBILE -->
-        <!-- Solid Wood Floor -->
+        <!-- Fitness -->
         <div
           :class="[
             'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-            { selected: selectedType.includes('Solid Wood Floor') },
+            { selected: selectedType.includes('Fitness') },
           ]"
-          @click="toggleSelect('Solid Wood Floor')"
+          @click="toggleSelect('Fitness')"
         >
           <div
-            v-if="selectedType.includes('Solid Wood Floor')"
+            v-if="selectedType.includes('Fitness')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -346,21 +235,20 @@
             src="/wooden/wooden-7.webp"
             alt=""
           />
-          <span>Solid Wood</span>
+          <span>Fitness</span>
         </div>
 
         <!-- MOBILE -->
-        <!-- Engineered Wood Floor  -->
+        <!-- Strength & Conditioning -->
         <div
-          v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-            { selected: selectedType.includes('Engineered Wood Floor ') },
+            'h-[14vh] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+            { selected: selectedType.includes('Strength & Conditioning') },
           ]"
-          @click="toggleSelect('Engineered Wood Floor ')"
+          @click="toggleSelect('Strength & Conditioning')"
         >
           <div
-            v-if="selectedType.includes('Engineered Wood Floor ')"
+            v-if="selectedType.includes('Strength & Conditioning')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -381,21 +269,21 @@
             src="/wooden/engineeredWoodenFloor.webp"
             alt=""
           />
-          <span>Engineered Wood </span>
+          <span>Strength & Conditioning</span>
         </div>
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- MOBILE -->
-        <!-- Bamboo -->
+        <!-- Group Training -->
         <div
           :class="[
             'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-            { selected: selectedType.includes('Bamboo Wood Floor') },
+            { selected: selectedType.includes('Group Training') },
           ]"
-          @click="toggleSelect('Bamboo Wood Floor')"
+          @click="toggleSelect('Group Training')"
         >
           <div
-            v-if="selectedType.includes('Bamboo Wood Floor')"
+            v-if="selectedType.includes('Group Training')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -416,20 +304,20 @@
             src="/wooden/wooden-3.webp"
             alt=""
           />
-          <span>Bamboo Wood</span>
+          <span>Group Training</span>
         </div>
 
         <!-- MOBILE -->
-        <!-- Customized -->
+        <!-- Martial Arts -->
         <div
           :class="[
             'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-            { selected: selectedType.includes('Cork Floor') },
+            { selected: selectedType.includes('Martial Arts') },
           ]"
-          @click="toggleSelect('Cork Floor')"
+          @click="toggleSelect('Martial Arts')"
         >
           <div
-            v-if="selectedType.includes('Cork Floor')"
+            v-if="selectedType.includes('Martial Arts')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -450,149 +338,8 @@
             src="/wooden/wooden-5.webp"
             alt=""
           />
-          <span>Cork Floor</span>
+          <span>Martial Arts</span>
         </div>
-      </div>
-    </div>
-    <div v-else class="h-max w-full flex flex-col gap-[1vh]">
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- MOBILE -->
-        <!-- Laminated Floor -->
-        <div
-          :class="[
-            'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-            { selected: selectedType.includes('Laminated Floor') },
-          ]"
-          @click="toggleSelect('Laminated Floor')"
-        >
-          <div
-            v-if="selectedType.includes('Laminated Floor')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <!-- Selected indicator without text -->
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-          ></div>
-          <NuxtImg
-            preload
-            quality="50"
-            placeholder
-            loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-5.webp"
-            alt=""
-          />
-          <span>Laminated Floor</span>
-        </div>
-
-        <!-- MOBILE -->
-        <!-- SPC Floor -->
-        <div
-          :class="[
-            'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-            { selected: selectedType.includes('SPC Floor') },
-          ]"
-          @click="toggleSelect('SPC Floor')"
-        >
-          <div
-            v-if="selectedType.includes('SPC Floor')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <!-- Selected indicator without text -->
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-          ></div>
-          <NuxtImg
-            preload
-            quality="50"
-            placeholder
-            loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-SPC.webp"
-            alt=""
-          />
-          <span>SPC Floor</span>
-        </div>
-      </div>
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- MOBILE -->
-        <!-- WPC Floor -->
-        <div
-          :class="[
-            'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('WPC Floor') },
-          ]"
-          @click="toggleSelect('WPC Floor')"
-        >
-          <div
-            v-if="selectedType.includes('WPC Floor')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <!-- Selected indicator without text -->
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-          ></div>
-          <NuxtImg
-            preload
-            quality="50"
-            placeholder
-            loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-wpc.webp"
-            alt=""
-          />
-          <span>WPC Floor</span>
-        </div>
-        <!-- MOBILE -->
-        <!-- Hard Laminated Floor -->
-        <div
-          :class="[
-            'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Hard Laminated Floor') },
-          ]"
-          @click="toggleSelect('Hard Laminated Floor')"
-        >
-          <div
-            v-if="selectedType.includes('Hard Laminated Floor')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <!-- Selected indicator without text -->
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-          ></div>
-          <NuxtImg
-            preload
-            quality="50"
-            placeholder
-            loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-7.webp"
-            alt=""
-          />
-          <span>Hard Laminated</span>
-        </div>
-
-        <!-- MOBILE -->
       </div>
     </div>
 
@@ -635,6 +382,7 @@ const toggleSelect = (type) => {
     scrollToBottom();
     selectedType.value = type;
     userStore.preference.type = toRaw(selectedType.value);
+    userStore.preference.flooring = "gym";
   }
 };
 

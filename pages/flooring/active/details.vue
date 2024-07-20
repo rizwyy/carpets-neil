@@ -1,11 +1,11 @@
 <script setup>
-import WoodenCategoryDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenCategoryDetails.vue";
-import WoodenTypeDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenTypeDetails.vue";
-import WoodenFinishDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenFinishDetails.vue";
+import GymCategoryDetails from "../../../components/MOBILE/FLOORING/GYM/GymCategoryDetails.vue";
+import GymTypeDetails from "../../../components/MOBILE/FLOORING/GYM/GymTypeDetails.vue";
+import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue";
-import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
-import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
+import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymDesignDetails.vue";
+import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
+
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -42,20 +42,20 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Wooden Flooring >
+          Active Flooring >
           <!-- DESKTOP -->
           {{ userStore.preference.category }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <WoodenCategoryDetails />
-      <CustomBTN heading="Wooden Flooring" link="/flooring/customise" />
-      <WoodenTypeDetails />
-      <WoodenDesignDetails />
+      <!-- <GymCategoryDetails /> -->
+      <CustomCarpetBTN />
+      <GymTypeDetails />
+      <GymDesignDetails />
       <ColorDetails />
-      <WoodenFinishDetails />
-      <WoodenBudgetDetails />
+      <GymFinishDetails />
+      <GymBudgetDetails />
 
       <!-- DESKTOP -->
       <a href="/flooring/wooden/catalog">
@@ -96,20 +96,20 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Wooden Flooring >
+          Active Flooring >
           {{ userStore.preference.category }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <WoodenCategoryDetails />
-      <CustomBTN heading="Custom Wooden Floors" link="/flooring/customise" />
+      <!-- <GymCategoryDetails /> -->
       <!-- MOBILE -->
-      <WoodenTypeDetails />
-      <WoodenDesignDetails />
+      <GymTypeDetails />
+      <!-- <CustomCarpetBTN /> -->
+      <GymDesignDetails />
       <ColorDetails />
-      <WoodenFinishDetails />
-      <WoodenBudgetDetails />
+      <GymFinishDetails />
+      <GymBudgetDetails />
       <!-- <PileDetails /> -->
       <a href="/flooring/wooden/catalog">
         <button
