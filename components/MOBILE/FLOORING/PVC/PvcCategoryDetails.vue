@@ -53,8 +53,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wall-to-wall.webp"
+            class="h-full w-full object-top object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/pvc/vinyl-sheets.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Luxury Vinyl</span>
@@ -86,7 +86,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/carpet-tiles.webp"
+            src="/pvc/pvc-flooring.webp"
             alt="Woven Vinyl"
           />
           <span class="text-[3.4vh]">Woven Vinyl</span>
@@ -147,8 +147,8 @@
           quality="50"
           placeholder
           loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wall-to-wall.webp"
+          class="h-full w-full object-top object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/pvc/vinyl-sheets.webp"
           alt=""
         />
         <span>Luxury Vinyl</span>
@@ -181,7 +181,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpet-tiles.webp"
+          src="/pvc/pvc-flooring.webp"
           alt=""
         />
         <span>Woven Vinyl</span>

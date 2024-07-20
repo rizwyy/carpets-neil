@@ -60,8 +60,8 @@
               quality="50"
               placeholder
               loading="eager"
-              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/colors/snow.webp"
+              class="h-full w-full object-cover object-top absolute left-0 bottom-0 z-[-9]"
+              src="/pvc/vinyl-sheets.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Sheet</span>
@@ -90,11 +90,10 @@
               class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
             ></div>
             <NuxtImg
-              quality="50"
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/texturedCarpet.webp"
+              src="/pvc/pvc-tile.webp"
               alt="Tile"
             />
             <span class="text-[3.4vh]">Tile</span>
@@ -129,7 +128,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/carpets/patterned.webp"
+              src="/pvc/60002.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Plank</span>
@@ -232,8 +231,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/colors/snow.webp"
+            class="h-full w-full object-cover object-top absolute left-0 bottom-0 z-[-9]"
+            src="/pvc/vinyl-sheets.webp"
             alt=""
           />
           <span>Sheet</span>
@@ -267,7 +266,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/texturedCarpet.webp"
+            src="/pvc/pvc-tile.webp"
             alt=""
           />
           <span>Tile</span>

@@ -64,7 +64,7 @@ onMounted(() => {});
       <PvcBudgetDetails />
 
       <!-- DESKTOP -->
-      <button @click="() => alert('CATALOG IS UNDER DEVELOPMENT')">
+      <a href="/flooring/pvc/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
@@ -77,7 +77,7 @@ onMounted(() => {});
         >
           BROWSE CATALOG
         </button>
-      </button>
+      </a>
       <!-- DESKTOP -->
     </div>
     <!-- DESKTOP -->
@@ -117,7 +117,7 @@ onMounted(() => {});
       <PvcFinishDetails />
       <PvcBudgetDetails />
       <!-- <PileDetails /> -->
-      <button @click="() => alert('CATALOG IS UNDER DEVELOPMENT')">
+      <a href="/flooring/pvc/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
@@ -142,7 +142,7 @@ onMounted(() => {});
           </svg>
           <!-- MOBILE -->
         </button>
-      </button>
+      </a>
     </div>
     <!-- MOBILE -->
   </section>

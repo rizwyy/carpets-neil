@@ -28,8 +28,10 @@
     <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
       <CategoryCardHeroPC
         name="Vinly Flooring"
-        src="10003.jpg"
-        link="/carpets/details"
+        desc="Durable, stylish vinyl tiles offer sleek, resilient, and low-maintenance flooring for any modern space."
+        :isAvailable="true"
+        src="pvc/pvc-flooring.webp"
+        link="/flooring/pvc/details"
       />
 
       <CategoryCardHeroPC

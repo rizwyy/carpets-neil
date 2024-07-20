@@ -90,7 +90,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/colors/snow.webp"
+            src="/pvc/60002.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Wood Effect</span>
@@ -124,7 +124,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/carpets/sisal.jpeg"
+            src="/pvc/pvc-stone.webp"
             alt="#"
           />
           <!-- DESKTOP -->
@@ -157,7 +157,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wool-carpet.jpeg"
+            src="/pvc/pvc-abstract.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Abstract</span>
@@ -260,7 +260,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/colors/snow.webp"
+          src="/pvc/60002.webp"
           alt="#"
         />
         <span>Wood Effect</span>
@@ -294,7 +294,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets/sisal.jpeg"
+          src="/pvc/pvc-stone.webp"
           alt="#"
         />
         <span>Stone Effect</span>
@@ -326,7 +326,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/carpets/nylon-carpet.jpeg"
+          src="/pvc/pvc-abstract.webp"
           alt="#"
         />
         <!-- MOBILE -->
