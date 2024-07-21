@@ -50,7 +50,7 @@ onMounted(() => {});
       </div>
       <!-- DESKTOP -->
       <WoodenCategoryDetails />
-      <CustomBTN heading="Wooden Flooring" link="/flooring/customise" />
+      <CustomBTN heading="Wooden Flooring" link="/flooring/customize" />
       <WoodenTypeDetails />
       <WoodenDesignDetails />
       <ColorDetails />
@@ -103,7 +103,7 @@ onMounted(() => {});
       </div>
       <BannerYouWin />
       <WoodenCategoryDetails />
-      <CustomBTN heading="Custom Wooden Floors" link="/flooring/customise" />
+      <CustomBTN heading="Custom Wooden Floors" link="/flooring/customize" />
       <!-- MOBILE -->
       <WoodenTypeDetails />
       <WoodenDesignDetails />
