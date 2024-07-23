@@ -6,10 +6,9 @@
     <div @click="toggleMenu" class="h-max w-max">
       <span
         ><svg
+          class="h-[3.8vh]"
           @click="openMenu"
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
           viewBox="0 0 24 24"
         >
           <path

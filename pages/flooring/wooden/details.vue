@@ -2,7 +2,7 @@
 import WoodenCategoryDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenCategoryDetails.vue";
 import WoodenTypeDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenTypeDetails.vue";
 import WoodenFinishDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenFinishDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
+import WoodenColorDetails from "~/components/MOBILE/FLOORING/WOODEN/WoodenColorDetails.vue";
 import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue";
 import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
 import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
@@ -53,7 +53,7 @@ onMounted(() => {});
       <CustomBTN heading="Wooden Flooring" link="/flooring/customize" />
       <WoodenTypeDetails />
       <WoodenDesignDetails />
-      <ColorDetails />
+      <WoodenColorDetails />
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
 
@@ -107,7 +107,7 @@ onMounted(() => {});
       <!-- MOBILE -->
       <WoodenTypeDetails />
       <WoodenDesignDetails />
-      <ColorDetails />
+      <WoodenColorDetails />
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
       <!-- <PileDetails /> -->

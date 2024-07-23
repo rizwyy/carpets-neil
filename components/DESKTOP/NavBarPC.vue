@@ -6,8 +6,7 @@
       <button @click="openMenu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          class="h-[3.2vh] w-[3vw]"
           viewBox="0 0 24 24"
         >
           <path

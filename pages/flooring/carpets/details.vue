@@ -1,8 +1,8 @@
 <script setup>
-import TypeDetails from "../../../components/MOBILE/FLOORING/CARPETS/TypeDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import MaterialDetails from "../../../components/MOBILE/FLOORING/CARPETS/MaterialDetails.vue";
-import BudgetDetails from "../../../components/MOBILE/FLOORING/CARPETS/BudgetDetails.vue";
+import TypeDetails from "../../../components/MOBILE/FLOORING/CARPETS/CarpetTypeDetails.vue";
+import CarpetColorDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue";
+import MaterialDetails from "../../../components/MOBILE/FLOORING/CARPETS/CarpetMaterialDetails.vue";
+import BudgetDetails from "../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
 import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
@@ -16,7 +16,7 @@ const route = useRoute();
 // COOKIES
 import Mobile from "./../../../layouts/Mobile.vue";
 import { useCookie } from "#app";
-import CategoryDetails from "~/components/MOBILE/FLOORING/CARPETS/CategoryDetails.vue";
+import CategoryDetails from "~/components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -56,7 +56,7 @@ onMounted(() => {});
       <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
       <TypeDetails />
       <MaterialDetails />
-      <ColorDetails />
+      <CarpetColorDetails />
       <BudgetDetails />
 
       <!-- DESKTOP -->
@@ -109,7 +109,7 @@ onMounted(() => {});
       <TypeDetails />
       <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
       <MaterialDetails />
-      <ColorDetails />
+      <CarpetColorDetails />
       <BudgetDetails />
       <!-- <PileDetails /> -->
       <a href="/flooring/carpets/catalog">
