@@ -206,7 +206,13 @@
     >
       <!-- SLIDE 1 -->
       <div class="h-max w-full flex flex-col gap-[1vh]">
-        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+        <div
+          :class="{
+            'w-[76vw]': userStore.preference.type === 'Engineered Wood Floor',
+            'w-[90vw]': userStore.preference.type !== 'Engineered Wood Floor',
+          }"
+          class="h-max flex justify-between gap-[2vw] z-[9]"
+        >
           <!-- MOBILE -->
           <!-- Plain Planks -->
           <div
@@ -271,7 +277,13 @@
             <span>Herringbone</span>
           </div>
         </div>
-        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+        <div
+          :class="{
+            'w-[76vw]': userStore.preference.type === 'Engineered Wood Floor',
+            'w-[90vw]': userStore.preference.type !== 'Engineered Wood Floor',
+          }"
+          class="h-max flex justify-between gap-[2vw] z-[9]"
+        >
           <!-- MOBILE -->
           <!-- Chevron -->
           <div
@@ -341,7 +353,7 @@
       </div>
       <!-- SLIDE 2 -->
       <div
-        v-if="userStore.preference.type === 'Engineered Wood'"
+        v-show="userStore.preference.type === 'Engineered Wood Floor'"
         class="h-max w-full flex flex-col gap-[1vh]"
       >
         <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
@@ -479,7 +491,7 @@
       </div>
       <!-- SLIDE 3 -->
       <div
-        v-if="userStore.preference.type === 'Engineered Wood'"
+        v-show="userStore.preference.type === 'Engineered Wood Floor'"
         class="h-max w-full flex flex-col gap-[1vh]"
       >
         <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">

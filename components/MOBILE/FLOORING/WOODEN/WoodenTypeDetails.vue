@@ -352,15 +352,14 @@
         <!-- MOBILE -->
         <!-- Engineered Wood Floor  -->
         <div
-          v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
             'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-            { selected: selectedType.includes('Engineered Wood Floor ') },
+            { selected: selectedType.includes('Engineered Wood Floor') },
           ]"
-          @click="toggleSelect('Engineered Wood Floor ')"
+          @click="toggleSelect('Engineered Wood Floor')"
         >
           <div
-            v-if="selectedType.includes('Engineered Wood Floor ')"
+            v-if="selectedType.includes('Engineered Wood Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -381,7 +380,7 @@
             src="/wooden/engineeredWoodenFloor.webp"
             alt=""
           />
-          <span>Engineered Wood </span>
+          <span>Engineered Wood</span>
         </div>
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
