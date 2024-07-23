@@ -201,136 +201,413 @@
         </svg>
       </button>
     </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- MOBILE -->
-      <!-- Plain Planks -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterial === 'Plain Planks' },
-        ]"
-        @click="toggleSelect('Plain Planks')"
-      >
-        <div
-          v-if="selectedmaterial === 'Plain Planks'"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+    <div
+      class="relative w-full overflow-x-auto no-scrollbar select-none flex gap-[2vw]"
+    >
+      <!-- SLIDE 1 -->
+      <div class="h-max w-full flex flex-col gap-[1vh]">
+        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+          <!-- MOBILE -->
+          <!-- Plain Planks -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Plain Planks' },
+            ]"
+            @click="toggleSelect('Plain Planks')"
           >
+            <div
+              v-if="selectedmaterial === 'Plain Planks'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/wooden-7.webp"
+              alt="#"
+            />
+            <span>Plain Planks</span>
+          </div>
+          <!-- MOBILE -->
+          <!-- Herringbone -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Herringbone' },
+            ]"
+            @click="toggleSelect('Herringbone')"
+          >
+            <div
+              v-if="selectedmaterial === 'Herringbone'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/wooden-herringbone.webp"
+              alt="#"
+            />
+            <span>Herringbone</span>
+          </div>
         </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          quality="50"
-          placeholder
-          loading="lazy"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-7.webp"
-          alt="#"
-        />
-        <span>Plain Planks</span>
+        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+          <!-- MOBILE -->
+          <!-- Chevron -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Chevron' },
+            ]"
+            @click="toggleSelect('Chevron')"
+          >
+            <div
+              v-if="selectedmaterial === 'Chevron'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/wooden-chevron.webp"
+              alt="#"
+            />
+            <span>Chevron</span>
+          </div>
+          <!-- MOBILE -->
+          <!-- Basket Weave -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Basket Weave' },
+            ]"
+            @click="toggleSelect('Basket Weave')"
+          >
+            <div
+              v-if="selectedmaterial === 'Basket Weave'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/wooden-basketWeave.webp"
+              alt="#"
+            />
+            <!-- MOBILE -->
+            <span>Basket Weave</span>
+          </div>
+        </div>
       </div>
-      <!-- MOBILE -->
-      <!-- Herringbone -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterial === 'Herringbone' },
-        ]"
-        @click="toggleSelect('Herringbone')"
-      >
-        <div
-          v-if="selectedmaterial === 'Herringbone'"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+      <!-- SLIDE 2 -->
+      <div class="h-max w-full flex flex-col gap-[1vh]">
+        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+          <!-- MOBILE -->
+          <!-- Custom I -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom I' },
+            ]"
+            @click="toggleSelect('Custom I')"
           >
+            <div
+              v-if="selectedmaterial === 'Custom I'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom1.webp"
+              alt="#"
+            />
+            <span>Custom I</span>
+          </div>
+          <!-- MOBILE -->
+          <!-- Custom II -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom II' },
+            ]"
+            @click="toggleSelect('Custom II')"
+          >
+            <div
+              v-if="selectedmaterial === 'Custom II'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom2.webp"
+              alt="#"
+            />
+            <span>Custom II</span>
+          </div>
         </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          placeholder
-          loading="lazy"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-herringbone.webp"
-          alt="#"
-        />
-        <span>Herringbone</span>
+        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+          <!-- MOBILE -->
+          <!-- Custom III -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom III' },
+            ]"
+            @click="toggleSelect('Custom III')"
+          >
+            <div
+              v-if="selectedmaterial === 'Custom III'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom3.webp"
+              alt="#"
+            />
+            <span>Custom III</span>
+          </div>
+          <!-- MOBILE -->
+          <!-- Custom IV -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom IV' },
+            ]"
+            @click="toggleSelect('Custom IV')"
+          >
+            <div
+              v-if="selectedmaterial === 'Custom IV'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom4.webp"
+              alt="#"
+            />
+            <!-- MOBILE -->
+            <span>Custom IV</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- MOBILE -->
-      <!-- Chevron -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterial === 'Chevron' },
-        ]"
-        @click="toggleSelect('Chevron')"
-      >
-        <div
-          v-if="selectedmaterial === 'Chevron'"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+      <!-- SLIDE 3 -->
+      <div class="h-max w-full flex flex-col gap-[1vh]">
+        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+          <!-- MOBILE -->
+          <!-- Custom V -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom V' },
+            ]"
+            @click="toggleSelect('Custom V')"
           >
-        </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          quality="50"
-          placeholder
-          loading="lazy"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-chevron.webp"
-          alt="#"
-        />
-        <span>Chevron</span>
-      </div>
-      <!-- MOBILE -->
-      <!-- Basket Weave -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterial === 'Basket Weave' },
-        ]"
-        @click="toggleSelect('Basket Weave')"
-      >
-        <div
-          v-if="selectedmaterial === 'Basket Weave'"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+            <div
+              v-if="selectedmaterial === 'Custom V'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom5.webp"
+              alt="#"
+            />
+            <span>Custom V</span>
+          </div>
+          <!-- MOBILE -->
+          <!-- Custom VI -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom VI' },
+            ]"
+            @click="toggleSelect('Custom VI')"
           >
+            <div
+              v-if="selectedmaterial === 'Custom VI'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom6.webp"
+              alt="#"
+            />
+            <span>Custom VI</span>
+          </div>
         </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          quality="50"
-          placeholder
-          loading="lazy"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-basketWeave.webp"
-          alt="#"
-        />
-        <!-- MOBILE -->
-        <span>Basket Weave</span>
+        <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
+          <!-- MOBILE -->
+          <!-- Custom VII -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom VII' },
+            ]"
+            @click="toggleSelect('Custom VII')"
+          >
+            <div
+              v-if="selectedmaterial === 'Custom VII'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom7.webp"
+              alt="#"
+            />
+            <span>Custom VII</span>
+          </div>
+          <!-- MOBILE -->
+          <!-- Custom VIII -->
+          <div
+            :class="[
+              'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: selectedmaterial === 'Custom VIII' },
+            ]"
+            @click="toggleSelect('Custom VIII')"
+          >
+            <div
+              v-if="selectedmaterial === 'Custom VIII'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom8.webp"
+              alt="#"
+            />
+            <!-- MOBILE -->
+            <span>Custom VIII</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -338,7 +615,6 @@
 
 <script setup>
 // PINIA
-import Mobile from "~/layouts/Mobile.vue";
 import useUserStore from "../../../../stores/user";
 const userStore = useUserStore();
 import { ref } from "vue";

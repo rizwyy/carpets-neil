@@ -56,7 +56,7 @@ const { heading, link } = defineProps(["heading", "link"]);
       />
 
       <a
-        href="/flooring/carpets/custom-carpets"
+        :href="link"
         class="absolute bottom-[1vh] right-[4vw] z-[99] text-[#222] text-viewAllMOB font-[500] flex items-center gap-[.6vw]"
       >
         View All<svg
