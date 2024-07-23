@@ -93,7 +93,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/pvc/pvc-tile.webp"
+              src="/pvc/vinyl-tile.webp"
               alt="Tile"
             />
             <span class="text-[3.4vh]">Tile</span>
@@ -128,7 +128,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/pvc/60002.webp"
+              src="/pvc/vinyl-plank.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Plank</span>
@@ -265,8 +265,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/pvc/pvc-tile.webp"
+            class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
+            src="/pvc/vinyl-tile.webp"
             alt=""
           />
           <span>Tile</span>
@@ -301,7 +301,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/carpets/patterned.webp"
+            src="/pvc/vinyl-plank.webp"
             alt=""
           />
           <span>Plank</span>
@@ -350,7 +350,6 @@
 <script setup>
 import { ref } from "vue";
 
-import RainBowBTN from "../../CustomCarpetBTN.vue";
 // PINIA
 import useUserStore from "../../../../stores/user";
 const userStore = useUserStore();

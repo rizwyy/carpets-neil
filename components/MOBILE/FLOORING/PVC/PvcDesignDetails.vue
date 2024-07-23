@@ -89,8 +89,8 @@
           <NuxtImg
             placeholder
             loading="lazy"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/pvc/60002.webp"
+            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/pvc/wood-effect.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Wood Effect</span>
@@ -124,7 +124,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/pvc/pvc-stone.webp"
+            src="/pvc/vinyl-stone.webp"
             alt="#"
           />
           <!-- DESKTOP -->
@@ -157,7 +157,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/pvc/pvc-abstract.webp"
+            src="/pvc/vinyl-abstract.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Abstract</span>
@@ -259,8 +259,8 @@
         <NuxtImg
           placeholder
           loading="lazy"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/60002.webp"
+          class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/pvc/wood-effect.webp"
           alt="#"
         />
         <span>Wood Effect</span>
@@ -294,7 +294,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/pvc-stone.webp"
+          src="/pvc/vinyl-stone.webp"
           alt="#"
         />
         <span>Stone Effect</span>
@@ -326,7 +326,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/pvc-abstract.webp"
+          src="/pvc/vinyl-abstract.webp"
           alt="#"
         />
         <!-- MOBILE -->
