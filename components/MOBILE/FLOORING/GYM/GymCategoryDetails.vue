@@ -195,7 +195,6 @@
 <script setup>
 import { ref } from "vue";
 
-import RainBowBTN from "../../CustomCarpetBTN.vue";
 // PINIA
 import useUserStore from "../../../../stores/user";
 const userStore = useUserStore();
