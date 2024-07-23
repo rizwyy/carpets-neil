@@ -50,7 +50,6 @@ onMounted(() => {});
       </div>
       <!-- DESKTOP -->
       <!-- <GymCategoryDetails /> -->
-      <CustomCarpetBTN />
       <GymTypeDetails />
       <GymDesignDetails />
       <ColorDetails />
@@ -105,7 +104,6 @@ onMounted(() => {});
       <!-- <GymCategoryDetails /> -->
       <!-- MOBILE -->
       <GymTypeDetails />
-      <!-- <CustomCarpetBTN /> -->
       <GymDesignDetails />
       <ColorDetails />
       <GymFinishDetails />
