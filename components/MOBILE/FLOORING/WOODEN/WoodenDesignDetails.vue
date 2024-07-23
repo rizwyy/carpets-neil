@@ -340,7 +340,10 @@
         </div>
       </div>
       <!-- SLIDE 2 -->
-      <div class="h-max w-full flex flex-col gap-[1vh]">
+      <div
+        v-if="userStore.preference.type === 'Engineered Wood'"
+        class="h-max w-full flex flex-col gap-[1vh]"
+      >
         <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
           <!-- MOBILE -->
           <!-- Custom I -->
@@ -475,7 +478,10 @@
         </div>
       </div>
       <!-- SLIDE 3 -->
-      <div class="h-max w-full flex flex-col gap-[1vh]">
+      <div
+        v-if="userStore.preference.type === 'Engineered Wood'"
+        class="h-max w-full flex flex-col gap-[1vh]"
+      >
         <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
           <!-- MOBILE -->
           <!-- Custom V -->
