@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <div
-    v-if="userStore.preference.category !== ''"
+    v-show="userStore.preference.category !== ''"
     class="max-[990px]:hidden h-max w-screen px-[6vw]"
   >
     <div
@@ -14,7 +14,7 @@
         <!-- DESKTOP -->
         <button
           @click="clearAllSelections"
-          v-if="selectedType.length"
+          v-show="selectedType.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -42,7 +42,7 @@
           @click="toggleSelect('Plain')"
         >
           <div
-            v-if="selectedType.includes('Plain')"
+            v-show="selectedType.includes('Plain')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -77,7 +77,7 @@
           @click="toggleSelect('Textured')"
         >
           <div
-            v-if="selectedType.includes('Textured')"
+            v-show="selectedType.includes('Textured')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -111,7 +111,7 @@
           @click="toggleSelect('Patterned')"
         >
           <div
-            v-if="selectedType.includes('Patterned')"
+            v-show="selectedType.includes('Patterned')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -145,7 +145,7 @@
           @click="toggleSelect('Stripped')"
         >
           <div
-            v-if="selectedType.includes('Stripped')"
+            v-show="selectedType.includes('Stripped')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->

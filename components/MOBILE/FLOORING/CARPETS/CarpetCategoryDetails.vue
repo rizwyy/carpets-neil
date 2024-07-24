@@ -7,7 +7,7 @@
 
 <script setup>
 import CarpetCategoryMOB from "./CARPETS-Category/CarpetCategory_MOB.vue";
-import CarpetCategoryPC from "./CARPETS-Category/CarpetCategory_MOB.vue";
+import CarpetCategoryPC from "./CARPETS-Category/CarpetCategory_PC.vue";
 const isMobile = ref(false);
 onMounted(() => {
   if (window.innerWidth < 990) {

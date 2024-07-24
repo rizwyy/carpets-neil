@@ -12,7 +12,7 @@
         <span class="text-left text-balance">Choose your Material</span>
         <button
           @click="clearmaterialSelections"
-          v-if="selectedmaterial"
+          v-show="selectedmaterial"
           class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -40,7 +40,7 @@
           @click="toggleSelect('polypropylene')"
         >
           <div
-            v-if="selectedmaterial === 'polypropylene'"
+            v-show="selectedmaterial === 'polypropylene'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -71,7 +71,7 @@
           @click="toggleSelect('Nylon')"
         >
           <div
-            v-if="selectedmaterial === 'Nylon'"
+            v-show="selectedmaterial === 'Nylon'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- DESKTOP -->
@@ -106,7 +106,7 @@
           @click="toggleSelect('Sisal')"
         >
           <div
-            v-if="selectedmaterial === 'Sisal'"
+            v-show="selectedmaterial === 'Sisal'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -140,7 +140,7 @@
           @click="toggleSelect('Wool')"
         >
           <div
-            v-if="selectedmaterial === 'Wool'"
+            v-show="selectedmaterial === 'Wool'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->

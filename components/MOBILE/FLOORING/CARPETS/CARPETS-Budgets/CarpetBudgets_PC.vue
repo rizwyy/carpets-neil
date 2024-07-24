@@ -16,7 +16,7 @@
         <span class="text-left text-balance">Choose Your Budget</span>
         <button
           @click="clearBudgetSelections"
-          v-if="selectedBudget.length"
+          v-show="selectedBudget.length"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -42,7 +42,7 @@
       >
         <!-- VALUE -->
         <div
-          v-if="
+          v-show="
             userStore.preference.category !== 'Area Rugs' &&
             !(
               userStore.preference.category === 'Wall to Wall' &&
@@ -60,7 +60,7 @@
           @click="toggleSelect('Value')"
         >
           <div
-            v-if="selectedBudget === 'Value'"
+            v-show="selectedBudget === 'Value'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -92,7 +92,19 @@
         </div>
         <!-- NOT AVAILABLE VALUE -->
         <div
-          v-else
+          v-show="
+            !(
+              userStore.preference.category !== 'Area Rugs' &&
+              !(
+                userStore.preference.category === 'Wall to Wall' &&
+                userStore.preference.material === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.category === 'Runners' &&
+                userStore.preference.material === 'Nylon'
+              )
+            )
+          "
           :class="[
             'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
@@ -109,7 +121,7 @@
         <!-- DESKTOP -->
         <!-- ESSENTIAL -->
         <div
-          v-if="
+          v-show="
             userStore.preference.category !== 'Area Rugs' &&
             !(
               userStore.preference.category === 'Wall to Wall' &&
@@ -127,7 +139,7 @@
           @click="toggleSelect('Essential')"
         >
           <div
-            v-if="selectedBudget === 'Essential'"
+            v-show="selectedBudget === 'Essential'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -159,7 +171,19 @@
         </div>
         <!-- NOT AVAILABLE ESSENTIALs -->
         <div
-          v-else
+          v-show="
+            !(
+              userStore.preference.category !== 'Area Rugs' &&
+              !(
+                userStore.preference.category === 'Wall to Wall' &&
+                userStore.preference.material === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.category === 'Runners' &&
+                userStore.preference.material === 'Nylon'
+              )
+            )
+          "
           :class="[
             'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
@@ -176,7 +200,7 @@
         <!-- DESKTOP -->
         <!-- PREMIER -->
         <div
-          v-if="
+          v-show="
             userStore.preference.category !== 'Area Rugs' &&
             userStore.preference.category !== 'Carpet Tiles' &&
             !(
@@ -195,7 +219,7 @@
           @click="toggleSelect('Premier')"
         >
           <div
-            v-if="selectedBudget === 'Premier'"
+            v-show="selectedBudget === 'Premier'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -228,7 +252,20 @@
         </div>
         <!-- NOT AVAILABLE PREMIER -->
         <div
-          v-else
+          v-show="
+            !(
+              userStore.preference.category !== 'Area Rugs' &&
+              userStore.preference.category !== 'Carpet Tiles' &&
+              !(
+                userStore.preference.category === 'Wall to Wall' &&
+                userStore.preference.material === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.category === 'Runners' &&
+                userStore.preference.material === 'polypropylene'
+              )
+            )
+          "
           :class="[
             'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
@@ -245,7 +282,7 @@
         <!-- DESKTOP -->
         <!-- SIGNATURE -->
         <div
-          v-if="
+          v-show="
             userStore.preference.category !== 'Area Rugs' &&
             userStore.preference.category !== 'Carpet Tiles' &&
             !(
@@ -264,7 +301,7 @@
           @click="toggleSelect('Signature')"
         >
           <div
-            v-if="selectedBudget === 'Signature'"
+            v-show="selectedBudget === 'Signature'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -297,7 +334,20 @@
         <!-- NOT AVAILABLE SIGNATURE -->
         <!-- DESKTOP -->
         <div
-          v-else
+          v-show="
+            !(
+              userStore.preference.category !== 'Area Rugs' &&
+              userStore.preference.category !== 'Carpet Tiles' &&
+              !(
+                userStore.preference.category === 'Wall to Wall' &&
+                userStore.preference.material === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.category === 'Runners' &&
+                userStore.preference.material === 'polypropylene'
+              )
+            )
+          "
           :class="[
             'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
@@ -313,7 +363,7 @@
         </div>
         <!-- ELITE -->
         <div
-          v-if="
+          v-show="
             userStore.preference.category === 'Area Rugs' ||
             (userStore.preference.category !== 'Carpet Tiles' &&
               !(
@@ -340,7 +390,7 @@
           @click="toggleSelect('Elite')"
         >
           <div
-            v-if="selectedBudget === 'Elite'"
+            v-show="selectedBudget === 'Elite'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- DESKTOP -->
@@ -374,7 +424,28 @@
         </div>
         <!-- NOT AVAILABLE ELITE -->
         <div
-          v-else
+          v-show="
+            !(
+              userStore.preference.category === 'Area Rugs' ||
+              (userStore.preference.category !== 'Carpet Tiles' &&
+                !(
+                  userStore.preference.category === 'Wall to Wall' &&
+                  userStore.preference.material === 'polypropylene'
+                ) &&
+                !(
+                  userStore.preference.category === 'Runners' &&
+                  userStore.preference.material === 'polypropylene'
+                ) &&
+                !(
+                  userStore.preference.category === 'Wall to Wall' &&
+                  userStore.preference.material === 'Nylon'
+                ) &&
+                !(
+                  userStore.preference.category === 'Runners' &&
+                  userStore.preference.material === 'Nylon'
+                ))
+            )
+          "
           :class="[
             'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
