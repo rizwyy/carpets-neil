@@ -1,11 +1,11 @@
 <template>
-  <GymBudgets_MOB v-if="isMobile" />
-  <GymBudgets_PC v-else />
+  <GymThickness_MOB v-if="isMobile" />
+  <GymThickness_PC v-else />
 </template>
 
 <script setup>
-import GymBudgets_MOB from "./GYM-Budgets/GymBudgets_MOB.vue";
-import GymBudgets_PC from "./GYM-Budgets/GymBudgets_PC.vue";
+import GymThickness_MOB from "./GYM-Thickness/GymThickness_MOB.vue";
+import GymThickness_PC from "./GYM-Thickness/GymThickness_PC.vue";
 
 const isMobile = ref(false);
 onMounted(() => {

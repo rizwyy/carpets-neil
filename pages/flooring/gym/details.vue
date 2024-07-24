@@ -1,9 +1,9 @@
 <script setup>
-import GymCategoryDetails from "../../../components/MOBILE/FLOORING/GYM/GymCategoryDetails.vue";
-import GymTypeDetails from "../../../components/MOBILE/FLOORING/GYM/GymTypeDetails.vue";
-import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
+import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymApplicationDetails.vue";
+import GymActivitiesDetails from "../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue";
+import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymThicknessDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymDesignDetails.vue";
+import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 
 import useUserStore from "../../../stores/user";
@@ -14,6 +14,9 @@ const route = useRoute();
 import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import GymFlooringDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
+import GymThicknessDetails from "../../../components/MOBILE/FLOORING/GYM/GymThicknessDetails.vue";
+import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -44,16 +47,16 @@ onMounted(() => {});
         >
           Gym Flooring >
           <!-- DESKTOP -->
-          {{ userStore.preference.type }}
+          {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <!-- <GymCategoryDetails /> -->
-      <GymTypeDetails />
-      <GymDesignDetails />
-      <ColorDetails />
-      <GymFinishDetails />
+      <GymApplicationDetails />
+      <GymActivitiesDetails />
+      <GymFlooringDetails />
+      <GymThicknessDetails />
+      <GymColorDetails />
       <GymBudgetDetails />
 
       <!-- DESKTOP -->
@@ -61,9 +64,12 @@ onMounted(() => {});
         <button
           @click="setUserPreferenceCookie"
           v-show="
-            userStore.preference.type.length > 0 &&
+            userStore.preference.flooring === 'gym' &&
+            userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_3 !== '' &&
+            userStore.preference.spec_4 !== '' &&
             userStore.preference.color.length > 0 &&
-            userStore.preference.material !== '' &&
             userStore.preference.budget !== ''
           "
           class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
@@ -96,26 +102,27 @@ onMounted(() => {});
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           Gym Flooring >
-          {{ userStore.preference.type }}
+          {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <!-- <GymCategoryDetails /> -->
-      <!-- MOBILE -->
-      <GymTypeDetails />
-      <GymDesignDetails />
-      <ColorDetails />
-      <GymFinishDetails />
+      <GymApplicationDetails />
+      <GymActivitiesDetails />
+      <GymFlooringDetails />
+      <GymThicknessDetails />
+      <GymColorDetails />
       <GymBudgetDetails />
-      <!-- <PileDetails /> -->
       <a href="/flooring/wooden/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
-            userStore.preference.type.length > 0 &&
+            userStore.preference.flooring === 'gym' &&
+            userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_3 !== '' &&
+            userStore.preference.spec_4 !== '' &&
             userStore.preference.color.length > 0 &&
-            userStore.preference.material !== '' &&
             userStore.preference.budget !== ''
           "
           class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-900 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"

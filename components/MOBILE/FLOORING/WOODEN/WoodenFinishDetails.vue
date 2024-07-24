@@ -13,7 +13,7 @@
     >
       <!-- DESKTOP -->
       <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
-        <span>Choose your Finish</span>
+        <span class="text-left text-balance">Choose your Finish</span>
         <button
           @click="clearSurfaceFinish"
           v-if="selectedSurfaceFinish"
@@ -119,7 +119,7 @@
   >
     <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
       <!-- MOBILE -->
-      <span>Choose your Finish</span>
+      <span class="text-left text-balance">Choose your Finish</span>
       <button
         @click="clearSurfaceFinish"
         v-if="selectedSurfaceFinish"

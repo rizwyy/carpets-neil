@@ -7,7 +7,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
-        <span> Choose Your Category </span>
+        <span class="text-left text-balance"> Choose Your Category </span>
         <button
           @click="clearAllSelections"
           v-if="selectedCategory.length"
@@ -103,7 +103,7 @@
     <div
       class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
     >
-      <span> Choose Your Category </span>
+      <span class="text-left text-balance"> Choose Your Category </span>
       <button
         @click="clearAllSelections"
         v-if="selectedCategory.length"

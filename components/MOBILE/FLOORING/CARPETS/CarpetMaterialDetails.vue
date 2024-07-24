@@ -9,7 +9,7 @@
     >
       <!-- DESKTOP -->
       <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
-        <span>Choose your Material</span>
+        <span class="text-left text-balance">Choose your Material</span>
         <button
           @click="clearmaterialSelections"
           v-if="selectedmaterial"
@@ -180,7 +180,7 @@
   >
     <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
       <!-- MOBILE -->
-      <span>Choose your Material</span>
+      <span class="text-left text-balance"> Choose your Material</span>
       <button
         @click="clearmaterialSelections"
         v-if="selectedmaterial"

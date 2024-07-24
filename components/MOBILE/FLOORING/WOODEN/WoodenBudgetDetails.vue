@@ -16,7 +16,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pl-[2vw]"
       >
-        <span>Choose Your Budget</span>
+        <span class="text-left text-balance">Choose Your Budget</span>
         <button
           @click="clearBudgetSelections"
           v-if="selectedBudget.length"
@@ -417,7 +417,7 @@
       @click="() => console.log(selectedBudget.value)"
       class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
     >
-      <span>Choose Your Budget</span>
+      <span class="text-left text-balance">Choose Your Budget</span>
       <button
         @click="clearBudgetSelections"
         v-if="selectedBudget.length"

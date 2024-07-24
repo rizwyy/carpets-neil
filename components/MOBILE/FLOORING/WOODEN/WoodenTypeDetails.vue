@@ -10,7 +10,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
-        <span> Choose Your Type </span>
+        <span class="text-left text-balance"> Choose Your Type </span>
         <!-- DESKTOP -->
         <button
           @click="clearAllSelections"
@@ -290,7 +290,7 @@
     <div
       class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
     >
-      <span> Choose Your Type </span>
+      <span class="text-left text-balance"> Choose Your Type </span>
       <button
         @click="clearAllSelections"
         v-if="selectedType.length"
