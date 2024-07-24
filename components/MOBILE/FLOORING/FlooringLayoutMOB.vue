@@ -126,10 +126,9 @@ function toggleExpansion() {
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
-            <a
+            <span
               class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1]"
-              href="/vinyl-floors"
-              >view all</a
+              >view all</span
             >
           </div>
           <div

@@ -1,6 +1,8 @@
 <template>
-  <GymBudgets_MOB v-if="isMobile" />
-  <GymBudgets_PC v-else />
+  <div class="">
+    <GymBudgets_MOB v-if="isMobile" />
+    <GymBudgets_PC v-else />
+  </div>
 </template>
 
 <script setup>
