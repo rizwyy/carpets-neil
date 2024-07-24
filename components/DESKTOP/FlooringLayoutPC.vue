@@ -32,11 +32,15 @@
         src="pvc/pvc-flooring.webp"
       />
 
-      <CategoryCardHeroPC
-        name="Gym Accessories"
-        src=""
-        link="/carpets/details"
-      />
+      <a href="/flooring/gym/details">
+        <CategoryCardHeroPC
+          name="Gym Flooring"
+          desc="Durable, stylish carpet flooring enhances comfort, warmth, and
+      aesthetic appeal in any space."
+          :isAvailable="true"
+          src="40002.jpg"
+        />
+      </a>
     </div>
     <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
       <CategoryCardHeroPC name="Sports Flooring" link="/carpets/details" />
