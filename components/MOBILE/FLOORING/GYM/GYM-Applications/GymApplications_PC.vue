@@ -10,7 +10,7 @@
         <span class="text-left text-balance"> Choose Your Application </span>
         <button
           @click="clearAllSelections"
-          v-if="spec_1.length"
+          v-show="spec_1.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2vh]">Clear All</span
@@ -37,7 +37,7 @@
           @click="toggleSelect('Fitness')"
         >
           <div
-            v-if="spec_1.includes('Fitness')"
+            v-show="spec_1.includes('Fitness')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -69,7 +69,7 @@
           @click="toggleSelect('Group Training')"
         >
           <div
-            v-if="spec_1.includes('Group Training')"
+            v-show="spec_1.includes('Group Training')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -102,7 +102,7 @@
           @click="toggleSelect('Strength & Conditioning')"
         >
           <div
-            v-if="spec_1.includes('Strength & Conditioning')"
+            v-show="spec_1.includes('Strength & Conditioning')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -134,7 +134,7 @@
           @click="toggleSelect('Martial Arts')"
         >
           <div
-            v-if="spec_1.includes('Martial Arts')"
+            v-show="spec_1.includes('Martial Arts')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->

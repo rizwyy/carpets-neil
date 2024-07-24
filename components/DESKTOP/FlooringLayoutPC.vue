@@ -30,6 +30,8 @@
         name="Vinly Flooring"
         desc="Durable, stylish vinyl tiles offer sleek, resilient, and low-maintenance flooring for any modern space."
         src="pvc/pvc-flooring.webp"
+        :isAvailable="true"
+        link="/flooring/pvc/details"
       />
 
       <a href="/flooring/gym/details">
@@ -39,6 +41,7 @@
       aesthetic appeal in any space."
           :isAvailable="true"
           src="40002.jpg"
+          link="/flooring/gym/details"
         />
       </a>
     </div>

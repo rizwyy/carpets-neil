@@ -10,7 +10,7 @@
       <span class="text-left text-balance"> Choose Your Activity </span>
       <button
         @click="clearAllSelections_spec2()"
-        v-if="spec_2.length"
+        v-show="spec_2.length"
         class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
       >
         <!-- MOBILE -->
@@ -43,7 +43,7 @@
           @click="toggleSelect('Cardio')"
         >
           <div
-            v-if="spec_2.includes('Cardio')"
+            v-show="spec_2.includes('Cardio')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -77,7 +77,7 @@
           @click="toggleSelect('Machine Training')"
         >
           <div
-            v-if="spec_2.includes('Machine Training')"
+            v-show="spec_2.includes('Machine Training')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -112,7 +112,7 @@
           @click="toggleSelect('Free Weights')"
         >
           <div
-            v-if="spec_2.includes('Free Weights')"
+            v-show="spec_2.includes('Free Weights')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -146,7 +146,7 @@
           @click="toggleSelect('Functional Training')"
         >
           <div
-            v-if="spec_2.includes('Functional Training')"
+            v-show="spec_2.includes('Functional Training')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -187,7 +187,7 @@
           @click="toggleSelect('Dance')"
         >
           <div
-            v-if="spec_2.includes('Dance')"
+            v-show="spec_2.includes('Dance')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -221,7 +221,7 @@
           @click="toggleSelect('Aerobic')"
         >
           <div
-            v-if="spec_2.includes('Aerobic')"
+            v-show="spec_2.includes('Aerobic')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -256,7 +256,7 @@
           @click="toggleSelect('Zumba')"
         >
           <div
-            v-if="spec_2.includes('Zumba')"
+            v-show="spec_2.includes('Zumba')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -290,7 +290,7 @@
           @click="toggleSelect('Step')"
         >
           <div
-            v-if="spec_2.includes('Step')"
+            v-show="spec_2.includes('Step')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -325,7 +325,7 @@
           @click="toggleSelect('TRX')"
         >
           <div
-            v-if="spec_2.includes('TRX')"
+            v-show="spec_2.includes('TRX')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -359,7 +359,7 @@
           @click="toggleSelect('Pilates')"
         >
           <div
-            v-if="spec_2.includes('Pilates')"
+            v-show="spec_2.includes('Pilates')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -400,7 +400,7 @@
           @click="toggleSelect('Weightlifting')"
         >
           <div
-            v-if="spec_2.includes('Weightlifting')"
+            v-show="spec_2.includes('Weightlifting')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -434,7 +434,7 @@
           @click="toggleSelect('Powerlifting')"
         >
           <div
-            v-if="spec_2.includes('Powerlifting')"
+            v-show="spec_2.includes('Powerlifting')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -475,7 +475,7 @@
           @click="toggleSelect('Judo')"
         >
           <div
-            v-if="spec_2.includes('Judo')"
+            v-show="spec_2.includes('Judo')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -509,7 +509,7 @@
           @click="toggleSelect('Kickboxing')"
         >
           <div
-            v-if="spec_2.includes('Kickboxing')"
+            v-show="spec_2.includes('Kickboxing')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -544,7 +544,7 @@
           @click="toggleSelect('Karate')"
         >
           <div
-            v-if="spec_2.includes('Karate')"
+            v-show="spec_2.includes('Karate')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -578,7 +578,7 @@
           @click="toggleSelect('Boxing')"
         >
           <div
-            v-if="spec_2.includes('Boxing')"
+            v-show="spec_2.includes('Boxing')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -613,7 +613,7 @@
           @click="toggleSelect('Taekwondo')"
         >
           <div
-            v-if="spec_2.includes('Taekwondo')"
+            v-show="spec_2.includes('Taekwondo')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -647,7 +647,7 @@
           @click="toggleSelect('Akido')"
         >
           <div
-            v-if="spec_2.includes('Akido')"
+            v-show="spec_2.includes('Akido')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
