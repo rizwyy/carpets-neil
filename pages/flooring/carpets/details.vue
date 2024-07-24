@@ -5,8 +5,6 @@ import MaterialDetails from "../../../components/MOBILE/FLOORING/CARPETS/CarpetM
 import BudgetDetails from "../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
 import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
-
-import Desktop from "./../../../layouts/Desktop.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 
 import useUserStore from "../../../stores/user";
@@ -14,7 +12,6 @@ const userStore = useUserStore();
 
 const route = useRoute();
 // COOKIES
-import Mobile from "./../../../layouts/Mobile.vue";
 import { useCookie } from "#app";
 import CategoryDetails from "~/components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
 const userPreference = useCookie("userPreference");
@@ -28,64 +25,18 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
 }
 
-onMounted(() => {});
+const isMobile = ref(false);
+onMounted(() => {
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
+});
 </script>
 <template>
-  <!-- DESKTOP -->
-  <section class="max-[990px]:hidden max-w-screen h-max">
-    <NavBarPC />
-    <div
-      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
-    >
-      <div
-        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
-      >
-        <!-- DESKTOP -->
-        <a
-          href="/flooring"
-          class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
-        >
-          Carpets >
-          <!-- DESKTOP -->
-          {{ userStore.preference.category }}
-        </a>
-        <span class="text-[5.4vh]"> Specify Your Needs </span>
-      </div>
-      <!-- DESKTOP -->
-      <CategoryDetails />
-      <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
-      <TypeDetails />
-      <MaterialDetails />
-      <CarpetColorDetails />
-      <BudgetDetails />
-
-      <!-- DESKTOP -->
-      <a href="/flooring/carpets/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.type.length > 0 &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.material !== '' &&
-            userStore.preference.budget !== ''
-          "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
-        >
-          BROWSE CATALOG
-        </button>
-      </a>
-      <!-- DESKTOP -->
-    </div>
-    <!-- DESKTOP -->
-  </section>
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
   <!-- MOBILE -->
-  <section class="min-[990px]:hidden w-max h-max">
+  <section v-if="isMobile" class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -140,6 +91,58 @@ onMounted(() => {});
       </a>
     </div>
     <!-- MOBILE -->
+  </section>
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- -------------------------------------------- -->
+  <!-- DESKTOP -->
+  <section v-else class="max-[990px]:hidden max-w-screen h-max">
+    <NavBarPC />
+    <div
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
+    >
+      <div
+        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+      >
+        <!-- DESKTOP -->
+        <a
+          href="/flooring"
+          class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
+        >
+          Carpets >
+          <!-- DESKTOP -->
+          {{ userStore.preference.category }}
+        </a>
+        <span class="text-[5.4vh]"> Specify Your Needs </span>
+      </div>
+      <!-- DESKTOP -->
+      <CategoryDetails />
+      <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
+      <TypeDetails />
+      <MaterialDetails />
+      <CarpetColorDetails />
+      <BudgetDetails />
+
+      <!-- DESKTOP -->
+      <a href="/flooring/carpets/catalog">
+        <button
+          @click="setUserPreferenceCookie"
+          v-show="
+            userStore.preference.type.length > 0 &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.material !== '' &&
+            userStore.preference.budget !== ''
+          "
+          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
+        >
+          BROWSE CATALOG
+        </button>
+      </a>
+      <!-- DESKTOP -->
+    </div>
+    <!-- DESKTOP -->
   </section>
 </template>
 

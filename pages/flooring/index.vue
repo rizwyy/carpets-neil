@@ -1,6 +1,6 @@
 <template>
   <!-- MOBILE -->
-  <section class="h-max w-max min-[990px]:hidden">
+  <section v-if="isMobile" class="h-max w-max min-[990px]:hidden">
     <NavBarMOB />
     <SearchBarMOB />
     <BannerYouWin />
@@ -9,7 +9,10 @@
     <FooterMOB />
   </section>
   <!-- DESKTOP -->
-  <section class="h-max max-w-screen overflow-x-hidden max-[990px]:hidden">
+  <section
+    v-else
+    class="h-max max-w-screen overflow-x-hidden max-[990px]:hidden"
+  >
     <NavBarPC />
     <BannerYouWin />
     <!-- <HowWoltizWorks /> -->
@@ -33,6 +36,15 @@ import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 // COOKIES
 import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
+
+const isMobile = ref(false);
+onMounted(() => {
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
+});
 </script>
 
 <style lang="scss" scoped></style>
