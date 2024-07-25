@@ -1,6 +1,6 @@
 <template>
   <!-- DESKTOP CARPETS-->
-  <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
+  <div class="max-[990px]:hidden h-max w-screen px-[6vw] flex justify-center">
     <div
       v-show="
         userStore.preference.category !== '' &&
@@ -12,7 +12,7 @@
       <div
         class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
       >
-        <span class="text-left text-balance"> Choose Your Color </span>
+        <span class="text-left text-balance"> Choose Your Color</span>
         <button
           @click="clearColorSelections"
           v-show="selectedColors.length"

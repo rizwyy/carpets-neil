@@ -1,7 +1,7 @@
 <template>
   <div class="h-max w-max">
-    <CarpetCategoryMOB v-if="isMobile" />
-    <CarpetCategoryPC v-else />
+    <CarpetCategoryMOB />
+    <CarpetCategoryPC />
   </div>
 </template>
 
