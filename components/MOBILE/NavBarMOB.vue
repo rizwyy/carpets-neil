@@ -61,13 +61,8 @@
       <a href="/">Home</a><a href="/about">About</a><span>Contact</span
       ><a href="/privacy">Privacy Policy</a>
     </div>
-    <div class="h-[20vh] w-screen flex flex-col">
-      <div
-        class="flex h-full w-full justify-between px-[4vw] items-center"
-      ></div>
-      <div
-        class="flex h-full w-full justify-between px-[4vw] pb-[8vh] items-center"
-      >
+    <div class="h-[20vh] w-screen flex flex-col justify-start">
+      <div class="flex h-full w-full justify-between px-[4vw] items-center">
         <span>Under Development | Demo</span>
         <span>Woltiz</span>
       </div>
