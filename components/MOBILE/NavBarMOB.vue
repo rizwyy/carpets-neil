@@ -65,7 +65,9 @@
       <div
         class="flex h-full w-full justify-between px-[4vw] items-center"
       ></div>
-      <div class="flex h-full w-full justify-between px-[4vw] items-center">
+      <div
+        class="flex h-full w-full justify-between px-[4vw] pb-[8vh] items-center"
+      >
         <span>Under Development | Demo</span>
         <span>Woltiz</span>
       </div>
