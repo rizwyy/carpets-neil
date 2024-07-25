@@ -78,35 +78,31 @@
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
-          v-if="userStore.customPreference.category === 'Carpet'"
+          v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover object-bottom"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'PVC'"
+          v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'Wooden'"
+          v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'Raised'"
+          v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'Active'"
+          v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
-        <NuxtImg
-          v-else
-          src="/runners.webp"
-          class="h-full w-full object-cover"
-        />
+        <NuxtImg src="/runners.webp" class="h-full w-full object-cover" />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
         >{{

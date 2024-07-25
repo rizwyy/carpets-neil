@@ -1,5 +1,14 @@
 <template>
-  <div class="max-[990px]:hidden">
+  <div v-if="isMobile" class="min-[990px]:hidden">
+    <NavBarMOB />
+    <SlidableNav />
+    <BannerYouWin />
+    <UploadContainer />
+    <WoltizWorkFlow />
+    <FaqMOB />
+    <FooterMOB />
+  </div>
+  <div v-else class="max-[990px]:hidden">
     <NavBarPC />
     <BannerYouWin />
     <SlidableNav />
@@ -8,16 +17,6 @@
     <FaqPC />
 
     <FooterPC />
-  </div>
-
-  <div class="min-[990px]:hidden">
-    <NavBarMOB />
-    <SlidableNav />
-    <BannerYouWin />
-    <UploadContainer />
-    <WoltizWorkFlow />
-    <FaqMOB />
-    <FooterMOB />
   </div>
 </template>
 
@@ -32,4 +31,13 @@ import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import SlidableNav from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNav.vue";
 import UploadContainer from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainer.vue";
 import WoltizWorkFlow from "~/components/MOBILE/FLOORING/CUSTOM/WoltizWorkFlow.vue";
+
+const isMobile = ref(false);
+onMounted(() => {
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
+});
 </script>

@@ -60,7 +60,7 @@ onMounted(() => {
       <CategoryDetails />
       <!-- MOBILE -->
       <TypeDetails />
-      <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
+      <CustomBTN heading="Custom Carpets" link="/flooring/customize" />
       <MaterialDetails />
       <ColorDetails />
       <BudgetDetails />
@@ -121,7 +121,7 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <CategoryDetails />
-      <CustomBTN heading="Custom Carpets" link="/flooring/customise" />
+      <CustomBTN heading="Custom Carpets" link="/flooring/customize" />
       <TypeDetails />
       <MaterialDetails />
       <ColorDetails />
