@@ -3,9 +3,9 @@
   <div
     v-show="
       userStore.preference.flooring === 'PVC' &&
-      userStore.preference.category !== '' &&
-      userStore.preference.type !== '' &&
-      userStore.preference.material !== '' &&
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== '' &&
+      userStore.preference.spec_3 !== '' &&
       userStore.preference.color.length > 0
     "
     class="min-[990px]:hidden h-max w-[100vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
@@ -43,17 +43,6 @@
       <!-- MOBILE -->
       <!-- VALUE -->
       <div
-        v-if="
-          userStore.preference.category !== 'Area Rugs' &&
-          !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'Nylon'
-          ) &&
-          !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'Nylon'
-          )
-        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Value' },
@@ -91,37 +80,10 @@
           <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
         </div>
       </div>
-      <!-- NOT AVAILABLE VALUE -->
-      <!-- MOBILE -->
-      <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
-          >
-        </div>
-      </div>
+
       <!-- MOBILE -->
       <!-- ESSENTIAL -->
       <div
-        v-if="
-          userStore.preference.category !== 'Area Rugs' &&
-          !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'Nylon'
-          ) &&
-          !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'Nylon'
-          )
-        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Essential' },
@@ -161,37 +123,10 @@
         </div>
       </div>
       <!-- MOBILE -->
-      <!-- NOT AVAILABLE ESSENTIALs -->
-      <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
-          >
-        </div>
-      </div>
+
       <!-- PREMIER -->
       <!-- MOBILE -->
       <div
-        v-if="
-          userStore.preference.category !== 'Area Rugs' &&
-          userStore.preference.category !== 'Carpet Tiles' &&
-          !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'polypropylene'
-          ) &&
-          !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'polypropylene'
-          )
-        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Premier' },
@@ -231,37 +166,10 @@
         </div>
       </div>
       <!-- MOBILE -->
-      <!-- NOT AVAILABLE PREMIER -->
-      <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
-          >
-        </div>
-      </div>
+
       <!-- SIGNATURE -->
       <!-- MOBILE -->
       <div
-        v-if="
-          userStore.preference.category !== 'Area Rugs' &&
-          userStore.preference.category !== 'Carpet Tiles' &&
-          !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'polypropylene'
-          ) &&
-          !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'polypropylene'
-          )
-        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Signature' },
@@ -301,44 +209,10 @@
       </div>
       <!-- MOBILE -->
       <!-- NOT AVAILABLE SIGNATURE -->
-      <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
-          >
-        </div>
-      </div>
+
       <!-- ELITE -->
       <!-- MOBILE -->
       <div
-        v-if="
-          userStore.preference.category === 'Area Rugs' ||
-          (userStore.preference.category !== 'Carpet Tiles' &&
-            !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'polypropylene'
-            ) &&
-            !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'polypropylene'
-            ) &&
-            !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'Nylon'
-            ))
-        "
         :class="[
           'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
           { selected: selectedBudget === 'Elite' },
@@ -377,22 +251,6 @@
         </div>
       </div>
       <!-- NOT AVAILABLE ELITE -->
-      <!-- MOBILE -->
-      <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
-          >
-        </div>
-      </div>
     </div>
   </div>
 </template>

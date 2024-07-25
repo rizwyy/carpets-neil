@@ -4,9 +4,9 @@
     <div
       v-show="
         userStore.preference.flooring === 'PVC' &&
-        userStore.preference.category !== '' &&
-        userStore.preference.type !== '' &&
-        userStore.preference.material !== '' &&
+        userStore.preference.spec_1 !== '' &&
+        userStore.preference.spec_2 !== '' &&
+        userStore.preference.spec_3 !== '' &&
         userStore.preference.color.length > 0
       "
       class="max-[990px]:hidden h-full w-full text-center py-[4vh] flex flex-col gap-[8.4vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
@@ -44,17 +44,6 @@
       >
         <!-- VALUE -->
         <div
-          v-if="
-            userStore.preference.category !== 'Area Rugs' &&
-            !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'Nylon'
-            )
-          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Value' },
@@ -62,7 +51,6 @@
           @click="toggleSelect('Value')"
         >
           <div
-            v-if="selectedBudget === 'Value'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -92,36 +80,10 @@
             <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
           </div>
         </div>
-        <!-- NOT AVAILABLE VALUE -->
-        <div
-          v-else
-          :class="[
-            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-          ]"
-        >
-          <div
-            class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-          >
-            <span class="text-[2vh] font-[500] text-[#fff9]"
-              >NOT ELIGIBLE WITH
-              {{ userStore.preference.material.toUpperCase() }}</span
-            >
-          </div>
-        </div>
+
         <!-- DESKTOP -->
         <!-- ESSENTIAL -->
         <div
-          v-if="
-            userStore.preference.category !== 'Area Rugs' &&
-            !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'Nylon'
-            )
-          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Essential' },
@@ -159,37 +121,10 @@
             <span>BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span>
           </div>
         </div>
-        <!-- NOT AVAILABLE ESSENTIALs -->
-        <div
-          v-else
-          :class="[
-            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-          ]"
-        >
-          <div
-            class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-          >
-            <span class="text-[2vh] font-[500] text-[#fff9]"
-              >NOT ELIGIBLE WITH
-              {{ userStore.preference.material.toUpperCase() }}</span
-            >
-          </div>
-        </div>
+
         <!-- DESKTOP -->
         <!-- PREMIER -->
         <div
-          v-if="
-            userStore.preference.category !== 'Area Rugs' &&
-            userStore.preference.category !== 'Carpet Tiles' &&
-            !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'polypropylene'
-            ) &&
-            !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'polypropylene'
-            )
-          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Premier' },
@@ -228,37 +163,10 @@
             <span> BD. 20m<sup>2</sup> to BD. 24.99m<sup>2</sup></span>
           </div>
         </div>
-        <!-- NOT AVAILABLE PREMIER -->
-        <div
-          v-else
-          :class="[
-            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-          ]"
-        >
-          <div
-            class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-          >
-            <span class="text-[2vh] font-[500] text-[#fff9]"
-              >NOT ELIGIBLE WITH
-              {{ userStore.preference.material.toUpperCase() }}</span
-            >
-          </div>
-        </div>
+
         <!-- DESKTOP -->
         <!-- SIGNATURE -->
         <div
-          v-if="
-            userStore.preference.category !== 'Area Rugs' &&
-            userStore.preference.category !== 'Carpet Tiles' &&
-            !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'polypropylene'
-            ) &&
-            !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'polypropylene'
-            )
-          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Signature' },
@@ -298,43 +206,9 @@
         </div>
         <!-- NOT AVAILABLE SIGNATURE -->
         <!-- DESKTOP -->
-        <div
-          v-else
-          :class="[
-            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-          ]"
-        >
-          <div
-            class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-          >
-            <span class="text-[2vh] font-[500] text-[#fff9]"
-              >NOT ELIGIBLE WITH
-              {{ userStore.preference.material.toUpperCase() }}</span
-            >
-          </div>
-        </div>
+
         <!-- ELITE -->
         <div
-          v-if="
-            userStore.preference.category === 'Area Rugs' ||
-            (userStore.preference.category !== 'Carpet Tiles' &&
-              !(
-                userStore.preference.category === 'Wall to Wall' &&
-                userStore.preference.material === 'polypropylene'
-              ) &&
-              !(
-                userStore.preference.category === 'Runners' &&
-                userStore.preference.material === 'polypropylene'
-              ) &&
-              !(
-                userStore.preference.category === 'Wall to Wall' &&
-                userStore.preference.material === 'Nylon'
-              ) &&
-              !(
-                userStore.preference.category === 'Runners' &&
-                userStore.preference.material === 'Nylon'
-              ))
-          "
           :class="[
             'h-[12vh] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedBudget === 'Elite' },
@@ -372,23 +246,6 @@
             class="font-[400] text-[2.4vh] text-left h-full flex-[2] flex justify-end items-center"
           >
             <span> Over BD. 30 m<sup>2</sup></span>
-          </div>
-        </div>
-        <!-- NOT AVAILABLE ELITE -->
-        <div
-          v-else
-          :class="[
-            'h-[12vh] w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-          ]"
-        >
-          <div
-            class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-          >
-            <!-- DESKTOP -->
-            <span class="text-[2vh] font-[500] text-[#fff9]"
-              >NOT ELIGIBLE WITH
-              {{ userStore.preference.material.toUpperCase() }}</span
-            >
           </div>
         </div>
       </div>

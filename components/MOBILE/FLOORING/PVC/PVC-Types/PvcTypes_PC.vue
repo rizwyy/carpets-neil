@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <div
-    v-show="userStore.preference.category !== ''"
+    v-show="userStore.preference.spec_1 !== ''"
     class="max-[990px]:hidden h-max w-screen px-[6vw]"
   >
     <div
@@ -14,7 +14,7 @@
         <!-- DESKTOP -->
         <button
           @click="clearAllSelections"
-          v-if="selectedType.length"
+          v-show="selectedType.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -43,7 +43,7 @@
             @click="toggleSelect('Sheet')"
           >
             <div
-              v-if="selectedType.includes('Sheet')"
+              v-show="selectedType.includes('Sheet')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -77,7 +77,7 @@
             @click="toggleSelect('Tile')"
           >
             <div
-              v-if="selectedType.includes('Tile')"
+              v-show="selectedType.includes('Tile')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -110,7 +110,7 @@
             @click="toggleSelect('Plank')"
           >
             <div
-              v-if="selectedType.includes('Plank')"
+              v-show="selectedType.includes('Plank')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -144,7 +144,7 @@
             @click="toggleSelect('Customised')"
           >
             <div
-              v-if="selectedType.includes('Customised')"
+              v-show="selectedType.includes('Customised')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -184,17 +184,17 @@ const selectedType = ref("");
 
 function clearAllSelections() {
   selectedType.value = "";
-  userStore.preference.type = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (type) => {
   if (selectedType.value === type) {
     selectedType.value = "";
-    userStore.preference.type = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
     selectedType.value = type;
-    userStore.preference.type = toRaw(selectedType.value);
+    userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
 </script>

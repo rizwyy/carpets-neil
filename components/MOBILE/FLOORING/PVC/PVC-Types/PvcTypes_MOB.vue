@@ -1,7 +1,7 @@
 <template>
   <!-- MOBILE -->
   <div
-    v-show="userStore.preference.category !== ''"
+    v-show="userStore.preference.spec_1 !== ''"
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
@@ -10,7 +10,7 @@
       <span class="text-left text-balance">Choose Your Type</span>
       <button
         @click="clearAllSelections"
-        v-if="selectedType.length"
+        v-show="selectedType.length"
         class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
       >
         <!-- MOBILE -->
@@ -39,7 +39,7 @@
           @click="toggleSelect('Sheet')"
         >
           <div
-            v-if="selectedType.includes('Sheet')"
+            v-show="selectedType.includes('Sheet')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -73,7 +73,7 @@
           @click="toggleSelect('Tile ')"
         >
           <div
-            v-if="selectedType.includes('Tile ')"
+            v-show="selectedType.includes('Tile ')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -108,7 +108,7 @@
           @click="toggleSelect('Plank')"
         >
           <div
-            v-if="selectedType.includes('Plank')"
+            v-show="selectedType.includes('Plank')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -142,7 +142,7 @@
           @click="toggleSelect('Customised')"
         >
           <div
-            v-if="selectedType.includes('Customised')"
+            v-show="selectedType.includes('Customised')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -183,17 +183,17 @@ const selectedType = ref("");
 
 function clearAllSelections() {
   selectedType.value = "";
-  userStore.preference.type = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (type) => {
   if (selectedType.value === type) {
     selectedType.value = "";
-    userStore.preference.type = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
     selectedType.value = type;
-    userStore.preference.type = toRaw(selectedType.value);
+    userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
 </script>

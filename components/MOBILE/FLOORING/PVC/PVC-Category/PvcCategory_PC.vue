@@ -10,7 +10,7 @@
         <span class="text-left text-balance"> Choose Your Category </span>
         <button
           @click="clearAllSelections"
-          v-if="selectedCategory.length"
+          v-show="selectedCategory.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -37,7 +37,7 @@
           @click="toggleSelect('Luxury Vinyl')"
         >
           <div
-            v-if="selectedCategory.includes('Luxury Vinyl')"
+            v-show="selectedCategory.includes('Luxury Vinyl')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -69,7 +69,7 @@
           @click="toggleSelect('Woven Vinyl')"
         >
           <div
-            v-if="selectedCategory.includes('Woven Vinyl')"
+            v-show="selectedCategory.includes('Woven Vinyl')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -113,7 +113,7 @@ const selectedCategory = ref("");
 
 function clearAllSelections() {
   selectedCategory.value = "";
-  userStore.preference.category = "";
+  userStore.preference.spec_1 = "";
 }
 function scrollToBottom() {
   setTimeout(() => {
@@ -126,11 +126,11 @@ function scrollToBottom() {
 const toggleSelect = (category) => {
   if (selectedCategory.value === category) {
     selectedCategory.value = "";
-    userStore.preference.category = "";
+    userStore.preference.spec_1 = "";
   } else {
     scrollToBottom();
     selectedCategory.value = category;
-    userStore.preference.category = toRaw(selectedCategory.value);
+    userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.flooring = "PVC";
   }
 };

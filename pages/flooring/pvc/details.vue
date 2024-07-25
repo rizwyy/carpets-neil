@@ -2,7 +2,7 @@
 import PvcCategoryDetails from "../../../components/MOBILE/FLOORING/PVC/PvcCategoryDetails.vue";
 import PvcTypeDetails from "../../../components/MOBILE/FLOORING/PVC/PvcTypeDetails.vue";
 import PvcFinishDetails from "../../../components/MOBILE/FLOORING/PVC/PvcFinishDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
+import PvcColorDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcColorDetails.vue";
 import PvcDesignDetails from "../../../components/MOBILE/FLOORING/PVC/PvcDesignDetails.vue";
 import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetDetails.vue";
 // import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
@@ -59,7 +59,7 @@ onMounted(() => {});
       <CustomCarpetBTN />
       <PvcTypeDetails />
       <PvcDesignDetails />
-      <ColorDetails />
+      <PvcColorDetails />
       <PvcFinishDetails />
       <PvcBudgetDetails />
 
@@ -68,9 +68,10 @@ onMounted(() => {});
         <button
           @click="setUserPreferenceCookie"
           v-show="
-            userStore.preference.type.length > 0 &&
+            userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_3 !== '' &&
             userStore.preference.color.length > 0 &&
-            userStore.preference.material !== '' &&
             userStore.preference.budget !== ''
           "
           class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
@@ -108,22 +109,21 @@ onMounted(() => {});
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <PvcCategoryDetails />
       <!-- MOBILE -->
+      <PvcCategoryDetails />
       <PvcTypeDetails />
-      <!-- <CustomCarpetBTN /> -->
       <PvcDesignDetails />
-      <ColorDetails />
+      <PvcColorDetails />
       <PvcFinishDetails />
       <PvcBudgetDetails />
-      <!-- <PileDetails /> -->
       <a href="/flooring/pvc/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
-            userStore.preference.type.length > 0 &&
+            userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_3 !== '' &&
             userStore.preference.color.length > 0 &&
-            userStore.preference.material !== '' &&
             userStore.preference.budget !== ''
           "
           class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-900 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"

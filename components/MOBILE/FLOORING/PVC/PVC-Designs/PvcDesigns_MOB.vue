@@ -3,8 +3,8 @@
   <div
     v-show="
       userStore.preference.flooring === 'PVC' &&
-      userStore.preference.category !== '' &&
-      userStore.preference.type !== ''
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== ''
     "
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
@@ -13,7 +13,7 @@
       <span class="text-left text-balance">Choose your Design</span>
       <button
         @click="clearmaterialSelections"
-        v-if="selectedmaterial"
+        v-show="selectedmaterial"
         class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -40,7 +40,7 @@
         @click="toggleSelect('Plain')"
       >
         <div
-          v-if="selectedmaterial === 'Plain'"
+          v-show="selectedmaterial === 'Plain'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -72,7 +72,7 @@
         @click="toggleSelect('Wood Effect')"
       >
         <div
-          v-if="selectedmaterial === 'Wood Effect'"
+          v-show="selectedmaterial === 'Wood Effect'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -105,7 +105,7 @@
         @click="toggleSelect('Stone Effect')"
       >
         <div
-          v-if="selectedmaterial === 'Stone Effect'"
+          v-show="selectedmaterial === 'Stone Effect'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -137,7 +137,7 @@
         @click="toggleSelect('Abstract')"
       >
         <div
-          v-if="selectedmaterial === 'Abstract'"
+          v-show="selectedmaterial === 'Abstract'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -175,17 +175,17 @@ import useUserStore from "~/stores/user";
 const selectedmaterial = ref("");
 function clearmaterialSelections() {
   selectedmaterial.value = "";
-  userStore.preference.material = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (material) => {
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
-    userStore.preference.material = "";
+    userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
     selectedmaterial.value = material;
-    userStore.preference.material = toRaw(selectedmaterial.value);
+    userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }
 };
 </script>
