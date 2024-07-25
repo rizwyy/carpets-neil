@@ -386,7 +386,7 @@
     </div>
     <!-- STRENGTH AND CONDITIONING -->
     <div
-      v-if="userStore.preference.spec_1 === 'Strength & Conditioning'"
+      v-if="userStore.preference.spec_1 === 'Strength'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
