@@ -93,16 +93,16 @@
       </div>
     </div>
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Strength & Conditioning -->
+      <!-- Strength -->
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Strength & Conditioning') },
+          { selected: spec_1.includes('Strength') },
         ]"
-        @click="toggleSelect('Strength & Conditioning')"
+        @click="toggleSelect('Strength')"
       >
         <div
-          v-show="spec_1.includes('Strength & Conditioning')"
+          v-show="spec_1.includes('Strength')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -123,7 +123,7 @@
           src="/wooden/wooden-2.webp"
           alt=""
         />
-        <span class="text-left text-balance">Strength & Conditioning</span>
+        <span class="text-left text-balance">Strength</span>
       </div>
 
       <!-- Martial Arts -->
