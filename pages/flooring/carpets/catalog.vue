@@ -155,7 +155,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="item.color"
+              :color="getColorAfterHyphen(item.color)"
             />
           </a>
         </div>
