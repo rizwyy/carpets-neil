@@ -30,7 +30,7 @@ const route = useRoute();
         <span class="inline-block text-[2.4vh] text-[#111]">{{ name }}</span>
       </div>
       <span
-        class="inline-block flex justify-start text-[1.6vh] w-[50%] text-[#999]"
+        class="inline-block flex justify-start text-[1.6vh] w-[100%] text-left text-balance text-[#999]"
         >{{ color }}</span
       >
       <div class="h-max w-max flex flex-col gap-[0vh]">
