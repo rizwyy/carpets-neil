@@ -46,7 +46,7 @@ async function fetchCarpetsData() {
     // Store data in userStore and ref variable
     const first30Objects = data.slice(0, 30);
     userStore.products = first30Objects;
-    products.value = shuffleArray(data);
+    products.value = shuffleArray(first30Objects);
     isLoading.value = false; // Set loading state to false
   } catch (error) {
     console.error("Error during fetch:", error);
