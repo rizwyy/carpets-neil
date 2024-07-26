@@ -19,6 +19,12 @@ const isLoading = ref(true);
 const isRetry = ref(false);
 const isMobile = ref(false);
 
+const currentBatch = ref(1);
+
+const batch1 = ref([]);
+const batch2 = ref([]);
+const batch3 = ref([]);
+
 const isAccessRestricted = ref(false);
 const route = useRoute();
 const router = useRouter();
@@ -44,9 +50,11 @@ async function fetchCarpetsData() {
     console.log("SUPABASE:", data);
 
     // Store data in userStore and ref variable
-    const first30Objects = data.slice(0, 30);
-    userStore.products = first30Objects;
-    products.value = shuffleArray(first30Objects);
+    batch1.value = data.slice(0, 30);
+    batch2.value = data.slice(30, 60);
+    batch3.value = data.slice(60, 100);
+    userStore.products = data;
+    products.value = shuffleArray(data);
     isLoading.value = false; // Set loading state to false
   } catch (error) {
     console.error("Error during fetch:", error);
@@ -146,8 +154,30 @@ onMounted(() => {
 
       <div v-else class="container h-max w-full px-[2vw]">
         <div class="grid grid-cols-2 gap-[4vw] w-full">
+          <a v-for="item in batch1" :key="item.id" :href="`product/${item.id}`">
+            <CatalogItemMOB
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="getColorAfterHyphen(item.color)"
+            />
+          </a>
           <a
-            v-for="item in products"
+            v-show="currentBatch > 1"
+            v-for="item in batch2"
+            :key="item.id"
+            :href="`product/${item.id}`"
+          >
+            <CatalogItemMOB
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="getColorAfterHyphen(item.color)"
+            />
+          </a>
+          <a
+            v-show="currentBatch > 2"
+            v-for="item in batch3"
             :key="item.id"
             :href="`product/${item.id}`"
           >
@@ -160,7 +190,11 @@ onMounted(() => {
           </a>
         </div>
         <div class="h-max max-w-screen flex justify-center py-[10vh]">
-          <button class="text-[2.4vh] border-b-[1px] border-black">
+          <button
+            @click="() => currentBatch++"
+            v-show="currentBatch !== 3"
+            class="text-[2.4vh] border-b-[1px] border-black"
+          >
             VIEW MORE
           </button>
         </div>
@@ -221,8 +255,17 @@ onMounted(() => {
       </div>
       <div v-else class="mx-auto w-[80vw] h-max">
         <div class="h-max w-full grid grid-cols-3 gap-x-[8vw] gap-y-[4vh]">
+          <a v-for="item in batch1" :key="item.id" :href="`product/${item.id}`">
+            <CatalogItemPC
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="getColorAfterHyphen(item.color)"
+            />
+          </a>
           <a
-            v-for="item in products"
+            v-show="currentBatch > 1"
+            v-for="item in batch2"
             :key="item.id"
             :href="`product/${item.id}`"
           >
@@ -230,12 +273,29 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="item.color"
+              :color="getColorAfterHyphen(item.color)"
+            />
+          </a>
+          <a
+            v-show="currentBatch > 2"
+            v-for="item in batch3"
+            :key="item.id"
+            :href="`product/${item.id}`"
+          >
+            <CatalogItemPC
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="getColorAfterHyphen(item.color)"
             />
           </a>
         </div>
         <div class="h-max max-w-screen flex justify-center py-[10vh]">
-          <button class="text-[2.4vh] border-b-[1px] border-black">
+          <button
+            @click="() => currentBatch++"
+            v-show="currentBatch !== 3"
+            class="text-[2.4vh] border-b-[1px] border-black"
+          >
             VIEW MORE
           </button>
         </div>

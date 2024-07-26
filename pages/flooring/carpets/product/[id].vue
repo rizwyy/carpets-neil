@@ -18,8 +18,8 @@
           <!-- MOBILE -->
           <NuxtImg
             class="object-cover h-[32vh] w-[98%]"
-            :src="`/carpets/${productColor}.jpg`"
-            :alt="color"
+            :src="`/carpets/${getColorAfterHyphen(productColor)}.jpg`"
+            :alt="getColorAfterHyphen(productColor)"
           />
         </div>
         <!-- R2 - DESCRIPTION -->
@@ -32,7 +32,9 @@
             class="h-max w-full flex flex-col gap-[1vh] justify-start px-[6vw]"
           >
             <h1 class="text-[2.8vh]">{{ productName }}</h1>
-            <h1 class="text-[1.8vh] text-[#333]">{{ productColor }}</h1>
+            <h1 class="text-[1.8vh] text-[#333]">
+              {{ getColorAfterHyphen(productColor) }}
+            </h1>
           </div>
           <div class="px-[6vw] flex flex-col gap-[.8vh] items-start">
             <p class="text-[2.vh]">{{ displayedText }}</p>
@@ -254,8 +256,8 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
             quality="100"
             loading="eager"
             class="object-contain h-[72vh] w-[100%]"
-            :src="`/carpets/${productColor}.jpg`"
-            :alt="color"
+            :src="`/carpets/${getColorAfterHyphen(productColor)}.jpg`"
+            :alt="getColorAfterHyphen(productColor)"
           />
         </div>
         <!-- DESKTOP -->
@@ -268,7 +270,7 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
           >
             <h1 class="text-[3.8vh]">{{ productName }}</h1>
             <h1 class="text-[2.4vh] tracking-[.2vw] text-[#333]">
-              {{ productColor }}
+              {{ getColorAfterHyphen(productColor) }}
             </h1>
           </div>
           <div
