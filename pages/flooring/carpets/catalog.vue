@@ -200,9 +200,9 @@ onMounted(() => {
             VIEW MORE
           </button>
         </div>
+        <FooterMOB />
       </div>
     </div>
-    <FooterMOB />
   </section>
 
   <section v-else class="max-[990px]:hidden h-max w-max">
@@ -302,8 +302,8 @@ onMounted(() => {
             VIEW MORE
           </button>
         </div>
+        <FooterMOB />
       </div>
-      <FooterMOB />
     </div>
   </section>
 </template>
