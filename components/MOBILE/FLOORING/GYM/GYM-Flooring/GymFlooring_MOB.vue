@@ -87,7 +87,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-herringbone.webp"
+          src="/gym/pvcGymFlooring.webp"
           alt="#"
         />
         <span>PVC</span>
@@ -121,7 +121,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-chevron.webp"
+          src="/gym/woodenGymFlooring.webp"
           alt="#"
         />
         <span>Wooden</span>

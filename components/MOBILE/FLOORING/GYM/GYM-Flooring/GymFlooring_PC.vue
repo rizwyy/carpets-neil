@@ -13,7 +13,7 @@
         <span class="text-left text-balance">Choose your Flooring</span>
         <button
           @click="clearmaterialSelections"
-          v-if="spec_3"
+          v-show="spec_3"
           class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -41,7 +41,7 @@
           @click="toggleSelect('Rubber')"
         >
           <div
-            v-if="spec_3 === 'Rubber'"
+            v-show="spec_3 === 'Rubber'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -58,7 +58,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-7.webp"
+            src="/gym/rubberFlooring.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Rubber</span>
@@ -72,7 +72,7 @@
           @click="toggleSelect('PVC')"
         >
           <div
-            v-if="spec_3 === 'PVC'"
+            v-show="spec_3 === 'PVC'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- DESKTOP -->
@@ -89,7 +89,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-herringbone.webp"
+            src="/gym/pvcGymFlooring.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">PVC</span>
@@ -106,7 +106,7 @@
           @click="toggleSelect('Wooden')"
         >
           <div
-            v-if="spec_3 === 'Wooden'"
+            v-show="spec_3 === 'Wooden'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -123,7 +123,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-chevron.webp"
+            src="/gym/woodenGymFlooring.webp"
             alt="#"
           />
           <!-- DESKTOP -->
@@ -139,7 +139,7 @@
           @click="toggleSelect('Artificial Grass')"
         >
           <div
-            v-if="spec_3 === 'Artificial Grass'"
+            v-show="spec_3 === 'Artificial Grass'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -156,7 +156,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-basketWeave.webp"
+            src="/40004.jpg"
             alt="#"
           />
           <span class="text-[3.2vh]">Artificial Grass</span>

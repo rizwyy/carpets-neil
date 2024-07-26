@@ -19,7 +19,7 @@
         <span>Choose Your Budget</span>
         <button
           @click="clearBudgetSelections"
-          v-if="budget.length"
+          v-show="budget.length"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -52,7 +52,7 @@
           @click="toggleSelect('Value')"
         >
           <div
-            v-if="budget === 'Value'"
+            v-show="budget === 'Value'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -94,7 +94,7 @@
           @click="toggleSelect('Essential')"
         >
           <div
-            v-if="budget === 'Essential'"
+            v-show="budget === 'Essential'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -135,7 +135,7 @@
           @click="toggleSelect('Premier')"
         >
           <div
-            v-if="budget === 'Premier'"
+            v-show="budget === 'Premier'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -177,7 +177,7 @@
           @click="toggleSelect('Signature')"
         >
           <div
-            v-if="budget === 'Signature'"
+            v-show="budget === 'Signature'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -218,7 +218,7 @@
           @click="toggleSelect('Elite')"
         >
           <div
-            v-if="budget === 'Elite'"
+            v-show="budget === 'Elite'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- DESKTOP -->

@@ -16,7 +16,7 @@
         <span class="text-left text-balance">Choose your Thickness</span>
         <button
           @click="clearSurfaceFinish"
-          v-if="selectedThickness"
+          v-show="selectedThickness"
           class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -44,7 +44,7 @@
           @click="toggleSelect('Matt Finish')"
         >
           <div
-            v-if="selectedThickness === 'Matt Finish'"
+            v-show="selectedThickness === 'Matt Finish'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -75,7 +75,7 @@
           @click="toggleSelect('Gloss Finish')"
         >
           <div
-            v-if="selectedThickness === 'Gloss Finish'"
+            v-show="selectedThickness === 'Gloss Finish'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- DESKTOP -->

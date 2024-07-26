@@ -65,8 +65,8 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-7.webp"
-              alt=""
+              src="/gym/cardio.webp"
+              alt="cardio"
             />
             <span class="text-[3.4vh]">Cardio</span>
           </div>
@@ -98,7 +98,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/engineeredWoodenFloor.webp"
+              src="/gym/functionalTraining.webp"
               alt="Functional Training"
             />
             <span class="text-[3.4vh]">Functional Training</span>
@@ -133,7 +133,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-3.webp"
+              src="/gym/machineTraining.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Machine Training</span>
@@ -166,8 +166,8 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-5.webp"
-              alt=""
+              src="/gym/freeWeights.webp"
+              alt="freeWeights"
             />
             <!-- DESKTOP -->
             <span class="text-[3.4vh]">Free Weights</span>
@@ -207,8 +207,8 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-7.webp"
-              alt=""
+              src="/gym/dance.webp"
+              alt="dance"
             />
             <span class="text-[3.4vh]">Dance</span>
           </div>
@@ -240,7 +240,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/engineeredWoodenFloor.webp"
+              src="/gym/fitness.webp"
               alt="Aerobic"
             />
             <span class="text-[3.4vh]">Aerobic</span>
@@ -275,8 +275,8 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-3.webp"
-              alt=""
+              src="/gym/zumba.webp"
+              alt="groupTraining"
             />
             <span class="text-[3.4vh]">Zumba</span>
           </div>
@@ -308,7 +308,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-5.webp"
+              src="/gym/steps.webp"
               alt=""
             />
             <!-- DESKTOP -->
@@ -344,7 +344,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-3.webp"
+              src="/gym/trxTraining.webp"
               alt=""
             />
             <span class="text-[3.4vh]">TRX</span>
@@ -377,7 +377,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-5.webp"
+              src="/gym/pilates.webp"
               alt=""
             />
             <!-- DESKTOP -->
@@ -418,7 +418,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-7.webp"
+              src="/gym/weightLifting.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Weightlifting</span>
@@ -451,7 +451,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/engineeredWoodenFloor.webp"
+              src="/gym/powerLifting.webp"
               alt="Powerlifting"
             />
             <span class="text-[3.4vh]">Powerlifting</span>
@@ -491,7 +491,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-7.webp"
+              src="/gym/judo.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Judo</span>
@@ -524,7 +524,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/engineeredWoodenFloor.webp"
+              src="/gym/kickBoxing.webp"
               alt="Kickboxing"
             />
             <span class="text-[3.4vh]">Kickboxing</span>
@@ -559,7 +559,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-3.webp"
+              src="/gym/karate.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Karate</span>
@@ -592,7 +592,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-5.webp"
+              src="/gym/boxing.webp"
               alt=""
             />
             <!-- DESKTOP -->
@@ -628,7 +628,7 @@
               preload
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-3.webp"
+              src="/gym/taekwondo.webp"
               alt=""
             />
             <span class="text-[3.4vh]">Taekwondo</span>
@@ -661,8 +661,8 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/gym/wooden-5.webp"
-              alt=""
+              src="/gym/akido.webp"
+              alt="akido"
             />
             <!-- DESKTOP -->
             <span class="text-[3.4vh]">Akido</span>
