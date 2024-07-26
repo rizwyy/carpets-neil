@@ -2,6 +2,8 @@
 // COMPONENTS IMPORTS
 
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import FooterMOB from "./../../../components/MOBILE/FooterMOB.vue";
+import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 import CatalogItemMOB from "../../../components/MOBILE/FLOORING/CatalogItemMOB.vue";
 import CatalogItemPC from "../../../components/DESKTOP/CatalogItemPC.vue";
 import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
@@ -200,6 +202,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <FooterMOB />
   </section>
 
   <section v-else class="max-[990px]:hidden h-max w-max">
@@ -300,6 +303,7 @@ onMounted(() => {
           </button>
         </div>
       </div>
+      <FooterMOB />
     </div>
   </section>
 </template>
