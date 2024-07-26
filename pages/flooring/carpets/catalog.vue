@@ -44,7 +44,8 @@ async function fetchCarpetsData() {
     console.log("SUPABASE:", data);
 
     // Store data in userStore and ref variable
-    userStore.products = data;
+    const first30Objects = data.slice(0, 30);
+    userStore.products = first30Objects;
     products.value = shuffleArray(data);
     isLoading.value = false; // Set loading state to false
   } catch (error) {

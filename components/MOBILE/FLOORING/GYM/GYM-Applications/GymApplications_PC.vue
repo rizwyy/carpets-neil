@@ -54,7 +54,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-2.webp"
+            src="/gym/fitness.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Fitness</span>
@@ -86,7 +86,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-1.webp"
+            src="/gym/groupTraining.webp"
             alt="Group Training"
           />
           <span class="text-[3.4vh]">Group Training</span>
@@ -119,7 +119,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-2.webp"
+            src="/gym/strength.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Strength & Conditioning</span>
@@ -151,7 +151,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-1.webp"
+            src="/gym/martialArts.webp"
             alt="Martial Arts"
           />
           <span class="text-[3.4vh]">Martial Arts</span>

@@ -56,7 +56,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-7.webp"
+          src="/gym/rubberFlooring.webp"
           alt="#"
         />
         <span>Rubber</span>
@@ -153,7 +153,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/wooden/wooden-basketWeave.webp"
+          src="/40004.jpg"
           alt="#"
         />
         <!-- MOBILE -->

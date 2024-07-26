@@ -61,7 +61,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-7.webp"
+            src="/gym/cardio.webp"
             alt=""
           />
           <span>Cardio</span>
@@ -95,7 +95,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/engineeredWoodenFloor.webp"
+            src="/gym/machineTraining.webp"
             alt=""
           />
           <span>Machine Training</span>
@@ -130,7 +130,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-3.webp"
+            src="/gym/freeWeights.webp"
             alt=""
           />
           <span>Free Weights</span>
@@ -164,7 +164,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-5.webp"
+            src="/gym/functionalTraining.webp"
             alt=""
           />
           <span>Functional Training</span>
@@ -205,7 +205,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-7.webp"
+            src="/gym/dance.webp"
             alt=""
           />
           <span>Dance</span>
@@ -239,7 +239,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/engineeredWoodenFloor.webp"
+            src="/gym/aerobics.webp"
             alt=""
           />
           <span>Aerobic</span>
@@ -274,7 +274,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-3.webp"
+            src="/gym/zumba.webp"
             alt=""
           />
           <span>Zumba</span>
@@ -308,7 +308,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-5.webp"
+            src="/gym/steps.webp"
             alt=""
           />
           <span>Step</span>
@@ -343,7 +343,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-3.webp"
+            src="/gym/trxTraining.webp"
             alt=""
           />
           <span>TRX</span>
@@ -377,7 +377,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-5.webp"
+            src="/gym/pilates.webp"
             alt=""
           />
           <span>Pilates</span>
@@ -418,7 +418,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-7.webp"
+            src="/gym/Weightlifting.webp"
             alt=""
           />
           <span>Weightlifting</span>
@@ -452,7 +452,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/engineeredWoodenFloor.webp"
+            src="/gym/Powerlifting.webp"
             alt=""
           />
           <span>Powerlifting</span>
@@ -493,7 +493,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-7.webp"
+            src="/gym/judo.webp"
             alt=""
           />
           <span>Judo</span>
@@ -527,7 +527,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/engineeredWoodenFloor.webp"
+            src="/gym/Kickboxing.webp"
             alt=""
           />
           <span>Kickboxing</span>
@@ -562,7 +562,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-3.webp"
+            src="/gym/karate.webp"
             alt=""
           />
           <span>Karate</span>
@@ -596,7 +596,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-5.webp"
+            src="/gym/boxing.webp"
             alt=""
           />
           <span>Boxing</span>
@@ -631,7 +631,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-3.webp"
+            src="/gym/taekwondo.webp"
             alt=""
           />
           <span>Taekwondo</span>
@@ -665,7 +665,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/gym/wooden-5.webp"
+            src="/gym/akido.webp"
             alt=""
           />
           <span>Akido</span>

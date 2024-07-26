@@ -6,3 +6,9 @@ export function scrollToBottom() {
     });
   }, 200);
 }
+export function getColorAfterHyphen(color) {
+  if (color.includes("-")) {
+    return color.split("-")[1];
+  }
+  return color;
+}
