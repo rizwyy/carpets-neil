@@ -280,6 +280,7 @@ function clearColorSelections() {
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };
+
 const toggleSelect = (color, added) => {
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -290,20 +291,17 @@ const toggleSelect = (color, added) => {
     return;
   }
 
-  const colorIndex = selectedColors.value.indexOf(color);
-
-  if (colorIndex !== -1) {
-    // Remove color if it is already selected
-    selectedColors.value.splice(colorIndex, 1);
+  // Toggle color selection
+  const isSelected = selectedColors.value.includes(color);
+  if (isSelected) {
+    selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
-    // Add color if it's not already selected
     if (!added) {
       scrollToBottom();
     }
     selectedColors.value.push(color);
   }
 
-  // Update userStore and reset states
   userStore.preference.color = toRaw(selectedColors.value);
   isMultiColoredOpted.value = false;
   removeCustomColor();
