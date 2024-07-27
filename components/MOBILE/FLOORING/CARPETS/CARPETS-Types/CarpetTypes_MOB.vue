@@ -186,14 +186,7 @@ function clearAllSelections() {
   selectedType.value = "";
   userStore.preference.type = "";
 }
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
+
 const toggleSelect = (type) => {
   if (selectedType.value === type) {
     selectedType.value = "";

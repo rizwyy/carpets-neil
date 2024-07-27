@@ -31,16 +31,6 @@ const isAccessRestricted = ref(false);
 const route = useRoute();
 const router = useRouter();
 
-//
-function shuffleArray(array) {
-  const newArray = [...array]; // Create a copy of the original array
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-}
-
 async function fetchCarpetsData() {
   try {
     const { data, error } = await client
@@ -52,7 +42,7 @@ async function fetchCarpetsData() {
     console.log("SUPABASE:", data);
 
     // Store data in userStore and ref variable
-    batch1.value = data.slice(0, 30);
+    batch1.value = shuffleArray(data.slice(0, 30));
     batch2.value = data.slice(30, 60);
     batch3.value = data.slice(60, 100);
     userStore.products = data;

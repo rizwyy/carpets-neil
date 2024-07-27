@@ -145,36 +145,31 @@ function toggleExpansion() {
       <div
         class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
       >
-        <div
+        <a
+          href="/flooring/raised/details"
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
-          <div
-            class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
-          >
-            COMING SOON!
-          </div>
-          <span class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#fff9]"
-            >Sports <br />
+          <span
+            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            >Raised <br />
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
-            <!-- <a
+            <span
               class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1]"
-              href="/flooring/carpets"
-              >view all</a
-            > -->
+              >view all</span
+            >
           </div>
           <div
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
-          <!-- <NuxtImg
+          <NuxtImg
             loading="lazy"
-            
             class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10001.jpg"
             alt="#"
-          /> -->
-        </div>
+          />
+        </a>
         <div
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >

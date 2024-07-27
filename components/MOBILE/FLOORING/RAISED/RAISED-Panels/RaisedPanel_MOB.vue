@@ -175,14 +175,7 @@ function clearSurfaceFinish() {
   selectedThickness.value = "";
   userStore.preference.spec_4 = "";
 }
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
+
 const toggleSelect = (surface) => {
   if (selectedThickness.value === surface) {
     selectedThickness.value = "";

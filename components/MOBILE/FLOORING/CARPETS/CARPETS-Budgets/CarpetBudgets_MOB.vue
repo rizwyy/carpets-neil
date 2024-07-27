@@ -415,14 +415,7 @@ const isMaterialSelected = (material) => {
 const isCategorySelected = (category) => {
   return userStore.preference.category.toLowerCase() === category.toLowerCase();
 };
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
+
 const toggleSelect = (type) => {
   if (selectedBudget.value === type) {
     selectedBudget.value = "";

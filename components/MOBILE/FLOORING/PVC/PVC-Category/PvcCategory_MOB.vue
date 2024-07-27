@@ -113,14 +113,7 @@ function clearAllSelections() {
   selectedCategory.value = "";
   userStore.preference.spec_1 = "";
 }
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
+
 const toggleSelect = (category) => {
   if (selectedCategory.value === category) {
     selectedCategory.value = "";

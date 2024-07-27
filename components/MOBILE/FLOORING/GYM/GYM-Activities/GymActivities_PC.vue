@@ -689,14 +689,7 @@ function clearAllSelections() {
   spec_2.value = "";
   userStore.preference.spec_2 = "";
 }
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
+
 const toggleSelect = (type) => {
   if (spec_2.value === type) {
     spec_2.value = "";

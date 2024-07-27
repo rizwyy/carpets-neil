@@ -270,14 +270,6 @@ function clearBudgetSelections() {
   userStore.preference.budget = "";
 }
 
-function scrollToBottom() {
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }, 200);
-}
 const toggleSelect = (type) => {
   if (budget.value === type) {
     budget.value = "";

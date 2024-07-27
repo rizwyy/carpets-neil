@@ -60,7 +60,7 @@ onMounted(() => {});
       <GymBudgetDetails />
 
       <!-- DESKTOP -->
-      <a href="/flooring/wooden/catalog">
+      <a href="/flooring/gym/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
@@ -113,7 +113,7 @@ onMounted(() => {});
       <GymThicknessDetails />
       <GymColorDetails />
       <GymBudgetDetails />
-      <a href="/flooring/wooden/catalog">
+      <a href="/flooring/gym/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
