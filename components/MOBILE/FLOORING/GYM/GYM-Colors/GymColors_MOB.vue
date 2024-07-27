@@ -39,21 +39,36 @@
     >
       <div
         v-show="isMultiColoredOpted"
-        class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
+        class="h-full w-full bg-black overflow-hidden bg-opacity-[.7] backdrop-blur-[12px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[2.8vh] px-[8vw]"
       >
-        <span class="text-[#f1f1f1] text-[3.2vh]">Enter Your Color</span>
-        <input
-          class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
-          type="text"
-          v-model="customColor"
-          placeholder="Enter your Color"
-        />
-        <button
-          @click="toggleSelect(customColor)"
-          class="text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+        <span class="text-[#f1f1f1] w-full text-left text-[2.8vh]"
+          >Personalize Your Color:</span
         >
-          submit
-        </button>
+        <div class="h-max w-full flex flex-col items-center gap-[2vh]">
+          <input
+            class="h-[6vh] w-[100%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+            type="text"
+            v-model="customColor"
+            placeholder="Enter your Color"
+          />
+        </div>
+        <div
+          v-show="customColor.length > 2"
+          class="flex h-max w-full gap-[6vw] justify-center"
+        >
+          <button
+            @click="toggleSelect(customColor, true)"
+            class="w-max text-left px-[2.8vw] py-[1.2vh] text-[#f1f1f1] border-[1px] border-[#fff8] rounded-md text-[2vh]"
+          >
+            Add More Colors
+          </button>
+          <button
+            @click="toggleSelect(customColor)"
+            class="text-[2vh] border-[1px] rounded-md px-[6vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+          >
+            Submit
+          </button>
+        </div>
       </div>
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
         <div
@@ -228,6 +243,21 @@
         <!-- MOBILE -->
       </div>
     </div>
+    <div
+      v-show="userStore.preference.color.length > 0"
+      class="h-max w-full flex flex-col gap-[1vh] items-start"
+    >
+      <span class="text-[#999]">Selected Colors:</span>
+      <div class="w-full grid grid-cols-4 gap-[2vw]">
+        <span
+          v-for="color in removeCustomColor()"
+          :key="color"
+          class="text-center border border-gray-300 py-[.4vh] text-[#999] text-[2vh] rounded"
+        >
+          {{ color }}
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -247,24 +277,37 @@ function clearColorSelections() {
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
 }
-
-const toggleSelect = (color) => {
+const removeCustomColor = () => {
+  return userStore.preference.color.filter((color) => color !== "CustomColor");
+};
+const toggleSelect = (color, added) => {
+  // Handle "CustomColor" case
   if (color === "CustomColor") {
-    isMultiColoredOpted.value = true;
-    selectedColors.value.push("CustomColor");
+    if (!selectedColors.value.includes("CustomColor")) {
+      isMultiColoredOpted.value = true;
+      selectedColors.value.push("CustomColor");
+    }
     return;
   }
-  if (selectedColors.value.includes(color)) {
-    selectedColors.value = selectedColors.value.filter((t) => t !== color);
-    userStore.preference.color = toRaw(selectedColors.value);
-    isMultiColoredOpted.value = false;
+
+  const colorIndex = selectedColors.value.indexOf(color);
+
+  if (colorIndex !== -1) {
+    // Remove color if it is already selected
+    selectedColors.value.splice(colorIndex, 1);
   } else {
-    scrollToBottom();
-    isMultiColoredOpted.value = false;
+    // Add color if it's not already selected
+    if (!added) {
+      scrollToBottom();
+    }
     selectedColors.value.push(color);
-    userStore.preference.color = toRaw(selectedColors.value);
-    customColor.value = "";
   }
+
+  // Update userStore and reset states
+  userStore.preference.color = toRaw(selectedColors.value);
+  isMultiColoredOpted.value = false;
+  removeCustomColor();
+  customColor.value = "";
 };
 </script>
 

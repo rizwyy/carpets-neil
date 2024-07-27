@@ -1,7 +1,8 @@
 export function scrollToBottom() {
   setTimeout(() => {
+    const offset = window.innerHeight * 0.1; // 10% of the viewport height
     window.scrollTo({
-      top: document.documentElement.scrollHeight,
+      top: document.documentElement.scrollHeight - offset,
       behavior: "smooth",
     });
   }, 200);
