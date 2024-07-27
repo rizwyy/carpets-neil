@@ -60,7 +60,7 @@
             @click="toggleSelect(customColor, true)"
             class="w-max text-left px-[2.8vw] py-[1.2vh] text-[#f1f1f1] border-[1px] border-[#fff8] rounded-md text-[2vh]"
           >
-            Add More Colors
+            Add
           </button>
           <button
             @click="toggleSelect(customColor)"
@@ -252,7 +252,7 @@
         <span
           v-for="color in removeCustomColor()"
           :key="color"
-          class="text-center border border-gray-300 py-[.4vh] text-[#999] text-[2vh] rounded"
+          class="text-center border border-gray-300 py-[.4vh] text-[#999] text-[2vh]"
         >
           {{ color }}
         </span>
@@ -262,7 +262,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import gsap from "gsap";
 // PINIA
 import useUserStore from "~/stores/user";
@@ -280,14 +279,13 @@ function clearColorSelections() {
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };
-
 const toggleSelect = (color, added) => {
   // Handle "CustomColor" case
   if (color === "CustomColor") {
     if (!selectedColors.value.includes("CustomColor")) {
-      isMultiColoredOpted.value = true;
       selectedColors.value.push("CustomColor");
     }
+    isMultiColoredOpted.value = true;
     return;
   }
 
