@@ -41,15 +41,15 @@
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('MultiColored') }"
-            @click="toggleSelect('MultiColored')"
+            :class="{ selected: selectedColors.includes('CustomColor') }"
+            @click="toggleSelect('CustomColor')"
           >
             <span
               class="text-[2.8vh]"
-              v-if="!selectedColors.includes('MultiColored')"
+              v-if="!selectedColors.includes('CustomColor')"
               >Multi Colored</span
             >
-            <template v-if="selectedColors.includes('MultiColored')">
+            <template v-if="selectedColors.includes('CustomColor')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
@@ -202,21 +202,31 @@ import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
-
+const customColor = ref("");
+const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
+  isMultiColoredOpted.value = false;
 }
 
 const toggleSelect = (color) => {
+  if (color === "CustomColor") {
+    isMultiColoredOpted.value = true;
+    selectedColors.value.push("CustomColor");
+    return;
+  }
   if (selectedColors.value.includes(color)) {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
     userStore.preference.color = toRaw(selectedColors.value);
+    isMultiColoredOpted.value = false;
   } else {
     scrollToBottom();
+    isMultiColoredOpted.value = false;
     selectedColors.value.push(color);
     userStore.preference.color = toRaw(selectedColors.value);
+    customColor.value = "";
   }
 };
 </script>

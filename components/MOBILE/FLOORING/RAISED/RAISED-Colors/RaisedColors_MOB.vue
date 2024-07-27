@@ -228,6 +228,21 @@
         <!-- MOBILE -->
       </div>
     </div>
+    <div
+      v-show="userStore.preference.color.length > 0"
+      class="h-max w-full flex flex-col gap-[1vh] items-start"
+    >
+      <span class="text-[#999]">Selected Colors:</span>
+      <div class="w-full grid grid-cols-4 gap-[2vw]">
+        <span
+          v-for="color in removeCustomColor()"
+          :key="color"
+          class="text-center border border-gray-300 py-[.4vh] text-[#999] text-[2vh]"
+        >
+          {{ color }}
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -247,7 +262,9 @@ function clearColorSelections() {
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
 }
-
+const removeCustomColor = () => {
+  return userStore.preference.color.filter((color) => color !== "CustomColor");
+};
 const toggleSelect = (color) => {
   if (color === "CustomColor") {
     isMultiColoredOpted.value = true;

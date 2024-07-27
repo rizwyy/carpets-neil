@@ -1,6 +1,6 @@
 <template>
   <!-- DESKTOP GYM COLOR DETAILS-->
-  <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
+  <div class="max-[990px]:hidden h-max w-screen flex justify-center">
     <div
       v-show="
         userStore.preference.spec_1 !== '' &&
@@ -69,7 +69,7 @@
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('MultiColored') }"
+            :class="{ selected: selectedColors.includes('CustomColor') }"
             @click="toggleSelect('CustomColor')"
           >
             <span class="text-[2.8vh]">Custom Color</span>
@@ -250,6 +250,7 @@ const selectedColors = ref([]);
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
+  isMultiColoredOpted.value = false;
 }
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");

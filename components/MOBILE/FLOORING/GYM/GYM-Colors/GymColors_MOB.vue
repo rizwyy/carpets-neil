@@ -39,30 +39,21 @@
     >
       <div
         v-show="isMultiColoredOpted"
-        class="h-full w-full bg-black overflow-hidden bg-opacity-[.7] backdrop-blur-[12px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[2.8vh] px-[8vw]"
+        class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
       >
-        <span class="text-[#f1f1f1] w-full text-left text-[2.8vh]"
-          >Personalize Your Color:</span
+        <span class="text-[#f1f1f1] text-[3.2vh]">Enter Your Color</span>
+        <input
+          class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+          type="text"
+          v-model="customColor"
+          placeholder="Enter your Color"
+        />
+        <button
+          @click="toggleSelect(customColor)"
+          class="text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
         >
-        <div class="h-max w-full flex flex-col items-center gap-[2vh]">
-          <input
-            class="h-[6vh] w-[100%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
-            type="text"
-            v-model="customColor"
-            placeholder="Enter your Color"
-          />
-        </div>
-        <div
-          v-show="customColor.length > 2"
-          class="flex h-max w-full gap-[6vw] justify-center"
-        >
-          <button
-            @click="toggleSelect(customColor, true)"
-            class="w-max text-left px-[2.8vw] py-[1.2vh] text-[#f1f1f1] border-[1px] border-[#fff8] rounded-md text-[2vh]"
-          >
-            Add
-          </button>
-        </div>
+          submit
+        </button>
       </div>
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
         <div

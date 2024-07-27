@@ -684,14 +684,14 @@
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
         <div
           class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
-          :class="{ selected: selectedColors.includes('MultiColored') }"
-          @click="toggleSelect('MultiColored')"
+          :class="{ selected: selectedColors.includes('Custom Color') }"
+          @click="toggleSelect('Custom Color')"
         >
           <!-- MOBILE -->
-          <span v-if="!selectedColors.includes('MultiColored')"
+          <span v-if="!selectedColors.includes('Custom Color')"
             >Multi Colored</span
           >
-          <template v-if="selectedColors.includes('MultiColored')">
+          <template v-if="selectedColors.includes('Custom Color')">
             <span
               class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span

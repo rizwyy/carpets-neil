@@ -208,16 +208,25 @@ const selectedColors = ref([]);
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
+  isMultiColoredOpted.value = false;
 }
 
 const toggleSelect = (color) => {
+  if (color === "CustomColor") {
+    isMultiColoredOpted.value = true;
+    selectedColors.value.push("CustomColor");
+    return;
+  }
   if (selectedColors.value.includes(color)) {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
     userStore.preference.color = toRaw(selectedColors.value);
+    isMultiColoredOpted.value = false;
   } else {
     scrollToBottom();
+    isMultiColoredOpted.value = false;
     selectedColors.value.push(color);
     userStore.preference.color = toRaw(selectedColors.value);
+    customColor.value = "";
   }
 };
 </script>
