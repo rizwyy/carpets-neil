@@ -1,10 +1,10 @@
 <script setup>
-import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymApplicationDetails.vue";
-import GymActivitiesDetails from "../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue";
-import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymThicknessDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
-import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
-import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
+import RaisedAreaDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedAreaDetails.vue";
+import RaisedApplicationDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedApplicationDetails.vue";
+import RaisedActivityDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedActivitiesDetails.vue";
+import RaisedPanelDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedPanelsDetails.vue";
+import RaisedColorDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedColorDetails.vue";
+import RaisedBudgetDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedBudgetDetails.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -14,9 +14,7 @@ const route = useRoute();
 import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
-import GymFlooringDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
-import GymThicknessDetails from "../../../components/MOBILE/FLOORING/GYM/GymThicknessDetails.vue";
-import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
+
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -45,26 +43,26 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Gym Flooring >
+          Raised Flooring >
           <!-- DESKTOP -->
-          {{ userStore.preference.spec_2 }}
+          {{ userStore.preference.spec_1 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <GymApplicationDetails />
-      <GymActivitiesDetails />
-      <GymFlooringDetails />
-      <GymThicknessDetails />
-      <GymColorDetails />
-      <GymBudgetDetails />
+      <RaisedAreaDetails />
+      <RaisedApplicationDetails />
+      <RaisedActivityDetails />
+      <RaisedPanelDetails />
+      <RaisedColorDetails />
+      <RaisedBudgetDetails />
 
       <!-- DESKTOP -->
-      <a href="/flooring/wooden/catalog">
+      <a href="/flooring/raised/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
-            userStore.preference.flooring === 'gym' &&
+            userStore.preference.flooring === 'raised' &&
             userStore.preference.spec_1 !== '' &&
             userStore.preference.spec_2 !== '' &&
             userStore.preference.spec_3 !== '' &&
@@ -101,23 +99,23 @@ onMounted(() => {});
           href="/flooring"
           class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Gym Flooring >
-          {{ userStore.preference.spec_2 }}
+          Raised Flooring >
+          {{ userStore.preference.spec_1 }}
         </a>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <GymApplicationDetails />
-      <GymActivitiesDetails />
-      <GymFlooringDetails />
-      <GymThicknessDetails />
-      <GymColorDetails />
-      <GymBudgetDetails />
-      <a href="/flooring/wooden/catalog">
+      <RaisedAreaDetails />
+      <RaisedApplicationDetails />
+      <RaisedActivityDetails />
+      <RaisedPanelDetails />
+      <RaisedColorDetails />
+      <RaisedBudgetDetails />
+      <a href="/flooring/raised/catalog">
         <button
           @click="setUserPreferenceCookie"
           v-show="
-            userStore.preference.flooring === 'gym' &&
+            userStore.preference.flooring === 'raised' &&
             userStore.preference.spec_1 !== '' &&
             userStore.preference.spec_2 !== '' &&
             userStore.preference.spec_3 !== '' &&
