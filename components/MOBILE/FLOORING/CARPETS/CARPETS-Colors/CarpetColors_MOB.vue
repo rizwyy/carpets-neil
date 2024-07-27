@@ -51,7 +51,7 @@
           @click="toggleSelect(customColor)"
           class="text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
         >
-          submit
+          Add
         </button>
       </div>
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
@@ -61,15 +61,7 @@
           @click="toggleSelect('CustomColor')"
         >
           <!-- MOBILE -->
-          <span v-show="!selectedColors.includes('CustomColor')"
-            >Custom Color</span
-          >
-          <div v-show="selectedColors.includes('CustomColor')">
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
+          <span>Custom Color</span>
         </div>
 
         <!-- MOBILE -->
