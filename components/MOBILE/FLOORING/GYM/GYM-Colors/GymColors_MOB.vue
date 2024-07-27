@@ -62,12 +62,6 @@
           >
             Add
           </button>
-          <button
-            @click="toggleSelect(customColor)"
-            class="text-[2vh] border-[1px] rounded-md px-[6vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
-          >
-            Submit
-          </button>
         </div>
       </div>
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
