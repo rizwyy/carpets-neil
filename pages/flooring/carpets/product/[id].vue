@@ -16,8 +16,8 @@
           class="product-image_container h-max w-full flex items-center justify-start px-[0vw]"
         >
           <!-- MOBILE -->
-          <NuxtImg
-            placeholder=""
+          <img
+            loading="lazy"
             class="object-cover h-[32vh] w-[98%]"
             :src="
               color
@@ -257,10 +257,8 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
         <!-- LAYOUT -->
         <!-- R1 -->
         <div class="h-full w-[40%] pl-[4vw] pt-[1vh] bg-[#fff] rounded-md">
-          <NuxtImg
-            quality="100"
+          <img
             loading="eager"
-            placeholder
             class="object-contain h-[72vh] w-[100%]"
             :src="
               color

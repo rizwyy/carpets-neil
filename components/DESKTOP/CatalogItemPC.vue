@@ -11,10 +11,7 @@ const { name, color, price, currency, src } = defineProps([
 <template>
   <div class="h-max w-max flex flex-col items-start font-outfit-400">
     <div class="h-[28vh] w-[20vw] overflow-hidden relative">
-      <NuxtImg
-        preload
-        placeholder
-        quality="80"
+      <img
         loading="lazy"
         class="h-full w-full object-cover"
         :src="
