@@ -12,14 +12,14 @@ const route = useRoute();
 
 <template>
   <div class="h-max w-[46vw] flex flex-col items-center">
-    <div class="NuxtImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
+    <div class="ImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
       <NuxtImg
         preload
         placeholder
         quality="80"
         loading="lazy"
         class="object-cover h-full w-full"
-        :src="`/carpets/${color}.jpg`"
+        :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`"
         :alt="color"
       />
     </div>
@@ -31,7 +31,7 @@ const route = useRoute();
       </div>
       <span
         class="inline-block flex justify-start text-[1.6vh] w-[100%] text-left text-balance text-[#999]"
-        >{{ color }}</span
+        >{{ getColorAfterHyphen(color) }}</span
       >
       <div class="h-max w-max flex flex-col gap-[0vh]">
         <div class="text-[#999] w-max flex justify-between gap-[1.2vw]">

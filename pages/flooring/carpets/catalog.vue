@@ -151,7 +151,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="getColorAfterHyphen(item.color)"
+              :color="item.color"
             />
           </a>
           <a
@@ -164,7 +164,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="getColorAfterHyphen(item.color)"
+              :color="item.color"
             />
           </a>
           <a
@@ -177,7 +177,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="getColorAfterHyphen(item.color)"
+              :color="item.color"
             />
           </a>
         </div>
@@ -253,7 +253,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="getColorAfterHyphen(item.color)"
+              :color="item.color"
             />
           </a>
           <a
@@ -266,7 +266,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="getColorAfterHyphen(item.color)"
+              :color="item.color"
             />
           </a>
           <a
@@ -279,7 +279,7 @@ onMounted(() => {
               :name="item.name"
               :price="item.price"
               :currency="item.currency"
-              :color="getColorAfterHyphen(item.color)"
+              :color="item.color"
             />
           </a>
         </div>

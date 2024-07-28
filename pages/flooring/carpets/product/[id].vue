@@ -17,8 +17,9 @@
         >
           <!-- MOBILE -->
           <NuxtImg
+            placeholder=""
             class="object-cover h-[32vh] w-[98%]"
-            :src="`/carpets/${getColorAfterHyphen(productColor)}.jpg`"
+            :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${productColor}`"
             :alt="getColorAfterHyphen(productColor)"
           />
         </div>
@@ -255,8 +256,9 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
           <NuxtImg
             quality="100"
             loading="eager"
+            placeholder
             class="object-contain h-[72vh] w-[100%]"
-            :src="`/carpets/${getColorAfterHyphen(productColor)}.jpg`"
+            :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${productColor}`"
             :alt="getColorAfterHyphen(productColor)"
           />
         </div>

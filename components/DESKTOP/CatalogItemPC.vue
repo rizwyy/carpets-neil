@@ -6,15 +6,18 @@ const { name, color, price, currency, src } = defineProps([
   "currency",
   "src",
 ]);
-const route = useRoute();
 </script>
 
 <template>
   <div class="h-max w-max flex flex-col items-start font-outfit-400">
     <div class="h-[28vh] w-[20vw] overflow-hidden relative">
-      <img
+      <NuxtImg
+        preload
+        placeholder
+        quality="80"
+        loading="lazy"
         class="h-full w-full object-cover"
-        :src="`/carpets/${color}.jpg`"
+        :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`"
         :alt="color"
       />
     </div>
@@ -23,7 +26,9 @@ const route = useRoute();
     >
       <div class="h-max w-full flex justify-between items-center">
         <span class="font-[600] text-[2.4vh]">{{ name }}</span>
-        <span class="text-[#888] text-[2vh]">{{ color }}</span>
+        <span class="text-[#888] text-[2vh]">{{
+          getColorAfterHyphen(color)
+        }}</span>
       </div>
       <div
         class="h-max w-full flex justify-between items-center pt-[.4vh] gap-[.2vw]"
