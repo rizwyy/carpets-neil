@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <div
-    v-if="userStore.preference.spec_1 !== ''"
+    v-show="userStore.preference.spec_1 !== ''"
     class="gymActivitesPC max-[990px]:hidden h-max w-screen px-[6vw]"
   >
     <div
@@ -14,7 +14,7 @@
         <!-- DESKTOP -->
         <button
           @click="clearAllSelections"
-          v-if="spec_2.length"
+          v-show="spec_2.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -34,7 +34,7 @@
       </div>
       <!-- Data Center -->
       <div
-        v-if="userStore.preference.spec_1 === 'Data Center'"
+        v-show="userStore.preference.spec_1 === 'Data Center'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -47,7 +47,7 @@
             @click="toggleSelect('Server Rooms')"
           >
             <div
-              v-if="spec_2.includes('Server Rooms')"
+              v-show="spec_2.includes('Server Rooms')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -72,16 +72,16 @@
           </div>
 
           <!-- DESKTOP -->
-          <!-- Functional Training  -->
+          <!-- Telecom Rooms  -->
           <div
             :class="[
               'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: spec_2.includes('Functional Training') },
+              { selected: spec_2.includes('Telecom Rooms') },
             ]"
-            @click="toggleSelect('Functional Training')"
+            @click="toggleSelect('Telecom Rooms')"
           >
             <div
-              v-if="spec_2.includes('Functional Training')"
+              v-show="spec_2.includes('Telecom Rooms')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -99,9 +99,9 @@
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
               src="/raised/functionalTraining.webp"
-              alt="Functional Training"
+              alt="Telecom Rooms"
             />
-            <span class="text-[3.4vh]">Functional Training</span>
+            <span class="text-[3.4vh]">Telecom Rooms</span>
           </div>
         </div>
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -115,7 +115,7 @@
             @click="toggleSelect('Telecom Rooms')"
           >
             <div
-              v-if="spec_2.includes('Telecom Rooms')"
+              v-show="spec_2.includes('Telecom Rooms')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -149,7 +149,7 @@
             @click="toggleSelect('Free Weights')"
           >
             <div
-              v-if="spec_2.includes('Free Weights')"
+              v-show="spec_2.includes('Free Weights')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -176,7 +176,7 @@
       </div>
       <!-- GROUP TRAINING -->
       <div
-        v-if="userStore.preference.spec_1 === 'Commercial'"
+        v-show="userStore.preference.spec_1 === 'Commercial'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -189,7 +189,7 @@
             @click="toggleSelect('Offices')"
           >
             <div
-              v-if="spec_2.includes('Offices')"
+              v-show="spec_2.includes('Offices')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -223,7 +223,7 @@
             @click="toggleSelect('Retail')"
           >
             <div
-              v-if="spec_2.includes('Retail')"
+              v-show="spec_2.includes('Retail')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -257,7 +257,7 @@
             @click="toggleSelect('Hospitality')"
           >
             <div
-              v-if="spec_2.includes('Hospitality')"
+              v-show="spec_2.includes('Hospitality')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -291,7 +291,7 @@
             @click="toggleSelect('Public Area')"
           >
             <div
-              v-if="spec_2.includes('Public Area')"
+              v-show="spec_2.includes('Public Area')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -326,7 +326,7 @@
             @click="toggleSelect('TRX')"
           >
             <div
-              v-if="spec_2.includes('TRX')"
+              v-show="spec_2.includes('TRX')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -360,7 +360,7 @@
             @click="toggleSelect('Pilates')"
           >
             <div
-              v-if="spec_2.includes('Pilates')"
+              v-show="spec_2.includes('Pilates')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -387,7 +387,7 @@
       </div>
       <!-- STRENGTH & CONDITIONING -->
       <div
-        v-if="userStore.preference.spec_1 === 'Industrial'"
+        v-show="userStore.preference.spec_1 === 'Industrial'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -400,7 +400,7 @@
             @click="toggleSelect('Industrial Facilities')"
           >
             <div
-              v-if="spec_2.includes('Industrial Facilities')"
+              v-show="spec_2.includes('Industrial Facilities')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -434,7 +434,7 @@
             @click="toggleSelect('Food Processing')"
           >
             <div
-              v-if="spec_2.includes('Food Processing')"
+              v-show="spec_2.includes('Food Processing')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -460,7 +460,7 @@
       </div>
       <!-- Health Care -->
       <div
-        v-if="userStore.preference.spec_1 === 'Health Care'"
+        v-show="userStore.preference.spec_1 === 'Health Care'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -473,7 +473,7 @@
             @click="toggleSelect('Clean Rooms')"
           >
             <div
-              v-if="spec_2.includes('Clean Rooms')"
+              v-show="spec_2.includes('Clean Rooms')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -507,7 +507,7 @@
             @click="toggleSelect('Facility Rooms')"
           >
             <div
-              v-if="spec_2.includes('Facility Rooms')"
+              v-show="spec_2.includes('Facility Rooms')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -541,7 +541,7 @@
             @click="toggleSelect('Karate')"
           >
             <div
-              v-if="spec_2.includes('Karate')"
+              v-show="spec_2.includes('Karate')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -575,7 +575,7 @@
             @click="toggleSelect('Boxing')"
           >
             <div
-              v-if="spec_2.includes('Boxing')"
+              v-show="spec_2.includes('Boxing')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -610,7 +610,7 @@
             @click="toggleSelect('Taekwondo')"
           >
             <div
-              v-if="spec_2.includes('Taekwondo')"
+              v-show="spec_2.includes('Taekwondo')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -644,7 +644,7 @@
             @click="toggleSelect('Akido')"
           >
             <div
-              v-if="spec_2.includes('Akido')"
+              v-show="spec_2.includes('Akido')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->

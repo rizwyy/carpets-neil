@@ -1,7 +1,7 @@
 <template>
   <!-- MOBILE -->
   <div
-    v-if="userStore.preference.spec_1 !== ''"
+    v-show="userStore.preference.spec_1 !== ''"
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
@@ -29,7 +29,7 @@
     </div>
     <!--Data Center -->
     <div
-      v-if="userStore.preference.spec_1 === 'Data Center'"
+      v-show="userStore.preference.spec_1 === 'Data Center'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -102,9 +102,9 @@
         </div>
       </div>
     </div>
-    <!-- GROUP TRAINING -->
+    <!-- COMMERCIAL -->
     <div
-      v-if="userStore.preference.spec_1 === 'Commercial'"
+      v-show="userStore.preference.spec_1 === 'Commercial'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -248,7 +248,7 @@
     </div>
     <!-- STRENGTH AND CONDITIONING -->
     <div
-      v-if="userStore.preference.spec_1 === 'Industrial'"
+      v-show="userStore.preference.spec_1 === 'Industrial'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -358,7 +358,7 @@
     </div>
     <!-- Health Care-->
     <div
-      v-if="userStore.preference.spec_1 === 'Health Care'"
+      v-show="userStore.preference.spec_1 === 'Health Care'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">

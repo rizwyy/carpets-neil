@@ -15,7 +15,7 @@
         <span class="text-left text-balance">Choose Your Color </span>
         <button
           @click="clearColorSelections"
-          v-if="selectedColors.length"
+          v-show="selectedColors.length"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <!-- DESKTOP -->
@@ -35,7 +35,7 @@
       </div>
 
       <div
-        v-if="userStore.preference.flooring === 'PVC'"
+        v-show="userStore.preference.flooring === 'PVC'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
@@ -46,15 +46,15 @@
           >
             <span
               class="text-[2.8vh]"
-              v-if="!selectedColors.includes('CustomColor')"
+              v-show="!selectedColors.includes('CustomColor')"
               >Multi Colored</span
             >
-            <template v-if="selectedColors.includes('CustomColor')">
+            <div v-show="selectedColors.includes('CustomColor')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
 
           <!-- DESKTOP -->
@@ -63,15 +63,17 @@
             :class="{ selected: selectedColors.includes('Beige') }"
             @click="toggleSelect('Beige')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Beige')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!selectedColors.includes('Beige')"
               >Beige</span
             >
-            <template v-if="selectedColors.includes('Beige')">
+            <div v-show="selectedColors.includes('Beige')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
           <!-- DESKTOP -->
           <div
@@ -79,15 +81,17 @@
             :class="{ selected: selectedColors.includes('Brown') }"
             @click="toggleSelect('Brown')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Brown')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!selectedColors.includes('Brown')"
               >Brown</span
             >
-            <template v-if="selectedColors.includes('Brown')">
+            <div v-show="selectedColors.includes('Brown')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
         </div>
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
@@ -96,48 +100,50 @@
             :class="{ selected: selectedColors.includes('Grey') }"
             @click="toggleSelect('Grey')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Grey')"
+            <span class="text-[2.8vh]" v-show="!selectedColors.includes('Grey')"
               >Grey</span
             >
             <!-- DESKTOP -->
-            <template v-if="selectedColors.includes('Grey')">
+            <div v-show="selectedColors.includes('Grey')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Green') }"
             @click="toggleSelect('Green')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Green')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!selectedColors.includes('Green')"
               >Green</span
             >
-            <template v-if="selectedColors.includes('Green')">
+            <div v-show="selectedColors.includes('Green')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-blue-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Blue') }"
             @click="toggleSelect('Blue')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Blue')"
+            <span class="text-[2.8vh]" v-show="!selectedColors.includes('Blue')"
               >Blue</span
             >
-            <template v-if="selectedColors.includes('Blue')">
+            <div v-show="selectedColors.includes('Blue')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
         </div>
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
@@ -146,32 +152,36 @@
             :class="{ selected: selectedColors.includes('White') }"
             @click="toggleSelect('White')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('White')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!selectedColors.includes('White')"
               >White</span
             >
-            <template v-if="selectedColors.includes('White')">
+            <div v-show="selectedColors.includes('White')">
               <!-- DESKTOP -->
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-black rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Black') }"
             @click="toggleSelect('Black')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Black')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!selectedColors.includes('Black')"
               >Black</span
             >
-            <template v-if="selectedColors.includes('Black')">
+            <div v-show="selectedColors.includes('Black')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
@@ -179,16 +189,16 @@
             @click="toggleSelect('Pink')"
           >
             <!-- DESKTOP -->
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Pink')"
+            <span class="text-[2.8vh]" v-show="!selectedColors.includes('Pink')"
               >Pink</span
             >
-            <template v-if="selectedColors.includes('Pink')">
+            <div v-show="selectedColors.includes('Pink')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
         </div>
       </div>

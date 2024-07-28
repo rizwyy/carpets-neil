@@ -61,7 +61,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-matteFinish.webp"
+            src="/raised/raised-barePanel.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Bare</span>
@@ -92,7 +92,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-gloss.webp"
+            src="/raised/raised-HPL.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">HPL</span>
@@ -126,7 +126,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-matteFinish.webp"
+            src="/raised/raised-PVC.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">PVC</span>
@@ -157,7 +157,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-gloss.webp"
+            src="/raised/raised-perforated.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Perforated</span>
