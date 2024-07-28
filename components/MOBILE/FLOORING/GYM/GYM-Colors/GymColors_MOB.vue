@@ -49,6 +49,7 @@
           placeholder="Enter your Color"
         />
         <button
+          v-show="customColor.length > 2"
           @click="toggleSelect(customColor)"
           class="text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
         >
@@ -230,12 +231,12 @@
       class="h-max w-full flex flex-col gap-[1vh] items-start"
     >
       <span class="text-[#444]">Selected Colors:</span>
-      <div class="w-full grid grid-cols-4 gap-[2vw]">
+      <div class="w-full grid grid-cols-3 gap-[2vw]">
         <span
           v-for="color in removeCustomColor()"
           :key="color"
           :style="{ backgroundColor: getColorHex(color) }"
-          class="text-center border border-black rounded-md py-[.4vh] px-[1vw]"
+          class="text-center border border-black rounded-md py-[.8vh] px-[1vw]"
         >
           <span
             class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.2vh] font-[00] backdrop-blur-[8px] text-white text-[1.6vh]"
@@ -272,7 +273,6 @@ const toggleSelect = (color, added) => {
     isMultiColoredOpted.value = true;
     return;
   }
-
   // Toggle color selection
   const isSelected = selectedColors.value.includes(color);
   if (isSelected) {

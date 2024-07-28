@@ -101,6 +101,7 @@ const carpetColors = {
   // Blues
   blue: "#0000FF",
   navy: "#000080",
+  navyblue: "#000080",
   darkblue: "#00008B",
   mediumblue: "#0000CD",
   dodgerblue: "#1E90FF",
