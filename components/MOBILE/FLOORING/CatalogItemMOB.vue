@@ -13,10 +13,7 @@ const route = useRoute();
 <template>
   <div class="h-max w-[46vw] flex flex-col items-center">
     <div class="ImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
-      <NuxtImg
-        preload
-        placeholder
-        quality="80"
+      <img
         loading="lazy"
         class="object-cover h-full w-full"
         :src="

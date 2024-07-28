@@ -262,7 +262,11 @@ class="price-details_container h-max w-max flex flex-col gap-[.2vh] items-end px
             loading="eager"
             placeholder
             class="object-contain h-[72vh] w-[100%]"
-            :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${productColor}`"
+            :src="
+              color
+                ? `https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`
+                : `/carpets/${getColorAfterHyphen(color)}.webp`
+            "
             :alt="getColorAfterHyphen(productColor)"
           />
         </div>

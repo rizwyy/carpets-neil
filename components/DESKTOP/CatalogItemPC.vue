@@ -17,7 +17,11 @@ const { name, color, price, currency, src } = defineProps([
         quality="80"
         loading="lazy"
         class="h-full w-full object-cover"
-        :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`"
+        :src="
+          color
+            ? `https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`
+            : `/carpets/${getColorAfterHyphen(color)}.webp`
+        "
         :alt="color"
       />
     </div>
