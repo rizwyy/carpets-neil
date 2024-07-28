@@ -196,14 +196,19 @@
       v-show="userStore.preference.color.length > 0"
       class="h-max w-full flex flex-col gap-[1vh] items-start"
     >
-      <span class="text-[#999]">Selected Colors:</span>
+      <span class="text-[#444]">Selected Colors:</span>
       <div class="w-full grid grid-cols-4 gap-[2vw]">
         <span
           v-for="color in removeCustomColor()"
           :key="color"
-          class="text-center border border-gray-300 py-[.4vh] text-[#999] text-[2vh]"
+          :style="{ backgroundColor: getColorHex(color) }"
+          class="text-center border border-black rounded-md py-[.4vh] px-[1vw]"
         >
-          {{ color }}
+          <span
+            class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.2vh] font-[00] backdrop-blur-[8px] text-white text-[1.6vh]"
+          >
+            {{ color }}
+          </span>
         </span>
       </div>
     </div>

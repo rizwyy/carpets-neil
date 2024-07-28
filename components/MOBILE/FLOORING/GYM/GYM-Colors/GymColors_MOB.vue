@@ -229,14 +229,19 @@
       v-show="userStore.preference.color.length > 0"
       class="h-max w-full flex flex-col gap-[1vh] items-start"
     >
-      <span class="text-[#999]">Selected Colors:</span>
+      <span class="text-[#444]">Selected Colors:</span>
       <div class="w-full grid grid-cols-4 gap-[2vw]">
         <span
           v-for="color in removeCustomColor()"
           :key="color"
-          class="text-center border border-gray-300 py-[.4vh] text-[#999] text-[2vh]"
+          :style="{ backgroundColor: getColorHex(color) }"
+          class="text-center border border-black rounded-md py-[.4vh] px-[1vw]"
         >
-          {{ color }}
+          <span
+            class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.2vh] font-[00] backdrop-blur-[8px] text-white text-[1.6vh]"
+          >
+            {{ color }}
+          </span>
         </span>
       </div>
     </div>
@@ -264,9 +269,6 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   // Handle "CustomColor" case
   if (color === "CustomColor") {
-    if (!selectedColors.value.includes("CustomColor")) {
-      selectedColors.value.push("CustomColor");
-    }
     isMultiColoredOpted.value = true;
     return;
   }
@@ -285,8 +287,22 @@ const toggleSelect = (color, added) => {
   userStore.preference.color = toRaw(selectedColors.value);
   isMultiColoredOpted.value = false;
   removeCustomColor();
+  getHexCodes();
   customColor.value = "";
 };
+
+const customColorArray = ref([]);
+function getColorHex(color) {
+  const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+  return carpetColors[formattedColor] || "#000000";
+}
+function getHexCodes() {
+  userStore.preference.color.forEach((color) => {
+    const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+    const hexCode = carpetColors[formattedColor] || "#000000";
+    customColorArray.value.push(hexCode);
+  });
+}
 </script>
 
 <style scoped>
