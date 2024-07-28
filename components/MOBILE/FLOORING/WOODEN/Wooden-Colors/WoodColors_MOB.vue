@@ -198,7 +198,7 @@
       class="h-max w-full flex flex-col gap-[1vh] items-start"
     >
       <span class="text-[#444]">Selected Colors:</span>
-      <div class="w-full grid grid-cols-4 gap-[2vw]">
+      <div class="w-full grid grid-cols-3 gap-[2vw]">
         <span
           v-for="color in removeCustomColor()"
           :key="color"
