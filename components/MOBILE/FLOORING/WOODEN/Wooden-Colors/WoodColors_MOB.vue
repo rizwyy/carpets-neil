@@ -232,24 +232,43 @@ function clearColorSelections() {
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };
-const toggleSelect = (color) => {
+const toggleSelect = (color, added) => {
+  // Handle "CustomColor" case
   if (color === "CustomColor") {
     isMultiColoredOpted.value = true;
-    selectedColors.value.push("CustomColor");
     return;
   }
-  if (selectedColors.value.includes(color)) {
+
+  // Toggle color selection
+  const isSelected = selectedColors.value.includes(color);
+  if (isSelected) {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
-    userStore.preference.color = toRaw(selectedColors.value);
-    isMultiColoredOpted.value = false;
   } else {
-    scrollToBottom();
-    isMultiColoredOpted.value = false;
+    if (!added) {
+      scrollToBottom();
+    }
     selectedColors.value.push(color);
-    userStore.preference.color = toRaw(selectedColors.value);
-    customColor.value = "";
   }
+
+  userStore.preference.color = toRaw(selectedColors.value);
+  isMultiColoredOpted.value = false;
+  removeCustomColor();
+  getHexCodes();
+  customColor.value = "";
 };
+
+const customColorArray = ref([]);
+function getColorHex(color) {
+  const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+  return carpetColors[formattedColor] || "#000000";
+}
+function getHexCodes() {
+  userStore.preference.color.forEach((color) => {
+    const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+    const hexCode = carpetColors[formattedColor] || "#000000";
+    customColorArray.value.push(hexCode);
+  });
+}
 </script>
 
 <style scoped>
