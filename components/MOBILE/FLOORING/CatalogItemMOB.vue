@@ -19,7 +19,11 @@ const route = useRoute();
         quality="80"
         loading="lazy"
         class="object-cover h-full w-full"
-        :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`"
+        :src="
+          color
+            ? `https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`
+            : `/carpets/${getColorAfterHyphen(color)}.webp`
+        "
         :alt="color"
       />
     </div>
