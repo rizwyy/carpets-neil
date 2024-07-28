@@ -61,7 +61,12 @@
           @click="toggleSelect('CustomColor')"
         >
           <!-- MOBILE -->
-          <span>Custom Color</span>
+          <span v-show="!selectedColors.includes('CustomColor')"
+            >Custom Color</span
+          >
+          <div v-show="selectedColors.includes('CustomColor')">
+            <span class="h-full w-full text-[2vh]">Add More +</span>
+          </div>
         </div>
 
         <!-- MOBILE -->
