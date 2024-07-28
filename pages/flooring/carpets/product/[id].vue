@@ -19,7 +19,11 @@
           <NuxtImg
             placeholder=""
             class="object-cover h-[32vh] w-[98%]"
-            :src="`https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${productColor}`"
+            :src="
+              color
+                ? `https://iqhciavbeulhroqoskbu.supabase.co/storage/v1/object/public/images_carpets/${color}`
+                : `/carpets/${getColorAfterHyphen(color)}.webp`
+            "
             :alt="getColorAfterHyphen(productColor)"
           />
         </div>
