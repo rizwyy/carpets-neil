@@ -1,7 +1,7 @@
 <script setup>
 import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymApplicationDetails.vue";
 import GymActivitiesDetails from "../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue";
-import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymThicknessDetails.vue";
+import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
 import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
@@ -15,7 +15,7 @@ import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import GymFlooringDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
-import GymThicknessDetails from "../../../components/MOBILE/FLOORING/GYM/GymThicknessDetails.vue";
+import GymThicknessDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
 import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
@@ -55,7 +55,7 @@ onMounted(() => {});
       <GymApplicationDetails />
       <GymActivitiesDetails />
       <GymFlooringDetails />
-      <GymThicknessDetails />
+      <GymFinishDetails />
       <GymColorDetails />
       <GymBudgetDetails />
 
@@ -110,7 +110,7 @@ onMounted(() => {});
       <GymApplicationDetails />
       <GymActivitiesDetails />
       <GymFlooringDetails />
-      <GymThicknessDetails />
+      <GymFinishDetails />
       <GymColorDetails />
       <GymBudgetDetails />
       <a href="/flooring/gym/catalog">
