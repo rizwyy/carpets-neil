@@ -30,7 +30,7 @@
           <NuxtImg
             @load="handleImageLoad('index_layout_Flooring', true)"
             preload
-            placeholder="/flooring-placeholder.png"
+            placeholder="/placeholders/flooring-placeholder.png"
             loading="eager"
             class="absolute object-cover object-bottom bottom-0 left-0 h-full w-full z-[-99] index_layout_Flooring_Img"
             src="/flooring1.webp"
