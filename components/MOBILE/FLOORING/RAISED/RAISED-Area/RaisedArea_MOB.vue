@@ -53,7 +53,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/fitness.webp"
+          src="/raised/raised-dataCenter.webp"
           alt=""
         />
         <span class="text-left text-balance">Data Center</span>
@@ -86,7 +86,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/groupTraining.webp"
+          src="/raised/raised-commercial.webp"
           alt=""
         />
         <span class="text-left text-balance">Commercial</span>
@@ -120,7 +120,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/strength.webp"
+          src="/raised/raised-industryFlooring.webp"
           alt=""
         />
         <span class="text-left text-balance">Industry</span>
@@ -153,7 +153,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/martialArts.webp"
+          src="/raised/raised-healthCare.webp"
           alt=""
         />
         <span class="text-left text-balance">Healthcare</span>

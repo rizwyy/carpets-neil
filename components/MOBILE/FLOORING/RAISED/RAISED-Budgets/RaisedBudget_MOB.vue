@@ -19,7 +19,7 @@
       <span>Choose Your Budget</span>
       <button
         @click="clearBudgetSelections"
-        v-if="budget.length"
+        v-show="budget.length"
         class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -51,7 +51,7 @@
         @click="toggleSelect('Value')"
       >
         <div
-          v-if="budget === 'Value'"
+          v-show="budget === 'Value'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -108,7 +108,7 @@
         @click="toggleSelect('Essential')"
       >
         <div
-          v-if="budget === 'Essential'"
+          v-show="budget === 'Essential'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -166,7 +166,7 @@
         @click="toggleSelect('Premier')"
       >
         <div
-          v-if="budget === 'Premier'"
+          v-show="budget === 'Premier'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -198,22 +198,6 @@
         </div>
       </div>
       <!-- MOBILE -->
-      <!-- NOT AVAILABLE PREMIER -->
-      <!-- <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
-          >
-        </div>
-      </div> -->
       <!-- SIGNATURE -->
       <!-- MOBILE -->
       <div
@@ -224,7 +208,7 @@
         @click="toggleSelect('Signature')"
       >
         <div
-          v-if="budget === 'Signature'"
+          v-show="budget === 'Signature'"
           class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- MOBILE -->
@@ -254,79 +238,47 @@
           <span> BD. 25m<sup>2</sup> to BD. 29.99m<sup>2</sup></span>
         </div>
       </div>
-      <!-- MOBILE -->
-      <!-- NOT AVAILABLE SIGNATURE -->
-      <!-- <div
-        v-else
+      <div
         :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+          { selected: budget === 'Elite' },
         ]"
+        @click="toggleSelect('Elite')"
       >
         <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
+          v-show="budget === 'Elite'"
+          class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
+          <!-- Selected indicator without text -->
+          <div
+            class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
           >
-        </div> -->
+            <span
+              class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >
+              Selected
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+        ></div>
+
+        <div
+          class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+        >
+          <span> Elite </span>
+        </div>
+        <div
+          class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+        >
+          <span> Over BD. 30 m<sup>2</sup></span>
+        </div>
+      </div>
     </div>
     <!-- ELITE -->
     <!-- MOBILE -->
-    <div
-      :class="[
-        'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden bg-black  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-        { selected: budget === 'Elite' },
-      ]"
-      @click="toggleSelect('Elite')"
-    >
-      <div
-        v-if="budget === 'Elite'"
-        class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-      >
-        <!-- Selected indicator without text -->
-        <div
-          class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
-        >
-          <span
-            class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-          >
-            Selected
-          </span>
-        </div>
-      </div>
-
-      <div
-        class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
-      ></div>
-
-      <div
-        class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
-      >
-        <span> Elite </span>
-      </div>
-      <div
-        class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
-      >
-        <span> Over BD. 30 m<sup>2</sup></span>
-      </div>
-    </div>
-    <!-- NOT AVAILABLE ELITE -->
-    <!-- MOBILE -->
-    <!-- <div
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
-          >
-        </div>
-      </div> -->
   </div>
 </template>
 

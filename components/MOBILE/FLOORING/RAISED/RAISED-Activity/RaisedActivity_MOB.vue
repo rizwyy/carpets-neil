@@ -12,7 +12,7 @@
       <span class="text-left text-balance">Choose your Activity</span>
       <button
         @click="clearmaterialSelections"
-        v-if="spec_3"
+        v-show="spec_3"
         class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -39,7 +39,7 @@
         @click="toggleSelect('Schools')"
       >
         <div
-          v-if="spec_3 === 'Schools'"
+          v-show="spec_3 === 'Schools'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -56,7 +56,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/rubberFlooring.webp"
+          src="/raised/raised-schools.webp"
           alt="#"
         />
         <span>Schools</span>
@@ -71,7 +71,7 @@
         @click="toggleSelect('Kitchens')"
       >
         <div
-          v-if="spec_3 === 'Kitchens'"
+          v-show="spec_3 === 'Kitchens'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -87,7 +87,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/pvcGymFlooring.webp"
+          src="/raised/raised-kitchenFlooring.webp"
           alt="#"
         />
         <span>Kitchens</span>
@@ -104,7 +104,7 @@
         @click="toggleSelect('Basements')"
       >
         <div
-          v-if="spec_3 === 'Basements'"
+          v-show="spec_3 === 'Basements'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -121,7 +121,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/woodenGymFlooring.webp"
+          src="/raised/raised-commercial.webp"
           alt="#"
         />
         <span>Basements</span>
@@ -136,7 +136,7 @@
         @click="toggleSelect('Swimming')"
       >
         <div
-          v-if="spec_3 === 'Swimming'"
+          v-show="spec_3 === 'Swimming'"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -153,7 +153,7 @@
           placeholder
           loading="lazy"
           class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/40004.jpg"
+          src="/raised/raised-swimming.webp"
           alt="#"
         />
         <!-- MOBILE -->

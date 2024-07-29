@@ -60,8 +60,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/cardio.webp"
+            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-serverRooms.webp"
             alt=""
           />
           <span>Server Rooms</span>
@@ -94,8 +94,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/machineTraining.webp"
+            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-telecomRooms.webp"
             alt=""
           />
           <span>Telecom Rooms</span>
@@ -136,7 +136,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/dance.webp"
+            src="/raised/raised-office.webp"
             alt=""
           />
           <span>Offices</span>
@@ -170,7 +170,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/aerobics.webp"
+            src="/raised/raised-retail.webp"
             alt=""
           />
           <span>Retail</span>
@@ -205,7 +205,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/zumba.webp"
+            src="/raised/raised-hospitality.webp"
             alt=""
           />
           <span>Hospitality</span>
@@ -239,7 +239,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/steps.webp"
+            src="/raised/raised-public.webp"
             alt=""
           />
           <span>Public Area</span>
@@ -248,7 +248,7 @@
     </div>
     <!-- STRENGTH AND CONDITIONING -->
     <div
-      v-show="userStore.preference.spec_1 === 'Industrial'"
+      v-show="userStore.preference.spec_1 === 'Industry'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -280,7 +280,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/Industrial Facilities.webp"
+            src="/raised/raised-industryFlooring.webp"
             alt=""
           />
           <span>Industrial Facilities</span>
@@ -314,7 +314,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/Food Processing.webp"
+            src="/raised/raised-food.webp"
             alt=""
           />
           <span>Food Processing</span>
@@ -348,8 +348,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/Chemical Lab.webp"
+            class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-lab4.webp"
             alt=""
           />
           <span>Chemical Lab</span>
@@ -358,7 +358,7 @@
     </div>
     <!-- Health Care-->
     <div
-      v-show="userStore.preference.spec_1 === 'Health Care'"
+      v-show="userStore.preference.spec_1 === 'Healthcare'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -390,7 +390,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/judo.webp"
+            src="/raised/raised-cleanRooms.webp"
             alt=""
           />
           <span>Clean Rooms</span>
@@ -424,8 +424,8 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/Facility Rooms.webp"
-            alt=""
+            src="/raised/raised-facilityRooms.webp"
+            alt="facility Rooms"
           />
           <span>Facility Rooms</span>
         </div>
