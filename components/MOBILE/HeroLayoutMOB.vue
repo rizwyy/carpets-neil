@@ -25,12 +25,13 @@
             >
           </div>
           <div
-            class="absolute object-cover bottom-0 left-0 h-full w-full opacity-[.8] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
+            class="absolute index_layout_Flooring_Overlay opacity-0 object-cover bottom-0 left-0 h-full w-full bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
           ></div>
           <NuxtImg
+            @load="handleImageLoad('index_layout_Flooring', true)"
             preload
             loading="eager"
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99] index_layout_Flooring_Img"
             src="/10001.jpg"
             alt="#"
           />
@@ -39,7 +40,7 @@
           class="h-[24vh] z-[1] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
-            class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
+            class="index_layout_wallCovering_Img h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
           >
             COMING SOON!
           </div>
@@ -54,12 +55,13 @@
             > -->
           </div>
           <div
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
+            class="index_layout_wallCovering_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-black"
           ></div>
           <NuxtImg
+            @load="handleImageLoad('index_layout_wallCovering', true)"
             quality="20"
             loading="lazy"
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99] index_layout_wallCovering_Img"
             src="/wall-to-wall.webp"
             alt="#"
           />

@@ -30,16 +30,19 @@ export function handleImageLoad(el, isOverlay) {
     `.${el}_Img`,
     {
       opacity: 0,
+      scale: 1.2,
     },
     {
+      scale: 1,
       opacity: 1,
       duration: 1,
+      ease: "slide.in",
     }
   );
   if (isOverlay) {
     gsap.to(`.${el}_Overlay`, {
-      opacity: 1,
-      duration: 1,
+      opacity: 0.6,
+      duration: 2,
     });
   }
 }

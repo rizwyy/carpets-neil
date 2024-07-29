@@ -56,7 +56,7 @@ function toggleExpansion() {
             <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
           </div>
           <div
-            class="flooringLayout_carpets_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_carpets_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_carpets', true)"
@@ -80,7 +80,7 @@ function toggleExpansion() {
             <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
           </div>
           <div
-            class="flooringLayout_wooden_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_wooden_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_wooden', true)"
@@ -106,7 +106,7 @@ function toggleExpansion() {
             Flooring</span
           >
           <div
-            class="flooringLayout_PVC_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_PVC_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
@@ -136,7 +136,7 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringLayout_Gym_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Gym_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_Gym', true)"
@@ -166,7 +166,7 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_Raised', true)"
