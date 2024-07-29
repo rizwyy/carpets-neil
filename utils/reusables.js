@@ -48,10 +48,10 @@ export function handleImageLoad(el, isOverlay, isText) {
   }
   if (isText) {
     gsap.to(`.${el}_Text`, {
+      delay: 0.1,
       opacity: 1,
       duration: 1,
-      ease: "power4.in",
-      delay: 0.2,
+      ease: "back.in",
       y: 0,
     });
   }

@@ -41,11 +41,12 @@
           class="h-[24vh] z-[1] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <div
-            class="index_layout_wallCovering_Img h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
+            class="flooringLayout_Text opacity-0 h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
           >
             COMING SOON!
           </div>
-          <span class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#fff9]"
+          <span
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#fff9]"
             >Wall Covering</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
