@@ -83,48 +83,49 @@
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover flooring_Banner_Img object-bottom"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           src="/runners.webp"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
       </div>
-      <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
+      <span
+        class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6] flooring_Banner_Text opacity-0"
         >{{
           `${userStore.customPreference.category} Flooring` || "Flooring"
         }}.</span
       >
       <button
-        class="rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
+        class="flooring_Banner_Text opacity-0 rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
       >
         See How Woltiz Works<svg
           xmlns="http://www.w3.org/2000/svg"
