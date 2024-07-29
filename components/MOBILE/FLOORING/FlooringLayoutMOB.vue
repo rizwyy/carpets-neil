@@ -143,8 +143,9 @@ function toggleExpansion() {
           <NuxtImg
             @load="handleImageLoad('flooringLayout_Gym', true)"
             loading="lazy"
+            placeholder="/placeholders/gym-placeholder.png"
             class="flooringLayout_Gym_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/40001.jpg"
+            src="/40001.webp"
             alt="#"
           />
         </a>
@@ -172,7 +173,7 @@ function toggleExpansion() {
           ></div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_Raised', true)"
-            placeholder=""
+            placeholder="/placeholders/raised-placeholder.png"
             loading="lazy"
             class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/raised/raised-office.webp"
