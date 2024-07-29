@@ -85,10 +85,11 @@ function toggleExpansion() {
           <NuxtImg
             @load="handleImageLoad('flooringLayout_wooden', true)"
             quality="50"
+            placeholder="/placeholder/engineeredWoodenFloor-placeholder.png"
             loading="lazy"
             class="flooringLayout_wooden_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/wooden/engineeredWoodenFloor.webp"
-            alt="#"
+            alt="engineeredWoodenFloor"
           />
         </a>
       </div>
@@ -113,6 +114,7 @@ function toggleExpansion() {
           </div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_PVC', true)"
+            placeholder="/placeholders/pvc-flooring-placeholder.png"
             quality="50"
             loading="lazy"
             class="flooringLayout_PVC_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
