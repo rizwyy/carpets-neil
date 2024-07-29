@@ -36,6 +36,7 @@ export function handleImageLoad(el, isOverlay, isText) {
       scale: 1,
       opacity: 1,
       duration: 0.6,
+      stagger: 0.1,
       ease: "slide.in",
     }
   );
@@ -43,6 +44,8 @@ export function handleImageLoad(el, isOverlay, isText) {
     gsap.to(`.${el}_Overlay`, {
       opacity: 0.6,
       ease: "slide.in",
+      stagger: 0.1,
+
       duration: 0.8,
     });
   }
@@ -50,25 +53,33 @@ export function handleImageLoad(el, isOverlay, isText) {
     gsap.to(`.${el}_Text`, {
       delay: 0.1,
       opacity: 1,
+      stagger: 0.1,
+
       duration: 1,
       ease: "back.in",
       y: 0,
     });
   }
 }
-export function bringOpacity(el) {
+export function bringOpacity(el, el2) {
+  const elementClass = `.${el}`;
+  const commonOptions = {
+    duration: 1,
+    ease: "slide.in",
+  };
+
+  if (el2 === "translate") {
+    console.log("hi");
+    gsap.fromTo(elementClass, { y: 90 }, { y: 0, ...commonOptions });
+  }
+
   gsap.fromTo(
-    `.${el}`,
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      duration: 0.4,
-      ease: "slide.in",
-    }
+    elementClass,
+    { opacity: 0 },
+    { opacity: 1, duration: 0.4, ease: "slide.in" }
   );
 }
+
 export function removeOpacity(el) {
   gsap.fromTo(
     `.${el}`,
