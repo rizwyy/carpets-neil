@@ -56,3 +56,29 @@ export function handleImageLoad(el, isOverlay, isText) {
     });
   }
 }
+export function bringOpacity(el) {
+  gsap.fromTo(
+    `.${el}`,
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 0.4,
+      ease: "slide.in",
+    }
+  );
+}
+export function removeOpacity(el) {
+  gsap.fromTo(
+    `.${el}`,
+    {
+      opacity: 1,
+    },
+    {
+      opacity: 0,
+      duration: 0.4,
+      ease: "back.out",
+    }
+  );
+}

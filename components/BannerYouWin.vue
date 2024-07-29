@@ -10,39 +10,40 @@
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner')"
+          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true)"
+          v-show="userStore.customPreference.category === ''"
+          @load="handleImageLoad('flooring_Banner_Default', true, true)"
           src="/runners.webp"
-          class="h-full w-full object-cover flooring_Banner_Img"
+          class="h-full w-full object-cover flooring_Banner_Default_Img"
         />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
