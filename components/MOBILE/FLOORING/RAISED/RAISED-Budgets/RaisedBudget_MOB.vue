@@ -81,23 +81,7 @@
           <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
         </div>
       </div>
-      <!-- NOT AVAILABLE VALUE -->
-      <!-- MOBILE -->
-      <!-- <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
-          >
-        </div>
-      </div> -->
+
       <!-- MOBILE -->
       <!-- ESSENTIAL -->
       <div
@@ -140,22 +124,7 @@
         </div>
       </div>
       <!-- MOBILE -->
-      <!-- NOT AVAILABLE ESSENTIALs -->
-      <!-- <div
-        v-else
-        :class="[
-          'h-[10vh] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
-          >
-        </div>
-      </div> -->
+
       <!-- PREMIER -->
       <!-- MOBILE -->
       <div

@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export function scrollToBottom() {
   setTimeout(() => {
     const offset = window.innerHeight * 0.1; // 10% of the viewport height
@@ -21,4 +23,23 @@ export function shuffleArray(array) {
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
   return newArray;
+}
+
+export function handleImageLoad(el, isOverlay) {
+  gsap.fromTo(
+    `.${el}_Img`,
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 1,
+    }
+  );
+  if (isOverlay) {
+    gsap.to(`.${el}_Overlay`, {
+      opacity: 1,
+      duration: 1,
+    });
+  }
 }

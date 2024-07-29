@@ -6,38 +6,43 @@
       class="h-[38vh] w-[90%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#2333] opacity-[.6]"
+        class="absolute flooring_Banner_Overlay opacity-0 h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#2333] opacity-[.6]"
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
-          v-if="userStore.customPreference.category === 'Carpet'"
+          @load="handleImageLoad('flooring_Banner')"
+          v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'PVC'"
+          @load="handleImageLoad('flooring_Banner')"
+          v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'Wooden'"
+          @load="handleImageLoad('flooring_Banner')"
+          v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'Raised'"
+          @load="handleImageLoad('flooring_Banner')"
+          v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          v-else-if="userStore.customPreference.category === 'Active'"
+          @load="handleImageLoad('flooring_Banner')"
+          v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
-          v-else
+          @load="handleImageLoad('flooring_Banner', true)"
           src="/runners.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
@@ -78,31 +83,40 @@
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
+          @load="handleImageLoad('flooring_Banner')"
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
-          class="h-full w-full object-cover object-bottom"
+          class="h-full w-full object-cover flooring_Banner_Img object-bottom"
         />
         <NuxtImg
+          @load="handleImageLoad('flooring_Banner')"
           v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
+          @load="handleImageLoad('flooring_Banner')"
           v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
+          @load="handleImageLoad('flooring_Banner')"
           v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
         <NuxtImg
+          @load="handleImageLoad('flooring_Banner')"
           v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Img"
         />
-        <NuxtImg src="/runners.webp" class="h-full w-full object-cover" />
+        <NuxtImg
+          @load="handleImageLoad('flooring_Banner')"
+          src="/runners.webp"
+          class="h-full w-full object-cover flooring_Banner_Img"
+        />
       </div>
       <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
         >{{
