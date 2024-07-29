@@ -61,9 +61,9 @@ function toggleExpansion() {
           <NuxtImg
             @load="handleImageLoad('flooringLayout_carpets', true)"
             loading="lazy"
-            placeholder
+            placeholder="/placeholders/carpets-placeholder.png"
             class="flooringLayout_carpets_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/10004.jpg"
+            src="/10004.webp"
             alt="#"
           />
         </a>
