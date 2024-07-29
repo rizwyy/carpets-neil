@@ -25,24 +25,34 @@ export function shuffleArray(array) {
   return newArray;
 }
 
-export function handleImageLoad(el, isOverlay) {
+export function handleImageLoad(el, isOverlay, isText) {
   gsap.fromTo(
     `.${el}_Img`,
     {
       opacity: 0,
-      scale: 1.2,
+      scale: 1.4,
     },
     {
       scale: 1,
       opacity: 1,
-      duration: 1,
+      duration: 0.6,
       ease: "slide.in",
     }
   );
   if (isOverlay) {
     gsap.to(`.${el}_Overlay`, {
       opacity: 0.6,
-      duration: 2,
+      ease: "slide.in",
+      duration: 0.8,
+    });
+  }
+  if (isText) {
+    gsap.to(`.${el}_Text`, {
+      opacity: 1,
+      duration: 1,
+      ease: "power4.in",
+      delay: 0.2,
+      y: 0,
     });
   }
 }

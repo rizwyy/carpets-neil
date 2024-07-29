@@ -48,21 +48,24 @@ function toggleExpansion() {
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-md justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Carpet <br />
             Flooring</span
           >
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
-            <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
+            <span
+              class="flooringLayout_Text opacity-0 text-[2vh] font-[500] border-b-[1px]"
+              >View All</span
+            >
           </div>
           <div
-            class="flooringLayout_carpets_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout_carpets', true)"
+            @load="handleImageLoad('flooringLayout', true, true)"
             loading="lazy"
             placeholder
-            class="flooringLayout_carpets_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10004.webp"
             alt="#"
           />
@@ -72,22 +75,25 @@ function toggleExpansion() {
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Wooden <br />
             Flooring</span
           >
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
-            <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
+            <span
+              class="flooringLayout_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
+              >View All</span
+            >
           </div>
           <div
-            class="flooringLayout_wooden_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout_wooden', true)"
+            @load="handleImageLoad('flooringLayout', true, true)"
             quality="50"
             placeholder
             loading="lazy"
-            class="flooringLayout_wooden_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/wooden/engineeredWoodenFloor.webp"
             alt="engineeredWoodenFloor"
           />
@@ -102,22 +108,26 @@ function toggleExpansion() {
           href="/flooring/pvc/details"
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
-          <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+          <span
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
             >Vinyl <br />
             Flooring</span
           >
           <div
-            class="flooringLayout_PVC_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
-            <span class="text-[2vh] font-[500] border-b-[1px]">View All</span>
+            <span
+              class="flooringLayout_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
+              >View All</span
+            >
           </div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout_PVC', true)"
+            @load="handleImageLoad('flooringLayout', true, true)"
             placeholder
             quality="50"
             loading="lazy"
-            class="flooringLayout_PVC_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/pvc/pvc-flooring.webp"
             alt="#"
           />
@@ -127,24 +137,24 @@ function toggleExpansion() {
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Gym <br />
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1]"
+              class="flooringLayout_Text opacity-0 underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1]"
               >view all</span
             >
           </div>
           <div
-            class="flooringLayout_Gym_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout_Gym', true)"
+            @load="handleImageLoad('flooringLayout', true, true)"
             loading="lazy"
             placeholder
-            class="flooringLayout_Gym_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/40001.webp"
             alt="#"
           />
@@ -158,7 +168,7 @@ function toggleExpansion() {
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Raised <br />
             Flooring</span
           >
@@ -169,10 +179,10 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringLayout_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout_Raised', true)"
+            @load="handleImageLoad('flooringLayout', true, true)"
             placeholder
             loading="lazy"
             class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
@@ -188,7 +198,8 @@ function toggleExpansion() {
           >
             COMING SOON!
           </div>
-          <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+          <span
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
             >Sports <br />
             Flooring</span
           >
@@ -222,7 +233,8 @@ function toggleExpansion() {
           >
             COMING SOON!
           </div>
-          <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+          <span
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
             >Fitness <br />
             Flooring</span
           >
@@ -252,7 +264,8 @@ function toggleExpansion() {
           >
             COMING SOON!
           </div>
-          <span class="text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+          <span
+            class="flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
             >Flooring <br />
             Accessories
           </span>
