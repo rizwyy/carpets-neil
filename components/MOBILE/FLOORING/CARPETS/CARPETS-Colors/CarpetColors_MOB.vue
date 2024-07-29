@@ -41,7 +41,7 @@
         class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
       >
         <div
-          class="h-max w-full flex-[2] flex justify-center items-center gap-[2vw]"
+          class="h-max w-full flex-[2.5] flex justify-center items-center gap-[2vw]"
         >
           <span class="text-[#f1f1f1] text-[3.2vh]">Enter Your Color</span>
           <svg
@@ -57,7 +57,7 @@
             />
           </svg>
         </div>
-        <div class="h-max w-full flex-[2]">
+        <div class="h-max w-full flex-[1.2]">
           <input
             class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
             type="text"
@@ -65,7 +65,7 @@
             placeholder="Enter your Color"
           />
         </div>
-        <div class="h-max w-full flex-[1]">
+        <div class="h-max w-full flex-[2] flex items-start justify-center">
           <transition
             @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
             @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"

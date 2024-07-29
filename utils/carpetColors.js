@@ -220,6 +220,7 @@ const carpetColors = {
   plum: "#DDA0DD",
   violet: "#EE82EE",
   fuchsia: "#FF00FF",
+  rose: "#FF00FF",
   magenta: "#FF00FF",
   mediumorchid: "#BA55D3",
   mediumpurple: "#9370DB",
