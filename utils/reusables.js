@@ -25,36 +25,32 @@ export function shuffleArray(array) {
   return newArray;
 }
 
-export function handleImageLoad(el, isOverlay, isText) {
+export function handleImageLoad(el, el2, isOverlay, isText) {
   gsap.fromTo(
     `.${el}_Img`,
     {
       opacity: 0,
-      scale: 1.4,
+      scale: 1.1,
     },
     {
       scale: 1,
       opacity: 1,
       duration: 0.6,
-      stagger: 0.1,
       ease: "slide.in",
     }
   );
   if (isOverlay) {
-    gsap.to(`.${el}_Overlay`, {
+    gsap.to(`.${el2}_Overlay`, {
       opacity: 0.6,
       ease: "slide.in",
       stagger: 0.1,
-
       duration: 0.8,
     });
   }
   if (isText) {
-    gsap.to(`.${el}_Text`, {
-      delay: 0.1,
+    gsap.to(`.${el2}_Text`, {
       opacity: 1,
       stagger: 0.1,
-
       duration: 1,
       ease: "back.in",
       y: 0,

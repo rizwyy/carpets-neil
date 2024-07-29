@@ -62,7 +62,14 @@ function toggleExpansion() {
             class="flooringItem_Overlay flooringLayout_Carpet_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringItem', true, true)"
+            @load="
+              handleImageLoad(
+                'flooringLayout_Carpet',
+                'flooringItem',
+                true,
+                true
+              )
+            "
             loading="lazy"
             placeholder
             class="flooringItem_Img flooringLayout_Carpet_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
@@ -89,7 +96,9 @@ function toggleExpansion() {
             class="flooringItem_Overlay flooringLayout_Wood_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringItem', true, true)"
+            @load="
+              handleImageLoad('flooringLayout_Wood', 'flooringItem', true, true)
+            "
             quality="50"
             placeholder
             loading="lazy"
@@ -123,7 +132,9 @@ function toggleExpansion() {
             >
           </div>
           <NuxtImg
-            @load="handleImageLoad('flooringItem', true, true)"
+            @load="
+              handleImageLoad('flooringLayout_Pvc', 'flooringItem', true, true)
+            "
             placeholder
             quality="50"
             loading="lazy"
@@ -151,7 +162,9 @@ function toggleExpansion() {
             class="flooringItem_Overlay flooringLayout_Gym_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringItem', true, true)"
+            @load="
+              handleImageLoad('flooringLayout_Gym', 'flooringItem', true, true)
+            "
             loading="lazy"
             placeholder
             class="flooringItem_Img flooringLayout_Gym_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
@@ -182,7 +195,14 @@ function toggleExpansion() {
             class="flooringItem_Overlay flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringItem', true, true)"
+            @load="
+              handleImageLoad(
+                'flooringLayout_Raised',
+                'flooringItem',
+                true,
+                true
+              )
+            "
             placeholder
             loading="lazy"
             class="flooringItem_Img flooringLayout_Raised_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"

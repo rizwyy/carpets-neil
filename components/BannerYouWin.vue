@@ -41,7 +41,7 @@
         />
         <NuxtImg
           v-show="userStore.customPreference.category === ''"
-          @load="handleImageLoad('flooring_Banner_Default', true, true)"
+          @load="handleImageLoad('', 'flooring_Banner_Default', true, true)"
           src="/runners.webp"
           class="h-full w-full object-cover"
         />
@@ -80,53 +80,48 @@
       class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[0vh] items-center justify-center pt-[4.8vh] pb-[1vh]"
     >
       <div
-        class="flooring_Banner_Overlay absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#fff9] opacity-0"
+        class="flooringBanner_Overlay absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#fff9] opacity-0"
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover object-bottom"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true, true)"
           v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          @load="handleImageLoad('flooring_Banner', true, true)"
+          @load="handleImageLoad('', 'flooringBanner', true, true)"
           src="/runners.webp"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover flooring_Banner_Default_Img"
         />
       </div>
       <span
-        class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6] flooring_Banner_Text opacity-0"
+        class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6] flooringBanner_Text opacity-0"
         >{{
           `${userStore.customPreference.category} Flooring` || "Flooring"
         }}.</span
       >
       <button
-        class="flooring_Banner_Text opacity-0 rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
+        class="flooringBanner_Text opacity-0 rounded-md font-outfit shadow-lg px-[2vw] py-[1.8vh] bg-[#000] bg-opacity-[.4] text-[1.8vh] backdrop-blur-[4px] text-[#f1f1f1] flex items-center gap-[.8vw] font-[500]"
       >
         See How Woltiz Works<svg
           xmlns="http://www.w3.org/2000/svg"

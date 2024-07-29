@@ -25,14 +25,21 @@
             >
           </div>
           <div
-            class="absolute flooringLayout_Flooring_Overlay opacity-0 object-cover bottom-0 left-0 h-full w-full bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
+            class="absolute flooringLayout_Overlay opacity-0 object-cover bottom-0 left-0 h-full w-full bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout_Flooring', true, true)"
+            @load="
+              handleImageLoad(
+                'flooringLayout_Flooring',
+                'flooringLayout',
+                true,
+                true
+              )
+            "
             preload
             placeholder
             loading="eager"
-            class="absolute object-cover object-bottom bottom-0 left-0 h-full w-full z-[-99] flooringLayout_Img"
+            class="absolute object-cover object-bottom bottom-0 left-0 h-full w-full z-[-99] flooringLayout_Flooring_Img"
             src="/flooring1.webp"
             alt="#"
           />
@@ -57,13 +64,20 @@
             > -->
           </div>
           <div
-            class="flooringLayout_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-black"
+            class="absolute flooringLayout_Overlay opacity-0 object-cover bottom-0 left-0 h-full w-full bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[10%] via-[70%] z-[-1]"
           ></div>
           <NuxtImg
-            @load="handleImageLoad('flooringLayout', true, true)"
+            @load="
+              handleImageLoad(
+                'flooringLayout_WallToWall',
+                'flooringLayout',
+                true,
+                true
+              )
+            "
             quality="20"
             loading="lazy"
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99] flooringLayout_Img"
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99] flooringLayout_WallToWall_Img"
             src="/wall-to-wall.webp"
             alt="#"
           />
