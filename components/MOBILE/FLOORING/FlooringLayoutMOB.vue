@@ -61,7 +61,7 @@ function toggleExpansion() {
           <NuxtImg
             @load="handleImageLoad('flooringLayout_carpets', true)"
             loading="lazy"
-            placeholder="/placeholders/carpets-placeholder.png"
+            placeholder
             class="flooringLayout_carpets_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10004.webp"
             alt="#"
@@ -85,7 +85,7 @@ function toggleExpansion() {
           <NuxtImg
             @load="handleImageLoad('flooringLayout_wooden', true)"
             quality="50"
-            placeholder="/placeholder/engineeredWoodenFloor-placeholder.png"
+            placeholder
             loading="lazy"
             class="flooringLayout_wooden_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/wooden/engineeredWoodenFloor.webp"
@@ -114,7 +114,7 @@ function toggleExpansion() {
           </div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_PVC', true)"
-            placeholder="/placeholders/pvc-flooring-placeholder.png"
+            placeholder
             quality="50"
             loading="lazy"
             class="flooringLayout_PVC_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
@@ -143,7 +143,7 @@ function toggleExpansion() {
           <NuxtImg
             @load="handleImageLoad('flooringLayout_Gym', true)"
             loading="lazy"
-            placeholder="/placeholders/gym-placeholder.png"
+            placeholder
             class="flooringLayout_Gym_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/40001.webp"
             alt="#"
@@ -173,7 +173,7 @@ function toggleExpansion() {
           ></div>
           <NuxtImg
             @load="handleImageLoad('flooringLayout_Raised', true)"
-            placeholder="/placeholders/raised-placeholder.png"
+            placeholder
             loading="lazy"
             class="flooringLayout_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/raised/raised-office.webp"
