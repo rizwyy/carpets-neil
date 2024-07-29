@@ -84,31 +84,37 @@
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
+          placeholder
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover object-bottom"
         />
         <NuxtImg
+          placeholder
           v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
+          placeholder
           v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
+          placeholder
           v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
+          placeholder
           v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
+          placeholder
           @load="handleImageLoad('', 'flooringBanner', true, true)"
           src="/runners.webp"
           class="h-full w-full object-cover flooring_Banner_Default_Img"
