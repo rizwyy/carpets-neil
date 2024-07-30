@@ -187,7 +187,7 @@ function toggleExpansion() {
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="flooringItem_Text underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1]"
+              class="flooringItem_Text underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1] opacity-0"
               >view all</span
             >
           </div>
@@ -210,37 +210,39 @@ function toggleExpansion() {
             alt="#"
           />
         </a>
-        <div
+        <a
+          href="/flooring/sports/details"
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
-          <div
-            class="h-max w-full absolute top-[50%] left-0 text-center z-[9] bg-[#888] bg-opacity-[.4] backdrop-blur-[8px] text-[#fcfcfc] text-[1.8vh] py-[.8vh]"
-          >
-            COMING SOON!
-          </div>
           <span
-            class="flooringItem flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+            class="flooringItem_Text flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
             >Sports <br />
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
-            <!-- <a
-              class="underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw]"
-              href="/raised-floors"
-              >view all</a
-            > -->
+            <span
+              class="flooringItem_Text underline underline-offset-[.4vh] opacity-0 z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw]"
+              >view all</span
+            >
           </div>
           <div
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] opacity-[.7] bg-black"
+            class="flooringItem_Overlay flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
-          <!-- <NuxtImg
+          <NuxtImg
+            @load="
+              handleImageLoad(
+                'flooringLayout_Sports',
+                'flooringItem',
+                true,
+                true
+              )
+            "
             loading="lazy"
-            
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/70001.jpg"
+            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99] flooringLayout_Sports_Img"
+            src="/70001.webp"
             alt="#"
-          /> -->
-        </div>
+          />
+        </a>
       </div>
       <div
         class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"

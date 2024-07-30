@@ -242,6 +242,18 @@ const carpetColors = {
   babygray: "#E8E8E8",
 
   // Grays
+  darkbrown: "#654321",
+  grey: "#808080",
+  earth: "#A0522D",
+  olive: "#808000",
+  taupe: "#483C32",
+  charcoal: "#36454F",
+  aquamarine: "#7FFFD4",
+  saffron: "#F4C430",
+  bronze: "#CD7F32",
+  cream: "#FFFDD0",
+  emerald: "#50C878",
+  mossy: "#8A9A5B",
 
   grey: "#808080",
   gray: "#808080",

@@ -41,7 +41,9 @@
         v-show="isMultiColoredOpted"
         class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
       >
-        <div class="h-max w-full flex justify-center items-center gap-[2vw]">
+        <div
+          class="h-max w-full flex-[2.5] flex justify-center items-center gap-[2vw]"
+        >
           <span class="text-[#f1f1f1] text-[3.2vh]">Enter Your Color</span>
           <svg
             @click="clearColorSelections"
@@ -56,19 +58,28 @@
             />
           </svg>
         </div>
-        <input
-          class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
-          type="text"
-          v-model="customColor"
-          placeholder="Enter your Color"
-        />
-        <button
-          v-show="customColor.length > 2"
-          @click="toggleSelect(customColor)"
-          class="text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
-        >
-          Add
-        </button>
+        <div class="h-max w-full flex-[1.2]">
+          <input
+            class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+            type="text"
+            v-model="customColor"
+            placeholder="Enter your Color"
+          />
+        </div>
+        <div class="h-max w-full flex-[2] flex items-start justify-center">
+          <transition
+            @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
+            @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"
+          >
+            <button
+              v-show="customColor.length > 2"
+              @click="toggleSelect(customColor)"
+              class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+            >
+              Add
+            </button>
+          </transition>
+        </div>
       </div>
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
         <div

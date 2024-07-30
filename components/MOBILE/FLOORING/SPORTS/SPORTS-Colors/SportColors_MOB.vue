@@ -1,7 +1,8 @@
 <template>
-  <!-- MOBILE PVC-->
+  <!-- MOBILE SPORTS COLOR DETAILS-->
   <div
     v-show="
+      userStore.preference.flooring === 'sports' &&
       userStore.preference.spec_1 !== '' &&
       userStore.preference.spec_2 !== '' &&
       userStore.preference.spec_3 !== ''
@@ -11,10 +12,10 @@
     <div
       class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between"
     >
-      <span class="text-left text-balance">Choose Your Color</span>
+      Choose Your Color
       <button
         @click="clearColorSelections"
-        v-show="selectedColors.length"
+        v-show="isMultiColoredOpted || selectedColors.length"
         class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         <!-- MOBILE -->
@@ -33,7 +34,7 @@
       </button>
     </div>
     <div
-      v-show="userStore.preference.flooring === 'PVC'"
+      v-show="userStore.preference.flooring === 'sports'"
       class="h-max w-full flex flex-col gap-[2vh] relative"
     >
       <div
@@ -82,7 +83,7 @@
       </div>
       <div class="color-selection flex justify-between gap-[4vw] z-[9]">
         <div
-          class="color-box h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+          class="color-box CustomColor h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
           :class="{ selected: selectedColors.includes('CustomColor') }"
           @click="toggleSelect('CustomColor')"
         >
@@ -260,7 +261,7 @@
           v-for="color in removeCustomColor()"
           :key="color"
           :style="{ backgroundColor: getColorHex(color) }"
-          class="text-center border border-black rounded-md py-[.4vh] px-[1vw]"
+          class="text-center border border-black rounded-md py-[.8vh] px-[1vw]"
         >
           <span
             class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.2vh] font-[00] backdrop-blur-[8px] text-white text-[1.6vh]"
@@ -274,11 +275,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import gsap from "gsap";
 // PINIA
 import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
+
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
@@ -296,7 +298,6 @@ const toggleSelect = (color, added) => {
     isMultiColoredOpted.value = true;
     return;
   }
-
   // Toggle color selection
   const isSelected = selectedColors.value.includes(color);
   if (isSelected) {
