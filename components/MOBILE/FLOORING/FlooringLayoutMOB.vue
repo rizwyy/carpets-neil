@@ -238,8 +238,8 @@ function toggleExpansion() {
               )
             "
             loading="lazy"
-            class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99] flooringLayout_Sports_Img"
-            src="/70001.webp"
+            class="absolute object-top object-cover bottom-0 left-0 h-full w-full z-[-99] flooringLayout_Sports_Img"
+            src="/sports/outdoor.webp"
             alt="#"
           />
         </a>
