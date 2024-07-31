@@ -128,8 +128,8 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-bamboo.webp"
+            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/wooden/bambooFlooring1.webp"
             alt=""
           />
           <span>Bamboo Wood</span>
@@ -162,9 +162,9 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-laminated.webp"
+            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
             alt=""
+            src="/wooden/wooden-cork1.webp"
           />
           <span>Cork Floor</span>
         </div>
