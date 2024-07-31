@@ -1,7 +1,7 @@
 <template>
   <div
     id="NavBarMOB"
-    class="navBarMOB opacity-[.2] scale-[.96] min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit"
+    class="navBarMOB opacity-[.2] min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit"
   >
     <div @click="toggleMenu" class="h-max w-max">
       <span
