@@ -135,6 +135,7 @@
         <!-- MOBILE -->
         <!-- Customized -->
         <div
+          v
           :class="[
             'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
             { selected: selectedType.includes('Customised') },

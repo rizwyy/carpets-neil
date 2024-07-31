@@ -2,6 +2,10 @@
 import Desktop from "~/layouts/Desktop.vue";
 import Mobile from "~/layouts/Mobile.vue";
 const { heading, link } = defineProps(["heading", "link"]);
+
+onMounted(() => {
+  handleDOMEntry("customBTN");
+});
 </script>
 <template>
   <div
@@ -37,7 +41,7 @@ const { heading, link } = defineProps(["heading", "link"]);
       </svg>
     </a>
   </div>
-  <div class="h-max w-max min-[990px]:hidden">
+  <div class="customBTN opacity-0 h-max w-max min-[990px]:hidden">
     <a
       :ref="link"
       class="h-[12vh] w-[90vw] relative overflow-hidden block flex items-center gap-[2vw] justify-center w-[52vw] bg-[#ececec] shadow-xl backdrop-blur-[14px] overflow-hidden rounded-md px-[.8vh] py-[.8vh]"

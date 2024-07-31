@@ -64,19 +64,19 @@
           />
           <span class="text-[3.2vh]">Plain</span>
         </div>
-        <!-- Wood Effect -->
+        <!-- DESKTOP -->
+        <!-- Abstract -->
         <div
           :class="[
-            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedmaterial === 'Wood Effect' },
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'Abstract' },
           ]"
-          @click="toggleSelect('Wood Effect')"
+          @click="toggleSelect('Abstract')"
         >
           <div
-            v-show="selectedmaterial === 'Wood Effect'"
+            v-show="selectedmaterial === 'Abstract'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
-            <!-- DESKTOP -->
             <!-- Selected indicator without text -->
             <span
               class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -84,20 +84,25 @@
             >
           </div>
           <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
           <NuxtImg
+            quality="50"
             placeholder
             loading="lazy"
-            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/pvc/wood-effect.webp"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/pvc/vinyl-abstract.webp"
             alt="#"
           />
-          <span class="text-[3.2vh]">Wood Effect</span>
+          <span class="text-[3.2vh]">Abstract</span>
         </div>
+
         <!-- DESKTOP -->
       </div>
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+      <div
+        v-show="userStore.preference.spec_1 !== 'Woven Vinyl'"
+        class="h-max w-full flex justify-between gap-[2vw] z-[9]"
+      >
         <!-- Stone Effect -->
         <div
           :class="[
@@ -130,19 +135,20 @@
           <!-- DESKTOP -->
           <span class="text-[3.2vh]">Stone Effect</span>
         </div>
-        <!-- DESKTOP -->
-        <!-- Abstract -->
+
+        <!-- Wood Effect -->
         <div
           :class="[
-            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedmaterial === 'Abstract' },
+            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: selectedmaterial === 'Wood Effect' },
           ]"
-          @click="toggleSelect('Abstract')"
+          @click="toggleSelect('Wood Effect')"
         >
           <div
-            v-show="selectedmaterial === 'Abstract'"
+            v-show="selectedmaterial === 'Wood Effect'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- DESKTOP -->
             <!-- Selected indicator without text -->
             <span
               class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -150,17 +156,16 @@
             >
           </div>
           <div
-            class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
           <NuxtImg
-            quality="50"
             placeholder
             loading="lazy"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/pvc/vinyl-abstract.webp"
+            class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/pvc/wood-effect.webp"
             alt="#"
           />
-          <span class="text-[3.2vh]">Abstract</span>
+          <span class="text-[3.2vh]">Wood Effect</span>
         </div>
         <!-- DESKTOP -->
       </div>

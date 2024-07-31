@@ -29,6 +29,7 @@
         </svg>
       </button>
     </div>
+    <!-- FOR WOVEN PLAIN & ABSTRACT ONLY  -->
     <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
       <!-- MOBILE -->
       <!-- Plain -->
@@ -61,71 +62,6 @@
           alt="#"
         />
         <span>Plain</span>
-      </div>
-      <!-- MOBILE -->
-      <!-- Wood Effect -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterial === 'Wood Effect' },
-        ]"
-        @click="toggleSelect('Wood Effect')"
-      >
-        <div
-          v-show="selectedmaterial === 'Wood Effect'"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
-          >
-        </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          placeholder
-          loading="lazy"
-          class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/wood-effect.webp"
-          alt="#"
-        />
-        <span>Wood Effect</span>
-      </div>
-    </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- MOBILE -->
-      <!-- Stone Effect -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedmaterial === 'Stone Effect' },
-        ]"
-        @click="toggleSelect('Stone Effect')"
-      >
-        <div
-          v-show="selectedmaterial === 'Stone Effect'"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-        >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
-          >
-        </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          quality="50"
-          placeholder
-          loading="lazy"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/vinyl-stone.webp"
-          alt="#"
-        />
-        <span>Stone Effect</span>
       </div>
       <!-- MOBILE -->
       <!-- Abstract -->
@@ -161,15 +97,82 @@
         <span>Abstract</span>
       </div>
     </div>
+    <div
+      v-show="userStore.preference.spec_1 !== 'Woven Vinyl'"
+      class="h-max w-full flex justify-between gap-[2vw] z-[9]"
+    >
+      <!-- MOBILE -->
+      <!-- Stone Effect -->
+      <div
+        :class="[
+          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedmaterial === 'Stone Effect' },
+        ]"
+        @click="toggleSelect('Stone Effect')"
+      >
+        <div
+          v-show="selectedmaterial === 'Stone Effect'"
+          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+        >
+          <!-- Selected indicator without text -->
+          <span
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >Selected</span
+          >
+        </div>
+        <div
+          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+        ></div>
+        <NuxtImg
+          quality="50"
+          placeholder
+          loading="lazy"
+          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/pvc/vinyl-stone.webp"
+          alt="#"
+        />
+        <span>Stone Effect</span>
+      </div>
+
+      <!-- MOBILE -->
+      <!-- Wood Effect -->
+      <div
+        :class="[
+          'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+          { selected: selectedmaterial === 'Wood Effect' },
+        ]"
+        @click="toggleSelect('Wood Effect')"
+      >
+        <div
+          v-show="selectedmaterial === 'Wood Effect'"
+          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+        >
+          <!-- Selected indicator without text -->
+          <span
+            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+            >Selected</span
+          >
+        </div>
+        <div
+          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+        ></div>
+        <NuxtImg
+          placeholder
+          loading="lazy"
+          class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/pvc/wood-effect.webp"
+          alt="#"
+        />
+        <span>Wood Effect</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 // PINIA
-import Mobile from "~/layouts/Mobile.vue";
 const userStore = useUserStore();
 import { ref } from "vue";
-import Desktop from "~/layouts/Desktop.vue";
 import useUserStore from "~/stores/user";
 
 const selectedmaterial = ref("");

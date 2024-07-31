@@ -31,7 +31,9 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
 }
 
-onMounted(() => {});
+onMounted(() => {
+  handleDOMEntry("detail_pvc_mob_text_item");
+});
 </script>
 <template>
   <!-- DESKTOP -->
@@ -46,13 +48,15 @@ onMounted(() => {});
         <!-- DESKTOP -->
         <a
           href="/flooring"
-          class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
+          class="detail_pvc_mob_text_item text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           PVC Flooring >
           <!-- DESKTOP -->
           {{ userStore.preference.category }}
         </a>
-        <span class="text-[5.4vh]"> Specify Your Needs </span>
+        <span class="detail_pvc_mob_text_item text-[5.4vh]">
+          Specify Your Needs
+        </span>
       </div>
       <!-- DESKTOP -->
       <PvcCategoryDetails />
@@ -101,12 +105,14 @@ onMounted(() => {});
         <!-- MOBILE -->
         <a
           href="/flooring"
-          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          class="detail_pvc_mob_text_item opacity-[0] text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
           PVC Flooring >
           {{ userStore.preference.category }}
         </a>
-        <span class="text-[3.8vh]"> Specify Your Needs </span>
+        <span class="detail_pvc_mob_text_item opacity-[0] text-[3.8vh]">
+          Specify Your Needs
+        </span>
       </div>
       <BannerYouWin />
       <!-- MOBILE -->
