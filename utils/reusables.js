@@ -94,3 +94,13 @@ export function removeOpacity(el) {
     }
   );
 }
+
+export function handleDOMEntry(el) {
+  gsap.to(`.${el}`, {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    duration: 1,
+    ease: "slide.in",
+  });
+}

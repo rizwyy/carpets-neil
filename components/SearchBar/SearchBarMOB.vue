@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-[990px]:hidden relative h-max w-screen flex flex-col items-center justify-center my-[1.8vh] px-[8vw] font-outfit"
+    class="min-[990px]:hidden searchBarMOB opacity-0 translate-y-[-20%] relative h-max w-screen flex flex-col items-center justify-center my-[1.8vh] px-[8vw] font-outfit"
   >
     <div
       class="div_searchBar h-max w-full flex items-center bg-[#f7f5f2] pl-[1vw] rounded-lg shadow-md overflow-hidden"
@@ -113,6 +113,10 @@ const onSearch = () => {
 
   selectResult("Carpet");
 };
+
+onMounted(() => {
+  handleDOMEntry("searchBarMOB");
+});
 </script>
 
 <style>

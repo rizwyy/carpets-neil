@@ -37,7 +37,9 @@ function toggleExpansion() {
 <template>
   <section class="h-max w-max min-[990px]:hidden font-outfit">
     <div class="h-max w-screen py-[2vh] text-[#333] px-[3.2vw]">
-      <span class="text-[3.8vh] tracking-[-.1vw]">Shop By Category</span>
+      <span class="flooringItem_BG opacity-0 text-[3.8vh] tracking-[-.1vw]"
+        >Shop By Category</span
+      >
     </div>
     <div class="h-max w-screen flex flex-col gap-[1.8vh]">
       <div

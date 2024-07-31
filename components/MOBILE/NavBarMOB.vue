@@ -1,7 +1,7 @@
 <template>
   <div
     id="NavBarMOB"
-    class="navBarMOB min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit"
+    class="navBarMOB opacity-0 scale-[.94] min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit"
   >
     <div @click="toggleMenu" class="h-max w-max">
       <span
@@ -91,7 +91,7 @@ function closeMenu() {
 }
 
 onMounted(() => {
-  bringOpacity("navBarMOB");
+  handleDOMEntry("navBarMOB");
 });
 </script>
 

@@ -74,7 +74,7 @@
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- MOBILE -->
   <div
-    class="min-[990px]:hidden h-max w-screen flex items-center justify-center my-[2vh] px-[3.2vw]"
+    class="bannerYouWin_MOB opacity-0 min-[990px]:hidden h-max w-screen flex items-center justify-center my-[2vh] px-[3.2vw]"
   >
     <div
       class="h-[24vh] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[0vh] items-center justify-center pt-[4.8vh] pb-[1vh]"
@@ -148,6 +148,10 @@
 <script setup>
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
+
+onMounted(() => {
+  handleDOMEntry("bannerYouWin_MOB");
+});
 </script>
 
 <style scoped>
