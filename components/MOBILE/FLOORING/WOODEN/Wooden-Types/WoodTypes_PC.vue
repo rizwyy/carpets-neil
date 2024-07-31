@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <div
-    v-if="userStore.preference.category !== ''"
+    v-if="userStore.preference.spec_1 !== ''"
     class="max-[990px]:hidden h-max w-screen px-[6vw]"
   >
     <div
@@ -33,7 +33,7 @@
         <!-- DESKTOP -->
       </div>
       <div
-        v-if="userStore.preference.category === 'Real Wood Floor'"
+        v-if="userStore.preference.spec_1 === 'Real Wood Floor'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -292,17 +292,17 @@ const selectedType = ref("");
 
 function clearAllSelections() {
   selectedType.value = "";
-  userStore.preference.type = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (type) => {
   if (selectedType.value === type) {
     selectedType.value = "";
-    userStore.preference.type = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
     selectedType.value = type;
-    userStore.preference.type = toRaw(selectedType.value);
+    userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
 </script>

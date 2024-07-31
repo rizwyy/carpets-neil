@@ -106,18 +106,18 @@ const selectedCategory = ref("");
 
 function clearAllSelections() {
   selectedCategory.value = "";
-  userStore.preference.category = "";
+  userStore.preference.spec_1 = "";
 }
 
 const toggleSelect = (category) => {
   if (selectedCategory.value === category) {
     selectedCategory.value = "";
-    userStore.preference.category = "";
+    userStore.preference.spec_1 = "";
   } else {
     scrollToBottom();
     selectedCategory.value = category;
-    userStore.preference.category = toRaw(selectedCategory.value);
-    userStore.preference.type = "";
+    userStore.preference.spec_1 = toRaw(selectedCategory.value);
+    userStore.preference.spec_2 = "";
     userStore.preference.flooring = "Wooden";
   }
 };

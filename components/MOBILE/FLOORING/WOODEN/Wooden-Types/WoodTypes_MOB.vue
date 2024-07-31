@@ -1,7 +1,7 @@
 <template>
   <!-- MOBILE -->
   <div
-    v-if="userStore.preference.category !== ''"
+    v-if="userStore.preference.spec_1 !== ''"
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
@@ -28,7 +28,7 @@
       </button>
     </div>
     <div
-      v-if="userStore.preference.category === 'Real Wood Floor'"
+      v-if="userStore.preference.spec_1 === 'Real Wood Floor'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -328,17 +328,17 @@ const selectedType = ref("");
 
 function clearAllSelections() {
   selectedType.value = "";
-  userStore.preference.type = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (type) => {
   if (selectedType.value === type) {
     selectedType.value = "";
-    userStore.preference.type = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
     selectedType.value = type;
-    userStore.preference.type = toRaw(selectedType.value);
+    userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
 </script>

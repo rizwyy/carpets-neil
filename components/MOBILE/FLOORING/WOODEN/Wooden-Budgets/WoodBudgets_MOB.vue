@@ -3,11 +3,11 @@
   <div
     v-show="
       userStore.preference.flooring === 'Wooden' &&
-      userStore.preference.category !== '' &&
-      userStore.preference.type !== '' &&
-      userStore.preference.material !== '' &&
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== '' &&
+      userStore.preference.spec_3 !== '' &&
       userStore.preference.color.length > 0 &&
-      userStore.preference.surface !== ''
+      userStore.preference.spec_4 !== ''
     "
     class="min-[990px]:hidden h-max w-[100vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
@@ -45,14 +45,14 @@
       <!-- VALUE -->
       <div
         v-if="
-          userStore.preference.category !== 'Area Rugs' &&
+          userStore.preference.spec_1 !== 'Area Rugs' &&
           !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'Nylon'
+            userStore.preference.spec_1 === 'Wall to Wall' &&
+            userStore.preference.spec_3 === 'Nylon'
           ) &&
           !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'Nylon'
+            userStore.preference.spec_1 === 'Runners' &&
+            userStore.preference.spec_3 === 'Nylon'
           )
         "
         :class="[
@@ -105,7 +105,7 @@
         >
           <span class="text-[2vh] font-[500] text-white"
             >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
+            {{ userStore.preference.spec_3.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -113,14 +113,14 @@
       <!-- ESSENTIAL -->
       <div
         v-if="
-          userStore.preference.category !== 'Area Rugs' &&
+          userStore.preference.spec_1 !== 'Area Rugs' &&
           !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'Nylon'
+            userStore.preference.spec_1 === 'Wall to Wall' &&
+            userStore.preference.spec_3 === 'Nylon'
           ) &&
           !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'Nylon'
+            userStore.preference.spec_1 === 'Runners' &&
+            userStore.preference.spec_3 === 'Nylon'
           )
         "
         :class="[
@@ -174,7 +174,7 @@
         >
           <span class="text-[2vh] font-[500] text-white"
             >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
+            {{ userStore.preference.spec_3.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -182,15 +182,15 @@
       <!-- MOBILE -->
       <div
         v-if="
-          userStore.preference.category !== 'Area Rugs' &&
-          userStore.preference.category !== 'Carpet Tiles' &&
+          userStore.preference.spec_1 !== 'Area Rugs' &&
+          userStore.preference.spec_1 !== 'Carpet Tiles' &&
           !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'polypropylene'
+            userStore.preference.spec_1 === 'Wall to Wall' &&
+            userStore.preference.spec_3 === 'polypropylene'
           ) &&
           !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'polypropylene'
+            userStore.preference.spec_1 === 'Runners' &&
+            userStore.preference.spec_3 === 'polypropylene'
           )
         "
         :class="[
@@ -244,7 +244,7 @@
         >
           <span class="text-[2vh] font-[500] text-white"
             >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
+            {{ userStore.preference.spec_3.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -252,15 +252,15 @@
       <!-- MOBILE -->
       <div
         v-if="
-          userStore.preference.category !== 'Area Rugs' &&
-          userStore.preference.category !== 'Carpet Tiles' &&
+          userStore.preference.spec_1 !== 'Area Rugs' &&
+          userStore.preference.spec_1 !== 'Carpet Tiles' &&
           !(
-            userStore.preference.category === 'Wall to Wall' &&
-            userStore.preference.material === 'polypropylene'
+            userStore.preference.spec_1 === 'Wall to Wall' &&
+            userStore.preference.spec_3 === 'polypropylene'
           ) &&
           !(
-            userStore.preference.category === 'Runners' &&
-            userStore.preference.material === 'polypropylene'
+            userStore.preference.spec_1 === 'Runners' &&
+            userStore.preference.spec_3 === 'polypropylene'
           )
         "
         :class="[
@@ -313,7 +313,7 @@
         >
           <span class="text-[2vh] font-[500] text-white"
             >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
+            {{ userStore.preference.spec_3.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -321,23 +321,23 @@
       <!-- MOBILE -->
       <div
         v-if="
-          userStore.preference.category === 'Area Rugs' ||
-          (userStore.preference.category !== 'Carpet Tiles' &&
+          userStore.preference.spec_1 === 'Area Rugs' ||
+          (userStore.preference.spec_1 !== 'Carpet Tiles' &&
             !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'polypropylene'
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'polypropylene'
             ) &&
             !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'polypropylene'
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'polypropylene'
             ) &&
             !(
-              userStore.preference.category === 'Wall to Wall' &&
-              userStore.preference.material === 'Nylon'
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Nylon'
             ) &&
             !(
-              userStore.preference.category === 'Runners' &&
-              userStore.preference.material === 'Nylon'
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Nylon'
             ))
         "
         :class="[
@@ -390,7 +390,7 @@
         >
           <span class="text-[2vh] font-[500] text-white"
             >NOT ELIGIBLE WITH
-            {{ userStore.preference.material.toUpperCase() }}</span
+            {{ userStore.preference.spec_3.toUpperCase() }}</span
           >
         </div>
       </div>
@@ -412,10 +412,10 @@ function clearBudgetSelections() {
   userStore.preference.budget = "";
 }
 const isMaterialSelected = (material) => {
-  return userStore.preference.material.toLowerCase() === material.toLowerCase();
+  return userStore.preference.spec_3.toLowerCase() === material.toLowerCase();
 };
 const isCategorySelected = (category) => {
-  return userStore.preference.category.toLowerCase() === category.toLowerCase();
+  return userStore.preference.spec_1.toLowerCase() === category.toLowerCase();
 };
 
 const toggleSelect = (type) => {

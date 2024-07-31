@@ -28,7 +28,7 @@ export function shuffleArray(array) {
 export function handleImageLoad(el, el2, isOverlay, isText) {
   gsap.to(`.${el2}_BG`, {
     opacity: 1,
-    duration: 1,
+    duration: 0.4,
   });
   gsap.fromTo(
     `.${el}_Img`,
@@ -38,7 +38,7 @@ export function handleImageLoad(el, el2, isOverlay, isText) {
     },
     {
       scale: 1,
-      opacity: 1,
+      opacity: 0.8,
       duration: 0.6,
       ease: "slide.in",
     }
@@ -49,14 +49,14 @@ export function handleImageLoad(el, el2, isOverlay, isText) {
       opacity: 0.6,
       ease: "slide.in",
       stagger: 0.1,
-      duration: 0.8,
+      duration: 0.6,
     });
   }
   if (isText) {
     gsap.to(`.${el2}_Text`, {
       opacity: 1,
       stagger: 0.1,
-      duration: 1,
+      duration: 0.8,
       ease: "back.in",
       y: 0,
     });
@@ -100,7 +100,7 @@ export function handleDOMEntry(el) {
     y: 0,
     scale: 1,
     opacity: 1,
-    duration: 1,
+    duration: 0.4,
     ease: "slide.in",
   });
 }

@@ -4,8 +4,8 @@
     <div
       v-show="
         userStore.preference.flooring === 'Wooden' &&
-        userStore.preference.category !== '' &&
-        userStore.preference.type !== ''
+        userStore.preference.spec_1 !== '' &&
+        userStore.preference.spec_2 !== ''
       "
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
@@ -178,17 +178,17 @@ import useUserStore from "~/stores/user";
 const selectedmaterial = ref("");
 function clearmaterialSelections() {
   selectedmaterial.value = "";
-  userStore.preference.material = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (material) => {
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
-    userStore.preference.material = "";
+    userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
     selectedmaterial.value = material;
-    userStore.preference.material = toRaw(selectedmaterial.value);
+    userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }
 };
 </script>

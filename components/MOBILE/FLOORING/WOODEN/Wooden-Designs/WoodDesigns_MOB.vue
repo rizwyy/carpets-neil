@@ -3,8 +3,8 @@
   <div
     v-show="
       userStore.preference.flooring === 'Wooden' &&
-      userStore.preference.category !== '' &&
-      userStore.preference.type !== ''
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== ''
     "
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
@@ -304,7 +304,7 @@
       </div>
       <!-- SLIDE 3 -->
       <div
-        v-show="userStore.preference.type === 'Engineered Wood Floor'"
+        v-show="userStore.preference.spec_2 === 'Engineered Wood Floor'"
         class="h-max w-full flex flex-col gap-[1vh]"
       >
         <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
@@ -454,17 +454,17 @@ import useUserStore from "~/stores/user";
 const selectedmaterial = ref("");
 function clearmaterialSelections() {
   selectedmaterial.value = "";
-  userStore.preference.material = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (material) => {
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
-    userStore.preference.material = "";
+    userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
     selectedmaterial.value = material;
-    userStore.preference.material = toRaw(selectedmaterial.value);
+    userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }
 };
 </script>
