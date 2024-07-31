@@ -126,7 +126,7 @@ export function handleDetailsDOMEntry(el) {
   tl.to(`.${el}-CONTAINER`, {
     scale: 1,
     opacity: 1,
-    duration: 0.8,
+    duration: 0.2,
     stagger: 0.1,
     ease: "slide.in",
   });
