@@ -59,7 +59,7 @@
             placeholder
             loading="lazy"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/wooden/wooden-7.webp"
+            src="/wooden/plank-wood.webp"
             alt="#"
           />
           <span class="text-[3.2vh]">Plain Planks</span>
