@@ -3,7 +3,7 @@
     <div
       class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] font-[400] text-[3.2vh]"
     >
-      <span>Shop by Categories</span>
+      <span class="flooringLayout_BG opacity-0">Shop by Categories</span>
     </div>
     <div class="h-max w-screen flex flex-col gap-[1.6vh]">
       <div
@@ -86,7 +86,7 @@
     </div>
     <!-- CONTENT BANNER SECTION  -->
     <div
-      class="contentBanner h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
+      class="contentBanner flooringLayout_BG opacity-0 h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
       <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
         Content / Banner
@@ -94,7 +94,7 @@
     </div>
     <!-- FAQ   SECTION  -->
     <div
-      class="FAQSection h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
+      class="FAQSection flooringLayout_BG opacity-0 h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
       <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
         FAQ

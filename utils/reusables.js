@@ -26,6 +26,10 @@ export function shuffleArray(array) {
 }
 
 export function handleImageLoad(el, el2, isOverlay, isText) {
+  gsap.to(`.${el2}_BG`, {
+    opacity: 1,
+    duration: 1,
+  });
   gsap.fromTo(
     `.${el}_Img`,
     {
@@ -39,6 +43,7 @@ export function handleImageLoad(el, el2, isOverlay, isText) {
       ease: "slide.in",
     }
   );
+
   if (isOverlay) {
     gsap.to(`.${el2}_Overlay`, {
       opacity: 0.6,
