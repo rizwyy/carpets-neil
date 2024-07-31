@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <div
-    v-show="userStore.preference.category !== ''"
+    v-show="userStore.preference.spec_1 !== ''"
     class="max-[990px]:hidden h-max w-screen px-[6vw]"
   >
     <div
@@ -189,17 +189,17 @@ const selectedType = ref("");
 
 function clearAllSelections() {
   selectedType.value = "";
-  userStore.preference.type = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (type) => {
   if (selectedType.value === type) {
     selectedType.value = "";
-    userStore.preference.type = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
     selectedType.value = type;
-    userStore.preference.type = toRaw(selectedType.value);
+    userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
 </script>

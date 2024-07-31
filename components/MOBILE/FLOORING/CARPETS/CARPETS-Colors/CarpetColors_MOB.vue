@@ -2,9 +2,9 @@
   <!-- MOBILE CARPETS-->
   <div
     v-show="
-      userStore.preference.category !== '' &&
-      userStore.preference.type !== '' &&
-      userStore.preference.material !== ''
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== '' &&
+      userStore.preference.spec_3 !== ''
     "
     class="min-[990px]:hidden h-max w-screen container mx-auto p-[4vh] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
   >
