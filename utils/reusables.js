@@ -104,3 +104,30 @@ export function handleDOMEntry(el) {
     ease: "slide.in",
   });
 }
+export function handleDetailsDOMEntry(el) {
+  gsap.to(`.${el}`, {
+    y: 0,
+    x: 0,
+    delay: 0.4,
+    scale: 1,
+    opacity: 1,
+    duration: 0.2,
+    ease: "slide.in",
+  });
+  let tl = gsap.timeline();
+  tl.to(`.${el}-HEADING`, {
+    y: 0,
+    x: 0,
+    delay: 0.4,
+    opacity: 1,
+    duration: 0.2,
+    ease: "slide.in",
+  });
+  tl.to(`.${el}-CONTAINER`, {
+    scale: 1,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "slide.in",
+  });
+}
