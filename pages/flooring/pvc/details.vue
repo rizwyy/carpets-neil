@@ -20,6 +20,7 @@ const route = useRoute();
 // COOKIES
 import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import CustomBTN from "~/components/MOBILE/CustomBTN.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -60,7 +61,7 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <PvcCategoryDetails />
-      <CustomCarpetBTN />
+      <CustomBTN heading="Customize" link="/flooring/customize" />
       <PvcTypeDetails />
       <PvcDesignDetails />
       <PvcColorDetails />
@@ -118,6 +119,8 @@ onMounted(() => {
       <!-- MOBILE -->
       <PvcCategoryDetails />
       <PvcTypeDetails />
+      sd <CustomBTN heading="Customize" link="/flooring/customize" />
+
       <PvcDesignDetails />
       <PvcColorDetails />
       <PvcFinishDetails />
