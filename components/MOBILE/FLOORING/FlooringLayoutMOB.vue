@@ -64,6 +64,7 @@ function toggleExpansion() {
             class="flooringItem_Overlay flooringLayout_Carpet_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
+            preload
             @load="
               handleImageLoad(
                 'flooringLayout_Carpet',
@@ -72,7 +73,7 @@ function toggleExpansion() {
                 true
               )
             "
-            loading="lazy"
+            loading="eager"
             placeholder
             class="flooringItem_Img flooringLayout_Carpet_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/10004.webp"
@@ -98,12 +99,13 @@ function toggleExpansion() {
             class="flooringItem_Overlay flooringLayout_Wood_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
           ></div>
           <NuxtImg
+            preload
             @load="
               handleImageLoad('flooringLayout_Wood', 'flooringItem', true, true)
             "
             quality="50"
             placeholder
-            loading="lazy"
+            loading="eager"
             class="flooringItem_Img flooringLayout_Wood_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
             src="/wooden/engineeredWoodenFloor.webp"
             alt="engineeredWoodenFloor"
