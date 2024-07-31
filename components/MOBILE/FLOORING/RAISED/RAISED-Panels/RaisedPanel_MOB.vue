@@ -175,6 +175,9 @@ function clearSurfaceFinish() {
 }
 
 const toggleSelect = (surface) => {
+  if (surface === "Bare" && !userStore.preference.color.includes("Grey")) {
+    userStore.preference.color.push("BarePanel");
+  }
   if (selectedThickness.value === surface) {
     selectedThickness.value = "";
     userStore.preference.spec_3 = "";
