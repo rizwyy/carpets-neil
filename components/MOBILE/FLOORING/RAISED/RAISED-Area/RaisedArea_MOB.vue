@@ -8,7 +8,7 @@
     >
       <span class="text-left text-balance"> Choose Your Area</span>
       <button
-        @click="clearAllSelections"
+        @click="clearAllSelections_spec1"
         v-show="spec_1.length"
         class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
@@ -25,138 +25,220 @@
         </svg>
       </button>
     </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Data Center -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Data Center') },
-        ]"
-        @click="toggleSelect('Data Center')"
-      >
+    <div class="h-max w-full relative flex flex-col gap-[1vh]">
+      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- Data Center -->
         <div
-          v-show="spec_1.includes('Data Center')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          :class="[
+            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Data Center') },
+          ]"
+          @click="toggleSelect('Data Center')"
         >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+          <div
+            v-show="spec_1.includes('Data Center')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-dataCenter.webp"
+            alt=""
+          />
+          <span class="text-left text-balance">Data Center</span>
         </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          preload
-          quality="50"
-          placeholder
-          loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/raised-dataCenter.webp"
-          alt=""
-        />
-        <span class="text-left text-balance">Data Center</span>
-      </div>
 
-      <!-- Commercial -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Commercial') },
-        ]"
-        @click="toggleSelect('Commercial')"
-      >
+        <!-- Commercial -->
         <div
-          v-show="spec_1.includes('Commercial')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          :class="[
+            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Commercial') },
+          ]"
+          @click="toggleSelect('Commercial')"
         >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+          <div
+            v-show="spec_1.includes('Commercial')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-commercial.webp"
+            alt=""
+          />
+          <span class="text-left text-balance">Commercial</span>
         </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          preload
-          quality="50"
-          placeholder
-          loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/raised-commercial.webp"
-          alt=""
-        />
-        <span class="text-left text-balance">Commercial</span>
       </div>
-    </div>
-    <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-      <!-- Industry -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Industry') },
-        ]"
-        @click="toggleSelect('Industry')"
-      >
+      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- Industry -->
         <div
-          v-show="spec_1.includes('Industry')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          :class="[
+            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Industry') },
+          ]"
+          @click="toggleSelect('Industry')"
         >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+          <div
+            v-show="spec_1.includes('Industry')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-industryFlooring.webp"
+            alt=""
+          />
+          <span class="text-left text-balance">Industry</span>
         </div>
-        <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          preload
-          quality="50"
-          placeholder
-          loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/raised-industryFlooring.webp"
-          alt=""
-        />
-        <span class="text-left text-balance">Industry</span>
-      </div>
 
-      <!-- Healthcare -->
-      <div
-        :class="[
-          'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Healthcare') },
-        ]"
-        @click="toggleSelect('Healthcare')"
-      >
+        <!-- Healthcare -->
         <div
-          v-show="spec_1.includes('Healthcare')"
-          class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          :class="[
+            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Healthcare') },
+          ]"
+          @click="toggleSelect('Healthcare')"
         >
-          <!-- Selected indicator without text -->
-          <span
-            class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-            >Selected</span
+          <div
+            v-show="spec_1.includes('Healthcare')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-healthCare.webp"
+            alt=""
+          />
+          <span class="text-left text-balance">Healthcare</span>
         </div>
+      </div>
+      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- Activities -->
         <div
-          class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-        ></div>
-        <NuxtImg
-          preload
-          quality="50"
-          placeholder
-          loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/raised/raised-healthCare.webp"
-          alt=""
-        />
-        <span class="text-left text-balance">Healthcare</span>
+          :class="[
+            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Activities') },
+          ]"
+          @click="toggleSelect('Activities')"
+        >
+          <div
+            v-show="spec_1.includes('Activities')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-swimming.webp"
+            alt=""
+          />
+          <span class="text-left text-balance">Activities</span>
+        </div>
+
+        <!-- Others -->
+        <div
+          :class="[
+            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Others') },
+          ]"
+          @click="toggleSelect('Others')"
+        >
+          <div
+            v-show="spec_1.includes('Others')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-black absolute bottom-0 left-0 z-[-1] backdrop-blur-[8px] bg-opacity-[.6] flex justify-center items-center"
+          >
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2"
+                /></svg
+            ></span>
+          </div>
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-retail.webp"
+            alt=""
+          />
+          <span class="text-left text-balance">Others</span>
+        </div>
       </div>
     </div>
   </div>
@@ -174,7 +256,7 @@ import useUserStore from "~/stores/user";
 const userPreference = useCookie("userPreference");
 const spec_1 = ref("");
 
-function clearAllSelections() {
+function clearAllSelections_spec1() {
   spec_1.value = "";
   userStore.preference.spec_1 = "";
 }

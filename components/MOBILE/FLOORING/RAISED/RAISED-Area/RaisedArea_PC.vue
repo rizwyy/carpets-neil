@@ -157,6 +157,83 @@
           <span class="text-[3.4vh]">Healthcare</span>
         </div>
       </div>
+      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <!-- Activities -->
+        <div
+          :class="[
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Activities') },
+          ]"
+          @click="toggleSelect('Activities')"
+        >
+          <div
+            v-show="spec_1.includes('Activities')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/strength.webp"
+            alt=""
+          />
+          <span class="text-[3.4vh]">Activities</span>
+        </div>
+
+        <!-- Others -->
+        <div
+          :class="[
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: spec_1.includes('Others') },
+          ]"
+          @click="toggleSelect('Others')"
+        >
+          <div
+            v-show="spec_1.includes('Others')"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+          >
+            <!-- Selected indicator without text -->
+            <span
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              >Selected</span
+            >
+          </div>
+          <div
+            class="h-full w-full bg-black flex items-center justify-center absolute bottom-0 left-0 bg-opacity-[.5] backdrop-blur-[12px] z-[-1]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2"
+              />
+            </svg>
+          </div>
+          <NuxtImg
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/raised/raised-retail.webp"
+            alt="Others"
+          />
+          <span class="text-[3.4vh]">Others</span>
+        </div>
+      </div>
 
       <div></div>
     </div>

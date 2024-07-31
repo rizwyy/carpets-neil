@@ -3,9 +3,7 @@
   <!-- MOBILE -->
   <div
     v-show="
-      userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
-      userStore.preference.spec_3 !== ''
+      userStore.preference.spec_1 !== '' && userStore.preference.spec_2 !== ''
     "
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
@@ -173,17 +171,17 @@ import useUserStore from "~/stores/user";
 const selectedThickness = ref("");
 function clearSurfaceFinish() {
   selectedThickness.value = "";
-  userStore.preference.spec_4 = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (surface) => {
   if (selectedThickness.value === surface) {
     selectedThickness.value = "";
-    userStore.preference.spec_4 = "";
+    userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
     selectedThickness.value = surface;
-    userStore.preference.spec_4 = toRaw(selectedThickness.value);
+    userStore.preference.spec_3 = toRaw(selectedThickness.value);
   }
 };
 </script>

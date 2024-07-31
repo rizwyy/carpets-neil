@@ -174,7 +174,7 @@
           </div>
         </div>
       </div>
-      <!-- GROUP TRAINING -->
+      <!-- Commercial -->
       <div
         v-show="userStore.preference.spec_1 === 'Commercial'"
         class="h-max w-full flex flex-col gap-[2vh]"
@@ -385,7 +385,145 @@
           </div>
         </div>
       </div>
-      <!-- STRENGTH & CONDITIONING -->
+      <!-- Commercial -->
+      <div
+        v-show="userStore.preference.spec_1 === 'Commercial'"
+        class="h-max w-full flex flex-col gap-[2vh]"
+      >
+        <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+          <!-- Schools -->
+          <div
+            :class="[
+              'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: spec_2 === 'Schools' },
+            ]"
+            @click="toggleSelect('Schools')"
+          >
+            <div
+              v-show="spec_2 === 'Schools'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/raised/rubberFlooring.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Schools</span>
+          </div>
+          <!-- Kitchens -->
+          <div
+            :class="[
+              'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: spec_2 === 'Kitchens' },
+            ]"
+            @click="toggleSelect('Kitchens')"
+          >
+            <div
+              v-show="spec_2 === 'Kitchens'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- DESKTOP -->
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/raised/pvcGymFlooring.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Kitchens</span>
+          </div>
+          <!-- DESKTOP -->
+        </div>
+        <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+          <!-- Basements -->
+          <div
+            :class="[
+              'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: spec_2 === 'Basements' },
+            ]"
+            @click="toggleSelect('Basements')"
+          >
+            <div
+              v-show="spec_2 === 'Basements'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/raised/woodenGymFlooring.webp"
+              alt="#"
+            />
+            <!-- DESKTOP -->
+            <span class="text-[3.2vh]">Basements</span>
+          </div>
+          <!-- DESKTOP -->
+          <!-- Swimming -->
+          <div
+            :class="[
+              'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: spec_2 === 'Swimming' },
+            ]"
+            @click="toggleSelect('Swimming')"
+          >
+            <div
+              v-show="spec_2 === 'Swimming'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/40004.jpg"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Swimming</span>
+          </div>
+          <!-- DESKTOP -->
+        </div>
+      </div>
+      <!-- Industrial -->
       <div
         v-show="userStore.preference.spec_1 === 'Industrial'"
         class="h-max w-full flex flex-col gap-[2vh]"

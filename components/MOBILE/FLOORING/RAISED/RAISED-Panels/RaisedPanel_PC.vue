@@ -2,9 +2,7 @@
   <!-- DESKTOP -->
   <div
     v-show="
-      userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
-      userStore.preference.spec_3 !== ''
+      userStore.preference.spec_1 !== '' && userStore.preference.spec_2 !== ''
     "
     class="max-[990px]:hidden h-max w-screen px-[6vw]"
   >

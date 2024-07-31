@@ -204,7 +204,7 @@
           <!-- MOBILE -->
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/black.webp"
+            src="/colors/black-wood.webp"
           />
           <span v-show="!selectedColors.includes('Black')">Black</span>
           <div v-show="selectedColors.includes('Black')">
