@@ -85,8 +85,8 @@
           quality="50"
           placeholder
           loading="eager"
-          class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/pvc-flooring.webp"
+          class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+          src="/pvc/woven-vinyl.webp"
           alt=""
         />
         <span>Woven Vinyl</span>

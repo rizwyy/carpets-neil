@@ -61,7 +61,8 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <PvcCategoryDetails />
-      <CustomBTN heading="Customize" link="/flooring/customize" />
+      <CustomBTN heading="Customized Vinyl's" link="/flooring/customize" />
+
       <PvcTypeDetails />
       <PvcDesignDetails />
       <PvcColorDetails />
@@ -119,7 +120,7 @@ onMounted(() => {
       <!-- MOBILE -->
       <PvcCategoryDetails />
       <PvcTypeDetails />
-      sd <CustomBTN heading="Customize" link="/flooring/customize" />
+      <CustomBTN heading="Customized Vinyl's" link="/flooring/customize" />
 
       <PvcDesignDetails />
       <PvcColorDetails />
