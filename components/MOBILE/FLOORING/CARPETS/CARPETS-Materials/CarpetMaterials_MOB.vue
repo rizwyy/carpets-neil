@@ -12,12 +12,12 @@
       <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
         <!-- MOBILE -->
         <span
-          class="text-left text-balance carpet_Materials_Details_Mob-HEADING translate-x-[40%] opacity-[.2]"
+          class="text-left text-balance carpet_Materials_Details_Mob-HEADING translate-x-[40%] opacity-[0]"
           >Choose your Material</span
         >
         <button
           @click="clearmaterialSelections"
-          v-if="selectedmaterial"
+          v-show="selectedmaterial"
           class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -41,10 +41,10 @@
             'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'polypropylene' },
           ]"
-          @click="toggleSelect('polypropylene')"
+          @click="toggleSelectMaterials('polypropylene')"
         >
           <div
-            v-if="selectedmaterial === 'polypropylene'"
+            v-show="selectedmaterial === 'polypropylene'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -73,10 +73,10 @@
             'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Nylon' },
           ]"
-          @click="toggleSelect('Nylon')"
+          @click="toggleSelectMaterials('Nylon')"
         >
           <div
-            v-if="selectedmaterial === 'Nylon'"
+            v-show="selectedmaterial === 'Nylon'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -107,10 +107,10 @@
             'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Sisal' },
           ]"
-          @click="toggleSelect('Sisal')"
+          @click="toggleSelectMaterials('Sisal')"
         >
           <div
-            v-if="selectedmaterial === 'Sisal'"
+            v-show="selectedmaterial === 'Sisal'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -140,10 +140,10 @@
             'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Wool' },
           ]"
-          @click="toggleSelect('Wool')"
+          @click="toggleSelectMaterials('Wool')"
         >
           <div
-            v-if="selectedmaterial === 'Wool'"
+            v-show="selectedmaterial === 'Wool'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -183,7 +183,7 @@ function clearmaterialSelections() {
   userStore.preference.spec_3 = "";
 }
 
-const toggleSelect = (material) => {
+const toggleSelectMaterials = (material) => {
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
     userStore.preference.spec_3 = "";

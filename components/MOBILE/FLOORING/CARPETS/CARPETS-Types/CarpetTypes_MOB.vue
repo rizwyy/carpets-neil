@@ -9,7 +9,7 @@
         class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
       >
         <span
-          class="text-left text-balance carpets_Types_Details_Mob-HEADING translate-x-[40%] opacity-[.2]"
+          class="text-left text-balance carpets_Types_Details_Mob-HEADING translate-x-[40%] opacity-[0]"
         >
           Choose Your Type
         </span>

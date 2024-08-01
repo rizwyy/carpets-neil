@@ -15,7 +15,7 @@
         class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
       >
         <span
-          class="text-left text-balance carpet_Budget_Details_Mob-HEADING translate-x-[40%] opacity-[.2]"
+          class="text-left text-balance carpet_Budget_Details_Mob-HEADING translate-x-[40%] opacity-[0]"
           >Choose Your Budget</span
         >
         <button

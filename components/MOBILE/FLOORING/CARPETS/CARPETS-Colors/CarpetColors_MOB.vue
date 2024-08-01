@@ -15,7 +15,7 @@
         class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between"
       >
         <span
-          class="text-left text-balance carpets_Color_Details_Mob-HEADING translate-x-[40%] opacity-[.2]"
+          class="text-left text-balance carpets_Color_Details_Mob-HEADING translate-x-[40%] opacity-[0]"
         >
           Choose Your Color
         </span>

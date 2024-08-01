@@ -10,7 +10,7 @@
         <span class="text-left text-balance"> Choose Your Category </span>
         <button
           @click="clearAllSelections"
-          v-if="selectedCategory.length"
+          v-show="selectedCategory.length"
           class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -36,7 +36,7 @@
           @click="toggleSelect('Wall to Wall')"
         >
           <div
-            v-if="selectedCategory.includes('Wall to Wall')"
+            v-show="selectedCategory.includes('Wall to Wall')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -69,7 +69,7 @@
           @click="toggleSelect('Carpet Tiles')"
         >
           <div
-            v-if="selectedCategory.includes('Carpet Tiles')"
+            v-show="selectedCategory.includes('Carpet Tiles')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -103,7 +103,7 @@
           @click="toggleSelect('Area Rugs')"
         >
           <div
-            v-if="selectedCategory.includes('Area Rugs')"
+            v-show="selectedCategory.includes('Area Rugs')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -136,7 +136,7 @@
           @click="toggleSelect('Runners')"
         >
           <div
-            v-if="selectedCategory.includes('Runners')"
+            v-show="selectedCategory.includes('Runners')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
