@@ -162,7 +162,7 @@
           <!-- MOBILE -->
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/brown.webp"
+            src="/colors/darkBrown-wood.webp"
           />
           <span v-show="!selectedColors.includes('Dark Brown')"
             >Dark Brown</span
