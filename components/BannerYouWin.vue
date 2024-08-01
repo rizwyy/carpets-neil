@@ -6,7 +6,7 @@
       class="h-[38vh] w-[90%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute flooring_Banner_Overlay opacity-0 h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#2333] opacity-[.6]"
+        class="absolute flooring_Banner_Overlay backdrop-blur-[14px] opacity-0 h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#2333] opacity-[.6]"
       ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
@@ -115,7 +115,7 @@
         />
         <NuxtImg
           placeholder
-          @load="handleImageLoad('', 'flooringBanner', true, true)"
+          @load="handleImageLoad('flooring_Banner_Default', 'flooringBanner')"
           src="/runners.webp"
           class="h-full w-full object-cover flooring_Banner_Default_Img"
         />

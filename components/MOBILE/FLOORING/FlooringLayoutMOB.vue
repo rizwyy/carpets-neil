@@ -61,18 +61,11 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringItem_Overlay flooringLayout_Carpet_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] to-transparent"
           ></div>
           <NuxtImg
             preload
-            @load="
-              handleImageLoad(
-                'flooringLayout_Carpet',
-                'flooringItem',
-                true,
-                true
-              )
-            "
+            @load="handleImageLoad('flooringLayout_Carpet', 'flooringItem')"
             loading="eager"
             placeholder
             class="flooringItem_Img flooringLayout_Carpet_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
@@ -96,18 +89,16 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringItem_Overlay flooringLayout_Wood_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] to-transparent"
           ></div>
           <NuxtImg
             preload
-            @load="
-              handleImageLoad('flooringLayout_Wood', 'flooringItem', true, true)
-            "
+            @load="handleImageLoad('flooringLayout_Wood', 'flooringItem')"
             quality="50"
             placeholder
             loading="eager"
             class="flooringItem_Img flooringLayout_Wood_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/wooden/engineeredWoodenFloor.webp"
+            src="/colors/darkBrown-wood.webp"
             alt="engineeredWoodenFloor"
           />
         </a>
@@ -127,7 +118,7 @@ function toggleExpansion() {
             Flooring</span
           >
           <div
-            class="flooringItem_Overlay flooringLayout_Pvc_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] to-transparent"
           ></div>
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
@@ -163,7 +154,7 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringItem_Overlay flooringLayout_Gym_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] to-transparent"
           ></div>
           <NuxtImg
             @load="
@@ -196,7 +187,7 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringItem_Overlay flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] to-transparent"
           ></div>
           <NuxtImg
             @load="
@@ -230,7 +221,7 @@ function toggleExpansion() {
             >
           </div>
           <div
-            class="flooringItem_Overlay flooringLayout_Raised_Overlay opacity-0 absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] via-[#0000] to-[#000] from-[14%]"
+            class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-gradient-to-br from-[#000] to-transparent"
           ></div>
           <NuxtImg
             @load="
@@ -317,3 +308,9 @@ function toggleExpansion() {
     </div>
   </section>
 </template>
+<style>
+.flooringItem_Overlay {
+  backdrop-filter: blur(14px);
+  opacity: 0.8;
+}
+</style>

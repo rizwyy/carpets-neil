@@ -25,42 +25,43 @@ export function shuffleArray(array) {
   return newArray;
 }
 
-export function handleImageLoad(el, el2, isOverlay, isText) {
-  gsap.to(`.${el2}_BG`, {
-    opacity: 1,
-    duration: 0.4,
-  });
-  gsap.fromTo(
+export function handleImageLoad(el, el2) {
+  const tl = gsap.timeline();
+
+  tl.fromTo(
     `.${el}_Img`,
     {
       opacity: 0,
-      scale: 1.1,
+      scale: 1.04,
     },
     {
       scale: 1,
-      opacity: 0.8,
+      opacity: 1,
       duration: 0.6,
       ease: "slide.in",
     }
   );
-
-  if (isOverlay) {
-    gsap.to(`.${el2}_Overlay`, {
-      opacity: 0.6,
-      ease: "slide.in",
-      stagger: 0.1,
-      duration: 0.6,
-    });
-  }
-  if (isText) {
-    gsap.to(`.${el2}_Text`, {
-      opacity: 1,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "back.in",
-      y: 0,
-    });
-  }
+  // 1:Overlay Comes
+  tl.to(`.${el2}_Overlay`, {
+    opacity: 0.5,
+    ease: "slide.in",
+    duration: 0.6,
+  });
+  // 2:Blurry Div Goes
+  tl.to(`.${el2}_Overlay`, {
+    backdropFilter: "blur(0px)",
+    duration: 0.4,
+    ease: "slide.out",
+  });
+  // 3:Text Comes
+  tl.to(`.${el2}_Text`, {
+    delay: -0.4,
+    opacity: 1,
+    stagger: 0.1,
+    duration: 0.4,
+    ease: "slide.in",
+    y: 0,
+  });
 }
 export function bringOpacity(el, el2) {
   const elementClass = `.${el}`;
