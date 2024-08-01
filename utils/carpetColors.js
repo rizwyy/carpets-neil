@@ -349,6 +349,14 @@ const carpetColors = {
   eggplant: "#614051",
   mulberry: "#C54B8C",
   heather: "#9C8AA4",
+
+  cherry: "#DE3163",
+  darkcherry: "#990033",
+  cherryred: "#D2042D",
+  wildcherry: "#D41F1F",
+  brightcherry: "#F50C0C",
+  softcherry: "#E77471",
+  pastelcherry: "#FFA6C9",
 };
 
 export default carpetColors;
