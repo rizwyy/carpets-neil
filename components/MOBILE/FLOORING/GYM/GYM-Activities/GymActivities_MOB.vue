@@ -677,7 +677,6 @@
 
 <script setup>
 import { ref } from "vue";
-import { scrollToBottom } from "~/utils/reusables";
 // PINIA
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
