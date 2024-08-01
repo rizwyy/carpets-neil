@@ -1,7 +1,7 @@
 <template>
   <!-- MOBILE -->
   <div
-    v-if="userStore.preference.spec_1 !== ''"
+    v-show="userStore.preference.spec_1 !== ''"
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
@@ -10,7 +10,7 @@
       <span class="text-left text-balance"> Choose Your Type </span>
       <button
         @click="clearAllSelections"
-        v-if="selectedType.length"
+        v-show="selectedType.length"
         class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
       >
         <!-- MOBILE -->
@@ -28,7 +28,7 @@
       </button>
     </div>
     <div
-      v-if="userStore.preference.spec_1 === 'Real Wood Floor'"
+      v-show="userStore.preference.spec_1 === 'Real Wood Floor'"
       class="h-max w-full flex flex-col gap-[1vh]"
     >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -42,7 +42,7 @@
           @click="toggleSelect('Solid Wood Floor')"
         >
           <div
-            v-if="selectedType.includes('Solid Wood Floor')"
+            v-show="selectedType.includes('Solid Wood Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -76,7 +76,7 @@
           @click="toggleSelect('Engineered Wood Floor')"
         >
           <div
-            v-if="selectedType.includes('Engineered Wood Floor')"
+            v-show="selectedType.includes('Engineered Wood Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -111,7 +111,7 @@
           @click="toggleSelect('Bamboo Wood Floor')"
         >
           <div
-            v-if="selectedType.includes('Bamboo Wood Floor')"
+            v-show="selectedType.includes('Bamboo Wood Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -145,7 +145,7 @@
           @click="toggleSelect('Cork Floor')"
         >
           <div
-            v-if="selectedType.includes('Cork Floor')"
+            v-show="selectedType.includes('Cork Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -170,7 +170,10 @@
         </div>
       </div>
     </div>
-    <div v-else class="h-max w-full flex flex-col gap-[1vh]">
+    <div
+      v-show="!(userStore.preference.spec_1 === 'Real Wood Floor')"
+      class="h-max w-full flex flex-col gap-[1vh]"
+    >
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- MOBILE -->
         <!-- Laminated Floor -->
@@ -182,7 +185,7 @@
           @click="toggleSelect('Laminated Floor')"
         >
           <div
-            v-if="selectedType.includes('Laminated Floor')"
+            v-show="selectedType.includes('Laminated Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -216,7 +219,7 @@
           @click="toggleSelect('SPC Floor')"
         >
           <div
-            v-if="selectedType.includes('SPC Floor')"
+            v-show="selectedType.includes('SPC Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -252,7 +255,7 @@
           @click="toggleSelect('WPC Floor')"
         >
           <div
-            v-if="selectedType.includes('WPC Floor')"
+            v-show="selectedType.includes('WPC Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -285,7 +288,7 @@
           @click="toggleSelect('Hard Laminated Floor')"
         >
           <div
-            v-if="selectedType.includes('Hard Laminated Floor')"
+            v-show="selectedType.includes('Hard Laminated Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
