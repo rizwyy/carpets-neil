@@ -131,7 +131,7 @@
         >
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/snow.webp"
+            src="/pvc/woven/woven-beige.webp"
           />
           <span v-show="!selectedColors.includes('Beige')">Beige</span>
           <!-- MOBILE -->
@@ -150,7 +150,7 @@
           <!-- MOBILE -->
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/brown.webp"
+            src="/pvc/woven/woven-brown.webp"
           />
           <span v-show="!selectedColors.includes('Brown')">Brown</span>
           <div v-show="selectedColors.includes('Brown')">
@@ -170,7 +170,7 @@
         >
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/silver.webp"
+            src="/pvc/woven/woven-grey.webp"
           />
           <span v-show="!selectedColors.includes('Grey')">Grey</span>
           <div v-show="selectedColors.includes('Grey')">
@@ -189,7 +189,7 @@
           <!-- MOBILE -->
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/green.webp"
+            src="/pvc/woven/woven-green.webp"
           />
           <span v-show="!selectedColors.includes('Green')">Green</span>
           <div v-show="selectedColors.includes('Green')">
@@ -207,7 +207,7 @@
         >
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/blue.webp"
+            src="/pvc/woven/woven-blue.webp"
           />
           <!-- MOBILE -->
           <span v-show="!selectedColors.includes('Blue')">Blue</span>
@@ -228,7 +228,7 @@
         >
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/polarBear.webp"
+            src="/pvc/woven/woven-white.webp"
           />
           <!-- MOBILE -->
           <span v-show="!selectedColors.includes('White')">White</span>
@@ -247,7 +247,7 @@
           <!-- MOBILE -->
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/black.webp"
+            src="/pvc/woven/woven-black.webp"
           />
           <span v-show="!selectedColors.includes('Black')">Black</span>
           <div v-show="selectedColors.includes('Black')">
@@ -259,16 +259,16 @@
         </div>
         <div
           class="color-box h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-          :class="{ selected: selectedColors.includes('Rose') }"
-          @click="toggleSelect('Rose')"
+          :class="{ selected: selectedColors.includes('Gold') }"
+          @click="toggleSelect('Gold')"
         >
           <!-- MOBILE -->
           <NuxtImg
             class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-            src="/colors/rose.webp"
+            src="/pvc/woven/woven-gold.webp"
           />
-          <span v-show="!selectedColors.includes('Rose')">Rose</span>
-          <div v-show="selectedColors.includes('Rose')">
+          <span v-show="!selectedColors.includes('Gold')">Gold</span>
+          <div v-show="selectedColors.includes('Gold')">
             <span
               class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span
