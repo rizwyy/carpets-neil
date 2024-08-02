@@ -115,3 +115,15 @@ export function handleDetailsDOMEntry(el) {
     ease: "slide.in",
   });
 }
+
+export function handleCatalogEntry(el) {
+  gsap.to(`.${el}`, {
+    delay: 0.3,
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "slide.in",
+  });
+}

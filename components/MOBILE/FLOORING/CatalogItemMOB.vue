@@ -8,10 +8,16 @@ const { name, color, price, currency, src } = defineProps([
 ]);
 
 const route = useRoute();
+
+onMounted(() => {
+  handleCatalogEntry("catalogItem_MOB");
+});
 </script>
 
 <template>
-  <div class="h-max w-[46vw] flex flex-col items-center">
+  <div
+    class="catalogItem_MOB opacity-0 translate-y-[20%] h-max w-[46vw] flex flex-col items-center"
+  >
     <div class="ImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
       <img
         loading="lazy"
