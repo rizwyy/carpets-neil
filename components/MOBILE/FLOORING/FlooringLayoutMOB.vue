@@ -1,43 +1,9 @@
-<script setup>
-import Mobile from "~/layouts/Mobile.vue";
-// COOKIES
-import { useCookie } from "#app";
-const userPreference = useCookie("userPreference");
-import useUserStore from "../../../stores/user";
-import HowWoltizWorks from "~/components/HowWoltizWorks.vue";
-import gsap from "gsap";
-const userStore = useUserStore();
-
-function setUserPreferenceCookie() {
-  userPreference.value = userStore.preference;
-  console.log("COOKIE SET::", toRaw(userPreference.value));
-  navigateTo(`/carpet/details`);
-}
-const setCategory = (category) => {
-  userStore.preference.category = category;
-  userPreference.value = userStore.preference;
-  console.log("COOKIE SET::", toRaw(userPreference.value));
-};
-const isExpanded = ref(false);
-
-const scrollToBottom = () => {
-  window.scrollBy({ top: window.innerHeight * 0.2, behavior: "smooth" });
-};
-
-function toggleExpansion() {
-  if (isExpanded.value) {
-    isExpanded.value = false;
-  } else {
-    isExpanded.value = true;
-    scrollToBottom();
-  }
-}
-</script>
+<script setup></script>
 
 <template>
   <section class="h-max w-max min-[990px]:hidden font-outfit">
     <div class="h-max w-screen py-[2vh] text-[#333] px-[3.2vw]">
-      <span class="flooringItem_BG opacity-0 text-[3.8vh] tracking-[-.1vw]"
+      <span class="flooringLayoutHeading text-[3.8vh] tracking-[-.1vw]"
         >Shop By Category</span
       >
     </div>
