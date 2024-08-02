@@ -303,10 +303,7 @@
         </div>
       </div>
       <!-- SLIDE 3 -->
-      <div
-        v-show="userStore.preference.spec_2 === 'Engineered Wood Floor'"
-        class="h-max w-full flex flex-col gap-[1vh]"
-      >
+      <div class="h-max w-full flex flex-col gap-[1vh]">
         <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
           <!-- MOBILE -->
           <!-- Custom V -->
