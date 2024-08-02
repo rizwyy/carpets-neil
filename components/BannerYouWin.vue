@@ -46,18 +46,18 @@
           class="h-full w-full object-cover"
         />
       </div>
-      <span class="font-outfit text-bannerMOB font-[400] text-[#f6f6f6]"
+      <span
+        class="font-outfit text-bannerMOB min-[1590px]:text-[7.2vh] font-[400] text-[#f6f6f6]"
         >{{
           `${userStore.customPreference.category} Flooring` || "Flooring"
         }}.</span
       >
       <button
-        class="rounded-md shadow-lg max-[990px]:px-[6vw] px-[2vw] py-[2vh] bg-[#fff3] backdrop-blur-[4px] text-[#fff] flex items-center gap-[.4vw]"
+        class="rounded-md shadow-lg min-[1590px]:text-[2.8vh] max-[990px]:px-[6vw] px-[2vw] py-[2vh] bg-[#fff3] backdrop-blur-[4px] text-[#fff] flex items-center gap-[.4vw]"
       >
         How Woltiz Works<svg
+          class="min-[1590px]:h-[3.2vh] h-[2vh]"
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
           viewBox="0 0 24 24"
         >
           <path

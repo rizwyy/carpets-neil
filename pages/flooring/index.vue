@@ -9,14 +9,21 @@
     <FooterMOB />
   </section>
   <!-- DESKTOP -->
+
   <section
     v-else
-    class="h-max max-w-screen overflow-x-hidden max-[990px]:hidden"
+    class="min-[1590px]:h-max min-[1590px]:w-screen min-[1590px]:max-w-[99vw] h-max max-w-screen overflow-x-hidden max-[990px]:hidden"
   >
     <NavBarPC />
-    <BannerYouWin />
-    <!-- <HowWoltizWorks /> -->
-    <FlooringLayoutPC />
+
+    <div
+      class="min-[1590px]:w-full min-[1590px]:flex min-[1590px]:items-center min-[1590px]:flex-col"
+    >
+      <div class="min-[1590px]:w-[75%]">
+        <BannerYouWin />
+        <FlooringLayoutPC />
+      </div>
+    </div>
     <FooterPC />
   </section>
 </template>

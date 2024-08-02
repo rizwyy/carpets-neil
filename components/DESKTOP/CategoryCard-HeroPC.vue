@@ -9,20 +9,29 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
 ]);
 </script>
 <template>
-  <div class="h-[42vh] w-full relative overflow-hidden rounded-md font-outfit">
+  <div
+    class="h-[42vh] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] w-[42vw] relative overflow-hidden rounded-md font-outfit"
+  >
     <NuxtImg
       class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"
       :src="`/${src || '#'}`"
       alt="#"
     />
+    <div class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"></div>
     <div
       class="z-[1] h-full w-full bg-gradient-to-r from-black to-[#0000] flex flex-col items-start justify-center px-[2vw] gap-[1vh]"
     >
-      <span class="text-[4.2vh] font-[400] text-[#f1f1f1]">{{ name }}</span>
-      <span class="w-[60%] text-[2vh] text-[#ececec]">{{ desc }}</span>
+      <span
+        class="text-[4.2vh] min-[1590px]:text-[3.2vh] font-[400] text-[#f1f1f1]"
+        >{{ name }}</span
+      >
+      <span
+        class="w-[60%] text-[2vh] text-[#ececec] min-[1590px]:text-[1.8vh]"
+        >{{ desc }}</span
+      >
       <a
         :href="link"
-        class="text-[2.4vh] text-[#fff] font-[400] underline underline-offset-[.8vh]"
+        class="text-[2.4vh] min-[1590px]:text-[1.8vh] text-[#fff] font-[400] underline underline-offset-[.8vh]"
         >View All</a
       >
     </div>
@@ -30,7 +39,8 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
       v-if="!isAvailable"
       class="z-[9] absolute top-0 left-0 h-full w-full bg-black bg-opacity-[.4] backdrop-blur-[1px] text-[#fff] w-full gap-[1vh] flex items-center justify-center"
     >
-      <span class="w-full py-[.4vh] bg-[#444] bg-opacity-[.8] text-center"
+      <span
+        class="w-full py-[.4vh] min-[1590px]:py-[1.8vh] min-[1590px]:text-[2.4vh] bg-[#444] bg-opacity-[.8] text-center"
         >NOT AVAILABLE</span
       >
     </div>

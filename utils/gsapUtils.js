@@ -55,7 +55,6 @@ export function bringOpacity(el, el2) {
   };
 
   if (el2 === "translate") {
-    console.log("hi");
     gsap.fromTo(elementClass, { y: 90 }, { y: 0, ...commonOptions });
   }
 
@@ -76,6 +75,20 @@ export function removeOpacity(el) {
       opacity: 0,
       duration: 0.4,
       ease: "back.out",
+    }
+  );
+}
+export function handleFromToEntry(el) {
+  gsap.fromTo(
+    `.${el}`,
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "slide.in",
     }
   );
 }

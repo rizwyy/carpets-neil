@@ -1,18 +1,20 @@
 <template>
   <section
-    class="h-max max-w-[100vw] flex flex-col gap-[2.8vh] py-[6vh] font-outfit"
+    class="h-max max-w-[100vw] flex flex-col gap-[4.8vh] min-[1590px]:gap-[4vh] py-[6vh] font-outfit"
   >
-    <div class="h-max w-full flex justify-center">
+    <div class="h-max w-full flex justify-center min-[1590px]:py-[2vh]">
       <span class="text-[2.8vw] font-[350]">Shop By Flooring Category</span>
     </div>
-    <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
+    <div
+      class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[2.4vw]"
+    >
       <a href="/flooring/carpets/details">
         <CategoryCardHeroPC
           name="Carpet Flooring"
           desc="Durable, stylish carpet flooring enhances comfort, warmth, and
       aesthetic appeal in any space."
           :isAvailable="true"
-          src="10004.jpg"
+          src="10004.webp"
         />
       </a>
       <a href="/flooring/wooden/details">
@@ -25,32 +27,57 @@
         />
       </a>
     </div>
-    <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
-      <CategoryCardHeroPC
-        name="Vinly Flooring"
-        desc="Durable, stylish vinyl tiles offer sleek, resilient, and low-maintenance flooring for any modern space."
-        src="pvc/pvc-flooring.webp"
-        :isAvailable="true"
-        link="/flooring/pvc/details"
-      />
-
+    <div
+      class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[2.4vw]"
+    >
+      <a href="/flooring/pvc/details">
+        <CategoryCardHeroPC
+          name="Vinly Flooring"
+          desc="Durable, stylish vinyl tiles offer sleek, resilient, and low-maintenance flooring for any modern space."
+          src="pvc/pvc-flooring.webp"
+          :isAvailable="true"
+          link="/flooring/pvc/details"
+        />
+      </a>
       <a href="/flooring/gym/details">
         <CategoryCardHeroPC
           name="Gym Flooring"
           desc="Durable, stylish carpet flooring enhances comfort, warmth, and
       aesthetic appeal in any space."
           :isAvailable="true"
-          src="40002.jpg"
+          src="40001.webp"
           link="/flooring/gym/details"
         />
       </a>
     </div>
-    <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
-      <CategoryCardHeroPC name="Sports Flooring" link="/carpets/details" />
+    <div
+      class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[2.4vw]"
+    >
+      <a href="/flooring/sports/details">
+        <CategoryCardHeroPC
+          name="Sports Flooring"
+          desc="Durable, stylish carpet flooring enhances comfort, warmth, and
+      aesthetic appeal in any space."
+          :isAvailable="true"
+          src="40002.jpg"
+          link="/flooring/sports/details"
+        />
+      </a>
 
-      <CategoryCardHeroPC name="Kids Flooring" src="" link="/carpets/details" />
+      <a href="/flooring/raised/details">
+        <CategoryCardHeroPC
+          name="Raised Flooring"
+          desc="Durable, stylish carpet flooring enhances comfort, warmth, and
+      aesthetic appeal in any space."
+          :isAvailable="true"
+          src="raised-flooring.webp"
+          link="/flooring/raised/details"
+        />
+      </a>
     </div>
-    <div class="h-max w-full flex justify-between px-[6vw] gap-[2vw]">
+    <div
+      class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[4vw]"
+    >
       <CategoryCardHeroPC name="Raised Flooring" link="/carpets/details" />
 
       <CategoryCardHeroPC
