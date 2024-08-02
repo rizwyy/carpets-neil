@@ -10,7 +10,7 @@ const { name, color, price, currency, src } = defineProps([
 const route = useRoute();
 
 onMounted(() => {
-  handleCatalogEntry("catalogItem_MOB");
+  handleCatalogDOMEntry("catalogItem_MOB");
 });
 </script>
 
@@ -18,7 +18,9 @@ onMounted(() => {
   <div
     class="catalogItem_MOB opacity-0 translate-y-[20%] h-max w-[46vw] flex flex-col items-center"
   >
-    <div class="ImgContainer h-[24vh] w-full overflow-hidden bg-gray-200">
+    <div
+      class="ImgContainer h-[24vh] w-full overflow-hidden bg-gray-200 overflow-hidden"
+    >
       <img
         loading="lazy"
         class="object-cover h-full w-full"

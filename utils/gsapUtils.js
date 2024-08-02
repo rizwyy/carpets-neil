@@ -116,7 +116,7 @@ export function handleDetailsDOMEntry(el) {
   });
 }
 
-export function handleCatalogEntry(el) {
+export function handleCatalogDOMEntry(el) {
   gsap.to(`.${el}`, {
     delay: 0.3,
     y: 0,
