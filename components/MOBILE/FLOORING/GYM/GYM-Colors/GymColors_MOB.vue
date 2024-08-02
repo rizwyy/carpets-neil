@@ -4,8 +4,7 @@
     v-show="
       userStore.preference.spec_1 !== '' &&
       userStore.preference.spec_2 !== '' &&
-      userStore.preference.spec_3 !== '' &&
-      userStore.preference.spec_4 !== ''
+      userStore.preference.spec_3 !== ''
     "
     class="min-[990px]:hidden container mx-auto p-[4vh] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
   >
@@ -70,27 +69,27 @@
           class="h-max w-full flex-[2] gap-[4vw] flex items-start justify-center"
         >
           <transition
-            @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
-            @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"
+            @beforeEnter="bringOpacity('carpet_details_colors_mob_done1_BTN')"
+            @beforeLeave="removeOpacity('carpet_details_colors_mob_done1_BTN')"
           >
             <button
               v-show="
                 !userStore.preference.color.length > 0 && customColor.length > 2
               "
               @click="toggleSelect('done')"
-              class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+              class="carpet_details_colors_mob_done1_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
             >
               Done
             </button>
           </transition>
           <transition
-            @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
-            @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"
+            @beforeEnter="bringOpacity('carpet_details_colors_mob_done_BTN')"
+            @beforeLeave="removeOpacity('carpet_details_colors_mob_done_BTN')"
           >
             <button
               v-show="userStore.preference.color.length > 0"
               @click="toggleSelect('done')"
-              class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+              class="carpet_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
             >
               Done
             </button>

@@ -55,7 +55,7 @@ onMounted(() => {});
       <GymApplicationDetails />
       <GymActivitiesDetails />
       <GymFlooringDetails />
-      <GymFinishDetails />
+      <!-- <GymFinishDetails /> -->
       <GymColorDetails />
       <GymBudgetDetails />
 
@@ -68,7 +68,6 @@ onMounted(() => {});
             userStore.preference.spec_1 !== '' &&
             userStore.preference.spec_2 !== '' &&
             userStore.preference.spec_3 !== '' &&
-            userStore.preference.spec_4 !== '' &&
             userStore.preference.color.length > 0 &&
             userStore.preference.budget !== ''
           "
@@ -110,7 +109,7 @@ onMounted(() => {});
       <GymApplicationDetails />
       <GymActivitiesDetails />
       <GymFlooringDetails />
-      <GymFinishDetails />
+      <!-- <GymFinishDetails /> -->
       <GymColorDetails />
       <GymBudgetDetails />
       <a href="/flooring/gym/catalog">
@@ -121,7 +120,6 @@ onMounted(() => {});
             userStore.preference.spec_1 !== '' &&
             userStore.preference.spec_2 !== '' &&
             userStore.preference.spec_3 !== '' &&
-            userStore.preference.spec_4 !== '' &&
             userStore.preference.color.length > 0 &&
             userStore.preference.budget !== ''
           "
