@@ -56,8 +56,8 @@ function toggleExpansion() {
           >
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
-              class="flooringItem_Text flooringLayout_Carpet_Text opacity-0 text-[2vh] font-[500] border-b-[1px]"
-              >View All</span
+              class="flooringItem_Text flooringLayout_Wood_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
+              >view all</span
             >
           </div>
           <div
@@ -85,7 +85,7 @@ function toggleExpansion() {
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
               class="flooringItem_Text flooringLayout_Wood_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
-              >View All</span
+              >view all</span
             >
           </div>
           <div
@@ -97,8 +97,8 @@ function toggleExpansion() {
             quality="50"
             placeholder
             loading="eager"
-            class="flooringItem_Img flooringLayout_Wood_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/colors/darkBrown-wood.webp"
+            class="flooringItem_Img flooringLayout_Wood_Img absolute object-bottom object-cover bottom-0 left-0 h-full w-full z-[-99]"
+            src="/wooden-flooring.webp"
             alt="engineeredWoodenFloor"
           />
         </a>
@@ -122,8 +122,8 @@ function toggleExpansion() {
           ></div>
           <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
-              class="flooringItem_Text flooringLayout_Pvc_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
-              >View All</span
+              class="flooringItem_Text flooringLayout_Wood_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
+              >view all</span
             >
           </div>
           <NuxtImg
@@ -147,9 +147,9 @@ function toggleExpansion() {
             >Gym <br />
             Flooring</span
           >
-          <div class="h-max w-full px-[2vw] flex justify-end">
+          <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
-              class="flooringItem_Text flooringLayout_Gym_Text opacity-0 underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1]"
+              class="flooringItem_Text flooringLayout_Wood_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
               >view all</span
             >
           </div>
@@ -180,9 +180,9 @@ function toggleExpansion() {
             >Raised <br />
             Flooring</span
           >
-          <div class="h-max w-full px-[2vw] flex justify-end">
+          <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
-              class="flooringItem_Text underline underline-offset-[.4vh] z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw] z-[1] opacity-0"
+              class="flooringItem_Text flooringLayout_Wood_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
               >view all</span
             >
           </div>
@@ -214,9 +214,9 @@ function toggleExpansion() {
             >Sports <br />
             Flooring</span
           >
-          <div class="h-max w-full px-[2vw] flex justify-end">
+          <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
             <span
-              class="flooringItem_Text underline underline-offset-[.4vh] opacity-0 z-[99] text-[#e1e9e5] text-[1.8vh] font-[500] ml-[.2vw]"
+              class="flooringItem_Text flooringLayout_Wood_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
               >view all</span
             >
           </div>

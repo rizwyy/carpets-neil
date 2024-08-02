@@ -72,17 +72,46 @@
               placeholder="Enter your Color"
             />
           </div>
-          <div class="h-max w-full flex-[2] flex items-start justify-center">
+          <div
+            class="h-max w-full flex-[2] gap-[4vw] flex items-start justify-center"
+          >
+            <transition
+              @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
+              @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"
+            >
+              <button
+                v-show="
+                  !userStore.preference.color.length > 0 &&
+                  customColor.length > 2
+                "
+                @click="toggleSelect('done')"
+                class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+              >
+                Done
+              </button>
+            </transition>
+            <transition
+              @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
+              @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"
+            >
+              <button
+                v-show="userStore.preference.color.length > 0"
+                @click="toggleSelect('done')"
+                class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+              >
+                Done
+              </button>
+            </transition>
             <transition
               @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
               @beforeLeave="removeOpacity('carpet_details_colors_mob_add_BTN')"
             >
               <button
                 v-show="customColor.length > 2"
-                @click="toggleSelect(customColor)"
+                @click="toggleSelect(customColor, 'addMore')"
                 class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
               >
-                Add
+                Add More +
               </button>
             </transition>
           </div>
@@ -299,12 +328,16 @@ const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };
 const toggleSelect = (color, added) => {
+  if (color === "done") {
+    isMultiColoredOpted.value = false;
+    scrollToBottom();
+    return;
+  }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
     isMultiColoredOpted.value = true;
     return;
   }
-
   // Toggle color selection
   const isSelected = selectedColors.value.includes(color);
   if (isSelected) {
@@ -317,7 +350,9 @@ const toggleSelect = (color, added) => {
   }
 
   userStore.preference.color = toRaw(selectedColors.value);
-  isMultiColoredOpted.value = false;
+  if (added !== "addMore") {
+    isMultiColoredOpted.value = false;
+  }
   removeCustomColor();
   getHexCodes();
   customColor.value = "";
