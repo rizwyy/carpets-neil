@@ -5,7 +5,7 @@
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
-      class="raisedApplication_temp_div opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1vh] bg-black text-[#f1f1f1] fixed bottom-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
+      class="raisedApplication_temp_div opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed bottom-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
     >
       <span>
         {{ userStore.preference.spec_2 }} is added as an Application
