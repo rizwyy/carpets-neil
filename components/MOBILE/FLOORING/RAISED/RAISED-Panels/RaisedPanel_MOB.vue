@@ -175,6 +175,7 @@ function clearSurfaceFinish() {
 }
 
 const toggleSelect = (surface) => {
+  userStore.preference.color = [];
   if (surface === "Bare" && !userStore.preference.color.includes("Grey")) {
     userStore.preference.color.push("BarePanel");
   }
