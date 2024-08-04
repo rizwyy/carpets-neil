@@ -157,14 +157,6 @@
             userStore.preference.spec_1 !== 'Area Rugs' &&
             !(
               userStore.preference.spec_1 === 'Wall to Wall' &&
-              userStore.preference.spec_3 === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.spec_1 === 'Runners' &&
-              userStore.preference.spec_3 === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.spec_1 === 'Wall to Wall' &&
               userStore.preference.spec_3 === 'Sisal'
             ) &&
             !(
@@ -217,19 +209,12 @@
             <span>BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span>
           </div>
         </div>
+        <!-- PC -->
         <!-- NOT AVAILABLE ESSENTIALs -->
         <div
           v-show="
             !(
               userStore.preference.spec_1 !== 'Area Rugs' &&
-              !(
-                userStore.preference.spec_1 === 'Wall to Wall' &&
-                userStore.preference.spec_3 === 'Nylon'
-              ) &&
-              !(
-                userStore.preference.spec_1 === 'Runners' &&
-                userStore.preference.spec_3 === 'Nylon'
-              ) &&
               !(
                 userStore.preference.spec_1 === 'Wall to Wall' &&
                 userStore.preference.spec_3 === 'Sisal'
@@ -372,6 +357,14 @@
             !(
               userStore.preference.spec_1 === 'Runners' &&
               userStore.preference.spec_3 === 'polypropylene'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Nylon'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Nylon'
             )
           "
           :class="[
@@ -425,6 +418,14 @@
               !(
                 userStore.preference.spec_1 === 'Runners' &&
                 userStore.preference.spec_3 === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Nylon'
               )
             )
           "

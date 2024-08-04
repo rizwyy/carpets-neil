@@ -161,14 +161,6 @@
             userStore.preference.spec_1 !== 'Area Rugs' &&
             !(
               userStore.preference.spec_1 === 'Wall to Wall' &&
-              userStore.preference.spec_3 === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.spec_1 === 'Runners' &&
-              userStore.preference.spec_3 === 'Nylon'
-            ) &&
-            !(
-              userStore.preference.spec_1 === 'Wall to Wall' &&
               userStore.preference.spec_3 === 'Sisal'
             ) &&
             !(
@@ -228,14 +220,6 @@
           v-show="
             !(
               userStore.preference.spec_1 !== 'Area Rugs' &&
-              !(
-                userStore.preference.spec_1 === 'Wall to Wall' &&
-                userStore.preference.spec_3 === 'Nylon'
-              ) &&
-              !(
-                userStore.preference.spec_1 === 'Runners' &&
-                userStore.preference.spec_3 === 'Nylon'
-              ) &&
               !(
                 userStore.preference.spec_1 === 'Wall to Wall' &&
                 userStore.preference.spec_3 === 'Sisal'
@@ -379,6 +363,14 @@
             !(
               userStore.preference.spec_1 === 'Runners' &&
               userStore.preference.spec_3 === 'polypropylene'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Nylon'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Nylon'
             )
           "
           :class="[
@@ -432,6 +424,14 @@
               !(
                 userStore.preference.spec_1 === 'Runners' &&
                 userStore.preference.spec_3 === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Nylon'
               )
             )
           "
