@@ -69,7 +69,7 @@
               class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
               type="text"
               v-model="customApplication"
-              placeholder="Enter your Color"
+              placeholder="Enter your Application"
             />
           </div>
           <div
