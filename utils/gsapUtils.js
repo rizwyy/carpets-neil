@@ -103,14 +103,6 @@ export function handleDOMEntry(el) {
   });
 }
 export function handleDetailsDOMEntry(el) {
-  gsap.to(`.${el}`, {
-    y: 0,
-    x: 0,
-    scale: 1,
-    opacity: 1,
-    duration: 0.2,
-    ease: "slide.in",
-  });
   let tl = gsap.timeline();
   tl.to(`.${el}-HEADING`, {
     y: 0,
@@ -121,6 +113,7 @@ export function handleDetailsDOMEntry(el) {
     ease: "slide.in",
   });
   tl.to(`.${el}-CONTAINER`, {
+    delay: -0.6,
     scale: 1,
     y: 0,
     opacity: 1,

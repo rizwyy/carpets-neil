@@ -6,10 +6,10 @@
     <div
       class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
     >
-      <span class="text-left text-balance"> Choose Your Category </span>
+      <span class="text-left text-balance">Choose Your Category</span>
       <button
         @click="clearAllSelections"
-        v-if="selectedCategory.length"
+        v-show="userStore.preference.spec_1 !== ''"
         class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -30,12 +30,12 @@
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedCategory.includes('Real Wood Floor') },
+          { selected: userStore.preference.spec_1.includes('Real Wood Floor') },
         ]"
         @click="toggleSelect('Real Wood Floor')"
       >
         <div
-          v-if="selectedCategory.includes('Real Wood Floor')"
+          v-show="userStore.preference.spec_1.includes('Real Wood Floor')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -63,12 +63,16 @@
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: selectedCategory.includes('Wood Artificial Floor') },
+          {
+            selected: userStore.preference.spec_1.includes(
+              'Wood Artificial Floor'
+            ),
+          },
         ]"
         @click="toggleSelect('Wood Artificial Floor')"
       >
         <div
-          v-if="selectedCategory.includes('Wood Artificial Floor')"
+          v-show="userStore.preference.spec_1.includes('Wood Artificial Floor')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
