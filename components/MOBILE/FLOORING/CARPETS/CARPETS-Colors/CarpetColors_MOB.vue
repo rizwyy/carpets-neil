@@ -390,7 +390,7 @@ function getHexCodes() {
 </script>
 
 <style scoped>
-.color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 {
+.color-box {
   position: relative;
 }
 
@@ -399,12 +399,7 @@ function getHexCodes() {
 }
 
 /* Hide text inside selected color box */
-.color-box
-  carpets_Color_Details_Mob-CONTAINER
-  translate-y-[10%]
-  opacity-0
-  .selected
-  > span:first-child {
+.color-box .selected > span:first-child {
   display: none;
 }
 </style>
