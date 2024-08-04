@@ -150,7 +150,7 @@ export function handleTempAnimation(el) {
     y: 0,
   });
   tl.to(`.${el}`, {
-    delay: 2,
+    delay: 1.2,
     opacity: 0,
     duration: 0.4,
     y: 50,
