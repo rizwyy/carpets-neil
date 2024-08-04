@@ -20,7 +20,7 @@
         >
         <button
           @click="clearBudgetSelections"
-          v-show="selectedBudget.length"
+          v-show="userStore.preference.budget !== ''"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -54,16 +54,32 @@
             !(
               userStore.preference.spec_1 === 'Runners' &&
               userStore.preference.spec_3 === 'Nylon'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Sisal'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Sisal'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Wool'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Wool'
             )
           "
           :class="[
             'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Value' },
+            { selected: userStore.preference.budget === 'Value' },
           ]"
           @click="toggleSelect('Value')"
         >
           <div
-            v-show="selectedBudget === 'Value'"
+            v-show="userStore.preference.budget === 'Value'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -106,6 +122,22 @@
               !(
                 userStore.preference.spec_1 === 'Runners' &&
                 userStore.preference.spec_3 === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Sisal'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Sisal'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Wool'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Wool'
               )
             )
           "
@@ -134,16 +166,32 @@
             !(
               userStore.preference.spec_1 === 'Runners' &&
               userStore.preference.spec_3 === 'Nylon'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Sisal'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Sisal'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Wool'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Wool'
             )
           "
           :class="[
             'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Essential' },
+            { selected: userStore.preference.budget === 'Essential' },
           ]"
           @click="toggleSelect('Essential')"
         >
           <div
-            v-show="selectedBudget === 'Essential'"
+            v-show="userStore.preference.budget === 'Essential'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -187,6 +235,22 @@
               !(
                 userStore.preference.spec_1 === 'Runners' &&
                 userStore.preference.spec_3 === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Sisal'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Sisal'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Wool'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Wool'
               )
             )
           "
@@ -216,16 +280,24 @@
             !(
               userStore.preference.spec_1 === 'Runners' &&
               userStore.preference.spec_3 === 'polypropylene'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Wall to Wall' &&
+              userStore.preference.spec_3 === 'Wool'
+            ) &&
+            !(
+              userStore.preference.spec_1 === 'Runners' &&
+              userStore.preference.spec_3 === 'Wool'
             )
           "
           :class="[
             'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Premier' },
+            { selected: userStore.preference.budget === 'Premier' },
           ]"
           @click="toggleSelect('Premier')"
         >
           <div
-            v-show="selectedBudget === 'Premier'"
+            v-show="userStore.preference.budget === 'Premier'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -270,6 +342,14 @@
               !(
                 userStore.preference.spec_1 === 'Runners' &&
                 userStore.preference.spec_3 === 'polypropylene'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Wool'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Wool'
               )
             )
           "
@@ -303,12 +383,12 @@
           "
           :class="[
             'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Signature' },
+            { selected: userStore.preference.budget === 'Signature' },
           ]"
           @click="toggleSelect('Signature')"
         >
           <div
-            v-show="selectedBudget === 'Signature'"
+            v-show="userStore.preference.budget === 'Signature'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- MOBILE -->
@@ -389,16 +469,24 @@
               !(
                 userStore.preference.spec_1 === 'Runners' &&
                 userStore.preference.spec_3 === 'Nylon'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Wall to Wall' &&
+                userStore.preference.spec_3 === 'Sisal'
+              ) &&
+              !(
+                userStore.preference.spec_1 === 'Runners' &&
+                userStore.preference.spec_3 === 'Sisal'
               ))
           "
           :class="[
             'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Elite' },
+            { selected: userStore.preference.budget === 'Elite' },
           ]"
           @click="toggleSelect('Elite')"
         >
           <div
-            v-show="selectedBudget === 'Elite'"
+            v-show="userStore.preference.budget === 'Elite'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -450,6 +538,14 @@
                 !(
                   userStore.preference.spec_1 === 'Runners' &&
                   userStore.preference.spec_3 === 'Nylon'
+                ) &&
+                !(
+                  userStore.preference.spec_1 === 'Wall to Wall' &&
+                  userStore.preference.spec_3 === 'Sisal'
+                ) &&
+                !(
+                  userStore.preference.spec_1 === 'Runners' &&
+                  userStore.preference.spec_3 === 'Sisal'
                 ))
             )
           "

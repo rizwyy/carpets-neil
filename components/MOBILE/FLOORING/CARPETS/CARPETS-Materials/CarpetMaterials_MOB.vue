@@ -184,6 +184,8 @@ function clearmaterialSelections() {
 }
 
 const toggleSelectMaterials = (material) => {
+  userStore.preference.budget = "";
+
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
     userStore.preference.spec_3 = "";
