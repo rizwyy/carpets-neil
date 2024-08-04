@@ -120,7 +120,7 @@
         </div>
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
             :class="{ selected: selectedColors.includes('CustomColor') }"
             @click="toggleSelect('CustomColor')"
           >
@@ -135,7 +135,7 @@
 
           <!-- MOBILE -->
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Beige') }"
             @click="toggleSelect('Beige')"
           >
@@ -153,7 +153,7 @@
             </div>
           </div>
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Brown') }"
             @click="toggleSelect('Brown')"
           >
@@ -174,7 +174,7 @@
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <!-- MOBILE -->
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Grey') }"
             @click="toggleSelect('Grey')"
           >
@@ -192,7 +192,7 @@
             </div>
           </div>
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Green') }"
             @click="toggleSelect('Green')"
           >
@@ -211,7 +211,7 @@
             <!-- MOBILE -->
           </div>
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Blue') }"
             @click="toggleSelect('Blue')"
           >
@@ -232,7 +232,7 @@
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <!-- MOBILE -->
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('White') }"
             @click="toggleSelect('White')"
           >
@@ -250,7 +250,7 @@
             </div>
           </div>
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Black') }"
             @click="toggleSelect('Black')"
           >
@@ -268,7 +268,7 @@
             </div>
           </div>
           <div
-            class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Rose') }"
             @click="toggleSelect('Rose')"
           >
@@ -390,7 +390,7 @@ function getHexCodes() {
 </script>
 
 <style scoped>
-.color-box carpets_Color_Details_Mob-CONTAINER opacity-0 {
+.color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 {
   position: relative;
 }
 
@@ -401,6 +401,7 @@ function getHexCodes() {
 /* Hide text inside selected color box */
 .color-box
   carpets_Color_Details_Mob-CONTAINER
+  translate-y-[10%]
   opacity-0
   .selected
   > span:first-child {

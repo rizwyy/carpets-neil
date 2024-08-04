@@ -37,7 +37,7 @@
         <!-- Plain -->
         <div
           :class="[
-            'h-[14vh] carpets_Types_Details_Mob-CONTAINER opacity-0 w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] carpets_Types_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Plain') },
           ]"
           @click="toggleSelect('Plain')"
@@ -72,7 +72,7 @@
         <div
           v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'h-[14vh] carpets_Types_Details_Mob-CONTAINER opacity-0 w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] carpets_Types_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Textured') },
           ]"
           @click="toggleSelect('Textured')"
@@ -107,7 +107,7 @@
         <!-- Textured -->
         <div
           :class="[
-            'h-[14vh] carpets_Types_Details_Mob-CONTAINER opacity-0 rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] carpets_Types_Details_Mob-CONTAINER translate-y-[10%] opacity-0 rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Patterned') },
           ]"
           @click="toggleSelect('Patterned')"
@@ -141,7 +141,7 @@
         <!-- Customized -->
         <div
           :class="[
-            'h-[14vh] w-full carpets_Types_Details_Mob-CONTAINER opacity-0 rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] w-full carpets_Types_Details_Mob-CONTAINER translate-y-[10%] opacity-0 rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedType.includes('Stripped') },
           ]"
           @click="toggleSelect('Stripped')"

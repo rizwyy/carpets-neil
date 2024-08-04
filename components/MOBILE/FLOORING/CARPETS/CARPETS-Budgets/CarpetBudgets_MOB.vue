@@ -73,7 +73,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Value' },
           ]"
           @click="toggleSelect('Value')"
@@ -142,7 +142,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -177,7 +177,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Essential' },
           ]"
           @click="toggleSelect('Essential')"
@@ -239,7 +239,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -275,7 +275,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Premier' },
           ]"
           @click="toggleSelect('Premier')"
@@ -338,7 +338,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -374,7 +374,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Signature' },
           ]"
           @click="toggleSelect('Signature')"
@@ -436,7 +436,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -480,7 +480,7 @@
               ))
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Elite' },
           ]"
           @click="toggleSelect('Elite')"
@@ -550,7 +550,7 @@
             )
           "
           :class="[
-            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[10vh] carpet_Budget_Details_Mob-CONTAINER translate-y-[10%] opacity-0 w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div

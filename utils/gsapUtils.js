@@ -122,9 +122,10 @@ export function handleDetailsDOMEntry(el) {
   });
   tl.to(`.${el}-CONTAINER`, {
     scale: 1,
+    y: 0,
     opacity: 1,
     duration: 0.2,
-    stagger: 0.06,
+    stagger: 0.1,
     ease: "slide.in",
   });
 }
