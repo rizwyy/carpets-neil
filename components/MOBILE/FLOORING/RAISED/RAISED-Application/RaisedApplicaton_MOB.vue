@@ -5,6 +5,29 @@
     class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div
+      class="raisedApplication_temp_div opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1vh] bg-black text-[#f1f1f1] fixed bottom-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
+    >
+      <span>
+        {{ userStore.preference.spec_2 }} is added as an Application
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 14 14"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m4 8l2.05 1.64a.48.48 0 0 0 .4.1a.5.5 0 0 0 .34-.24L10 4" />
+          <circle cx="7" cy="7" r="6.5" />
+        </g>
+      </svg>
+    </div>
+    <div
       class="h-max w-full flex items-center justify-between text-[3.2vh] tracking-[-.07vw] z-[9]"
     >
       <span class="text-left text-balance"> Choose Your Application</span>
@@ -50,14 +73,14 @@
             />
           </div>
           <div
-            class="h-max w-full flex-[2.4] flex items-start justify-center pb-[2vh]"
+            class="h-max w-full flex-[2.4] flex-col flex items-center pb-[2vh]"
           >
             <transition
               @beforeEnter="bringOpacity('sports_details_activity_mob_add_BTN')"
             >
               <button
                 v-show="customApplication.length > 2"
-                @click="toggleSelect(customApplication)"
+                @click="toggleSelect(customApplication, 'showAddedMsg')"
                 class="sports_details_activity_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
               >
                 Add
@@ -632,7 +655,10 @@ function clearAllSelections_spec2() {
   customApplication.value = "";
 }
 
-const toggleSelect = (type) => {
+const toggleSelect = (type, msg) => {
+  if (msg === "showAddedMsg") {
+    handleTempAnimation("raisedApplication_temp_div");
+  }
   if (spec_2.value === type) {
     spec_2.value = "";
     userStore.preference.spec_2 = "";

@@ -140,3 +140,19 @@ export function handleCatalogDOMEntry(el) {
     ease: "slide.in",
   });
 }
+
+export function handleTempAnimation(el) {
+  const tl = gsap.timeline({ ease: "slide.in" });
+  tl.to(`.${el}`, {
+    autoAlpha: 1,
+    opacity: 1,
+    duration: 0.6,
+    y: 0,
+  });
+  tl.to(`.${el}`, {
+    delay: 2,
+    opacity: 0,
+    duration: 0.4,
+    y: 50,
+  });
+}
