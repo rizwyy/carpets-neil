@@ -179,7 +179,7 @@
             <!-- MOBILE -->
             <NuxtImg
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/cork-brown.webp"
+              src="/wooden/wood-Brown.webp"
             />
             <span v-show="!selectedColors.includes('Brown')">Brown</span>
             <div v-show="selectedColors.includes('Brown')">
