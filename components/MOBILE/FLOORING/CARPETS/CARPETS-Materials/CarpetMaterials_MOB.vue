@@ -17,7 +17,7 @@
         >
         <button
           @click="clearmaterialSelections"
-          v-show="selectedmaterial"
+          v-show="userStore.preference.spec_3 !== ''"
           class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg

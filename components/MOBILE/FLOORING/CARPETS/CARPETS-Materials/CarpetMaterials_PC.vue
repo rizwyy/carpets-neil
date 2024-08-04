@@ -11,8 +11,8 @@
       <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
         <span class="text-left text-balance">Choose your Material</span>
         <button
-          @click="clearmaterialSelections"
-          v-show="selectedmaterial"
+          @click="clearMaterialSelections"
+          v-show="userStore.preference.spec_3 !== ''"
           class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2.2vh]">Clear All</span
@@ -37,7 +37,7 @@
             'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'polypropylene' },
           ]"
-          @click="toggleSelect('polypropylene')"
+          @click="toggleSelectMaterials('polypropylene')"
         >
           <div
             v-show="selectedmaterial === 'polypropylene'"
@@ -68,7 +68,7 @@
             'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Nylon' },
           ]"
-          @click="toggleSelect('Nylon')"
+          @click="toggleSelectMaterials('Nylon')"
         >
           <div
             v-show="selectedmaterial === 'Nylon'"
@@ -103,7 +103,7 @@
             'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Sisal' },
           ]"
-          @click="toggleSelect('Sisal')"
+          @click="toggleSelectMaterials('Sisal')"
         >
           <div
             v-show="selectedmaterial === 'Sisal'"
@@ -137,7 +137,7 @@
             'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedmaterial === 'Wool' },
           ]"
-          @click="toggleSelect('Wool')"
+          @click="toggleSelectMaterials('Wool')"
         >
           <div
             v-show="selectedmaterial === 'Wool'"
@@ -177,12 +177,14 @@ import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
 const selectedmaterial = ref("");
-function clearmaterialSelections() {
+function clearMaterialSelections() {
   selectedmaterial.value = "";
   userStore.preference.spec_3 = "";
 }
 
-const toggleSelect = (material) => {
+const toggleSelectMaterials = (material) => {
+  userStore.preference.budget = "";
+
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
     userStore.preference.spec_3 = "";
