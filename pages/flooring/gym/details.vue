@@ -2,7 +2,7 @@
 import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymApplicationDetails.vue";
 import GymActivitiesDetails from "../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue";
 import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/ColorDetails.vue";
+
 import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 

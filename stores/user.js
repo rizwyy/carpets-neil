@@ -8,10 +8,6 @@ const useUserStore = defineStore("user", {
     },
     preference: {
       flooring: "",
-      category: "",
-      type: "",
-      material: "",
-      surface: "",
 
       spec_1: "",
       spec_2: "",
