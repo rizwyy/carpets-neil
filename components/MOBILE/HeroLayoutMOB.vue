@@ -72,7 +72,7 @@
     </div>
     <!-- CONTENT BANNER SECTION  -->
     <div
-      class="contentBanner flooringLayout_BG opacity-0 h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
+      class="HeroItem_Text flooringLayout_BG opacity-0 h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
       <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
         Content / Banner
@@ -80,7 +80,7 @@
     </div>
     <!-- FAQ   SECTION  -->
     <div
-      class="FAQSection flooringLayout_BG opacity-0 h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
+      class="HeroItem_Text flooringLayout_BG opacity-0 h-max w-screen flex items-center justify-center py-[10vh] bg-[#f1f1f1]"
     >
       <div class="h-[20vh] w-[75%] bg-white flex items-center justify-center">
         FAQ
