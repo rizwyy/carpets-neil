@@ -133,10 +133,9 @@
             :class="{ selected: selectedColors.includes('Beige') }"
             @click="toggleSelect('Beige')"
           >
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/snow.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#E3DAC9]"
+            ></div>
             <span v-show="!selectedColors.includes('Beige')">Beige</span>
             <!-- MOBILE -->
             <div v-show="selectedColors.includes('Beige')">
@@ -152,10 +151,9 @@
             @click="toggleSelect('Brown')"
           >
             <!-- MOBILE -->
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/brown.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#79443B]"
+            ></div>
             <span v-show="!selectedColors.includes('Brown')">Brown</span>
             <div v-show="selectedColors.includes('Brown')">
               <span
@@ -172,10 +170,9 @@
             :class="{ selected: selectedColors.includes('Grey') }"
             @click="toggleSelect('Grey')"
           >
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/silver.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#BEBFC5]"
+            ></div>
             <span v-show="!selectedColors.includes('Grey')">Grey</span>
             <div v-show="selectedColors.includes('Grey')">
               <!-- MOBILE -->
@@ -191,10 +188,9 @@
             @click="toggleSelect('Green')"
           >
             <!-- MOBILE -->
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/green.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#03C03C]"
+            ></div>
             <span v-show="!selectedColors.includes('Green')">Green</span>
             <div v-show="selectedColors.includes('Green')">
               <span
@@ -209,10 +205,9 @@
             :class="{ selected: selectedColors.includes('Blue') }"
             @click="toggleSelect('Blue')"
           >
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/blue.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#007FFF]"
+            ></div>
             <!-- MOBILE -->
             <span v-show="!selectedColors.includes('Blue')">Blue</span>
             <div v-show="selectedColors.includes('Blue')">
@@ -230,10 +225,9 @@
             :class="{ selected: selectedColors.includes('White') }"
             @click="toggleSelect('White')"
           >
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/polarBear.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#fff]"
+            ></div>
             <!-- MOBILE -->
             <span v-show="!selectedColors.includes('White')">White</span>
             <div v-show="selectedColors.includes('White')">
@@ -249,10 +243,9 @@
             @click="toggleSelect('Black')"
           >
             <!-- MOBILE -->
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/black.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#000]"
+            ></div>
             <span v-show="!selectedColors.includes('Black')">Black</span>
             <div v-show="selectedColors.includes('Black')">
               <span
@@ -267,10 +260,9 @@
             @click="toggleSelect('Rose')"
           >
             <!-- MOBILE -->
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/rose.webp"
-            />
+            <div
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#FF00FF]"
+            ></div>
             <span v-show="!selectedColors.includes('Rose')">Rose</span>
             <div v-show="selectedColors.includes('Rose')">
               <span
