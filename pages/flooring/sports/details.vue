@@ -108,32 +108,36 @@ onMounted(() => {});
       <SportsColorDetails />
       <SportsBudgetDetails />
       <a href="/flooring/sports/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.flooring === 'sports' &&
-            userStore.preference.spec_1 !== '' &&
-            userStore.preference.spec_2 !== '' &&
-            userStore.preference.spec_3 !== '' &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.budget !== ''
-          "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-900 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
+        <transition
+          @beforeEnter="bringOpacity('details_gym_submit_btn_mob', 'translate')"
         >
-          <!-- MOBILE -->
-          BROWSE CATALOG<svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
+          <button
+            @click="setUserPreferenceCookie"
+            v-show="
+              userStore.preference.flooring === 'sports' &&
+              userStore.preference.spec_1 !== '' &&
+              userStore.preference.spec_2 !== '' &&
+              userStore.preference.spec_3 !== '' &&
+              userStore.preference.color.length > 0 &&
+              userStore.preference.budget !== ''
+            "
+            class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-900 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
           >
-            <path
-              fill="currentColor"
-              d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
-            />
-          </svg>
-          <!-- MOBILE -->
-        </button>
+            <!-- MOBILE -->
+            BROWSE CATALOG<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
+              />
+            </svg>
+            <!-- MOBILE -->
+          </button>
+        </transition>
       </a>
     </div>
     <!-- MOBILE -->

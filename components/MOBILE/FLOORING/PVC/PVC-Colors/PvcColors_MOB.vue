@@ -137,10 +137,15 @@
             @click="toggleSelect('Beige')"
           >
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-beige.webp"
             />
             <span v-show="!selectedColors.includes('Beige')">Beige</span>
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#F3E5AB]"
+            ></div>
             <!-- MOBILE -->
             <div v-show="selectedColors.includes('Beige')">
               <span
@@ -156,9 +161,14 @@
           >
             <!-- MOBILE -->
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-brown.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#993300]"
+            ></div>
             <span v-show="!selectedColors.includes('Brown')">Brown</span>
             <div v-show="selectedColors.includes('Brown')">
               <span
@@ -176,9 +186,14 @@
             @click="toggleSelect('Grey')"
           >
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-grey.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#BEBFC5]"
+            ></div>
             <span v-show="!selectedColors.includes('Grey')">Grey</span>
             <div v-show="selectedColors.includes('Grey')">
               <!-- MOBILE -->
@@ -195,9 +210,14 @@
           >
             <!-- MOBILE -->
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-green.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#00FF00]"
+            ></div>
             <span v-show="!selectedColors.includes('Green')">Green</span>
             <div v-show="selectedColors.includes('Green')">
               <span
@@ -213,9 +233,14 @@
             @click="toggleSelect('Blue')"
           >
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-blue.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#007FFF]"
+            ></div>
             <!-- MOBILE -->
             <span v-show="!selectedColors.includes('Blue')">Blue</span>
             <div v-show="selectedColors.includes('Blue')">
@@ -234,9 +259,14 @@
             @click="toggleSelect('White')"
           >
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-white.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#ffff]"
+            ></div>
             <!-- MOBILE -->
             <span v-show="!selectedColors.includes('White')">White</span>
             <div v-show="selectedColors.includes('White')">
@@ -253,9 +283,14 @@
           >
             <!-- MOBILE -->
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-black.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-black"
+            ></div>
             <span v-show="!selectedColors.includes('Black')">Black</span>
             <div v-show="selectedColors.includes('Black')">
               <span
@@ -271,9 +306,14 @@
           >
             <!-- MOBILE -->
             <NuxtImg
+              v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-gold.webp"
             />
+            <div
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#FFD700]"
+            ></div>
             <span v-show="!selectedColors.includes('Gold')">Gold</span>
             <div v-show="selectedColors.includes('Gold')">
               <span
