@@ -20,8 +20,8 @@
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="HeroItem_Text opacity-0 border-b-[1px] z-[99] text-[#e1e9e5] text-viewAllMOB font-[400]"
-              >View All</span
+              class="HeroItem_Text opacity-0 border-b-[1px] z-[99] text-[#e1e9e5] text-viewAllMOB font-[500]"
+              >view all</span
             >
           </div>
           <div
