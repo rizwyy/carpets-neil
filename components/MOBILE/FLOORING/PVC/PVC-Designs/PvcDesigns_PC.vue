@@ -184,17 +184,17 @@ import useUserStore from "~/stores/user";
 const selectedmaterial = ref("");
 function clearmaterialSelections() {
   selectedmaterial.value = "";
-  userStore.preference.material = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (material) => {
   if (selectedmaterial.value === material) {
     selectedmaterial.value = "";
-    userStore.preference.material = "";
+    userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
     selectedmaterial.value = material;
-    userStore.preference.material = toRaw(selectedmaterial.value);
+    userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }
 };
 </script>
