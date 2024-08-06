@@ -3,7 +3,7 @@
     class="min-[1590px]:flex min-[1590px]:justify-center min-[1590px]:h-max min-[1590px]:w-screen"
   >
     <section
-      class="max-[990px]:hidden relative h-max min-[1590px]:w-[80%] w-full overflow-x-hidden py-[8h] font-outfit"
+      class="max-[990px]:hidden relative h-max w-full min-[1590px]:w-[80%] w-full overflow-x-hidden py-[8h] font-outfit"
     >
       <!-- 2 * 3 LAYOUT -->
       <section class="h-max w-full flex flex-col gap-[6.2vh] px-[6vw]">
@@ -37,7 +37,6 @@
 import CategoryCardHeroPC from "./CategoryCard-HeroPC.vue";
 import FaqPC from "./FaqPC.vue";
 import FooterPC from "./FooterPC.vue";
-import SearchBarPC from "../SearchBar/SearchBarPC.vue";
 </script>
 
 <style lang="scss" scoped></style>

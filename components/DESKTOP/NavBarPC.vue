@@ -1,6 +1,6 @@
 <template>
   <section
-    class="max-[990px]:hidden h-max max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-[#f1f1f1] font-outfit"
+    class="max-[990px]:hidden h-max w-full max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-[#f1f1f1] font-outfit"
   >
     <div class="h-full w-[35%] flex items-center justify-start">
       <button @click="openMenu">

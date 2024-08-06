@@ -9,6 +9,16 @@ export function scrollToBottom() {
     });
   }, 200);
 }
+
+export function scrollToTop() {
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0, // Scroll to the top
+      behavior: "smooth",
+    });
+  }, 200);
+}
+
 export function handleImageLoad(el, el2) {
   const tl = gsap.timeline();
 
@@ -148,5 +158,13 @@ export function handleTempAnimation(el) {
     opacity: 0,
     duration: 0.4,
     y: 50,
+  });
+}
+
+export function handleBringOpacityForCustomColor(el) {
+  gsap.to(`.${el}`, {
+    opacity: 1,
+    duration: 2.2,
+    ease: "bounce.inOut",
   });
 }

@@ -336,6 +336,8 @@ const userStore = useUserStore();
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
+const customColorArray = ref([]);
+
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
@@ -375,7 +377,6 @@ const toggleSelect = (color, added) => {
   customColor.value = "";
 };
 
-const customColorArray = ref([]);
 function getColorHex(color) {
   const formattedColor = color.toLowerCase().replace(/\s+/g, "");
   return carpetColors[formattedColor] || "#000000";

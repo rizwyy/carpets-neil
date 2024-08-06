@@ -3,7 +3,7 @@
     class="min-[1590px]:flex min-[1590px]:justify-center min-[1590px]:h-max min-[1590px]:w-screen"
   >
     <div
-      class="min-[1590px]:w-[80vw] h-max max-w-screen flex justify-center overflow-x-hidden"
+      class="min-[1590px]:w-[80vw] h-max w-full flex justify-center overflow-x-hidden"
     >
       <div
         class="max-[990px]:hidden h-max w-[80vw] min-[1590px]:w-[80%] rounded-md my-[6vh] shadow-xl bg-gradient-to-tr from-[#bde0fe] backdrop-blur-[8px] via-[#a2d2ff] to-[#7dd3fc] from-[1%] flex flex-col justify-center items-center z-[99] pb-[2vh] gap-[.2vh] pt-[3.2vh]"
