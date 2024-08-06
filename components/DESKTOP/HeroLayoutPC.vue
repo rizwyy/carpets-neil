@@ -14,7 +14,7 @@
           <CategoryCardHeroPC
             name="Flooring"
             desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            src="10001.jpg"
+            src="/flooring1.webp"
             :isAvailable="true"
             link="/flooring"
           />
