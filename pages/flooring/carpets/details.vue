@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 <template>
   <!-- MOBILE -->
-  <section v-if="isMobile" class="min-[990px]:hidden w-max h-max">
+  <section v-if="isMobile" class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -104,7 +104,7 @@ onMounted(() => {
   <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- DESKTOP -->
-  <section v-else class="max-[990px]:hidden max-w-screen h-max">
+  <section v-else class="max-[990px]:hidden max-w-screen h-max select-none">
     <NavBarPC />
     <div
       class="h-max max-w-[100vw] relative overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"

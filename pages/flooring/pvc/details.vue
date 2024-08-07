@@ -5,14 +5,7 @@ import PvcFinishDetails from "../../../components/MOBILE/FLOORING/PVC/PvcFinishD
 import PvcColorDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcColorDetails.vue";
 import PvcDesignDetails from "../../../components/MOBILE/FLOORING/PVC/PvcDesignDetails.vue";
 import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetDetails.vue";
-// import CustomCarpetBTN from "./../../../components/MOBILE/CustomCarpetBTN.vue";
 
-//  <WoodenCategoryDetails />
-//   <CustomCarpetBTN />
-//   <WoodenTypeDetails />
-//   <ColorDetails />
-//   <WoodenDesignDetails />
-//   <WoodenBudgetDetails />
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -20,7 +13,9 @@ const route = useRoute();
 // COOKIES
 import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import CustomBTN from "~/components/MOBILE/CustomBTN.vue";
+import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -38,7 +33,7 @@ onMounted(() => {
 </script>
 <template>
   <!-- DESKTOP -->
-  <section class="max-[990px]:hidden max-w-screen h-max">
+  <section class="max-[990px]:hidden max-w-screen h-max select-none">
     <NavBarPC />
     <div
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
@@ -59,6 +54,8 @@ onMounted(() => {
           Specify Your Needs
         </span>
       </div>
+      <ScrollToTopBTNPC />
+
       <!-- DESKTOP -->
       <PvcCategoryDetails />
       <CustomBTN heading="Customized Vinyl's" link="/flooring/customize" />
@@ -96,7 +93,7 @@ onMounted(() => {
   <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
-  <section class="min-[990px]:hidden w-max h-max">
+  <section class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"

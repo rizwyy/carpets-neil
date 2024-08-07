@@ -71,7 +71,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="max-[990px]:hidden h-max w-max">
+  <section class="max-[990px]:hidden h-max max-w-screen overflow-x-hidden">
     <NavBarPC />
     <div class="h-max max-w-screen overflow-x-hidden font-outfit">
       <!-- <div class="h-max px-[2vw] text-[6vh] w-screen py-[6vh] px-[6vw]">

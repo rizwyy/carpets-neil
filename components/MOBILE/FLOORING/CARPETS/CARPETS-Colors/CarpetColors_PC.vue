@@ -50,6 +50,9 @@
         >
           <div
             v-show="isMultiColoredOpted"
+            @keyup.esc="
+              isMultiColoredOpted ? (isMultiColoredOpted = false) : ''
+            "
             class="h-full w-full overflow-hidden bg-black py-[2vh] bg-opacity-[.85] backdrop-blur-[18px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
           >
             <div
@@ -75,6 +78,7 @@
                 >Enter Your Colors:</span
               >
               <input
+                @keyup.enter="toggleSelect(customColor, 'addMore')"
                 class="h-[6vh] w-[50%] px-[4vw] bg-inherit outline-none focus:border-[#fff] rounded-t-md border-[#fff9] text-[2vw] border-b-[2px] text-[#fff] py-[2vh]"
                 type="text"
                 v-model="customColor"

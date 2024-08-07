@@ -1,7 +1,7 @@
 <template>
   <button
     v-show="userStore.preference.spec_1 !== ''"
-    @click="scrollToTop"
+    @click="gsapScrollTo"
     class="fixed flex items-center justify-center bottom-[1.8vh] right-[1vw] px-[1.4vw] py-[2.4vh] hover:scale-[1.1] transition-all duration-[300ms] backdrop-blur-[12px] bg-[#BEBFC5] rounded-full z-[999] shadow-xl"
   >
     <svg

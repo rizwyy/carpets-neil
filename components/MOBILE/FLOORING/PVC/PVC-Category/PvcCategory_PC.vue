@@ -120,7 +120,7 @@ const toggleSelect = (category) => {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    scrollToBottom();
+    gsapScrollDown(600);
     selectedCategory.value = category;
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.flooring = "PVC";

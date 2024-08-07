@@ -194,8 +194,6 @@ const toggleSelect = (category) => {
     userStore.preference.flooring = "Carpets";
   }
 };
-
-onMounted(() => {});
 </script>
 
 <style scoped>

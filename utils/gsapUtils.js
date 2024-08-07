@@ -1,5 +1,6 @@
 import gsap from "gsap";
-
+import { ScrollToPlugin } from "gsap/all";
+gsap.registerPlugin(ScrollToPlugin);
 export function scrollToBottom() {
   setTimeout(() => {
     const offset = window.innerHeight * 0.1; // 10% of the viewport height
@@ -167,4 +168,16 @@ export function handleBringOpacityForCustomColor(el) {
     duration: 2.2,
     ease: "bounce.inOut",
   });
+}
+
+export function gsapScrollTo() {
+  gsap.to(window, { duration: 0.8, scrollTo: 300, ease: "slide.in" });
+}
+export function gsapScrollDown(dist) {
+  // Calculate the new scroll position
+  const currentScroll = window.scrollY || window.pageYOffset;
+  const newScroll = currentScroll + dist;
+
+  // Animate the scroll to the new position
+  gsap.to(window, { duration: 0.8, scrollTo: newScroll, ease: "power2.inOut" });
 }
