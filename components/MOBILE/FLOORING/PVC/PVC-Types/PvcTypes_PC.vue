@@ -197,7 +197,8 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    gsapScrollDown(600);
+    scrollToNextElement(240, 1700);
+
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }

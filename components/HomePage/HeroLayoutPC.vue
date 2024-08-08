@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-[990px]:hidden h-max max-w-[100vw] flex flex-col gap-[2vh] overflow-x-hidden min-[1590px]:max-w-[99.2vw] relative"
+    class="max-[990px]:hidden h-max max-w-[100vw] relative flex flex-col gap-[2vh] overflow-x-hidden min-[1590px]:max-w-[99.2vw]"
   >
     <NavBarPC />
     <HeroBannerPC />

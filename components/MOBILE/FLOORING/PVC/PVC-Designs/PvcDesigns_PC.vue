@@ -17,7 +17,8 @@ const toggleSelect = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    gsapScrollDown(900);
+    scrollToBottom();
+
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
   }

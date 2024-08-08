@@ -500,7 +500,8 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    gsapScrollDown(500);
+    scrollToNextElement(240, 3400);
+
     return;
   }
   // Handle "CustomColor" case
@@ -514,7 +515,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      gsapScrollDown(800);
+      scrollToNextElement(240, 3400);
     }
     selectedColors.value.push(color);
   }

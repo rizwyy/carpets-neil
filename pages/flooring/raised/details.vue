@@ -5,6 +5,8 @@ import RaisedPanelDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedPanels
 import RaisedColorDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedColorDetails.vue";
 import RaisedBudgetDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedBudgetDetails.vue";
 
+import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue";
+
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -105,6 +107,7 @@ onMounted(() => {});
       <RaisedAreaDetails />
       <RaisedApplicationDetails />
       <RaisedPanelDetails />
+      <RaisedFinishesDetails />
       <RaisedColorDetails />
       <RaisedBudgetDetails />
       <a href="/flooring/raised/catalog">
