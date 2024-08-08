@@ -41,7 +41,7 @@
           <!-- Solid Wood Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
               { selected: selectedType.includes('Solid Wood Floor') },
             ]"
             @click="toggleSelect('Solid Wood Floor')"
@@ -75,7 +75,7 @@
           <!-- Engineered Wood Floor  -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
               { selected: selectedType.includes('Engineered Wood Floor') },
             ]"
             @click="toggleSelect('Engineered Wood Floor')"
@@ -110,7 +110,7 @@
           <!-- Bamboo -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] rounded-md border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
               { selected: selectedType.includes('Bamboo Wood Floor') },
             ]"
             @click="toggleSelect('Bamboo Wood Floor')"
@@ -144,7 +144,7 @@
           <!-- Customized -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
               { selected: selectedType.includes('Cork Floor') },
             ]"
             @click="toggleSelect('Cork Floor')"
@@ -184,7 +184,7 @@
           <!-- Laminated Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
               { selected: selectedType.includes('Laminated Floor') },
             ]"
             @click="toggleSelect('Laminated Floor')"
@@ -218,7 +218,7 @@
           <!-- SPC Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
               { selected: selectedType.includes('SPC Floor') },
             ]"
             @click="toggleSelect('SPC Floor')"
@@ -254,7 +254,7 @@
           <!-- WPC Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: selectedType.includes('WPC Floor') },
             ]"
             @click="toggleSelect('WPC Floor')"
@@ -287,7 +287,7 @@
           <!-- Hard Laminated Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: selectedType.includes('Hard Laminated Floor') },
             ]"
             @click="toggleSelect('Hard Laminated Floor')"
@@ -354,7 +354,7 @@ const toggleSelect = (type) => {
 
 <style scoped>
 .selected {
-  border-radius: 0px; /* Adjust this value as needed */
-  border: 2px solid #333; /* Adjust border color as needed */
+  border-radius: 6px; /* Adjust this value as needed */
+  border: 3.2px solid #333; /* Adjust border color as needed */
 }
 </style>

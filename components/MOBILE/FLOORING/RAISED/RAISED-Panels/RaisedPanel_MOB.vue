@@ -181,8 +181,11 @@ function clearSurfaceFinish() {
 
 const toggleSelect = (surface) => {
   userStore.preference.color = [];
-  if (surface === "Bare" && !userStore.preference.color.includes("Grey")) {
+  if (surface === "Bare") {
     userStore.preference.color.push("BarePanel");
+  }
+  if (surface === "Perforated") {
+    userStore.preference.color.push("PerforatedPanel");
   }
   if (selectedThickness.value === surface) {
     selectedThickness.value = "";

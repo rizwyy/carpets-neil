@@ -7,7 +7,6 @@
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
         userStore.preference.spec_3 !== '' &&
-        userStore.preference.spec_4 !== '' &&
         userStore.preference.color.length > 0
       "
       class="max-[990px]:hidden h-full w-full text-center py-[4vh] flex flex-col gap-[8.4vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"

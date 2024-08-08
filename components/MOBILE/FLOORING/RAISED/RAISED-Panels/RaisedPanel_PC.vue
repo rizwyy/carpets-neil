@@ -168,7 +168,6 @@
 
 <script setup>
 // PINIA
-
 const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
@@ -176,17 +175,21 @@ import useUserStore from "~/stores/user";
 const selectedThickness = ref("");
 function clearSurfaceFinish() {
   selectedThickness.value = "";
-  userStore.preference.spec_4 = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (surface) => {
+  userStore.preference.color = [];
+  if (surface === "Bare" && !userStore.preference.color.includes("Grey")) {
+    userStore.preference.color.push("BarePanel");
+  }
   if (selectedThickness.value === surface) {
     selectedThickness.value = "";
-    userStore.preference.spec_4 = "";
+    userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
     selectedThickness.value = surface;
-    userStore.preference.spec_4 = toRaw(selectedThickness.value);
+    userStore.preference.spec_3 = toRaw(selectedThickness.value);
   }
 };
 </script>

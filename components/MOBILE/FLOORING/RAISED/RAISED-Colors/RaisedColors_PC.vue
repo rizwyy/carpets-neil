@@ -6,7 +6,9 @@
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
         userStore.preference.spec_3 !== '' &&
-        userStore.preference.spec_4 !== ''
+        userStore.preference.spec_3 !== 'Bare' &&
+        (userStore.preference.spec_4 !== '' ||
+          userStore.preference.spec_3 === 'Perforated')
       "
       class="container h-max w-full shadow-xl py-[4vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
     >
@@ -16,7 +18,7 @@
         Choose Your Color
         <button
           @click="clearColorSelections"
-          v-if="selectedColors.length"
+          v-show="userStore.preference.color.length > 0"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <!-- DESKTOP -->
@@ -36,160 +38,178 @@
       </div>
 
       <div
-        v-if="userStore.preference.flooring === 'raised'"
+        v-show="userStore.preference.flooring === 'raised'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('MultiColored') }"
-            @click="toggleSelect('MultiColored')"
+            :class="{
+              selected: userStore.preference.color.includes('Custom Color'),
+            }"
+            @click="toggleSelect('Custom Color')"
           >
             <span
               class="text-[2.8vh]"
-              v-if="!selectedColors.includes('MultiColored')"
-              >Multi Colored</span
+              v-show="!userStore.preference.color.includes('Custom Color')"
+              >Custom Color</span
             >
-            <template v-if="selectedColors.includes('MultiColored')">
+            <div v-show="userStore.preference.color.includes('Custom Color')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
 
           <!-- DESKTOP -->
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-[#333] bg-[#F5F5DC] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Beige') }"
+            :class="{ selected: userStore.preference.color.includes('Beige') }"
             @click="toggleSelect('Beige')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Beige')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Beige')"
               >Beige</span
             >
-            <template v-if="selectedColors.includes('Beige')">
+            <div v-show="userStore.preference.color.includes('Beige')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
           <!-- DESKTOP -->
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-[brown] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Brown') }"
+            :class="{ selected: userStore.preference.color.includes('Brown') }"
             @click="toggleSelect('Brown')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Brown')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Brown')"
               >Brown</span
             >
-            <template v-if="selectedColors.includes('Brown')">
+            <div v-show="userStore.preference.color.includes('Brown')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
         </div>
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-gray-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Grey') }"
+            :class="{ selected: userStore.preference.color.includes('Grey') }"
             @click="toggleSelect('Grey')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Grey')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Grey')"
               >Grey</span
             >
             <!-- DESKTOP -->
-            <template v-if="selectedColors.includes('Grey')">
+            <div v-show="userStore.preference.color.includes('Grey')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Green') }"
+            :class="{ selected: userStore.preference.color.includes('Green') }"
             @click="toggleSelect('Green')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Green')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Green')"
               >Green</span
             >
-            <template v-if="selectedColors.includes('Green')">
+            <div v-show="userStore.preference.color.includes('Green')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-blue-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Blue') }"
+            :class="{ selected: userStore.preference.color.includes('Blue') }"
             @click="toggleSelect('Blue')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Blue')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Blue')"
               >Blue</span
             >
-            <template v-if="selectedColors.includes('Blue')">
+            <div v-show="userStore.preference.color.includes('Blue')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
         </div>
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-[#444] bg-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('White') }"
+            :class="{ selected: userStore.preference.color.includes('White') }"
             @click="toggleSelect('White')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('White')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('White')"
               >White</span
             >
-            <template v-if="selectedColors.includes('White')">
+            <div v-show="userStore.preference.color.includes('White')">
               <!-- DESKTOP -->
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-black rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Black') }"
+            :class="{ selected: userStore.preference.color.includes('Black') }"
             @click="toggleSelect('Black')"
           >
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Black')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Black')"
               >Black</span
             >
-            <template v-if="selectedColors.includes('Black')">
+            <div v-show="userStore.preference.color.includes('Black')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: selectedColors.includes('Pink') }"
+            :class="{ selected: userStore.preference.color.includes('Pink') }"
             @click="toggleSelect('Pink')"
           >
             <!-- DESKTOP -->
-            <span class="text-[2.8vh]" v-if="!selectedColors.includes('Pink')"
+            <span
+              class="text-[2.8vh]"
+              v-show="!userStore.preference.color.includes('Pink')"
               >Pink</span
             >
-            <template v-if="selectedColors.includes('Pink')">
+            <div v-show="userStore.preference.color.includes('Pink')">
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                 >Selected</span
               >
               <!-- DESKTOP -->
-            </template>
+            </div>
           </div>
         </div>
       </div>
@@ -204,31 +224,59 @@ import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
 
+const customColor = ref("");
+const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
 }
-
-const toggleSelect = (color) => {
-  if (color === "CustomColor") {
-    isMultiColoredOpted.value = true;
-    selectedColors.value.push("CustomColor");
+const removeCustomColor = () => {
+  return userStore.preference.color.filter((color) => color !== "CustomColor");
+};
+const toggleSelect = (color, added) => {
+  if (color === "done") {
+    isMultiColoredOpted.value = false;
+    scrollToBottom();
     return;
   }
-  if (selectedColors.value.includes(color)) {
-    selectedColors.value = selectedColors.value.filter((t) => t !== color);
-    userStore.preference.color = toRaw(selectedColors.value);
-    isMultiColoredOpted.value = false;
-  } else {
-    scrollToBottom();
-    isMultiColoredOpted.value = false;
-    selectedColors.value.push(color);
-    userStore.preference.color = toRaw(selectedColors.value);
-    customColor.value = "";
+  // Handle "CustomColor" case
+  if (color === "CustomColor") {
+    isMultiColoredOpted.value = true;
+    return;
   }
+  // Toggle color selection
+  const isSelected = selectedColors.value.includes(color);
+  if (isSelected) {
+    selectedColors.value = selectedColors.value.filter((t) => t !== color);
+  } else {
+    if (!added) {
+      scrollToBottom();
+    }
+    selectedColors.value.push(color);
+  }
+
+  userStore.preference.color = toRaw(selectedColors.value);
+  if (added !== "addMore") {
+    isMultiColoredOpted.value = false;
+  }
+  removeCustomColor();
+  getHexCodes();
+  customColor.value = "";
 };
+const customColorArray = ref([]);
+function getColorHex(color) {
+  const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+  return carpetColors[formattedColor] || "#000000";
+}
+function getHexCodes() {
+  userStore.preference.color.forEach((color) => {
+    const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+    const hexCode = carpetColors[formattedColor] || "#000000";
+    customColorArray.value.push(hexCode);
+  });
+}
 </script>
 
 <style scoped>

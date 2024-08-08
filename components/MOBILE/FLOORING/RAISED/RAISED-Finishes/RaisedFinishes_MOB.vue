@@ -403,10 +403,8 @@ import { scrollToBottom } from "#imports";
 // PINIA
 const userStore = useUserStore();
 // COOKIES
-import { useCookie } from "#app";
 import useUserStore from "~/stores/user";
 
-const userPreference = useCookie("userPreference");
 const spec_4 = ref("");
 
 function clearAllSelections_spec1() {
