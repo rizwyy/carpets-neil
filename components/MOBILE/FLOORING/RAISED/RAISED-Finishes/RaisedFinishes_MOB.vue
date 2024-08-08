@@ -18,7 +18,7 @@
         <!-- MOBILE -->
         <span
           class="text-left text-balance raised_Finishes_Details_Mob-HEADING opacity-0 translate-x-[40%]"
-          >Choose your Design</span
+          >Choose your Finish</span
         >
         <button
           @click="clearmaterialSelections"
