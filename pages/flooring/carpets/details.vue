@@ -158,9 +158,9 @@ onMounted(() => {
 
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 5s ease-in-out infinite;
-  -moz-animation: animatedgradient 5s ease-in-out infinite;
-  animation: animatedgradient 5s ease-in-out infinite normal;
+  -webkit-animation: animatedgradient 4s ease-in-out infinite;
+  -moz-animation: animatedgradient 4s ease-in-out infinite;
+  animation: animatedgradient 4s ease-in-out infinite normal;
 }
 
 @keyframes animatedgradient {
