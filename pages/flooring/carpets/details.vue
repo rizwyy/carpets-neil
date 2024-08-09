@@ -77,7 +77,7 @@ onMounted(() => {
               userStore.preference.spec_3 !== '' &&
               userStore.preference.budget !== ''
             "
-            class="details_carpets_submit_btn mb-[8vh] mt-[4vh] w-[90vw] rounded-[1.2vh] tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-gradient-to-br from-[#111] to-[#666] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
+            class="details_carpets_submit_btn mb-[8vh] mt-[4vh] w-[90vw] rounded-[1.2vh] tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-gradient-to-br from-[#111] to-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
           >
             <!-- MOBILE -->
             <span
@@ -158,9 +158,9 @@ onMounted(() => {
 
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 4s ease-out infinite;
-  -moz-animation: animatedgradient 4s ease-out infinite;
-  animation: animatedgradient 4s ease-out infinite normal;
+  -webkit-animation: animatedgradient 5s ease-in-out infinite;
+  -moz-animation: animatedgradient 5s ease-in-out infinite;
+  animation: animatedgradient 5s ease-in-out infinite normal;
 }
 
 @keyframes animatedgradient {
