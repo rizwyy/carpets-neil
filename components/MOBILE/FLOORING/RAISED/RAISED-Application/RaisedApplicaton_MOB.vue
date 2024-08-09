@@ -658,7 +658,6 @@ const userStore = useUserStore();
 
 const spec_2 = ref("");
 
-const isCustomAreaOpted = ref(false);
 const customApplication = ref("");
 
 function clearAllSelections_spec2() {

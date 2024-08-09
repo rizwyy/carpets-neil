@@ -6,9 +6,9 @@
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
         userStore.preference.spec_3 !== '' &&
-        userStore.preference.spec_3 !== 'Bare' &&
-        (userStore.preference.spec_4 !== '' ||
-          userStore.preference.spec_3 === 'Perforated')
+        (userStore.preference.spec_3 !== 'Bare' ||
+          userStore.preference.spec_3 === 'PerforatedPanel') &&
+        userStore.preference.spec_4 !== ''
       "
       class="container h-max w-full shadow-xl py-[4vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
     >
@@ -18,7 +18,7 @@
         Choose Your Color
         <button
           @click="clearColorSelections"
-          v-show="userStore.preference.color.length > 0"
+          v-show="isMultiColoredOpted || userStore.preference.color.length"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <!-- DESKTOP -->
@@ -41,6 +41,104 @@
         v-show="userStore.preference.flooring === 'raised'"
         class="h-max w-full flex flex-col gap-[2vh]"
       >
+        <div
+          v-show="isMultiColoredOpted"
+          @keyup.esc="isMultiColoredOpted ? (isMultiColoredOpted = false) : ''"
+          class="h-full w-full overflow-hidden bg-black py-[2vh] bg-opacity-[.85] backdrop-blur-[18px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
+        >
+          <div
+            class="h-max w-full flex-[2.2] flex justify-center items-center gap-[2vw]"
+          >
+            <transition
+              @beforeEnter="
+                handleBringOpacityForCustomColor('customColorText_PC')
+              "
+            >
+              <span
+                v-show="isMultiColoredOpted"
+                class="customColorText_PC opacity-0 text-[5.8vw] bg-gradient-to-r from-[#68e3f9] via-[#f55a9b] to-[#4f4ed7] bg-clip-text text-transparent font-shadows"
+                >Custom Colors</span
+              >
+            </transition>
+          </div>
+          <div
+            class="h-max w-full flex-[1.2] flex gap-[2.8vw] justify-center items-center"
+          >
+            <span class="text-[#f1f1f1] text-details_Box_Heading_PC font-[400]"
+              >Enter Your Colors:</span
+            >
+            <input
+              @keyup.enter="toggleSelect(customColor, 'addMore')"
+              class="h-[6vh] w-[50%] px-[4vw] bg-inherit outline-none focus:border-[#fff] rounded-t-md border-[#fff9] text-[2vw] border-b-[2px] text-[#fff] py-[2vh]"
+              type="text"
+              v-model="customColor"
+              placeholder="Enter your Color"
+            />
+            <button @click="clearCustomColorValue">
+              <svg
+                class="first:hover:fill-[#f1f1f1]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#fff9"
+                  d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m2.59 6L12 10.59L9.41 8L8 9.41L10.59 12L8 14.59L9.41 16L12 13.41L14.59 16L16 14.59L13.41 12L16 9.41z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="h-max w-full flex-[2.8] gap-[6vh] flex flex-col items-center justify-start"
+          >
+            <div class="h-max w-max"></div>
+            <div class="h-max w-max flex gap-[4vw]">
+              <span
+                @click="clearColorSelections"
+                class="flex items-center justify-center cursor-pointer text-[1.4vw] gap-[.6vw] text-white hover:border-[#f1f1f1] border-[#fff9] border-md border-[2px] px-[3vw] rounded-md py-[1.8vh]"
+                >Cancel
+              </span>
+              <transition
+                @beforeEnter="bringOpacity('raised_details_colors_mob_add_BTN')"
+                @beforeLeave="
+                  removeOpacity('raised_details_colors_mob_add_BTN')
+                "
+              >
+                <button
+                  v-show="customColor.length > 2"
+                  @click="toggleSelect(customColor, 'addMore')"
+                  class="raised_details_colors_mob_add_BTN text-[1.4vw] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[2vh]"
+                >
+                  Add More
+                </button>
+              </transition>
+              <transition
+                @beforeEnter="
+                  bringOpacity('carpet_details_colors_mob_done1_BTN')
+                "
+              >
+                <button
+                  v-show="
+                    !userStore.preference.color.length > 0 &&
+                    customColor.length > 2
+                  "
+                  @click="toggleSelect('done')"
+                  class="carpet_details_colors_mob_done1_BTN text-[1.4vw] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[1vh]"
+                >
+                  Done
+                </button>
+              </transition>
+              <button
+                v-show="userStore.preference.color.length > 0"
+                @click="toggleSelect('done')"
+                class="carpet_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[1.8vh]"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="color-selection flex justify-between gap-[4vw] z-[9]">
           <div
             class="color_box_PC h-[24vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"

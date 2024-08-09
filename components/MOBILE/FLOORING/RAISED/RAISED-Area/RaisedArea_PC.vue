@@ -10,7 +10,7 @@
         <span class="text-left text-balance"> Choose Your Area</span>
         <button
           @click="clearAllSelections"
-          v-show="spec_1.length"
+          v-show="userStore.preference.spec_1 !== ''"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2vh]">Clear All</span
@@ -32,12 +32,12 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_1.includes('Data Center') },
+            { selected: userStore.preference.spec_1.includes('Data Center') },
           ]"
           @click="toggleSelect('Data Center')"
         >
           <div
-            v-show="spec_1.includes('Data Center')"
+            v-show="userStore.preference.spec_1.includes('Data Center')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -54,7 +54,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/fitness.webp"
+            src="/raised/raised-dataCenter.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Data Center</span>
@@ -64,12 +64,12 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_1.includes('Commercial') },
+            { selected: userStore.preference.spec_1.includes('Commercial') },
           ]"
           @click="toggleSelect('Commercial')"
         >
           <div
-            v-show="spec_1.includes('Commercial')"
+            v-show="userStore.preference.spec_1.includes('Commercial')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -86,7 +86,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/groupTraining.webp"
+            src="/raised/raised-commercial.webp"
             alt="Commercial"
           />
           <span class="text-[3.4vh]">Commercial</span>
@@ -97,12 +97,12 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_1.includes('Industrial') },
+            { selected: userStore.preference.spec_1.includes('Industrial') },
           ]"
           @click="toggleSelect('Industrial')"
         >
           <div
-            v-show="spec_1.includes('Industrial')"
+            v-show="userStore.preference.spec_1.includes('Industrial')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -119,7 +119,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/strength.webp"
+            src="/raised/raised-industryFlooring.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Industrial</span>
@@ -129,12 +129,12 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_1.includes('Healthcare') },
+            { selected: userStore.preference.spec_1.includes('Healthcare') },
           ]"
           @click="toggleSelect('Healthcare')"
         >
           <div
-            v-show="spec_1.includes('Healthcare')"
+            v-show="userStore.preference.spec_1.includes('Healthcare')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -151,7 +151,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/martialArts.webp"
+            src="/raised/raised-healthCare.webp"
             alt="Healthcare"
           />
           <span class="text-[3.4vh]">Healthcare</span>
@@ -162,12 +162,12 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_1.includes('Activities') },
+            { selected: userStore.preference.spec_1.includes('Activities') },
           ]"
           @click="toggleSelect('Activities')"
         >
           <div
-            v-show="spec_1.includes('Activities')"
+            v-show="userStore.preference.spec_1.includes('Activities')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -184,7 +184,7 @@
             placeholder
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/raised/strength.webp"
+            src="/raised/raised-swimming.webp"
             alt=""
           />
           <span class="text-[3.4vh]">Activities</span>
@@ -194,12 +194,12 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_1.includes('Others') },
+            { selected: userStore.preference.spec_1.includes('Others') },
           ]"
           @click="toggleSelect('Others')"
         >
           <div
-            v-show="spec_1.includes('Others')"
+            v-show="userStore.preference.spec_1.includes('Others')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
