@@ -77,7 +77,7 @@ onMounted(() => {
               userStore.preference.spec_3 !== '' &&
               userStore.preference.budget !== ''
             "
-            class="details_carpets_submit_btn mb-[8vh] mt-[4vh] w-[90vw] rounded-[1.2vh] tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-gradient-to-br from-[#111] to-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
+            class="details_carpets_submit_btn mb-[8vh] mt-[4vh] w-[90vw] rounded-[1.2vh] tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
           >
             <!-- MOBILE -->
             <span
@@ -138,9 +138,13 @@ onMounted(() => {
             userStore.preference.spec_3 !== '' &&
             userStore.preference.budget !== ''
           "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
+          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
         >
-          BROWSE CATALOG
+          <span
+            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text tracking-[.2vw] text-transparent bg-300% animate-gradient hover:bg-[#E0FFFF] transition-all duration-[500ms] ease-in-out"
+          >
+            BROWSE CATALOG</span
+          >
         </button>
       </a>
       <!-- DESKTOP -->

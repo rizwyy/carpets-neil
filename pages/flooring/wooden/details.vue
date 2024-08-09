@@ -14,6 +14,7 @@ const route = useRoute();
 import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -49,6 +50,7 @@ onMounted(() => {});
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
+      <ScrollToTopBTNPC />
       <WoodenCategoryDetails />
       <CustomBTN heading="Wooden Flooring" link="/flooring/customize" />
       <WoodenTypeDetails />
@@ -69,9 +71,13 @@ onMounted(() => {});
             userStore.preference.spec_4 !== '' &&
             userStore.preference.budget !== ''
           "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-gradient-to-br from-[#444] via-[#000] to-[#999] to-[90%] right-[2vw] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
+          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
         >
-          BROWSE CATALOG
+          <span
+            class="bg-gradient-to-r from-[#fff7] transition-all duration-[500ms] via-[#E0FFFF] ease-in-out to-[#fff5] hover:bg-[#E0FFFF] bg-clip-text tracking-[.2vw] text-transparent bg-300% animate-gradient"
+          >
+            BROWSE CATALOG</span
+          >
         </button>
       </a>
       <!-- DESKTOP -->
@@ -157,5 +163,23 @@ onMounted(() => {});
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 5s ease-in-out infinite;
+  -moz-animation: animatedgradient 5s ease-in-out infinite;
+  animation: animatedgradient 5s ease-in-out infinite normal;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>
