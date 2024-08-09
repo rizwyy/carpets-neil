@@ -3,7 +3,7 @@
     <div
       class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] font-[400] text-[3.2vh]"
     >
-      <span class="flooringLayout_BG opacity-0">Shop by Categories</span>
+      <span class="HeroItem_Text opacity-0">Shop by Categories</span>
     </div>
     <div class="h-max w-screen flex flex-col gap-[1.6vh]">
       <div
