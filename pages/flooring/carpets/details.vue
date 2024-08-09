@@ -77,7 +77,7 @@ onMounted(() => {
               userStore.preference.spec_3 !== '' &&
               userStore.preference.budget !== ''
             "
-            class="details_carpets_submit_btn mb-[8vh] mt-[4vh] w-[90vw] rounded-[1.2vh] tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
+            class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
           >
             <!-- MOBILE -->
             <span
