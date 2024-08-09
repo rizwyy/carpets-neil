@@ -135,7 +135,7 @@ onMounted(() => {});
               userStore.preference.spec_4 !== '' &&
               userStore.preference.budget !== ''
             "
-            class="details_wooden_submit_btn_mob mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-900 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
+            class="details_wooden_submit_btn_mob mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111]right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
           >
             <!-- MOBILE -->
             BROWSE CATALOG<svg

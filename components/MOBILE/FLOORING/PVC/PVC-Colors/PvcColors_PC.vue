@@ -424,9 +424,11 @@
     <transition>
       <div
         v-show="userStore.preference.color.length > 0"
-        class="h-max w-full flex flex-col gap-[1vh] border-t-[2px] items-start bg-[#f1f1f1] py-[4vh] px-[4vw] rounded-b-md bg-opacity-[.5]"
+        class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
       >
-        <span class="text-[2vw]">Selected Colors:</span>
+        <span class="text-detailsHeading_PC text-[2.4vw]"
+          >Selected Colors:</span
+        >
         <div class="w-full grid grid-cols-4 gap-[2vw] pt-[4vh]">
           <span
             v-for="color in removeCustomColor()"
@@ -438,7 +440,7 @@
               class="absolute h-full w-full left-0 top-0 bg-gradient-to-r from-black via-transparent to-transparent opacity-[.6]"
             ></div>
             <span
-              class="inline px-[2vw] rounded-sm py-[.4vh] font-[500] text-[#f1f1f1] text-[1.6vw] text-center z-[9]"
+              class="inline px-[2vw] rounded-sm py-[.4vh] font-[500] text-[#f1f1f1] text-[1.2vw] text-center z-[9]"
             >
               {{ color }}
             </span>
