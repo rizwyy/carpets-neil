@@ -3,12 +3,12 @@
   <transition @beforeEnter="handleDetailsDOMEntry('raised_Color_Details_Mob')">
     <div
       v-show="
-        userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
-        userStore.preference.spec_3 !== '' &&
-        (userStore.preference.spec_3 !== 'Bare' ||
-          userStore.preference.spec_3 === 'PerforatedPanel') &&
-        userStore.preference.spec_4 !== ''
+        userStore.preference.spec_3 === 'HPL' ||
+        userStore.preference.spec_3 === 'PVC'
+          ? userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_4 !== ''
+          : false
       "
       class="min-[990px]:hidden container mx-auto p-[4vh] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
     >

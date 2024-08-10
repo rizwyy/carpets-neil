@@ -54,6 +54,7 @@ onMounted(() => {});
       <RaisedAreaDetails />
       <RaisedApplicationDetails />
       <RaisedPanelDetails />
+      <RaisedFinishesDetails />
       <RaisedColorDetails />
       <RaisedBudgetDetails />
 

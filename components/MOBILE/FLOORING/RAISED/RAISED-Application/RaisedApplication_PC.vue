@@ -1,6 +1,6 @@
 <template>
   <!-- DESKTOP -->
-  <div class="gymActivitesPC h-max w-screen px-[6vw]">
+  <div class="raisedActivitesPC h-max w-screen px-[6vw]">
     <transition
       @beforeEnter="handleDetailsDOMEntry('raised_Application_Details_PC')"
     >

@@ -66,28 +66,24 @@ onMounted(() => {
       <BudgetDetails />
       <!-- <PileDetails /> -->
       <a href="/flooring/carpets/catalog">
-        <transition
-          @beforeEnter="bringOpacity('details_carpets_submit_btn', 'translate')"
+        <button
+          @click="setUserPreferenceCookie"
+          v-show="
+            userStore.preference.spec_2.length > 0 &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.spec_3 !== '' &&
+            userStore.preference.budget !== ''
+          "
+          class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
         >
-          <button
-            @click="setUserPreferenceCookie"
-            v-show="
-              userStore.preference.spec_2.length > 0 &&
-              userStore.preference.color.length > 0 &&
-              userStore.preference.spec_3 !== '' &&
-              userStore.preference.budget !== ''
-            "
-            class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
+          <!-- MOBILE -->
+          <span
+            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
           >
-            <!-- MOBILE -->
-            <span
-              class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
-            >
-              BROWSE CATALOG</span
-            >
-            <!-- MOBILE -->
-          </button>
-        </transition>
+            BROWSE CATALOG</span
+          >
+          <!-- MOBILE -->
+        </button>
       </a>
     </div>
     <!-- MOBILE -->

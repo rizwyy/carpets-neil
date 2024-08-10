@@ -91,7 +91,7 @@ onMounted(() => {});
   <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
-  <section class="min-[990px]:hidden w-max h-max">
+  <section class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -120,38 +120,25 @@ onMounted(() => {});
       <WoodenBudgetDetails />
       <!-- <PileDetails /> -->
       <a href="/flooring/wooden/catalog">
-        <transition
-          @beforeEnter="
-            bringOpacity('details_wooden_submit_btn_mob', 'translate')
+        <button
+          @click="setUserPreferenceCookie"
+          v-show="
+            userStore.preference.spec_1.length > 0 &&
+            userStore.preference.spec_2.length > 0 &&
+            userStore.preference.spec_3.length > 0 &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.spec_4 !== '' &&
+            userStore.preference.budget !== ''
           "
+          class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
         >
-          <button
-            @click="setUserPreferenceCookie"
-            v-show="
-              userStore.preference.spec_1.length > 0 &&
-              userStore.preference.spec_2.length > 0 &&
-              userStore.preference.spec_3.length > 0 &&
-              userStore.preference.color.length > 0 &&
-              userStore.preference.spec_4 !== '' &&
-              userStore.preference.budget !== ''
-            "
-            class="details_wooden_submit_btn_mob mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111]right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
+          <!-- MOBILE -->
+          <span
+            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
           >
-            <!-- MOBILE -->
-            BROWSE CATALOG<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
-              />
-            </svg>
-            <!-- MOBILE -->
-          </button>
-        </transition>
+            BROWSE CATALOG</span
+          >
+        </button>
       </a>
     </div>
     <!-- MOBILE -->
@@ -166,9 +153,9 @@ onMounted(() => {});
 }
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 5s ease-in-out infinite;
-  -moz-animation: animatedgradient 5s ease-in-out infinite;
-  animation: animatedgradient 5s ease-in-out infinite normal;
+  -webkit-animation: animatedgradient 4s ease-in-out infinite;
+  -moz-animation: animatedgradient 4s ease-in-out infinite;
+  animation: animatedgradient 4s ease-in-out infinite normal;
 }
 
 @keyframes animatedgradient {

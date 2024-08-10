@@ -21,7 +21,7 @@
           >Choose your Finish</span
         >
         <button
-          @click="clearmaterialSelections"
+          @click="clearAllSelections"
           v-show="userStore.preference.spec_4 !== ''"
           class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
@@ -407,18 +407,20 @@ import useUserStore from "~/stores/user";
 
 const spec_4 = ref("");
 
-function clearAllSelections_spec1() {
+function clearAllSelections() {
   spec_4.value = "";
   userStore.preference.spec_4 = "";
 }
 
-const toggleSelect = (category) => {
-  if (spec_4.value === category) {
+const toggleSelect = (finish) => {
+  userStore.preference.color = [];
+
+  if (spec_4.value === finish) {
     spec_4.value = "";
     userStore.preference.spec_4 = "";
   } else {
     scrollToBottom();
-    spec_4.value = category;
+    spec_4.value = finish;
     userStore.preference.spec_4 = toRaw(spec_4.value);
   }
 };
