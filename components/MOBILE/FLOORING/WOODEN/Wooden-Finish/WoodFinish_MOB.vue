@@ -42,7 +42,7 @@
         <!-- Matt Finish -->
         <div
           :class="[
-            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_4 === 'Matt Finish' },
           ]"
           @click="toggleSelect('Matt Finish')"
@@ -74,7 +74,7 @@
         <!-- Gloss Finish -->
         <div
           :class="[
-            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_4 === 'Gloss Finish' },
           ]"
           @click="toggleSelect('Gloss Finish')"
@@ -132,7 +132,7 @@ const toggleSelect = (surface) => {
 
 <style scoped>
 .selected {
-  border-radius: 0px; /* Adjust this value as needed */
-  border: 2px solid #333; /* Adjust border color as needed */
+  border-radius: 2px; /* Adjust this value as needed */
+  border: 3px solid #333; /* Adjust border color as needed */
 }
 </style>

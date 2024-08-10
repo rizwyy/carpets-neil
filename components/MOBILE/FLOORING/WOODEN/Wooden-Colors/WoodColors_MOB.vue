@@ -419,6 +419,7 @@ function getHexCodes() {
 
 .selected {
   border: 2px solid #333; /* Example border color */
+  border-radius: 8px;
 }
 
 /* Hide text inside selected color box */

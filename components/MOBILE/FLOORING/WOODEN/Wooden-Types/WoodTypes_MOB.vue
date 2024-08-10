@@ -284,16 +284,16 @@
             <span>WPC Floor</span>
           </div>
           <!-- MOBILE -->
-          <!-- Hard Laminated Floor -->
+          <!-- Hard Laminated -->
           <div
             :class="[
               'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Hard Laminated Floor') },
+              { selected: selectedType.includes('Hard Laminated') },
             ]"
-            @click="toggleSelect('Hard Laminated Floor')"
+            @click="toggleSelect('Hard Laminated')"
           >
             <div
-              v-show="selectedType.includes('Hard Laminated Floor')"
+              v-show="selectedType.includes('Hard Laminated')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -354,7 +354,7 @@ const toggleSelect = (type) => {
 
 <style scoped>
 .selected {
-  border-radius: 6px; /* Adjust this value as needed */
-  border: 3.2px solid #333; /* Adjust border color as needed */
+  border-radius: 2px; /* Adjust this value as needed */
+  border: 3px solid #333; /* Adjust border color as needed */
 }
 </style>
