@@ -13,7 +13,6 @@
     >
       <!-- MOBILE -->
       <div
-        @click="() => console.log(selectedBudget.value)"
         class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
       >
         <span
@@ -22,7 +21,7 @@
         >
         <button
           @click="clearBudgetSelections"
-          v-if="selectedBudget.length"
+          v-show="userStore.preference.budget.length"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -49,12 +48,12 @@
         <div
           :class="[
             'h-[10vh] pvc_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Value' },
+            { selected: userStore.preference.budget === 'Value' },
           ]"
           @click="toggleSelect('Value')"
         >
           <div
-            v-if="selectedBudget === 'Value'"
+            v-show="userStore.preference.budget === 'Value'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -70,7 +69,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[84%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -90,12 +89,12 @@
         <div
           :class="[
             'h-[10vh] pvc_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Essential' },
+            { selected: userStore.preference.budget === 'Essential' },
           ]"
           @click="toggleSelect('Essential')"
         >
           <div
-            v-if="selectedBudget === 'Essential'"
+            v-show="userStore.preference.budget === 'Essential'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -112,7 +111,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[74%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -133,12 +132,12 @@
         <div
           :class="[
             'h-[10vh] pvc_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Premier' },
+            { selected: userStore.preference.budget === 'Premier' },
           ]"
           @click="toggleSelect('Premier')"
         >
           <div
-            v-if="selectedBudget === 'Premier'"
+            v-show="userStore.preference.budget === 'Premier'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -154,7 +153,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[64%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
           <!-- MOBILE -->
 
@@ -176,12 +175,12 @@
         <div
           :class="[
             'h-[10vh] pvc_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Signature' },
+            { selected: userStore.preference.budget === 'Signature' },
           ]"
           @click="toggleSelect('Signature')"
         >
           <div
-            v-if="selectedBudget === 'Signature'"
+            v-show="userStore.preference.budget === 'Signature'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- MOBILE -->
@@ -197,7 +196,7 @@
             </div>
           </div>
           <div
-            class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[54%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -219,12 +218,12 @@
         <div
           :class="[
             'h-[10vh] pvc_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedBudget === 'Elite' },
+            { selected: userStore.preference.budget === 'Elite' },
           ]"
           @click="toggleSelect('Elite')"
         >
           <div
-            v-if="selectedBudget === 'Elite'"
+            v-show="userStore.preference.budget === 'Elite'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -240,7 +239,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[34%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div

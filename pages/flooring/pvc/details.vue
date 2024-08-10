@@ -137,20 +137,14 @@ onMounted(() => {
             userStore.preference.color.length > 0 &&
             userStore.preference.budget !== ''
           "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-slate-900 right-[2vw] z-[999] text-white px-[4vw] py-[4vh] flex items-center gap-[2vw] justify-center"
+          class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
         >
           <!-- MOBILE -->
-          BROWSE CATALOG<svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
+          <span
+            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
           >
-            <path
-              fill="currentColor"
-              d="M12.525 18.025q-.5.325-1.012.038T11 17.175V13H3q-.425 0-.712-.288T2 12t.288-.712T3 11h8V6.825q0-.6.513-.888t1.012.038l8.15 5.175q.475.3.475.85t-.475.85z"
-            />
-          </svg>
+            BROWSE CATALOG</span
+          >
           <!-- MOBILE -->
         </button>
       </a>
