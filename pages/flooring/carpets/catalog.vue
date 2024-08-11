@@ -26,6 +26,7 @@ const currentBatch = ref(1);
 const batch1 = ref([]);
 const batch2 = ref([]);
 const batch3 = ref([]);
+const batch4 = ref([]);
 
 const isAccessRestricted = ref(false);
 const route = useRoute();
@@ -45,6 +46,7 @@ async function fetchCarpetsData() {
     batch1.value = shuffleArray(data.slice(0, 30));
     batch2.value = data.slice(30, 60);
     batch3.value = data.slice(60, 100);
+    batch4.value = data.slice(60, 140);
     userStore.products = data;
     products.value = shuffleArray(data);
     isLoading.value = false; // Set loading state to false
@@ -180,11 +182,24 @@ onMounted(() => {
               :color="item.color"
             />
           </a>
+          <a
+            v-show="currentBatch > 3"
+            v-for="item in batch4"
+            :key="item.id"
+            :href="`product/${item.id}`"
+          >
+            <CatalogItemMOB
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="item.color"
+            />
+          </a>
         </div>
         <div class="h-max max-w-screen flex justify-center py-[10vh]">
           <button
             @click="() => currentBatch++"
-            v-show="currentBatch !== 3"
+            v-show="currentBatch !== 4"
             class="text-[2.4vh] border-b-[1px] border-black"
           >
             VIEW MORE
@@ -272,6 +287,19 @@ onMounted(() => {
           <a
             v-show="currentBatch > 2"
             v-for="item in batch3"
+            :key="item.id"
+            :href="`product/${item.id}`"
+          >
+            <CatalogItemPC
+              :name="item.name"
+              :price="item.price"
+              :currency="item.currency"
+              :color="item.color"
+            />
+          </a>
+          <a
+            v-show="currentBatch > 3"
+            v-for="item in batch4"
             :key="item.id"
             :href="`product/${item.id}`"
           >

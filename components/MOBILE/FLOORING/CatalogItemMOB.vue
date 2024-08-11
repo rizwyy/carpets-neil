@@ -36,7 +36,9 @@ onMounted(() => {
       class="detailsContainer h-max w-full flex flex-col gap-[.4vh] items-start pt-[.8vh] pl-[1vw]"
     >
       <div class="h-max w-full flex items-center justify-between">
-        <span class="inline-block text-[2.4vh] text-[#111]">{{ name }}</span>
+        <span class="inline-block text-[2.4vh] text-[#111]">{{
+          name.toUpperCase()
+        }}</span>
       </div>
       <span
         class="inline-block flex justify-start text-[1.6vh] w-[100%] text-left text-balance text-[#999]"
