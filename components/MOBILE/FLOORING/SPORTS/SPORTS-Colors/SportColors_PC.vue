@@ -1,12 +1,11 @@
 <template>
-  <!-- DESKTOP GYM COLOR DETAILS-->
+  <!-- DESKTOP SPORTS COLOR DETAILS-->
   <div class="max-[990px]:hidden h-max w-screen flex justify-center">
     <div
       v-show="
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
-        userStore.preference.spec_3 !== '' &&
-        userStore.preference.spec_4 !== ''
+        userStore.preference.spec_3 !== ''
       "
       class="container h-max w-full shadow-xl py-[4vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
     >

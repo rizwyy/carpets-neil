@@ -68,7 +68,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[84%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -82,23 +82,7 @@
             <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
           </div>
         </div>
-        <!-- NOT AVAILABLE VALUE -->
-        <!-- MOBILE -->
-        <!-- <div
-        v-else
-        :class="[
-          'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
-          >
-        </div>
-      </div> -->
+
         <!-- MOBILE -->
         <!-- ESSENTIAL -->
         <div
@@ -126,7 +110,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[68%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -183,7 +167,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[56%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
           <!-- MOBILE -->
 
@@ -198,23 +182,7 @@
             <span> BD. 20m<sup>2</sup> to BD. 24.99m<sup>2</sup></span>
           </div>
         </div>
-        <!-- MOBILE -->
-        <!-- NOT AVAILABLE PREMIER -->
-        <!-- <div
-        v-else
-        :class="[
-          'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
-        ]"
-      >
-        <div
-          class="h-full w-full flex items-center justify-center bg-black bg-opacity-[.9] absolute bottom-0 left-0 z-[9] rounded-full"
-        >
-          <span class="text-[2vh] font-[500] text-white"
-            >NOT ELIGIBLE WITH
-            {{ userStore.preference.spec_3.toUpperCase() }}</span
-          >
-        </div>
-      </div> -->
+
         <!-- SIGNATURE -->
         <!-- MOBILE -->
         <div
@@ -240,8 +208,9 @@
               </span>
             </div>
           </div>
+
           <div
-            class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -278,8 +247,9 @@
               </span>
             </div>
           </div>
+
           <div
-            class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[28%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div

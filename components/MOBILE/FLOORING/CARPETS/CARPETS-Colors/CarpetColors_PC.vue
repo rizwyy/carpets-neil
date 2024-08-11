@@ -425,7 +425,9 @@ const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };
 const toggleSelect = (color, added) => {
-  console.log(toRaw(customColor.value));
+  if (color.length < 3) {
+    return;
+  }
   if (color === "done") {
     const customColorValue = customColor.value.trim(); // Trim to remove any leading/trailing whitespace
 
