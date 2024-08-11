@@ -190,7 +190,7 @@ const toggleSelect = (category) => {
     spec_1.value = category;
     userStore.preference.spec_1 = toRaw(spec_1.value);
     userStore.preference.spec_2 = "";
-    userStore.preference.flooring = "gym";
+    userStore.preference.flooring = "sports";
   }
 };
 
