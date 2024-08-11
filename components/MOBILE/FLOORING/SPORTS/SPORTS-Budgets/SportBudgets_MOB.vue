@@ -55,7 +55,7 @@
           >
             <!-- Selected indicator without text -->
             <div
-              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
+              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
             >
               <span
                 class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -66,7 +66,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[84%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -96,7 +96,7 @@
             <!-- Selected indicator without text -->
             <!-- MOBILE -->
             <div
-              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
+              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
             >
               <span
                 class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -107,7 +107,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[68%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -136,7 +136,7 @@
           >
             <!-- Selected indicator without text -->
             <div
-              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
+              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
             >
               <span
                 class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -147,7 +147,7 @@
           </div>
 
           <div
-            class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[54%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
           <!-- MOBILE -->
 
@@ -180,7 +180,7 @@
             <!-- MOBILE -->
             <!-- Selected indicator without text -->
             <div
-              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
+              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
             >
               <span
                 class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -190,7 +190,7 @@
             </div>
           </div>
           <div
-            class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[48%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -217,7 +217,7 @@
           >
             <!-- MOBILE -->
             <div
-              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1px] rounded-full"
+              class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
             >
               <span
                 class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -227,7 +227,7 @@
             </div>
           </div>
           <div
-            class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+            class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[32%] absolute bottom-0 left-0 z-[-1] rounded-full"
           ></div>
 
           <div
@@ -274,6 +274,5 @@ const toggleSelect = (type) => {
 <style scoped>
 .selected {
   border-radius: full; /* Adjust this value as needed */
-  border: 0px solid #333; /* Adjust border color as needed */
 }
 </style>
