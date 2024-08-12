@@ -83,7 +83,7 @@
                   !userStore.preference.color.length > 0 &&
                   customColor.length > 2
                 "
-                @click="toggleSelect('done')"
+                @click="toggleSelect(customColor, 'done')"
                 class="carpet_details_colors_mob_done1_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
               >
                 Done
@@ -95,7 +95,7 @@
             >
               <button
                 v-show="userStore.preference.color.length > 0"
-                @click="toggleSelect('done')"
+                @click="toggleSelect(customColor, 'done')"
                 class="carpet_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
               >
                 Done
@@ -385,7 +385,6 @@ const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
     scrollToBottom();
-    return;
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
