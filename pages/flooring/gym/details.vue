@@ -17,17 +17,23 @@ import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import GymFlooringDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymThicknessDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
 import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
+import FinalForm from "~/components/MOBILE/FLOORING/FinalForm.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
 const isCategoryOpted = ref(false);
 const category = ref("");
+const isFormVisible = ref(false);
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
   restrictedAccess.value = false;
   console.log("COOKIE SET::", toRaw(userPreference.value));
 }
-
+function ToggleForm() {
+  isFormVisible.value = true;
+  setUserPreferenceCookie();
+  bringForm();
+}
 onMounted(() => {});
 </script>
 <template>
@@ -93,6 +99,7 @@ onMounted(() => {});
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
+    <FinalForm v-if="isFormVisible" />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
@@ -133,7 +140,7 @@ onMounted(() => {});
           class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
         >
           <button
-            @click="setUserPreferenceCookie"
+            @click="ToggleForm"
             v-show="
               userStore.preference.flooring === 'gym' &&
               userStore.preference.spec_1 !== '' &&

@@ -186,3 +186,15 @@ export function scrollToNextElement(defaultHeight, distance) {
     });
   }, 200);
 }
+export function bringForm() {
+  gsap.to(".FormOverlay_MOB", {
+    autoAlpha: 1,
+    zIndex: 9999,
+  });
+}
+export function removeForm() {
+  gsap.to(".FormOverlay_MOB", {
+    autoAlpha: 0,
+    zIndex: -99,
+  });
+}
