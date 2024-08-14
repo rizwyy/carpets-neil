@@ -90,12 +90,22 @@
               class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
             ></div>
             <NuxtImg
+              v-show="userStore.preference.spec_1 !== 'Woven Vinyl'"
               preload
               quality="50"
               placeholder
               loading="eager"
               class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
               src="/pvc/vinyl-tile.webp"
+              alt=""
+            />
+            <NuxtImg
+              preload
+              quality="50"
+              placeholder
+              loading="eager"
+              class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
+              src="/pvc/woven-tile.webp"
               alt=""
             />
             <span>Tile</span>
