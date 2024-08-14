@@ -178,6 +178,11 @@
           >
             <!-- MOBILE -->
             <NuxtImg
+              v-show="userStore.preference.spec_2 !== cork"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/wooden/cork-brown.webp"
+            />
+            <NuxtImg
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/wooden/wood-Brown.webp"
             />

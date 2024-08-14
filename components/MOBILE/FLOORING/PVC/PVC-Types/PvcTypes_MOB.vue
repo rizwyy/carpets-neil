@@ -137,17 +137,17 @@
           </div>
 
           <!-- MOBILE -->
-          <!-- Acoustic -->
+          <!-- Abstract -->
           <div
             v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
             :class="[
               'h-[14vh] pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-              { selected: selectedType.includes('Acoustic') },
+              { selected: selectedType.includes('Abstract') },
             ]"
-            @click="toggleSelect('Acoustic')"
+            @click="toggleSelect('Abstract')"
           >
             <div
-              v-show="selectedType.includes('Acoustic')"
+              v-show="selectedType.includes('Abstract')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -164,11 +164,11 @@
               quality="50"
               placeholder
               loading="eager"
-              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/pvc/acoustic-flooring.webp"
+              class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
+              src="/pvc/abstract-pvc.webp"
               alt=""
             />
-            <span>Acoustic</span>
+            <span>Abstract</span>
           </div>
           <!-- MOBILE -->
           <!-- Rugs -->

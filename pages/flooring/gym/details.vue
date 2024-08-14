@@ -6,6 +6,8 @@ import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishD
 import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 
+import FloatingBarMOB from "./../../../components/MOBILE/FLOORING/FloatingBarMOB.vue";
+
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -31,7 +33,7 @@ function setUserPreferenceCookie() {
 }
 function ToggleForm() {
   isFormVisible.value = true;
-  setUserPreferenceCookie();
+  // setUserPreferenceCookie();
   bringForm();
 }
 onMounted(() => {});
@@ -100,6 +102,7 @@ onMounted(() => {});
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
     <FinalForm v-if="isFormVisible" />
+    <FloatingBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >

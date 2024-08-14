@@ -27,21 +27,34 @@
             type="text"
             class="bg-inherit border-b-[2px] rounded-none py-[.8vh] px-[2vw] outline-none focus:border-black"
             placeholder="Name"
+            v-model="nameIpt"
           />
         </div>
         <div class="h-max w-full flex flex-col">
           <input
-            required
+            :required="mailIpt.length > 8"
+            type="email"
+            class="bg-inherit border-b-[2px] rounded-none py-[.8vh] px-[2vw] outline-none focus:border-black"
+            placeholder="Mail"
+            v-model="mailIpt"
+          />
+        </div>
+        <div class="h-max w-full flex flex-col">
+          <input
+            :required="phoneIpt.length > 8"
             type="number"
             class="bg-inherit border-b-[2px] rounded-none py-[.8vh] px-[2vw] outline-none focus:border-black"
             placeholder="Phone"
+            v-model="phoneIpt"
           />
         </div>
         <div class="h-max w-full flex flex-col">
-          <input
-            type="submit"
+          <button
+            @click.prevent="handleClick"
             class="bg-inherit fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[1.4px] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
-          />
+          >
+            CONFIRM
+          </button>
         </div>
       </form>
       <div class="px-[8vw] pt-[2vh] px-[8vw] flex flex-col gap-[2vh]">
@@ -92,7 +105,63 @@
 
 <script setup>
 import useUserStore from "./../../../stores/user";
+
 const userStore = useUserStore();
+
+const mailIpt = ref("");
+const nameIpt = ref("");
+const phoneIpt = ref("");
+const mySecureCookie = useCookie("mySecureCookie");
+const token = ref("");
+
+async function fetchToken() {
+  try {
+    const { data, error } = await useFetch("/api/generate-token");
+
+    if (error.value) {
+      console.error("Error fetching token:", error.value);
+    } else {
+      token.value = data.value.token;
+    }
+  } catch (err) {
+    console.error("Unexpected error:", err);
+  }
+}
+
+const handleClick = () => {
+  const userData = {
+    name: nameIpt.value,
+    phone: phoneIpt.value,
+    email: mailIpt.value,
+  };
+
+  // Call API route to set the cookie
+  useFetch("/api/set-cookie")
+    .then(({ data, error }) => {
+      if (error?.value) {
+        throw new Error("Error setting cookie: " + error.value);
+      }
+      console.log("SET COOKIE DONE");
+      return fetch("/api/insert-logs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error inserting logs");
+      }
+      return response.json();
+    })
+    .then((logData) => {
+      console.log("SUCCESS");
+      console.log("Log data:", logData);
+    })
+    .catch((err) => {
+      console.error("Unexpected errors:", err.message);
+    });
+};
 </script>
 
 <style scoped>

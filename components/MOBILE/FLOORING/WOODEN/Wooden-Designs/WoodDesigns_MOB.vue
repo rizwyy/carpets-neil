@@ -63,11 +63,20 @@
               class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
             ></div>
             <NuxtImg
+              v-show="userStore.preference.spec_2 !== 'Cork Floor'"
               quality="50"
               placeholder
               loading="lazy"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
               src="/wooden/plank-wood.webp"
+              alt="#"
+            />
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/cork-planks.webp"
               alt="#"
             />
             <span>Planks</span>

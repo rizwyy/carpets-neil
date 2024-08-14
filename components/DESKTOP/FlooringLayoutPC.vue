@@ -14,7 +14,7 @@
           desc="Durable, stylish carpet flooring enhances comfort, warmth, and
       aesthetic appeal in any space."
           :isAvailable="true"
-          src="10004.webp"
+          src="/carpets/carpetsCover.webp"
         />
       </a>
       <a href="/flooring/wooden/details">

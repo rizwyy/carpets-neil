@@ -189,7 +189,7 @@ export function scrollToNextElement(defaultHeight, distance) {
 export function bringForm() {
   gsap.to(".FormOverlay_MOB", {
     autoAlpha: 1,
-    zIndex: 9999,
+    zIndex: 99999,
   });
 }
 export function removeForm() {

@@ -35,7 +35,7 @@
             loading="eager"
             placeholder
             class="flooringItem_Img flooringLayout_Carpet_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/10004.webp"
+            src="/carpets/carpetsCover.webp"
             alt="#"
           />
         </a>

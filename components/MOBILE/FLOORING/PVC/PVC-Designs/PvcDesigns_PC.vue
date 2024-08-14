@@ -100,6 +100,7 @@ const toggleSelect = (material) => {
           <!-- DESKTOP -->
           <!-- Abstract -->
           <div
+            v-show="userStore.preference.spec_3 === 'Abstract'"
             :class="[
               'materialItem_PC overflow-hidden rounded-md h-[28vh] pvc_design_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Abstract' },
@@ -107,7 +108,6 @@ const toggleSelect = (material) => {
             @click="toggleSelect('Abstract')"
           >
             <div
-              v-show="userStore.preference.spec_3 === 'Abstract'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -124,10 +124,41 @@ const toggleSelect = (material) => {
               placeholder
               loading="lazy"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/pvc/vinyl-abstract.webp"
+              src="/pvc/abstract-pvc.webp"
               alt="#"
             />
             <span class="text-[3.2vh]">Abstract</span>
+          </div>
+          <!-- Rugs -->
+          <div
+            v-show="userStore.preference.spec_3 === 'Rugs'"
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] pvc_design_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Rugs' },
+            ]"
+            @click="toggleSelect('Rugs')"
+          >
+            <div
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/carpets/stripped.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Rugs</span>
           </div>
 
           <!-- DESKTOP -->
