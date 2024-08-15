@@ -160,6 +160,22 @@ export function handleTempAnimation(el) {
   });
 }
 
+export function handleLoadingEntry() {
+  gsap.to(`.loadingOverlay`, {
+    autoAlpha: 1,
+    opacity: 1,
+    duration: 0.6,
+    y: 0,
+  });
+}
+export function handleLoadingExit() {
+  gsap.to(`.loadingOverlay`, {
+    autoAlpha: 0,
+    duration: 0.4,
+    y: 50,
+  });
+}
+
 export function handleBringOpacityForCustomColor(el) {
   gsap.to(`.${el}`, {
     opacity: 1,

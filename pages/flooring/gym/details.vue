@@ -3,12 +3,12 @@ import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymAp
 import GymActivitiesDetails from "../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue";
 import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
 
-import GymDesignDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
-import GymBudgetDetails from "../../../components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
+import GymDesignDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
+import GymBudgetDetails from "~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 
-import FloatingBarMOB from "./../../../components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 
-import useUserStore from "../../../stores/user";
+import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
 const route = useRoute();
@@ -16,10 +16,9 @@ const route = useRoute();
 import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
-import GymFlooringDetails from "../../../components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
-import GymThicknessDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
+import GymFlooringDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
+import GymThicknessDetails from "~/components/MOBILE/FLOORING/GYM/GymFinishDetails.vue";
 import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
-import FinalForm from "~/components/MOBILE/FLOORING/FinalForm.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -101,7 +100,6 @@ onMounted(() => {});
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
-    <FinalForm v-if="isFormVisible" />
     <FloatingBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -142,8 +140,8 @@ onMounted(() => {});
         <div
           class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
         >
-          <button
-            @click="ToggleForm"
+          <a
+            href="/flooring/gym/checkout"
             v-show="
               userStore.preference.flooring === 'gym' &&
               userStore.preference.spec_1 !== '' &&
@@ -162,7 +160,7 @@ onMounted(() => {});
             >
 
             <!-- MOBILE -->
-          </button>
+          </a>
           <button
             @click="setUserPreferenceCookie"
             v-show="

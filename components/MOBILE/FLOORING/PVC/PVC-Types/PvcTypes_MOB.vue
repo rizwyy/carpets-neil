@@ -105,7 +105,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
-              src="/pvc/woven-tile.webp"
+              src="/pvc/woven-tiles.webp"
               alt=""
             />
             <span>Tile</span>
@@ -140,7 +140,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/pvc/vinyl-plank.webp"
+              src="/pvc/woven-plank.webp"
               alt=""
             />
             <span>Plank</span>
@@ -209,7 +209,7 @@
               placeholder
               loading="eager"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/carpets/stripped.webp"
+              src="/pvc/vinyl-rug.webp"
               alt=""
             />
             <span>Rugs</span>

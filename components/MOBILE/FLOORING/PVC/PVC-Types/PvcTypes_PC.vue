@@ -109,7 +109,7 @@
                 placeholder
                 loading="eager"
                 class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
-                src="/pvc/woven-tile.webp"
+                src="/pvc/woven-tiles.webp"
                 alt=""
               />
               <span class="text-[3.4vh]">Tile</span>
@@ -183,6 +183,39 @@
               />
               <!-- DESKTOP -->
               <span class="text-[3.4vh]">Abstract</span>
+            </div>
+            <!-- Rugs -->
+            <div
+              v-show="userStore.preference.spec_1 !== 'Luxury Vinyl'"
+              :class="[
+                'h-[28vh] w-full pvc_type_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                { selected: userStore.preference.spec_2 === 'Rugs' },
+              ]"
+              @click="toggleSelect('Rugs')"
+            >
+              <div
+                v-show="userStore.preference.spec_2.includes('Rugs')"
+                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              >
+                <!-- Selected indicator without text -->
+                <span
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  >Selected</span
+                >
+              </div>
+              <div
+                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+              ></div>
+              <NuxtImg
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/pvc/vinyl-rug.webp"
+                alt="#"
+              />
+              <!-- DESKTOP -->
+              <span class="text-[3.4vh]">Rugs</span>
             </div>
           </div>
         </div>

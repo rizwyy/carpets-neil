@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[7.2vh] floatingCTA w-[74vw] z-[999] fixed bottom-[2vh] py-[1vh] backdrop-blur-[12px] bg-[#000] left-[42%] translate-x-[-50%] bg-opacity-[.34] rounded-md flex font-outfit"
+    class="h-[7.2vh] floatingCTA w-[86vw] z-[999] fixed bottom-[2vh] py-[1vh] backdrop-blur-[12px] bg-[#000] left-[50%] translate-x-[-50%] bg-opacity-[.34] rounded-md flex font-outfit"
   >
     <div
       class="h-full w-[65%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
@@ -39,26 +39,6 @@
           /></svg
       ></a>
     </div>
-  </div>
-  <div
-    class="h-[7.2vh] w-[%] fixed bottom-[2vh] right-[4vw] backdrop-blur-[12px] bg-[#000] bg-opacity-[.34] z-[9999] flex items-center rounded-md justify-start px-[3.4vw]"
-  >
-    <span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-[4.2vh]"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="#ececec"
-          d="M6.7 18.29c.39.39 1.02.39 1.41 0L12 14.42l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 12.3a.996.996 0 0 0-1.41 0L6.7 16.88a.996.996 0 0 0 0 1.41"
-        />
-        <path
-          fill="#ececec"
-          d="M6.7 11.7c.39.39 1.02.39 1.41 0L12 7.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 5.71a.996.996 0 0 0-1.41 0L6.7 10.29a.996.996 0 0 0 0 1.41"
-        />
-      </svg>
-    </span>
   </div>
 </template>
 
