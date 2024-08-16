@@ -525,7 +525,7 @@ function openWhatsApp(phone, message) {
     return;
   } else {
     const link = generateWhatsAppLink(phone, message);
-    window.open(link, "_blank"); // Opens link in a new window/tab
+    window.open(link, "_blank");
   }
 }
 function generateEmailLink(email, subject, body) {
@@ -540,7 +540,7 @@ function openEmail(email, subject, body) {
     return;
   } else {
     const link = generateEmailLink(email, subject, body);
-    window.open(link, "_blank"); // Opens link in a new window/tab
+    window.open(link, "_blank");
   }
 }
 async function fetchProductDetails(id) {
