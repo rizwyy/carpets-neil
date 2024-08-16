@@ -172,9 +172,15 @@
               class="color_box_PC h-[18vh] gym_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#333] bg-[#F5F5DC] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Beige'),
+                'text-[#fff]': userStore.preference.spec_3 === 'Wooden',
               }"
               @click="toggleSelect('Beige')"
             >
+              <NuxtImg
+                v-show="userStore.preference.spec_3 === 'Wooden'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/beige-wood.webp"
+              />
               <span
                 class="text-[2.8vh]"
                 v-show="!userStore.preference.color.includes('Beige')"
@@ -195,6 +201,11 @@
               }"
               @click="toggleSelect('Brown')"
             >
+              <NuxtImg
+                v-show="userStore.preference.spec_3 === 'Wooden'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/wooden/wood-Brown.webp"
+              />
               <span
                 class="text-[2.8vh]"
                 v-show="!userStore.preference.color.includes('Brown')"
@@ -213,6 +224,11 @@
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
+              <NuxtImg
+                v-show="userStore.preference.spec_3 === 'Wooden'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/grey-wood.webp"
+              />
               <span
                 class="text-[2.8vh]"
                 v-show="!userStore.preference.color.includes('Grey')"
@@ -234,6 +250,11 @@
               }"
               @click="toggleSelect('Orange')"
             >
+              <NuxtImg
+                v-show="userStore.preference.spec_3 === 'Wooden'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/cork-orange.webp"
+              />
               <span
                 class="text-[2.8vh]"
                 v-show="!userStore.preference.color.includes('Orange')"
