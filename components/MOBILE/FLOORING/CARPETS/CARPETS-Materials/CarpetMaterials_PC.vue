@@ -102,7 +102,10 @@
           </div>
           <!-- DESKTOP -->
         </div>
-        <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
+        <div
+          v-show="userStore.preference.spec_1 !== 'Carpet Tiles'"
+          class="h-max w-full flex justify-between gap-[2vw] z-[9]"
+        >
           <!-- Sisal -->
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
