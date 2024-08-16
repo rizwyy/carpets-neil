@@ -37,10 +37,23 @@
 
 <script setup>
 import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
-
+const userPreference = useCookie("userPreference");
+console.log(toRaw(userPreference.value.spec_1));
 onMounted(() => {
   setTimeout(() => {
-    const link = "https://facebook.com";
+    const link = generateWhatsAppLink(
+      "97333008801",
+      `Hello, I would like to confirm my order. Please proceed with the following details:
+
+Product Specifications: ${toRaw(userPreference.value.spec_1)},${toRaw(
+        userPreference.value.spec_2
+      )},${toRaw(userPreference.value.spec_3)}, ${toRaw(
+        userPreference.value.spec_4
+      )}, ${toRaw(userPreference.value.color)}, ${toRaw(
+        userPreference.value.budget
+      )}
+Thank you! Looking forward to your confirmation.`
+    );
     window.open(link, "_blank");
   }, 3000);
 });

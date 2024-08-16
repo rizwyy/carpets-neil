@@ -13,3 +13,7 @@ export function shuffleArray(array) {
   }
   return newArray;
 }
+export function generateWhatsAppLink(phone, message) {
+  const encodedMessage = encodeURIComponent(message);
+  return `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+}

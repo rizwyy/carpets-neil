@@ -183,6 +183,7 @@
 
 <script setup>
 import useUserStore from "../../../stores/user";
+import { useRouter } from "vue-router";
 
 const userStore = useUserStore();
 const isFormFilled = ref(false);
@@ -192,6 +193,7 @@ const phoneIpt = ref("");
 const userPreference = useCookie("userPreference");
 const token = ref("");
 
+const router = useRouter();
 async function fetchToken() {
   try {
     const { data, error } = await useFetch("/api/generate-token");
@@ -240,6 +242,7 @@ const handleClick = () => {
       phoneIpt.value = "";
       scrollToBottom();
       handleLoadingExit();
+      router.push("/flooring/gym/success");
       console.log("SUCCESS");
       console.log("Log data:", logData);
     })
