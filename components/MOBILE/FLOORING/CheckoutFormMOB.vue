@@ -90,13 +90,22 @@
     >
       <div
         v-show="!isFormFilled"
-        class="h-[58vh] w-full flex flex-col gap-[8vh] px-[3.8vw] pt-[3.2vh] bg-gradient-to-tl from-[#F0F8FF] to-[#B9D9EB] rounded-md shadow-xl relative"
+        class="h-[60vh] w-full flex flex-col gap-[6.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative"
       >
-        <span class="w-max text-[3.4vh] font-[400]">Information</span>
-        <div class="h-max w-full flex flex-col px-[2vw] gap-[vh]">
+        <NuxtImg
+          class="absolute top-0 left-0 h-full w-full object-cover z-[-9]"
+          src="/assets/layered-peaks.png"
+        />
+        <div
+          class="h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
+        ></div>
+        <span class="w-max text-[3.4vh] font-[400] text-white"
+          >Information</span
+        >
+        <div class="h-max w-full flex flex-col gap-[vh]">
           <input
             type="text"
-            class="bg-inherit border-b-[2px] border-[#999] rounded-none py-[.8vh] outline-none focus:border-black"
+            class="border-[2px] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
             placeholder="Name"
             v-model="nameIpt"
           />
@@ -105,7 +114,7 @@
           <input
             :required="mailIpt.length > 8"
             type="email"
-            class="bg-inherit border-b-[2px] border-[#999] rounded-none py-[.8vh] px-[2vw] outline-none focus:border-black"
+            class="border-[2px] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
             placeholder="Mail"
             v-model="mailIpt"
           />
@@ -114,7 +123,7 @@
           <input
             :required="phoneIpt.length > 8"
             type="number"
-            class="bg-inherit border-b-[2px] border-[#999] rounded-none py-[.8vh] px-[2vw] outline-none focus:border-black"
+            class="border-[2px] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
             placeholder="Phone"
             v-model="phoneIpt"
           />
@@ -122,44 +131,68 @@
       </div>
       <div
         v-show="isFormFilled"
-        class="h-[62vh] w-full flex flex-col gap-[4.8vh] px-[3.8vw] pt-[3.2vh] rounded-md bg-gradient-to-tl from-[#F0F8FF] to-[#B9D9EB] shadow-xl"
+        class="h-[62vh] w-full flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative"
       >
+        <NuxtImg
+          class="absolute top-0 left-0 rotate-[180deg] h-full w-full object-cover z-[-9]"
+          src="/assets/layered-peaks.png"
+        />
+        <div
+          class="h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
+        ></div>
         <div class="h-max w-full flex justify-between pb-[3.2vh]">
-          <span class="border-b-[1px] w-max border-[#333]">PREFERANCES</span>
-          <a href="/details" class="border-b-[1px] w-max border-[#333]">EDIT</a>
+          <span
+            class="border-b-[1px] w-max font-[400] text-[2.4vh] border-[#000] text-black"
+            >PREFERANCES</span
+          >
+          <a
+            href="/details"
+            class="border-b-[1px] text-black font-[400] w-max border-[#000]"
+            >EDIT</a
+          >
         </div>
         <span>
-          <span class="mt-[1vh]"
+          <span
+            class="mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             ><span>Category/Application:&nbsp;</span
             >{{ userPreference.spec_1 }}</span
           >
         </span>
         <span>
-          <span class="mt-[1vh]"
+          <span
+            class="mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             ><span>Activity/Type:&nbsp;</span>{{ userPreference.spec_2 }}</span
           >
         </span>
         <span>
-          <span class="mt-[1vh]"
+          <span
+            class="mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             ><span>Material/Style:&nbsp;</span>{{ userPreference.spec_3 }}</span
           >
         </span>
-        <span>
-          <span class="mt-[1vh]"
-            ><span>Finish:&nbsp;</span>{{ userPreference.spec_4 }}</span
-          >
-        </span>
-
-        <span
-          v-show="userPreference.color.length > 0"
-          class="flex items-center"
-        >
-          <span>Colors: </span>
-          <span v-for="(color, index) in userPreference.color" :key="index"
-            >&nbsp;{{ color }}<span v-show="index > 1">,&nbsp;</span>
+        <div class="h-max w-full flex justify-between items-center">
+          <span>
+            <span
+              class="w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              ><span>Finish:&nbsp;</span>{{ userPreference.spec_4 }}</span
+            >
           </span>
-        </span>
-        <span class="">Budget: {{ userPreference.budget }}</span>
+          <span
+            class="w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+            >Budget: {{ userPreference.budget }}</span
+          >
+        </div>
+        <div class="h-max w-max flex flex-col gap-[1.8vh]">
+          <span class="font-[500]">Colors Opted:</span>
+          <span
+            v-show="userPreference.color.length > 0"
+            class="w-max border-[2px] rounded-md px-[4vw] text-center py-[.6vh] border-[#444]"
+            v-for="(color, index) in userPreference.color"
+            :key="index"
+            :style="{ backgroundColor: getColorHex(color) }"
+            >{{ color }}
+          </span>
+        </div>
       </div>
     </div>
 
@@ -167,14 +200,14 @@
     <button
       v-show="!isFormFilled"
       @click="() => (isFormFilled = true)"
-      class="bg-white fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[1.4px] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+      class="bg-white fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
     >
-      NEXT
+      PROCEED
     </button>
     <button
       v-show="isFormFilled"
       @click="handleClick"
-      class="bg-white fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[1.4px] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+      class="bg-white fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
     >
       CONFIRM
     </button>

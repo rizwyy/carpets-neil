@@ -17,3 +17,7 @@ export function generateWhatsAppLink(phone, message) {
   const encodedMessage = encodeURIComponent(message);
   return `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
 }
+export function getColorHex(color) {
+  const formattedColor = color.toLowerCase().replace(/\s+/g, "");
+  return carpetColors[formattedColor] || "#000000";
+}
