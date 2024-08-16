@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen relative w-screen overflow-hidden font-outfit">
+  <div class="h-full w-screen overflow-hidden font-outfit">
     <!-- ERROR OVERLAY -->
     <div
       class="errOverlayMOB opacity-0 invisible h-max py-[2.4vh] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999]"
@@ -64,11 +64,13 @@
     </div>
     <!-- NAVBAR -->
     <div
-      class="h-max w-full fixed top-0 left-0 z-[9] pt-[4vh] pb-[3.2vh] flex items-center bg-[#fff] shadow-sm backdrop-blur-[14px] justify-between gap-[4vw] px-[8vw]"
+      class="h-max w-full fixed top-0 left-0 z-[9] pt-[3.2vh] pb-[3.2vh] flex items-center bg-[#fff3] shadow-sm backdrop-blur-[14px] justify-between gap-[4vw] px-[8vw]"
     >
-      <a :href="!isFormFilled ? '/flooring/gym/details' : ''"
+      <a
+        class="flex text-[1.8vh] items-center text-[#555]"
+        :href="!isFormFilled ? '/flooring/gym/details' : ''"
         ><svg
-          class="h-[3.2vh]"
+          class="h-[3vh]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -76,7 +78,8 @@
             fill="#333"
             d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875t-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12t.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388t.375.875t-.375.875z"
           /></svg
-      ></a>
+        >{{ !isFormFilled ? "DETAILS" : "STEP 1" }}</a
+      >
       <span v-show="!isFormFilled" class="text-[1.8vh] text-[#555]"
         >STEP 1 OF 2</span
       >
@@ -86,22 +89,28 @@
     </div>
     <!-- MAIN -->
     <div
-      class="h-max w-full flex overflow-hidden flex-col px-[3.2vw] gap-[8vh] pt-[11.2vh] items-center"
+      class="h-max w-full flex overflow-hidden flex-col px-[3.2vw] gap-[8vh] pt-[14.2vh] items-center"
     >
       <div
         v-show="!isFormFilled"
-        class="h-[60vh] w-full flex flex-col gap-[6.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative"
+        class="h-[60vh] w-full flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative"
       >
         <NuxtImg
           class="absolute top-0 left-0 h-full w-full object-cover z-[-9]"
           src="/assets/layered-peaks.png"
         />
-        <div
+        <!-- <div
           class="h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
-        ></div>
-        <span class="w-max text-[3.4vh] font-[400] text-white"
-          >Information</span
-        >
+        ></div> -->
+        <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
+          <span
+            class="w-max text-[3.8vh] tracking-[-.2vw] font-[400] text-white"
+            >Your Contact Information</span
+          >
+          <span class="text-[#e1e9e5] text-[2.2vh] font-[450]"
+            >Enter your contact information</span
+          >
+        </div>
         <div class="h-max w-full flex flex-col gap-[vh]">
           <input
             type="text"
@@ -137,9 +146,9 @@
           class="absolute top-0 left-0 rotate-[180deg] h-full w-full object-cover z-[-9]"
           src="/assets/layered-peaks.png"
         />
-        <div
+        <!-- <div
           class="h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
-        ></div>
+        ></div> -->
         <div class="h-max w-full flex justify-between pb-[3.2vh]">
           <span
             class="border-b-[1px] w-max font-[400] text-[2.4vh] border-[#000] text-black"
@@ -186,7 +195,7 @@
           <span class="font-[500]">Colors Opted:</span>
           <span
             v-show="userPreference.color.length > 0"
-            class="w-max border-[2px] rounded-md px-[4vw] text-center py-[.6vh] border-[#444]"
+            class="w-max border-[2px] rounded-md px-[4vw] text-[#999] font-[400] text-center py-[.6vh] border-[#444]"
             v-for="(color, index) in userPreference.color"
             :key="index"
             :style="{ backgroundColor: getColorHex(color) }"

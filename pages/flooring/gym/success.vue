@@ -2,7 +2,7 @@
   <div>
     <NavBarMOB />
     <div
-      class="h-[80vh] w-screen flex flex-col justify-evenly items-center font-outfit gap-[8.8vh] px-[4vw]"
+      class="h-[78vh] w-screen flex flex-col justify-evenly items-center font-outfit gap-[8.8vh] px-[4vw]"
     >
       <div
         class="h-max w-max flex flex-col justify-center items-center gap-[4.8vh]"

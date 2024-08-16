@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-[90vh] relative w-screen overflow-hidden">
     <CheckoutFormMOB />
   </div>
 </template>
