@@ -29,6 +29,7 @@ function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
   restrictedAccess.value = false;
   console.log("COOKIE SET::", toRaw(userPreference.value));
+  return true;
 }
 function ToggleForm() {
   isFormVisible.value = true;
@@ -141,6 +142,7 @@ onMounted(() => {});
           class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
         >
           <a
+            @click="setUserPreferenceCookie"
             href="/flooring/gym/checkout"
             v-show="
               userStore.preference.flooring === 'gym' &&
@@ -161,8 +163,9 @@ onMounted(() => {});
 
             <!-- MOBILE -->
           </a>
-          <button
+          <a
             @click="setUserPreferenceCookie"
+            href="/flooring/gym/checkout"
             v-show="
               userStore.preference.flooring === 'gym' &&
               userStore.preference.spec_1 !== '' &&
@@ -181,7 +184,7 @@ onMounted(() => {});
             >
 
             <!-- MOBILE -->
-          </button>
+          </a>
         </div>
       </div>
     </div>
