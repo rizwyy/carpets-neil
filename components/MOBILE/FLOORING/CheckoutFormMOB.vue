@@ -302,7 +302,7 @@ function handleCheckoutPart1() {
   isCheckoutImgLoaded.value = true;
   setTimeout(() => {
     isFormFilled.value = true;
-  }, 2000);
+  }, 1000);
 }
 
 function handlePt2Entry() {
