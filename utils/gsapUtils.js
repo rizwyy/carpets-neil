@@ -48,7 +48,7 @@ export function handleImageLoad(el, el2) {
   });
   // 3:Text Comes
   tl.to(`.${el2}_Text`, {
-    delay: -0.4,
+    delay: -0.5,
     opacity: 1,
     stagger: 0.1,
     duration: 0.4,
@@ -212,5 +212,25 @@ export function removeForm() {
   gsap.to(".FormOverlay_MOB", {
     autoAlpha: 0,
     zIndex: -99,
+  });
+}
+
+export function checkoutPt1Animation() {
+  gsap.to(".checkoutBg_Img", {
+    scale: 2,
+    duration: 0.4,
+    ease: "power4.out",
+  });
+  gsap.to(".checkout_Text", {
+    autoAlpha: 0,
+    duration: 0.4,
+    ease: "back.in",
+  });
+}
+export function checkoutPt2Animation() {
+  gsap.to(".checkoutPt2BG_Img", {
+    scale: 1,
+    duration: 0.8,
+    ease: "power4.in",
   });
 }
