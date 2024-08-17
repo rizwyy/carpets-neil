@@ -4,10 +4,7 @@
     @before-enter="handleDetailsDOMEntry('sport_Flooring_Details_Mob')"
   >
     <div
-      v-show="
-        userStore.preference.flooring === 'sports' &&
-        userStore.preference.spec_2 !== ''
-      "
+      v-show="userStore.preference.flooring === 'sports'"
       class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
@@ -18,7 +15,7 @@
         >
         <button
           @click="clearmaterialSelections"
-          v-show="userStore.preference.spec_3 !== ''"
+          v-show="userStore.preference.spec_2 !== ''"
           class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -47,14 +44,14 @@
                   'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                   {
                     selected:
-                      userStore.preference.spec_3.includes('Artificial Grass'),
+                      userStore.preference.spec_2.includes('Artificial Grass'),
                   },
                 ]"
                 @click="toggleSelect('Artificial Grass')"
               >
                 <div
                   v-show="
-                    userStore.preference.spec_3.includes('Artificial Grass')
+                    userStore.preference.spec_2.includes('Artificial Grass')
                   "
                   class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
                 >
@@ -84,12 +81,12 @@
               <div
                 :class="[
                   'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-                  { selected: userStore.preference.spec_3.includes('Rubber') },
+                  { selected: userStore.preference.spec_2.includes('Rubber') },
                 ]"
                 @click="toggleSelect('Rubber')"
               >
                 <div
-                  v-show="userStore.preference.spec_3.includes('Rubber')"
+                  v-show="userStore.preference.spec_2.includes('Rubber')"
                   class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
                 >
                   <!-- Selected indicator without text -->
@@ -121,13 +118,13 @@
                   'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected:
-                      userStore.preference.spec_3.includes('Wooden Sprung'),
+                      userStore.preference.spec_2.includes('Wooden Sprung'),
                   },
                 ]"
                 @click="toggleSelect('Wooden Sprung')"
               >
                 <div
-                  v-show="userStore.preference.spec_3.includes('Wooden Sprung')"
+                  v-show="userStore.preference.spec_2.includes('Wooden Sprung')"
                   class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
                 >
                   <!-- Selected indicator without text -->
@@ -158,13 +155,13 @@
                   'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected:
-                      userStore.preference.spec_3.includes('PolyUrethane'),
+                      userStore.preference.spec_2.includes('PolyUrethane'),
                   },
                 ]"
                 @click="toggleSelect('PolyUrethane')"
               >
                 <div
-                  v-show="userStore.preference.spec_3.includes('PolyUrethane')"
+                  v-show="userStore.preference.spec_2.includes('PolyUrethane')"
                   class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
                 >
                   <!-- Selected indicator without text -->
@@ -201,13 +198,13 @@
                   'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected:
-                      userStore.preference.spec_3.includes('PVC Sports'),
+                      userStore.preference.spec_2.includes('PVC Sports'),
                   },
                 ]"
                 @click="toggleSelect('PVC Sports')"
               >
                 <div
-                  v-show="userStore.preference.spec_3.includes('PVC Sports')"
+                  v-show="userStore.preference.spec_2.includes('PVC Sports')"
                   class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
                 >
                   <!-- Selected indicator without text -->
@@ -238,14 +235,14 @@
                   'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                   {
                     selected:
-                      userStore.preference.spec_3.includes('Acrylic Sports'),
+                      userStore.preference.spec_2.includes('Acrylic Sports'),
                   },
                 ]"
                 @click="toggleSelect('Acrylic Sports')"
               >
                 <div
                   v-show="
-                    userStore.preference.spec_3.includes('Acrylic Sports')
+                    userStore.preference.spec_2.includes('Acrylic Sports')
                   "
                   class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
                 >
@@ -284,20 +281,20 @@ const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
-const spec_3 = ref("");
+const spec_2 = ref("");
 function clearmaterialSelections() {
-  spec_3.value = "";
-  userStore.preference.spec_3 = "";
+  spec_2.value = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (material) => {
-  if (spec_3.value === material) {
-    spec_3.value = "";
-    userStore.preference.spec_3 = "";
+  if (spec_2.value === material) {
+    spec_2.value = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
-    spec_3.value = material;
-    userStore.preference.spec_3 = toRaw(spec_3.value);
+    spec_2.value = material;
+    userStore.preference.spec_2 = toRaw(spec_2.value);
   }
 };
 </script>

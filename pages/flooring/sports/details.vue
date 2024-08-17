@@ -50,7 +50,7 @@ onMounted(() => {});
       </div>
       <!-- DESKTOP -->
       <SportsTypesDetails />
-      <SportsActivitiesDetails />
+      <!-- <SportsActivitiesDetails /> -->
       <SportsFlooringDetails />
       <SportsColorDetails />
       <SportsBudgetDetails />
@@ -63,7 +63,6 @@ onMounted(() => {});
             userStore.preference.flooring === 'sports' &&
             userStore.preference.spec_1 !== '' &&
             userStore.preference.spec_2 !== '' &&
-            userStore.preference.spec_3 !== '' &&
             userStore.preference.color.length > 0 &&
             userStore.preference.budget !== ''
           "
@@ -107,7 +106,7 @@ onMounted(() => {});
       </div>
       <BannerYouWin />
       <SportsTypesDetails />
-      <SportsActivitiesDetails />
+      <!-- <SportsActivitiesDetails /> -->
       <SportsFlooringDetails />
       <SportsColorDetails />
       <SportsBudgetDetails />
@@ -121,7 +120,6 @@ onMounted(() => {});
               userStore.preference.flooring === 'sports' &&
               userStore.preference.spec_1 !== '' &&
               userStore.preference.spec_2 !== '' &&
-              userStore.preference.spec_3 !== '' &&
               userStore.preference.color.length > 0 &&
               userStore.preference.budget !== ''
             "

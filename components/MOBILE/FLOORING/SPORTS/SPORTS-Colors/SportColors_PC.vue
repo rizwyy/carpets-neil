@@ -9,8 +9,7 @@
       <div
         v-show="
           userStore.preference.spec_1 !== '' &&
-          userStore.preference.spec_2 !== '' &&
-          userStore.preference.spec_3 !== ''
+          userStore.preference.spec_2 !== ''
         "
         class="container relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
       >

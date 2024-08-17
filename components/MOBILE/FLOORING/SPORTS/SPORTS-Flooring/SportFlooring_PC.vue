@@ -5,10 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('sports_Flooring_Details_PC')"
     >
       <div
-        v-show="
-          userStore.preference.flooring === 'sports' &&
-          userStore.preference.spec_2 !== ''
-        "
+        v-show="userStore.preference.flooring === 'sports'"
         class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <!-- DESKTOP -->
@@ -19,7 +16,7 @@
           >
           <button
             @click="clearmaterialSelections"
-            v-show="spec_3"
+            v-show="spec_2"
             class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <span class="text-[2.2vh]">Clear All</span
@@ -42,12 +39,12 @@
           <div
             :class="[
               'materialItem_PC rounded-md h-[28vh] sports_Flooring_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: spec_3 === 'Rubber' },
+              { selected: spec_2 === 'Rubber' },
             ]"
             @click="toggleSelect('Rubber')"
           >
             <div
-              v-show="spec_3 === 'Rubber'"
+              v-show="spec_2 === 'Rubber'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -73,12 +70,12 @@
           <div
             :class="[
               'materialItem_PC rounded-md h-[28vh] sports_Flooring_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: spec_3 === 'PVC' },
+              { selected: spec_2 === 'PVC' },
             ]"
             @click="toggleSelect('PVC')"
           >
             <div
-              v-show="spec_3 === 'PVC'"
+              v-show="spec_2 === 'PVC'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- DESKTOP -->
@@ -107,12 +104,12 @@
           <div
             :class="[
               'materialItem_PC rounded-md h-[28vh] sports_Flooring_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-              { selected: spec_3 === 'Wooden' },
+              { selected: spec_2 === 'Wooden' },
             ]"
             @click="toggleSelect('Wooden')"
           >
             <div
-              v-show="spec_3 === 'Wooden'"
+              v-show="spec_2 === 'Wooden'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -140,12 +137,12 @@
           <div
             :class="[
               'materialItem_PC rounded-md h-[28vh] sports_Flooring_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-              { selected: spec_3 === 'Artificial Grass' },
+              { selected: spec_2 === 'Artificial Grass' },
             ]"
             @click="toggleSelect('Artificial Grass')"
           >
             <div
-              v-show="spec_3 === 'Artificial Grass'"
+              v-show="spec_2 === 'Artificial Grass'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -181,20 +178,20 @@ const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
-const spec_3 = ref("");
+const spec_2 = ref("");
 function clearmaterialSelections() {
-  spec_3.value = "";
-  userStore.preference.spec_3 = "";
+  spec_2.value = "";
+  userStore.preference.spec_2 = "";
 }
 
 const toggleSelect = (material) => {
-  if (spec_3.value === material) {
-    spec_3.value = "";
-    userStore.preference.spec_3 = "";
+  if (spec_2.value === material) {
+    spec_2.value = "";
+    userStore.preference.spec_2 = "";
   } else {
     scrollToBottom();
-    spec_3.value = material;
-    userStore.preference.spec_3 = toRaw(spec_3.value);
+    spec_2.value = material;
+    userStore.preference.spec_2 = toRaw(spec_2.value);
   }
 };
 </script>
