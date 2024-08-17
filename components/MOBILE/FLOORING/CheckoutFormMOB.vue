@@ -64,19 +64,19 @@
     </div>
     <!-- NAVBAR -->
     <div
-      class="h-max w-full fixed top-0 left-0 z-[9] pt-[3.2vh] pb-[3.2vh] flex items-center bg-[#fff3] shadow-sm backdrop-blur-[14px] justify-between gap-[4vw] px-[8vw]"
+      class="h-max w-full fixed top-0 left-0 z-[9] pt-[3.2vh] pb-[3.2vh] flex items-center bg-[#fff3] shadow-sm backdrop-blur-[14px] justify-between gap-[4vw] px-[4vw]"
     >
       <a
-        class="flex text-[1.8vh] items-center text-[#555]"
+        class="flex text-[1.8vh] gap-[2vw] items-center tracking-[.1vw] text-[#333]"
         :href="!isFormFilled ? '/flooring/gym/details' : ''"
         ><svg
-          class="h-[3vh]"
           xmlns="http://www.w3.org/2000/svg"
+          class="h-[5vh]"
           viewBox="0 0 24 24"
         >
           <path
             fill="#333"
-            d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875t-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12t.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388t.375.875t-.375.875z"
+            d="M10.589 12.5H15q.213 0 .356-.144t.144-.357t-.144-.356T15 11.5h-4.411l1.765-1.766q.14-.133.14-.34t-.14-.348t-.347-.14q-.208 0-.341.14l-2.389 2.389q-.242.242-.242.565t.242.566l2.389 2.388q.14.14.344.13q.204-.009.344-.15t.14-.347t-.14-.34zm1.414 8.5q-1.866 0-3.51-.708q-1.643-.709-2.859-1.924t-1.925-2.856T3 12.003t.709-3.51Q4.417 6.85 5.63 5.634t2.857-1.925T11.997 3t3.51.709q1.643.708 2.859 1.922t1.925 2.857t.709 3.509t-.708 3.51t-1.924 2.859t-2.856 1.925t-3.509.709M12 20q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
           /></svg
         >{{ !isFormFilled ? "DETAILS" : "STEP 1" }}</a
       >
@@ -209,7 +209,7 @@
     <button
       v-show="!isFormFilled"
       @click="() => (isFormFilled = true)"
-      class="bg-white fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+      class="bg-white fixed bottom-[2vh] left-[50%] w-[88vw] translate-x-[-50%] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
     >
       PROCEED
     </button>

@@ -2,7 +2,7 @@
   <div>
     <NavBarMOB />
     <div
-      class="h-[78vh] w-screen flex flex-col justify-evenly items-center font-outfit gap-[8.8vh] px-[4vw]"
+      class="h-[78vh] w-screen flex flex-col justify-center items-center font-outfit gap-[10.8vh] px-[4vw]"
     >
       <div
         class="h-max w-max flex flex-col justify-center items-center gap-[4.8vh]"
@@ -27,10 +27,16 @@
         </svg>
         <span class="text-[2.8vh] text-center">Thank you!</span>
       </div>
-      <span class="text-[2.4vh] text-center text-[#333]">
-        Your order is confirmed. <br />
-        We’ll reach out to you soon.</span
+      <span
+        class="h-max w-full bg-[#ececec] py-[1.8vh] px-[4vw] rounded-md shadow-lg text-[2.2vh] flex flex-col items-start justify-center gap-[2vh] text-[#333]"
       >
+        <span class="font-[500]">Please note:</span>
+        <span class="">
+          You will be redirected to WhatsApp in {{ timer }} seconds with a
+          predefined message.
+        </span>
+        <span>Simply hit the "Send" button to confirm your order.</span>
+      </span>
     </div>
   </div>
 </template>
@@ -39,22 +45,37 @@
 import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
 const userPreference = useCookie("userPreference");
 console.log(toRaw(userPreference.value.spec_1));
+const timer = ref(5);
 onMounted(() => {
+  // Start countdown after 3 seconds
   setTimeout(() => {
-    const link = generateWhatsAppLink(
-      "97333008801",
-      `Hello, I would like to confirm my order. Please proceed with the following details:
+    const countdown = setInterval(() => {
+      if (timer.value > 0) {
+        timer.value--;
+      } else {
+        clearInterval(countdown); // Stop countdown
+
+        // Generate WhatsApp link
+        const link = generateWhatsAppLink(
+          "97333008801",
+          `Hello, I would like to confirm my order. Please proceed with the following details:
 
 Product Specifications: ${toRaw(userPreference.value.spec_1)},${toRaw(
-        userPreference.value.spec_2
-      )},${toRaw(userPreference.value.spec_3)}, ${toRaw(
-        userPreference.value.spec_4
-      )}, ${toRaw(userPreference.value.color)}, ${toRaw(
-        userPreference.value.budget
-      )}
+            userPreference.value.spec_2
+          )},${toRaw(userPreference.value.spec_3)}, ${toRaw(
+            userPreference.value.spec_4
+          )}, ${toRaw(userPreference.value.color)}, ${toRaw(
+            userPreference.value.budget
+          )}
 Thank you! Looking forward to your confirmation.`
-    );
-    window.open(link, "_blank");
+        );
+
+        // Redirect to WhatsApp
+        if (typeof window !== "undefined") {
+          window.location.assign(link);
+        }
+      }
+    }, 1000);
   }, 3000);
 });
 </script>
