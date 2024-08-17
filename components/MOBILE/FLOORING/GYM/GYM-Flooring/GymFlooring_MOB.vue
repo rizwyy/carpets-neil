@@ -133,6 +133,7 @@
         <!-- MOBILE -->
         <!-- Artificial Grass -->
         <div
+          v-show="!(userStore.preference.spec_1 === 'Strength')"
           :class="[
             'h-[14vh] gym_Flooring_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_3 === 'Artificial Grass' },

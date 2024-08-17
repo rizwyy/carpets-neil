@@ -136,6 +136,7 @@
           <!-- DESKTOP -->
           <!-- Artificial Grass -->
           <div
+            v-show="!(userStore.preference.spec_1 === 'Strength')"
             :class="[
               'materialItem_PC rounded-md h-[28vh] gym_flooring_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
               { selected: spec_3 === 'Artificial Grass' },
