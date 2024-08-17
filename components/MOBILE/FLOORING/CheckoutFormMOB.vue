@@ -202,7 +202,7 @@
               >PREFERANCES</span
             >
             <a
-              href="/details"
+              href="/flooring/gym/details"
               class="checkoutPt2_Text px-[2.4vw] translate-y-[20%] opacity-0 text-[2vh] text-white font-[500] w-max tracking-[.1vh] flex gap-[.4vw] items-center"
               >EDIT<svg
                 xmlns="http://www.w3.org/2000/svg"
