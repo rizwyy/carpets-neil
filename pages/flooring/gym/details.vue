@@ -25,7 +25,13 @@ const restrictedAccess = useCookie("restrictedAccess");
 const isCategoryOpted = ref(false);
 const category = ref("");
 const isFormVisible = ref(false);
-function setUserPreferenceCookie() {
+function setUserPreferenceCookie(msgType) {
+  if (msgType === "email") {
+    userStore.preference.msgType = "email";
+  }
+  if (msgType === "whatsapp") {
+    userStore.preference.msgType = "whatsapp";
+  }
   userPreference.value = userStore.preference;
   restrictedAccess.value = false;
   console.log("COOKIE SET::", toRaw(userPreference.value));
@@ -142,7 +148,7 @@ onMounted(() => {});
           class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
         >
           <a
-            @click="setUserPreferenceCookie"
+            @click="setUserPreferenceCookie('whatsapp')"
             href="/flooring/gym/checkout"
             v-show="
               userStore.preference.flooring === 'gym' &&
@@ -164,7 +170,7 @@ onMounted(() => {});
             <!-- MOBILE -->
           </a>
           <a
-            @click="setUserPreferenceCookie"
+            @click="setUserPreferenceCookie('email')"
             href="/flooring/gym/checkout"
             v-show="
               userStore.preference.flooring === 'gym' &&

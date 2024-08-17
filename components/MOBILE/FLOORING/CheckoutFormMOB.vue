@@ -294,6 +294,8 @@ const handleClick = () => {
       console.error("Unexpected errors:", err.message);
     });
 };
+
+onMounted(() => {});
 </script>
 
 <style scoped>

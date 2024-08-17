@@ -1,17 +1,17 @@
 <template>
   <div
-    class="h-full w-screen overflow-hidden bg-gradient-to-b from-[#fff] via-[#f1f1f1] to-[#ececec] from-[1%] flex items-center justify-center"
+    class="h-screen absolute w-screen overflow-hidden bg-[#ececec] from-[1%] flex items-center justify-center z-[9999]"
   >
     <div
-      class="flex h-max w-full items-center flex justify-center min-[990px]:gap-[4vh] gap-[2vh] flex-col px-[2vw] text-center"
+      class="flex h-full w-full items-center flex justify-center min-[990px]:gap-[4vh] gap-[2vh] flex-col px-[2vw] text-center"
     >
       <span
         class="text-[#222] min-[990px]:text-[5vh] text-[3.2vh] font-outfit flex"
       >
-        Sorry, Direct access to this page is restricted.
+        Direct access to this page is restricted.
       </span>
       <a
-        class="text-[2.8vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[1vh] text-white bg-black"
+        class="text-[2.4vh] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2vh] text-white bg-black"
         href="/"
         >Go Home</a
       >
