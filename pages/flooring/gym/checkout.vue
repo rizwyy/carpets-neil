@@ -1,10 +1,10 @@
 <template>
   <div class="h-[90vh] relative w-screen overflow-hidden">
-    <div v-if="isAccessRestricted" class="h-screen w-screen">
+    <CheckoutFormMOB v-if="!isAccessRestricted" />
+    <div v-else class="h-screen w-screen">
       <NavBarMOB />
       <Unavailable />
     </div>
-    <CheckoutFormMOB v-else />
   </div>
 </template>
 
