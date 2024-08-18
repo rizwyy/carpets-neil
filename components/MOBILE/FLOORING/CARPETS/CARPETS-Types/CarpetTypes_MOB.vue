@@ -184,7 +184,7 @@ const userStore = useUserStore();
 // COOKIES
 import useUserStore from "~/stores/user";
 
-const spec_2 = ref("");
+const selectedType = ref("");
 
 function clearAllSelections() {
   spec_2.value = "";
