@@ -192,6 +192,22 @@
             </div>
           </div>
           <div
+            v-show="userStore.preference.spec_3 === 'Sisal'"
+            class="color-box carpets_Color_Details_Mob-CONTAINER bg-[gold] translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            :class="{ selected: selectedColors.includes('Gold') }"
+            @click="toggleSelect('Gold')"
+          >
+            <span v-show="!selectedColors.includes('Gold')">Gold</span>
+            <div v-show="selectedColors.includes('Gold')">
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <!-- MOBILE -->
+          </div>
+          <div
+            v-show="userStore.preference.spec_3 !== 'Sisal'"
             class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Green') }"
             @click="toggleSelect('Green')"
@@ -268,6 +284,21 @@
             </div>
           </div>
           <div
+            v-show="userStore.preference.spec_3 === 'Sisal'"
+            class="color-box carpets_Color_Details_Mob-CONTAINER bg-[tan] translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            :class="{ selected: selectedColors.includes('Tan') }"
+            @click="toggleSelect('Tan')"
+          >
+            <span v-show="!selectedColors.includes('Tan')">Tan</span>
+            <div v-show="selectedColors.includes('Tan')">
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+          </div>
+          <div
+            v-show="userStore.preference.spec_3 !== 'Sisal'"
             class="color-box carpets_Color_Details_Mob-CONTAINER translate-y-[10%] opacity-0 h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Rose') }"
             @click="toggleSelect('Rose')"
@@ -292,7 +323,7 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start"
       >
-        <span class="text-[#444]">Selected Colors:</span>
+        <span class="text-[#444] selectedColors_MOB">Selected Colors:</span>
         <div class="w-full grid grid-cols-3 gap-[2vw]">
           <span
             v-for="color in removeCustomColor()"
@@ -322,6 +353,15 @@
             </span>
           </span>
         </div>
+        <!--  -->
+        <button
+          @click="scrollToElement('.selectedColors_MOB')"
+          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] px-[2vw] py-[.8vh] mt-[4vh]"
+        >
+          Add More Colors +
+        </button>
+
+        <!--  -->
       </div>
     </div>
   </transition>
@@ -337,6 +377,22 @@ const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 const customColorArray = ref([]);
+
+function scrollToElement(elementSelector) {
+  const element = document.querySelector(elementSelector);
+  console.log(element);
+
+  if (element) {
+    setTimeout(() => {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // Center the element in the viewport
+      });
+    }, 200);
+  } else {
+    console.warn(`Element not found: ${elementSelector}`);
+  }
+}
 
 function clearColorSelections() {
   selectedColors.value = [];

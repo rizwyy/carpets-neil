@@ -16,6 +16,7 @@ import MaterialDetails from "./../../../components/MOBILE/FLOORING/CARPETS/Carpe
 import ColorDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue";
 import BudgetDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -40,6 +41,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section v-if="isMobile" class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
+    <FloatingBarMOB />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
@@ -60,7 +62,7 @@ onMounted(() => {
       <CategoryDetails />
       <!-- MOBILE -->
       <TypeDetails />
-      <CustomBTN heading="Custom Carpets" link="/flooring/customize" />
+      <!-- <CustomBTN heading="Custom Carpets" link="/flooring/customize" /> -->
       <MaterialDetails />
       <ColorDetails />
       <BudgetDetails />

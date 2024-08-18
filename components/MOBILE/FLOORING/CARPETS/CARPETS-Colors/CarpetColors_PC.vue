@@ -257,6 +257,28 @@
           </div>
           <div class="color-selection flex justify-between gap-[2.8vw] z-[9]">
             <div
+              v-show="userStore.preference.spec_3 === 'Sisal'"
+              class="color_box_PC h-[18vh] bg-[gold] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{
+                selected: userStore.preference.color.includes('Gold'),
+              }"
+              @click="toggleSelect('Gold')"
+            >
+              <span
+                class="text-[2.8vh]"
+                v-show="!userStore.preference.color.includes('Gold')"
+                >Gold</span
+              >
+              <div v-show="userStore.preference.color.includes('Gold')">
+                <span
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  >Selected</span
+                >
+                <!-- DESKTOP -->
+              </div>
+            </div>
+            <div
+              v-show="userStore.preference.spec_3 !== 'Sisal'"
               class="color_box_PC h-[18vh] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
@@ -315,6 +337,27 @@
               </div>
             </div>
             <div
+              v-show="userStore.preference.spec_3 === 'Sisal'"
+              class="color_box_PC h-[18vh] bg-[tan] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{ selected: userStore.preference.color.includes('Tan') }"
+              @click="toggleSelect('Tan')"
+            >
+              <!-- DESKTOP -->
+              <span
+                class="text-[2.8vh]"
+                v-show="!userStore.preference.color.includes('Tan')"
+                >Tan</span
+              >
+              <div v-show="userStore.preference.color.includes('Tan')">
+                <span
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  >Selected</span
+                >
+                <!-- DESKTOP -->
+              </div>
+            </div>
+            <div
+              v-show="userStore.preference.spec_3 !== 'Sisal'"
               class="color_box_PC h-[18vh] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Pink') }"
               @click="toggleSelect('Pink')"
