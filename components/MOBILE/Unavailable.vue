@@ -3,7 +3,6 @@
     v-if="isLoading"
     class="h-screen w-screen flex justify-center items-center bg-[#fff2] backdrop-blur-[8px]"
   >
-    <NavBarMOB />
     <svg xmlns="http://www.w3.org/2000/svg" class="h-[6vh]" viewBox="0 0 24 24">
       <circle cx="18" cy="12" r="0" fill="currentColor">
         <animate
