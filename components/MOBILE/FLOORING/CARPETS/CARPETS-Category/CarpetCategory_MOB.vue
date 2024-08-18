@@ -197,6 +197,7 @@ const toggleSelect = (category) => {
     userStore.preference.spec_1 = toRaw(spec_1.value);
     userStore.preference.flooring = "Carpets";
     userStore.preference.budget = "";
+    userStore.preference.spec_3 = "";
   }
 };
 </script>
