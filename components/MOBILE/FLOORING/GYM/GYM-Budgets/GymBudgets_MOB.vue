@@ -1,6 +1,6 @@
 <template>
   <!-- MOBILE -->
-  <transition @beforeEnter="handleDetailsDOMEntry('gym_Budget_Details_Mob')">
+  <transition @before-appear="handleDetailsDOMEntry('gym_Budget_Details_Mob')">
     <div
       v-show="
         userStore.preference.flooring === 'gym' &&
@@ -20,7 +20,7 @@
         >
         <button
           @click="clearBudgetSelections"
-          v-show="budget.length"
+          v-show="userStore.preference.budget.length"
           class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -47,12 +47,12 @@
         <div
           :class="[
             'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: budget === 'Value' },
+            { selected: userStore.preference.budget === 'Value' },
           ]"
           @click="toggleSelect('Value')"
         >
           <div
-            v-show="budget === 'Value'"
+            v-show="userStore.preference.budget === 'Value'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -88,12 +88,12 @@
         <div
           :class="[
             'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: budget === 'Essential' },
+            { selected: userStore.preference.budget === 'Essential' },
           ]"
           @click="toggleSelect('Essential')"
         >
           <div
-            v-show="budget === 'Essential'"
+            v-show="userStore.preference.budget === 'Essential'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -146,12 +146,12 @@
         <div
           :class="[
             'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: budget === 'Premier' },
+            { selected: userStore.preference.budget === 'Premier' },
           ]"
           @click="toggleSelect('Premier')"
         >
           <div
-            v-show="budget === 'Premier'"
+            v-show="userStore.preference.budget === 'Premier'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -188,12 +188,12 @@
         <div
           :class="[
             'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: budget === 'Signature' },
+            { selected: userStore.preference.budget === 'Signature' },
           ]"
           @click="toggleSelect('Signature')"
         >
           <div
-            v-show="budget === 'Signature'"
+            v-show="userStore.preference.budget === 'Signature'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- MOBILE -->
@@ -227,12 +227,12 @@
         <div
           :class="[
             'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-            { selected: budget === 'Elite' },
+            { selected: userStore.preference.budget === 'Elite' },
           ]"
           @click="toggleSelect('Elite')"
         >
           <div
-            v-show="budget === 'Elite'"
+            v-show="userStore.preference.budget === 'Elite'"
             class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- MOBILE -->

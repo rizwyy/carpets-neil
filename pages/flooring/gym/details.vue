@@ -42,7 +42,9 @@ function ToggleForm() {
   // setUserPreferenceCookie();
   bringForm();
 }
-onMounted(() => {});
+onMounted(() => {
+  userStore.preference = toRaw(userPreference.value);
+});
 </script>
 <template>
   <!-- DESKTOP -->

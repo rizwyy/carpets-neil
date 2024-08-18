@@ -9,7 +9,7 @@
       <span class="text-left text-balance"> Choose Your Application </span>
       <button
         @click="clearAllSelections"
-        v-show="spec_1.length"
+        v-show="userStore.preference.spec_1.length"
         class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
       >
         Clear All<svg
@@ -30,12 +30,12 @@
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Fitness') },
+          { selected: userStore.preference.spec_1.includes('Fitness') },
         ]"
         @click="toggleSelect('Fitness')"
       >
         <div
-          v-show="spec_1.includes('Fitness')"
+          v-show="userStore.preference.spec_1.includes('Fitness')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -63,12 +63,12 @@
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Group Training') },
+          { selected: userStore.preference.spec_1.includes('Group Training') },
         ]"
         @click="toggleSelect('Group Training')"
       >
         <div
-          v-show="spec_1.includes('Group Training')"
+          v-show="userStore.preference.spec_1.includes('Group Training')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -97,12 +97,12 @@
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Strength') },
+          { selected: userStore.preference.spec_1.includes('Strength') },
         ]"
         @click="toggleSelect('Strength')"
       >
         <div
-          v-show="spec_1.includes('Strength')"
+          v-show="userStore.preference.spec_1.includes('Strength')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
@@ -130,12 +130,12 @@
       <div
         :class="[
           'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-          { selected: spec_1.includes('Martial Arts') },
+          { selected: userStore.preference.spec_1.includes('Martial Arts') },
         ]"
         @click="toggleSelect('Martial Arts')"
       >
         <div
-          v-show="spec_1.includes('Martial Arts')"
+          v-show="userStore.preference.spec_1.includes('Martial Arts')"
           class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
         >
           <!-- Selected indicator without text -->
