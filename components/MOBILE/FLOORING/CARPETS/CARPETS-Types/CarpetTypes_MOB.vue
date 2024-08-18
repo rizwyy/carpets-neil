@@ -201,22 +201,6 @@ const toggleSelect = (type) => {
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
-
-onMounted(() => {
-  const section = ref(null);
-  onMounted(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          section.value.classList.remove("opacity-0");
-          section.value.classList.add("opacity-100");
-        }
-      });
-    });
-
-    observer.observe(section.value);
-  });
-});
 </script>
 
 <style scoped>
