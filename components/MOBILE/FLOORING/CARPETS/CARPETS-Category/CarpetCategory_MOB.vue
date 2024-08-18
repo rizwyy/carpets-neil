@@ -7,10 +7,14 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
       >
-        <span class="text-left text-balance"> Choose Your Category </span>
+        <span
+          class="text-left text-balance carpet_Category_Details_Mob-HEADING"
+        >
+          Choose Your Category
+        </span>
         <button
           @click="clearAllSelections"
-          v-show="selectedCategory.length"
+          v-show="userStore.preference.spec_1.length"
           class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -30,13 +34,13 @@
         <!-- Wall To Wall -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Wall to Wall') },
+            'h-[14vh] carpet_Category_Details_Mob-CONTAINER w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_1.includes('Wall to Wall') },
           ]"
           @click="toggleSelect('Wall to Wall')"
         >
           <div
-            v-show="selectedCategory.includes('Wall to Wall')"
+            v-show="userStore.preference.spec_1.includes('Wall to Wall')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -63,13 +67,13 @@
         <!-- Carpet Tiles -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Carpet Tiles') },
+            'h-[14vh] carpet_Category_Details_Mob-CONTAINER w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_1.includes('Carpet Tiles') },
           ]"
           @click="toggleSelect('Carpet Tiles')"
         >
           <div
-            v-show="selectedCategory.includes('Carpet Tiles')"
+            v-show="userStore.preference.spec_1.includes('Carpet Tiles')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -97,13 +101,13 @@
         <!-- Area Rugs -->
         <div
           :class="[
-            'h-[14vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Area Rugs') },
+            'h-[14vh] carpet_Category_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_1.includes('Area Rugs') },
           ]"
           @click="toggleSelect('Area Rugs')"
         >
           <div
-            v-show="selectedCategory.includes('Area Rugs')"
+            v-show="userStore.preference.spec_1.includes('Area Rugs')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -130,13 +134,13 @@
         <!-- Customized -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Runners') },
+            'h-[14vh] carpet_Category_Details_Mob-CONTAINER w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_1.includes('Runners') },
           ]"
           @click="toggleSelect('Runners')"
         >
           <div
-            v-show="selectedCategory.includes('Runners')"
+            v-show="userStore.preference.spec_1.includes('Runners')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -176,26 +180,25 @@ import { useCookie } from "#app";
 import useUserStore from "~/stores/user";
 
 const userPreference = useCookie("userPreference");
-const selectedCategory = ref("");
+const spec_1 = ref("");
 
 function clearAllSelections() {
-  selectedCategory.value = "";
+  spec_1.value = "";
   userStore.preference.spec_1 = "";
 }
 
 const toggleSelect = (category) => {
-  if (selectedCategory.value === category) {
-    selectedCategory.value = "";
+  if (spec_1.value === category) {
+    spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
     scrollToBottom();
-    selectedCategory.value = category;
-    userStore.preference.spec_1 = toRaw(selectedCategory.value);
+    spec_1.value = category;
+    userStore.preference.spec_1 = toRaw(spec_1.value);
     userStore.preference.flooring = "Carpets";
+    userStore.preference.budget = "";
   }
 };
-
-onMounted(() => {});
 </script>
 
 <style scoped>

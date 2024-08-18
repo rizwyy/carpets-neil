@@ -178,7 +178,7 @@
           <input
             :required="phoneIpt.length > 8"
             type="number"
-            class="border-[2px] checkout_Text checkout_Item opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
+            class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] checkout_Text checkout_Item opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
             placeholder="Phone"
             v-model="phoneIpt"
           />

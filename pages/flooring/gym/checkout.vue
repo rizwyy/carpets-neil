@@ -2,15 +2,13 @@
   <div class="h-[90vh] relative w-screen overflow-hidden">
     <CheckoutFormMOB v-if="!isAccessRestricted" />
     <div v-else class="h-screen w-screen">
-      <NavBarMOB />
       <Unavailable />
     </div>
   </div>
 </template>
 
 <script setup>
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import CheckoutFormMOB from "~/components/MOBILE/FLOORING/CheckoutFormMOB.vue";
+import CheckoutFormMOB from "~/components/MOBILE/FLOORING/CheckoutFormMOB_GYM.vue";
 import Unavailable from "~/components/MOBILE/Unavailable.vue";
 const restrictedAccess = useCookie("restrictedAccess");
 

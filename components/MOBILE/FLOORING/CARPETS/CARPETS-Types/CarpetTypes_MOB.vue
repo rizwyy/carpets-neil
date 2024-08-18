@@ -1,6 +1,6 @@
 <template>
   <!-- MOBILE -->
-  <transition @beforeEnter="handleDetailsDOMEntry('carpets_Types_Details_Mob')">
+  <transition @beforeEnter="handleDetailsDOMEntry('carpet_Types_Details_Mob')">
     <div
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
@@ -8,14 +8,12 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
       >
-        <span
-          class="text-left text-balance carpets_Types_Details_Mob-HEADING translate-x-[40%] opacity-[0]"
-        >
+        <span class="text-left text-balance carpet_Types_Details_Mob-HEADING">
           Choose Your Type
         </span>
         <button
           @click="clearAllSelections"
-          v-show="selectedType.length"
+          v-show="userStore.preference.spec_2.length"
           class="h-max bg-white text-gray-500 text-clearAllMOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <!-- MOBILE -->
@@ -37,13 +35,13 @@
         <!-- Plain -->
         <div
           :class="[
-            'h-[14vh] carpets_Types_Details_Mob-CONTAINER overflow-hidden translate-y-[10%] opacity-0 w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Plain') },
+            'h-[14vh] carpet_Types_Details_Mob-CONTAINER  overflow-hidden w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_2.includes('Plain') },
           ]"
           @click="toggleSelect('Plain')"
         >
           <div
-            v-show="selectedType.includes('Plain')"
+            v-show="userStore.preference.spec_2.includes('Plain')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -72,13 +70,13 @@
         <div
           v-show="userStore.preference.category !== 'Carpet Tiles'"
           :class="[
-            'h-[14vh] carpets_Types_Details_Mob-CONTAINER overflow-hidden translate-y-[10%] opacity-0 w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Textured') },
+            'h-[14vh] carpet_Types_Details_Mob-CONTAINER  overflow-hidden w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_2.includes('Textured') },
           ]"
           @click="toggleSelect('Textured')"
         >
           <div
-            v-show="selectedType.includes('Textured')"
+            v-show="userStore.preference.spec_2.includes('Textured')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -107,13 +105,13 @@
         <!-- Textured -->
         <div
           :class="[
-            'h-[14vh] carpets_Types_Details_Mob-CONTAINER overflow-hidden translate-y-[10%] opacity-0 rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Patterned') },
+            'h-[14vh] carpet_Types_Details_Mob-CONTAINER  overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_2.includes('Patterned') },
           ]"
           @click="toggleSelect('Patterned')"
         >
           <div
-            v-show="selectedType.includes('Patterned')"
+            v-show="userStore.preference.spec_2.includes('Patterned')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -141,13 +139,13 @@
         <!-- Customized -->
         <div
           :class="[
-            'h-[14vh] w-full carpets_Types_Details_Mob-CONTAINER overflow-hidden translate-y-[10%] opacity-0 rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedType.includes('Stripped') },
+            'h-[14vh] carpet_Types_Details_Mob-CONTAINER w-full  overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            { selected: userStore.preference.spec_2.includes('Stripped') },
           ]"
           @click="toggleSelect('Stripped')"
         >
           <div
-            v-show="selectedType.includes('Stripped')"
+            v-show="userStore.preference.spec_2.includes('Stripped')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -186,10 +184,10 @@ const userStore = useUserStore();
 // COOKIES
 import useUserStore from "~/stores/user";
 
-const selectedType = ref("");
+const spec_2 = ref("");
 
 function clearAllSelections() {
-  selectedType.value = "";
+  spec_2.value = "";
   userStore.preference.spec_2 = "";
 }
 
@@ -203,6 +201,22 @@ const toggleSelect = (type) => {
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
+
+onMounted(() => {
+  const section = ref(null);
+  onMounted(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.value.classList.remove("opacity-0");
+          section.value.classList.add("opacity-100");
+        }
+      });
+    });
+
+    observer.observe(section.value);
+  });
+});
 </script>
 
 <style scoped>

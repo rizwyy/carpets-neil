@@ -15,9 +15,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
       >
-        <span class="gym_Budget_Details_Mob-HEADING opacity-0 translate-x-[40%]"
-          >Choose Your Budget</span
-        >
+        <span class="gym_Budget_Details_Mob-HEADING">Choose Your Budget</span>
         <button
           @click="clearBudgetSelections"
           v-show="userStore.preference.budget.length"
@@ -46,7 +44,7 @@
         <!-- VALUE -->
         <div
           :class="[
-            'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Value' },
           ]"
           @click="toggleSelect('Value')"
@@ -87,7 +85,7 @@
         <!-- ESSENTIAL -->
         <div
           :class="[
-            'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] gym_Budget_Details_Mob-CONTAINER w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Essential' },
           ]"
           @click="toggleSelect('Essential')"
@@ -129,7 +127,7 @@
         <!-- <div
         v-else
         :class="[
-          'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+          'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
         ]"
       >
         <div
@@ -145,7 +143,7 @@
         <!-- MOBILE -->
         <div
           :class="[
-            'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Premier' },
           ]"
           @click="toggleSelect('Premier')"
@@ -187,7 +185,7 @@
         <!-- MOBILE -->
         <div
           :class="[
-            'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Signature' },
           ]"
           @click="toggleSelect('Signature')"
@@ -226,7 +224,7 @@
         </div>
         <div
           :class="[
-            'h-[10vh] gym_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+            'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.budget === 'Elite' },
           ]"
           @click="toggleSelect('Elite')"

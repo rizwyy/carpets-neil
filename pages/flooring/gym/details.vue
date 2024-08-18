@@ -43,7 +43,9 @@ function ToggleForm() {
   bringForm();
 }
 onMounted(() => {
-  userStore.preference = toRaw(userPreference.value);
+  if (toRaw(userPreference.value)) {
+    userStore.preference = toRaw(userPreference.value);
+  }
 });
 </script>
 <template>
@@ -109,7 +111,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
-    <FloatingBarMOB />
+    <FloatingBarMOB flooring="GYM FLOORS" link="/" />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >

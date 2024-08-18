@@ -44,7 +44,6 @@
 <script setup>
 import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
 const userPreference = useCookie("userPreference");
-console.log(toRaw(userPreference.value.spec_1));
 const timer = ref(3);
 onMounted(() => {
   // Start countdown after 3 seconds

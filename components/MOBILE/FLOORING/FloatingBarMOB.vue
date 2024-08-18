@@ -1,3 +1,9 @@
+<script setup>
+const { flooring, link } = defineProps(["flooring", "link"]);
+
+const colorr = "gym";
+</script>
+
 <template>
   <div
     class="h-[7.2vh] floatingCTA w-[86vw] z-[999] fixed bottom-[2vh] py-[1vh] backdrop-blur-[12px] bg-[#000] left-[50%] translate-x-[-50%] bg-opacity-[.34] rounded-md flex font-outfit"
@@ -6,9 +12,10 @@
       class="h-full w-[65%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
     >
       <a
+        :href="link"
         class="text-[#ececec] font-[500] text-[2vh] flex items-center gap-[1vw] justify-center"
       >
-        <span class=""> CUSTOM CARPETS</span>
+        <span class="">CUSTOM {{ `${flooring}` }}</span>
         <svg
           class="h-[2.4vh]"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +48,6 @@
     </div>
   </div>
 </template>
-
-<script setup></script>
 
 <style scoped>
 .font-outfit {
