@@ -330,8 +330,13 @@ function validateInputs(emailIpt, phoneIpt, nameIpt) {
 }
 
 function handleCheckoutPart1() {
+  console.log(phoneIpt.value);
   // VALIDATE INPUT FIELDS
-  const isValid = validateInputs(mailIpt.value, phoneIpt.value, nameIpt.value);
+  const isValid = validateInputs(
+    mailIpt.value,
+    `${phoneIpt.value}`,
+    nameIpt.value
+  );
   if (!isValid) {
     handleTempAnimation("iptErrMsg_Carpets");
     show_FillInputFields_MSG.value = true;
