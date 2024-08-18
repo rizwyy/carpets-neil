@@ -18,6 +18,14 @@
         />
       </svg>
     </div>
+    <!--INPUT ERROR OVERLAY -->
+    <div
+      class="iptErrMsg_Carpets opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999]"
+    >
+      <span class="text-white font-[500] tracking-[.2vw] uppercase text-center"
+        >Please fill out all fields correctly before proceeding</span
+      >
+    </div>
     <!-- LOADING OVERLAY -->
     <div
       class="loadingOverlay opacity-0 invisible h-screen w-screen absolute top-0 left-0 bg-[#fff1] backdrop-blur-[2px] z-[99] flex items-center justify-center"
@@ -297,7 +305,38 @@ const token = ref("");
 const isCheckoutImgLoaded = ref(false);
 const router = useRouter();
 
+const show_FillInputFields_MSG = ref(false);
+function validateInputs(emailIpt, phoneIpt, nameIpt) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const phonePattern = /^\+?\d{10,15}$/;
+
+  const isEmailValid = emailPattern.test(emailIpt.trim());
+  if (!isEmailValid) {
+    console.log("Invalid email format");
+  }
+
+  const isPhoneValid = phonePattern.test(phoneIpt.trim());
+  if (!isPhoneValid) {
+    console.log("Invalid phone number format");
+  }
+
+  const isNameValid = nameIpt.trim().length >= 2;
+  if (!isNameValid) {
+    console.log("Name must be at least 2 characters long");
+  }
+
+  return isEmailValid && isPhoneValid && isNameValid;
+}
+
 function handleCheckoutPart1() {
+  // VALIDATE INPUT FIELDS
+  const isValid = validateInputs(mailIpt.value, phoneIpt.value, nameIpt.value);
+  if (!isValid) {
+    handleTempAnimation("iptErrMsg_Carpets");
+    show_FillInputFields_MSG.value = true;
+    return;
+  }
   checkoutPt1Animation();
   isCheckoutImgLoaded.value = true;
   setTimeout(() => {
