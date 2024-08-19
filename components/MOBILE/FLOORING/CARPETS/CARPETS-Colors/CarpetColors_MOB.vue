@@ -376,9 +376,9 @@
         <!--  -->
         <button
           @click="scrollToElement('.selectedColors_MOB')"
-          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] px-[2vw] py-[.8vh] mt-[4vh]"
+          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh] mt-[4vh]"
         >
-          Add More Colors +
+          Add More +
         </button>
 
         <!--  -->
