@@ -100,7 +100,7 @@
             quality="50"
             loading="lazy"
             class="flooringItem_Img flooringLayout_Pvc_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
-            src="/pvc/pvc-flooring.webp"
+            src="/pvc/vinyl-cover.webp"
             alt="#"
           />
         </a>

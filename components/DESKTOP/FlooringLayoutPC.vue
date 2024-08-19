@@ -34,7 +34,7 @@
         <CategoryCardHeroPC
           name="Vinly Flooring"
           desc="Durable, stylish vinyl tiles offer sleek, resilient, and low-maintenance flooring for any modern space."
-          src="pvc/pvc-flooring.webp"
+          src="/pvc/vinyl-cover.webp"
           :isAvailable="true"
           link="/flooring/pvc/details"
         />

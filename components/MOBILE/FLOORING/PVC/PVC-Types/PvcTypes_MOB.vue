@@ -57,12 +57,23 @@
             ></div>
             <NuxtImg
               preload
+              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              quality="60"
+              placeholder
+              loading="eager"
+              class="h-full w-full object-cover object-top absolute left-0 bottom-0 z-[-9]"
+              src="/pvc/vinyl-cover.webp"
+              alt="#"
+            />
+            <NuxtImg
+              preload
+              v-show="userStore.preference.spec_1 !== 'Luxury Vinyl'"
               quality="50"
               placeholder
               loading="eager"
               class="h-full w-full object-cover object-top absolute left-0 bottom-0 z-[-9]"
               src="/pvc/vinyl-sheets.webp"
-              alt=""
+              alt="#"
             />
             <span>Sheet</span>
           </div>
