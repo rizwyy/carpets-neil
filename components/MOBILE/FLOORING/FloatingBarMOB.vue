@@ -31,9 +31,14 @@ const colorr = "gym";
       class="h-full w-[50%] flex items-center justify-center pl-[12vw] relative"
     >
       <span
-        class="py-[.4vh] px-[.8vw] rounded-md bg-white h-max absolute text-center text-[1.4vh] font-[600] left-[2.4vw] top-0"
-        >NEED HELP?</span
+        class="py-[.4vh] px-[1vw] top-0 rounded-md bg-white h-max absolute text-center text-[1.4vh] bg-black font-[600] left-[2.4vw]"
       >
+        <span
+          class="animate-gradient from-[#000] bg-gradient-to-r via-[#89CFF0] shadow-2xl to-[#000] bg-clip-text text-transparent bg-300%"
+        >
+          NEED HELP?
+        </span>
+      </span>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +80,9 @@ const colorr = "gym";
 
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 4s ease-in-out infinite;
-  -moz-animation: animatedgradient 4s ease-in-out infinite;
-  animation: animatedgradient 4s ease-in-out infinite normal;
+  -webkit-animation: animatedgradient 6s ease-in-out infinite;
+  -moz-animation: animatedgradient 6s ease-in-out infinite;
+  animation: animatedgradient 6s ease-in-out infinite normal;
 }
 
 @keyframes animatedgradient {

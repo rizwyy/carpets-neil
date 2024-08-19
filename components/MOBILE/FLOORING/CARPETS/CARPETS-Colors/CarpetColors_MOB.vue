@@ -216,7 +216,7 @@
           </div>
           <div
             v-show="userStore.preference.spec_3 !== 'Sisal'"
-            class="color-box carpets_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="color-box carpets_Color_Details_Mob-CONTAINER selectedColors_MOB h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: userStore.preference.color.includes('Green') }"
             @click="toggleSelect('Green')"
           >
@@ -343,7 +343,7 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start"
       >
-        <span class="text-[#444] selectedColors_MOB">Selected Colors:</span>
+        <span class="text-[#444]">Selected Colors:</span>
         <div class="w-full grid grid-cols-3 gap-[2vw]">
           <span
             v-for="color in removeCustomColor()"
