@@ -372,14 +372,14 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToElement('.selectedColors_MOB')"
+            class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
+          >
+            Add More
+          </button>
         </div>
         <!--  -->
-        <button
-          @click="scrollToElement('.selectedColors_MOB')"
-          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh] mt-[4vh]"
-        >
-          Add More +
-        </button>
 
         <!--  -->
       </div>
@@ -400,7 +400,6 @@ const customColorArray = ref([]);
 
 function scrollToElement(elementSelector) {
   const element = document.querySelector(elementSelector);
-  console.log(element);
 
   if (element) {
     setTimeout(() => {

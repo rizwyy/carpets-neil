@@ -338,7 +338,9 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start"
       >
-        <span class="text-[#444]">Selected Colors:</span>
+        <span class="text-[#444] selectedColors_MOB_Wooden"
+          >Selected Colors:</span
+        >
         <div class="w-full grid grid-cols-3 gap-[2vw]">
           <span
             v-for="color in removeCustomColor()"
@@ -368,6 +370,12 @@
             </span>
           </span>
         </div>
+        <!-- <button
+          @click="scrollToElement('.selectedColors_MOB_Wooden')"
+          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[1.2vh] mt-[4vh]"
+        >
+          Add More +
+        </button> -->
       </div>
     </div>
   </transition>
@@ -386,6 +394,20 @@ function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
+}
+function scrollToElement(elementSelector) {
+  const element = document.querySelector(elementSelector);
+
+  if (element) {
+    setTimeout(() => {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // Center the element in the viewport
+      });
+    }, 200);
+  } else {
+    console.warn(`Element not found: ${elementSelector}`);
+  }
 }
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
