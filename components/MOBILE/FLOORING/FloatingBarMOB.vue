@@ -9,7 +9,7 @@ const colorr = "gym";
     class="h-[8.2vh] floatingCTA w-[100vw] z-[99999] fixed bottom-[0vh] py-[1vh] backdrop-blur-[12px] bg-[#000] bg-opacity-[.8] left-[50%] translate-x-[-50%] flex font-outfit"
   >
     <div
-      class="h-full w-[50%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
+      class="h-full w-[60%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
     >
       <a
         href="/flooring/customize"
@@ -27,9 +27,7 @@ const colorr = "gym";
           /></svg
       ></a>
     </div>
-    <div
-      class="h-full w-[50%] flex items-center justify-center pl-[12vw] relative"
-    >
+    <div class="h-full w-[40%] flex items-center justify-center relative">
       <a
         class="text-[#ececec] font-[500] text-[2vh] flex gap-[1vw] items-center justify-center"
         ><span>CHAT </span>
