@@ -6,6 +6,8 @@ import WoodenColorDetails from "~/components/MOBILE/FLOORING/WOODEN/WoodenColorD
 import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue";
 import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
 import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -93,6 +95,7 @@ onMounted(() => {});
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
+    <FloatingBarMOB flooring="WOODEN" link="/" />
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
@@ -111,14 +114,11 @@ onMounted(() => {});
       </div>
       <BannerYouWin />
       <WoodenCategoryDetails />
-      <CustomBTN heading="Custom Wooden Floors" link="/flooring/customize" />
-      <!-- MOBILE -->
       <WoodenTypeDetails />
       <WoodenDesignDetails />
       <WoodenColorDetails />
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
-      <!-- <PileDetails /> -->
       <div class="h-max w-full flex flex-col gap-[0vh] mt-[2vh]">
         <span
           v-show="

@@ -12,7 +12,7 @@ const colorr = "gym";
       class="h-full w-[65%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
     >
       <a
-        :href="link"
+        href="/flooring/customize"
         class="text-[#ececec] font-[500] text-[2vh] flex items-center gap-[1vw] justify-center"
       >
         <span class="">CUSTOM {{ `${flooring}` }}</span>
