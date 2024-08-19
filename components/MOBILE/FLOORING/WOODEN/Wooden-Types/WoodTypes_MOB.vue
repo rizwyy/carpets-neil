@@ -8,9 +8,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
       >
-        <span
-          class="text-left text-balance wooden_Type_Details_Mob-HEADING opacity-0 translate-x-[40%]"
-        >
+        <span class="text-left text-balance wooden_Type_Details_Mob-HEADING">
           Choose Your Type
         </span>
         <button
@@ -41,13 +39,16 @@
           <!-- Solid Wood Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-              { selected: selectedType.includes('Solid Wood Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              {
+                selected:
+                  userStore.preference.spec_2.includes('Solid Wood Floor'),
+              },
             ]"
             @click="toggleSelect('Solid Wood Floor')"
           >
             <div
-              v-show="selectedType.includes('Solid Wood Floor')"
+              v-show="userStore.preference.spec_2.includes('Solid Wood Floor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -75,13 +76,19 @@
           <!-- Engineered Wood Floor  -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-              { selected: selectedType.includes('Engineered Wood Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              {
+                selected: userStore.preference.spec_2.includes(
+                  'Engineered Wood Floor'
+                ),
+              },
             ]"
             @click="toggleSelect('Engineered Wood Floor')"
           >
             <div
-              v-show="selectedType.includes('Engineered Wood Floor')"
+              v-show="
+                userStore.preference.spec_2.includes('Engineered Wood Floor')
+              "
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -110,13 +117,16 @@
           <!-- Bamboo -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-              { selected: selectedType.includes('Bamboo Wood Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+              {
+                selected:
+                  userStore.preference.spec_2.includes('Bamboo Wood Floor'),
+              },
             ]"
             @click="toggleSelect('Bamboo Wood Floor')"
           >
             <div
-              v-show="selectedType.includes('Bamboo Wood Floor')"
+              v-show="userStore.preference.spec_2.includes('Bamboo Wood Floor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -144,13 +154,13 @@
           <!-- Customized -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-              { selected: selectedType.includes('Cork Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+              { selected: userStore.preference.spec_2.includes('Cork Floor') },
             ]"
             @click="toggleSelect('Cork Floor')"
           >
             <div
-              v-show="selectedType.includes('Cork Floor')"
+              v-show="userStore.preference.spec_2.includes('Cork Floor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -184,13 +194,16 @@
           <!-- Laminated Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-              { selected: selectedType.includes('Laminated Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              {
+                selected:
+                  userStore.preference.spec_2.includes('Laminated Floor'),
+              },
             ]"
             @click="toggleSelect('Laminated Floor')"
           >
             <div
-              v-show="selectedType.includes('Laminated Floor')"
+              v-show="userStore.preference.spec_2.includes('Laminated Floor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -218,13 +231,13 @@
           <!-- SPC Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-              { selected: selectedType.includes('SPC Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+              { selected: userStore.preference.spec_2.includes('SPC Floor') },
             ]"
             @click="toggleSelect('SPC Floor')"
           >
             <div
-              v-show="selectedType.includes('SPC Floor')"
+              v-show="userStore.preference.spec_2.includes('SPC Floor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -254,13 +267,13 @@
           <!-- WPC Floor -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('WPC Floor') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_2.includes('WPC Floor') },
             ]"
             @click="toggleSelect('WPC Floor')"
           >
             <div
-              v-show="selectedType.includes('WPC Floor')"
+              v-show="userStore.preference.spec_2.includes('WPC Floor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -287,13 +300,16 @@
           <!-- Hard Laminated -->
           <div
             :class="[
-              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[10%] rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Hard Laminated') },
+              'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              {
+                selected:
+                  userStore.preference.spec_2.includes('Hard Laminated'),
+              },
             ]"
             @click="toggleSelect('Hard Laminated')"
           >
             <div
-              v-show="selectedType.includes('Hard Laminated')"
+              v-show="userStore.preference.spec_2.includes('Hard Laminated')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -341,7 +357,7 @@ function clearAllSelections() {
 }
 
 const toggleSelect = (type) => {
-  if (selectedType.value === type) {
+  if (userStore.preference.spec_2 === type) {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {

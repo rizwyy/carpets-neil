@@ -145,15 +145,17 @@
           <div class="color-selection flex justify-between gap-[2.4vw] z-[9]">
             <div
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Custom Color') }"
+              :class="{
+                selected: userStore.preference.color.includes('Custom Color'),
+              }"
               @click="toggleSelect('CustomColor')"
             >
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('CustomColor')"
+                v-show="!userStore.preference.color.includes('CustomColor')"
                 >Custom Color</span
               >
-              <div v-show="selectedColors.includes('CustomColor')">
+              <div v-show="userStore.preference.color.includes('CustomColor')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -165,7 +167,9 @@
             <div
               v-show="userStore.preference.spec_2 === 'Cork Floor'"
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#333] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Charcoal') }"
+              :class="{
+                selected: userStore.preference.color.includes('Charcoal'),
+              }"
               @click="toggleSelect('Charcoal')"
             >
               <NuxtImg
@@ -174,10 +178,10 @@
               />
               <span
                 class="text-[2.8vh] text-white"
-                v-show="!selectedColors.includes('Charcoal')"
+                v-show="!userStore.preference.color.includes('Charcoal')"
                 >Charcoal</span
               >
-              <div v-show="selectedColors.includes('Charcoal')">
+              <div v-show="userStore.preference.color.includes('Charcoal')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -187,7 +191,9 @@
             <div
               v-show="userStore.preference.spec_2 !== 'Cork Floor'"
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#333] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Beige') }"
+              :class="{
+                selected: userStore.preference.color.includes('Beige'),
+              }"
               @click="toggleSelect('Beige')"
             >
               <NuxtImg
@@ -196,10 +202,10 @@
               />
               <span
                 class="text-[2.8vh] text-white"
-                v-show="!selectedColors.includes('Beige')"
+                v-show="!userStore.preference.color.includes('Beige')"
                 >Beige</span
               >
-              <div v-show="selectedColors.includes('Beige')">
+              <div v-show="userStore.preference.color.includes('Beige')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -210,7 +216,9 @@
 
             <div
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Brown') }"
+              :class="{
+                selected: userStore.preference.color.includes('Brown'),
+              }"
               @click="toggleSelect('Brown')"
             >
               <NuxtImg
@@ -224,10 +232,10 @@
               />
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('Brown')"
+                v-show="!userStore.preference.color.includes('Brown')"
                 >Brown</span
               >
-              <div v-show="selectedColors.includes('Brown')">
+              <div v-show="userStore.preference.color.includes('Brown')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -238,12 +246,12 @@
           <div class="color-selection flex justify-between gap-[2.4vw] z-[9]">
             <div
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Grey') }"
+              :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('Grey')"
+                v-show="!userStore.preference.color.includes('Grey')"
                 >Grey</span
               >
               <NuxtImg
@@ -257,7 +265,7 @@
                 src="/colors/cork-grey.webp"
               />
               <!-- DESKTOP -->
-              <div v-show="selectedColors.includes('Grey')">
+              <div v-show="userStore.preference.color.includes('Grey')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -266,7 +274,9 @@
             </div>
             <div
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Dark Brown') }"
+              :class="{
+                selected: userStore.preference.color.includes('Dark Brown'),
+              }"
               @click="toggleSelect('Dark Brown')"
             >
               <NuxtImg
@@ -281,10 +291,10 @@
               />
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('Dark Brown')"
+                v-show="!userStore.preference.color.includes('Dark Brown')"
                 >Dark Brown</span
               >
-              <div v-show="selectedColors.includes('Dark Brown')">
+              <div v-show="userStore.preference.color.includes('Dark Brown')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -294,7 +304,9 @@
             </div>
             <div
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('White') }"
+              :class="{
+                selected: userStore.preference.color.includes('White'),
+              }"
               @click="toggleSelect('White')"
             >
               <NuxtImg
@@ -309,10 +321,10 @@
               />
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('White')"
+                v-show="!userStore.preference.color.includes('White')"
                 >White</span
               >
-              <div v-show="selectedColors.includes('White')">
+              <div v-show="userStore.preference.color.includes('White')">
                 <!-- DESKTOP -->
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
@@ -323,7 +335,9 @@
             <div
               v-show="userStore.preference.spec_2 !== 'Cork Floor'"
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Black') }"
+              :class="{
+                selected: userStore.preference.color.includes('Black'),
+              }"
               @click="toggleSelect('Black')"
             >
               <NuxtImg
@@ -332,10 +346,10 @@
               />
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('Black')"
+                v-show="!userStore.preference.color.includes('Black')"
                 >Black</span
               >
-              <div v-show="selectedColors.includes('Black')">
+              <div v-show="userStore.preference.color.includes('Black')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -346,7 +360,9 @@
             <div
               v-show="userStore.preference.spec_2 === 'Cork Floor'"
               class="color_box_PC h-[18vh] wooden_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: selectedColors.includes('Orange') }"
+              :class="{
+                selected: userStore.preference.color.includes('Orange'),
+              }"
               @click="toggleSelect('Orange')"
             >
               <NuxtImg
@@ -355,10 +371,10 @@
               />
               <span
                 class="text-[2.8vh]"
-                v-show="!selectedColors.includes('Orange')"
+                v-show="!userStore.preference.color.includes('Orange')"
                 >Orange</span
               >
-              <div v-show="selectedColors.includes('Orange')">
+              <div v-show="userStore.preference.color.includes('Orange')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -466,7 +482,7 @@ const toggleSelect = (color, added) => {
     return;
   }
   // Toggle color selection
-  const isSelected = selectedColors.value.includes(color);
+  const isSelected = userStore.preference.color.includes(color);
   if (isSelected) {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {

@@ -15,8 +15,7 @@
     >
       <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
         <!-- MOBILE -->
-        <span
-          class="text-left text-balance wooden_Finish_Details_Mob-HEADING opacity-0 translate-x-[40%]"
+        <span class="text-left text-balance wooden_Finish_Details_Mob-HEADING"
           >Choose your Finish</span
         >
         <button
@@ -42,7 +41,7 @@
         <!-- Matt Finish -->
         <div
           :class="[
-            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_4 === 'Matt Finish' },
           ]"
           @click="toggleSelect('Matt Finish')"
@@ -74,7 +73,7 @@
         <!-- Gloss Finish -->
         <div
           :class="[
-            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_4 === 'Gloss Finish' },
           ]"
           @click="toggleSelect('Gloss Finish')"
@@ -119,7 +118,7 @@ function clearSurfaceFinish() {
 }
 
 const toggleSelect = (surface) => {
-  if (selectedSurfaceFinish.value === surface) {
+  if (userStore.preference.spec_4 === surface) {
     selectedSurfaceFinish.value = "";
     userStore.preference.spec_4 = "";
   } else {

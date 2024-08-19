@@ -10,7 +10,7 @@
         <span class="text-left text-balance"> Choose Your Category </span>
         <button
           @click="clearAllSelections"
-          v-show="selectedCategory.length"
+          v-show="userStore.preference.spec_1.length"
           class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <span class="text-[2vh]">Clear All</span
@@ -32,12 +32,14 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Real Wood Floor') },
+            {
+              selected: userStore.preference.spec_1.includes('Real Wood Floor'),
+            },
           ]"
           @click="toggleSelect('Real Wood Floor')"
         >
           <div
-            v-show="selectedCategory.includes('Real Wood Floor')"
+            v-show="userStore.preference.spec_1.includes('Real Wood Floor')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -64,12 +66,18 @@
         <div
           :class="[
             'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: selectedCategory.includes('Wood Artificial Floor') },
+            {
+              selected: userStore.preference.spec_1.includes(
+                'Wood Artificial Floor'
+              ),
+            },
           ]"
           @click="toggleSelect('Wood Artificial Floor')"
         >
           <div
-            v-show="selectedCategory.includes('Wood Artificial Floor')"
+            v-show="
+              userStore.preference.spec_1.includes('Wood Artificial Floor')
+            "
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -113,7 +121,7 @@ function clearAllSelections() {
 }
 
 const toggleSelect = (category) => {
-  if (selectedCategory.value === category) {
+  if (userStore.preference.spec_1 === category) {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {

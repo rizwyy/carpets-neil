@@ -25,7 +25,7 @@
           >
           <button
             @click="clearBudgetSelections"
-            v-show="selectedBudget.length"
+            v-show="userStore.preference.budget.length"
             class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <span class="text-[2.2vh]">Clear All</span
@@ -64,12 +64,12 @@
             "
             :class="[
               'h-[12vh] wooden_Budgets_Details_PC-CONTAINER opacity-0 translate-y-[20%] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedBudget === 'Value' },
+              { selected: userStore.preference.budget === 'Value' },
             ]"
             @click="toggleSelect('Value')"
           >
             <div
-              v-show="selectedBudget === 'Value'"
+              v-show="userStore.preference.budget === 'Value'"
               class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -143,12 +143,12 @@
             "
             :class="[
               'h-[12vh] wooden_Budgets_Details_PC-CONTAINER opacity-0 translate-y-[20%] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedBudget === 'Essential' },
+              { selected: userStore.preference.budget === 'Essential' },
             ]"
             @click="toggleSelect('Essential')"
           >
             <div
-              v-show="selectedBudget === 'Essential'"
+              v-show="userStore.preference.budget === 'Essential'"
               class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -223,12 +223,12 @@
             "
             :class="[
               'h-[12vh] wooden_Budgets_Details_PC-CONTAINER opacity-0 translate-y-[20%] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedBudget === 'Premier' },
+              { selected: userStore.preference.budget === 'Premier' },
             ]"
             @click="toggleSelect('Premier')"
           >
             <div
-              v-show="selectedBudget === 'Premier'"
+              v-show="userStore.preference.budget === 'Premier'"
               class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -305,12 +305,12 @@
             "
             :class="[
               'h-[12vh] wooden_Budgets_Details_PC-CONTAINER opacity-0 translate-y-[20%] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedBudget === 'Signature' },
+              { selected: userStore.preference.budget === 'Signature' },
             ]"
             @click="toggleSelect('Signature')"
           >
             <div
-              v-show="selectedBudget === 'Signature'"
+              v-show="userStore.preference.budget === 'Signature'"
               class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -394,12 +394,12 @@
             "
             :class="[
               'h-[12vh] wooden_Budgets_Details_PC-CONTAINER opacity-0 translate-y-[20%] budgetItemPC w-[60%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedBudget === 'Elite' },
+              { selected: userStore.preference.budget === 'Elite' },
             ]"
             @click="toggleSelect('Elite')"
           >
             <div
-              v-show="selectedBudget === 'Elite'"
+              v-show="userStore.preference.budget === 'Elite'"
               class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- DESKTOP -->

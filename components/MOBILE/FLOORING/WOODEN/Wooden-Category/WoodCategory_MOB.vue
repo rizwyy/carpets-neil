@@ -114,7 +114,7 @@ function clearAllSelections() {
 }
 
 const toggleSelect = (category) => {
-  if (selectedCategory.value === category) {
+  if (userStore.preference.spec_1 === category) {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {

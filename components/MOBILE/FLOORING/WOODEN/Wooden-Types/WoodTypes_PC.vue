@@ -19,7 +19,7 @@
           <!-- DESKTOP -->
           <button
             @click="clearAllSelections"
-            v-show="selectedType.length"
+            v-show="userStore.preference.spec_2.length"
             class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <span class="text-[2.2vh]">Clear All</span
@@ -46,12 +46,17 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('Solid Wood Floor') },
+                {
+                  selected:
+                    userStore.preference.spec_2.includes('Solid Wood Floor'),
+                },
               ]"
               @click="toggleSelect('Solid Wood Floor')"
             >
               <div
-                v-show="selectedType.includes('Solid Wood Floor')"
+                v-show="
+                  userStore.preference.spec_2.includes('Solid Wood Floor')
+                "
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -80,12 +85,15 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('Engineered Wood') },
+                {
+                  selected:
+                    userStore.preference.spec_2.includes('Engineered Wood'),
+                },
               ]"
               @click="toggleSelect('Engineered Wood')"
             >
               <div
-                v-show="selectedType.includes('Engineered Wood')"
+                v-show="userStore.preference.spec_2.includes('Engineered Wood')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -114,12 +122,17 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('Bamboo Wood Floor') },
+                {
+                  selected:
+                    userStore.preference.spec_2.includes('Bamboo Wood Floor'),
+                },
               ]"
               @click="toggleSelect('Bamboo Wood Floor')"
             >
               <div
-                v-show="selectedType.includes('Bamboo Wood Floor')"
+                v-show="
+                  userStore.preference.spec_2.includes('Bamboo Wood Floor')
+                "
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -148,12 +161,14 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('Cork Floor') },
+                {
+                  selected: userStore.preference.spec_2.includes('Cork Floor'),
+                },
               ]"
               @click="toggleSelect('Cork Floor')"
             >
               <div
-                v-show="selectedType.includes('Cork Floor')"
+                v-show="userStore.preference.spec_2.includes('Cork Floor')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -187,12 +202,15 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('Laminated Floor') },
+                {
+                  selected:
+                    userStore.preference.spec_2.includes('Laminated Floor'),
+                },
               ]"
               @click="toggleSelect('Laminated Floor')"
             >
               <div
-                v-show="selectedType.includes('Laminated Floor')"
+                v-show="userStore.preference.spec_2.includes('Laminated Floor')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -221,12 +239,12 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('SPC Floor') },
+                { selected: userStore.preference.spec_2.includes('SPC Floor') },
               ]"
               @click="toggleSelect('SPC Floor')"
             >
               <div
-                v-show="selectedType.includes('SPC Floor')"
+                v-show="userStore.preference.spec_2.includes('SPC Floor')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -255,12 +273,12 @@
             <div
               :class="[
                 'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: selectedType.includes('WPC Floor') },
+                { selected: userStore.preference.spec_2.includes('WPC Floor') },
               ]"
               @click="toggleSelect('WPC Floor')"
             >
               <div
-                v-show="selectedType.includes('WPC Floor')"
+                v-show="userStore.preference.spec_2.includes('WPC Floor')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -305,7 +323,7 @@ function clearAllSelections() {
 }
 
 const toggleSelect = (type) => {
-  if (selectedType.value === type) {
+  if (userStore.preference.spec_2 === type) {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {

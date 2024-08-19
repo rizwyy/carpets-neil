@@ -22,7 +22,7 @@
           >
           <button
             @click="clearSurfaceFinish"
-            v-show="selectedSurfaceFinish"
+            v-show="userStore.preference.spec_4"
             class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-[.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <span class="text-[2.2vh]">Clear All</span
@@ -45,12 +45,12 @@
           <div
             :class="[
               'materialItem_PC rounded-md h-[28vh] wooden_Finish_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedSurfaceFinish === 'Matt Finish' },
+              { selected: userStore.preference.spec_4 === 'Matt Finish' },
             ]"
             @click="toggleSelect('Matt Finish')"
           >
             <div
-              v-show="selectedSurfaceFinish === 'Matt Finish'"
+              v-show="userStore.preference.spec_4 === 'Matt Finish'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -76,12 +76,12 @@
           <div
             :class="[
               'materialItem_PC rounded-md h-[28vh] wooden_Finish_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedSurfaceFinish === 'Gloss Finish' },
+              { selected: userStore.preference.spec_4 === 'Gloss Finish' },
             ]"
             @click="toggleSelect('Gloss Finish')"
           >
             <div
-              v-show="selectedSurfaceFinish === 'Gloss Finish'"
+              v-show="userStore.preference.spec_4 === 'Gloss Finish'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- DESKTOP -->
@@ -123,7 +123,7 @@ function clearSurfaceFinish() {
 }
 
 const toggleSelect = (surface) => {
-  if (selectedSurfaceFinish.value === surface) {
+  if (userStore.preference.spec_4 === surface) {
     selectedSurfaceFinish.value = "";
     userStore.preference.spec_4 = "";
   } else {
