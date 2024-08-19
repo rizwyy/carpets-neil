@@ -30,26 +30,6 @@ const colorr = "gym";
     <div
       class="h-full w-[50%] flex items-center justify-center pl-[12vw] relative"
     >
-      <span
-        class="py-[.4vh] px-[1vw] top-0 rounded-md bg-white h-max absolute text-center text-[1.4vh] bg-black font-[600] left-[2.4vw]"
-      >
-        <span
-          class="animate-gradient from-[#000] bg-gradient-to-r via-[#89CFF0] shadow-2xl to-[#000] bg-clip-text text-transparent bg-300%"
-        >
-          NEED HELP?
-        </span>
-      </span>
-
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="absolute left-[17.4vw] rotate-[0deg] h-[2.4vh] top-[1.6vh]"
-        viewBox="0 0 256 256"
-      >
-        <path
-          fill="#fff"
-          d="m229.66 157.66l-48 48A8 8 0 0 1 168 200v-40h-40A104.11 104.11 0 0 1 24 56a8 8 0 0 1 16 0a88.1 88.1 0 0 0 88 88h40v-40a8 8 0 0 1 13.66-5.66l48 48a8 8 0 0 1 0 11.32"
-        />
-      </svg>
       <a
         class="text-[#ececec] font-[500] text-[2vh] flex gap-[1vw] items-center justify-center"
         ><span>CHAT </span>
