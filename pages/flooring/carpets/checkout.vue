@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[90vh] relative w-screen overflow-hidden">
+  <div class="h-max pb-[18vh] relative w-screen overflow-hidden">
     <CheckoutFormMOB v-if="!isAccessRestricted" />
     <div v-else class="h-screen w-screen">
       <NavBarMOB />
