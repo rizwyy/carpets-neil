@@ -6,10 +6,10 @@ const colorr = "gym";
 
 <template>
   <div
-    class="h-[7.2vh] floatingCTA w-[86vw] z-[999] fixed bottom-[2vh] py-[1vh] backdrop-blur-[12px] bg-[#000] left-[50%] translate-x-[-50%] bg-opacity-[.34] rounded-md flex font-outfit"
+    class="h-[8.2vh] floatingCTA w-[100vw] z-[99999] fixed bottom-[0vh] py-[1vh] backdrop-blur-[12px] bg-[#000] bg-opacity-[.8] left-[50%] translate-x-[-50%] flex font-outfit"
   >
     <div
-      class="h-full w-[65%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
+      class="h-full w-[50%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
     >
       <a
         href="/flooring/customize"
@@ -27,7 +27,24 @@ const colorr = "gym";
           /></svg
       ></a>
     </div>
-    <div class="h-full w-[35%] flex items-center justify-center">
+    <div
+      class="h-full w-[50%] flex items-center justify-center pl-[12vw] relative"
+    >
+      <span
+        class="py-[.4vh] px-[.8vw] rounded-md bg-white h-max absolute text-center text-[1.4vh] font-[600] left-[2.4vw] top-0"
+        >NEED HELP?</span
+      >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-[17.4vw] rotate-[0deg] h-[2.4vh] top-[1.6vh]"
+        viewBox="0 0 256 256"
+      >
+        <path
+          fill="#fff"
+          d="m229.66 157.66l-48 48A8 8 0 0 1 168 200v-40h-40A104.11 104.11 0 0 1 24 56a8 8 0 0 1 16 0a88.1 88.1 0 0 0 88 88h40v-40a8 8 0 0 1 13.66-5.66l48 48a8 8 0 0 1 0 11.32"
+        />
+      </svg>
       <a
         class="text-[#ececec] font-[500] text-[2vh] flex gap-[1vw] items-center justify-center"
         ><span>CHAT </span>
