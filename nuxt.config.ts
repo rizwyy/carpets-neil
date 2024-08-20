@@ -13,14 +13,23 @@ export default defineNuxtConfig({
       /* Extend the Tailwind config here */
       content: ["content/**/**.md"],
       theme: {
-        fontSize: {
-          bannerMOB: "5.4vh",
-          headingMOB: "5.8vh",
-          subHeadingMOB: "5.8vh",
-          viewAllMOB: "1.8vh",
-          inputMOB: "2vh",
-          clearAllMOB: "1.6vh",
-          details_Box_Heading_PC: "2.4vw",
+        extend: {
+          fontSize: {
+            bannerMOB: "5.4vh",
+            headingMOB: "5.8vh",
+            subHeadingMOB: "5.8vh",
+            viewAllMOB: "1.8vh",
+            inputMOB: "2vh",
+            clearAllMOB: "1.6vh",
+            details_Box_Heading_PC: "2.4vw",
+          },
+          colors: {
+            navBarBG: "#f1f1f1",
+            detailsBG: "#fffdf5",
+            detailsFrom: "#fffdf5",
+            detailsTo: "#f1f1f1",
+            detailsHeadCLR: "#222",
+          },
         },
       },
     },
@@ -33,9 +42,5 @@ export default defineNuxtConfig({
       SUPABASE_URL: process.env.SUPABASE_URL,
       SUPABASE_KEY: process.env.SUPABASE_KEY,
     },
-  },
-
-  app: {
-    pageTransition: { name: "page", mode: "out-in" },
   },
 });

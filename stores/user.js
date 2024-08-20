@@ -17,8 +17,9 @@ const useUserStore = defineStore("user", {
       color: [],
       budget: "",
 
-      msgType: "",
+      orderMethod: "",
     },
+    userData: { name: "", email: "", phone: "" },
   }),
 });
 export default useUserStore;

@@ -25,12 +25,12 @@ const restrictedAccess = useCookie("restrictedAccess");
 const isCategoryOpted = ref(false);
 const category = ref("");
 const isFormVisible = ref(false);
-function setUserPreferenceCookie(msgType) {
-  if (msgType === "email") {
-    userStore.preference.msgType = "email";
+function setUserPreferenceCookie(orderMethod) {
+  if (orderMethod === "email") {
+    userStore.preference.orderMethod = "email";
   }
-  if (msgType === "whatsapp") {
-    userStore.preference.msgType = "whatsapp";
+  if (orderMethod === "whatsapp") {
+    userStore.preference.orderMethod = "whatsapp";
   }
   userPreference.value = userStore.preference;
   restrictedAccess.value = false;

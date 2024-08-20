@@ -107,46 +107,30 @@ export function handleDOMEntry(el) {
     y: 0,
     scale: 1,
     opacity: 1,
+    autoAlpha: 1,
     duration: 0.4,
     ease: "slide.in",
   });
 }
 export function handleDetailsDOMEntry(el) {
   let tl = gsap.timeline();
-
-  // Animate the heading element from an initial state to its final state
-  tl.fromTo(
-    `.${el}-HEADING`,
-    {
-      x: -50, // Starting X position (you can adjust this)
-      opacity: 0, // Start with 0 opacity
-    },
-    {
-      y: 0, // Ending Y position
-      x: 0, // Ending X position
-      opacity: 1, // End with full opacity
-      duration: 0.2,
-      ease: "power2.out", // You can adjust the ease function
-    }
-  );
-
-  // Animate the container element from an initial state to its final state
-  tl.fromTo(
-    `.${el}-CONTAINER`,
-    {
-      y: 20, // Starting Y position (you can adjust this)
-      opacity: 0, // Start with 0 opacity
-    },
-    {
-      scale: 1, // Ending scale (back to normal size)
-      y: 0, // Ending Y position
-      opacity: 1, // End with full opacity
-      delay: -0.6,
-      duration: 0.2,
-      stagger: 0.1, // Staggering the animations
-      ease: "power2.out", // You can adjust the ease function
-    }
-  );
+  tl.to(`.${el}-HEADING`, {
+    y: 0,
+    x: 0,
+    delay: 0.4,
+    opacity: 1,
+    duration: 0.2,
+    ease: "slide.in",
+  });
+  tl.to(`.${el}-CONTAINER`, {
+    delay: -0.6,
+    scale: 1,
+    y: 0,
+    opacity: 1,
+    duration: 0.2,
+    stagger: 0.1,
+    ease: "slide.in",
+  });
 }
 
 export function handleCatalogDOMEntry(el) {
