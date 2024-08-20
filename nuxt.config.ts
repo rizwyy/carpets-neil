@@ -24,7 +24,7 @@ export default defineNuxtConfig({
             details_Box_Heading_PC: "2.4vw",
           },
           colors: {
-            navBarBG: "#f1f1f1",
+            navBarBG: "#fff",
             detailsBG: "#fffdf5",
             detailsFrom: "#fffdf5",
             detailsTo: "#f1f1f1",
