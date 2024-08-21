@@ -8,7 +8,7 @@
       userStore.preference.material !== '' &&
       userStore.preference.color.length > 0
     "
-    class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+    class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
   >
     <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
       <!-- MOBILE -->

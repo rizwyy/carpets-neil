@@ -7,7 +7,7 @@
         userStore.preference.spec_2 !== '' &&
         userStore.preference.spec_3 !== ''
       "
-      class="min-[990px]:hidden container mx-auto p-[4vh] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
+      class="min-[990px]:hidden container mx-auto p-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
     >
       <div
         class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between"
