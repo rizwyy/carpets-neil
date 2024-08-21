@@ -31,7 +31,7 @@
               userStore.preference.color.length > 0 &&
               userStore.preference.budget !== ''
             "
-            class="w-[44vw] carpetOrderMethods_MOB-CONTAINER opacity-0 translate-y-[20%] rounded-md tracking-[.3vw] text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
+            class="w-[44vw] carpetOrderMethods_MOB-CONTAINER opacity-0 translate-y-[20%] rounded-md text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
           >
             <!-- MOBILE -->
             <span
@@ -39,11 +39,21 @@
             >
               WhatsApp</span
             >
+            <div
+              v-show="userStore.preference.orderMethod === 'whatsapp'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.4vh] rounded-md"
+                >Selected</span
+              >
+            </div>
 
             <!-- MOBILE -->
           </button>
           <button
-            @click="toggleOrderMethod('whatsapp')"
+            @click="toggleOrderMethod('email')"
             v-show="
               userStore.preference.flooring === 'Carpets' &&
               userStore.preference.spec_1 !== '' &&
@@ -54,6 +64,16 @@
             "
             class="w-[44vw] carpetOrderMethods_MOB-CONTAINER opacity-0 translate-y-[20%] rounded-md tracking-[.3vw] text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
           >
+            <div
+              v-show="userStore.preference.orderMethod === 'email'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.4vh] rounded-md"
+                >Selected</span
+              >
+            </div>
             <!-- MOBILE -->
             <span
               class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff] via-[#ececec] shadow-2xl to-[#ececec] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_2 uppercase tracking-[.4vw]"
