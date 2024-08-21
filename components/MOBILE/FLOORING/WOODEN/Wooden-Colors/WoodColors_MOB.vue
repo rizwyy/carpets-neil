@@ -370,12 +370,12 @@
             </span>
           </span>
         </div>
-        <!-- <button
-          @click="scrollToElement('.selectedColors_MOB_Wooden')"
-          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[1.2vh] mt-[4vh]"
+        <button
+          @click="scrollToElement('.selectedColors_MOB')"
+          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
         >
-          Add More +
-        </button> -->
+          Add More
+        </button>
       </div>
     </div>
   </transition>
