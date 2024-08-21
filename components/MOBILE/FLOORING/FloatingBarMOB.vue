@@ -1,11 +1,13 @@
 <script setup>
 const { flooring, link } = defineProps(["flooring", "link"]);
+import useUserStore from "~/stores/user";
 
-const colorr = "gym";
+const userStore = useUserStore();
 </script>
 
 <template>
   <div
+    v-show="userStore.preference.spec_1 !== ''"
     class="h-[8.2vh] floatingCTA w-[100vw] z-[99999] fixed bottom-[0vh] py-[1vh] backdrop-blur-[12px] bg-[#000] bg-opacity-[.8] left-[50%] translate-x-[-50%] flex font-outfit"
   >
     <div
