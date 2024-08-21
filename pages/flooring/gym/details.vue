@@ -7,6 +7,9 @@ import GymDesignDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDetail
 import GymBudgetDetails from "~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import GymOrderMethodDetails from "./../../../components/MOBILE/FLOORING/GYM/GymOrderMethodDetails.vue";
+import GymInfoDetails from "./../../../components/MOBILE/FLOORING/GYM/GymInfoDetails.vue";
+import GymReviewDetails from "./../../../components/MOBILE/FLOORING/GYM/GymReviewDetails.vue";
 
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
@@ -42,11 +45,7 @@ function ToggleForm() {
   // setUserPreferenceCookie();
   bringForm();
 }
-onMounted(() => {
-  if (toRaw(userPreference.value)) {
-    userStore.preference = toRaw(userPreference.value);
-  }
-});
+onMounted(() => {});
 </script>
 <template>
   <!-- DESKTOP -->
@@ -73,32 +72,11 @@ onMounted(() => {
       <GymApplicationDetails />
       <GymActivitiesDetails />
       <GymFlooringDetails />
-      <!-- <GymFinishDetails /> -->
       <GymColorDetails />
       <GymBudgetDetails />
-
-      <!-- DESKTOP -->
-      <a href="/flooring/gym/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.flooring === 'gym' &&
-            userStore.preference.spec_1 !== '' &&
-            userStore.preference.spec_2 !== '' &&
-            userStore.preference.spec_3 !== '' &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.budget !== ''
-          "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] ease-in-out flex items-center gap-[2vw] justify-center"
-        >
-          <span
-            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text tracking-[.2vw] text-transparent bg-300% animate-gradient hover:bg-[#E0FFFF] transition-all duration-[500ms] ease-in-out"
-          >
-            BROWSE CATALOG</span
-          >
-        </button>
-      </a>
-      <!-- DESKTOP -->
+      <GymOrderMethodDetails />
+      <GymInfoDetails />
+      <GymReviewDetails />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -135,68 +113,9 @@ onMounted(() => {
       <!-- <GymFinishDetails /> -->
       <GymColorDetails />
       <GymBudgetDetails />
-      <div class="h-max w-full flex flex-col gap-[0vh] mt-[2vh]">
-        <span
-          v-show="
-            userStore.preference.flooring === 'gym' &&
-            userStore.preference.spec_1 !== '' &&
-            userStore.preference.spec_2 !== '' &&
-            userStore.preference.spec_3 !== '' &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.budget !== ''
-          "
-          class="w-[75%] px-[4vw] text-[3.2vh] leading-[3.8vh]"
-          >Select Your Preferred Ordering Method:</span
-        >
-        <div
-          class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
-        >
-          <a
-            @click="setUserPreferenceCookie('whatsapp')"
-            href="/flooring/gym/checkout"
-            v-show="
-              userStore.preference.flooring === 'gym' &&
-              userStore.preference.spec_1 !== '' &&
-              userStore.preference.spec_2 !== '' &&
-              userStore.preference.spec_3 !== '' &&
-              userStore.preference.color.length > 0 &&
-              userStore.preference.budget !== ''
-            "
-            class="w-[44vw] rounded-md tracking-[.3vw] text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
-          >
-            <!-- MOBILE -->
-            <span
-              class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff7] via-[#E0FFFF] shadow-2xl to-[#fff5] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_1 uppercase tracking-[.4vw]"
-            >
-              WhatsApp</span
-            >
-
-            <!-- MOBILE -->
-          </a>
-          <a
-            @click="setUserPreferenceCookie('email')"
-            href="/flooring/gym/checkout"
-            v-show="
-              userStore.preference.flooring === 'gym' &&
-              userStore.preference.spec_1 !== '' &&
-              userStore.preference.spec_2 !== '' &&
-              userStore.preference.spec_3 !== '' &&
-              userStore.preference.color.length > 0 &&
-              userStore.preference.budget !== ''
-            "
-            class="w-[42vw] rounded-md tracking-[.3vw] text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
-          >
-            <!-- MOBILE -->
-            <span
-              class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff7] via-[#E0FFFF] shadow-2xl to-[#fff5] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_2 uppercase tracking-[.4vw]"
-            >
-              Mail</span
-            >
-
-            <!-- MOBILE -->
-          </a>
-        </div>
-      </div>
+      <GymOrderMethodDetails />
+      <GymInfoDetails />
+      <GymReviewDetails />
     </div>
     <!-- MOBILE -->
   </section>
