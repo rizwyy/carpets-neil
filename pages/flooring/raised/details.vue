@@ -6,6 +6,10 @@ import RaisedColorDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedColorD
 import RaisedBudgetDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedBudgetDetails.vue";
 
 import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedOrderMethodDetails.vue";
+import RaisedInfoDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedInfoDetails.vue";
+import RaisedReviewDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedReviewDetails.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -57,6 +61,9 @@ onMounted(() => {});
       <RaisedFinishesDetails />
       <RaisedColorDetails />
       <RaisedBudgetDetails />
+      <OrderMethodDetails />
+      <RaisedInfoDetails />
+      <RaisedReviewDetails />
 
       <!-- DESKTOP -->
       <a href="/flooring/raised/catalog">
@@ -115,34 +122,9 @@ onMounted(() => {});
       <RaisedFinishesDetails />
       <RaisedColorDetails />
       <RaisedBudgetDetails />
-      <a href="/flooring/raised/catalog">
-        <transition
-          @beforeEnter="
-            bringOpacity('details_raised_submit_btn_mob', 'translate')
-          "
-        >
-          <button
-            @click="setUserPreferenceCookie"
-            v-show="
-              userStore.preference.flooring === 'raised' &&
-              userStore.preference.spec_1 !== '' &&
-              userStore.preference.spec_2 !== '' &&
-              userStore.preference.spec_3 !== '' &&
-              userStore.preference.color.length > 0 &&
-              userStore.preference.budget !== ''
-            "
-            class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
-          >
-            <!-- MOBILE -->
-            <span
-              class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
-            >
-              BROWSE CATALOG</span
-            >
-            <!-- MOBILE -->
-          </button>
-        </transition>
-      </a>
+      <OrderMethodDetails />
+      <RaisedInfoDetails />
+      <RaisedReviewDetails />
     </div>
     <!-- MOBILE -->
   </section>
