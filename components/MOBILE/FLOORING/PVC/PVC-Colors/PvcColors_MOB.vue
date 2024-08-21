@@ -194,7 +194,9 @@
             </div>
           </div>
         </div>
-        <div class="color-selection flex justify-between gap-[4vw] z-[9]">
+        <div
+          class="addMorePoint_PVC_MOB color-selection flex justify-between gap-[4vw] z-[9]"
+        >
           <!-- MOBILE -->
           <div
             class="color-box h-[10vh] pvc_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
@@ -433,6 +435,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToElement('.addMorePoint_PVC_MOB')"
+            class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </div>
@@ -448,6 +456,22 @@ const userStore = useUserStore();
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
+
+function scrollToElement(elementSelector) {
+  const element = document.querySelector(elementSelector);
+  console.log(element);
+  if (element) {
+    setTimeout(() => {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // Center the element in the viewport
+      });
+    }, 200);
+  } else {
+    console.warn(`Element not found: ${elementSelector}`);
+  }
+}
+
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];

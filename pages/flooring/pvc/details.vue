@@ -6,6 +6,11 @@ import PvcColorDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcColorD
 import PvcDesignDetails from "../../../components/MOBILE/FLOORING/PVC/PvcDesignDetails.vue";
 import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetDetails.vue";
 
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import PvcOrderMethodDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcOrderMethodDetails.vue";
+import PvcInfoDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcInfoDetails.vue";
+import PvcReviewDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcReviewDetails.vue";
+
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -99,6 +104,8 @@ onMounted(() => {
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
+    <FloatingBarMOB flooring="VINYL" link="/" />
+
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
@@ -121,33 +128,14 @@ onMounted(() => {
       <!-- MOBILE -->
       <PvcCategoryDetails />
       <PvcTypeDetails />
-      <CustomBTN heading="Customized Vinyl's" link="/flooring/customize" />
 
       <PvcDesignDetails />
       <PvcColorDetails />
       <PvcFinishDetails />
       <PvcBudgetDetails />
-      <a href="/flooring/pvc/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.spec_1 !== '' &&
-            userStore.preference.spec_2 !== '' &&
-            userStore.preference.spec_3 !== '' &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.budget !== ''
-          "
-          class="details_carpets_submit_btn mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
-        >
-          <!-- MOBILE -->
-          <span
-            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
-          >
-            BROWSE CATALOG</span
-          >
-          <!-- MOBILE -->
-        </button>
-      </a>
+      <PvcOrderMethodDetails />
+      <PvcInfoDetails />
+      <PvcReviewDetails />
     </div>
     <!-- MOBILE -->
   </section>

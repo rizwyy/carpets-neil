@@ -15,11 +15,11 @@ import MaterialDetails from "./../../../components/MOBILE/FLOORING/CARPETS/Carpe
 import ColorDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue";
 import BudgetDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
-import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CheckoutFormMOB_CARPETS from "~/components/MOBILE/FLOORING/CheckoutFormMOB_CARPETS.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsOrderMethodDetails.vue";
 import CarpetsInfoDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsInfoDetails.vue";
 import CarpetsReviewDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsReviewDetails.vue";

@@ -185,6 +185,7 @@ export function handleBringOpacityForCustomColor(el) {
   });
 }
 
+// FOR PC
 export function scrollToNextElement(defaultHeight, distance) {
   setTimeout(() => {
     // Get the current scroll position
