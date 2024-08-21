@@ -178,7 +178,7 @@
             </div>
           </div>
           <div
-            class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            class="selectedColors_MOB_Wooden color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: userStore.preference.color.includes('Brown') }"
             @click="toggleSelect('Brown')"
           >
@@ -338,9 +338,7 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start"
       >
-        <span class="text-[#444] selectedColors_MOB_Wooden"
-          >Selected Colors:</span
-        >
+        <span class="text-[#444]">Selected Colors:</span>
         <div class="w-full grid grid-cols-3 gap-[2vw]">
           <span
             v-for="color in removeCustomColor()"
@@ -369,13 +367,13 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToElement('.selectedColors_MOB_Wooden')"
+            class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
+          >
+            Add More
+          </button>
         </div>
-        <button
-          @click="scrollToElement('.selectedColors_MOB')"
-          class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
-        >
-          Add More
-        </button>
       </div>
     </div>
   </transition>
@@ -395,6 +393,7 @@ function clearColorSelections() {
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
 }
+
 function scrollToElement(elementSelector) {
   const element = document.querySelector(elementSelector);
 
@@ -409,6 +408,7 @@ function scrollToElement(elementSelector) {
     console.warn(`Element not found: ${elementSelector}`);
   }
 }
+
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };

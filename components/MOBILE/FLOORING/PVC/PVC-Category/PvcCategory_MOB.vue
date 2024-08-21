@@ -53,7 +53,7 @@
           placeholder
           loading="eager"
           class="h-full w-full object-top object-cover absolute left-0 bottom-0 z-[-9]"
-          src="/pvc/vinyl-sheets.webp"
+          src="/pvc/vinyl-cover.webp"
           alt=""
         />
         <span>Luxury Vinyl</span>
