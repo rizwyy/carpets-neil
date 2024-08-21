@@ -106,7 +106,7 @@
               placeholder
               loading="lazy"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-herringbone.webp"
+              src="/wooden/wooden-cork1.webp"
               alt="#"
             />
             <span>Tiles</span>

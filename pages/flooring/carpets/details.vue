@@ -40,7 +40,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section v-if="isMobile" class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
-    <!-- <FloatingBarMOB flooring="CARPETS" link="/" /> -->
+    <FloatingBarMOB flooring="CARPETS" link="/" />
 
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
