@@ -14,7 +14,7 @@
       class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
     >
       <div
-        class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh]"
+        class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
       >
         <NuxtImg
           @load="handleImageLoad('checkoutPt2BG', 'checkoutPt2')"
@@ -26,12 +26,12 @@
             ></div> -->
         <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
           <span
-            class="checkoutPt2_Text translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-white"
+            class="checkoutPt2_Text translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
             >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
           >
           <button
             @click="scrollToTop"
-            class="checkoutPt2_Text opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#ececec] font-[500] w-max flex gap-[.6vw] items-center z"
+            class="checkoutPt2_Text opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"
           >
             Edit Details
             <svg

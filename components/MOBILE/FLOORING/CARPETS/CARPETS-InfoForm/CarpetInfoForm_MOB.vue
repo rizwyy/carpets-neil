@@ -23,22 +23,19 @@
       </div>
       <div class="h-max w-screen pt-[2vh] pb-[6vh] flex justify-center">
         <div
-          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative"
+          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
         >
           <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
             <span
-              class="carpetInfoMOB-HEADING opacity-0 translate-y-[20%] w-max text-[3.8vh] tracking-[-.2vw] font-[400] text-white"
+              class="carpetInfoMOB-HEADING opacity-0 translate-y-[20%] w-max text-[3.8vh] tracking-[-.2vw] font-[400] text-[#444]"
               >Your Contact Information</span
             >
             <span
-              class="carpetInfoMOB-HEADING opacity-0 translate-y-[20%] text-[#e1e9e5] text-[2.2vh] font-[450]"
+              class="carpetInfoMOB-HEADING opacity-0 translate-y-[20%] text-[#999] text-[2.2vh] font-[450]"
               >Enter your contact information</span
             >
           </div>
-          <NuxtImg
-            class="carpetInfoMOB-CONTAINER absolute top-0 left-0 h-full w-full object-cover z-[-9]"
-            src="/assets/layered-peaks.png"
-          />
+
           <div
             class="invisible opacity-0 carpetInfoMOB-CONTAINER h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
           >
