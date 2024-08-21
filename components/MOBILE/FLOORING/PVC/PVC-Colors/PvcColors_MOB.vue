@@ -141,9 +141,17 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-beige.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wood Effect'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/beige-wood.webp"
+            />
             <span v-show="!selectedColors.includes('Beige')">Beige</span>
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#F3E5AB]"
             ></div>
             <!-- MOBILE -->
@@ -165,8 +173,16 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-brown.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wood Effect'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/brown-wood.webp"
+            />
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#993300]"
             ></div>
             <span v-show="!selectedColors.includes('Brown')">Brown</span>
@@ -190,8 +206,16 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-grey.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wood Effect'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/grey-wood.webp"
+            />
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#BEBFC5]"
             ></div>
             <span v-show="!selectedColors.includes('Grey')">Grey</span>
@@ -204,6 +228,10 @@
             </div>
           </div>
           <div
+            v-show="
+              userStore.preference.spec_1 === 'Luxury Vinyl' &&
+              userStore.preference.spec_3 !== 'Wood Effect'
+            "
             class="color-box h-[10vh] pvc_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Green') }"
             @click="toggleSelect('Green')"
@@ -214,8 +242,8 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-green.webp"
             />
+
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#00FF00]"
             ></div>
             <span v-show="!selectedColors.includes('Green')">Green</span>
@@ -228,6 +256,30 @@
             <!-- MOBILE -->
           </div>
           <div
+            v-show="userStore.preference.spec_3 === 'Wood Effect'"
+            class="color-box h-[10vh] pvc_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            :class="{ selected: selectedColors.includes('Dark Brown') }"
+            @click="toggleSelect('Dark Brown')"
+          >
+            <!-- MOBILE -->
+            <NuxtImg
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/darkBrown-wood.webp"
+            />
+
+            <span v-show="!selectedColors.includes('Dark Brown')"
+              >Dark Brown</span
+            >
+            <div v-show="selectedColors.includes('Dark Brown')">
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <!-- MOBILE -->
+          </div>
+          <div
+            v-show="userStore.preference.spec_3 !== 'Wood Effect'"
             class="color-box h-[10vh] pvc_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Blue') }"
             @click="toggleSelect('Blue')"
@@ -238,7 +290,10 @@
               src="/pvc/woven/woven-blue.webp"
             />
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#007FFF]"
             ></div>
             <!-- MOBILE -->
@@ -263,8 +318,16 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-white.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wood Effect'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/white-wood.webp"
+            />
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#ffff]"
             ></div>
             <!-- MOBILE -->
@@ -287,8 +350,16 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/pvc/woven/woven-black.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wood Effect'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/black-wood.webp"
+            />
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-black"
             ></div>
             <span v-show="!selectedColors.includes('Black')">Black</span>
@@ -300,6 +371,7 @@
             </div>
           </div>
           <div
+            v-show="userStore.preference.spec_3 !== 'Wood Effect'"
             class="color-box h-[10vh] pvc_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Gold') }"
             @click="toggleSelect('Gold')"
@@ -311,7 +383,10 @@
               src="/pvc/woven/woven-gold.webp"
             />
             <div
-              v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
+              v-show="
+                userStore.preference.spec_1 === 'Luxury Vinyl' &&
+                userStore.preference.spec_3 !== 'Wood Effect'
+              "
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#FFD700]"
             ></div>
             <span v-show="!selectedColors.includes('Gold')">Gold</span>
