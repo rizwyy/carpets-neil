@@ -158,17 +158,17 @@
           </div>
 
           <!-- MOBILE -->
-          <!-- Abstract -->
+          <!-- Multicolor -->
           <div
             v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
             :class="[
               'h-[14vh] pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
-              { selected: selectedType.includes('Abstract') },
+              { selected: selectedType.includes('Multicolor') },
             ]"
-            @click="toggleSelect('Abstract')"
+            @click="toggleSelect('Multicolor')"
           >
             <div
-              v-show="selectedType.includes('Abstract')"
+              v-show="selectedType.includes('Multicolor')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -189,7 +189,7 @@
               src="/pvc/abstract-pvc.webp"
               alt=""
             />
-            <span>Abstract</span>
+            <span>Multicolor</span>
           </div>
           <!-- MOBILE -->
           <!-- Rugs -->
