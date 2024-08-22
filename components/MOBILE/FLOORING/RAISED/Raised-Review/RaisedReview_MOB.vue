@@ -2,7 +2,7 @@
   <transition @beforeEnter="handleDetailsDOMEntry('raisedRevForm')">
     <div
       v-show="
-        userStore.preference.flooring === 'Raised' &&
+        userStore.preference.flooring === 'raised' &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
         userStore.preference.spec_3 !== '' &&
