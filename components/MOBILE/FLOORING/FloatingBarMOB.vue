@@ -17,7 +17,13 @@ const userStore = useUserStore();
         href="/flooring/customize"
         class="text-[#ececec] font-[500] text-[2vh] flex items-center gap-[1vw] justify-center"
       >
-        <span class="">CUSTOM {{ `${flooring}` }}</span>
+        <span class=""
+          >CUSTOM
+          <span
+            class="bg-gradient-to-r from-[#fff9] via-[#E0FFFF] to-[#fff] bg-clip-text text-transparent bg-300% animate-gradient"
+            >{{ `${flooring}` }}</span
+          ></span
+        >
         <svg
           class="h-[2.4vh]"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,11 +66,10 @@ const userStore = useUserStore();
 
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 6s ease-in-out infinite;
-  -moz-animation: animatedgradient 6s ease-in-out infinite;
-  animation: animatedgradient 6s ease-in-out infinite normal;
+  -webkit-animation: animatedgradient 4s ease-in-out infinite;
+  -moz-animation: animatedgradient 4s ease-in-out infinite;
+  animation: animatedgradient 4s ease-in-out infinite normal;
 }
-
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
