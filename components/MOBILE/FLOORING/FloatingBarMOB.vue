@@ -60,9 +60,9 @@ const userStore = useUserStore();
 
 .animate-gradient {
   background-size: 300%;
-  -webkit-animation: animatedgradient 5s ease-in infinite;
-  -moz-animation: animatedgradient 5s ease-in infinite;
-  animation: animatedgradient 5s ease-in infinite normal;
+  -webkit-animation: animatedgradient 3.2s ease-in-out infinite;
+  -moz-animation: animatedgradient 3.2s ease-in-out infinite;
+  animation: animatedgradient 3.2s ease-in-out infinite normal;
 }
 @keyframes animatedgradient {
   0% {
