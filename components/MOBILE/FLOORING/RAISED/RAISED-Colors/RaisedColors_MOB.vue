@@ -336,6 +336,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollUpBy(400)"
+            class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </div>

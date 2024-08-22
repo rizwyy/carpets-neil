@@ -436,7 +436,7 @@
             </span>
           </span>
           <button
-            @click="scrollToElement('.addMorePoint_PVC_MOB')"
+            @click="scrollUpBy(400)"
             class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
           >
             Add More
@@ -456,21 +456,6 @@ const userStore = useUserStore();
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
-
-function scrollToElement(elementSelector) {
-  const element = document.querySelector(elementSelector);
-  console.log(element);
-  if (element) {
-    setTimeout(() => {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center", // Center the element in the viewport
-      });
-    }, 200);
-  } else {
-    console.warn(`Element not found: ${elementSelector}`);
-  }
-}
 
 function clearColorSelections() {
   selectedColors.value = [];

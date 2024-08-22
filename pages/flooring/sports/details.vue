@@ -5,6 +5,11 @@ import SportsFlooringDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsFlo
 import SportsColorDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue";
 import SportsBudgetDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue";
 
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import SportsOrderMethodDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsOrderMethodDetails.vue";
+import SportsInfoDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsInfoDetails.vue";
+import SportsReviewDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsReviewDetails.vue";
+
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -50,32 +55,12 @@ onMounted(() => {});
       </div>
       <!-- DESKTOP -->
       <SportsTypesDetails />
-      <!-- <SportsActivitiesDetails /> -->
       <SportsFlooringDetails />
       <SportsColorDetails />
       <SportsBudgetDetails />
-
-      <!-- DESKTOP -->
-      <a href="/flooring/sports/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.flooring === 'sports' &&
-            userStore.preference.spec_1 !== '' &&
-            userStore.preference.spec_2 !== '' &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.budget !== ''
-          "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] ease-in-out flex items-center gap-[2vw] justify-center"
-        >
-          <span
-            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text tracking-[.2vw] text-transparent bg-300% animate-gradient hover:bg-[#E0FFFF] transition-all duration-[500ms] ease-in-out"
-          >
-            BROWSE CATALOG</span
-          >
-        </button>
-      </a>
-      <!-- DESKTOP -->
+      <SportsOrderMethodDetails />
+      <SportsInfoDetails />
+      <SportsReviewDetails />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -88,6 +73,8 @@ onMounted(() => {});
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
+    <FloatingBarMOB flooring="SPORTS" link="/" />
+
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
@@ -106,37 +93,13 @@ onMounted(() => {});
       </div>
       <BannerYouWin />
       <SportsTypesDetails />
-      <!-- <SportsActivitiesDetails /> -->
       <SportsFlooringDetails />
       <SportsColorDetails />
       <SportsBudgetDetails />
-      <a href="/flooring/sports/catalog">
-        <transition
-          @beforeEnter="bringOpacity('details_gym_submit_btn_mob', 'translate')"
-        >
-          <button
-            @click="setUserPreferenceCookie"
-            v-show="
-              userStore.preference.flooring === 'sports' &&
-              userStore.preference.spec_1 !== '' &&
-              userStore.preference.spec_2 !== '' &&
-              userStore.preference.color.length > 0 &&
-              userStore.preference.budget !== ''
-            "
-            class="mb-[6vh] mt-[4vh] w-[90vw] rounded-sm tracking-[.3vw] text-[2.4vh] font-[500] text-[#f1f1f1] bg-[#111] shadow-2xl right-[2vw] z-[999] text-white px-[4vw] py-[4.2vh] flex items-center gap-[2vw] justify-center"
-          >
-            <!-- MOBILE -->
-            <span
-              class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text text-transparent bg-300% animate-gradient"
-            >
-              BROWSE CATALOG</span
-            >
-            <!-- MOBILE -->
-          </button>
-        </transition>
-      </a>
+      <SportsOrderMethodDetails />
+      <SportsInfoDetails />
+      <SportsReviewDetails />
     </div>
-    <!-- MOBILE -->
   </section>
 </template>
 

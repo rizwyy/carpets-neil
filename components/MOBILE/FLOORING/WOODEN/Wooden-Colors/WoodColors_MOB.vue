@@ -368,7 +368,7 @@
             </span>
           </span>
           <button
-            @click="scrollToElement('.selectedColors_MOB_Wooden')"
+            @click="scrollUpBy(400)"
             class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
           >
             Add More
@@ -392,21 +392,6 @@ function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
-}
-
-function scrollToElement(elementSelector) {
-  const element = document.querySelector(elementSelector);
-
-  if (element) {
-    setTimeout(() => {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center", // Center the element in the viewport
-      });
-    }, 200);
-  } else {
-    console.warn(`Element not found: ${elementSelector}`);
-  }
 }
 
 const removeCustomColor = () => {

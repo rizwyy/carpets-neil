@@ -396,7 +396,7 @@
               </span>
             </span>
             <button
-              @click="scrollToElement('.selectedColors_MOB')"
+              @click="scrollUpBy(400)"
               class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
             >
               Add More
@@ -421,21 +421,6 @@ const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 const customColorArray = ref([]);
-
-function scrollToElement(elementSelector) {
-  const element = document.querySelector(elementSelector);
-
-  if (element) {
-    setTimeout(() => {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center", // Center the element in the viewport
-      });
-    }, 200);
-  } else {
-    console.warn(`Element not found: ${elementSelector}`);
-  }
-}
 
 function clearColorSelections() {
   selectedColors.value = [];
