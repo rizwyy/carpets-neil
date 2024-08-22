@@ -20,7 +20,7 @@ const userStore = useUserStore();
         <span class=""
           >CUSTOM
           <span
-            class="bg-gradient-to-r from-[#fff9] via-[#E0FFFF] to-[#fff] bg-clip-text text-transparent bg-300% animate-gradient"
+            class="bg-gradient-to-r from-[#fff9] via-[#E0FFFF] to-[#fff9] bg-clip-text text-transparent bg-300% animate-gradient"
             >{{ `${flooring}` }}</span
           ></span
         >
