@@ -97,7 +97,6 @@ const restrictedAccess = useCookie("restrictedAccess");
 
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
-  restrictedAccess.value = false;
   console.log("COOKIE SET::", toRaw(userPreference.value));
 }
 

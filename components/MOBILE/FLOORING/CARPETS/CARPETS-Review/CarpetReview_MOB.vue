@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <transition @beforeEnter="handleDetailsDOMEntry('carpetsRevForm')">
     <div
       v-show="
         userStore.preference.flooring === 'Carpets' &&
@@ -16,22 +16,57 @@
       <div
         class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
       >
-        <NuxtImg
-          @load="handleImageLoad('checkoutPt2BG', 'checkoutPt2')"
-          class="checkoutPt2BG_Img scale-[2] absolute top-0 left-0 h-full w-full object-cover z-[-9]"
-          src="/assets/layered-peaks.png"
-        />
-        <!-- <div
-              class="checkoutPt2_Overlay h-full w-full absolute top-0 left-0 bg-[#fff2] backdrop-blur-[8px] blur-[1px] z-[-1]"
-            ></div> -->
+        <div
+          class="h-full w-full absolute top-0 left-0 flex items-center justify-center opacity-0 loadingOverlay invisible bg-[#fff1] backdrop-blur-[8px] z-[999]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-[6vh]"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="18" cy="12" r="0" fill="currentColor">
+              <animate
+                attributeName="r"
+                begin=".67"
+                calcMode="spline"
+                dur="1.5s"
+                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                repeatCount="indefinite"
+                values="0;2;0;0"
+              />
+            </circle>
+            <circle cx="12" cy="12" r="0" fill="currentColor">
+              <animate
+                attributeName="r"
+                begin=".33"
+                calcMode="spline"
+                dur="1.5s"
+                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                repeatCount="indefinite"
+                values="0;2;0;0"
+              />
+            </circle>
+            <circle cx="6" cy="12" r="0" fill="currentColor">
+              <animate
+                attributeName="r"
+                begin="0"
+                calcMode="spline"
+                dur="1.5s"
+                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                repeatCount="indefinite"
+                values="0;2;0;0"
+              />
+            </circle>
+          </svg>
+        </div>
         <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
           <span
-            class="checkoutPt2_Text translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
+            class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
             >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
           >
           <button
             @click="scrollToTop"
-            class="checkoutPt2_Text opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"
+            class="carpetsRevForm-HEADING opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"
           >
             Edit Details
             <svg
@@ -48,21 +83,21 @@
         </div>
         <span>
           <span
-            class="mt-[1vh] w-full border-[2px] checkoutPt2_Text translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+            class="mt-[1vh] w-full border-[2px] carpetsRevForm-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             ><span>Category/Application:&nbsp;</span
             >{{ userStore.preference.spec_1 }}</span
           >
         </span>
         <span>
           <span
-            class="mt-[1vh] w-full border-[2px] checkoutPt2_Text translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+            class="mt-[1vh] w-full border-[2px] carpetsRevForm-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             ><span>Activity/Type:&nbsp;</span
             >{{ userStore.preference.spec_2 }}</span
           >
         </span>
         <span>
           <span
-            class="mt-[1vh] w-full border-[2px] checkoutPt2_Text translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+            class="mt-[1vh] w-full border-[2px] carpetsRevForm-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             ><span>Material/Style:&nbsp;</span
             >{{ userStore.preference.spec_3 }}</span
           >
@@ -70,17 +105,17 @@
         <div class="h-max w-full flex justify-between items-center">
           <span>
             <span
-              class="checkoutPt2_Text translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
               ><span>Finish:&nbsp;</span>{{ userStore.preference.spec_4 }}</span
             >
           </span>
           <span
-            class="checkoutPt2_Text translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+            class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
             >Budget: {{ userStore.preference.budget }}</span
           >
         </div>
         <div
-          class="checkoutPt2_Text translate-y-[20%] opacity-0 h-max w-max flex flex-col gap-[1.8vh]"
+          class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 h-max w-max flex flex-col gap-[1.8vh]"
         >
           <span class="font-[500]">Colors Opted:</span>
           <span
@@ -93,13 +128,12 @@
           </span>
         </div>
 
-        <a
-          href="/flooring/carpets/success"
+        <button
           @click="handleClick"
-          class="bg-[#fff9] text-center checkoutPt2_Text active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+          class="bg-[#fff9] text-center carpetsRevForm-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
         >
           CONFIRM
-        </a>
+        </button>
       </div>
     </div>
   </transition>
@@ -109,6 +143,8 @@
 import useUserStore from "~/stores/user";
 import { useRouter } from "vue-router";
 const router = useRouter();
+const restrictedAccess = useCookie("restrictedAccess");
+const isAccessRestricted = ref(true);
 
 const userStore = useUserStore();
 
@@ -145,12 +181,13 @@ const handleClick = () => {
       userStore.userData.phone = "";
       scrollToBottom();
       handleLoadingExit();
+      restrictedAccess.value = false;
       router.push("/flooring/carpets/success");
       console.log("SUCCESS");
       console.log("Log data:", logData);
     })
     .catch((err) => {
-      handleLoadingExit();
+      restrictedAccess.value = true;
       handleTempAnimation("errOverlayMOB");
       console.error("Unexpected errors:", err.message);
     });

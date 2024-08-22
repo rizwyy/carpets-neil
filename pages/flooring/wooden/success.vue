@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div v-if="isAccessRestricted" class="h-max w-screen">
+    <NavBarMOB />
+    <Unavailable />
+  </div>
+  <div v-else>
     <NavBarMOB />
     <div
       class="h-[78vh] w-screen flex flex-col justify-center items-center font-outfit gap-[10.8vh] px-[4vw]"
@@ -43,10 +47,19 @@
 
 <script setup>
 import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
+import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
 const userPreference = useCookie("userPreference");
-console.log(toRaw(userPreference.value.spec_1));
+const restrictedAccess = useCookie("restrictedAccess");
+
+const isAccessRestricted = ref(true);
 const timer = ref(3);
 onMounted(() => {
+  if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
+    isAccessRestricted.value = true;
+  } else {
+    isAccessRestricted.value = false;
+  }
+
   // Start countdown after 3 seconds
   setTimeout(() => {
     const countdown = setInterval(() => {

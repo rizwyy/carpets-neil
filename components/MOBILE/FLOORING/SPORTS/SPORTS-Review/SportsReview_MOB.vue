@@ -15,6 +15,49 @@
       <div
         class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
       >
+        <div
+          class="h-full w-full absolute top-0 left-0 flex items-center justify-center opacity-0 loadingOverlay invisible bg-[#fff1] backdrop-blur-[8px] z-[999]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-[6vh]"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="18" cy="12" r="0" fill="currentColor">
+              <animate
+                attributeName="r"
+                begin=".67"
+                calcMode="spline"
+                dur="1.5s"
+                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                repeatCount="indefinite"
+                values="0;2;0;0"
+              />
+            </circle>
+            <circle cx="12" cy="12" r="0" fill="currentColor">
+              <animate
+                attributeName="r"
+                begin=".33"
+                calcMode="spline"
+                dur="1.5s"
+                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                repeatCount="indefinite"
+                values="0;2;0;0"
+              />
+            </circle>
+            <circle cx="6" cy="12" r="0" fill="currentColor">
+              <animate
+                attributeName="r"
+                begin="0"
+                calcMode="spline"
+                dur="1.5s"
+                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                repeatCount="indefinite"
+                values="0;2;0;0"
+              />
+            </circle>
+          </svg>
+        </div>
         <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
           <span
             class="sportsRevForm-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
