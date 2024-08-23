@@ -301,6 +301,21 @@
             class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
           >
             <span> Over BD. 30 m<sup>2</sup></span>
+            <span v-show="userStore.preference.country === 'Bahrain'"
+              >Over BD. 30 m<sup>2</sup></span
+            >
+            <span v-show="userStore.preference.country === 'Kuwait'"
+              >Over KD. 24.3 m<sup>2</sup></span
+            >
+            <span v-show="userStore.preference.country === 'Qatar'"
+              >Over QR. 290.44 m<sup>2</sup></span
+            >
+            <span v-show="userStore.preference.country === 'Saudi Arabia'"
+              >Over SR. 298.76 m<sup>2</sup></span
+            >
+            <span v-show="userStore.preference.country === 'UAE'"
+              >Over AD. 292.44 m<sup>2</sup></span
+            >
           </div>
         </div>
       </div>
