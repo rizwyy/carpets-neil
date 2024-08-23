@@ -452,7 +452,21 @@
             <div
               class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
             >
-              <span> BD. 25m<sup>2</sup> to BD. 29.99m<sup>2</sup></span>
+              <span v-show="userStore.preference.country === 'Bahrain'"
+                >BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Kuwait'"
+                >KD. 20.27m<sup>2</sup> to KD. 24.32m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Qatar'"
+                >QR. 242.04m<sup>2</sup> to QR. 290.35m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Saudi Arabia'"
+                >SR. 248.95m<sup>2</sup> to SR. 298.64m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'UAE'"
+                >AD. 243.70m<sup>2</sup> to AD. 292.35m<sup>2</sup></span
+              >
             </div>
           </div>
           <!-- MOBILE -->
