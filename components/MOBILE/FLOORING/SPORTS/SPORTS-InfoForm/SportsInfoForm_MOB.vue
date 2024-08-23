@@ -103,7 +103,7 @@
             <div class="h-max w-full flex">
               <select
                 v-model="userStore.preference.country"
-                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none sportsInfoMOB-CONTAINER"
+                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none sportsInfoMOB-CONTAINER opacity-0"
               >
                 <option value="Bahrain">+973</option>
                 <option value="UAE">+971</option>
