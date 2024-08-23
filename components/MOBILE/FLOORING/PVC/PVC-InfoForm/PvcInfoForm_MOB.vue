@@ -104,7 +104,7 @@
             <div class="h-max w-full flex">
               <select
                 v-model="userStore.preference.country"
-                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none"
+                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none pvcInfoMOB-CONTAINER"
               >
                 <option value="Bahrain">+973</option>
                 <option value="UAE">+971</option>
@@ -115,7 +115,7 @@
               <input
                 :required="phoneIpt.length > 8"
                 type="number"
-                class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] pvcInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black text-[2vh]"
+                class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] pvcInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] outline-none focus:border-black text-[2vh]"
                 placeholder="Phone"
                 v-model="phoneIpt"
               />
