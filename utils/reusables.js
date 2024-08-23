@@ -43,3 +43,16 @@ export function validateInputs(emailIpt, phoneIpt, nameIpt) {
 
   return isEmailValid && isPhoneValid && isNameValid;
 }
+
+export function addCountryCode(phoneNumber, country) {
+  const countryCodes = {
+    Bahrain: "+973",
+    UAE: "+971",
+    SaudiArabia: "+966",
+    Kuwait: "+965",
+    Qatar: "+974",
+  };
+
+  const countryCode = countryCodes[country] || "";
+  return `${countryCode}${phoneNumber}`;
+}

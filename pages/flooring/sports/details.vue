@@ -5,7 +5,7 @@ import SportsFlooringDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsFlo
 import SportsColorDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue";
 import SportsBudgetDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue";
 
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import SportsOrderMethodDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsOrderMethodDetails.vue";

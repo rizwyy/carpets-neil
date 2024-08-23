@@ -101,13 +101,25 @@
             />
           </div>
           <div class="h-max w-full flex flex-col gap-[6.2vh] pb-[6.2vh]">
-            <input
-              :required="phoneIpt.length > 8"
-              type="number"
-              class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] woodenInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
-              placeholder="Phone"
-              v-model="phoneIpt"
-            />
+            <div class="h-max w-full flex">
+              <select
+                v-model="userStore.preference.country"
+                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none"
+              >
+                <option value="Bahrain">+973</option>
+                <option value="UAE">+971</option>
+                <option value="Saudi Arabia">+966</option>
+                <option value="Kuwait">+965</option>
+                <option value="Qatar">+974</option>
+              </select>
+              <input
+                :required="phoneIpt.length > 8"
+                type="number"
+                class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] text-[2vh] woodenInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
+                placeholder="Phone"
+                v-model="phoneIpt"
+              />
+            </div>
             <button
               @click="handleInfoProceedings"
               class="bg-white woodenInfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"

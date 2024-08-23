@@ -5,7 +5,7 @@ import RaisedPanelDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedPanels
 import RaisedColorDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedColorDetails.vue";
 import RaisedBudgetDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedBudgetDetails.vue";
 
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";

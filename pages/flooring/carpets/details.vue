@@ -9,7 +9,7 @@ const route = useRoute();
 // COOKIES
 import { useCookie } from "#app";
 
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import CategoryDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
 import TypeDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetTypeDetails.vue";

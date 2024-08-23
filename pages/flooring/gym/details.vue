@@ -6,7 +6,7 @@ import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishD
 import GymDesignDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymBudgetDetails from "~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import GymOrderMethodDetails from "./../../../components/MOBILE/FLOORING/GYM/GymOrderMethodDetails.vue";
 import GymInfoDetails from "./../../../components/MOBILE/FLOORING/GYM/GymInfoDetails.vue";

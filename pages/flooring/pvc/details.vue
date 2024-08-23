@@ -6,7 +6,7 @@ import PvcColorDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcColorD
 import PvcDesignDetails from "../../../components/MOBILE/FLOORING/PVC/PvcDesignDetails.vue";
 import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetDetails.vue";
 
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import PvcOrderMethodDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcOrderMethodDetails.vue";

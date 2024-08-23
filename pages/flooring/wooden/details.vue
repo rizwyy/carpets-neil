@@ -7,7 +7,7 @@ import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/Wood
 import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
 import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenOrderMethodDetails.vue";
 import WoodenInfoDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenInfoDetails.vue";
