@@ -152,9 +152,15 @@
       </svg>
     </span>
     <!-- CODE -->
-    <span class="text-[1.8vh] text-center">{{
-      userStore.preference.country
-    }}</span>
+    <span class="text-[1.8vh] text-center flex items-center"
+      >{{ userStore.preference.country
+      }}<svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-[2.4vh]"
+        viewBox="0 0 24 24"
+      >
+        <path fill="currentColor" d="M12 14.308L8.192 10.5h7.616z" /></svg
+    ></span>
   </div>
 </template>
 
