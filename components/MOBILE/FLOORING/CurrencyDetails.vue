@@ -30,7 +30,7 @@
         </div>
         <button
           @click="() => handleAutoAlpha('countryDetailsPopUp', 0)"
-          class="rounded-md border-[2px] text-[2.4vh] font-[500] tracking-[.2vw] text-[#f1f1f1] bg-[#000] bg-opacity-[.2] border-[#fff9] py-[2.4vh] w-[100%]"
+          class="rounded-md border-[2px] text-[2.4vh] font-[500] tracking-[.2vw] text-[#f1f1f1] bg-[#000] bg-opacity-[.4] border-[#fff9] py-[2.4vh] w-[100%]"
         >
           PROCEED
         </button>
