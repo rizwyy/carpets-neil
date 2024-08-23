@@ -19,7 +19,7 @@
           >
           <select
             v-model="userStore.preference.country"
-            class="w-full bg-inherit rounded-lg border-[2px] border-[#fff9] px-[3.2vw] py-[2.4vh] text-[2.4vh] outline-none"
+            class="w-full bg-inherit rounded-lg border-[2px] border-[#fff9] px-[3.2vw] py-[2.4vh] text-[2.4vh] text-[#fff] outline-none bg-black"
           >
             <option value="Bahrain">Bahrain</option>
             <option value="UAE">UAE</option>
