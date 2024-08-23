@@ -1,7 +1,7 @@
 <template>
   <!-- POP UP -->
   <div
-    class="countryDetailsPopUp h-screen w-screen flex items-center justify-center bg-[#fff] bg-opacity-[.2] backdrop-blur-[8px] z-[999] fixed top-0 left-0"
+    class="countryDetailsPopUp h-[100svh] w-screen flex items-center justify-center bg-[#fff] bg-opacity-[.2] backdrop-blur-[8px] z-[999] fixed top-0 left-0"
   >
     <div
       class="h-max w-[90vw] rounded-xl overflow-hidden bg-[#444] bg-opacity-[.8] backdrop-blur-[8px] flex flex-col gap-[4vh] items-center py-[4vh] px-[4.2vw] text-[#f1f1f1] relative shadow-2xl"
