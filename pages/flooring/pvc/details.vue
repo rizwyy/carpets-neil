@@ -51,10 +51,9 @@ onMounted(() => {
         <!-- DESKTOP -->
         <a
           href="/flooring"
-          class="detail_pvc_mob_text_item text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
+          class="detail_pvc_mob_text_item text-[2.6vh] underline underline-offset-[.8vh] text-[#666] flex"
         >
-          PVC Flooring >
-          <!-- DESKTOP -->
+          PVC Flooring
           {{ userStore.preference.category }}
         </a>
         <span class="detail_pvc_mob_text_item text-[5.4vh]">

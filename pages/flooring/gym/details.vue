@@ -101,10 +101,9 @@ onMounted(() => {});
         <div class="h-max w-full flex justify-between">
           <a
             href="/flooring"
-            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+            class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
           >
-            Gym Flooring >
-            {{ userStore.preference.spec_2 }}
+            Gym Flooring
           </a>
           <CurrencyDetails />
         </div>
