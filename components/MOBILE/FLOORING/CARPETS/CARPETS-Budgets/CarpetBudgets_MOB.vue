@@ -109,7 +109,21 @@
             <div
               class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
             >
-              <span> BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span>
+              <span v-show="userStore.preference.country === 'Bahrain'">
+                BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Qatar'">
+                QR. 57.98m<sup>2</sup> to QR. 96.70m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Kuwait'">
+                KD. 4.86m<sup>2</sup> to KD. 8.10m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Saudi Riyal'">
+                SR. 59.64m<sup>2</sup> to SR. 99.47m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'UAE'">
+                AD. 58.38m<sup>2</sup> to AD. 97.36m<sup>2</sup></span
+              >
             </div>
           </div>
           <!-- NOT AVAILABLE VALUE -->
@@ -214,7 +228,21 @@
             <div
               class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
             >
-              <span>BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span>
+              <span v-show="userStore.preference.country === 'Bahrain'"
+                >BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Kuwait'"
+                >KD. 8.11m<sup>2</sup> to KD. 16.21m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Qatar'"
+                >QR. 96.80m<sup>2</sup> to QR. 193.49m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'Saudi Arabia'"
+                >SR. 99.57m<sup>2</sup> to SR. 199.04m<sup>2</sup></span
+              >
+              <span v-show="userStore.preference.country === 'UAE'"
+                >AD. 97.46m<sup>2</sup> to AD. 194.82m<sup>2</sup></span
+              >
             </div>
           </div>
           <!-- MOBILE -->
