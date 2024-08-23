@@ -7,7 +7,7 @@
       class="h-max w-[90vw] rounded-xl overflow-hidden bg-[#444] bg-opacity-[.8] backdrop-blur-[8px] flex flex-col gap-[4vh] items-center py-[4vh] px-[4.2vw] text-[#f1f1f1] relative shadow-2xl"
     >
       <div
-        class="h-full w-full absolute top-0 left-0 bg-gradient-to-t via-[#c9def4] from-[#e8e8e8] to-[#abc9e9] z-[-9]"
+        class="h-full w-full absolute top-0 left-0 bg-gradient-to-t via-[#f1f1f1] from-[#fff] to-[#f1f1f1] z-[-9]"
       ></div>
       <span class="text-[2.4vh] font-[400] w-full text-start text-[#666]"
         >Current Country: {{ userStore.preference.country }}</span
