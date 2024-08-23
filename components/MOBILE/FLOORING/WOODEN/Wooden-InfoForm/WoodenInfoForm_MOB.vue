@@ -115,7 +115,7 @@
               <input
                 :required="phoneIpt.length > 8"
                 type="number"
-                class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] text-[2vh] woodenInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
+                class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] text-[2vh] woodenInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
                 placeholder="Phone"
                 v-model="phoneIpt"
               />
