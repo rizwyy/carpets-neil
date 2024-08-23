@@ -6,6 +6,8 @@ import PvcColorDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcColorD
 import PvcDesignDetails from "../../../components/MOBILE/FLOORING/PVC/PvcDesignDetails.vue";
 import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetDetails.vue";
 
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import PvcOrderMethodDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcOrderMethodDetails.vue";
 import PvcInfoDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcInfoDetails.vue";
@@ -95,14 +97,16 @@ onMounted(() => {
       <div
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
-        <!-- MOBILE -->
-        <a
-          href="/flooring"
-          class="detail_pvc_mob_text_item opacity-[0] text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
-        >
-          PVC Flooring >
-          {{ userStore.preference.category }}
-        </a>
+        <div class="h-max w-full flex justify-between">
+          <a
+            href="/flooring"
+            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          >
+            Carpet Flooring >
+            {{ userStore.preference.spec_2 }}
+          </a>
+          <CurrencyDetails />
+        </div>
         <span class="detail_pvc_mob_text_item opacity-[0] text-[3.8vh]">
           Specify Your Needs
         </span>

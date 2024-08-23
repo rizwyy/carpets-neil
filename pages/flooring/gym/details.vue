@@ -6,6 +6,7 @@ import GymFinishDetails from "../../../components/MOBILE/FLOORING/GYM/GymFinishD
 import GymDesignDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
 import GymBudgetDetails from "~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
 
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import GymOrderMethodDetails from "./../../../components/MOBILE/FLOORING/GYM/GymOrderMethodDetails.vue";
 import GymInfoDetails from "./../../../components/MOBILE/FLOORING/GYM/GymInfoDetails.vue";
@@ -97,13 +98,16 @@ onMounted(() => {});
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
         <!-- MOBILE -->
-        <a
-          href="/flooring"
-          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
-        >
-          Gym Flooring >
-          {{ userStore.preference.spec_2 }}
-        </a>
+        <div class="h-max w-full flex justify-between">
+          <a
+            href="/flooring"
+            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          >
+            Gym Flooring >
+            {{ userStore.preference.spec_2 }}
+          </a>
+          <CurrencyDetails />
+        </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
@@ -121,35 +125,10 @@ onMounted(() => {});
   </section>
 </template>
 
-<style scoped>
+<style>
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-}
-.animate-gradient_1 {
-  background-size: 300%;
-  -webkit-animation: animatedgradient 4s ease-in-out infinite;
-  -moz-animation: animatedgradient 4s ease-in-out infinite;
-  animation: animatedgradient 4s ease-in-out infinite normal;
-}
-.animate-gradient_2 {
-  background-size: 300%;
-  animation-delay: 2.2;
-  -webkit-animation: animatedgradient 4s ease-in-out infinite;
-  -moz-animation: animatedgradient 4s ease-in-out infinite;
-  animation: animatedgradient 4s ease-in-out infinite normal;
-}
-
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 </style>

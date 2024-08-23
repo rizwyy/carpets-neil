@@ -243,3 +243,11 @@ export function checkoutPt2Animation() {
     ease: "power4.in",
   });
 }
+
+export function handleAutoAlpha(el, autoAlpha) {
+  gsap.to(`.${el}`, {
+    autoAlpha: autoAlpha,
+    duration: 0.8,
+    ease: "power4.out",
+  });
+}

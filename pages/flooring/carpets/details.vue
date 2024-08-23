@@ -9,13 +9,14 @@ const route = useRoute();
 // COOKIES
 import { useCookie } from "#app";
 
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+
 import CategoryDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
 import TypeDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetTypeDetails.vue";
 import MaterialDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetMaterialDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue";
 import BudgetDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
-import CheckoutFormMOB_CARPETS from "~/components/MOBILE/FLOORING/CheckoutFormMOB_CARPETS.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -49,13 +50,16 @@ onMounted(() => {
         class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
         <!-- MOBILE -->
-        <a
-          href="/flooring"
-          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
-        >
-          Carpets >
-          {{ userStore.preference.spec_1 }}
-        </a>
+        <div class="h-max w-full flex justify-between">
+          <a
+            href="/flooring"
+            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          >
+            Carpet Flooring >
+            {{ userStore.preference.spec_2 }}
+          </a>
+          <CurrencyDetails />
+        </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />

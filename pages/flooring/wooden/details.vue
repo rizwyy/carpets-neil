@@ -7,6 +7,7 @@ import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/Wood
 import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
 import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
 
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenOrderMethodDetails.vue";
 import WoodenInfoDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenInfoDetails.vue";
@@ -94,13 +95,16 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
         <!-- MOBILE -->
-        <a
-          href="/flooring"
-          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
-        >
-          Wooden Flooring >
-          {{ userStore.preference.spec_1 }}
-        </a>
+        <div class="h-max w-full flex justify-between">
+          <a
+            href="/flooring"
+            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          >
+            Wooden Flooring >
+            {{ userStore.preference.spec_2 }}
+          </a>
+          <CurrencyDetails />
+        </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />

@@ -73,21 +73,14 @@
 <script setup>
 import gsap from "gsap";
 const isMenuOpen = ref(false);
+
 function openMenu() {
   isMenuOpen.value = true;
-  gsap.to(".menuPageMOB", {
-    autoAlpha: 1,
-    duration: 0.2,
-    ease: "power4.in",
-  });
+  handleAutoAlpha("menuPageMOB", 1);
 }
 function closeMenu() {
   isMenuOpen.value = false;
-  gsap.to(".menuPageMOB", {
-    autoAlpha: 0,
-    duration: 0.2,
-    ease: "power4.out",
-  });
+  handleAutoAlpha("menuPageMOB", 0);
 }
 
 onMounted(() => {

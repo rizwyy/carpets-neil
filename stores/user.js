@@ -16,8 +16,8 @@ const useUserStore = defineStore("user", {
       spec_5: "",
       color: [],
       budget: "",
-
       orderMethod: "",
+      country: "Bahrain",
     },
     userData: { name: "", email: "", phone: "" },
   }),

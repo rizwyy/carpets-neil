@@ -5,6 +5,8 @@ import SportsFlooringDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsFlo
 import SportsColorDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue";
 import SportsBudgetDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue";
 
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CurrencyDetails.vue";
+
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import SportsOrderMethodDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsOrderMethodDetails.vue";
 import SportsInfoDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsInfoDetails.vue";
@@ -82,13 +84,16 @@ onMounted(() => {});
         class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
       >
         <!-- MOBILE -->
-        <a
-          href="/flooring"
-          class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
-        >
-          Sports Flooring >
-          {{ userStore.preference.spec_2 }}
-        </a>
+        <div class="h-max w-full flex justify-between">
+          <a
+            href="/flooring"
+            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+          >
+            Wooden Flooring >
+            {{ userStore.preference.spec_2 }}
+          </a>
+          <CurrencyDetails />
+        </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
