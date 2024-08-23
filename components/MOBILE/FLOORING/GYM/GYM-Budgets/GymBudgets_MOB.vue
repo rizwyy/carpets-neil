@@ -86,7 +86,7 @@
             <span v-show="userStore.preference.country === 'Kuwait'">
               KD. 4.86m<sup>2</sup> to KD. 8.10m<sup>2</sup></span
             >
-            <span v-show="userStore.preference.country === 'Saudi Riyal'">
+            <span v-show="userStore.preference.country === 'Saudi Arabia'">
               SR. 59.64m<sup>2</sup> to SR. 99.47m<sup>2</sup></span
             >
             <span v-show="userStore.preference.country === 'UAE'">
