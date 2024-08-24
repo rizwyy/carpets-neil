@@ -136,10 +136,10 @@
             @click="toggleSelect('Beige')"
           >
             <div
-              v-show="userStore.preference.spec_3 !== 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#E3DAC9]"
             ></div>
             <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/beige-wood.webp"
             />
@@ -161,10 +161,10 @@
           >
             <!-- MOBILE -->
             <div
-              v-show="userStore.preference.spec_3 !== 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#79443B]"
             ></div>
             <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/wooden/wood-Brown.webp"
             />
@@ -252,6 +252,7 @@
             <!-- MOBILE -->
           </div>
           <div
+            v-show="userStore.preference.spec_3 !== 'Wooden'"
             class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: userStore.preference.color.includes('Blue') }"
             @click="toggleSelect('Blue')"
@@ -279,10 +280,10 @@
             @click="toggleSelect('White')"
           >
             <div
-              v-show="userStore.preference.spec_3 !== 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#fff]"
             ></div>
             <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/white-wood.webp"
             />
@@ -304,10 +305,10 @@
           >
             <!-- MOBILE -->
             <div
-              v-show="userStore.preference.spec_3 !== 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md bg-[#000]"
             ></div>
             <NuxtImg
+              v-show="userStore.preference.spec_3 === 'Wooden'"
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/black-wood.webp"
             />
@@ -321,26 +322,7 @@
               >
             </div>
           </div>
-          <div
-            v-show="userStore.preference.spec_3 === 'Wooden'"
-            class="color-box wooden_Color_Details_Mob-CONTAINER opacity-0 translate-y-[10%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-            :class="{ selected: userStore.preference.color.includes('Orange') }"
-            @click="toggleSelect('Orange')"
-          >
-            <NuxtImg
-              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-              src="/colors/cork-orange.webp"
-            />
-            <span v-show="!userStore.preference.color.includes('Orange')"
-              >Orange</span
-            >
-            <div v-show="userStore.preference.color.includes('Orange')">
-              <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                >Selected</span
-              >
-            </div>
-          </div>
+
           <div
             v-show="userStore.preference.spec_3 !== 'Wooden'"
             class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
