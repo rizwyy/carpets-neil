@@ -17,7 +17,7 @@
         <!-- DESKTOP -->
         <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
           <span
-            class="text-left text-balance wooden_Finish_Details_PC-HEADING opacity-0 translate-x-[40%]"
+            class="text-detailsContainer_heading_PC text-left text-balance wooden_Finish_Details_PC-HEADING opacity-0 translate-x-[40%]"
             >Choose your Finish</span
           >
           <button

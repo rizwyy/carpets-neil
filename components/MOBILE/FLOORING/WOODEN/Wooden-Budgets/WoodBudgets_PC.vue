@@ -20,7 +20,7 @@
           class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pl-[2vw]"
         >
           <span
-            class="text-left text-balance wooden_Budgets_Details_PC-HEADING opacity-0 translate-x-[40%]"
+            class="text-detailsContainer_heading_PC text-left text-balance wooden_Budgets_Details_PC-HEADING opacity-0 translate-x-[40%]"
             >Choose Your Budget</span
           >
           <button

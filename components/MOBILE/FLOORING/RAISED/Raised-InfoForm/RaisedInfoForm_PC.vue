@@ -17,7 +17,7 @@
         class="iptErrMsg_raised opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
       >
         <span
-          class="text-white font-[500] tracking-[.2vw] uppercase text-center"
+          class="text-white font-[500] tracking-[.2vw] uppercase text-center text-detailsContainer_heading_PC"
           >Please fill out all fields correctly before proceeding</span
         >
       </div>

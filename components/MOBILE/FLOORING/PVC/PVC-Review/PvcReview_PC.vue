@@ -61,7 +61,7 @@
         </div>
         <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
           <span
-            class="pvcRevForm-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
+            class="pvcRevForm-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333] text-detailsContainer_heading_PC"
             >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
           >
           <button

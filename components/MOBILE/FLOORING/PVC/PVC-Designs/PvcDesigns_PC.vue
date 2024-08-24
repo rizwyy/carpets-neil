@@ -42,7 +42,7 @@ const toggleSelect = (material) => {
         <!-- DESKTOP -->
         <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
           <span
-            class="text-left text-balance pvc_design_details_pc-HEADING opacity-0 translate-x-[40%]"
+            class="text-left text-balance pvc_design_details_pc-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
             >Choose your Design</span
           >
           <button

@@ -9,7 +9,7 @@
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== ''
       "
-      class="w-[75%] px-[4vw] text-[3.2vh] leading-[3.8vh]"
+      class="w-[75%] px-[4vw] text-[3.2vh] leading-[3.8vh] text-detailsContainer_heading_PC"
       >Select Your Preferred Ordering Method:</span
     >
     <div

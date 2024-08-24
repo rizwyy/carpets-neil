@@ -21,7 +21,7 @@ export default defineNuxtConfig({
             viewAllMOB: "1.8vh",
             inputMOB: "2vh",
             clearAllMOB: "1.6vh",
-            details_Box_Heading_PC: "2.4vw",
+            detailsContainer_heading_PC: "2.4vw",
           },
           colors: {
             navBarBG: "#fff",

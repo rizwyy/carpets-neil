@@ -17,7 +17,7 @@
           class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pl-[2vw]"
         >
           <span
-            class="gym_Budgets_Details_PC-HEADING opacity-0 translate-x-[40%]"
+            class="gym_Budgets_Details_PC-HEADING opacity-0 translate-x-[40%] detailsContainer_heading_PC"
             >Choose Your Budget</span
           >
           <button

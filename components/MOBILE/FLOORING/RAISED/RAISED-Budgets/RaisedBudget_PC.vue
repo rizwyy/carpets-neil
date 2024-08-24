@@ -19,7 +19,7 @@
           class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pl-[2vw]"
         >
           <span
-            class="raised_Budget_Details_pc-HEADING opacity-0 translate-x-[40%]"
+            class="raised_Budget_Details_pc-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
             >Choose Your Budget</span
           >
           <button

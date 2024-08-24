@@ -11,7 +11,7 @@
         <!-- DESKTOP -->
         <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
           <span
-            class="text-left text-balance sports_Flooring_Details_PC-HEADING opacity-0 translate-x-[40%]"
+            class="text-left text-detailsContainer_heading_PC text-balance sports_Flooring_Details_PC-HEADING opacity-0 translate-x-[40%]"
             >Choose your Flooring</span
           >
           <button

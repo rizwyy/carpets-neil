@@ -10,7 +10,7 @@
       >
         <div class="h-max w-full flex items-center justify-between z-[9]">
           <span
-            class="text-left text-details_Box_Heading_PC text-balance carpets_Types_Details_PC-HEADING opacity-0 translate-x-[40%]"
+            class="text-left text-detailsContainer_heading_PC text-balance carpets_Types_Details_PC-HEADING opacity-0 translate-x-[40%]"
           >
             Choose Your Type
           </span>

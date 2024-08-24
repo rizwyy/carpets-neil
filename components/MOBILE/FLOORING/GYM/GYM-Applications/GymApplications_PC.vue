@@ -7,7 +7,9 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
-        <span class="text-left text-balance"> Choose Your Application </span>
+        <span class="text-left text-balance text-detailsContainer_heading_PC">
+          Choose Your Application
+        </span>
         <button
           @click="clearAllSelections"
           v-show="spec_1.length"

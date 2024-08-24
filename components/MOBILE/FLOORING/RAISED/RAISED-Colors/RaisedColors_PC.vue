@@ -14,7 +14,7 @@
         class="container h-max w-full shadow-xl py-[4vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh] relative"
       >
         <div
-          class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
+          class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between text-detailsContainer_heading_PC"
         >
           Choose Your Color
           <button
@@ -334,7 +334,7 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
       >
-        <span class="text-detailsHeading_PC text-[2.4vw]"
+        <span class="text-detailsContainer_heading_PC text-[2.4vw]"
           >Selected Colors:</span
         >
         <div class="w-full grid grid-cols-4 gap-[2vw] pt-[4vh]">

@@ -14,7 +14,7 @@
         <!-- DESKTOP -->
         <div class="h-max w-full flex justify-between text-[3.8vh] z-[9]">
           <span
-            class="carpets_Materials_Details_PC-HEADING text-details_Box_Heading_PC opacity-0 text-left text-balance translate-x-[40%]"
+            class="carpets_Materials_Details_PC-HEADING text-detailsContainer_heading_PC opacity-0 text-left text-balance translate-x-[40%]"
             >Choose your Material</span
           >
           <button

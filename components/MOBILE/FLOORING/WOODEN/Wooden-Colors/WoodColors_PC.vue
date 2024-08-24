@@ -28,7 +28,7 @@
             >
               <span
                 v-show="isMultiColoredOpted"
-                class="customColorText_PC opacity-0 text-[5.8vw] bg-gradient-to-r from-[#68e3f9] via-[#f55a9b] to-[#4f4ed7] bg-clip-text text-transparent font-shadows"
+                class="text-detailsContainer_heading_PC customColorText_PC opacity-0 text-[5.8vw] bg-gradient-to-r from-[#68e3f9] via-[#f55a9b] to-[#4f4ed7] bg-clip-text text-transparent font-shadows"
                 >Custom Colors</span
               >
             </transition>
@@ -113,7 +113,7 @@
           class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
         >
           <span
-            class="text-left text-balance wooden_Colors_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsHeading_PC"
+            class="text-left text-balance wooden_Colors_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
           >
             Choose Your Color
           </span>
@@ -395,7 +395,7 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
       >
-        <span class="text-detailsHeading_PC text-[2.4vw]"
+        <span class="text-detailsContainer_heading_PC text-[2.4vw]"
           >Selected Colors:</span
         >
         <div class="w-full grid grid-cols-4 gap-[2vw] pt-[4vh]">

@@ -12,7 +12,7 @@
           class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
         >
           <span
-            class="text-left text-balance pvc_type_details_pc-HEADING opacity-0 translate-x-[40%]"
+            class="text-left text-balance pvc_type_details_pc-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
             >Chooses Your Type</span
           >
           <!-- DESKTOP -->

@@ -15,7 +15,7 @@
         >
           <span
             v-show="!isMultiColoredOpted"
-            class="text-left text-balance pvc_colors_Details_PC-HEADING opacity-0 translate-x-[40%] details_Box_Heading_PC"
+            class="text-left text-detailsContainer_heading_PC pvc_colors_Details_PC-HEADING opacity-0 translate-x-[40%] details_Box_Heading_PC"
           >
             Choose Your Color</span
           >
@@ -426,7 +426,7 @@
         v-show="userStore.preference.color.length > 0"
         class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
       >
-        <span class="text-detailsHeading_PC text-[2.4vw]"
+        <span class="text-detailsContainer_heading_PC text-[2.4vw]"
           >Selected Colors:</span
         >
         <div class="w-full grid grid-cols-4 gap-[2vw] pt-[4vh]">

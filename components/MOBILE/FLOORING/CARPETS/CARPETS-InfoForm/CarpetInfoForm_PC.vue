@@ -17,13 +17,13 @@
         class="iptErrMsg_Carpets opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
       >
         <span
-          class="text-white font-[500] tracking-[.2vw] uppercase text-center"
+          class="text-white font-[500] tracking-[.2vw] uppercase text-center text-detailsContainer_heading_PC"
           >Please fill out all fields correctly before proceeding</span
         >
       </div>
       <div class="h-max w-screen flex justify-center">
         <div
-          class="h-max w-[%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[6vh] rounded-md items-center"
+          class="h-max w-[90%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[6vh] rounded-md items-center"
         >
           <div
             class="h-max w-[44%] flex flex-col gap-[5.8vh] overflow-hidden px-[2.8vw] pt-[4.2vh] rounded-md shadow-xl relative bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
