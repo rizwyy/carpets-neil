@@ -16,7 +16,7 @@
           class="h-[24vh] w-[50%] overflow-hidden relative flex flex-col gap-[.8vh] items-start rounded-md justify-between px-[2.4vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="flooringItem_Text flooringLayout_Carpet_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringItem_Text flooringLayout_Carpet_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Carpet <br />
             Flooring</span
           >
@@ -44,7 +44,7 @@
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="flooringItem_Text flooringLayout_Wood_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringItem_Text flooringLayout_Wood_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Wooden <br />
             Flooring</span
           >
@@ -79,7 +79,7 @@
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="flooringItem_Text flooringLayout_Pvc_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+            class="flooringItem_Text flooringLayout_Pvc_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] text-[#f1f1f1]"
             >Vinyl <br />
             Flooring</span
           >
@@ -109,7 +109,7 @@
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="flooringItem_Text flooringLayout_Gym_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringItem_Text flooringLayout_Gym_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Gym <br />
             Flooring</span
           >
@@ -142,7 +142,7 @@
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="flooringItem_Text flooringLayout_Raised_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+            class="flooringItem_Text flooringLayout_Raised_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
             >Raised <br />
             Flooring</span
           >
@@ -176,7 +176,7 @@
           class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="flooringItem_Text flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#f1f1f1]"
+            class="flooringItem_Text flooringLayout_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] text-[#f1f1f1]"
             >Sports <br />
             Flooring</span
           >
@@ -217,7 +217,7 @@
             COMING SOON!
           </div>
           <span
-            class="flooringItem flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+            class="flooringItem flooringLayout_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] text-[#fff9]"
             >Fitness <br />
             Flooring</span
           >
@@ -248,7 +248,7 @@
             COMING SOON!
           </div>
           <span
-            class="flooringItem flooringLayout_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] text-[#fff9]"
+            class="flooringItem flooringLayout_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] text-[#fff9]"
             >Flooring <br />
             Accessories
           </span>

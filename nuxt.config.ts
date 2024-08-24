@@ -15,13 +15,15 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           fontSize: {
-            bannerMOB: "5.4vh",
-            headingMOB: "5.8vh",
-            subHeadingMOB: "5.8vh",
-            viewAllMOB: "1.8vh",
-            inputMOB: "2vh",
-            clearAllMOB: "1.6vh",
-            detailsContainer_heading_PC: "2.4vw",
+            bannerContainer_heading_MOB: "5.4vh", //MOBILE -> BANNER -> HEADING
+            gridContainer_heading_MOB: "3vh", //MOBILE -> GRID LAYOUT -> CONTAINER -> HEADING
+            gridContainer_anchor_MOB: "1.8vh", //MOBILE -> GRID LAYOUT -> CONTAINER -> ANCHOR
+            detailsContainer_clearAllText_MOB: "1.6vh", //MOBILE -> DETAILS -> CONTAINER -> CLEAR ALL
+            detailsContainer_inputText_MOB: "2vh", // MOBILE -> DETAILS-> CONTAINER -> INPUT
+            detailsContainer_heading_PC: "2.4vw", //LAPTOP -> DETAILS -> CONTAINER -> HEADING
+            gridContainer_heading_PC: "2.4vw", //LAPTOP -> GRID LAYOUT -> CONTAINER -> HEADING
+            gridContainer_desc_PC: "1.2vw", //LAPTOP -> GRID LAYOUT -> CONTAINER -> DESC
+            gridContainer_anchor_PC: "1.2vw", //LAPTOP -> GRID LAYOUT -> CONTAINER -> ANCHOR
           },
           colors: {
             navBarBG: "#fff",

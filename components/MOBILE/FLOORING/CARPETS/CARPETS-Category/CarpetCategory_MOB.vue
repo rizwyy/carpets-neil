@@ -16,7 +16,7 @@
           <button
             @click="clearAllSelections"
             v-show="userStore.preference.spec_1.length"
-            class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             Clear All<svg
               xmlns="http://www.w3.org/2000/svg"

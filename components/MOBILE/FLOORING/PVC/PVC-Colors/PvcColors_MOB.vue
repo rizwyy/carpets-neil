@@ -19,7 +19,7 @@
         <button
           @click="clearColorSelections"
           v-show="selectedColors.length"
-          class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-clearAllMOB rounded-md flex gap-[1vw] items-center"
+          class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
         >
           <!-- MOBILE -->
           Clear All<svg

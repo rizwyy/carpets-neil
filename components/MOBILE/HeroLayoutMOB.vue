@@ -14,13 +14,13 @@
           class="h-[24vh] z-[1] w-[50%] overflow-hidden rounded-md relative flex flex-col gap-[.8vh] items-start justify-between px-[2vw] pt-[1.8vh] pb-[1.2vh]"
         >
           <span
-            class="HeroItem_Text opacity-0 text-[3vh] font-[500] tracking-[.1vw] leading-[3.2vh] text-[#f1f1f1]"
+            class="HeroItem_Text opacity-0 text-gridContainer_heading_MOB font-[500] tracking-[.1vw] leading-[3.2vh] text-[#f1f1f1]"
           >
             Flooring</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">
             <span
-              class="HeroItem_Text opacity-0 border-b-[1px] z-[99] text-[#e1e9e5] text-viewAllMOB font-[500]"
+              class="HeroItem_Text opacity-0 border-b-[1px] z-[99] text-[#e1e9e5] text-gridContainer_anchor_MOB font-[500]"
               >view all</span
             >
           </div>
@@ -46,7 +46,7 @@
             COMING SOON!
           </div>
           <span
-            class="HeroItem_Text opacity-0 text-[3vh] font-[400] leading-[3.2vh] z-[1] text-[#fff9]"
+            class="HeroItem_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] z-[1] text-[#fff9]"
             >Wall Covering</span
           >
           <div class="h-max w-full px-[2vw] flex justify-end">

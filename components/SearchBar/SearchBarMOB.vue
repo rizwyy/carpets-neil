@@ -12,7 +12,7 @@
         @blur="onBlur"
         type="text"
         placeholder="Find your dream product..."
-        class="input_searchBar h-max w-full bg-[#f7f5f2] text-inputMOB font-[400] flex-grow pl-[4vw] outline-none focus:outline-none"
+        class="input_searchBar h-max w-full bg-[#f7f5f2] text-detailsContainer_inputText_MOB font-[400] flex-grow pl-[4vw] outline-none focus:outline-none"
       />
       <div
         @click="onSearch"

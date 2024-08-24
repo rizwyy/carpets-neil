@@ -19,19 +19,19 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
     />
     <div class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"></div>
     <div
-      class="z-[1] h-full w-full bg-gradient-to-r from-black to-[#0000] flex flex-col items-start justify-center px-[2vw] gap-[1.4vh]"
+      class="z-[1] h-full w-full bg-gradient-to-r from-black to-[#0000] flex flex-col items-start justify-center px-[2vw] gap-[2vh]"
     >
       <span
-        class="text-[4.2vh] min-[1590px]:text-[3.2vh] font-[400] text-[#f1f2f3]"
+        class="text-gridContainer_heading_PC min-[1590px]:text-[1.8vw] font-[400] text-[#f1f1f1]"
         >{{ name }}</span
       >
       <span
-        class="w-[60%] text-[2vh] text-[#ececec] min-[1590px]:text-[1.8vh]"
+        class="w-[60%] text-gridContainer_desc_PC text-[#ececec] min-[1590px]:text-[1.8vh]"
         >{{ desc }}</span
       >
       <a
         :href="link"
-        class="text-[1vw] min-[1590px]:text-[1.8vh] text-[#fff] font-[400] underline underline-offset-[.5vh]"
+        class="text-gridContainer_anchor_PC min-[1590px]:text-[1.8vh] text-[#fff] font-[400] underline underline-offset-[.5vh]"
         >view all</a
       >
     </div>

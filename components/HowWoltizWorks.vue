@@ -10,7 +10,7 @@
       <div
         class="h-full w-full absolute top-0 left-0 z-[-1] bg-black opacity-[.4]"
       ></div>
-      <span class="font-[400] text-bannerMOB text-[#f1f1f1]"
+      <span class="font-[400] text-bannerContainer_heading_MOB text-[#f1f1f1]"
         >You Win, We Win</span
       >
       <button
