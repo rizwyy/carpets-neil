@@ -129,6 +129,7 @@
 
           <!-- MOBILE -->
           <div
+            v-show="userStore.preference.spec_2 !== 'Artificial Grass'"
             class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: selectedColors.includes('Beige') }"
             @click="toggleSelect('Beige')"
@@ -158,6 +159,11 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/brown.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-brown.webp"
+            />
             <span v-show="!userStore.preference.color.includes('Brown')"
               >Brown</span
             >
@@ -180,6 +186,11 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/silver.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-grey.webp"
+            />
             <span v-show="!userStore.preference.color.includes('Grey')"
               >Grey</span
             >
@@ -201,6 +212,11 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/green.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-green.webp"
+            />
             <span v-show="!userStore.preference.color.includes('Green')"
               >Green</span
             >
@@ -220,6 +236,11 @@
             <NuxtImg
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/blue.webp"
+            />
+            <NuxtImg
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-blue.webp"
             />
             <!-- MOBILE -->
             <span v-show="!userStore.preference.color.includes('Blue')"
@@ -244,6 +265,11 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/polarBear.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-white.webp"
+            />
             <!-- MOBILE -->
             <span v-show="!userStore.preference.color.includes('White')"
               >White</span
@@ -265,6 +291,11 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/black.webp"
             />
+            <NuxtImg
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-black.webp"
+            />
             <span v-show="!userStore.preference.color.includes('Black')"
               >Black</span
             >
@@ -277,6 +308,28 @@
           </div>
           <div
             class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+            :class="{ selected: userStore.preference.color.includes('Red') }"
+            @click="toggleSelect('Red')"
+          >
+            <!-- MOBILE -->
+            <NuxtImg
+              class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+              src="/colors/artificialGrass-red.webp"
+            />
+
+            <span v-show="!userStore.preference.color.includes('Red')"
+              >Red</span
+            >
+            <div v-show="userStore.preference.color.includes('Red')">
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+          </div>
+          <div
+            v-show="userStore.preference.spec_2 !== 'Artificial Grass'"
+            class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: userStore.preference.color.includes('Rose') }"
             @click="toggleSelect('Rose')"
           >
@@ -285,6 +338,7 @@
               class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
               src="/colors/rose.webp"
             />
+
             <span v-show="!userStore.preference.color.includes('Rose')"
               >Rose</span
             >
