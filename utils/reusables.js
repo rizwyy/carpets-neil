@@ -24,8 +24,8 @@ export function getColorHex(color) {
 export function validateInputs(emailIpt, phoneIpt, nameIpt) {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const phonePattern = /^\+?\d{10,15}$/;
-
+  const phonePattern =
+    /^\+?(9733\d{7}|9715\d{8}|9665\d{8}|965[569]\d{6}|974[3456]\d{7})$/;
   const isEmailValid = emailPattern.test(emailIpt.trim());
   if (!isEmailValid) {
     console.log("Invalid email format");

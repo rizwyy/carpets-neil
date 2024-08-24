@@ -143,9 +143,13 @@ const nameIpt = ref("");
 const phoneIpt = ref("");
 
 function handleInfoProceedings() {
+  const phoneWithCode = addCountryCode(
+    phoneIpt.value,
+    userStore.preference.country
+  );
   const isValid = validateInputs(
     mailIpt.value,
-    `${phoneIpt.value}`,
+    `${phoneWithCode}`,
     nameIpt.value
   );
   if (!isValid) {
@@ -156,7 +160,7 @@ function handleInfoProceedings() {
   //   handleTempAnimation("loadingPt1_WoodenMOB");
   userStore.userData.name = nameIpt.value;
   userStore.userData.email = mailIpt.value;
-  userStore.userData.phone = phoneIpt.value;
+  userStore.userData.phone = phoneWithCode;
   scrollToBottom();
 }
 </script>

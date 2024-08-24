@@ -143,20 +143,21 @@ const nameIpt = ref("");
 const phoneIpt = ref("");
 
 function handleInfoProceedings() {
-  const isValid = validateInputs(
-    mailIpt.value,
-    `${phoneIpt.value}`,
-    nameIpt.value
-  );
-
-  if (!isValid) {
-    handleTempAnimation("iptErrMsg_Pvc");
-    return;
-  }
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
   );
+  const isValid = validateInputs(
+    mailIpt.value,
+    `${phoneWithCode}`,
+    nameIpt.value
+  );
+  if (!isValid) {
+    handleTempAnimation("iptErrMsg_Wooden");
+    return;
+  }
+
+  //   handleTempAnimation("loadingPt1_WoodenMOB");
   userStore.userData.name = nameIpt.value;
   userStore.userData.email = mailIpt.value;
   userStore.userData.phone = phoneWithCode;
