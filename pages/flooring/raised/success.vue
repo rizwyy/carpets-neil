@@ -5,6 +5,7 @@
   </div>
   <div v-else>
     <NavBarMOB />
+    <NavBarPC />
     <div
       class="h-[78vh] w-screen flex flex-col justify-center items-center font-outfit gap-[10.8vh] px-[4vw]"
     >
@@ -47,6 +48,7 @@
 
 <script setup>
 import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
+import NavBarPC from "./../../../components/DESKTOP/NavBarPC.vue";
 import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");

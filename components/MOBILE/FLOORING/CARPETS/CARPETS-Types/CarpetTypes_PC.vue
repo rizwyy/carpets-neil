@@ -17,7 +17,7 @@
           <!-- DESKTOP -->
           <button
             @click="clearAllSelections"
-            v-show="selectedType.length"
+            v-show="userStore.preference.spec_2.length"
             class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <span class="text-[2.2vh]">Clear All</span
@@ -40,12 +40,12 @@
           <div
             :class="[
               'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Plain') },
+              { selected: userStore.preference.spec_2.includes('Plain') },
             ]"
             @click="toggleSelect('Plain')"
           >
             <div
-              v-show="selectedType.includes('Plain')"
+              v-show="userStore.preference.spec_2.includes('Plain')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -75,12 +75,12 @@
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
               'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Textured') },
+              { selected: userStore.preference.spec_2.includes('Textured') },
             ]"
             @click="toggleSelect('Textured')"
           >
             <div
-              v-show="selectedType.includes('Textured')"
+              v-show="userStore.preference.spec_2.includes('Textured')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -109,12 +109,12 @@
           <div
             :class="[
               'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Patterned') },
+              { selected: userStore.preference.spec_2.includes('Patterned') },
             ]"
             @click="toggleSelect('Patterned')"
           >
             <div
-              v-show="selectedType.includes('Patterned')"
+              v-show="userStore.preference.spec_2.includes('Patterned')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -143,12 +143,12 @@
           <div
             :class="[
               'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedType.includes('Stripped') },
+              { selected: userStore.preference.spec_2.includes('Stripped') },
             ]"
             @click="toggleSelect('Stripped')"
           >
             <div
-              v-show="selectedType.includes('Stripped')"
+              v-show="userStore.preference.spec_2.includes('Stripped')"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->

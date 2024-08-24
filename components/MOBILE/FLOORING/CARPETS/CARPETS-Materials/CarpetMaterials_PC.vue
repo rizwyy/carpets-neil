@@ -42,12 +42,12 @@
           <div
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedmaterial === 'polypropylene' },
+              { selected: userStore.preference.spec_3 === 'polypropylene' },
             ]"
             @click="toggleSelectMaterials('polypropylene')"
           >
             <div
-              v-show="selectedmaterial === 'polypropylene'"
+              v-show="userStore.preference.spec_3 === 'polypropylene'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -73,12 +73,12 @@
           <div
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedmaterial === 'Nylon' },
+              { selected: userStore.preference.spec_3 === 'Nylon' },
             ]"
             @click="toggleSelectMaterials('Nylon')"
           >
             <div
-              v-show="selectedmaterial === 'Nylon'"
+              v-show="userStore.preference.spec_3 === 'Nylon'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- DESKTOP -->
@@ -111,12 +111,12 @@
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedmaterial === 'Sisal' },
+              { selected: userStore.preference.spec_3 === 'Sisal' },
             ]"
             @click="toggleSelectMaterials('Sisal')"
           >
             <div
-              v-show="selectedmaterial === 'Sisal'"
+              v-show="userStore.preference.spec_3 === 'Sisal'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -145,12 +145,12 @@
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-              { selected: selectedmaterial === 'Wool' },
+              { selected: userStore.preference.spec_3 === 'Wool' },
             ]"
             @click="toggleSelectMaterials('Wool')"
           >
             <div
-              v-show="selectedmaterial === 'Wool'"
+              v-show="userStore.preference.spec_3 === 'Wool'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -185,22 +185,22 @@ const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
-const selectedmaterial = ref("");
+const selectedMaterial = ref("");
 function clearMaterialSelections() {
-  selectedmaterial.value = "";
+  selectedMaterial.value = "";
   userStore.preference.spec_3 = "";
 }
 
 const toggleSelectMaterials = (material) => {
   userStore.preference.budget = "";
 
-  if (selectedmaterial.value === material) {
-    selectedmaterial.value = "";
+  if (selectedMaterial.value === material) {
+    selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
-    selectedmaterial.value = material;
-    userStore.preference.spec_3 = toRaw(selectedmaterial.value);
+    selectedMaterial.value = material;
+    userStore.preference.spec_3 = toRaw(selectedMaterial.value);
   }
 };
 </script>

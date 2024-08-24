@@ -64,18 +64,14 @@ onMounted(() => {
 
       <!-- DESKTOP -->
       <PvcCategoryDetails />
-      <CustomBTN heading="Customized Vinyl's" link="/flooring/customize" />
-
       <PvcTypeDetails />
       <PvcDesignDetails />
       <PvcColorDetails />
       <PvcFinishDetails />
       <PvcBudgetDetails />
-
       <PvcOrderMethodDetails />
       <PvcInfoDetails />
       <PvcReviewDetails />
-      <!-- DESKTOP -->
     </div>
     <!-- DESKTOP -->
   </section>

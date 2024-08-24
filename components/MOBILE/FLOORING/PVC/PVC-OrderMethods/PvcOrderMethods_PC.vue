@@ -1,23 +1,19 @@
 <template>
-  <div class="h-max w-full flex flex-col gap-[0vh] mt-[2vh]">
-    <span
-      v-show="
-        userStore.preference.flooring === 'PVC' &&
-        userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
-        userStore.preference.spec_3 !== '' &&
-        userStore.preference.color.length > 0 &&
-        userStore.preference.budget !== ''
-      "
-      class="w-[75%] px-[4vw] text-[3.2vh] leading-[3.8vh]"
-      >Select Your Preferred Ordering Method:</span
-    >
+  <div
+    v-show="
+      userStore.preference.flooring === 'PVC' &&
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== '' &&
+      userStore.preference.spec_3 !== '' &&
+      userStore.preference.color.length > 0 &&
+      userStore.preference.budget !== ''
+    "
+    class="h-max w-full flex flex-col items-center gap-[0vh] mt-[2vh]"
+  >
     <div
-      class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
+      class="h-max w-[94%] flex flex-col gap-[4vh] bg-[#f1f1f1] pt-[6vh] rounded-md items-center"
     >
-      <a
-        @click="setUserPreferenceCookie('whatsapp')"
-        href="/flooring/pvc/checkout"
+      <span
         v-show="
           userStore.preference.flooring === 'PVC' &&
           userStore.preference.spec_1 !== '' &&
@@ -26,39 +22,55 @@
           userStore.preference.color.length > 0 &&
           userStore.preference.budget !== ''
         "
-        class="w-[44vw] rounded-md tracking-[.3vw] text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
+        class="w-full px-[4vw] text-[2.4vw] leading-[3.8vh]"
+        >Select Your Preferred Ordering Method</span
       >
-        <!-- DESKTOP -->
-        <span
-          class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff7] via-[#ececec] shadow-2xl to-[#fff5] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_1 uppercase tracking-[.4vw]"
-        >
-          WhatsApp</span
-        >
-
-        <!-- DESKTOP -->
-      </a>
-      <a
-        @click="setUserPreferenceCookie('email')"
-        href="/flooring/pvc/checkout"
-        v-show="
-          userStore.preference.flooring === 'PVC' &&
-          userStore.preference.spec_1 !== '' &&
-          userStore.preference.spec_2 !== '' &&
-          userStore.preference.spec_3 !== '' &&
-          userStore.preference.color.length > 0 &&
-          userStore.preference.budget !== ''
-        "
-        class="w-[42vw] rounded-md tracking-[.3vw] text-[2.4vh] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
+      <div
+        class="h-max w-[92%] flex items-center justify-center gap-[4vw] px-[2vw] mb-[12vh] mt-[4vh]"
       >
-        <!-- DESKTOP -->
-        <span
-          class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff7] via-[#fff] shadow-2xl to-[#fff5] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_2 uppercase tracking-[.4vw]"
+        <button
+          @click="toggleOrderMethod('whatsapp')"
+          v-show="
+            userStore.preference.flooring === 'PVC' &&
+            userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_3 !== '' &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.budget !== ''
+          "
+          class="w-[44vw] rounded-md tracking-[.3vw] text-[1.8vw] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
         >
-          Mail</span
-        >
+          <!-- DESKTOP -->
+          <span
+            class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff7] via-[#ececec] shadow-2xl to-[#fff5] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_1 uppercase tracking-[.4vw]"
+          >
+            WhatsApp</span
+          >
 
-        <!-- DESKTOP -->
-      </a>
+          <!-- DESKTOP -->
+        </button>
+        <button
+          @click="toggleOrderMethod('email')"
+          v-show="
+            userStore.preference.flooring === 'PVC' &&
+            userStore.preference.spec_1 !== '' &&
+            userStore.preference.spec_2 !== '' &&
+            userStore.preference.spec_3 !== '' &&
+            userStore.preference.color.length > 0 &&
+            userStore.preference.budget !== ''
+          "
+          class="w-[42vw] rounded-md tracking-[.3vw] text-[1.8vw] font-[500] bg-[#111] border-[2px] border-[#333] z-[999] text-white px-[2vw] flex items-center gap-[2vw] justify-between"
+        >
+          <!-- DESKTOP -->
+          <span
+            class="bg-gradient-to-r flex-[85] py-[3.2vh] from-[#fff7] via-[#fff] shadow-2xl to-[#fff5] bg-clip-text text-transparent bg-300% text-center px-[4vw] animate-gradient_2 uppercase tracking-[.4vw]"
+          >
+            Mail</span
+          >
+
+          <!-- DESKTOP -->
+        </button>
+      </div>
     </div>
   </div>
 </template>

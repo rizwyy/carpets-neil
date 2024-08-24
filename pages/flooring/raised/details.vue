@@ -66,29 +66,6 @@ onMounted(() => {});
       <OrderMethodDetails />
       <RaisedInfoDetails />
       <RaisedReviewDetails />
-
-      <!-- DESKTOP -->
-      <a href="/flooring/raised/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.flooring === 'raised' &&
-            userStore.preference.spec_1 !== '' &&
-            userStore.preference.spec_2 !== '' &&
-            userStore.preference.spec_3 !== '' &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.budget !== ''
-          "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
-        >
-          <span
-            class="bg-gradient-to-r from-[#fff7] via-[#E0FFFF] to-[#fff5] bg-clip-text tracking-[.2vw] text-transparent bg-300% animate-gradient hover:bg-[#E0FFFF] transition-all duration-[500ms] ease-in-out"
-          >
-            BROWSE CATALOG</span
-          >
-        </button>
-      </a>
-      <!-- DESKTOP -->
     </div>
     <!-- DESKTOP -->
   </section>

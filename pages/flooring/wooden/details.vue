@@ -46,35 +46,14 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <!-- DESKTOP -->
       <ScrollToTopBTNPC />
       <WoodenCategoryDetails />
-      <CustomBTN heading="Wooden Flooring" link="/flooring/customize" />
       <WoodenTypeDetails />
       <WoodenDesignDetails />
       <WoodenColorDetails />
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
-
-      <!-- DESKTOP -->
-      <a href="/flooring/wooden/catalog">
-        <button
-          @click="setUserPreferenceCookie"
-          v-show="
-            userStore.preference.spec_1.length > 0 &&
-            userStore.preference.spec_2.length > 0 &&
-            userStore.preference.spec_3.length > 0 &&
-            userStore.preference.color.length > 0 &&
-            userStore.preference.spec_4 !== '' &&
-            userStore.preference.budget !== ''
-          "
-          class="mb-[8vh] mt-[4vh] w-[90vw] rounded-md bg-[#111] z-[999] text-white px-[4vw] py-[4vh] text-[4vh] hover:from-[#444] hover:to-[#111] ease-in-out flex items-center gap-[2vw] justify-center"
-        >
-          <span
-            class="bg-gradient-to-r from-[#fff7] transition-all duration-[500ms] via-[#E0FFFF] ease-in-out to-[#fff5] hover:bg-[#E0FFFF] bg-clip-text tracking-[.2vw] text-transparent bg-300% animate-gradient"
-          >
-            BROWSE CATALOG</span
-          >
-        </button>
-      </a>
-      <!-- DESKTOP -->
+      <OrderMethodDetails />
+      <WoodenInfoDetails />
+      <WoodenReviewDetails />
     </div>
     <!-- DESKTOP -->
   </section>
