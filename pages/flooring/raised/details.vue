@@ -11,7 +11,7 @@ import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedOrderMethodDetails.vue";
 import RaisedInfoDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedInfoDetails.vue";
-import RaisedReviewDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedReviewDetails.vue";
+import ReviewCardMOB from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -65,7 +65,7 @@ onMounted(() => {});
       <RaisedBudgetDetails />
       <OrderMethodDetails />
       <RaisedInfoDetails />
-      <RaisedReviewDetails />
+      <ReviewCardMOB flooring="raised" link="raised" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -105,7 +105,7 @@ onMounted(() => {});
       <RaisedBudgetDetails />
       <OrderMethodDetails />
       <RaisedInfoDetails />
-      <RaisedReviewDetails />
+      <ReviewCardMOB flooring="raised" link="raised" />
     </div>
     <!-- MOBILE -->
   </section>

@@ -10,7 +10,7 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import SportsOrderMethodDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsOrderMethodDetails.vue";
 import SportsInfoDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsInfoDetails.vue";
-import SportsReviewDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsReviewDetails.vue";
+import ReviewCardMOB from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -62,7 +62,7 @@ onMounted(() => {});
       <SportsBudgetDetails />
       <SportsOrderMethodDetails />
       <SportsInfoDetails />
-      <SportsReviewDetails />
+      <ReviewCardMOB flooring="sports" link="sports" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -102,7 +102,7 @@ onMounted(() => {});
       <SportsBudgetDetails />
       <SportsOrderMethodDetails />
       <SportsInfoDetails />
-      <SportsReviewDetails />
+      <ReviewCardMOB flooring="sports" link="sports" />
     </div>
   </section>
 </template>

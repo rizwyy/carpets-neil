@@ -12,6 +12,7 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import PvcOrderMethodDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcOrderMethodDetails.vue";
 import PvcInfoDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcInfoDetails.vue";
 import PvcReviewDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcReviewDetails.vue";
+import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -117,7 +118,7 @@ onMounted(() => {
       <PvcBudgetDetails />
       <PvcOrderMethodDetails />
       <PvcInfoDetails />
-      <PvcReviewDetails />
+      <ReviewCard flooring="PVC" link="pvc" />
     </div>
     <!-- MOBILE -->
   </section>

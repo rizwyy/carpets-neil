@@ -11,7 +11,7 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenOrderMethodDetails.vue";
 import WoodenInfoDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenInfoDetails.vue";
-import WoodenReviewDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenReviewDetails.vue";
+import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -53,7 +53,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenBudgetDetails />
       <OrderMethodDetails />
       <WoodenInfoDetails />
-      <WoodenReviewDetails />
+      <ReviewCard flooring="Wooden" link="wooden" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -94,7 +94,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenBudgetDetails />
       <OrderMethodDetails />
       <WoodenInfoDetails />
-      <WoodenReviewDetails />
+      <ReviewCardMOB flooring="Wooden" link="wooden" />
     </div>
     <!-- MOBILE -->
   </section>

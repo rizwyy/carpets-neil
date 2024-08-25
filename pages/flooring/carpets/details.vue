@@ -23,7 +23,8 @@ const restrictedAccess = useCookie("restrictedAccess");
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsOrderMethodDetails.vue";
 import CarpetsInfoDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsInfoDetails.vue";
-import CarpetsReviewDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsReviewDetails.vue";
+
+import ReviewCardMOB from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 
 const isCategoryOpted = ref(false);
 const category = ref("");
@@ -71,7 +72,7 @@ onMounted(() => {
       <BudgetDetails />
       <OrderMethodDetails />
       <CarpetsInfoDetails />
-      <CarpetsReviewDetails />
+      <ReviewCardMOB flooring="Carpets" link="carpets" />
     </div>
     <!-- MOBILE -->
   </section>
@@ -111,7 +112,8 @@ onMounted(() => {
       <BudgetDetails />
       <OrderMethodDetails />
       <CarpetsInfoDetails />
-      <CarpetsReviewDetails />
+      <ReviewCardMOB flooring="Carpets" link="carpets" />
+
       <!-- DESKTOP -->
     </div>
     <!-- DESKTOP -->
