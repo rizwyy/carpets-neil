@@ -1,6 +1,8 @@
 <template>
   <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
-    <!-- v-show="
+    <div
+      class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
+      v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -8,8 +10,8 @@
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== '' &&
         userStore.userData.name !== ''
-      " -->
-    <div class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]">
+      "
+    >
       <div
         class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo"
       >
