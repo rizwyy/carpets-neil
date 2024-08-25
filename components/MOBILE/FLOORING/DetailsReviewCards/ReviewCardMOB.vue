@@ -127,12 +127,9 @@
             >
           </div>
           <div
-            class="revCard-HEADING translate-y-[20%] opacity-0 h-max w-max flex flex-col gap-[1.8vh]"
+            class="revCard-HEADING translate-y-[20%] opacity-0 h-max w-full pt-[3.2vh] border-[#e8e8e8] flex flex-col gap-[1.8vh] border-t-[1px]"
           >
-            <span
-              class="font-[400] border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-              >Colors Opted:</span
-            >
+            <span class="font-[400]">Colors Opted:</span>
             <span
               v-show="userStore.preference.color.length > 0"
               class="w-max border-[2px] rounded-md px-[4vw] text-[#999] font-[400] text-center py-[.6vh] border-[#444]"
@@ -143,10 +140,11 @@
             </span>
           </div>
           <div
-            class="h-max w-full pt-[4vh] border-t-[1px] border-[#555] flex flex-col gap-[4vh] mb-[4vh]"
+            class="h-max w-full pt-[4vh] border-t-[1px] border-[#999] flex flex-col gap-[4vh] mb-[4vh]"
           >
-            <span class="text-[2.4vh] tracking-[-.05vw] w-full"
-              >Additional Details & Attachments</span
+            <span
+              class="text-[2.4vh] tracking-[-.05vw] w-full text-detailsContainer_heading_MOB"
+              >Add On's</span
             >
             <div class="h-max w-full flex flex-col gap-[1vh] text-[#777]">
               <span>Provide Additional Details</span>

@@ -10,8 +10,8 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenOrderMethodDetails.vue";
-import WoodenInfoDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenInfoDetails.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
+import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -52,7 +52,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
       <OrderMethodDetails />
-      <WoodenInfoDetails />
+      <InfoForm flooring="Wooden" />
       <ReviewCard flooring="Wooden" link="wooden" />
     </div>
     <!-- DESKTOP -->
@@ -93,7 +93,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
       <OrderMethodDetails />
-      <WoodenInfoDetails />
+      <InfoForm flooring="Wooden" />
       <ReviewCard flooring="Wooden" link="wooden" />
     </div>
     <!-- MOBILE -->

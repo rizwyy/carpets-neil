@@ -10,7 +10,8 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import GymOrderMethodDetails from "./../../../components/MOBILE/FLOORING/GYM/GymOrderMethodDetails.vue";
 import GymInfoDetails from "./../../../components/MOBILE/FLOORING/GYM/GymInfoDetails.vue";
-import ReviewCardMOB from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
+import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
+import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
@@ -76,8 +77,8 @@ onMounted(() => {});
       <GymColorDetails />
       <GymBudgetDetails />
       <GymOrderMethodDetails />
-      <GymInfoDetails />
-      <ReviewCardMOB flooring="gym" link="gym" />
+      <InfoForm flooring="gym" />
+      <ReviewCard flooring="gym" link="gym" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -117,8 +118,8 @@ onMounted(() => {});
       <GymColorDetails />
       <GymBudgetDetails />
       <GymOrderMethodDetails />
-      <GymInfoDetails />
-      <ReviewCardMOB flooring="gym" link="gym" />
+      <InfoForm flooring="gym" />
+      <ReviewCard flooring="gym" link="gym" />
     </div>
     <!-- MOBILE -->
   </section>

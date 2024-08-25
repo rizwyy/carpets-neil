@@ -10,9 +10,8 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import PvcOrderMethodDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcOrderMethodDetails.vue";
-import PvcInfoDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcInfoDetails.vue";
-import PvcReviewDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcReviewDetails.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
+import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -55,7 +54,6 @@ onMounted(() => {
           class="detail_pvc_mob_text_item text-[2.6vh] underline underline-offset-[.8vh] text-[#666] flex"
         >
           PVC Flooring
-          {{ userStore.preference.category }}
         </a>
         <span class="detail_pvc_mob_text_item text-[5.4vh]">
           Specify Your Needs
@@ -72,7 +70,8 @@ onMounted(() => {
       <PvcBudgetDetails />
       <PvcOrderMethodDetails />
       <PvcInfoDetails />
-      <PvcReviewDetails />
+      <InfoForm flooring="PVC" />
+      <ReviewCard flooring="PVC" link="pvc" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -96,10 +95,9 @@ onMounted(() => {
         <div class="h-max w-full flex justify-between">
           <a
             href="/flooring"
-            class="text-[2.4vh] underline underline-offset-[.4vh] text-[#666] flex"
+            class="text-[2.4vh] underline underline-offset-[.6vh] text-[#666] flex"
           >
-            Carpet Flooring >
-            {{ userStore.preference.spec_2 }}
+            PVC Flooring
           </a>
           <CurrencyDetails />
         </div>
@@ -118,6 +116,7 @@ onMounted(() => {
       <PvcBudgetDetails />
       <PvcOrderMethodDetails />
       <PvcInfoDetails />
+      <InfoForm flooring="PVC" />
       <ReviewCard flooring="PVC" link="pvc" />
     </div>
     <!-- MOBILE -->

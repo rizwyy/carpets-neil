@@ -1,12 +1,11 @@
 <template>
   <!--INPUT ERROR OVERLAY -->
-  <transition @beforeEnter="handleDetailsDOMEntry('carpetInfoMOB')">
+  <transition @beforeEnter="handleDetailsDOMEntry('InfoMOB')">
     <div
       v-show="
-        userStore.preference.flooring === 'Carpets' &&
+        userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
-        userStore.preference.spec_3 !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== ''
@@ -14,7 +13,7 @@
       class="h-max w-screen flex justify-center"
     >
       <div
-        class="iptErrMsg_Carpets opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
+        class="iptErrMsg opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
       >
         <span
           class="text-white font-[500] tracking-[.2vw] uppercase text-center"
@@ -27,17 +26,17 @@
         >
           <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
             <span
-              class="carpetInfoMOB-HEADING opacity-0 translate-y-[20%] w-max text-[3.8vh] tracking-[-.2vw] font-[400] text-[#444]"
+              class="InfoMOB-HEADING opacity-0 translate-y-[20%] w-max text-[3.8vh] tracking-[-.2vw] font-[400] text-[#444]"
               >Your Contact Information</span
             >
             <span
-              class="carpetInfoMOB-HEADING opacity-0 translate-y-[20%] text-[#999] text-[2.2vh] font-[450]"
+              class="InfoMOB-HEADING opacity-0 translate-y-[20%] text-[#999] text-[2.2vh] font-[450]"
               >Enter your contact information</span
             >
           </div>
 
           <div
-            class="invisible opacity-0 carpetInfoMOB-CONTAINER h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
+            class="invisible opacity-0 InfoMOB-CONTAINER h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +85,7 @@
           <div class="h-max w-full flex flex-col gap-[vh]">
             <input
               type="text"
-              class="border-[2px] carpetInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
+              class="border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
               placeholder="Name"
               v-model="nameIpt"
             />
@@ -95,7 +94,7 @@
             <input
               :required="mailIpt.length > 8"
               type="email"
-              class="border-[2px] carpetInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
+              class="border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
               placeholder="Mail"
               v-model="mailIpt"
             />
@@ -104,7 +103,7 @@
             <div class="h-max w-full flex">
               <select
                 v-model="userStore.preference.country"
-                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none carpetInfoMOB-CONTAINER opacity-0"
+                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoMOB-CONTAINER opacity-0"
               >
                 <option value="Bahrain">+973</option>
                 <option value="UAE">+971</option>
@@ -115,14 +114,14 @@
               <input
                 :required="phoneIpt.length > 8"
                 type="number"
-                class="[appearance:textfield] text-[16px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] carpetInfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[2vh] outline-none focus:border-black"
+                class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[2vh] outline-none focus:border-black"
                 placeholder="Phone"
                 v-model="phoneIpt"
               />
             </div>
             <button
               @click="handleInfoProceedings"
-              class="bg-white carpetInfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+              class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
             >
               SUBMIT
             </button>
@@ -135,6 +134,7 @@
 
 <script setup>
 import useUserStore from "../../../stores/user";
+const { flooring } = defineProps(["flooring"]);
 
 const userStore = useUserStore();
 

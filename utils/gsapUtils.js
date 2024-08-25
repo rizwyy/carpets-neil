@@ -24,6 +24,12 @@ export function scrollUpBy(distance = 100) {
     behavior: "smooth",
   });
 }
+export function scrollBy(distance = 100) {
+  window.scrollBy({
+    top: -distance,
+    behavior: "smooth",
+  });
+}
 
 export function handleImageLoad(el, el2) {
   const tl = gsap.timeline();

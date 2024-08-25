@@ -10,8 +10,8 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedOrderMethodDetails.vue";
-import RaisedInfoDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedInfoDetails.vue";
 import ReviewCardMOB from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
+import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
@@ -65,6 +65,7 @@ onMounted(() => {});
       <RaisedBudgetDetails />
       <OrderMethodDetails />
       <RaisedInfoDetails />
+      <InfoForm flooring="raised" />
       <ReviewCardMOB flooring="raised" link="raised" />
     </div>
     <!-- DESKTOP -->
@@ -105,6 +106,7 @@ onMounted(() => {});
       <RaisedBudgetDetails />
       <OrderMethodDetails />
       <RaisedInfoDetails />
+      <InfoForm flooring="raised" />
       <ReviewCardMOB flooring="raised" link="raised" />
     </div>
     <!-- MOBILE -->
