@@ -28,7 +28,7 @@ export default defineNuxtConfig({
           colors: {
             navBarBG: "#fff",
             detailsBG: "#fffdf5",
-            detailsFrom: "#ebf4f5",
+            detailsFrom: "#fff",
             detailsTo: "#f1f1f1",
             detailsHeadCLR: "#222",
           },

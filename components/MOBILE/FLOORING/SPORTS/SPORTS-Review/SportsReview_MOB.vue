@@ -13,7 +13,7 @@
       class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
     >
       <div
-        class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
+        class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo"
       >
         <div
           class="h-full w-full absolute top-0 left-0 flex items-center justify-center opacity-0 loadingOverlay invisible bg-[#fff1] backdrop-blur-[8px] z-[999]"

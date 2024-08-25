@@ -23,7 +23,7 @@
       </div>
       <div class="h-max w-screen pt-[2vh] pb-[6vh] flex justify-center">
         <div
-          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
+          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative bg-gradient-to-br from-detailsFrom to-detailsTo"
         >
           <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
             <span
