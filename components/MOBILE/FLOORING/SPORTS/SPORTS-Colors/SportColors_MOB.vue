@@ -307,6 +307,7 @@
             </div>
           </div>
           <div
+            v-show="userStore.preference.spec_2 === 'Artificial Grass'"
             class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
             :class="{ selected: userStore.preference.color.includes('Red') }"
             @click="toggleSelect('Red')"
