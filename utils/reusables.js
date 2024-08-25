@@ -56,3 +56,37 @@ export function addCountryCode(phoneNumber, country) {
   const countryCode = countryCodes[country] || "";
   return `${countryCode}${phoneNumber}`;
 }
+
+export function convertCurrency(fromValue, fromCurrency, country) {
+  let conversionRate;
+  let currencyCode;
+
+  switch (country) {
+    case "Bahrain":
+      conversionRate = fromCurrency === "BD" ? 1 : 2.65957; // Assuming 1 BD = 2.65957 USD (example rate)
+      currencyCode = "BD";
+      break;
+    case "Qatar":
+      conversionRate = fromCurrency === "QR" ? 1 : 3.64; // Assuming 1 QR = 3.64 USD
+      currencyCode = "QR";
+      break;
+    case "Kuwait":
+      conversionRate = fromCurrency === "KD" ? 1 : 3.3; // Assuming 1 KD = 3.30 USD
+      currencyCode = "KD";
+      break;
+    case "Saudi Arabia":
+      conversionRate = fromCurrency === "SR" ? 1 : 3.75; // Assuming 1 SR = 3.75 USD
+      currencyCode = "SR";
+      break;
+    case "UAE":
+      conversionRate = fromCurrency === "AD" ? 1 : 3.67; // Assuming 1 AD = 3.67 USD
+      currencyCode = "AD";
+      break;
+    default:
+      conversionRate = 1; // Default to 1 if country not matched
+      currencyCode = ""; // Empty string if no match
+  }
+
+  const toValue = (fromValue * conversionRate).toFixed(2); // Round to 2 decimal places
+  return `${currencyCode} ${toValue} `;
+}

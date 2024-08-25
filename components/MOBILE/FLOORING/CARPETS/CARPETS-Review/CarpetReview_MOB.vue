@@ -111,7 +111,7 @@
           </span>
           <span
             class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            >Budget: {{ userStore.preference.budget }}</span
+            >Budget: ({{ userStore.preference.budget }})</span
           >
         </div>
         <div

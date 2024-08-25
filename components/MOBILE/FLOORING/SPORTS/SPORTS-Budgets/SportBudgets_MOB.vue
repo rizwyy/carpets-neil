@@ -74,22 +74,15 @@
             <span> Value </span>
           </div>
           <div
-            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
           >
-            <span v-show="userStore.preference.country === 'Bahrain'">
-              BD. 5.99m<sup>2</sup> to BD. 9.99m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Qatar'">
-              QR. 57.98m<sup>2</sup> to QR. 96.70m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Kuwait'">
-              KD. 4.86m<sup>2</sup> to KD. 8.10m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Saudi Riyal'">
-              SR. 59.64m<sup>2</sup> to SR. 99.47m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'UAE'">
-              AD. 58.38m<sup>2</sup> to AD. 97.36m<sup>2</sup></span
+            <span>
+              {{
+                convertCurrency(5.99, "BD", userStore.preference.country)
+              }}m<sup>2</sup> to
+              {{
+                convertCurrency(9.99, "BD", userStore.preference.country)
+              }}m<sup>2</sup></span
             >
           </div>
         </div>
@@ -129,22 +122,16 @@
             <span> Essential </span>
           </div>
           <div
-            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
           >
-            <span v-show="userStore.preference.country === 'Bahrain'"
-              >BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Kuwait'"
-              >KD. 8.11m<sup>2</sup> to KD. 16.21m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Qatar'"
-              >QR. 96.80m<sup>2</sup> to QR. 193.49m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Saudi Arabia'"
-              >SR. 99.57m<sup>2</sup> to SR. 199.04m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'UAE'"
-              >AD. 97.46m<sup>2</sup> to AD. 194.82m<sup>2</sup></span
+            <span>
+              {{ convertCurrency(10, "BD", userStore.preference.country) }}m<sup
+                >2</sup
+              >
+              to
+              {{
+                convertCurrency(19.99, "BD", userStore.preference.country)
+              }}m<sup>2</sup></span
             >
           </div>
         </div>
@@ -184,22 +171,16 @@
             <span> Premier </span>
           </div>
           <div
-            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
           >
-            <span v-show="userStore.preference.country === 'Bahrain'"
-              >BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Kuwait'"
-              >KD. 16.22m<sup>2</sup> to KD. 20.26m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Qatar'"
-              >QR. 193.63m<sup>2</sup> to QR. 241.94m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Saudi Arabia'"
-              >SR. 199.17m<sup>2</sup> to SR. 248.87m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'UAE'"
-              >AD. 194.96m<sup>2</sup> to AD. 243.61m<sup>2</sup></span
+            <span>
+              {{ convertCurrency(20, "BD", userStore.preference.country) }}m<sup
+                >2</sup
+              >
+              to
+              {{
+                convertCurrency(24.99, "BD", userStore.preference.country)
+              }}m<sup>2</sup></span
             >
           </div>
         </div>
@@ -240,22 +221,16 @@
             <span> Signature </span>
           </div>
           <div
-            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
           >
-            <span v-show="userStore.preference.country === 'Bahrain'"
-              >BD. 10m<sup>2</sup> to BD. 19.99m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Kuwait'"
-              >KD. 20.27m<sup>2</sup> to KD. 24.32m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Qatar'"
-              >QR. 242.04m<sup>2</sup> to QR. 290.35m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Saudi Arabia'"
-              >SR. 248.95m<sup>2</sup> to SR. 298.64m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'UAE'"
-              >AD. 243.70m<sup>2</sup> to AD. 292.35m<sup>2</sup></span
+            <span>
+              {{ convertCurrency(25, "BD", userStore.preference.country) }}m<sup
+                >2</sup
+              >
+              to
+              {{
+                convertCurrency(29.99, "BD", userStore.preference.country)
+              }}m<sup>2</sup></span
             >
           </div>
         </div>
@@ -291,22 +266,13 @@
             <span> Elite </span>
           </div>
           <div
-            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center"
+            class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
           >
-            <span v-show="userStore.preference.country === 'Bahrain'"
-              >Over BD. 30 m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Kuwait'"
-              >Over KD. 24.3 m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Qatar'"
-              >Over QR. 290.44 m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'Saudi Arabia'"
-              >Over SR. 298.76 m<sup>2</sup></span
-            >
-            <span v-show="userStore.preference.country === 'UAE'"
-              >Over AD. 292.44 m<sup>2</sup></span
+            <span>
+              Over
+              {{ convertCurrency(30, "BD", userStore.preference.country) }}m<sup
+                >2</sup
+              ></span
             >
           </div>
         </div>
