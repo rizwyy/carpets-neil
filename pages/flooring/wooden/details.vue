@@ -94,7 +94,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenBudgetDetails />
       <OrderMethodDetails />
       <WoodenInfoDetails />
-      <ReviewCardMOB flooring="Wooden" link="wooden" />
+      <ReviewCard flooring="Wooden" link="wooden" />
     </div>
     <!-- MOBILE -->
   </section>
