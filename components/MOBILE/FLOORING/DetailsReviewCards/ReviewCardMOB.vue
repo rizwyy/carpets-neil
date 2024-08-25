@@ -1,7 +1,6 @@
 <template>
   <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
-    <div
-      v-show="
+    <!-- v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -9,9 +8,8 @@
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== '' &&
         userStore.userData.name !== ''
-      "
-      class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
-    >
+      " -->
+    <div class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]">
       <div
         class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo"
       >
@@ -58,89 +56,117 @@
             </circle>
           </svg>
         </div>
-        <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
-          <span
-            class="revCard-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
-            >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
-          >
-          <button
-            @click="scrollToTop"
-            class="revCard-HEADING opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"
-          >
-            Edit Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-[2.4vh]"
-              viewBox="0 0 24 24"
+        <!-- CURRENT PREFERENCE -->
+        <div class="h-max w-full flex flex-col gap-[4.2vh]">
+          <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
+            <span
+              class="revCard-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
+              >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
             >
-              <path
-                fill="currentColor"
-                d="M5 19h1.425L16.2 9.225L14.775 7.8L5 17.575zm-1 2q-.425 0-.712-.288T3 20v-2.425q0-.4.15-.763t.425-.637L16.2 3.575q.3-.275.663-.425t.762-.15t.775.15t.65.45L20.425 5q.3.275.437.65T21 6.4q0 .4-.138.763t-.437.662l-12.6 12.6q-.275.275-.638.425t-.762.15zM19 6.4L17.6 5zm-3.525 2.125l-.7-.725L16.2 9.225z"
-              />
-            </svg>
-          </button>
-        </div>
-        <span>
-          <span
-            class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Category/Application:&nbsp;</span
-            >{{ userStore.preference.spec_1 }}</span
-          >
-        </span>
-        <span>
-          <span
-            class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Activity/Type:&nbsp;</span
-            >{{ userStore.preference.spec_2 }}</span
-          >
-        </span>
-        <span>
-          <span
-            class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Material/Style:&nbsp;</span
-            >{{ userStore.preference.spec_3 }}</span
-          >
-        </span>
-        <div
-          class="h-max w-full flex flex-col justify-between gap-[3.2vh] items-start"
-        >
+            <button
+              @click="scrollToTop"
+              class="revCard-HEADING opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"
+            >
+              Edit Details
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-[2.4vh]"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M5 19h1.425L16.2 9.225L14.775 7.8L5 17.575zm-1 2q-.425 0-.712-.288T3 20v-2.425q0-.4.15-.763t.425-.637L16.2 3.575q.3-.275.663-.425t.762-.15t.775.15t.65.45L20.425 5q.3.275.437.65T21 6.4q0 .4-.138.763t-.437.662l-12.6 12.6q-.275.275-.638.425t-.762.15zM19 6.4L17.6 5zm-3.525 2.125l-.7-.725L16.2 9.225z"
+                />
+              </svg>
+            </button>
+          </div>
           <span>
             <span
-              class="revCard-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-              ><span>Finish:&nbsp;</span
-              >{{
-                userStore.preference.spec_4 === "" ? "N/A" : userStore.spec_4
-              }}</span
+              class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              ><span>Category/Application:&nbsp;</span
+              >{{ userStore.preference.spec_1 }}</span
             >
           </span>
-          <span
-            class="revCard-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7] text-right"
-            >Budget:
-            {{
-              getPriceRange(
-                userStore.preference.budget,
-                userStore.preference.country
-              )
-            }}&nbsp;({{ userStore.preference.budget }})</span
-          >
-        </div>
-        <div
-          class="revCard-HEADING translate-y-[20%] opacity-0 h-max w-max flex flex-col gap-[1.8vh]"
-        >
-          <span class="font-[500]">Colors Opted:</span>
-          <span
-            v-show="userStore.preference.color.length > 0"
-            class="w-max border-[2px] rounded-md px-[4vw] text-[#999] font-[400] text-center py-[.6vh] border-[#444]"
-            v-for="(color, index) in userStore.preference.color"
-            :key="index"
-            :style="{ backgroundColor: getColorHex(color) }"
-            >{{ color }}
+          <span>
+            <span
+              class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              ><span>Activity/Type:&nbsp;</span
+              >{{ userStore.preference.spec_2 }}</span
+            >
           </span>
+          <span>
+            <span
+              class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              ><span>Material/Style:&nbsp;</span
+              >{{ userStore.preference.spec_3 }}</span
+            >
+          </span>
+          <div
+            class="h-max w-full flex flex-col justify-between gap-[3.2vh] items-start"
+          >
+            <span>
+              <span
+                class="revCard-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+                ><span>Finish:&nbsp;</span
+                >{{
+                  userStore.preference.spec_4 === "" ? "N/A" : userStore.spec_4
+                }}</span
+              >
+            </span>
+            <span
+              class="revCard-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7] text-right"
+              >Budget:
+              {{
+                getPriceRange(
+                  userStore.preference.budget,
+                  userStore.preference.country
+                )
+              }}&nbsp;({{ userStore.preference.budget }})</span
+            >
+          </div>
+          <div
+            class="revCard-HEADING translate-y-[20%] opacity-0 h-max w-max flex flex-col gap-[1.8vh]"
+          >
+            <span
+              class="font-[400] border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              >Colors Opted:</span
+            >
+            <span
+              v-show="userStore.preference.color.length > 0"
+              class="w-max border-[2px] rounded-md px-[4vw] text-[#999] font-[400] text-center py-[.6vh] border-[#444]"
+              v-for="(color, index) in userStore.preference.color"
+              :key="index"
+              :style="{ backgroundColor: getColorHex(color) }"
+              >{{ color }}
+            </span>
+          </div>
+          <div
+            class="h-max w-full pt-[4vh] border-t-[1px] border-[#555] flex flex-col gap-[4vh] mb-[4vh]"
+          >
+            <span class="text-[2.4vh] tracking-[-.05vw] w-full"
+              >Additional Details & Attachments</span
+            >
+            <div class="h-max w-full flex flex-col gap-[1vh] text-[#777]">
+              <span>Provide Additional Details</span>
+              <textarea
+                type=""
+                placeholder="Extra Info/Requirements Goes Here"
+                class="border-[2px] text-detailsContainer_inputText_MOB rounded-md px-[2.4vw] border-[#999] bg-[#fff9] text-[#222] py-[1.8vh] outline-none focus:border-black"
+              />
+            </div>
+            <div class="h-max w-full flex flex-col gap-[1vh] text-[#777]">
+              <span>Attach Relevant Files</span>
+              <input
+                type="file"
+                class="py-[.1vh] w-full text-[#333] text-[1.8vh] rounded-md leading-[4vh] file:bg-blue-100 file:text-[#555] file:font-semibold file:border-none file:px-[6vw] file:py-[1vh] file:mr-[4vw] file:rounded-md border-[2px] border-gray-500"
+              />
+            </div>
+          </div>
         </div>
 
         <button
           @click="handleClick"
-          class="bg-[#fff9] text-center revCard-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+          class="bg-[#fff9] text-center revCard-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#999] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
         >
           CONFIRM
         </button>
