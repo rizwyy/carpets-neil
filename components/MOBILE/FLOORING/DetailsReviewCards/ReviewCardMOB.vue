@@ -108,12 +108,32 @@
           >
             <span>
               <span
+                v-show="!Array.isArray(userStore.preference.spec_4)"
                 class="revCard-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-                ><span>Finish:&nbsp;</span
+                ><span>Finish:&nbsp; </span
                 >{{
                   userStore.preference.spec_4 === "" ? "N/A" : userStore.spec_4
                 }}</span
               >
+              <span
+                v-show="Array.isArray(userStore.preference.spec_4)"
+                class="revCard-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              >
+                <span>Finish:&nbsp;</span>
+                <span v-if="userStore.preference.spec_4.length > 0">
+                  <span
+                    v-for="(surface, index) in userStore.preference.spec_4"
+                    :key="index"
+                  >
+                    {{ surface
+                    }}<span
+                      v-if="index < userStore.preference.spec_4.length - 1"
+                      >,
+                    </span>
+                  </span>
+                </span>
+                <span v-else>N/A</span>
+              </span>
             </span>
             <span
               class="revCard-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7] text-right"

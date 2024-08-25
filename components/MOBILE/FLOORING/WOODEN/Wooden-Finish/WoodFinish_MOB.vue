@@ -42,12 +42,12 @@
         <div
           :class="[
             'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: userStore.preference.spec_4 === 'Matt Finish' },
+            { selected: userStore.preference.spec_4.includes('Matt Finish') },
           ]"
           @click="toggleSelect('Matt Finish')"
         >
           <div
-            v-show="userStore.preference.spec_4 === 'Matt Finish'"
+            v-show="userStore.preference.spec_4.includes('Matt Finish')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -74,12 +74,12 @@
         <div
           :class="[
             'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: userStore.preference.spec_4 === 'Gloss Finish' },
+            { selected: userStore.preference.spec_4.includes('Gloss Finish') },
           ]"
           @click="toggleSelect('Gloss Finish')"
         >
           <div
-            v-show="userStore.preference.spec_4 === 'Gloss Finish'"
+            v-show="userStore.preference.spec_4.includes('Gloss Finish')"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -116,17 +116,19 @@ function clearSurfaceFinish() {
   selectedSurfaceFinish.value = "";
   userStore.preference.spec_4 = "";
 }
-
 const toggleSelect = (surface) => {
-  if (userStore.preference.spec_4 === surface) {
-    selectedSurfaceFinish.value = "";
-    userStore.preference.spec_4 = "";
+  const index = userStore.preference.spec_4.indexOf(surface);
+
+  if (index !== -1) {
+    userStore.preference.spec_4.splice(index, 1);
   } else {
-    scrollToBottom();
-    selectedSurfaceFinish.value = surface;
-    userStore.preference.spec_4 = toRaw(selectedSurfaceFinish.value);
+    userStore.preference.spec_4.push(surface);
   }
 };
+
+onMounted(() => {
+  userStore.preference.spec_4 = [];
+});
 </script>
 
 <style scoped>
