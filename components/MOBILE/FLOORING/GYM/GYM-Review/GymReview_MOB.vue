@@ -102,16 +102,24 @@
             >{{ userStore.preference.spec_3 }}</span
           >
         </span>
-        <div class="h-max w-full flex justify-between items-center">
+        <div
+          class="h-max w-full flex flex-col justify-between gap-[3.2vh] items-start"
+        >
           <span>
             <span
-              class="gymRevForm-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+              class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
               ><span>Finish:&nbsp;</span>{{ userStore.preference.spec_4 }}</span
             >
           </span>
           <span
-            class="gymRevForm-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            >Budget: {{ userStore.preference.budget }}</span
+            class="carpetsRevForm-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7] text-right"
+            >Budget:
+            {{
+              getPriceRange(
+                userStore.preference.budget,
+                userStore.preference.country
+              )
+            }}&nbsp;({{ userStore.preference.budget }})</span
           >
         </div>
         <div

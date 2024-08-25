@@ -90,3 +90,80 @@ export function convertCurrency(fromValue, fromCurrency, country) {
   const toValue = (fromValue * conversionRate).toFixed(2); // Round to 2 decimal places
   return `${currencyCode} ${toValue} `;
 }
+
+export function getPriceRange(name, country) {
+  let priceRange;
+
+  switch (name) {
+    case "Value":
+      priceRange = {
+        Bahrain: "5.99 to 9.99",
+        Qatar: "57.98 to 96.70",
+        Kuwait: "4.86 to 8.10",
+        SaudiArabia: "59.64 to 99.47",
+        UAE: "58.38 to 97.36",
+      };
+      break;
+    case "Essential":
+      priceRange = {
+        Bahrain: "10.00 to 19.99",
+        Qatar: "97.00 to 194.00",
+        Kuwait: "8.11 to 16.20",
+        SaudiArabia: "99.48 to 198.95",
+        UAE: "97.37 to 194.72",
+      };
+      break;
+    case "Premier":
+      priceRange = {
+        Bahrain: "20.00 to 24.99",
+        Qatar: "194.01 to 242.99",
+        Kuwait: "16.21 to 20.24",
+        SaudiArabia: "198.96 to 248.69",
+        UAE: "194.73 to 243.40",
+      };
+      break;
+    case "Signature":
+      priceRange = {
+        Bahrain: "25.00 to 29.99",
+        Qatar: "243.00 to 291.99",
+        Kuwait: "20.25 to 24.29",
+        SaudiArabia: "248.70 to 298.43",
+        UAE: "243.41 to 292.08",
+      };
+      break;
+    case "Elite":
+      priceRange = {
+        Bahrain: "Over 30",
+        Qatar: "Over 292",
+        Kuwait: "Over 24.30",
+        SaudiArabia: "Over 298",
+        UAE: "Over 292",
+      };
+      break;
+    default:
+      return "Invalid name";
+  }
+
+  let currencyCode;
+  switch (country) {
+    case "Bahrain":
+      currencyCode = "BD";
+      break;
+    case "Qatar":
+      currencyCode = "QR";
+      break;
+    case "Kuwait":
+      currencyCode = "KD";
+      break;
+    case "Saudi Arabia":
+      currencyCode = "SR";
+      break;
+    case "UAE":
+      currencyCode = "AD";
+      break;
+    default:
+      return "Invalid country";
+  }
+
+  return `${currencyCode}. ${priceRange[country]}m²`;
+}
