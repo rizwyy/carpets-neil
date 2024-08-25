@@ -30,7 +30,7 @@
           </select>
         </div>
         <button
-          @click="() => handleAutoAlpha('countryDetailsPopUp', 0)"
+          @click="() => setCountryCookie()"
           class="rounded-md border-[2px] text-[2.4vh] font-[500] tracking-[.2vw] text-[#333] bg-[#fff] bg-opacity-[.4] border-[#333] py-[2.4vh] w-[100%]"
         >
           PROCEED
@@ -167,6 +167,8 @@
 
 <script setup>
 import useUserStore from "~/stores/user";
+const ctry = useCookie("ctry");
+
 const userStore = useUserStore();
 const countriesAndCurrencies = {
   Bahrain: "BHD",
@@ -176,10 +178,22 @@ const countriesAndCurrencies = {
   Qatar: "QAR",
 };
 
+function setCountryCookie() {
+  ctry.value = userStore.preference.country;
+  handleAutoAlpha("countryDetailsPopUp", 0);
+}
+
 onMounted(() => {
+  const TIMEOUT_DURATION = 2000;
+
+  if (toRaw(ctry.value)) {
+    userStore.preference.country = toRaw(ctry.value);
+    return;
+  }
+
   setTimeout(() => {
     handleAutoAlpha("countryDetailsPopUp", 1);
-  }, 2000);
+  }, TIMEOUT_DURATION);
 });
 </script>
 
