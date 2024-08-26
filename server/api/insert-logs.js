@@ -26,25 +26,34 @@ export default defineEventHandler(async (event) => {
   }
 
   // Parse user data from the request body
-  const { name, phone, email } = await readBody(event);
-  console.log(name, phone, email);
-  if (!name || !phone || !email) {
+  const { name, phone, email, preference } = await readBody(event);
+  console.log(name, phone, email, preference);
+
+  // Build the insert object dynamically, only including fields that are present
+  const insertData = {};
+  if (name) insertData.name = name;
+  if (phone) insertData.phone = phone;
+  if (email) insertData.email = email;
+  if (preference) insertData.preference = preference;
+
+  if (Object.keys(insertData).length === 0) {
     throw createError({
       statusCode: 400,
-      message: "Bad Request: Missing name, phone, or email",
+      message: "Bad Request: No valid fields to insert",
     });
   }
 
   // Insert user data into logs table
-  const { data, error } = await supabase
-    .from("logs")
-    .insert([{ name, phone, email }]);
+  const { data, error } = await supabase.from("logs").insert([insertData]);
 
   if (data) {
-    console.log(data);
+    console.log("Log inserted successfully:", data);
   }
   if (error) {
-    throw createError({ statusCode: 400, message: `::${error.message}` });
+    throw createError({
+      statusCode: 400,
+      message: `Error inserting logs: ${error.message}`,
+    });
   }
 
   return { data };

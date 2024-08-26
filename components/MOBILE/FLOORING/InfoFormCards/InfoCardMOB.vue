@@ -123,7 +123,7 @@
               @click="handleInfoProceedings"
               class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
             >
-              SUBMIT
+              PROCEED
             </button>
           </div>
         </div>
@@ -134,9 +134,60 @@
 
 <script setup>
 import useUserStore from "../../../stores/user";
+import { ref } from "vue";
+
+const supabase = useSupabaseClient();
 const { flooring } = defineProps(["flooring"]);
 
 const userStore = useUserStore();
+
+const insertLog = () => {
+  const name = nameIpt.value;
+  const orderMethod = userStore.preference.orderMethod;
+  const contact = orderMethod === "whatsapp" ? phoneIpt.value : mailIpt.value;
+
+  const userData = {
+    name,
+    phone: orderMethod === "whatsapp" ? contact : "",
+    email: orderMethod === "email" ? contact : "",
+    preference: userStore.preference,
+  };
+
+  console.log("Sending userData:", userData);
+
+  if (!name || !contact) {
+    console.error("Name and contact details are required.");
+    return;
+  }
+
+  // Call API route to insert logs
+  useFetch("/api/set-cookie")
+    .then(({ data, error }) => {
+      if (error?.value) {
+        throw new Error("Error setting cookie: " + error.value);
+      }
+      console.log("SET COOKIE DONE");
+      return fetch("/api/insert-logs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error inserting logs");
+      }
+      return response.json();
+    })
+    .then((logData) => {
+      console.log("SUCCESS");
+      console.log("Log data:", logData);
+      scrollBy(-600);
+    })
+    .catch((err) => {
+      console.error("Unexpected errors:", err.message);
+    });
+};
 
 const mailIpt = ref("");
 const nameIpt = ref("");
@@ -161,6 +212,8 @@ function handleInfoProceedings() {
   userStore.userData.name = nameIpt.value;
   userStore.userData.email = mailIpt.value;
   userStore.userData.phone = phoneWithCode;
-  scrollBy(-600);
+
+  // INSERT A ROW INTO LOGS TABLE WITH NAME, PHONE/EMAIL
+  insertLog();
 }
 </script>
