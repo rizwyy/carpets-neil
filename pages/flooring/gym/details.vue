@@ -8,8 +8,7 @@ import GymBudgetDetails from "~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.
 
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
-import GymOrderMethodDetails from "./../../../components/MOBILE/FLOORING/GYM/GymOrderMethodDetails.vue";
-import GymInfoDetails from "./../../../components/MOBILE/FLOORING/GYM/GymInfoDetails.vue";
+import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
@@ -76,7 +75,7 @@ onMounted(() => {});
       <GymFlooringDetails />
       <GymColorDetails />
       <GymBudgetDetails />
-      <GymOrderMethodDetails />
+      <OrderMethod flooring="gym" />
       <InfoForm flooring="gym" />
       <ReviewCard flooring="gym" link="gym" />
     </div>
@@ -117,7 +116,7 @@ onMounted(() => {});
       <!-- <GymFinishDetails /> -->
       <GymColorDetails />
       <GymBudgetDetails />
-      <GymOrderMethodDetails />
+      <OrderMethod flooring="gym" />
       <InfoForm flooring="gym" />
       <ReviewCard flooring="gym" link="gym" />
     </div>

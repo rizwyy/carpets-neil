@@ -9,8 +9,9 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
-import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedOrderMethodDetails.vue";
-import ReviewCardMOB from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
+
+import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
+import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
 import useUserStore from "../../../stores/user";
@@ -63,10 +64,9 @@ onMounted(() => {});
       <RaisedFinishesDetails />
       <RaisedColorDetails />
       <RaisedBudgetDetails />
-      <OrderMethodDetails />
-      <RaisedInfoDetails />
+      <OrderMethod flooring="raised" />
       <InfoForm flooring="raised" />
-      <ReviewCardMOB flooring="raised" link="raised" />
+      <ReviewCard flooring="raised" link="raised" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -79,6 +79,8 @@ onMounted(() => {});
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
+    <FloatingBarMOB flooring="RAISED FLOORS" link="/" />
+
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
@@ -104,10 +106,9 @@ onMounted(() => {});
       <RaisedFinishesDetails />
       <RaisedColorDetails />
       <RaisedBudgetDetails />
-      <OrderMethodDetails />
-      <RaisedInfoDetails />
+      <OrderMethod flooring="raised" />
       <InfoForm flooring="raised" />
-      <ReviewCardMOB flooring="raised" link="raised" />
+      <ReviewCard flooring="raised" link="raised" />
     </div>
     <!-- MOBILE -->
   </section>

@@ -19,6 +19,11 @@
           <button
             @click="clearAllSelections"
             v-show="userStore.preference.spec_2.length"
+            style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
             class="h-max bg-white text-gray-500 text-detailsContainer_clearAllText_MOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->

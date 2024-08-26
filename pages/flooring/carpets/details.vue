@@ -21,8 +21,8 @@ const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
-import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetsOrderMethodDetails.vue";
 
+import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
@@ -70,7 +70,8 @@ onMounted(() => {
       <MaterialDetails />
       <ColorDetails />
       <BudgetDetails />
-      <OrderMethodDetails />
+
+      <OrderMethod flooring="Carpets" />
       <InfoForm flooring="Carpets" />
       <ReviewCard flooring="Carpets" link="carpets" />
     </div>
@@ -110,7 +111,7 @@ onMounted(() => {
       <MaterialDetails />
       <ColorDetails />
       <BudgetDetails />
-      <OrderMethodDetails />
+      <OrderMethod flooring="Carpets" />
       <InfoForm flooring="Carpets" />
 
       <ReviewCard flooring="Carpets" link="carpets" />

@@ -9,7 +9,7 @@ import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
-import OrderMethodDetails from "./../../../components/MOBILE/FLOORING/WOODEN/WoodenOrderMethodDetails.vue";
+import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
@@ -51,7 +51,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenColorDetails />
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
-      <OrderMethodDetails />
+      <OrderMethod flooring="Wooden" />
       <InfoForm flooring="Wooden" />
       <ReviewCard flooring="Wooden" link="wooden" />
     </div>
@@ -92,7 +92,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
       <WoodenColorDetails />
       <WoodenFinishDetails />
       <WoodenBudgetDetails />
-      <OrderMethodDetails />
+      <OrderMethod flooring="Wooden" />
       <InfoForm flooring="Wooden" />
       <ReviewCard flooring="Wooden" link="wooden" />
     </div>

@@ -7,7 +7,7 @@ const userStore = useUserStore();
 
 <template>
   <div
-    v-show="userStore.preference.spec_1 !== ''"
+    v-show="userStore.preference.spec_1 !== '' && userStore.userData.id === 0"
     class="h-[8.2vh] floatingCTA w-[100vw] z-[99999] fixed bottom-[0vh] py-[1vh] backdrop-blur-[12px] bg-[#000] bg-opacity-[.9] left-[50%] translate-x-[-50%] flex font-outfit"
   >
     <div

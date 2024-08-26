@@ -36,7 +36,7 @@
           </div>
 
           <div
-            class="invisible opacity-0 InfoMOB-CONTAINER h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
+            class="invisible opacity-0 h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -114,16 +114,56 @@
               <input
                 :required="phoneIpt.length > 8"
                 type="number"
-                class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[2vh] outline-none focus:border-black"
+                class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[2vh] outline-none focus:border-black"
                 placeholder="Phone"
                 v-model="phoneIpt"
               />
             </div>
             <button
               @click="handleInfoProceedings"
-              class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+              class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black flex justify-center items-center"
             >
-              PROCEED
+              <span v-show="!isLoading">PROCEED</span>
+              <svg
+                v-show="isLoading"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-[5.2vh]"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="18" cy="12" r="0" fill="#222">
+                  <animate
+                    attributeName="r"
+                    begin=".67"
+                    calcMode="spline"
+                    dur="1.5s"
+                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                    repeatCount="indefinite"
+                    values="0;2;0;0"
+                  />
+                </circle>
+                <circle cx="12" cy="12" r="0" fill="#222">
+                  <animate
+                    attributeName="r"
+                    begin=".33"
+                    calcMode="spline"
+                    dur="1.5s"
+                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                    repeatCount="indefinite"
+                    values="0;2;0;0"
+                  />
+                </circle>
+                <circle cx="6" cy="12" r="0" fill="#222">
+                  <animate
+                    attributeName="r"
+                    begin="0"
+                    calcMode="spline"
+                    dur="1.5s"
+                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                    repeatCount="indefinite"
+                    values="0;2;0;0"
+                  />
+                </circle>
+              </svg>
             </button>
           </div>
         </div>
@@ -135,16 +175,21 @@
 <script setup>
 import useUserStore from "../../../stores/user";
 import { ref } from "vue";
-
-const supabase = useSupabaseClient();
+const userPreference = useCookie("userPreference");
 const { flooring } = defineProps(["flooring"]);
 
+const isLoading = ref(false);
 const userStore = useUserStore();
 
 const insertLog = () => {
+  isLoading.value = true;
+  const phoneWithCode = addCountryCode(
+    phoneIpt.value,
+    userStore.preference.country
+  );
   const name = nameIpt.value;
   const orderMethod = userStore.preference.orderMethod;
-  const contact = orderMethod === "whatsapp" ? phoneIpt.value : mailIpt.value;
+  const contact = orderMethod === "whatsapp" ? phoneWithCode : mailIpt.value;
 
   const userData = {
     name,
@@ -157,6 +202,8 @@ const insertLog = () => {
 
   if (!name || !contact) {
     console.error("Name and contact details are required.");
+    isLoading.value = false;
+
     return;
   }
 
@@ -180,12 +227,14 @@ const insertLog = () => {
       return response.json();
     })
     .then((logData) => {
+      isLoading.value = false;
       console.log("SUCCESS");
       console.log("Log data:", logData);
       userStore.userData.id = logData.id;
       scrollBy(-600);
     })
     .catch((err) => {
+      isLoading.value = false;
       console.error("Unexpected errors:", err.message);
     });
 };
@@ -193,7 +242,10 @@ const insertLog = () => {
 const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
-
+function setUserPreferenceCookie() {
+  userPreference.value = userStore.preference;
+  console.log("COOKIE SET::", toRaw(userPreference.value));
+}
 function handleInfoProceedings() {
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
@@ -215,6 +267,7 @@ function handleInfoProceedings() {
   userStore.userData.phone = phoneWithCode;
 
   // INSERT A ROW INTO LOGS TABLE WITH NAME, PHONE/EMAIL
+  setUserPreferenceCookie();
   insertLog();
 }
 </script>

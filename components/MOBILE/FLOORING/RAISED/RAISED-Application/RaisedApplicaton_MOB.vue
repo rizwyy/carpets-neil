@@ -5,10 +5,10 @@
   >
     <div
       v-show="userStore.preference.spec_1 !== ''"
-      class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw] pb-[10vh]"
     >
       <div
-        class="raisedApplication_temp_div opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed bottom-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
+        class="raisedApplication_temp_div opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed top-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
       >
         <span>
           {{ userStore.preference.spec_2 }} is added as an Application
@@ -38,11 +38,16 @@
         <span
           class="text-left text-balance raised_Application_Details_Mob-HEADING opacity-0 translate-x-[40%] tracking-[-.1vw]"
         >
-          Choose Your Application</span
+          {{
+            userStore.preference.spec_1 === "Others"
+              ? "Add Custom Application"
+              : "Choose Applications"
+          }}</span
         >
         <button
           @click="clearAllSelections_spec2()"
           v-show="spec_2.length"
+          style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
           class="h-max bg-white text-gray-500 text-detailsContainer_clearAllText_MOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
         >
           <!-- MOBILE -->
@@ -64,25 +69,26 @@
         <transition @beforeEnter="bringOpacity('customApplicationOverlay')">
           <div
             v-show="userStore.preference.spec_1 === 'Others'"
-            class="customApplicationOverlay opacity-0 h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
+            class="customApplicationOverlay opacity-0 h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[2vh] overflow-hidden"
           >
             <div
-              class="h-max w-[75%] flex-[2.4] flex justify-center items-center gap-[2vw] pt-[2vh]"
+              class="h-max w-[94%] flex flex-col items-start gap-[2vw] pt-[3.2vh]"
             >
-              <span class="text-[#f1f1f1] text-[3.2vh] text-left"
-                >Add Custom Application</span
+              <span class="text-[#fff9] text-[2vh] text-left"
+                >What kind of space are you looking to improve with a raised
+                floor? (e.g., office, data center, retail store)</span
               >
             </div>
-            <div class="h-max w-full flex-0">
+            <div class="h-max w-full flex justify-center">
               <input
-                class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+                class="h-[6vh] w-[94%] px-[4vw] bg-[#222] border-[#999] border-[1px] border-[#] rounded-md text-[#ececec]"
                 type="text"
                 v-model="customApplication"
                 placeholder="Enter your Application"
               />
             </div>
             <div
-              class="h-max w-full flex-[2.4] flex-col flex items-center pb-[2vh]"
+              class="h-max w-full flex-col flex items-center pt-[1vh] pb-[4vh] justify-start"
             >
               <transition
                 @beforeEnter="
@@ -92,9 +98,9 @@
                 <button
                   v-show="customApplication.length > 2"
                   @click="toggleSelect(customApplication, 'showAddedMsg')"
-                  class="sports_details_activity_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="sports_details_activity_mob_add_BTN text-[2vh] border-[1px] rounded-sm px-[8vw] text-[#f1f1f1] border-[#ededed] py-[1vh]"
                 >
-                  Add
+                  ADD
                 </button>
               </transition>
             </div>

@@ -42,7 +42,7 @@
   </div>
   <!-- ELEMENT -->
   <div
-    @click="() => handleAutoAlpha('countryDetailsPopUp', 1)"
+    @click="handleEnableCountryOverlay"
     class="h-full flex items-center w-max gap-[2vw] bg-[#] border-[1px] bg-[#f2f2f3] rounded-md px-[2vw] py-[.8vh] border-black"
   >
     <!-- LOGO -->
@@ -180,9 +180,15 @@ const countriesAndCurrencies = {
   Qatar: "QAR",
 };
 
+function handleEnableCountryOverlay() {
+  handleAutoAlpha("countryDetailsPopUp", 1);
+  DISABLE_SCROLL();
+}
+
 function setCountryCookie() {
   ctry.value = userStore.preference.country;
   handleAutoAlpha("countryDetailsPopUp", 0);
+  ENABLE_SCROLL();
 }
 
 onMounted(() => {

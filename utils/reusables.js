@@ -167,3 +167,9 @@ export function getPriceRange(name, country) {
 
   return `${currencyCode}. ${priceRange[country]}m²`;
 }
+export function DISABLE_SCROLL() {
+  document.body.style.overflow = "hidden";
+}
+export function ENABLE_SCROLL() {
+  document.body.style.overflow = "";
+}

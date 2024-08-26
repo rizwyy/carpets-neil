@@ -9,7 +9,8 @@ import PvcBudgetDetails from "../../../components/MOBILE/FLOORING/PVC/PvcBudgetD
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
-import PvcOrderMethodDetails from "./../../../components/MOBILE/FLOORING/PVC/PvcOrderMethodDetails.vue";
+
+import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
@@ -69,7 +70,7 @@ onMounted(() => {
       <PvcFinishDetails />
       <PvcBudgetDetails />
       <PvcOrderMethodDetails />
-      <PvcInfoDetails />
+      <OrderMethod flooring="PVC" />
       <InfoForm flooring="PVC" />
       <ReviewCard flooring="PVC" link="pvc" />
     </div>
@@ -115,7 +116,7 @@ onMounted(() => {
       <PvcFinishDetails />
       <PvcBudgetDetails />
       <PvcOrderMethodDetails />
-      <PvcInfoDetails />
+      <OrderMethod flooring="PVC" />
       <InfoForm flooring="PVC" />
       <ReviewCard flooring="PVC" link="pvc" />
     </div>
