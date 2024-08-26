@@ -19,7 +19,7 @@ const useUserStore = defineStore("user", {
       orderMethod: "",
       country: "Bahrain",
     },
-    userData: { name: "", email: "", phone: "" },
+    userData: { name: "", email: "", phone: "", id: 0 },
   }),
 });
 export default useUserStore;

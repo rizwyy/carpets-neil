@@ -27,40 +27,46 @@ export default defineEventHandler(async (event) => {
   }
 
   // Parse user data from the request body
-  const { name, phone, email, preference } = await readBody(event);
-  console.log(name, phone, email, preference);
+  const { id, name, phone, email, preference, isOrderConfirmed } =
+    await readBody(event);
+  console.log(id, name, phone, email, preference, isOrderConfirmed);
 
-  // Build the insert object dynamically, only including fields that are present
-  const insertData = {};
-  if (name) insertData.name = name;
-  if (phone) insertData.phone = phone;
-  if (email) insertData.email = email;
-  if (preference) insertData.preference = preference;
-
-  if (Object.keys(insertData).length === 0) {
+  if (!id) {
     throw createError({
       statusCode: 400,
-      message: "Bad Request: No valid fields to insert",
+      message: "Bad Request: Missing log ID",
     });
   }
 
-  // Insert user data into logs table and return the id
+  // Build the update object dynamically, only including fields that are present
+  const updateData = {};
+  if (name) updateData.name = name;
+  if (phone) updateData.phone = phone;
+  if (email) updateData.email = email;
+  if (preference) updateData.preference = preference;
+  updateData.isOrderConfirmed = isOrderConfirmed ?? null; // Default to null if not provided
+
+  if (Object.keys(updateData).length === 0) {
+    throw createError({
+      statusCode: 400,
+      message: "Bad Request: No valid fields to update",
+    });
+  }
+
+  // Update the logs table
   const { data, error } = await supabase
     .from("logs")
-    .insert([insertData])
-    .select("id") // Select the id of the newly inserted row
-    .single(); // Ensure we get the inserted row as a single object
+    .update(updateData)
+    .eq("id", id);
 
   if (error) {
     throw createError({
       statusCode: 400,
-      message: `Error inserting logs: ${error.message}`,
+      message: `Error updating logs: ${error.message}`,
     });
   }
 
-  // Store the id in userStore.userData.id
-  const insertedId = data.id;
-  console.log("Log inserted successfully with id:", insertedId);
+  console.log("Log updated successfully:", data);
 
-  return { id: insertedId };
+  return { data };
 });

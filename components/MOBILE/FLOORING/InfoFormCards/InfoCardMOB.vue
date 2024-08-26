@@ -182,6 +182,7 @@ const insertLog = () => {
     .then((logData) => {
       console.log("SUCCESS");
       console.log("Log data:", logData);
+      userStore.userData.id = logData.id;
       scrollBy(-600);
     })
     .catch((err) => {

@@ -1,7 +1,6 @@
 <template>
   <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
     <div
-      class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
       v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
@@ -11,6 +10,7 @@
         userStore.preference.orderMethod !== '' &&
         userStore.userData.name !== ''
       "
+      class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
     >
       <div
         class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo"
@@ -180,18 +180,37 @@
               <span>Attach Relevant Files</span>
               <input
                 type="file"
-                class="py-[.1vh] w-full text-[#333] text-[1.8vh] rounded-md leading-[4vh] file:bg-blue-100 file:text-[#555] file:font-semibold file:border-none file:px-[6vw] file:py-[1vh] file:mr-[4vw] file:rounded-md border-[2px] border-gray-500"
+                class="py-[.1vh] w-full text-[#333] text-[1.8vh] rounded-md leading-[4vh] file:bg-blue-100 file:text-[#555] file:font-[400] file:border-none file:px-[6vw] file:py-[1vh] file:mr-[4vw] file:rounded-md border-[2px] border-gray-500"
               />
             </div>
           </div>
         </div>
 
-        <button
-          @click="handleClick"
-          class="bg-[#fff9] text-center revCard-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#999] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+        <div
+          class="h-max w-full flex flex-col justify-center items-center gap-[4vh]"
         >
-          CONFIRM
-        </button>
+          <button
+            @click="() => updateIsOrderConfirmedAndRedirect(false)"
+            class="bg-[#DCE9FE] text-center revCard-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[1.8px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2vh] px-[4vw] outline-none focus:border-black text-[#333]"
+          >
+            Discover Other Floors
+          </button>
+          <span class="text-left text-[#777] text-[1.8vh]"
+            ><ul class="font-[500]">
+              Note:
+            </ul>
+            Your current selection is saved. You can Browse other flooring
+            options to find the perfect match.</span
+          >
+        </div>
+        <div class="h-max w-full border-t-[2px] pt-[4vh] border-[#999]">
+          <button
+            @click="handleClick"
+            class="bg-[#fff9] text-center revCard-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#999] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
+          >
+            CONFIRM
+          </button>
+        </div>
       </div>
     </div>
   </transition>
@@ -251,6 +270,43 @@ const handleClick = () => {
       handleTempAnimation("errOverlayMOB");
       console.error("Unexpected errors:", err.message);
     });
+};
+
+const updateIsOrderConfirmedAndRedirect = async (isOrderConfirmed) => {
+  try {
+    // Ensure the ID is set
+    if (!userStore.userData.id) {
+      throw new Error("Log ID is required");
+    }
+
+    // Create the update data object with the isOrderConfirmed field
+    const updateData = {
+      isOrderConfirmed,
+    };
+
+    // Call the API endpoint to update the log
+    const { data, error } = await useFetch("/api/update-log", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: userStore.userData.id,
+        ...updateData,
+      }),
+    });
+
+    if (error.value) {
+      throw new Error(error.value.message);
+    }
+
+    // Handle successful update
+    console.log("Log updated successfully:", data.value);
+    router.push("/flooring");
+  } catch (err) {
+    // Handle errors
+    console.error("Error updating log:", err.message);
+  }
 };
 </script>
 
