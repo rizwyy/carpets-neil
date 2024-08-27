@@ -92,10 +92,10 @@ onMounted(() => {});
     <NavBarMOB />
     <FloatingBarMOB flooring="GYM FLOORS" link="/" />
     <div
-      class="h-max w-screen font-outfit flex flex-col gap-[2vh] flex flex-col gap-[1vh] items-center z-[2]"
+      class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
       <div
-        class="h-max px-[4vw] pt-[6vh] pb-[3.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh] ]"
+        class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
         <!-- MOBILE -->
         <div class="h-max w-full flex justify-between">
