@@ -1,34 +1,18 @@
-import { getCookie } from "h3";
 import { createError } from "h3";
 import { serverSupabaseClient } from "#supabase/server";
 import { createClient } from "@supabase/supabase-js";
 
 export default defineEventHandler(async (event) => {
   const client = await serverSupabaseClient(event);
-  const cookieToken = getCookie(event, "mySecureCookie");
 
   const supabase = createClient(
     process.env.SUPABASE_URL,
     process.env.SERVICE_KEY
   );
 
-  // Validate the token against stored tokens
-  const { data: session, error: selectError } = await client
-    .from("tokens")
-    .select("created_at")
-    .eq("token", cookieToken)
-    .single();
-
-  if (selectError || !session) {
-    throw createError({
-      statusCode: 403,
-      message: "Forbidden: Invalid cookie token",
-    });
-  }
-
   // Get the mobile number from the request query
   const { mobile } = getQuery(event);
-
+  console.log(mobile);
   if (!mobile) {
     throw createError({
       statusCode: 400,
@@ -40,7 +24,8 @@ export default defineEventHandler(async (event) => {
   const { data, error } = await supabase
     .from("logs")
     .select("id, preference, isOrderConfirmed")
-    .eq("phone", mobile);
+    .eq("phone", mobile)
+    .eq("isOrderConfirmed", false);
 
   if (error) {
     throw createError({

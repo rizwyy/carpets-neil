@@ -6,6 +6,8 @@ const useUserStore = defineStore("user", {
     customPreference: {
       category: "",
     },
+    flooringHistory: [],
+
     preference: {
       flooring: "",
 

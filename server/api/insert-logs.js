@@ -27,8 +27,10 @@ export default defineEventHandler(async (event) => {
   }
 
   // Parse user data from the request body
-  const { name, phone, email, preference } = await readBody(event);
-  console.log(name, phone, email, preference);
+  const { name, phone, email, preference, isOrderConfirmed } = await readBody(
+    event
+  );
+  console.log(name, phone, email, preference, isOrderConfirmed);
 
   // Build the insert object dynamically, only including fields that are present
   const insertData = {};
@@ -36,6 +38,7 @@ export default defineEventHandler(async (event) => {
   if (phone) insertData.phone = phone;
   if (email) insertData.email = email;
   if (preference) insertData.preference = preference;
+  insertData.isOrderConfirmed = isOrderConfirmed ?? null; // Default to null if not provided
 
   if (Object.keys(insertData).length === 0) {
     throw createError({

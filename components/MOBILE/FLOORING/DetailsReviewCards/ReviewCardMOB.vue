@@ -59,7 +59,7 @@
           </svg>
         </div>
         <!-- CURRENT PREFERENCE -->
-        <div class="h-max w-full flex flex-col gap-[4.2vh]">
+        <div class="h-max w-full flex flex-col gap-[2vh]">
           <div
             class="h-max w-full flex flex-col items-start gap-[1.2vh] px-[3.8vw]"
           >
@@ -84,12 +84,30 @@
               </svg>
             </button>
           </div>
+
           <!--  -->
           <div class="h-max w-full px-[1vw]">
             <PreferenceCardMOB />
           </div>
           <!--  -->
+          <!--  -->
+          <span
+            v-show="userStore.flooringHistory.length > 0"
+            class="h-max w-full pt-[3.2vh] px-[3.2vw] text-[2vh] text-[#555]"
+            >Previously Saved Flooring Choices:</span
+          >
+          <div
+            v-if="userStore.flooringHistory.length > 0"
+            class="h-max w-full px-[1vw] pt-[0vh]"
+          >
+            <ReusablePreferenceCardMOB
+              v-for="(item, index) in userStore.flooringHistory"
+              :key="index"
+              :item="item"
+            />
+          </div>
 
+          <!--  -->
           <div
             class="h-max w-full border-[#999] flex flex-col gap-[4vh] mb-[4vh] px-[2vw]"
           >
@@ -139,7 +157,7 @@
             selections.</span
           >
           <button
-            @click="() => updateIsOrderConfirmedAndRedirect(false)"
+            @click="() => updateIsOrderConfirmedAndRedirect()"
             class="bg-[#DCE9FE] text-center revCard-HEADING active:scale-[.93] flex items-center justify-center backdrop-blur-[8px] w-[88vw] border-[1.8px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2vh] px-[4vw] outline-none focus:border-black text-[#333]"
           >
             <span v-show="!isLoading">Discover Other Floors</span>
@@ -246,25 +264,31 @@ const userStore = useUserStore();
 
 import { useRouter } from "vue-router";
 import PreferenceCardMOB from "./PreferenceCardMOB.vue";
+import ReusablePreferenceCardMOB from "./ReusablePreferenceCardMOB.vue";
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
 const isAccessRestricted = ref(true);
 const isLoading = ref(false);
+const historyFound = ref(true);
 
 const { flooring, link } = defineProps(["flooring", "link"]);
 
 async function getHistory() {
   const preferences = await fetchPreferencesByMobile(userStore.userData.phone);
-  console.log(toRaw(preferences));
+  userStore.flooringHistory = toRaw(preferences.data);
+  console.log("CHECK::", toRaw(preferences.data));
 }
 
 const HandleOrderConfirmation = () => {
   isLoading.value = true;
   handleLoadingEntry();
+
   const userData = {
     name: userStore.userData.name,
     phone: userStore.userData.phone,
     email: userStore.userData.email,
+    preference: userStore.preference,
+    isOrderConfirmed: true,
   };
 
   // Call API route to set the cookie
@@ -274,6 +298,29 @@ const HandleOrderConfirmation = () => {
         throw new Error("Error setting cookie: " + error.value);
       }
       console.log("SET COOKIE DONE");
+
+      // Conditionally call the API route to update logs
+      if (userStore.flooringHistory.length > 0) {
+        // Call the API route to update logs with isOrderConfirmed = false
+        return fetch("/api/confirm-logs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone: userStore.userData.phone }),
+        }).then((response) => {
+          if (!response.ok) {
+            throw new Error("Error updating logs");
+          }
+          console.log("LOGS UPDATED TO CONFIRMED");
+          return response.json(); // Proceed to insert logs if successful
+        });
+      } else {
+        // Skip updating logs if flooringHistory is empty
+        console.log("No flooring history to confirm");
+        return Promise.resolve(); // Resolve with no data to continue to the next step
+      }
+    })
+    .then(() => {
+      // Now insert the new log
       return fetch("/api/insert-logs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -287,6 +334,7 @@ const HandleOrderConfirmation = () => {
       return response.json();
     })
     .then((logData) => {
+      // Clear user data after successful insertion
       userStore.userData.email = "";
       userStore.userData.name = "";
       userStore.userData.phone = "";
@@ -304,7 +352,7 @@ const HandleOrderConfirmation = () => {
     });
 };
 
-const updateIsOrderConfirmedAndRedirect = async (isOrderConfirmed) => {
+const updateIsOrderConfirmedAndRedirect = async () => {
   isLoading.value = true;
   try {
     // Ensure the ID is set
@@ -314,7 +362,7 @@ const updateIsOrderConfirmedAndRedirect = async (isOrderConfirmed) => {
 
     // Create the update data object with the isOrderConfirmed field
     const updateData = {
-      isOrderConfirmed,
+      isOrderConfirmed: false,
     };
 
     // Call the API endpoint to update the log
@@ -353,15 +401,12 @@ async function fetchPreferencesByMobile(mobile) {
     }
 
     // Call the API endpoint to get the logs associated with the mobile number
-    const { data, error } = await useFetch(
-      `/api/get-log?mobile=${mobile.substring(1)}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const { data, error } = await useFetch(`/api/get-log?mobile=${mobile}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (error.value) {
       throw new Error(error.value.message);
@@ -369,15 +414,26 @@ async function fetchPreferencesByMobile(mobile) {
 
     // Handle successful data retrieval
     console.log("Preferences fetched successfully:", data.value);
+    userStore.flooringHistory = toRaw(data.value);
     return data.value; // Return the fetched data
   } catch (err) {
     // Handle errors
     console.error("Error fetching preferences:", err.message);
+    historyFound.value = false;
     return null;
   }
 }
 
-onMounted(async () => {});
+watch(
+  () => userStore.userData.name,
+  (newValue) => {
+    if (newValue !== "") {
+      setTimeout(async () => {
+        await getHistory();
+      }, 2000);
+    }
+  }
+);
 </script>
 
 <style lang="scss" scoped></style>

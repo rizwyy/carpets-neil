@@ -257,10 +257,3 @@ export function handleAutoAlpha(el, autoAlpha) {
     ease: "power4.out",
   });
 }
-
-export function DISABLE_SCROLL() {
-  document.body.style.overflow = "hidden";
-}
-export function ENABLE_SCROLL() {
-  document.body.style.overflow = "";
-}
