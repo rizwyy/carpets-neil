@@ -9,8 +9,8 @@
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
         userStore.preference.spec_3 !== '' &&
-        userStore.preference.color.length > 0 &&
-        userStore.preference.spec_4 !== ''
+        userStore.preference.spec_4.length > 0 &&
+        userStore.preference.color.length > 0
       "
       class="h-max w-screen flex justify-center pb-[10vh]"
     >

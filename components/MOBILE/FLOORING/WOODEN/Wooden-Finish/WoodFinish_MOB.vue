@@ -129,6 +129,7 @@ const toggleSelect = (surface) => {
     userStore.preference.spec_4.splice(index, 1);
   } else {
     userStore.preference.spec_4.push(surface);
+    scrollToBottom();
   }
 };
 
