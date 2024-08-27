@@ -12,7 +12,7 @@
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
       <div
-        class="h-max w-[100vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <!-- MOBILE -->
         <div

@@ -15,7 +15,7 @@
           userStore.preference.spec_2 !== '' &&
           userStore.preference.spec_3 !== ''
         "
-        class="container mx-auto p-[4vh] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
+        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
           class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between gym_Color_Details_Mob-HEADING"
