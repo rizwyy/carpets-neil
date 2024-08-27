@@ -62,11 +62,10 @@ onMounted(() => {
         </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
+      <!-- MOBILE -->
       <BannerYouWin />
       <CategoryDetails />
-      <!-- MOBILE -->
       <TypeDetails />
-      <!-- <CustomBTN heading="Custom Carpets" link="/flooring/customize" /> -->
       <MaterialDetails />
       <ColorDetails />
       <BudgetDetails />
