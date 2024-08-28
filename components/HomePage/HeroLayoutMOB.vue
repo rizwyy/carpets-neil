@@ -21,6 +21,7 @@
     <!-- SEARCH BAR COMP -->
 
     <HeroLayoutMOB />
+    <!-- <HeroContentMOB /> -->
     <FooterMOB />
   </section>
 </template>
@@ -29,6 +30,7 @@
 import NavBarMOB from "./../MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "./../SearchBar/SearchBarMOB.vue";
 import HeroLayoutMOB from "./../MOBILE/HeroLayoutMOB.vue";
+import HeroContentMOB from "./HeroContentMOB.vue";
 import FooterMOB from "./../MOBILE/FooterMOB.vue";
 
 onMounted(() => {
