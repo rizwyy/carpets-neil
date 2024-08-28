@@ -1,4 +1,7 @@
 <script setup>
+import useUserStore from "../../../stores/user";
+const userStore = useUserStore();
+
 import RaisedAreaDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedAreaDetails.vue";
 import RaisedApplicationDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedApplicationDetails.vue";
 import RaisedPanelDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedPanelsDetails.vue";
@@ -14,10 +17,6 @@ import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
-import useUserStore from "../../../stores/user";
-const userStore = useUserStore();
-
-// COOKIES
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 

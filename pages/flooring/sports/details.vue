@@ -1,4 +1,7 @@
 <script setup>
+import useUserStore from "../../../stores/user";
+const userStore = useUserStore();
+
 import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
 import SportsFlooringDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue";
 import SportsColorDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue";
@@ -12,11 +15,6 @@ import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
 import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 
-import useUserStore from "../../../stores/user";
-const userStore = useUserStore();
-
-const route = useRoute();
-// COOKIES
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 

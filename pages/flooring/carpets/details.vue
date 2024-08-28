@@ -1,5 +1,6 @@
 <script setup>
 import useUserStore from "../../../stores/user";
+const userStore = useUserStore();
 
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
@@ -16,7 +17,6 @@ import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 
-const userStore = useUserStore();
 const isMobile = ref(false);
 
 onMounted(() => {
