@@ -178,75 +178,20 @@ import { ref } from "vue";
 const userPreference = useCookie("userPreference");
 const { flooring } = defineProps(["flooring"]);
 
-const isLoading = ref(false);
-const userStore = useUserStore();
-
-const insertLog = () => {
-  isLoading.value = true;
-  const phoneWithCode = addCountryCode(
-    phoneIpt.value,
-    userStore.preference.country
-  );
-  const name = nameIpt.value;
-  const orderMethod = userStore.preference.orderMethod;
-  const contact = orderMethod === "whatsapp" ? phoneWithCode : mailIpt.value;
-
-  const userData = {
-    name,
-    phone: orderMethod === "whatsapp" ? contact : "",
-    email: orderMethod === "email" ? contact : "",
-    preference: userStore.preference,
-  };
-
-  console.log("Sending userData:", userData);
-
-  if (!name || !contact) {
-    console.error("Name and contact details are required.");
-    isLoading.value = false;
-
-    return;
-  }
-
-  // Call API route to insert logs
-  useFetch("/api/set-cookie")
-    .then(({ data, error }) => {
-      if (error?.value) {
-        throw new Error("Error setting cookie: " + error.value);
-      }
-      console.log("SET COOKIE DONE");
-      return fetch("/api/insert-logs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error inserting logs");
-      }
-      return response.json();
-    })
-    .then((logData) => {
-      isLoading.value = false;
-      console.log("SUCCESS");
-      console.log("Log data:", logData);
-      userStore.userData.id = logData.id;
-      scrollBy(-600);
-    })
-    .catch((err) => {
-      isLoading.value = false;
-      console.error("Unexpected errors:", err.message);
-    });
-};
-
 const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
+
+const isLoading = ref(false);
+const userStore = useUserStore();
+
 function setUserPreferenceCookie() {
   userPreference.value = userStore.preference;
   console.log("COOKIE SET::", toRaw(userPreference.value));
 }
 function handleInfoProceedings() {
+  scrollBy(-800);
+
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
@@ -261,12 +206,9 @@ function handleInfoProceedings() {
     return;
   }
 
-  //   handleTempAnimation("loadingPt1_WoodenMOB");
   userStore.userData.name = nameIpt.value;
   userStore.userData.email = mailIpt.value;
   userStore.userData.phone = phoneWithCode;
-  // SET COOKIE FOR ORDER METHOD, NAME, PHONE/EMAIL
   setUserPreferenceCookie();
-  insertLog(); // NO NEED TO CALL THIS HERE
 }
 </script>

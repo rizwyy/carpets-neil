@@ -129,11 +129,7 @@
             <div
               class="h-max w-full flex flex-col gap-[1vh] text-[#777] px-[2vw]"
             >
-              <span>Attach Relevant Files</span>
-              <input
-                type="file"
-                class="py-[.1vh] w-full text-[#333] text-[1.8vh] rounded-md leading-[4vh] file:bg-blue-100 file:text-[#555] file:font-[400] file:border-none file:px-[6vw] file:py-[1vh] file:mr-[4vw] file:rounded-md border-[2px] border-gray-500"
-              />
+              <UploadContainerMOB />
             </div>
           </div>
         </div>
@@ -157,7 +153,7 @@
             selections.</span
           >
           <button
-            @click="() => HandleClickOnAddMore()"
+            @click="() => HandleAddMore()"
             class="bg-[#DCE9FE] text-center revCard-HEADING active:scale-[.93] flex items-center justify-center backdrop-blur-[8px] w-[88vw] border-[1.8px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2vh] px-[4vw] outline-none focus:border-black text-[#333]"
           >
             <span v-show="!isLoading">Discover Other Floors</span>
@@ -264,6 +260,7 @@ const userStore = useUserStore();
 
 import { useRouter } from "vue-router";
 import PreferenceCardMOB from "./PreferenceCardMOB.vue";
+import UploadContainerMOB from "./UploadContainerMOB.vue";
 import ReusablePreferenceCardMOB from "./ReusablePreferenceCardMOB.vue";
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
@@ -309,10 +306,12 @@ async function getHistory() {
   console.log("CHECK::", toRaw(preferences.data));
 }
 
+// ACTIONS
 const HandleOrderConfirmation = () => {
   isLoading.value = true;
   handleLoadingEntry();
 
+  // Prepare the user data object with isOrderConfirmed set to true
   const userData = {
     name: userStore.userData.name,
     phone: userStore.userData.phone,
@@ -321,7 +320,7 @@ const HandleOrderConfirmation = () => {
     isOrderConfirmed: true,
   };
 
-  // Call API route to set the cookie
+  // Step 1: Set the cookie and validate
   useFetch("/api/set-cookie")
     .then(({ data, error }) => {
       if (error?.value) {
@@ -329,9 +328,8 @@ const HandleOrderConfirmation = () => {
       }
       console.log("SET COOKIE DONE");
 
-      // Conditionally call the API route to update logs
+      // Step 2: Conditionally update logs if flooringHistory is not empty
       if (userStore.flooringHistory.length > 0) {
-        // Call the API route to update logs with isOrderConfirmed = false
         return fetch("/api/confirm-logs", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -344,13 +342,12 @@ const HandleOrderConfirmation = () => {
           return response.json(); // Proceed to insert logs if successful
         });
       } else {
-        // Skip updating logs if flooringHistory is empty
         console.log("No flooring history to confirm");
-        return Promise.resolve(); // Resolve with no data to continue to the next step
+        return Promise.resolve(); // Resolve to continue without updating logs
       }
     })
     .then(() => {
-      // Now insert the new log
+      // Step 3: Insert the new log with isOrderConfirmed set to true
       return fetch("/api/insert-logs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -382,48 +379,71 @@ const HandleOrderConfirmation = () => {
     });
 };
 
-const HandleClickOnAddMore = async () => {
-  // UPDATE THE CURRENT LOG
-  isLoading.value = true;
-  try {
-    // Ensure the ID is set
-    if (!userStore.userData.id) {
-      throw new Error("Log ID is required");
-    }
+const insertLog = () => {
+  // Retrieve values from userStore.userData
+  const name = userStore.userData.name;
+  const orderMethod = userStore.preference.orderMethod;
+  const contact =
+    orderMethod === "whatsapp"
+      ? userStore.userData.phone
+      : userStore.userData.email;
 
-    // Create the update data object with the isOrderConfirmed field
-    const updateData = {
-      isOrderConfirmed: false,
-    };
+  const userData = {
+    name,
+    phone: orderMethod === "whatsapp" ? contact : "",
+    email: orderMethod === "email" ? contact : "",
+    preference: userStore.preference,
+    isOrderConfirmed: userStore.preference.isOrderConfirmed || false,
+  };
 
-    // Call the API endpoint to update the log
-    const { data, error } = await useFetch("/api/update-log", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: userStore.userData.id,
-        ...updateData,
-      }),
-    });
+  console.log("Sending userData:", userData);
 
-    if (error.value) {
-      throw new Error(error.value.message);
-    }
-
-    // Handle successful update
-    console.log("Log updated successfully:", data.value);
-    isLoading.value = false;
-
-    router.push("/flooring");
-  } catch (err) {
-    // Handle errors
-    isLoading.value = false;
-    console.error("Error updating log:", err.message);
+  if (!name || !contact) {
+    console.error("Name and contact details are required.");
+    return;
   }
+
+  // Call API route to insert logs
+  useFetch("/api/set-cookie")
+    .then(({ data, error }) => {
+      if (error?.value) {
+        throw new Error("Error setting cookie: " + error.value);
+      }
+      console.log("SET COOKIE DONE");
+      return fetch("/api/insert-logs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error inserting logs");
+      }
+      return response.json();
+    })
+    .then((logData) => {
+      console.log("SUCCESS");
+      console.log("Log data:", logData);
+      userStore.userData.id = logData.id;
+
+      // Redirect to /flooring after successful log insertion
+      router.push("/flooring");
+    })
+    .catch((err) => {
+      console.error("Unexpected errors:", err.message);
+    });
 };
 
+const HandleAddMore = () => {
+  // Set isOrderConfirmed to false
+  userStore.preference.isOrderConfirmed = false;
+
+  // Call the insertLog function
+  insertLog();
+};
+
+//
 watch(
   () => userStore.userData.name,
   (newValue) => {
