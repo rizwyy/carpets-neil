@@ -5,7 +5,6 @@ import WoodenFinishDetails from "../../../components/MOBILE/FLOORING/WOODEN/Wood
 import WoodenColorDetails from "~/components/MOBILE/FLOORING/WOODEN/WoodenColorDetails.vue";
 import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue";
 import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
-import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
@@ -16,15 +15,24 @@ import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-const route = useRoute();
 // COOKIES
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
+
+const isMobile = ref(false);
+onMounted(() => {
+  handleDOMEntry("detail_pvc_mob_text_item");
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
+});
 </script>
 <template>
   <!-- DESKTOP -->
-  <section class="max-[990px]:hidden max-w-screen h-max">
+  <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
     <NavBarPC />
     <div
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
@@ -64,7 +72,7 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
   <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
-  <section class="min-[990px]:hidden w-max h-max select-none">
+  <section v-else class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
     <FloatingBarMOB flooring="WOODEN" link="/" />
     <div

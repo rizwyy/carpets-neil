@@ -17,31 +17,27 @@ import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-const route = useRoute();
 // COOKIES
-import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
-import CustomBTN from "~/components/MOBILE/CustomBTN.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
-const userPreference = useCookie("userPreference");
-const restrictedAccess = useCookie("restrictedAccess");
 
-const isCategoryOpted = ref(false);
-const category = ref("");
-function setUserPreferenceCookie() {
-  userPreference.value = userStore.preference;
-  restrictedAccess.value = false;
-  console.log("COOKIE SET::", toRaw(userPreference.value));
-}
-
+const isMobile = ref(false);
 onMounted(() => {
   handleDOMEntry("detail_pvc_mob_text_item");
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
 });
 </script>
 <template>
   <!-- DESKTOP -->
-  <section class="max-[990px]:hidden max-w-screen h-max select-none">
+  <section
+    v-if="!isMobile"
+    class="max-[990px]:hidden max-w-screen h-max select-none"
+  >
     <NavBarPC />
     <div
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
@@ -83,7 +79,7 @@ onMounted(() => {
   <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
-  <section class="min-[990px]:hidden w-max h-max select-none">
+  <section v-else class="min-[990px]:hidden w-max h-max select-none">
     <NavBarMOB />
     <FloatingBarMOB flooring="VINYL" link="/" />
 

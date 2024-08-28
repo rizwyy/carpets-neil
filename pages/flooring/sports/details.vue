@@ -1,6 +1,5 @@
 <script setup>
 import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
-import SportsActivitiesDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsActivityDetails.vue";
 import SportsFlooringDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue";
 import SportsColorDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue";
 import SportsBudgetDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue";
@@ -18,26 +17,22 @@ const userStore = useUserStore();
 
 const route = useRoute();
 // COOKIES
-import { useCookie } from "#app";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
-const userPreference = useCookie("userPreference");
-const restrictedAccess = useCookie("restrictedAccess");
-
-const isCategoryOpted = ref(false);
-const category = ref("");
-function setUserPreferenceCookie() {
-  userPreference.value = userStore.preference;
-  restrictedAccess.value = false;
-  console.log("COOKIE SET::", toRaw(userPreference.value));
-}
-
-onMounted(() => {});
+const isMobile = ref(false);
+onMounted(() => {
+  handleDOMEntry("detail_pvc_mob_text_item");
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
+});
 </script>
 <template>
   <!-- DESKTOP -->
-  <section class="max-[990px]:hidden max-w-screen h-max">
+  <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
     <NavBarPC />
     <div
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
@@ -74,7 +69,7 @@ onMounted(() => {});
   <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
-  <section class="min-[990px]:hidden w-max h-max">
+  <section v-else class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
     <FloatingBarMOB flooring="SPORTS" link="/" />
 

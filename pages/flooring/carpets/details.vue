@@ -1,35 +1,24 @@
 <script setup>
-import CustomBTN from "./../../../components/MOBILE/CustomBTN.vue";
+import useUserStore from "../../../stores/user";
+
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import useUserStore from "../../../stores/user";
-const userStore = useUserStore();
-
-const route = useRoute();
-// COOKIES
-import { useCookie } from "#app";
-
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
-
 import CategoryDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
 import TypeDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetTypeDetails.vue";
 import MaterialDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetMaterialDetails.vue";
 import ColorDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue";
 import BudgetDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
-import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
-const userPreference = useCookie("userPreference");
-const restrictedAccess = useCookie("restrictedAccess");
+import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
+import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
+import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
 
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
+import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 
-import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
-import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
-import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
-
-const isCategoryOpted = ref(false);
-const category = ref("");
-
+const userStore = useUserStore();
 const isMobile = ref(false);
+
 onMounted(() => {
   if (window.innerWidth < 990) {
     isMobile.value = true;
