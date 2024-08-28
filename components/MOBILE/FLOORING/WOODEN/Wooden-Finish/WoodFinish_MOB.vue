@@ -126,7 +126,15 @@ function clearSurfaceFinish() {
   userStore.preference.spec_4 = "";
 }
 const toggleSelect = (surface) => {
+  // Ensure spec_4 is an array
+  if (!Array.isArray(userStore.preference.spec_4)) {
+    userStore.preference.spec_4 = [];
+  }
+
   const index = userStore.preference.spec_4.indexOf(surface);
+
+  // Clear the array before performing the rest of the operations
+  userStore.preference.spec_4 = [];
 
   if (index !== -1) {
     userStore.preference.spec_4.splice(index, 1);
