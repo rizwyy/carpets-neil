@@ -422,6 +422,9 @@ const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 const customColorArray = ref([]);
 
+const existingUser = ref(false);
+const userPreference = useCookie("userPreference");
+
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
@@ -433,7 +436,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    existingUser.value ? scrollBy(800) : scrollToBottom();
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -446,7 +449,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      existingUser.value ? scrollBy(800) : scrollToBottom();
     }
     selectedColors.value.push(color);
   }
@@ -471,6 +474,14 @@ function getHexCodes() {
     customColorArray.value.push(hexCode);
   });
 }
+
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>

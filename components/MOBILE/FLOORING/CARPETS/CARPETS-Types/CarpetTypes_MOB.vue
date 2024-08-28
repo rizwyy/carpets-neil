@@ -194,8 +194,10 @@ import { ref } from "vue";
 const userStore = useUserStore();
 // COOKIES
 import useUserStore from "~/stores/user";
-
 const selectedType = ref("");
+
+const existingUser = ref(false);
+const userPreference = useCookie("userPreference");
 
 function clearAllSelections() {
   spec_2.value = "";
@@ -207,11 +209,19 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
+
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>

@@ -17,14 +17,16 @@ export function scrollToTop() {
     });
   }, 200);
 }
-
-export function scrollUpBy(distance = 100) {
-  window.scrollBy({
-    top: -distance,
-    behavior: "smooth",
-  });
+export function scrollBy(amount) {
+  setTimeout(() => {
+    const scrollAmount = amount;
+    window.scrollBy({
+      top: scrollAmount,
+      behavior: "smooth",
+    });
+  }, 200);
 }
-export function scrollBy(distance = 100) {
+export function scrollUpBy(distance = 100) {
   window.scrollBy({
     top: -distance,
     behavior: "smooth",

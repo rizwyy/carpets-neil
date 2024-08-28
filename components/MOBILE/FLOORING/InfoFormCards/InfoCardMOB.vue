@@ -84,6 +84,11 @@
 
           <div class="h-max w-full flex flex-col gap-[vh]">
             <input
+              :class="{
+                'bg-gray-300': cookieFound,
+                'bg-white': !cookieFound,
+              }"
+              :readonly="cookieFound"
               type="text"
               class="border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
               placeholder="Name"
@@ -92,6 +97,11 @@
           </div>
           <div class="h-max w-full flex flex-col">
             <input
+              :class="{
+                'bg-gray-300': cookieFound,
+                'bg-white': !cookieFound,
+              }"
+              :readonly="cookieFound"
               :required="mailIpt.length > 8"
               type="email"
               class="border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
@@ -102,6 +112,10 @@
           <div class="h-max w-full flex flex-col gap-[6.2vh] pb-[6.2vh]">
             <div class="h-max w-full flex">
               <select
+                :class="{
+                  'bg-gray-300': cookieFound,
+                  'bg-white': !cookieFound,
+                }"
                 v-model="userStore.preference.country"
                 class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoMOB-CONTAINER opacity-0"
               >
@@ -112,6 +126,11 @@
                 <option value="Qatar">+974</option>
               </select>
               <input
+                :readonly="cookieFound"
+                :class="{
+                  'bg-gray-300': cookieFound,
+                  'bg-white': !cookieFound,
+                }"
                 :required="phoneIpt.length > 8"
                 type="number"
                 class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[2vh] outline-none focus:border-black"
@@ -120,10 +139,12 @@
               />
             </div>
             <button
-              @click="handleInfoProceedings"
+              @click="cookieFound ? toggleReadOnly() : handleInfoProceedings()"
               class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black flex justify-center items-center"
             >
-              <span v-show="!isLoading">PROCEED</span>
+              <span v-show="!isLoading">{{
+                cookieFound ? "EDIT" : "SAVE"
+              }}</span>
               <svg
                 v-show="isLoading"
                 xmlns="http://www.w3.org/2000/svg"
@@ -182,15 +203,29 @@ const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
 
+const cookieFound = ref(false);
+
 const isLoading = ref(false);
 const userStore = useUserStore();
 
+function toggleReadOnly() {
+  cookieFound.value = false;
+}
+
 function setUserPreferenceCookie() {
-  userPreference.value = userStore.preference;
+  const obj = {
+    name: userStore.userData.name,
+    email: userStore.userData.email,
+    phone: userStore.userData.phone,
+    orderMethod: userStore.preference.orderMethod,
+  };
+  userPreference.value = obj;
+
   console.log("COOKIE SET::", toRaw(userPreference.value));
+  cookieFound.value = true;
 }
 function handleInfoProceedings() {
-  scrollBy(-800);
+  scrollBy(800);
 
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
@@ -211,4 +246,21 @@ function handleInfoProceedings() {
   userStore.userData.phone = phoneWithCode;
   setUserPreferenceCookie();
 }
+
+onMounted(() => {
+  if (toRaw(userPreference.value)) {
+    userStore.userData.name = nameIpt.value = toRaw(userPreference.value.name);
+    userStore.userData.phone = phoneIpt.value = toRaw(
+      userPreference.value.phone
+    ).substring(4);
+    userStore.userData.email = mailIpt.value = toRaw(
+      userPreference.value.email
+    );
+    if (userStore.userData.name !== "") {
+      cookieFound.value = true;
+    }
+  } else {
+    return;
+  }
+});
 </script>

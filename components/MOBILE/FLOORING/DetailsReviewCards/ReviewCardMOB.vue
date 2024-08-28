@@ -264,6 +264,7 @@ import UploadContainerMOB from "./UploadContainerMOB.vue";
 import ReusablePreferenceCardMOB from "./ReusablePreferenceCardMOB.vue";
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
+const userPreference = useCookie("userPreference");
 const isAccessRestricted = ref(true);
 const isLoading = ref(false);
 const historyFound = ref(true);
@@ -367,6 +368,7 @@ const HandleOrderConfirmation = () => {
       userStore.userData.phone = "";
       scrollToBottom();
       handleLoadingExit();
+      userPreference.value = null;
       restrictedAccess.value = false;
       router.push(`/flooring/${link}/success`);
       console.log("SUCCESS");

@@ -606,7 +606,9 @@
 
 <script setup>
 import { ref } from "vue";
-// PINIA
+
+const existingUser = ref(false);
+const userPreference = useCookie("userPreference");
 
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
@@ -617,23 +619,25 @@ function clearBudgetSelections() {
   selectedBudget.value = "";
   userStore.preference.budget = "";
 }
-const isMaterialSelected = (material) => {
-  return userStore.preference.spec_3.toLowerCase() === material.toLowerCase();
-};
-const isCategorySelected = (category) => {
-  return userStore.preference.spec_1.toLowerCase() === category.toLowerCase();
-};
 
 const toggleSelect = (type) => {
   if (selectedBudget.value === type) {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
+
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
 };
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>
