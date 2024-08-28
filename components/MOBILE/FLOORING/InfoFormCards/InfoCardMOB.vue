@@ -265,9 +265,8 @@ function handleInfoProceedings() {
   userStore.userData.name = nameIpt.value;
   userStore.userData.email = mailIpt.value;
   userStore.userData.phone = phoneWithCode;
-
-  // INSERT A ROW INTO LOGS TABLE WITH NAME, PHONE/EMAIL
+  // SET COOKIE FOR ORDER METHOD, NAME, PHONE/EMAIL
   setUserPreferenceCookie();
-  insertLog();
+  insertLog(); // NO NEED TO CALL THIS HERE
 }
 </script>

@@ -213,8 +213,9 @@
               @click="toggleSelect('Grey')"
             >
               <NuxtImg
+                v-show="userStore.preference.spec_3 === 'Wooden'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
-                src="/wooden/wood-Brown.webp"
+                src="/colors/grey-wood.webp"
               />
               <div
                 v-show="userStore.preference.spec_3 !== 'Wooden'"

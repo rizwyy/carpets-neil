@@ -151,6 +151,11 @@
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/snow.webp"
               />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/beige-wood.webp"
+              />
               <span v-show="!userStore.preference.color.includes('Beige')"
                 >Beige</span
               >
@@ -171,6 +176,7 @@
             >
               <!-- MOBILE -->
               <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/brown.webp"
               />
@@ -178,6 +184,11 @@
                 v-show="userStore.preference.spec_2 === 'Artificial Grass'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/artificialGrass-brown.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/wooden/wood-Brown.webp"
               />
               <span v-show="!userStore.preference.color.includes('Brown')"
                 >Brown</span
@@ -202,6 +213,11 @@
                 src="/colors/silver.webp"
               />
               <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/grey-wood.webp"
+              />
+              <NuxtImg
                 v-show="userStore.preference.spec_2 === 'Artificial Grass'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/artificialGrass-grey.webp"
@@ -218,6 +234,32 @@
               </div>
             </div>
             <div
+              v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{
+                selected: userStore.preference.color.includes('Dark Brown'),
+              }"
+              @click="toggleSelect('Dark Brown')"
+            >
+              <!-- MOBILE -->
+              <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Cork Floor'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/darkBrown-wood.webp"
+              />
+              <span v-show="!userStore.preference.color.includes('Dark Brown')"
+                >Dark Brown</span
+              >
+              <div v-show="userStore.preference.color.includes('Dark Brown')">
+                <span
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  >Selected</span
+                >
+              </div>
+              <!-- MOBILE -->
+            </div>
+            <div
+              v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
               class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
@@ -246,6 +288,7 @@
               <!-- MOBILE -->
             </div>
             <div
+              v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
               class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
@@ -281,6 +324,7 @@
               @click="toggleSelect('White')"
             >
               <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/polarBear.webp"
               />
@@ -288,6 +332,11 @@
                 v-show="userStore.preference.spec_2 === 'Artificial Grass'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/artificialGrass-white.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/white-wood.webp"
               />
               <!-- MOBILE -->
               <span v-show="!userStore.preference.color.includes('White')"
@@ -309,8 +358,14 @@
             >
               <!-- MOBILE -->
               <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/black.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/black-wood.webp"
               />
               <NuxtImg
                 v-show="userStore.preference.spec_2 === 'Artificial Grass'"
@@ -350,7 +405,10 @@
               </div>
             </div>
             <div
-              v-show="userStore.preference.spec_2 !== 'Artificial Grass'"
+              v-show="
+                userStore.preference.spec_2 !== 'Artificial Grass' &&
+                userStore.preference.spec_2 !== 'Wooden Sprung'
+              "
               class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Rose') }"
               @click="toggleSelect('Rose')"

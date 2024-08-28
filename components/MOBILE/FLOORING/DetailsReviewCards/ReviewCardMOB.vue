@@ -157,7 +157,7 @@
             selections.</span
           >
           <button
-            @click="() => updateIsOrderConfirmedAndRedirect()"
+            @click="() => HandleClickOnAddMore()"
             class="bg-[#DCE9FE] text-center revCard-HEADING active:scale-[.93] flex items-center justify-center backdrop-blur-[8px] w-[88vw] border-[1.8px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2vh] px-[4vw] outline-none focus:border-black text-[#333]"
           >
             <span v-show="!isLoading">Discover Other Floors</span>
@@ -273,6 +273,36 @@ const historyFound = ref(true);
 
 const { flooring, link } = defineProps(["flooring", "link"]);
 
+async function fetchPreferencesByMobile(mobile) {
+  try {
+    // Ensure the mobile number is provided
+    if (!mobile) {
+      throw new Error("Mobile number is required");
+    }
+
+    // Call the API endpoint to get the logs associated with the mobile number
+    const { data, error } = await useFetch(`/api/get-log?mobile=${mobile}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (error.value) {
+      throw new Error(error.value.message);
+    }
+
+    // Handle successful data retrieval
+    console.log("Preferences fetched successfully:", data.value);
+    userStore.flooringHistory = toRaw(data.value);
+    return data.value; // Return the fetched data
+  } catch (err) {
+    // Handle errors
+    console.error("Error fetching preferences:", err.message);
+    historyFound.value = false;
+    return null;
+  }
+}
 async function getHistory() {
   const preferences = await fetchPreferencesByMobile(userStore.userData.phone);
   userStore.flooringHistory = toRaw(preferences.data);
@@ -352,7 +382,8 @@ const HandleOrderConfirmation = () => {
     });
 };
 
-const updateIsOrderConfirmedAndRedirect = async () => {
+const HandleClickOnAddMore = async () => {
+  // UPDATE THE CURRENT LOG
   isLoading.value = true;
   try {
     // Ensure the ID is set
@@ -392,37 +423,6 @@ const updateIsOrderConfirmedAndRedirect = async () => {
     console.error("Error updating log:", err.message);
   }
 };
-
-async function fetchPreferencesByMobile(mobile) {
-  try {
-    // Ensure the mobile number is provided
-    if (!mobile) {
-      throw new Error("Mobile number is required");
-    }
-
-    // Call the API endpoint to get the logs associated with the mobile number
-    const { data, error } = await useFetch(`/api/get-log?mobile=${mobile}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (error.value) {
-      throw new Error(error.value.message);
-    }
-
-    // Handle successful data retrieval
-    console.log("Preferences fetched successfully:", data.value);
-    userStore.flooringHistory = toRaw(data.value);
-    return data.value; // Return the fetched data
-  } catch (err) {
-    // Handle errors
-    console.error("Error fetching preferences:", err.message);
-    historyFound.value = false;
-    return null;
-  }
-}
 
 watch(
   () => userStore.userData.name,
