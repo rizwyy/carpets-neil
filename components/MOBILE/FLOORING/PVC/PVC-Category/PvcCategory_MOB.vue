@@ -104,10 +104,10 @@ import { ref } from "vue";
 const userStore = useUserStore();
 // COOKIES
 import { useCookie } from "#app";
-import gsap from "gsap";
-import Mobile from "~/layouts/Mobile.vue";
-import Desktop from "~/layouts/Desktop.vue";
+
 import useUserStore from "~/stores/user";
+
+const existingUser = ref(false);
 const userPreference = useCookie("userPreference");
 const selectedCategory = ref("");
 
@@ -121,14 +121,20 @@ const toggleSelect = (category) => {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
     selectedCategory.value = category;
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.flooring = "PVC";
   }
 };
 
-onMounted(() => {});
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>

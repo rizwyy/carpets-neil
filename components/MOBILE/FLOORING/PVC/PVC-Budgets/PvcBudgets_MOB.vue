@@ -306,6 +306,8 @@ import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
 
+const existingUser = ref(false);
+const userPreference = useCookie("userPreference");
 const selectedBudget = ref("");
 
 function clearBudgetSelections() {
@@ -318,11 +320,20 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
+
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
 };
+
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>

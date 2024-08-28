@@ -240,7 +240,8 @@
 <script setup>
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
-
+const existingUser = ref(false);
+const userPreference = useCookie("userPreference");
 // PINIA
 const userStore = useUserStore();
 
@@ -256,11 +257,19 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
+
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>

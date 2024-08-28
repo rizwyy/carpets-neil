@@ -105,11 +105,12 @@
 
 <script setup>
 // PINIA
-import Mobile from "~/layouts/Mobile.vue";
+import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 import { ref } from "vue";
-import Desktop from "~/layouts/Desktop.vue";
-import useUserStore from "~/stores/user";
+
+const existingUser = ref(false);
+const userPreference = useCookie("userPreference");
 
 const selectedSurfaceFinish = ref("");
 function clearSurfaceFinish() {
@@ -122,11 +123,20 @@ const toggleSelect = (surface) => {
     selectedSurfaceFinish.value = "";
     userStore.preference.surface = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
+
     selectedSurfaceFinish.value = surface;
     userStore.preference.surface = toRaw(selectedSurfaceFinish.value);
   }
 };
+
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>
