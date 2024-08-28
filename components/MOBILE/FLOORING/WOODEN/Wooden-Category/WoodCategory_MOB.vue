@@ -109,9 +109,12 @@
 import { ref } from "vue";
 
 // PINIA
+import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 // COOKIES
-import useUserStore from "~/stores/user";
+const userPreference = useCookie("userPreference");
+
+const existingUser = ref(false);
 const selectedCategory = ref("");
 
 function clearAllSelections() {
@@ -124,7 +127,8 @@ const toggleSelect = (category) => {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
+
     selectedCategory.value = category;
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.spec_2 = "";
@@ -132,7 +136,13 @@ const toggleSelect = (category) => {
   }
 };
 
-onMounted(() => {});
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>

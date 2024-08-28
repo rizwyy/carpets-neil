@@ -537,6 +537,9 @@ const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
+const userPreference = useCookie("userPreference");
+const existingUser = ref(false);
+
 const selectedMaterial = ref("");
 function clearMaterialSelections() {
   selectedMaterial.value = "";
@@ -548,11 +551,18 @@ const toggleSelect = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    scrollToBottom();
+    existingUser.value ? scrollBy(500) : scrollToBottom();
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
   }
 };
+onMounted(() => {
+  if (typeof toRaw(userPreference.value).name === "string") {
+    existingUser.value = true;
+  } else {
+    return;
+  }
+});
 </script>
 
 <style scoped>
