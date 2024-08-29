@@ -104,6 +104,7 @@
 </template>
 
 <script setup>
+const { existingUser } = defineProps(["existingUser"]);
 // PINIA
 const userStore = useUserStore();
 import { ref } from "vue";
@@ -120,7 +121,8 @@ const toggleSelect = (surface) => {
     selectedThickness.value = "";
     userStore.preference.spec_4 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
+
     selectedThickness.value = surface;
     userStore.preference.spec_4 = toRaw(selectedThickness.value);
   }

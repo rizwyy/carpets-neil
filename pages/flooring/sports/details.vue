@@ -19,8 +19,17 @@ import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 
 const isMobile = ref(false);
+const existingUser = ref(false);
+
 onMounted(() => {
-  handleDOMEntry("detail_pvc_mob_text_item");
+  const userPreferenceCookie = useCookie("userPreference").value;
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
+    existingUser.value = true;
+  }
+
   if (window.innerWidth < 990) {
     isMobile.value = true;
   } else {
@@ -89,11 +98,11 @@ onMounted(() => {
         </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
-      <BannerYouWin />
-      <SportsTypesDetails />
-      <SportsFlooringDetails />
-      <SportsColorDetails />
-      <SportsBudgetDetails />
+      <BannerYouWin :existingUser="existingUser" />
+      <SportsTypesDetails :existingUser="existingUser" />
+      <SportsFlooringDetails :existingUser="existingUser" />
+      <SportsColorDetails :existingUser="existingUser" />
+      <SportsBudgetDetails :existingUser="existingUser" />
       <OrderMethod flooring="sports" />
       <InfoForm flooring="sports" />
       <ReviewCard flooring="sports" link="sports" />

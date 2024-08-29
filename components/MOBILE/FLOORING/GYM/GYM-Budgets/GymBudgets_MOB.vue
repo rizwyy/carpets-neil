@@ -309,7 +309,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+const { existingUser } = defineProps(["existingUser"]);
 import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
@@ -326,7 +326,7 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

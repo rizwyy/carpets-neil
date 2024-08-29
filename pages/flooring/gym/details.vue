@@ -19,7 +19,17 @@ import GymFlooringDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDeta
 import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
 
 const isMobile = ref(false);
+const existingUser = ref(false);
+
 onMounted(() => {
+  const userPreferenceCookie = useCookie("userPreference").value;
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
+    existingUser.value = true;
+  }
+
   if (window.innerWidth < 990) {
     isMobile.value = true;
   } else {
@@ -89,12 +99,12 @@ onMounted(() => {
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <GymApplicationDetails />
-      <GymActivitiesDetails />
-      <GymFlooringDetails />
+      <GymApplicationDetails :existingUser="existingUser" />
+      <GymActivitiesDetails :existingUser="existingUser" />
+      <GymFlooringDetails :existingUser="existingUser" />
       <!-- <GymFinishDetails /> -->
-      <GymColorDetails />
-      <GymBudgetDetails />
+      <GymColorDetails :existingUser="existingUser" />
+      <GymBudgetDetails :existingUser="existingUser" />
       <OrderMethod flooring="gym" />
       <InfoForm flooring="gym" />
       <ReviewCard flooring="gym" link="gym" />

@@ -479,7 +479,8 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
+const { existingUser } = defineProps(["existingUser"]);
+
 // PINIA
 import useUserStore from "~/stores/user";
 
@@ -499,7 +500,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (added === "done") {
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    existingUser ? scrollBy(800) : scrollToBottom();
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -512,7 +513,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      existingUser ? scrollBy(800) : scrollToBottom();
     }
     selectedColors.value.push(color);
   }

@@ -713,7 +713,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+const { existingUser } = defineProps(["existingUser"]);
+
 // PINIA
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
@@ -729,7 +730,8 @@ const toggleSelect = (type) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
+
     spec_2.value = type;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }
