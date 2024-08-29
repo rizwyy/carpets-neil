@@ -181,10 +181,9 @@ import { ref } from "vue";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 // COOKIES
-import { useCookie } from "#app";
 
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
+
 const spec_1 = ref("");
 
 function clearAllSelections() {
@@ -197,7 +196,7 @@ const toggleSelect = (category) => {
     spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
 
     spec_1.value = category;
     userStore.preference.spec_1 = toRaw(spec_1.value);
@@ -206,20 +205,6 @@ const toggleSelect = (category) => {
     userStore.preference.spec_3 = "";
   }
 };
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

@@ -306,8 +306,8 @@ import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
 
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
+
 const selectedBudget = ref("");
 
 function clearBudgetSelections() {
@@ -320,29 +320,12 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
 };
-
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    console.warn("userPreference cookie not found or name is not a string.");
-    // Handle the case where there is no cookie or the name is not valid
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

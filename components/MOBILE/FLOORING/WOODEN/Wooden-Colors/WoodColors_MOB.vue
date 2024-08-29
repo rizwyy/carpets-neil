@@ -407,10 +407,8 @@ import { ref } from "vue";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
-// COOKIES
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
 
-const existingUser = ref(false);
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
@@ -426,7 +424,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser.value ? scrollBy(800) : scrollToBottom();
+    existingUser ? scrollBy(800) : scrollToBottom();
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -439,7 +437,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser.value ? scrollBy(800) : scrollToBottom();
+      existingUser ? scrollBy(800) : scrollToBottom();
     }
     selectedColors.value.push(color);
   }
@@ -464,13 +462,6 @@ function getHexCodes() {
     customColorArray.value.push(hexCode);
   });
 }
-onMounted(() => {
-  if (typeof toRaw(userPreference.value).name === "string") {
-    existingUser.value = true;
-  } else {
-    return;
-  }
-});
 </script>
 
 <style scoped>

@@ -466,8 +466,8 @@ import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
 
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
+
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
@@ -483,7 +483,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -496,7 +496,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser.value ? scrollBy(500) : scrollToBottom();
+      existingUser ? scrollBy(500) : scrollToBottom();
     }
     selectedColors.value.push(color);
   }
@@ -522,23 +522,6 @@ function getHexCodes() {
     customColorArray.value.push(hexCode);
   });
 }
-
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    console.warn("userPreference cookie not found or name is not a string.");
-    // Handle the case where there is no cookie or the name is not valid
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

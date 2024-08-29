@@ -179,8 +179,8 @@
 // PINIA
 const userStore = useUserStore();
 import { ref } from "vue";
+const { existingUser } = defineProps(["existingUser"]);
 import useUserStore from "~/stores/user";
-const existingUser = ref(false);
 
 const selectedMaterial = ref("");
 function clearMaterialSelections() {
@@ -195,25 +195,11 @@ const toggleSelectMaterials = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
   }
 };
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

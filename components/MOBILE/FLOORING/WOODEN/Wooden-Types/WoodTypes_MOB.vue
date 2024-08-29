@@ -360,8 +360,8 @@ import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 // COOKIES
 const selectedType = ref("");
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+
+const { existingUser } = defineProps(["existingUser"]);
 
 function clearAllSelections() {
   selectedType.value = "";
@@ -373,20 +373,12 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
 
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
-
-onMounted(() => {
-  if (typeof toRaw(userPreference.value).name === "string") {
-    existingUser.value = true;
-  } else {
-    return;
-  }
-});
 </script>
 
 <style scoped>

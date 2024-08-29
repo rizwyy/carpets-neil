@@ -20,8 +20,17 @@ import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 
 const isMobile = ref(false);
+const existingUser = ref(false);
+
 onMounted(() => {
-  handleDOMEntry("detail_pvc_mob_text_item");
+  const userPreferenceCookie = useCookie("userPreference").value;
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
+    existingUser.value = true;
+  }
+
   if (window.innerWidth < 990) {
     isMobile.value = true;
   } else {
@@ -93,12 +102,12 @@ onMounted(() => {
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
-      <WoodenCategoryDetails />
-      <WoodenTypeDetails />
-      <WoodenDesignDetails />
-      <WoodenColorDetails />
-      <WoodenFinishDetails />
-      <WoodenBudgetDetails />
+      <WoodenCategoryDetails :existingUser="existingUser" />
+      <WoodenTypeDetails :existingUser="existingUser" />
+      <WoodenDesignDetails :existingUser="existingUser" />
+      <WoodenColorDetails :existingUser="existingUser" />
+      <WoodenFinishDetails :existingUser="existingUser" />
+      <WoodenBudgetDetails :existingUser="existingUser" />
       <OrderMethod flooring="Wooden" />
       <InfoForm flooring="Wooden" />
       <ReviewCard flooring="Wooden" link="wooden" />

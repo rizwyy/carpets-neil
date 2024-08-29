@@ -116,10 +116,9 @@
 const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
-// COOKIES
-const userPreference = useCookie("userPreference");
 
-const existingUser = ref(false);
+const { existingUser } = defineProps(["existingUser"]);
+
 const selectedSurfaceFinish = ref("");
 function clearSurfaceFinish() {
   selectedSurfaceFinish.value = "";
@@ -140,17 +139,9 @@ const toggleSelect = (surface) => {
     userStore.preference.spec_4.splice(index, 1);
   } else {
     userStore.preference.spec_4.push(surface);
-    existingUser.value ? scrollBy(600) : scrollToBottom();
+    existingUser ? scrollBy(600) : scrollToBottom();
   }
 };
-
-onMounted(() => {
-  if (typeof toRaw(userPreference.value).name === "string") {
-    existingUser.value = true;
-  } else {
-    return;
-  }
-});
 </script>
 
 <style scoped>

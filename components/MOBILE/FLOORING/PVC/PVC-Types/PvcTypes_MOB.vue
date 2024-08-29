@@ -240,8 +240,8 @@
 <script setup>
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
+
 // PINIA
 const userStore = useUserStore();
 
@@ -257,28 +257,12 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
 
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    console.log("userPreference cookie not found or name is not a string.");
-    // Handle the case where there is no cookie or the name is not valid
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

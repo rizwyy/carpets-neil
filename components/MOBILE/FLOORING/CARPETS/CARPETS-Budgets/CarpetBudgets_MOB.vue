@@ -607,8 +607,7 @@
 <script setup>
 import { ref } from "vue";
 
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
 
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
@@ -625,27 +624,12 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser.value ? scrollBy(600) : scrollToBottom();
+    existingUser ? scrollBy(600) : scrollToBottom();
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
 };
-
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

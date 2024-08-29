@@ -19,7 +19,7 @@
             >Choose your Design</span
           >
           <button
-            @click="clearmaterialSelections"
+            @click="clearMaterialSelections"
             v-show="selectedmaterial"
             class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
@@ -184,11 +184,10 @@ const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
 
 const selectedmaterial = ref("");
-function clearmaterialSelections() {
+function clearMaterialSelections() {
   selectedmaterial.value = "";
   userStore.preference.spec_3 = "";
 }
@@ -198,29 +197,12 @@ const toggleSelect = (material) => {
     selectedmaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
 
     selectedmaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }
 };
-
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    console.warn("userPreference cookie not found or name is not a string.");
-    // Handle the case where there is no cookie or the name is not valid
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

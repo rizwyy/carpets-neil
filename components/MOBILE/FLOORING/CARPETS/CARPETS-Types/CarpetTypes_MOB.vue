@@ -196,8 +196,7 @@ const userStore = useUserStore();
 import useUserStore from "~/stores/user";
 const selectedType = ref("");
 
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
+const { existingUser } = defineProps(["existingUser"]);
 
 function clearAllSelections() {
   spec_2.value = "";
@@ -209,26 +208,11 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }
 };
-
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

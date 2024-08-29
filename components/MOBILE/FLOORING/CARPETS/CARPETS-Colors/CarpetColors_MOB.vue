@@ -416,14 +416,12 @@ import { ref } from "vue";
 // PINIA
 import useUserStore from "~/stores/user";
 
+const { existingUser } = defineProps(["existingUser"]);
 const userStore = useUserStore();
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 const customColorArray = ref([]);
-
-const existingUser = ref(false);
-const userPreference = useCookie("userPreference");
 
 function clearColorSelections() {
   selectedColors.value = [];
@@ -436,7 +434,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser.value ? scrollBy(800) : scrollToBottom();
+    existingUser ? scrollBy(800) : scrollToBottom();
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -449,7 +447,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser.value ? scrollBy(800) : scrollToBottom();
+      existingUser ? scrollBy(800) : scrollToBottom();
     }
     selectedColors.value.push(color);
   }
@@ -474,21 +472,6 @@ function getHexCodes() {
     customColorArray.value.push(hexCode);
   });
 }
-
-onMounted(() => {
-  // Check if the userPreference cookie exists
-  const userPreferenceCookie = useCookie("userPreference").value;
-
-  // If the cookie exists, proceed to check the name property
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).name === "string"
-  ) {
-    existingUser.value = true;
-  } else {
-    existingUser.value = false;
-  }
-});
 </script>
 
 <style scoped>

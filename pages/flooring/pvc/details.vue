@@ -22,8 +22,17 @@ import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 
 const isMobile = ref(false);
+const existingUser = ref(false);
+
 onMounted(() => {
-  handleDOMEntry("detail_pvc_mob_text_item");
+  const userPreferenceCookie = useCookie("userPreference").value;
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
+    existingUser.value = true;
+  }
+
   if (window.innerWidth < 990) {
     isMobile.value = true;
   } else {
@@ -47,24 +56,21 @@ onMounted(() => {
         <!-- DESKTOP -->
         <a
           href="/flooring"
-          class="detail_pvc_mob_text_item text-[2.6vh] underline underline-offset-[.8vh] text-[#666] flex"
+          class="text-[2.6vh] underline underline-offset-[.8vh] text-[#666] flex"
         >
           PVC Flooring
         </a>
-        <span class="detail_pvc_mob_text_item text-[5.4vh]">
-          Specify Your Needs
-        </span>
+        <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <ScrollToTopBTNPC />
 
       <!-- DESKTOP -->
-      <PvcCategoryDetails />
-      <PvcTypeDetails />
-      <PvcDesignDetails />
-      <PvcColorDetails />
-      <PvcFinishDetails />
-      <PvcBudgetDetails />
-      <PvcOrderMethodDetails />
+      <PvcCategoryDetails :existingUser="existingUser" />
+      <PvcTypeDetails :existingUser="existingUser" />
+      <PvcDesignDetails :existingUser="existingUser" />
+      <PvcColorDetails :existingUser="existingUser" />
+      <PvcFinishDetails :existingUser="existingUser" />
+      <PvcBudgetDetails :existingUser="existingUser" />
       <OrderMethod flooring="PVC" />
       <InfoForm flooring="PVC" />
       <ReviewCard flooring="PVC" link="pvc" />

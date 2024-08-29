@@ -18,8 +18,17 @@ import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 
 const isMobile = ref(false);
+const existingUser = ref(false);
 
 onMounted(() => {
+  const userPreferenceCookie = useCookie("userPreference").value;
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
+    existingUser.value = true;
+  }
+
   if (window.innerWidth < 990) {
     isMobile.value = true;
   } else {
@@ -53,12 +62,11 @@ onMounted(() => {
       </div>
       <!-- MOBILE -->
       <BannerYouWin />
-      <CategoryDetails />
-      <TypeDetails />
-      <MaterialDetails />
-      <ColorDetails />
-      <BudgetDetails />
-
+      <CategoryDetails :existingUser="existingUser" />
+      <TypeDetails :existingUser="existingUser" />
+      <MaterialDetails :existingUser="existingUser" />
+      <ColorDetails :existingUser="existingUser" />
+      <BudgetDetails :existingUser="existingUser" />
       <OrderMethod flooring="Carpets" />
       <InfoForm flooring="Carpets" />
       <ReviewCard flooring="Carpets" link="carpets" />
