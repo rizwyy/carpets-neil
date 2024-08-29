@@ -1,207 +1,241 @@
 <template>
-  <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
+  <!--INPUT ERROR OVERLAY -->
+  <transition @beforeEnter="handleDetailsDOMEntry('InfoCardPC')">
     <div
       v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
-        userStore.preference.spec_3 !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== '' &&
-        userStore.preference.orderMethod !== '' &&
-        userStore.userData.name !== ''
+        userStore.preference.orderMethod !== ''
       "
-      class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
+      class="h-max w-screen flex justify-center"
     >
       <div
-        class="h-max w-[94%] flex flex-col gap-[4.2vh] px-[3.8vw] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo"
+        class="iptErrMsg_Carpets opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
       >
-        <div
-          class="h-full w-full absolute top-0 left-0 flex items-center justify-center opacity-0 loadingOverlay invisible bg-[#fff1] backdrop-blur-[8px] z-[999]"
+        <span
+          class="text-white font-[500] tracking-[.2vw] uppercase text-center text-detailsContainer_heading_PC"
+          >Please fill out all fields correctly before proceeding</span
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-[6vh]"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="18" cy="12" r="0" fill="currentColor">
-              <animate
-                attributeName="r"
-                begin=".67"
-                calcMode="spline"
-                dur="1.5s"
-                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                repeatCount="indefinite"
-                values="0;2;0;0"
-              />
-            </circle>
-            <circle cx="12" cy="12" r="0" fill="currentColor">
-              <animate
-                attributeName="r"
-                begin=".33"
-                calcMode="spline"
-                dur="1.5s"
-                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                repeatCount="indefinite"
-                values="0;2;0;0"
-              />
-            </circle>
-            <circle cx="6" cy="12" r="0" fill="currentColor">
-              <animate
-                attributeName="r"
-                begin="0"
-                calcMode="spline"
-                dur="1.5s"
-                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                repeatCount="indefinite"
-                values="0;2;0;0"
-              />
-            </circle>
-          </svg>
-        </div>
-        <div class="h-max w-full flex flex-col items-start gap-[1.2vh]">
-          <span
-            class="revCard-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
-            >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
-          >
-          <button
-            @click="scrollToTop"
-            class="revCard-HEADING opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"
-          >
-            Edit Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-[2.4vh]"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M5 19h1.425L16.2 9.225L14.775 7.8L5 17.575zm-1 2q-.425 0-.712-.288T3 20v-2.425q0-.4.15-.763t.425-.637L16.2 3.575q.3-.275.663-.425t.762-.15t.775.15t.65.45L20.425 5q.3.275.437.65T21 6.4q0 .4-.138.763t-.437.662l-12.6 12.6q-.275.275-.638.425t-.762.15zM19 6.4L17.6 5zm-3.525 2.125l-.7-.725L16.2 9.225z"
-              />
-            </svg>
-          </button>
-        </div>
-        <span>
-          <span
-            class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Category/Application:&nbsp;</span
-            >{{ userStore.preference.spec_1 }}</span
-          >
-        </span>
-        <span>
-          <span
-            class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Activity/Type:&nbsp;</span
-            >{{ userStore.preference.spec_2 }}</span
-          >
-        </span>
-        <span>
-          <span
-            class="mt-[1vh] w-full border-[2px] revCard-HEADING translate-y-[20%] opacity-0 rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Material/Style:&nbsp;</span
-            >{{ userStore.preference.spec_3 }}</span
-          >
-        </span>
+      </div>
+      <div class="h-max w-screen flex justify-center">
         <div
-          class="h-max w-full flex flex-col justify-between gap-[3.2vh] items-start"
+          class="h-max w-[90%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[6vh] rounded-md items-center"
         >
-          <span>
-            <span
-              class="revCard-HEADING translate-y-[20%] opacity-0 w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-              ><span>Finish:&nbsp;</span>{{ userStore.preference.spec_4 }}</span
-            >
-          </span>
-          <span
-            class="revCard-HEADING translate-y-[20%] opacity-0 w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7] text-right"
-            >Budget:
-            {{
-              getPriceRange(
-                userStore.preference.budget,
-                userStore.preference.country
-              )
-            }}&nbsp;({{ userStore.preference.budget }})</span
+          <div
+            class="h-max w-[44%] flex flex-col gap-[5.8vh] overflow-hidden px-[2.8vw] pt-[4.2vh] rounded-md shadow-xl relative bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
           >
-        </div>
-        <div
-          class="revCard-HEADING translate-y-[20%] opacity-0 h-max w-max flex flex-col gap-[1.8vh]"
-        >
-          <span class="font-[500]">Colors Opted:</span>
-          <span
-            v-show="userStore.preference.color.length > 0"
-            class="w-max border-[2px] rounded-md px-[4vw] text-[#999] font-[400] text-center py-[.6vh] border-[#444]"
-            v-for="(color, index) in userStore.preference.color"
-            :key="index"
-            :style="{ backgroundColor: getColorHex(color) }"
-            >{{ color }}
-          </span>
-        </div>
+            <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
+              <span
+                class="InfoCardPC-HEADING opacity-0 translate-y-[20%] w-max text-[2.4vw] font-[400] text-[#444]"
+                >Your Contact Information</span
+              >
+              <span
+                class="InfoCardPC-HEADING opacity-0 translate-y-[20%] text-[#999] text-[1.4vw] font-[450]"
+                >Enter your contact information</span
+              >
+            </div>
 
-        <button
-          @click="handleClick"
-          class="bg-[#fff9] text-center revCard-HEADING active:scale-[.93] backdrop-blur-[8px] w-[88vw] border-[3.2px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black"
-        >
-          CONFIRM
-        </button>
+            <div
+              class="invisible opacity-0 InfoCardPC-CONTAINER h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-[6vh]"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="18" cy="12" r="0" fill="#222">
+                  <animate
+                    attributeName="r"
+                    begin=".67"
+                    calcMode="spline"
+                    dur="1.5s"
+                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                    repeatCount="indefinite"
+                    values="0;2;0;0"
+                  />
+                </circle>
+                <circle cx="12" cy="12" r="0" fill="#222">
+                  <animate
+                    attributeName="r"
+                    begin=".33"
+                    calcMode="spline"
+                    dur="1.5s"
+                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                    repeatCount="indefinite"
+                    values="0;2;0;0"
+                  />
+                </circle>
+                <circle cx="6" cy="12" r="0" fill="#222">
+                  <animate
+                    attributeName="r"
+                    begin="0"
+                    calcMode="spline"
+                    dur="1.5s"
+                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                    repeatCount="indefinite"
+                    values="0;2;0;0"
+                  />
+                </circle>
+              </svg>
+            </div>
+            <div
+              class="checkout_Overlay h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
+            ></div>
+
+            <div class="h-max w-full flex flex-col gap-[vh]">
+              <input
+                :class="{
+                  'bg-[#e9e9e9]': cookieFound,
+                  'bg-white': !cookieFound,
+                }"
+                :readonly="cookieFound"
+                class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
+                placeholder="Name"
+                v-model="nameIpt"
+              />
+            </div>
+            <div class="h-max w-full flex flex-col">
+              <input
+                :class="{
+                  'bg-[#e9e9e9]': cookieFound,
+                  'bg-white': !cookieFound,
+                }"
+                :readonly="cookieFound"
+                :required="mailIpt.length > 8"
+                type="email"
+                class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
+                placeholder="Mail"
+                v-model="mailIpt"
+              />
+            </div>
+            <div class="h-max w-full flex flex-col gap-[6.2vh] pb-[6.2vh]">
+              <div class="h-max w-full flex">
+                <select
+                  :class="{
+                    'bg-[#e9e9e9]': cookieFound,
+                    'bg-white': !cookieFound,
+                  }"
+                  v-model="userStore.preference.country"
+                  class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoCardPC-CONTAINER opacity-0"
+                >
+                  <option value="Bahrain">+973</option>
+                  <option value="UAE">+971</option>
+                  <option value="Saudi Arabia">+966</option>
+                  <option value="Kuwait">+965</option>
+                  <option value="Qatar">+974</option>
+                </select>
+                <input
+                  :readonly="cookieFound"
+                  :class="{
+                    'bg-[#e9e9e9]': cookieFound,
+                    'bg-white': !cookieFound,
+                  }"
+                  :required="phoneIpt.length > 8"
+                  type="number"
+                  class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[1.2vw] border-[#555] border-l-[#777] bg-[#fff9] py-[2.4vh] text-[2vh] outline-none focus:border-black"
+                  placeholder="Phone"
+                  v-model="phoneIpt"
+                />
+              </div>
+              <button
+                @click="
+                  cookieFound ? toggleReadOnly() : handleInfoProceedings()
+                "
+                class="bg-white InfoCardPC-CONTAINER active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none focus:border-black"
+              >
+                <span v-show="!isLoading">{{
+                  cookieFound ? "EDIT" : "SAVE"
+                }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </transition>
 </template>
 
 <script setup>
-import useUserStore from "~/stores/user";
-import { useRouter } from "vue-router";
-const router = useRouter();
-const restrictedAccess = useCookie("restrictedAccess");
-const isAccessRestricted = ref(true);
+import useUserStore from "../../../stores/user";
+import { ref } from "vue";
+const userPreference = useCookie("userPreference");
+const { flooring } = defineProps(["flooring"]);
 
+const mailIpt = ref("");
+const nameIpt = ref("");
+const phoneIpt = ref("");
+
+const cookieFound = ref(false);
+
+const isLoading = ref(false);
 const userStore = useUserStore();
 
-const { flooring, link } = defineProps(["flooring", "link"]);
+function toggleReadOnly() {
+  cookieFound.value = false;
+}
 
-const handleClick = () => {
-  handleLoadingEntry();
-  const userData = {
+function setUserPreferenceCookie() {
+  const obj = {
     name: userStore.userData.name,
-    phone: userStore.userData.phone,
     email: userStore.userData.email,
+    phone: userStore.userData.phone,
+    orderMethod: userStore.preference.orderMethod,
   };
+  userPreference.value = obj;
 
-  // Call API route to set the cookie
-  useFetch("/api/set-cookie")
-    .then(({ data, error }) => {
-      if (error?.value) {
-        throw new Error("Error setting cookie: " + error.value);
-      }
-      console.log("SET COOKIE DONE");
-      return fetch("/api/insert-logs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error inserting logs");
-      }
-      return response.json();
-    })
-    .then((logData) => {
-      userStore.userData.email = "";
-      userStore.userData.name = "";
-      userStore.userData.phone = "";
-      scrollToBottom();
-      handleLoadingExit();
-      restrictedAccess.value = false;
-      router.push(`/flooring/${link}/success`);
-      console.log("SUCCESS");
-      console.log("Log data:", logData);
-    })
-    .catch((err) => {
-      restrictedAccess.value = true;
-      handleTempAnimation("errOverlayMOB");
-      console.error("Unexpected errors:", err.message);
-    });
-};
+  console.log("COOKIE SET::", toRaw(userPreference.value));
+  cookieFound.value = true;
+}
+function handleInfoProceedings() {
+  scrollBy(800);
+
+  const phoneWithCode = addCountryCode(
+    phoneIpt.value,
+    userStore.preference.country
+  );
+  const isValid = validateInputs(
+    mailIpt.value,
+    `${phoneWithCode}`,
+    nameIpt.value
+  );
+  if (!isValid) {
+    handleTempAnimation("iptErrMsg_Wooden");
+    return;
+  }
+
+  userStore.userData.name = nameIpt.value;
+  userStore.userData.email = mailIpt.value;
+  userStore.userData.phone = phoneWithCode;
+  setUserPreferenceCookie();
+}
+
+onMounted(() => {
+  const userPreferenceCookie = toRaw(userPreference.value);
+
+  // Check if userPreferenceCookie exists and has the required properties
+  if (
+    userPreferenceCookie &&
+    typeof userPreferenceCookie.name === "string" &&
+    (typeof userPreferenceCookie.phone === "string" ||
+      typeof userPreferenceCookie.email === "string")
+  ) {
+    // Safely assign name, phone, and email values
+    userStore.userData.name = nameIpt.value = userPreferenceCookie.name;
+    userStore.userData.phone = phoneIpt.value = userPreferenceCookie.phone
+      ? userPreferenceCookie.phone.substring(4)
+      : "";
+    userStore.userData.email = mailIpt.value = userPreferenceCookie.email || "";
+
+    // If the name exists, set cookieFound to true
+    if (userStore.userData.name) {
+      cookieFound.value = true;
+    }
+  } else {
+    // If userPreferenceCookie doesn't exist or is invalid, just return
+    return;
+  }
+});
 </script>
-
-<style lang="scss" scoped></style>

@@ -65,8 +65,13 @@
           >
             <span
               class="revCard-HEADING translate-y-[20%] opacity-0 w-full text-start tracking-[-.1vw] font-[400] text-[3.8vh] text-[#333]"
-              >{{ userStore.userData.name.split(" ")[0] }}'s Preferences</span
             >
+              {{
+                userStore.userData.name
+                  ? userStore.userData.name.split(" ")[0] + "'s Preferences"
+                  : "Your Preferences"
+              }}
+            </span>
             <button
               @click="scrollToTop"
               class="revCard-HEADING opacity-0 underline underline-offset-[.5vh] translate-y-[20%] text-[2vh] text-[#999] font-[500] w-max flex gap-[.6vw] items-center z"

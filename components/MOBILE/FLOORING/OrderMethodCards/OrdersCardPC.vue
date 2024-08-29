@@ -11,7 +11,7 @@
     class="h-max w-full flex flex-col items-center gap-[0vh] mt-[2vh] select-none"
   >
     <div
-      class="h-max w-[94%] flex flex-col gap-[4vh] bg-[#f1f1f1] pt-[6vh] rounded-md items-center"
+      class="h-max w-[89%] flex flex-col gap-[4vh] bg-[#f1f1f1] pt-[6vh] rounded-md items-center"
     >
       <span
         v-show="

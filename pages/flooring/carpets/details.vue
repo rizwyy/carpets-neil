@@ -109,7 +109,6 @@ onMounted(() => {
       <BudgetDetails />
       <OrderMethod flooring="Carpets" />
       <InfoForm flooring="Carpets" />
-
       <ReviewCard flooring="Carpets" link="carpets" />
 
       <!-- DESKTOP -->
