@@ -4,15 +4,12 @@
     class="parentDiv h-[6vh] w-[80%] flex flex-col bg-[#f1f1f1] rounded-md mx-auto overflow-hidden"
   >
     <!-- UNEXPANDED -->
-    <div class="child1 flex-[1] w-full text-[2.4vh]">
+    <div @click="toggleExpansion" class="child1 flex-[1] w-full text-[2.4vh]">
       <span
         class="h-max w-full inline-block px-[3.2vw] py-[1vh] flex justify-between items-center rounded-md border-[1px] border-[#999] text-[#444]"
       >
         Carpets
-        <span
-          @click="toggleExpansion"
-          class="text-[1.4vh] text-[#999] cursor-pointer"
-        >
+        <span class="text-[1.4vh] text-[#999] cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[3.8vh]"
