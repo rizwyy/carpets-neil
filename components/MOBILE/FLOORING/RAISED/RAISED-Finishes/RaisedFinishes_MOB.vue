@@ -402,12 +402,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { scrollToBottom } from "#imports";
+const { existingUser } = defineProps(["existingUser"]);
+
 // PINIA
-const userStore = useUserStore();
-// COOKIES
 import useUserStore from "~/stores/user";
+const userStore = useUserStore();
 
 const spec_4 = ref("");
 
@@ -423,7 +422,8 @@ const toggleSelect = (finish) => {
     spec_4.value = "";
     userStore.preference.spec_4 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
+
     spec_4.value = finish;
     userStore.preference.spec_4 = toRaw(spec_4.value);
   }

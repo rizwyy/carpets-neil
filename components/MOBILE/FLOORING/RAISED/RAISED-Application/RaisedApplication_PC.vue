@@ -672,6 +672,8 @@
 <script setup>
 import { ref } from "vue";
 // PINIA
+const { existingUser } = defineProps(["existingUser"]);
+
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
@@ -686,11 +688,6 @@ function cancelCustomApplication() {
   isCustomAreaOpted.value = false;
   userStore.preference.spec_1 = "";
 }
-function clearAllSelections_spec2() {
-  spec_2.value = "";
-  userStore.preference.spec_2 = "";
-  customApplication.value = "";
-}
 
 const toggleSelect = (type, msg) => {
   if (msg === "showAddedMsg") {
@@ -700,7 +697,7 @@ const toggleSelect = (type, msg) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
     spec_2.value = type;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }

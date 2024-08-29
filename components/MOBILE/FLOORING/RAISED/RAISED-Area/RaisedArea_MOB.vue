@@ -247,15 +247,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { scrollToBottom } from "#imports";
-// PINIA
-const userStore = useUserStore();
-// COOKIES
-import { useCookie } from "#app";
-import useUserStore from "~/stores/user";
+const { existingUser } = defineProps(["existingUser"]);
 
-const userPreference = useCookie("userPreference");
+import useUserStore from "~/stores/user";
+const userStore = useUserStore();
+
 const spec_1 = ref("");
 
 function clearAllSelections_spec1() {
@@ -268,7 +264,7 @@ const toggleSelect = (category) => {
     spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
     spec_1.value = category;
     userStore.preference.spec_1 = toRaw(spec_1.value);
     userStore.preference.spec_2 = "";
