@@ -1,27 +1,20 @@
 <template>
   <!-- PREFERENCE PARENT DIV -->
-  <div
-    :style="{
-      border: isExpanded ? `1px solid ` : '0px',
-    }"
-    class="h-max w-full relative px-[4vw] py-[3.2vh] rounded-md"
-  >
+  <div class="max-[990px]:hidden h-max w-[24vw] relative">
     <!-- UNEXPANDED -->
-    <div class="h-max w-full">
+    <div class="h-max w-full bg-[#e9e9e9]">
       <span
         :style="{
-          border: !isExpanded ? '1px solid' : '0px',
-          fontSize: !isExpanded ? '2.4vh' : '3.2vh',
-          paddingLeft: !isExpanded ? '3.2vw' : '1.2vw', // Adjust these values as needed
-          paddingRight: !isExpanded ? '3.2vw' : '1.2vw',
+          border: '1px solid',
+          borderRadius: !isExpanded ? '0.375rem' : '0.375rem 0.375rem 0 0',
         }"
-        class="h-max w-full inline-block px-[3.2vw] text-[2.4vh] py-[1vh] flex justify-between items-center rounded-md border-[1px] border-[#999] text-[#444]"
+        class="h-max w-full inline-block px-[3.2vw] text-[2.4vh] py-[2vh] flex justify-between items-center rounded-t-md border-[1px] border-[#999] text-[#444]"
       >
         {{ userStore.preference.flooring }}
         <span
           v-show="!isExpanded"
           @click="handleExpansion"
-          class="text-[1.4vh] text-[#999]"
+          class="text-[1.4vh] text-[#999] cursor-pointer"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[3.8vh]"
@@ -35,7 +28,7 @@
         <span
           v-show="isExpanded"
           @click="handleMinimize"
-          class="text-[1.4vh] h-full w-max text-[#999]"
+          class="text-[1.4vh] h-full w-max text-[#999] cursor-pointer"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[3.8vh]"
@@ -49,99 +42,111 @@
       </span>
     </div>
     <!-- EXPANDED -->
-    <div
-      v-show="isExpanded"
-      class="h-max w-full flex flex-col items-start gap-[4.2vh] pt-[4vh]"
-    >
-      <div>
-        <span
-          class="mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-          ><span>Category/Application:&nbsp;</span
-          >{{ userStore.preference.spec_1 }}</span
-        >
-      </div>
-      <div>
-        <span
-          class="mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-          ><span>Activity/Type:&nbsp;</span
-          >{{ userStore.preference.spec_2 }}</span
-        >
-      </div>
-      <div>
-        <span
-          class="mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-          ><span>Material/Style:&nbsp;</span
-          >{{ userStore.preference.spec_3 }}</span
-        >
-      </div>
+    <transition @beforeEnter="handleBeforeExpandAnimation_PreferenceCardPC">
       <div
-        class="h-max w-full flex flex-col justify-between gap-[3.2vh] items-start"
+        v-show="isExpanded"
+        class="h-max w-[24vw] flex flex-col items-start gap-[4.2vh] py-[4vh] px-[2vw] border-black border-[1px] rounded-b-md"
       >
-        <span>
-          <span
-            v-show="!Array.isArray(userStore.preference.spec_4)"
-            class="w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
-            ><span>Finish:&nbsp; </span
-            >{{
-              userStore.preference.spec_4 === ""
-                ? "N/A"
-                : userStore.preference.spec_4
-            }}</span
+        <div>
+          <span class="mt-[1vh] w-full specItems opacity-0"
+            ><span>Category/Application:&nbsp;</span
+            >{{ userStore.preference.spec_1 }}</span
           >
-          <span
-            v-show="Array.isArray(userStore.preference.spec_4)"
-            class="w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+        </div>
+        <div>
+          <span class="mt-[1vh] w-full specItems opacity-0"
+            ><span>Activity/Type:&nbsp;</span
+            >{{ userStore.preference.spec_2 }}</span
           >
-            <span>Finish:&nbsp;</span>
-            <span v-show="userStore.preference.spec_4.length > 0">
-              <span
-                v-for="(surface, index) in userStore.preference.spec_4"
-                :key="index"
-              >
-                {{ surface
-                }}<span v-show="index < userStore.preference.spec_4.length - 1"
-                  >,
+        </div>
+        <div>
+          <span class="mt-[1vh] w-full specItems opacity-0"
+            ><span>Material/Style:&nbsp;</span
+            >{{ userStore.preference.spec_3 }}</span
+          >
+        </div>
+        <div
+          class="h-max w-full flex flex-col justify-between gap-[3.2vh] items-start"
+        >
+          <span>
+            <span
+              v-show="!Array.isArray(userStore.preference.spec_4)"
+              class="w-full h-max opacity-0 specItems"
+              ><span>Finish:&nbsp; </span
+              >{{
+                userStore.preference.spec_4 === ""
+                  ? "N/A"
+                  : userStore.preference.spec_4
+              }}</span
+            >
+            <span
+              v-show="Array.isArray(userStore.preference.spec_4)"
+              class="w-full specItems opacity-0"
+            >
+              <span>Finish:&nbsp;</span>
+              <span v-show="userStore.preference.spec_4.length > 0">
+                <span
+                  v-for="(surface, index) in userStore.preference.spec_4"
+                  :key="index"
+                >
+                  {{ surface
+                  }}<span
+                    v-show="index < userStore.preference.spec_4.length - 1"
+                    >,
+                  </span>
                 </span>
               </span>
+              <span v-show="!(userStore.preference.spec_4.length > 0)"
+                >N/A</span
+              >
             </span>
-            <span v-show="!(userStore.preference.spec_4.length > 0)">N/A</span>
           </span>
-        </span>
-        <span
-          class="w-max border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7] text-right"
-          >Budget:
-          {{
-            getPriceRange(
-              userStore.preference.budget,
-              userStore.preference.country
-            )
-          }}&nbsp;({{ userStore.preference.budget }})</span
-        >
-      </div>
-      <div class="h-max w-full flex flex-col gap-[1.8vh] px-[2vw]">
-        <span class="font-[400]">Colors Opted:</span>
-        <div class="h-max w-full grid grid-cols-3 gap-[2vh]">
-          <span
-            v-show="userStore.preference.color.length > 0"
-            class="w-max border-[2px] rounded-full px-[4vw] text-[#999] font-[400] text-center py-[.8vh] border-[#444] bg-[#000] bg-opacity-[.2] backdrop-blur-[8px]"
-            v-for="(color, index) in userStore.preference.color"
-            :key="index"
-            :style="{
-              color: getColorHex(color),
-            }"
-            >{{ color }}
-          </span>
+          <span class="w-max text-right opacity-0 specItems"
+            >Budget:
+            {{
+              getPriceRange(
+                userStore.preference.budget,
+                userStore.preference.country
+              )
+            }}&nbsp;({{ userStore.preference.budget }})</span
+          >
+        </div>
+        <div class="h-max w-full flex flex-col gap-[1.8vh]">
+          <span class="font-[400] specItems opacity-0">Colors Opted:</span>
+          <div class="h-max w-full grid grid-cols-3 gap-[2vh]">
+            <span
+              v-show="userStore.preference.color.length > 0"
+              class="w-max text-[#999] px-[1vw] rounded-sm border-[2px] border-[#999] font-[400] text-center py-[.8vh] specItems opacity-0"
+              v-for="(color, index) in userStore.preference.color"
+              :key="index"
+              :style="{
+                background: getColorHex(color),
+              }"
+              >{{ color }}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script setup>
+import gsap from "gsap";
 import useUserStore from "~/stores/user";
-const userStore = useUserStore();
 
+const userStore = useUserStore();
 const isExpanded = ref(false);
+
+function handleBeforeExpandAnimation_PreferenceCardPC() {
+  gsap.to(".specItems", {
+    y: 0,
+    duration: 0.4,
+    opacity: 1,
+    stagger: 0.1,
+    ease: "back.in",
+  });
+}
 
 function handleExpansion() {
   isExpanded.value = true;

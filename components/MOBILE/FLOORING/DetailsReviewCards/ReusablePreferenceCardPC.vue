@@ -4,7 +4,7 @@
     :style="{
       border: isExpanded ? `1px solid ` : '0px',
     }"
-    class="h-max w-full relative px-[4vw] py-[3.2vh] rounded-md"
+    class="max-[990px]:hidden h-max w-full relative px-[4vw] py-[3.2vh] rounded-md"
   >
     <!-- UNEXPANDED -->
     <div class="h-max w-full">

@@ -10,7 +10,7 @@
         userStore.preference.orderMethod !== '' &&
         userStore.userData.name !== ''
       "
-      class="h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
     >
       <div
         class="h-max w-[94%] flex flex-col gap-[4.2vh] pt-[3.2vh] rounded-md overflow-hidden shadow-xl relative pb-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo"

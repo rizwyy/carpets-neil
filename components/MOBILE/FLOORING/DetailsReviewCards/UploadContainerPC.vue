@@ -1,9 +1,9 @@
 <template>
-  <div class="h-max w-full flex justify-center">
+  <div class="max-[990px]:hidden h-max w-full flex justify-center">
     <div class="h-max w-[100%] bg-white py-[4vh] px-[2vw] rounded-xl">
       <div
         ref="dropArea"
-        class="border-2 rounded-md px-[2vw] py-[4vh] border-dotted border-[#999] w-full h-full flex flex-col items-center"
+        class="border-2 rounded-md px-[2vw] py-[8vh] border-dotted border-[#999] w-full h-full flex flex-col items-center"
         @drop.prevent="handleDrop"
         @dragover.prevent="handleDragOver"
       >

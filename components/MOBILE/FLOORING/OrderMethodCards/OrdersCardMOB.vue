@@ -8,7 +8,7 @@
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== ''
       "
-      class="h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
       <div
         class="h-max w-[96%] flex flex-col gap-[0vh] bg-gradient-to-br from-detailsFrom to-detailsTo pt-[4vh] pb-[4vh] rounded-md shadow-lg"

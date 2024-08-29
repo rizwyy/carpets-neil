@@ -248,19 +248,16 @@ function handleInfoProceedings() {
 }
 
 onMounted(() => {
-  if (toRaw(userPreference.value)) {
-    userStore.userData.name = nameIpt.value = toRaw(userPreference.value.name);
-    userStore.userData.phone = phoneIpt.value = toRaw(
-      userPreference.value.phone
-    ).substring(4);
-    userStore.userData.email = mailIpt.value = toRaw(
-      userPreference.value.email
-    );
-    if (userStore.userData.name !== "") {
+  if (userPreference.value && typeof userPreference.value === "object") {
+    const { name = "", phone = "", email = "" } = toRaw(userPreference.value);
+
+    userStore.userData.name = nameIpt.value = name || "";
+    userStore.userData.phone = phoneIpt.value = phone ? phone.substring(4) : "";
+    userStore.userData.email = mailIpt.value = email || "";
+
+    if (userStore.userData.name) {
       cookieFound.value = true;
     }
-  } else {
-    return;
   }
 });
 </script>
