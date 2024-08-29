@@ -22,10 +22,10 @@
       </div>
       <div class="h-max w-screen flex justify-center">
         <div
-          class="h-max w-[90%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[6vh] rounded-md items-center"
+          class="h-max w-[88%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[6vh] rounded-md items-center"
         >
           <div
-            class="h-max w-[44%] flex flex-col gap-[5.8vh] overflow-hidden px-[2.8vw] pt-[4.2vh] rounded-md shadow-xl relative bg-gradient-to-b from-[#ebf4f5] to-[#b5c6e0]"
+            class="h-max w-[84%] flex flex-col gap-[5.8vh] overflow-hidden px-[2.8vw] pt-[4.2vh] rounded-md shadow-xl relative bg-gradient-to-br from-detailsFrom to-detailsTo"
           >
             <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
               <span
@@ -84,8 +84,10 @@
             <div
               class="checkout_Overlay h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
             ></div>
-
-            <div class="h-max w-full flex flex-col gap-[vh]">
+            <div class="h-max w-full flex flex-col gap-[1vh]">
+              <span class="text-[1.1vw] font-[500] text-[#333]"
+                >Name (required)</span
+              >
               <input
                 :class="{
                   'bg-[#e9e9e9]': cookieFound,
@@ -97,54 +99,64 @@
                 v-model="nameIpt"
               />
             </div>
-            <div class="h-max w-full flex flex-col">
-              <input
-                :class="{
-                  'bg-[#e9e9e9]': cookieFound,
-                  'bg-white': !cookieFound,
-                }"
-                :readonly="cookieFound"
-                :required="mailIpt.length > 8"
-                type="email"
-                class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
-                placeholder="Mail"
-                v-model="mailIpt"
-              />
-            </div>
-            <div class="h-max w-full flex flex-col gap-[6.2vh] pb-[6.2vh]">
-              <div class="h-max w-full flex">
-                <select
-                  :class="{
-                    'bg-[#e9e9e9]': cookieFound,
-                    'bg-white': !cookieFound,
-                  }"
-                  v-model="userStore.preference.country"
-                  class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoCardPC-CONTAINER opacity-0"
+            <div class="h-max w-full flex justify-between items-center">
+              <div class="h-max w-[46%] flex flex-col gap-[1vh]">
+                <span class="text-[1.1vw] font-[500] text-[#333]"
+                  >Email Address (required)</span
                 >
-                  <option value="Bahrain">+973</option>
-                  <option value="UAE">+971</option>
-                  <option value="Saudi Arabia">+966</option>
-                  <option value="Kuwait">+965</option>
-                  <option value="Qatar">+974</option>
-                </select>
                 <input
-                  :readonly="cookieFound"
                   :class="{
                     'bg-[#e9e9e9]': cookieFound,
                     'bg-white': !cookieFound,
                   }"
-                  :required="phoneIpt.length > 8"
-                  type="number"
-                  class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[1.2vw] border-[#555] border-l-[#777] bg-[#fff9] py-[2.4vh] text-[2vh] outline-none focus:border-black"
-                  placeholder="Phone"
-                  v-model="phoneIpt"
+                  :readonly="cookieFound"
+                  :required="mailIpt.length > 8"
+                  type="email"
+                  class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
+                  placeholder="Mail"
+                  v-model="mailIpt"
                 />
               </div>
+              <div class="h-max w-[46%] flex flex-col gap-[1vh]">
+                <span class="text-[1.1vw] font-[500] text-[#333]"
+                  >Phone Number (required)</span
+                >
+                <div class="h-max w-full flex">
+                  <select
+                    :class="{
+                      'bg-[#e9e9e9]': cookieFound,
+                      'bg-white': !cookieFound,
+                    }"
+                    v-model="userStore.preference.country"
+                    class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoCardPC-CONTAINER opacity-0"
+                  >
+                    <option value="Bahrain">+973</option>
+                    <option value="UAE">+971</option>
+                    <option value="Saudi Arabia">+966</option>
+                    <option value="Kuwait">+965</option>
+                    <option value="Qatar">+974</option>
+                  </select>
+                  <input
+                    :readonly="cookieFound"
+                    :class="{
+                      'bg-[#e9e9e9]': cookieFound,
+                      'bg-white': !cookieFound,
+                    }"
+                    :required="phoneIpt.length > 8"
+                    type="number"
+                    class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[1.2vw] border-[#555] border-l-[#777] bg-[#fff9] py-[2.4vh] text-[2vh] outline-none focus:border-black"
+                    placeholder="Phone"
+                    v-model="phoneIpt"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="h-max w-full flex flex-col gap-[8vh] pb-[6.2vh]">
               <button
                 @click="
                   cookieFound ? toggleReadOnly() : handleInfoProceedings()
                 "
-                class="bg-white InfoCardPC-CONTAINER active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none focus:border-black"
+                class="bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none focus:border-black"
               >
                 <span v-show="!isLoading">{{
                   cookieFound ? "EDIT" : "SAVE"
