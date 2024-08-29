@@ -91,7 +91,7 @@
           </div>
 
           <!--  -->
-          <div class="h-max w-full px-[1vw]">
+          <div class="h-max w-full px-[3.2vw]">
             <PreferenceCardMOB />
           </div>
           <!--  -->
