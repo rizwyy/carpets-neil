@@ -17,7 +17,7 @@
             >Choose your Flooring</span
           >
           <button
-            @click="clearmaterialSelections"
+            @click="clearMaterialSelections"
             v-show="userStore.preference.spec_2 !== ''"
             class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
@@ -288,13 +288,13 @@
 
 <script setup>
 // PINIA
+const { existingUser } = defineProps(["existingUser"]);
 
 const userStore = useUserStore();
-import { ref } from "vue";
 import useUserStore from "~/stores/user";
 
 const spec_2 = ref("");
-function clearmaterialSelections() {
+function clearMaterialSelections() {
   spec_2.value = "";
   userStore.preference.spec_2 = "";
 }
@@ -304,7 +304,8 @@ const toggleSelect = (material) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    existingUser ? scrollBy(500) : scrollToBottom();
+
     spec_2.value = material;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }
