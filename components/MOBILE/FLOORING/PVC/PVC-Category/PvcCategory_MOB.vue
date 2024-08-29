@@ -129,10 +129,19 @@ const toggleSelect = (category) => {
 };
 
 onMounted(() => {
-  if (typeof toRaw(userPreference.value).name === "string") {
+  // Check if the userPreference cookie exists
+  const userPreferenceCookie = useCookie("userPreference").value;
+
+  // If the cookie exists, proceed to check the name property
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
     existingUser.value = true;
   } else {
-    return;
+    console.warn("userPreference cookie not found or name is not a string.");
+    // Handle the case where there is no cookie or the name is not valid
+    existingUser.value = false;
   }
 });
 </script>

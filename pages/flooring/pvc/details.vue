@@ -97,9 +97,7 @@ onMounted(() => {
           </a>
           <CurrencyDetails />
         </div>
-        <span class="detail_pvc_mob_text_item opacity-[0] text-[3.8vh]">
-          Specify Your Needs
-        </span>
+        <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
       <!-- MOBILE -->

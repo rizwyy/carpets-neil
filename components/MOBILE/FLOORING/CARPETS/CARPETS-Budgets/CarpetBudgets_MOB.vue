@@ -625,17 +625,25 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser.value ? scrollBy(500) : scrollToBottom();
+    existingUser.value ? scrollBy(600) : scrollToBottom();
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
 };
+
 onMounted(() => {
-  if (typeof toRaw(userPreference.value).name === "string") {
+  // Check if the userPreference cookie exists
+  const userPreferenceCookie = useCookie("userPreference").value;
+
+  // If the cookie exists, proceed to check the name property
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
     existingUser.value = true;
   } else {
-    return;
+    existingUser.value = false;
   }
 });
 </script>

@@ -18,7 +18,7 @@
             >Choose your Material</span
           >
           <button
-            @click="clearmaterialSelections"
+            @click="clearMaterialSelections"
             v-show="userStore.preference.spec_3 !== ''"
             class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
@@ -180,25 +180,40 @@
 const userStore = useUserStore();
 import { ref } from "vue";
 import useUserStore from "~/stores/user";
+const existingUser = ref(false);
 
-const selectedmaterial = ref("");
-function clearmaterialSelections() {
-  selectedmaterial.value = "";
+const selectedMaterial = ref("");
+function clearMaterialSelections() {
+  selectedMaterial.value = "";
   userStore.preference.spec_3 = "";
 }
 
 const toggleSelectMaterials = (material) => {
   userStore.preference.budget = "";
 
-  if (selectedmaterial.value === material) {
-    selectedmaterial.value = "";
+  if (selectedMaterial.value === material) {
+    selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
     scrollToBottom();
-    selectedmaterial.value = material;
-    userStore.preference.spec_3 = toRaw(selectedmaterial.value);
+    selectedMaterial.value = material;
+    userStore.preference.spec_3 = toRaw(selectedMaterial.value);
   }
 };
+onMounted(() => {
+  // Check if the userPreference cookie exists
+  const userPreferenceCookie = useCookie("userPreference").value;
+
+  // If the cookie exists, proceed to check the name property
+  if (
+    userPreferenceCookie &&
+    typeof toRaw(userPreferenceCookie).name === "string"
+  ) {
+    existingUser.value = true;
+  } else {
+    existingUser.value = false;
+  }
+});
 </script>
 
 <style scoped>
