@@ -1,7 +1,7 @@
 <template>
   <!-- PREFERENCE PARENT DIV -->
   <div
-    class="parentDiv h-max w-[80%] flex flex-col bg-[#f1f1f1] rounded-md mx-auto overflow-hidden"
+    class="parentDiv h-max w-[90%] flex flex-col bg-[#f1f1f1] rounded-md mx-auto overflow-hidden"
   >
     <!-- UNEXPANDED -->
     <div @click="toggleExpansion" class="child1 flex-[1] w-full text-[2.4vh]">
@@ -30,7 +30,7 @@
     >
       <div>
         <span
-          class="prefItem opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+          class="prefItem text-[2vh] opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
         >
           <span>Category/Application:&nbsp;</span
           >{{ userStore.preference.spec_1 }}
@@ -38,21 +38,21 @@
       </div>
       <div>
         <span
-          class="prefItem opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+          class="prefItem text-[2vh] opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
         >
           <span>Activity/Type:&nbsp;</span>{{ userStore.preference.spec_2 }}
         </span>
       </div>
       <div>
         <span
-          class="prefItem opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+          class="prefItem text-[2vh] opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
         >
           <span>Material/Style:&nbsp;</span>{{ userStore.preference.spec_3 }}
         </span>
       </div>
       <div>
         <span
-          class="prefItem opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+          class="prefItem text-[2vh] opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
         >
           <span>Finish:&nbsp;</span
           >{{
@@ -64,7 +64,7 @@
       </div>
       <div>
         <span
-          class="prefItem opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
+          class="prefItem text-[2vh] opacity-0 mt-[1vh] w-full border-[2px] rounded-full px-[4vw] py-[1vh] border-[#666] bg-[#fff7]"
         >
           <span>Budget:&nbsp;</span
           >{{
@@ -76,11 +76,11 @@
         </span>
       </div>
       <div class="h-max w-full flex flex-col gap-[1.8vh] px-[2vw]">
-        <span class="font-[400]">Colors Opted:</span>
+        <span class="font-[400] text-[2vh]">Colors Opted:</span>
         <div class="h-max w-full grid grid-cols-3 gap-[2vh]">
           <span
             v-show="userStore.preference.color.length > 0"
-            class="prefItem opacity-0 w-max border-[2px] rounded-full px-[4vw] text-[#999] font-[400] text-center py-[.8vh] border-[#444] bg-[#000] bg-opacity-[.2] backdrop-blur-[8px]"
+            class="prefItem text-[2vh] opacity-0 w-max border-[2px] rounded-full px-[4vw] text-[#999] font-[400] text-center py-[.8vh] border-[#444] bg-[#000] bg-opacity-[.2] backdrop-blur-[8px]"
             v-for="(color, index) in userStore.preference.color"
             :key="index"
             :style="{ color: getColorHex(color) }"
@@ -127,7 +127,7 @@ function toggleExpansion() {
       .to(
         ".parentDiv",
         {
-          width: "80%",
+          width: "90%",
           duration: 0.4,
         },
         "<"

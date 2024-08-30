@@ -1,7 +1,6 @@
 <template>
   <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
-    <div
-      v-show="
+    <!-- v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -9,7 +8,8 @@
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== '' &&
         userStore.userData.name !== ''
-      "
+      " -->
+    <div
       class="min-[990px]:hidden h-max w-screen flex justify-center pt-[6vh] pb-[18vh]"
     >
       <div
