@@ -1,7 +1,7 @@
 <template>
   <!-- PREFERENCE PARENT DIV -->
   <div
-    class="parentDiv h-[6vh] w-[80%] flex flex-col bg-[#f1f1f1] rounded-md mx-auto overflow-hidden"
+    class="parentDiv h-max w-[80%] flex flex-col bg-[#f1f1f1] rounded-md mx-auto overflow-hidden"
   >
     <!-- UNEXPANDED -->
     <div @click="toggleExpansion" class="child1 flex-[1] w-full text-[2.4vh]">
@@ -127,7 +127,6 @@ function toggleExpansion() {
       .to(
         ".parentDiv",
         {
-          height: "6vh",
           width: "80%",
           duration: 0.4,
         },
@@ -137,10 +136,10 @@ function toggleExpansion() {
     // Expansion
     timeline
       .to(".parentDiv", {
-        height: "64vh",
+        height: "100%",
         width: "100%",
         duration: 0.4,
-        ease: "power1.in",
+        ease: "power4.in",
       })
       .to(
         ".child2",
@@ -153,7 +152,7 @@ function toggleExpansion() {
       .to(
         ".child1",
         {
-          fontSize: "2.8vh",
+          fontSize: "3.2vh",
         },
         "<"
       )
