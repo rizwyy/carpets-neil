@@ -91,8 +91,8 @@
           </div>
 
           <!--  -->
-          <div class="h-max w-full px-[3.2vw]">
-            <PreferenceCardMOB />
+          <div class="h-max w-full px-[1vw]">
+            <ReusablePreferenceCardMOB />
           </div>
           <!--  -->
           <!--  -->
@@ -103,7 +103,7 @@
           >
           <div
             v-if="userStore.flooringHistory.length > 0"
-            class="h-max w-full px-[1vw] pt-[0vh]"
+            class="h-max w-full px-[1vw] pt-[0vh] flex flex-col items-center gap-[2vh]"
           >
             <ReusablePreferenceCardMOB
               v-for="(item, index) in userStore.flooringHistory"
