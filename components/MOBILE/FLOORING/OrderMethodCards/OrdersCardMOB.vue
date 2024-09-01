@@ -19,7 +19,7 @@
           How to Connect?
         </span>
         <div
-          class="h-max w-full flex items-center justify-center gap-[4vw] px-[2vw] mt-[4vh]"
+          class="h-max w-full flex items-center justify-center gap-[4vw] px-[4vw] mt-[4vh]"
         >
           <OrderMethodButton
             label="WhatsApp"
@@ -27,8 +27,8 @@
             @click="toggleOrderMethod('whatsapp')"
             buttonClass="OrderMethods_MOB-CONTAINER"
             containerBgColor="#e8e8e8"
-            selectedBorderColor="#555"
-            textColor="#444"
+            selectedBorderColor="#333"
+            textColor="#555"
           />
           <OrderMethodButton
             label="Mail"
@@ -36,8 +36,8 @@
             @click="toggleOrderMethod('email')"
             buttonClass="OrderMethods_MOB-CONTAINER"
             containerBgColor="#e8e8e8"
-            selectedBorderColor="#555"
-            textColor="#444"
+            selectedBorderColor="#533355"
+            textColor="#555"
           />
         </div>
       </div>
