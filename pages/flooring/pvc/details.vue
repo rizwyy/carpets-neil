@@ -108,16 +108,16 @@ onMounted(() => {
       <BannerYouWin />
       <!-- MOBILE -->
       <PvcCategoryDetails />
-      <PvcTypeDetails />
 
-      <PvcDesignDetails />
-      <PvcColorDetails />
-      <PvcFinishDetails />
-      <PvcBudgetDetails />
-      <PvcOrderMethodDetails />
-      <OrderMethod flooring="PVC" />
-      <InfoForm flooring="PVC" />
-      <ReviewCard flooring="PVC" link="pvc" />
+      <LazyPvcTypeDetails />
+      <LazyPvcDesignDetails />
+      <LazyPvcColorDetails />
+      <LazyPvcFinishDetails />
+      <LazyPvcBudgetDetails />
+      <LazyPvcOrderMethodDetails />
+      <LazyOrderMethod flooring="PVC" />
+      <LazyInfoForm flooring="PVC" />
+      <LazyReviewCard flooring="PVC" link="pvc" />
     </div>
     <!-- MOBILE -->
   </section>

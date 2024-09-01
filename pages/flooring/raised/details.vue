@@ -104,14 +104,14 @@ onMounted(() => {
       </div>
       <BannerYouWin />
       <RaisedAreaDetails :existingUser="existingUser" />
-      <RaisedApplicationDetails :existingUser="existingUser" />
-      <RaisedPanelDetails :existingUser="existingUser" />
-      <RaisedFinishesDetails :existingUser="existingUser" />
-      <RaisedColorDetails :existingUser="existingUser" />
-      <RaisedBudgetDetails :existingUser="existingUser" />
-      <OrderMethod flooring="raised" />
-      <InfoForm flooring="raised" />
-      <ReviewCard flooring="raised" link="raised" />
+      <LazyRaisedApplicationDetails :existingUser="existingUser" />
+      <LazyRaisedPanelDetails :existingUser="existingUser" />
+      <LazyRaisedFinishesDetails :existingUser="existingUser" />
+      <LazyRaisedColorDetails :existingUser="existingUser" />
+      <LazyRaisedBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="raised" />
+      <LazyInfoForm flooring="raised" />
+      <LazyReviewCard flooring="raised" link="raised" />
     </div>
     <!-- MOBILE -->
   </section>

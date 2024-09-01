@@ -100,12 +100,12 @@ onMounted(() => {
       </div>
       <BannerYouWin :existingUser="existingUser" />
       <SportsTypesDetails :existingUser="existingUser" />
-      <SportsFlooringDetails :existingUser="existingUser" />
-      <SportsColorDetails :existingUser="existingUser" />
-      <SportsBudgetDetails :existingUser="existingUser" />
-      <OrderMethod flooring="sports" />
-      <InfoForm flooring="sports" />
-      <ReviewCard flooring="sports" link="sports" />
+      <LazySportsFlooringDetails :existingUser="existingUser" />
+      <LazySportsColorDetails :existingUser="existingUser" />
+      <LazySportsBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="sports" />
+      <LazyInfoForm flooring="sports" />
+      <LazyReviewCard flooring="sports" link="sports" />
     </div>
   </section>
 </template>

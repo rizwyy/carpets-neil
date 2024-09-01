@@ -100,14 +100,14 @@ onMounted(() => {
       </div>
       <BannerYouWin />
       <GymApplicationDetails :existingUser="existingUser" />
-      <GymActivitiesDetails :existingUser="existingUser" />
-      <GymFlooringDetails :existingUser="existingUser" />
+      <LazyGymActivitiesDetails :existingUser="existingUser" />
+      <LazyGymFlooringDetails :existingUser="existingUser" />
       <!-- <GymFinishDetails /> -->
-      <GymColorDetails :existingUser="existingUser" />
-      <GymBudgetDetails :existingUser="existingUser" />
-      <OrderMethod flooring="gym" />
-      <InfoForm flooring="gym" />
-      <ReviewCard flooring="gym" link="gym" />
+      <LazyGymColorDetails :existingUser="existingUser" />
+      <LazyGymBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="gym" />
+      <LazyInfoForm flooring="gym" />
+      <LazyReviewCard flooring="gym" link="gym" />
     </div>
     <!-- MOBILE -->
   </section>
