@@ -2,21 +2,33 @@
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
-import SportsFlooringDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue";
-import SportsColorDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue";
-import SportsBudgetDetails from "~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue";
-
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
-import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+// Eager-loaded component (for both mobile and desktop)
+import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
 
-import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
-import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
-import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
-
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+// Lazy-loaded components
+const LazySportsFlooringDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue")
+);
+const LazySportsColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue")
+);
+const LazySportsBudgetDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue")
+);
+const LazyOrderMethod = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
+);
+const LazyInfoForm = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/InfoForm.vue")
+);
+const LazyReviewCard = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/DetailsReview.vue")
+);
 
 const isMobile = ref(false);
 const existingUser = ref(false);
@@ -37,6 +49,7 @@ onMounted(() => {
   }
 });
 </script>
+
 <template>
   <!-- DESKTOP -->
   <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
@@ -60,20 +73,15 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <SportsTypesDetails />
-      <SportsFlooringDetails />
-      <SportsColorDetails />
-      <SportsBudgetDetails />
-      <OrderMethod flooring="sports" />
-      <InfoForm flooring="sports" />
-      <ReviewCard flooring="sports" link="sports" />
+      <LazySportsFlooringDetails />
+      <LazySportsColorDetails />
+      <LazySportsBudgetDetails />
+      <LazyOrderMethod flooring="sports" />
+      <LazyInfoForm flooring="sports" />
+      <LazyReviewCard flooring="sports" link="sports" />
     </div>
     <!-- DESKTOP -->
   </section>
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">

@@ -2,22 +2,40 @@
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-import WoodenCategoryDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenCategoryDetails.vue";
-import WoodenTypeDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenTypeDetails.vue";
-import WoodenFinishDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenFinishDetails.vue";
-import WoodenColorDetails from "~/components/MOBILE/FLOORING/WOODEN/WoodenColorDetails.vue";
-import WoodenDesignDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue";
-import WoodenBudgetDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue";
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
-
-import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
-import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
-import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
-
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
+
+// Eager-loaded component (for both mobile and desktop)
+import WoodenCategoryDetails from "../../../components/MOBILE/FLOORING/WOODEN/WoodenCategoryDetails.vue";
+
+// Lazy-loaded components
+const LazyWoodenTypeDetails = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/WOODEN/WoodenTypeDetails.vue")
+);
+const LazyWoodenDesignDetails = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/WOODEN/WoodenDesignDetails.vue")
+);
+const LazyWoodenColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/WOODEN/WoodenColorDetails.vue")
+);
+const LazyWoodenFinishDetails = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/WOODEN/WoodenFinishDetails.vue")
+);
+const LazyWoodenBudgetDetails = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/WOODEN/WoodenBudgetDetails.vue")
+);
+const LazyOrderMethod = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
+);
+const LazyInfoForm = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/InfoForm.vue")
+);
+const LazyReviewCard = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/DetailsReview.vue")
+);
 
 const isMobile = ref(false);
 const existingUser = ref(false);
@@ -38,6 +56,7 @@ onMounted(() => {
   }
 });
 </script>
+
 <template>
   <!-- DESKTOP -->
   <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
@@ -62,22 +81,17 @@ onMounted(() => {
       <!-- DESKTOP -->
       <ScrollToTopBTNPC />
       <WoodenCategoryDetails />
-      <WoodenTypeDetails />
-      <WoodenDesignDetails />
-      <WoodenColorDetails />
-      <WoodenFinishDetails />
-      <WoodenBudgetDetails />
-      <OrderMethod flooring="Wooden" />
-      <InfoForm flooring="Wooden" />
-      <ReviewCard flooring="Wooden" link="wooden" />
+      <LazyWoodenTypeDetails />
+      <LazyWoodenDesignDetails />
+      <LazyWoodenColorDetails />
+      <LazyWoodenFinishDetails />
+      <LazyWoodenBudgetDetails />
+      <LazyOrderMethod flooring="Wooden" />
+      <LazyInfoForm flooring="Wooden" />
+      <LazyReviewCard flooring="Wooden" link="wooden" />
     </div>
     <!-- DESKTOP -->
   </section>
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max select-none">

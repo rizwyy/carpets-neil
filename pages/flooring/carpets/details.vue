@@ -4,18 +4,39 @@ const userStore = useUserStore();
 
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import CategoryDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
-import TypeDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetTypeDetails.vue";
-import MaterialDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetMaterialDetails.vue";
-import ColorDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue";
-import BudgetDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue";
-import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
-import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
-import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
-
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 import ScrollToTopBTNPC from "~/components/DESKTOP/ScrollToTopBTN-PC.vue";
-import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+
+// Eager-loaded component (for both mobile and desktop)
+import CategoryDetails from "./../../../components/MOBILE/FLOORING/CARPETS/CarpetCategoryDetails.vue";
+
+// Lazy-loaded components
+const LazyTypeDetails = defineAsyncComponent(() =>
+  import("./../../../components/MOBILE/FLOORING/CARPETS/CarpetTypeDetails.vue")
+);
+const LazyMaterialDetails = defineAsyncComponent(() =>
+  import(
+    "./../../../components/MOBILE/FLOORING/CARPETS/CarpetMaterialDetails.vue"
+  )
+);
+const LazyColorDetails = defineAsyncComponent(() =>
+  import("./../../../components/MOBILE/FLOORING/CARPETS/CarpetColorDetails.vue")
+);
+const LazyBudgetDetails = defineAsyncComponent(() =>
+  import(
+    "./../../../components/MOBILE/FLOORING/CARPETS/CarpetBudgetDetails.vue"
+  )
+);
+const LazyOrderMethod = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
+);
+const LazyInfoForm = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/InfoForm.vue")
+);
+const LazyReviewCard = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/DetailsReview.vue")
+);
 
 const isMobile = ref(false);
 const existingUser = ref(false);
@@ -63,20 +84,16 @@ onMounted(() => {
       <!-- MOBILE -->
       <BannerYouWin />
       <CategoryDetails :existingUser="existingUser" />
-      <TypeDetails :existingUser="existingUser" />
-      <MaterialDetails :existingUser="existingUser" />
-      <ColorDetails :existingUser="existingUser" />
-      <BudgetDetails :existingUser="existingUser" />
-      <OrderMethod flooring="Carpets" />
-      <InfoForm flooring="Carpets" />
-      <ReviewCard flooring="Carpets" link="carpets" />
+      <LazyTypeDetails :existingUser="existingUser" />
+      <LazyMaterialDetails :existingUser="existingUser" />
+      <LazyColorDetails :existingUser="existingUser" />
+      <LazyBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="Carpets" />
+      <LazyInfoForm flooring="Carpets" />
+      <LazyReviewCard flooring="Carpets" link="carpets" />
     </div>
     <!-- MOBILE -->
   </section>
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- DESKTOP -->
   <section v-else class="max-[990px]:hidden max-w-screen h-max select-none">
@@ -116,6 +133,22 @@ onMounted(() => {
     <!-- DESKTOP -->
   </section>
 </template>
+
+<style scoped>
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+</style>
+
+<style scoped>
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+</style>
 
 <style scoped>
 .font-outfit {

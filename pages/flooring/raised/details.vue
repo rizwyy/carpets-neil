@@ -2,23 +2,39 @@
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
-import RaisedAreaDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedAreaDetails.vue";
-import RaisedApplicationDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedApplicationDetails.vue";
-import RaisedPanelDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedPanelsDetails.vue";
-import RaisedColorDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedColorDetails.vue";
-import RaisedBudgetDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedBudgetDetails.vue";
-
+import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
-import RaisedFinishesDetails from "./../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue";
-import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+// Eager-loaded component (for both mobile and desktop)
+import RaisedAreaDetails from "~/components/MOBILE/FLOORING/RAISED/RaisedAreaDetails.vue";
 
-import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
-import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
-import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
-
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
+// Lazy-loaded components
+const LazyRaisedApplicationDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RAISED/RaisedApplicationDetails.vue")
+);
+const LazyRaisedPanelDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RAISED/RaisedPanelsDetails.vue")
+);
+const LazyRaisedFinishesDetails = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/RAISED/RaisedFinishesDetails.vue")
+);
+const LazyRaisedColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RAISED/RaisedColorDetails.vue")
+);
+const LazyRaisedBudgetDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RAISED/RaisedBudgetDetails.vue")
+);
+const LazyOrderMethod = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
+);
+const LazyInfoForm = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/InfoForm.vue")
+);
+const LazyReviewCard = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/DetailsReview.vue")
+);
 
 const isMobile = ref(false);
 const existingUser = ref(false);
@@ -39,6 +55,7 @@ onMounted(() => {
   }
 });
 </script>
+
 <template>
   <!-- DESKTOP -->
   <section class="max-[990px]:hidden max-w-screen h-max">
@@ -62,23 +79,19 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <RaisedAreaDetails />
-      <RaisedApplicationDetails />
-      <RaisedPanelDetails />
-      <RaisedFinishesDetails />
-      <RaisedColorDetails />
-      <RaisedBudgetDetails />
-      <OrderMethod flooring="raised" />
-      <InfoForm flooring="raised" />
-      <ReviewCard flooring="raised" link="raised" />
+      <LazyRaisedApplicationDetails />
+      <LazyRaisedPanelDetails />
+      <LazyRaisedFinishesDetails />
+      <LazyRaisedColorDetails />
+      <LazyRaisedBudgetDetails />
+      <LazyOrderMethod flooring="raised" />
+      <LazyInfoForm flooring="raised" />
+      <LazyReviewCard flooring="raised" link="raised" />
     </div>
     <!-- DESKTOP -->
   </section>
   <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
 
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />

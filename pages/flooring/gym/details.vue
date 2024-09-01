@@ -2,21 +2,36 @@
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
-import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymApplicationDetails.vue";
-import GymActivitiesDetails from "../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue";
-
-import GymBudgetDetails from "~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue";
-
-import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
-import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
-import OrderMethod from "../../../components/MOBILE/FLOORING/OrderMethod.vue";
-import ReviewCard from "../../../components/MOBILE/FLOORING/DetailsReview.vue";
-import InfoForm from "../../../components/MOBILE/FLOORING/InfoForm.vue";
-
-import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
-import GymFlooringDetails from "~/components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue";
-import GymColorDetails from "~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
+
+// Eager-loaded component (for both mobile and desktop)
+import GymApplicationDetails from "../../../components/MOBILE/FLOORING/GYM/GymApplicationDetails.vue";
+
+// Lazy-loaded components
+const LazyGymActivitiesDetails = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/GYM/GymActivitiesDetails.vue")
+);
+const LazyGymFlooringDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/GYM/GymFlooringDetails.vue")
+);
+const LazyGymColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/GYM/GymColorDetails.vue")
+);
+const LazyGymBudgetDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/GYM/GymBudgetDetails.vue")
+);
+const LazyOrderMethod = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
+);
+const LazyInfoForm = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/InfoForm.vue")
+);
+const LazyReviewCard = defineAsyncComponent(() =>
+  import("../../../components/MOBILE/FLOORING/DetailsReview.vue")
+);
 
 const isMobile = ref(false);
 const existingUser = ref(false);
@@ -37,6 +52,7 @@ onMounted(() => {
   }
 });
 </script>
+
 <template>
   <!-- DESKTOP -->
   <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
@@ -60,21 +76,16 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <GymApplicationDetails />
-      <GymActivitiesDetails />
-      <GymFlooringDetails />
-      <GymColorDetails />
-      <GymBudgetDetails />
-      <OrderMethod flooring="gym" />
-      <InfoForm flooring="gym" />
-      <ReviewCard flooring="gym" link="gym" />
+      <LazyGymActivitiesDetails />
+      <LazyGymFlooringDetails />
+      <LazyGymColorDetails />
+      <LazyGymBudgetDetails />
+      <LazyOrderMethod flooring="gym" />
+      <LazyInfoForm flooring="gym" />
+      <LazyReviewCard flooring="gym" link="gym" />
     </div>
     <!-- DESKTOP -->
   </section>
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
-
-  <!-- -------------------------------------------- -->
-  <!-- -------------------------------------------- -->
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">
@@ -102,7 +113,6 @@ onMounted(() => {
       <GymApplicationDetails :existingUser="existingUser" />
       <LazyGymActivitiesDetails :existingUser="existingUser" />
       <LazyGymFlooringDetails :existingUser="existingUser" />
-      <!-- <GymFinishDetails /> -->
       <LazyGymColorDetails :existingUser="existingUser" />
       <LazyGymBudgetDetails :existingUser="existingUser" />
       <LazyOrderMethod flooring="gym" />
@@ -113,7 +123,7 @@ onMounted(() => {
   </section>
 </template>
 
-<style>
+<style scoped>
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
