@@ -103,14 +103,14 @@ onMounted(() => {
       </div>
       <BannerYouWin />
       <WoodenCategoryDetails :existingUser="existingUser" />
-      <LazyWoodenTypeDetails :existingUser="existingUser" />
-      <LazyWoodenDesignDetails :existingUser="existingUser" />
-      <LazyWoodenColorDetails :existingUser="existingUser" />
-      <LazyWoodenFinishDetails :existingUser="existingUser" />
-      <LazyWoodenBudgetDetails :existingUser="existingUser" />
-      <LazyOrderMethod flooring="Wooden" />
-      <LazyInfoForm flooring="Wooden" />
-      <LazyReviewCard flooring="Wooden" link="wooden" />
+      <LayWoodenTypeDetails :existingUser="existingUser" />
+      <LayWoodenDesignDetails :existingUser="existingUser" />
+      <LayWoodenColorDetails :existingUser="existingUser" />
+      <LayWoodenFinishDetails :existingUser="existingUser" />
+      <LayWoodenBudgetDetails :existingUser="existingUser" />
+      <LayOrderMethod flooring="Wooden" />
+      <LayInfoForm flooring="Wooden" />
+      <LayReviewCard flooring="Wooden" link="wooden" />
     </div>
     <!-- MOBILE -->
   </section>
