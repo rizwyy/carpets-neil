@@ -102,16 +102,16 @@
           Are you sure you want to proceed?</span
         >
         <div
-          class="h-max w-full flex justify-between gap-[4vw] border-t-[1.8px] border-[#999]"
+          class="h-max w-full flex justify-between gap-[4vw] border-t-[1.8px] border-[#ddd]"
         >
           <button
-            class="px-[8vw] text-[2vh] font-[500] text-[#222] py-[2vh] w-1/2 text-center border-r-[1.8px] border-[#999] tracking-[.3vw]"
+            class="px-[8vw] text-[2vh] font-[500] text-[#222] py-[2vh] w-1/2 text-center border-r-[1.8px] border-[#ddd] tracking-[.3vw]"
             @click="handleCloseOrderMethodWarningNo"
           >
             NO
           </button>
           <button
-            class="px-[8vw] text-[2vh] font-[500] text-[#222] py-[2vh] w-1/2 text-center border-[#999] tracking-[.3vw]"
+            class="px-[8vw] text-[2vh] font-[500] text-[#222] py-[2vh] w-1/2 text-center border-[#ddd] tracking-[.3vw]"
             @click="handleCloseOrderMethodWarningYes"
           >
             YES

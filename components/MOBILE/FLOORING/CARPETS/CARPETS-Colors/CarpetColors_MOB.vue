@@ -453,6 +453,8 @@ const toggleSelect = (color, added) => {
   }
 
   userStore.preference.color = toRaw(selectedColors.value);
+  userStore.updateCart();
+
   if (added !== "addMore") {
     isMultiColoredOpted.value = false;
   }

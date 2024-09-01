@@ -442,6 +442,8 @@ const toggleSelect = (color, added) => {
     selectedColors.value.push(color);
   }
   userStore.preference.color = toRaw(selectedColors.value);
+  userStore.updateCart();
+
   if (added !== "addMore") {
     isMultiColoredOpted.value = false;
   }

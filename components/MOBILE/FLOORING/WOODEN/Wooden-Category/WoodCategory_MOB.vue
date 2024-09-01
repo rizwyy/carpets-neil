@@ -131,6 +131,7 @@ const toggleSelect = (category) => {
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.spec_2 = "";
     userStore.preference.flooring = "Wooden";
+    userStore.updateCart();
   }
 };
 </script>

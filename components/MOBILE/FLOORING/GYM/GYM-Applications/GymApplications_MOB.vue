@@ -199,6 +199,7 @@ const toggleSelect = (category) => {
     userStore.preference.spec_2 = "";
     userStore.preference.flooring = "gym";
   }
+  userStore.updateCart();
 };
 
 onMounted(() => {

@@ -202,6 +202,7 @@ const toggleSelect = (material) => {
     selectedmaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }
+  userStore.updateCart();
 };
 </script>
 

@@ -211,6 +211,7 @@ const toggleSelect = (type) => {
     existingUser ? scrollBy(500) : scrollToBottom();
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
+    userStore.updateCart();
   }
 };
 </script>

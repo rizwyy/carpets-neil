@@ -126,6 +126,7 @@ const toggleSelect = (surface) => {
     selectedSurfaceFinish.value = surface;
     userStore.preference.surface = toRaw(selectedSurfaceFinish.value);
   }
+  userStore.updateCart();
 };
 </script>
 

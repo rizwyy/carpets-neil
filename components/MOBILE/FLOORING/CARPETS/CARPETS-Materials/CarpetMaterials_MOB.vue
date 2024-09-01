@@ -198,6 +198,7 @@ const toggleSelectMaterials = (material) => {
     existingUser ? scrollBy(500) : scrollToBottom();
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
+    userStore.updateCart();
   }
 };
 </script>

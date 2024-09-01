@@ -502,12 +502,14 @@ const toggleSelect = (color, added) => {
   }
 
   userStore.preference.color = toRaw(selectedColors.value);
+
   if (added !== "addMore") {
     isMultiColoredOpted.value = false;
   }
   removeCustomColor();
   getHexCodes();
   customColor.value = "";
+  userStore.updateCart();
 };
 
 const customColorArray = ref([]);

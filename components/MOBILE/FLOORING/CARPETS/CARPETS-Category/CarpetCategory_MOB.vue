@@ -203,6 +203,7 @@ const toggleSelect = (category) => {
     userStore.preference.flooring = "Carpets";
     userStore.preference.budget = "";
     userStore.preference.spec_3 = "";
+    userStore.updateCart();
   }
 };
 </script>

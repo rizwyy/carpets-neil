@@ -16,12 +16,12 @@
         <div class="h-max w-full flex flex-col items-center gap-[8vh]">
           <div class="h-max w-full flex flex-col items-center gap-[5vh]">
             <span
-              class="flex-[4] text-[3.8vh] leading-[4vh] w-full text-start text-[#333]"
+              class="flex-[4] text-[3.2vh] leading-[4vh] w-full text-start text-[#333]"
               >Choose Your Country</span
             >
             <select
               v-model="userStore.preference.country"
-              class="w-full bg-inherit rounded-lg border-[2px] border-[#777] px-[3.2vw] py-[2.4vh] text-[2.4vh] text-[#000] outline-none bg-black"
+              class="w-full bg-inherit rounded-lg border-[2px] border-[#777] px-[3.2vw] py-[1.8vh] text-[2.4vh] text-[#000] outline-none bg-black"
             >
               <option value="Bahrain">Bahrain</option>
               <option value="UAE">UAE</option>
@@ -32,7 +32,7 @@
           </div>
           <button
             @click="() => setCountryCookie()"
-            class="rounded-md border-[2px] text-[2.4vh] font-[500] tracking-[.2vw] text-[#333] bg-[#fff] bg-opacity-[.4] border-[#333] py-[2.4vh] w-[100%]"
+            class="rounded-md border-[2px] text-[2vh] font-[500] tracking-[.2vw] text-[#333] bg-[#fff] bg-opacity-[.4] border-[#555] py-[2.4vh] w-[100%]"
           >
             PROCEED
           </button>

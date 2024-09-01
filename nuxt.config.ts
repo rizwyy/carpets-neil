@@ -25,6 +25,7 @@ export default defineNuxtConfig({
             gridContainer_heading_PC: "2.4vw", //LAPTOP -> GRID LAYOUT -> CONTAINER -> HEADING
             gridContainer_anchor_PC: "1.2vw", //LAPTOP -> GRID LAYOUT -> CONTAINER -> ANCHOR
             detailsContainer_heading_PC: "2.4vw", //LAPTOP -> DETAILS -> CONTAINER -> HEADING
+            specCard_span_MOB: "2vh",
           },
           colors: {
             navBarBG: "#fff",
@@ -32,6 +33,9 @@ export default defineNuxtConfig({
             detailsFrom: "#fff",
             detailsTo: "#f1f1f1",
             detailsHeadCLR: "#222",
+            // REVIEW CARD
+            prefCard: "#EBF2FE",
+            prefCardBG: "#fff",
           },
         },
       },

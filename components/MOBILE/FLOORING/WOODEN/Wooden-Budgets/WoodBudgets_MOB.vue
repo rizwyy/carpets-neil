@@ -319,6 +319,7 @@ const toggleSelect = (budget) => {
     existingUser ? scrollBy(500) : scrollToBottom();
     selectedBudget.value = budget;
     userStore.preference.budget = toRaw(selectedBudget.value);
+    userStore.updateCart();
   }
 };
 </script>

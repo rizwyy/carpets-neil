@@ -330,6 +330,7 @@ const toggleSelect = (type) => {
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }
+  userStore.updateCart();
 };
 </script>
 

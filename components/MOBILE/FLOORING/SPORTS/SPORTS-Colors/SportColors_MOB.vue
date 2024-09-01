@@ -524,6 +524,7 @@ const toggleSelect = (color, added) => {
   removeCustomColor();
   getHexCodes();
   customColor.value = "";
+  userStore.updateCart();
 };
 
 const customColorArray = ref([]);

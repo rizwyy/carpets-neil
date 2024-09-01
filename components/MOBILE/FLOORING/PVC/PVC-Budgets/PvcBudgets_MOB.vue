@@ -325,6 +325,7 @@ const toggleSelect = (type) => {
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }
+  userStore.updateCart();
 };
 </script>
 

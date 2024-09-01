@@ -200,6 +200,7 @@ const toggleSelect = (surface) => {
     selectedThickness.value = surface;
     userStore.preference.spec_3 = toRaw(selectedThickness.value);
   }
+  userStore.updateCart();
 };
 </script>
 

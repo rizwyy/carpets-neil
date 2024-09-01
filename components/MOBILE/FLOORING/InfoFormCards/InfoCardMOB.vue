@@ -22,7 +22,7 @@
       </div>
       <div class="h-max w-screen pt-[2vh] pb-[6vh] flex justify-center">
         <div
-          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md shadow-xl relative bg-gradient-to-br from-detailsFrom to-detailsTo"
+          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md relative bg-gradient-to-br from-detailsFrom to-detailsTo"
         >
           <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
             <span
@@ -133,7 +133,7 @@
                 }"
                 :required="phoneIpt.length > 8"
                 type="number"
-                class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[2vh] outline-none focus:border-black"
+                class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[18px] outline-none focus:border-black"
                 placeholder="Phone"
                 v-model="phoneIpt"
               />
@@ -245,6 +245,7 @@ function handleInfoProceedings() {
   userStore.userData.email = mailIpt.value;
   userStore.userData.phone = phoneWithCode;
   setUserPreferenceCookie();
+  userStore.updateCart();
 }
 
 onMounted(() => {

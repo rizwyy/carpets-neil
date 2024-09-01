@@ -692,6 +692,7 @@ const toggleSelect = (type, msg) => {
     spec_2.value = type;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }
+  userStore.updateCart();
 };
 </script>
 
