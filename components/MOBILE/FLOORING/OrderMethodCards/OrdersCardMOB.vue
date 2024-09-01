@@ -16,7 +16,7 @@
         <span
           class="w-[94%] px-[4vw] tracking-[-.1vw] font-[400] leading-[3.8vh] OrderMethods_MOB-HEADING opacity-0 translate-x-[40%] text-detailsHeadCLR text-detailsContainer_heading_MOB"
         >
-          How to Connect?
+          Preferred Reach-Out
         </span>
         <div
           class="h-max w-full flex items-center justify-center gap-[4vw] px-[4vw] mt-[4vh]"

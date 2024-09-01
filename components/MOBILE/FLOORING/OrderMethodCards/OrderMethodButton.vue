@@ -4,7 +4,7 @@
     :class="buttonClass"
     :style="{
       backgroundColor: containerBgColor,
-      borderColor: selected ? selectedBorderColor : '#999',
+      borderColor: selected ? selectedBorderColor : '#d4d4d4',
       color: textColor,
     }"
     class="w-[44vw] h-[22svh] opacity-0 translate-y-[20%] rounded-2xl text-[2.8vh] font-[400] border-[2.8px] border-[#333] z-[999] text-white px-[2vw] flex flex-col items-start gap-[2vw] justify-between"
@@ -27,7 +27,7 @@
             color: selectedBorderColor,
           }"
           class="h-max w-max font-[600]"
-          ><CircleBold
+          ><TickCircleIcon
         /></span>
       </div>
     </div>
@@ -41,8 +41,8 @@
 </template>
 
 <script setup>
-import CircleBold from "~/public/icons/circleBold.vue";
 import MailIcon from "~/public/icons/mailIcon.vue";
+import TickCircleIcon from "~/public/icons/tickCircleIcon.vue";
 import WhatsappIcon from "~/public/icons/whatsappIcon.vue";
 
 defineProps({
