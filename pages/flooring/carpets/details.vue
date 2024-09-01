@@ -103,13 +103,13 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <CategoryDetails />
-      <TypeDetails />
-      <MaterialDetails />
-      <ColorDetails />
-      <BudgetDetails />
-      <OrderMethod flooring="Carpets" />
-      <InfoForm flooring="Carpets" />
-      <ReviewCard flooring="Carpets" link="carpets" />
+      <LazyTypeDetails />
+      <LazyMaterialDetails />
+      <LazyColorDetails />
+      <LazyBudgetDetails />
+      <LazyOrderMethod flooring="Carpets" />
+      <LazyInfoForm flooring="Carpets" />
+      <LazyReviewCard flooring="Carpets" link="carpets" />
 
       <!-- DESKTOP -->
     </div>
