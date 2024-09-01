@@ -86,58 +86,6 @@ const useUserStore = defineStore("user", {
         console.log("-");
       }
     },
-    // Action to get history
-    async getHistory() {
-      try {
-        // Ensure the mobile number is provided
-        const mobile = this.userData.phone;
-        if (!mobile) {
-          throw new Error("Mobile number is required");
-        }
-
-        // Fetch preferences by mobile number
-        const { data, error } = await useFetch(
-          `/api/get-log?mobile=${mobile}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        if (error?.value) {
-          throw new Error(error.value.message);
-        }
-
-        // Check if data is available and process it
-        if (data?.value?.length > 0) {
-          const preferences = data.value;
-
-          // Clear existing non-PINIA items from the cart
-          this.cart = this.cart.filter((item) => item.id === "PINIA");
-
-          // Loop through the array of preferences and add them to the cart
-          const preferencesWithId = preferences.map((pref) => {
-            const { preference, id } = pref; // Destructure the preference and id
-            return { ...preference, id }; // Return a new object with the id included
-          });
-
-          // Add all preferences to the cart at once
-          this.cart.push(...preferencesWithId);
-
-          console.log("Preferences added to cart:", this.cart);
-        } else {
-          console.log("No preferences found.");
-        }
-
-        // Ensure the first item in the cart has id 'PINIA'
-        this.updateCart();
-      } catch (error) {
-        console.error("Failed to fetch or process preferences:", error);
-        // Optionally handle errors, such as clearing the cart or showing an error message
-      }
-    },
   },
 });
 export default useUserStore;
