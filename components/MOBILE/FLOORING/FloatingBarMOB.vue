@@ -4,12 +4,13 @@ import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
 </script>
+
 <template>
   <div
     v-show="
       userStore.preference.spec_1 !== '' && userStore.preference.budget === ''
     "
-    class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[8.2vh] z-[99999] backdrop-blur-lg bg-black bg-opacity-90 flex font-outfit"
+    class="fixed bottom-0 left-0 w-full h-[8.2vh] z-[99999] backdrop-blur-lg bg-black bg-opacity-90 flex font-outfit"
   >
     <div
       class="flex items-center justify-center w-2/3 border-r border-gray-300"
@@ -18,7 +19,7 @@ const userStore = useUserStore();
         href="/flooring/customize"
         class="font-medium text-[2.2vh] flex items-center justify-center gap-[1vw] bg-gradient-to-r from-white/70 via-cyan-100 to-white/70 bg-clip-text text-transparent animate-gradient"
       >
-        CUSTOM <span class="">{{ `${flooring}` }}</span>
+        CUSTOM <span>{{ flooring }}</span>
         <svg
           class="h-[2.4vh]"
           xmlns="http://www.w3.org/2000/svg"
