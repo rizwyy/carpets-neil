@@ -4,7 +4,7 @@
     :class="buttonClass"
     :style="{
       backgroundColor: containerBgColor,
-      borderColor: selected ? selectedBorderColor : '#d4d4d4',
+      borderColor: selected ? selectedBorderColor : '#777',
       color: textColor,
     }"
     class="w-[44vw] h-[24svh] opacity-0 translate-y-[20%] rounded-2xl text-[2.4vh] font-[400] border-[2.8px] border-[#333] z-[999] text-white px-[1vw] flex flex-col items-start gap-[2vw] justify-between shadow-lg"
