@@ -31,7 +31,7 @@
             />
           </svg>
         </div>
-        <a v-else href="flooring/carpets/details">
+        <a v-else :href="selectedUrl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -51,15 +51,14 @@
       class="w-full bg-white border rounded-b-md mt-1 z-10"
     >
       <ul>
-        <a
-          href="/flooring/carpets/details"
+        <li
           v-for="(result, index) in filteredResults"
           :key="index"
           class="px-4 py-2 hover:bg-gray-200 cursor-pointer block"
           @click="selectResult(result)"
         >
-          {{ result }}
-        </a>
+          {{ result.label }}
+        </li>
       </ul>
     </div>
   </div>
@@ -67,25 +66,21 @@
 
 <script setup>
 import { ref } from "vue";
+import { searchQueries } from "~/utils/searchQueries"; // Import the search queries
 import useUserStore from "../../../stores/user";
+
 const userStore = useUserStore();
 const query = ref("");
-const results = ref([
-  "Carpet",
-  "Furniture",
-  "Blinds & Curtains",
-  "Beige Carpets",
-  "Grey Carpets",
-]);
 const filteredResults = ref([]);
 const isActive = ref(false);
+const selectedUrl = ref("");
 
 const onInput = () => {
   if (query.value.trim() === "") {
     filteredResults.value = [];
   } else {
-    filteredResults.value = results.value.filter((result) =>
-      result.toLowerCase().includes(query.value.toLowerCase())
+    filteredResults.value = searchQueries.filter((searchQuery) =>
+      searchQuery.label.toLowerCase().includes(query.value.toLowerCase())
     );
   }
 };
@@ -101,7 +96,8 @@ const onBlur = () => {
 };
 
 const selectResult = (result) => {
-  query.value = result;
+  query.value = result.label;
+  selectedUrl.value = result.url;
   filteredResults.value = [];
   isActive.value = false;
 };
@@ -111,7 +107,16 @@ const onSearch = () => {
     return;
   }
 
-  selectResult("Carpet");
+  const found = searchQueries.find(
+    (searchQuery) =>
+      searchQuery.label.toLowerCase() === query.value.toLowerCase()
+  );
+  if (found) {
+    selectedUrl.value = found.url;
+  } else {
+    // If no match found, you can set a default URL or handle it as needed
+    selectedUrl.value = "/flooring";
+  }
 };
 
 onMounted(() => {

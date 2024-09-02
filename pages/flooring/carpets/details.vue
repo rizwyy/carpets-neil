@@ -41,16 +41,6 @@ const LazyReviewCard = defineAsyncComponent(() =>
 const isMobile = ref(false);
 const existingUser = ref(false);
 
-useHead({
-  meta: [
-    {
-      name: "viewport",
-      content:
-        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
-    },
-  ],
-});
-
 onMounted(() => {
   const userPreferenceCookie = useCookie("userPreference").value;
   if (
