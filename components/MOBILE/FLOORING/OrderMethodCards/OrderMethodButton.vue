@@ -32,7 +32,7 @@
       </div>
     </div>
     <div
-      class="h-max w-max flex w-full flex justify-start pb-[1vh] pl-[0vw] text-[10.2vh]"
+      class="h-max w-max flex w-full flex justify-start pb-[.4vh] pl-[0vw] text-[10.2vh]"
       :style="{ color: logoColor }"
     >
       <WhatsappIcon v-if="label === 'WhatsApp'" />
