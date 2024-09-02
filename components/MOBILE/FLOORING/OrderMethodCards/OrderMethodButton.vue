@@ -7,7 +7,7 @@
       borderColor: selected ? selectedBorderColor : '#777',
       color: textColor,
     }"
-    class="relative w-[80vw] min-w-[150px] max-w-[300px] h-[8vh] min-h-[48px] max-h-[60px] rounded-lg text-[2.2vh] font-medium border-[2.8px] border-[#333] z-[999] text-white px-[4vw] flex items-center justify-between shadow-lg transition-all duration-300 ease-in-out"
+    class="relative w-[80vw] min-w-[150px] max-w-[300px] h-[8vh] min-h-[48px] max-h-[60px] rounded-lg text-[2.2vh] font-medium border-[2.8px] border-[#333] z-[999] text-white px-[4vw] flex items-center justify-between shadow-xl transition-all duration-300 ease-in-out"
     aria-label="button"
   >
     <!-- Tick Icon in the top-right corner when selected -->

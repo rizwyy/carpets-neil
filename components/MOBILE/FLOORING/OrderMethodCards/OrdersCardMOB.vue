@@ -11,7 +11,7 @@
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
       <div
-        class="h-max w-[96%] flex flex-col gap-[0vh] bg-gradient-to-br from-detailsFrom to-detailsTo pt-[4vh] pb-[4vh] rounded-md shadow-lg"
+        class="h-max w-[96%] flex flex-col gap-[0vh] bg-gradient-to-br from-detailsFrom to-detailsTo pt-[4vh] pb-[4vh] rounded-md"
       >
         <span
           class="w-[94%] px-[4vw] tracking-[-.1vw] font-[400] leading-[3.8vh] OrderMethods_MOB-HEADING opacity-0 translate-x-[40%] text-detailsHeadCLR text-detailsContainer_heading_MOB"
