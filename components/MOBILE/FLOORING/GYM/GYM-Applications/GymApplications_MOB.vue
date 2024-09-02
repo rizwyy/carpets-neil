@@ -34,7 +34,7 @@
         <!-- Fitness -->
         <div
           :class="[
-            'h-[14vh] gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh]  gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Fitness') },
           ]"
           @click="toggleSelect('Fitness')"
@@ -67,7 +67,7 @@
         <!-- Group Training -->
         <div
           :class="[
-            'h-[14vh] gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh]  gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes('Group Training'),
             },
@@ -103,7 +103,7 @@
         <!-- Strength -->
         <div
           :class="[
-            'h-[14vh] gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh]  gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Strength') },
           ]"
           @click="toggleSelect('Strength')"
@@ -136,7 +136,7 @@
         <!-- Martial Arts -->
         <div
           :class="[
-            'h-[14vh] gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh]  gym_Application_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Martial Arts') },
           ]"
           @click="toggleSelect('Martial Arts')"

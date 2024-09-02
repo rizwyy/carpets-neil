@@ -42,7 +42,7 @@
           <!-- Plain -->
           <div
             :class="[
-              'h-[14vh] pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[14vh] rounded-md overflow-hidden pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: selectedmaterial === 'Plain' },
             ]"
             @click="toggleSelect('Plain')"
@@ -74,7 +74,7 @@
           <!-- Abstract -->
           <div
             :class="[
-              'h-[14vh] pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[14vh] rounded-md overflow-hidden pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: selectedmaterial === 'Abstract' },
             ]"
             @click="toggleSelect('Abstract')"
@@ -112,7 +112,7 @@
           <!-- Stone Effect -->
           <div
             :class="[
-              'h-[14vh] pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[14vh] rounded-md overflow-hidden pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: selectedmaterial === 'Stone Effect' },
             ]"
             @click="toggleSelect('Stone Effect')"
@@ -145,7 +145,7 @@
           <!-- Wood Effect -->
           <div
             :class="[
-              'h-[14vh] pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[14vh] rounded-md overflow-hidden pvc_Design_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: selectedmaterial === 'Wood Effect' },
             ]"
             @click="toggleSelect('Wood Effect')"

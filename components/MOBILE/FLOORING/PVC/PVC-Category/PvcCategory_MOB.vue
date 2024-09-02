@@ -30,7 +30,7 @@
         <!-- Luxury Vinyl -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] w-full rounded-md overflow-hidden border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedCategory.includes('Luxury Vinyl') },
           ]"
           @click="toggleSelect('Luxury Vinyl')"
@@ -63,7 +63,7 @@
         <!-- Woven Vinyl -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] w-full rounded-md overflow-hidden border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedCategory.includes('Woven Vinyl') },
           ]"
           @click="toggleSelect('Woven Vinyl')"

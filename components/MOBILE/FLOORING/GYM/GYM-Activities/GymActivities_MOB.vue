@@ -46,7 +46,7 @@
               <!-- Cardio -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Cardio') },
                 ]"
                 @click="toggleSelect('Cardio')"
@@ -80,7 +80,7 @@
               <!-- Machine Training -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                   {
                     selected:
                       userStore.preference.spec_2.includes('Machine Training'),
@@ -120,7 +120,7 @@
               <!-- Free Weights -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected:
                       userStore.preference.spec_2.includes('Free Weights'),
@@ -157,7 +157,7 @@
               <!-- Functional Training -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected: userStore.preference.spec_2.includes(
                       'Functional Training'
@@ -204,7 +204,7 @@
               <!-- Dance -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Dance') },
                 ]"
                 @click="toggleSelect('Dance')"
@@ -238,7 +238,7 @@
               <!-- Aerobic -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Aerobic') },
                 ]"
                 @click="toggleSelect('Aerobic')"
@@ -273,7 +273,7 @@
               <!-- Zumba -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Zumba') },
                 ]"
                 @click="toggleSelect('Zumba')"
@@ -307,7 +307,7 @@
               <!-- Step -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Step') },
                 ]"
                 @click="toggleSelect('Step')"
@@ -342,7 +342,7 @@
               <!-- TRX -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('TRX') },
                 ]"
                 @click="toggleSelect('TRX')"
@@ -376,7 +376,7 @@
               <!-- Pilates -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Pilates') },
                 ]"
                 @click="toggleSelect('Pilates')"
@@ -417,7 +417,7 @@
               <!-- Weightlifting -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected:
                       userStore.preference.spec_2.includes('Weightlifting'),
@@ -454,7 +454,7 @@
               <!-- Powerlifting -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                   {
                     selected:
                       userStore.preference.spec_2.includes('Powerlifting'),
@@ -498,7 +498,7 @@
               <!-- Judo -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Judo') },
                 ]"
                 @click="toggleSelect('Judo')"
@@ -532,7 +532,7 @@
               <!-- Kickboxing -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                   {
                     selected:
                       userStore.preference.spec_2.includes('Kickboxing'),
@@ -570,7 +570,7 @@
               <!-- Karate -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Karate') },
                 ]"
                 @click="toggleSelect('Karate')"
@@ -604,7 +604,7 @@
               <!-- Boxing -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Boxing') },
                 ]"
                 @click="toggleSelect('Boxing')"
@@ -639,7 +639,7 @@
               <!-- Taekwondo -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   {
                     selected: userStore.preference.spec_2.includes('Taekwondo'),
                   },
@@ -675,7 +675,7 @@
               <!-- Akido -->
               <div
                 :class="[
-                  'h-[14vh] gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[14vh] overflow-hidden gym_Activity_Details_Mob-CONTAINER w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                   { selected: userStore.preference.spec_2.includes('Akido') },
                 ]"
                 @click="toggleSelect('Akido')"
