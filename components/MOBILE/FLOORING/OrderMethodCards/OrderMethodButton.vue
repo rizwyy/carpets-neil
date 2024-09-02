@@ -26,7 +26,7 @@
     <div class="flex items-center gap-[2vw] w-full">
       <!-- Icon Section -->
       <div
-        class="text-[2.8vh] flex-shrink-0 flex items-center justify-center"
+        class="text-[3vh] flex-shrink-0 flex items-center justify-center"
         :style="{ color: logoColor }"
         aria-label="icon"
       >
@@ -36,7 +36,7 @@
       <!-- Text Section -->
       <div
         :style="{ color: textColor }"
-        class="flex-1 text-start font-medium text-[2vh]"
+        class="flex-1 text-start font-[500] text-[2.4vh]"
         aria-label="button text"
       >
         {{ label }}
