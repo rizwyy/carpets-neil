@@ -10,7 +10,7 @@ const userStore = useUserStore();
     v-show="
       userStore.preference.spec_1 !== '' && userStore.userData.name === ''
     "
-    class="h-[8.2vh] floatingCTA w-[100vw] z-[99999] fixed bottom-[0vh] py-[1vh] backdrop-blur-[12px] bg-[#000] bg-opacity-[.9] left-[50%] translate-x-[-50%] flex font-outfit"
+    class="h-[8.2vh] floatingCTA w-[100vw] z-[99999] fixed bottom-[0vh] left-[0vw] py-[1vh] backdrop-blur-[12px] bg-[#000] bg-opacity-[.9] left-[50%] translate-x-[-50%] flex font-outfit"
   >
     <div
       class="h-full w-[66%] border-r-[.1vw] flex items-center justify-center border-[#ececec9]"
