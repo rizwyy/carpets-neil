@@ -128,7 +128,7 @@
               class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black flex justify-center items-center"
             >
               <span v-show="!isLoading">{{
-                isFormValidated() && cookieFound ? "EDIT" : "SAVE"
+                isFormValidated() && cookieFound ? "EDIT" : "PROCEED"
               }}</span>
               <LoadingIcon v-show="isLoading" />
             </button>

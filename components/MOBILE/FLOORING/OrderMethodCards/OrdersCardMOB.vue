@@ -26,20 +26,20 @@
             :selected="userStore.preference.orderMethod === 'whatsapp'"
             @click="toggleOrderMethod('whatsapp')"
             buttonClass="OrderMethods_MOB-CONTAINER"
-            containerBgColor="#A9DFC1"
-            selectedBorderColor="#207F5B"
-            textColor="#555"
-            logo-color="#207F5B"
+            containerBgColor="#207F5B"
+            selectedBorderColor="#A3D6A4"
+            textColor="#f1f1f1"
+            logo-color="#f1f1f1"
           />
           <OrderMethodButton
             label="Mail"
             :selected="userStore.preference.orderMethod === 'email'"
             @click="toggleOrderMethod('email')"
             buttonClass="OrderMethods_MOB-CONTAINER"
-            containerBgColor="#F4A399"
-            selectedBorderColor="#C0392B"
-            textColor="#555"
-            logo-color="#C0392B"
+            containerBgColor="#C0392B"
+            selectedBorderColor="#F9C4C2"
+            textColor="#f1f1f1"
+            logo-color="#f1f1f1"
           />
         </div>
       </div>

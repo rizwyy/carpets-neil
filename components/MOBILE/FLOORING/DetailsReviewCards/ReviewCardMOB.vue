@@ -57,12 +57,18 @@
     class="h-max w-full flex justify-evenly pb-[2vh]"
   >
     <button
+      v-if="!isRefreshLoading"
       @click="() => getHistory()"
-      class="h-max w-max px-[4vw] py-[2vh] text-[#555] rounded-full text-[3.2vh]"
+      class="h-max w-max text-[#555] rounded-full"
     >
-      <RefreshIcon v-if="!isRefreshLoading" />
-      <LoadingIcon2 v-else />
+      <div class="h-max w-max flex items-center gap-[1vw] text-[2.8vh]">
+        <span class="text-[2vh]">Refresh</span>
+        <RefreshIcon />
+      </div>
     </button>
+    <div v-else class="text-[3.2vh] px-[4vw]">
+      <LoadingIcon2 />
+    </div>
   </div>
   <div
     v-show="
@@ -82,7 +88,7 @@
       @click="HandleAddMore"
       class="border-[2px] rounded-md w-[90%] py-[2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center"
     >
-      <span v-if="!isAddMoreLoading">ADD MORE</span>
+      <span v-if="!isAddMoreLoading">BROWSE OTHER PRODUCTS</span>
       <LoadingIcon class="text-[4.2vh]" v-else />
     </button>
     <button

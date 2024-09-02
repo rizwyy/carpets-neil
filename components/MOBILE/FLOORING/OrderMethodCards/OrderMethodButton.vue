@@ -7,39 +7,35 @@
       borderColor: selected ? selectedBorderColor : '#777',
       color: textColor,
     }"
-    class="w-[44vw] h-[24vh] opacity-0 translate-y-[20%] rounded-2xl text-[2.4vh] font-[400] border-[2.8px] border-[#333] z-[999] text-white px-[1vw] flex flex-col items-start gap-[2vw] justify-between shadow-lg"
+    class="relative w-[44vw] h-[10vh] opacity-0 translate-y-[20%] rounded-lg text-[2.4vh] font-[400] border-[2.8px] border-[#333] z-[999] text-white px-[1vw] flex flex-col items-start gap-[2vw] justify-between shadow-lg"
   >
+    <!-- Tick Icon in the top-right corner when selected -->
     <div
-      :class="[
-        'h-max w-full px-[.4vw] flex',
-        selected ? 'justify-between' : 'justify-start',
-      ]"
+      v-show="selected"
+      class="absolute right-0 top-0 mt-[0.5vh] mr-[0.5vw] flex items-center justify-center z-[99]"
     >
       <span
+        :style="{ color: selectedBorderColor }"
+        class="h-max w-max font-[600] text-[2.8vh]"
+      >
+        <TickCircleIcon />
+      </span>
+    </div>
+
+    <div :class="['h-full w-full px-[2vw] flex items-center justify-center']">
+      <div
+        class="h-max w-max text-[3.8vh] flex-[1] pt-[.8vh]"
+        :style="{ color: logoColor }"
+      >
+        <WhatsappIcon v-if="label === 'WhatsApp'" />
+        <MailIcon v-else />
+      </div>
+      <div
         :style="{ color: textColor }"
-        class="pt-[1vh] text-start font-[500]"
+        class="h-max w pt-[1vh] text-start font-[500] flex-[2]"
       >
         {{ label }}
-      </span>
-      <div
-        v-show="selected"
-        class="selectedDiv h-full w-full flex justify-end pt-[1vh]"
-      >
-        <span
-          :style="{
-            color: selectedBorderColor,
-          }"
-          class="h-max w-max font-[600] text-[3.2vh]"
-          ><TickCircleIcon
-        /></span>
       </div>
-    </div>
-    <div
-      class="h-max w-max flex w-full flex justify-start pl-[0vw] text-[10.2vh]"
-      :style="{ color: logoColor }"
-    >
-      <WhatsappIcon v-if="label === 'WhatsApp'" />
-      <MailIcon v-else />
     </div>
   </button>
 </template>
