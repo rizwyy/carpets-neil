@@ -7,7 +7,8 @@
       borderColor: selected ? selectedBorderColor : '#777',
       color: textColor,
     }"
-    class="relative w-[44vw] h-[10vh] opacity-0 translate-y-[20%] rounded-lg text-[2.4vh] font-[400] border-[2.8px] border-[#333] z-[999] text-white px-[1vw] flex flex-col items-start gap-[2vw] justify-between shadow-lg"
+    class="relative w-[80vw] min-w-[150px] max-w-[300px] h-[8vh] min-h-[48px] max-h-[60px] rounded-lg text-[2.2vh] font-medium border-[2.8px] border-[#333] z-[999] text-white px-[4vw] flex items-center justify-between shadow-lg transition-all duration-300 ease-in-out"
+    aria-label="button"
   >
     <!-- Tick Icon in the top-right corner when selected -->
     <div
@@ -16,27 +17,27 @@
     >
       <span
         :style="{ color: selectedBorderColor }"
-        class="h-max w-max font-[600] text-[2.8vh]"
+        class="font-semibold text-[2.6vh]"
       >
         <TickCircleIcon />
       </span>
     </div>
 
-    <div
-      :class="[
-        'h-full w-full px-[2vw] flex items-center justify-center gap-[1.2vw]',
-      ]"
-    >
+    <div class="flex items-center gap-[2vw] w-full">
+      <!-- Icon Section -->
       <div
-        class="h-max w-max text-[3.8vh] pt-[.8vh] flex justify-end"
+        class="text-[2.8vh] flex-shrink-0 flex items-center justify-center"
         :style="{ color: logoColor }"
+        aria-label="icon"
       >
         <WhatsappIcon v-if="label === 'WhatsApp'" />
         <MailIcon v-else />
       </div>
+      <!-- Text Section -->
       <div
         :style="{ color: textColor }"
-        class="h-max w pt-[1vh] text-start font-[500] text-[2vh]"
+        class="flex-1 text-start font-medium text-[2vh]"
+        aria-label="button text"
       >
         {{ label }}
       </div>
@@ -84,3 +85,16 @@ defineProps({
   },
 });
 </script>
+
+<style scoped>
+/* Scoped styles for custom adjustments */
+button {
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  touch-action: manipulation; /* Prevents delay on touch devices */
+}
+
+button:hover {
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow enhancement */
+}
+</style>
