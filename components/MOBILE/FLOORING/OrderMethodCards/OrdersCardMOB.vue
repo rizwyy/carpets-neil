@@ -28,7 +28,7 @@
             buttonClass="OrderMethods_MOB-CONTAINER"
             containerBgColor="#A9DFC1"
             selectedBorderColor="#207F5B"
-            textColor="#333333"
+            textColor="#555"
             logo-color="#207F5B"
           />
           <OrderMethodButton
@@ -38,7 +38,7 @@
             buttonClass="OrderMethods_MOB-CONTAINER"
             containerBgColor="#F4A399"
             selectedBorderColor="#C0392B"
-            textColor="#333333"
+            textColor="#555"
             logo-color="#C0392B"
           />
         </div>
