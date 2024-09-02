@@ -32,7 +32,7 @@
       </div>
       <div
         :style="{ color: textColor }"
-        class="h-max w pt-[1vh] text-start font-[500] flex-[2]"
+        class="h-max w pt-[1vh] text-start font-[500] flex-[1.4]"
       >
         {{ label }}
       </div>
