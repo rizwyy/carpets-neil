@@ -434,6 +434,7 @@ const toggleSelect = (finish) => {
 <style scoped>
 .selected {
   border-radius: 0px; /* Adjust this value as needed */
+  border-radius: 0.375rem;
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

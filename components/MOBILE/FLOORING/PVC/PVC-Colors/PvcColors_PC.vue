@@ -552,6 +552,7 @@ function getHexCodes() {
 }
 
 .selected {
+  border-radius: 0.375rem;
   border: 2px solid #333; /* Example border color */
 }
 

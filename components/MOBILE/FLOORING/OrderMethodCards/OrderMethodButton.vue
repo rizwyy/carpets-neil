@@ -22,9 +22,13 @@
       </span>
     </div>
 
-    <div :class="['h-full w-full px-[2vw] flex items-center justify-center']">
+    <div
+      :class="[
+        'h-full w-full px-[2vw] flex items-center justify-center gap-[1.2vw]',
+      ]"
+    >
       <div
-        class="h-max w-max text-[3.8vh] flex-[1] pt-[.8vh]"
+        class="h-max w-max text-[3.8vh] pt-[.8vh] flex justify-end"
         :style="{ color: logoColor }"
       >
         <WhatsappIcon v-if="label === 'WhatsApp'" />
@@ -32,7 +36,7 @@
       </div>
       <div
         :style="{ color: textColor }"
-        class="h-max w pt-[1vh] text-start font-[500] flex-[1.2]"
+        class="h-max w pt-[1vh] text-start font-[500] text-[2vh]"
       >
         {{ label }}
       </div>
