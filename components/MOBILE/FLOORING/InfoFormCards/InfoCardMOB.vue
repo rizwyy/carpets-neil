@@ -38,45 +38,7 @@
           <div
             class="invisible opacity-0 h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-[6vh]"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="18" cy="12" r="0" fill="#222">
-                <animate
-                  attributeName="r"
-                  begin=".67"
-                  calcMode="spline"
-                  dur="1.5s"
-                  keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                  repeatCount="indefinite"
-                  values="0;2;0;0"
-                />
-              </circle>
-              <circle cx="12" cy="12" r="0" fill="#222">
-                <animate
-                  attributeName="r"
-                  begin=".33"
-                  calcMode="spline"
-                  dur="1.5s"
-                  keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                  repeatCount="indefinite"
-                  values="0;2;0;0"
-                />
-              </circle>
-              <circle cx="6" cy="12" r="0" fill="#222">
-                <animate
-                  attributeName="r"
-                  begin="0"
-                  calcMode="spline"
-                  dur="1.5s"
-                  keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                  repeatCount="indefinite"
-                  values="0;2;0;0"
-                />
-              </circle>
-            </svg>
+            <LoadingIcon />
           </div>
           <div
             class="checkout_Overlay h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
@@ -84,27 +46,35 @@
 
           <div class="h-max w-full flex flex-col gap-[vh]">
             <input
-              :class="{
-                'bg-gray-300': cookieFound,
-                'bg-white': !cookieFound,
-              }"
-              :readonly="cookieFound"
+              :class="[
+                'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[1.8vh] outline-none ',
+                {
+                  'bg-gray-300': isFormValidated() && cookieFound,
+                  'bg-white': !(isFormValidated() && cookieFound),
+                  'border-red-500 focus:border-red-300': isNameInvalid, // Add this line to conditionally apply the red border
+                  'border-[#555] focus:border-black': !isNameInvalid, // Default border color when not invalid
+                },
+              ]"
+              :readonly="isFormValidated() && cookieFound"
               type="text"
-              class="border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
               placeholder="Name"
               v-model="nameIpt"
             />
           </div>
           <div class="h-max w-full flex flex-col">
             <input
-              :class="{
-                'bg-gray-300': cookieFound,
-                'bg-white': !cookieFound,
-              }"
-              :readonly="cookieFound"
+              :class="[
+                'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[1.8vh] outline-none ',
+                {
+                  'bg-gray-300': isFormValidated() && cookieFound,
+                  'bg-white': !(isFormValidated() && cookieFound),
+                  'border-red-500 focus:border-red-300': isMailInvalid, // Add this line to conditionally apply the red border
+                  'border-[#555] focus:border-black': !isMailInvalid, // Default border color when not invalid
+                },
+              ]"
+              :readonly="isFormValidated() && cookieFound"
               :required="mailIpt.length > 8"
               type="email"
-              class="border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] border-[#555] bg-[#fff9] py-[1.8vh] outline-none focus:border-black"
               placeholder="Mail"
               v-model="mailIpt"
             />
@@ -112,12 +82,16 @@
           <div class="h-max w-full flex flex-col gap-[6.2vh] pb-[6.2vh]">
             <div class="h-max w-full flex">
               <select
-                :class="{
-                  'bg-gray-300': cookieFound,
-                  'bg-white': !cookieFound,
-                }"
+                :class="[
+                  'w-max rounded-l-md border-[2px] border-r-[0px] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoMOB-CONTAINER opacity-0',
+                  {
+                    'bg-gray-300': isFormValidated() && cookieFound,
+                    'bg-white': !(isFormValidated() && cookieFound),
+                    'border-red-500 focus:border-red-300': isPhoneInvalid, // Apply red border and focus state if phone is invalid
+                    'border-[#555]': !isPhoneInvalid, // Default border color when valid
+                  },
+                ]"
                 v-model="userStore.preference.country"
-                class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoMOB-CONTAINER opacity-0"
               >
                 <option value="Bahrain">+973</option>
                 <option value="UAE">+971</option>
@@ -125,66 +99,38 @@
                 <option value="Kuwait">+965</option>
                 <option value="Qatar">+974</option>
               </select>
+
               <input
-                :readonly="cookieFound"
-                :class="{
-                  'bg-gray-300': cookieFound,
-                  'bg-white': !cookieFound,
-                }"
+                :readonly="isFormValidated() && cookieFound"
+                :class="[
+                  '[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] py-[1.8vh] text-[18px] outline-none',
+                  {
+                    'bg-gray-300': isFormValidated() && cookieFound,
+                    'bg-white': !(isFormValidated() && cookieFound),
+                    'border-red-500 focus:border-red-300': isPhoneInvalid, // Apply red border and focus state if phone is invalid
+                    'border-[#555] border-l-[#777] focus:border-black':
+                      !isPhoneInvalid, // Default border color when valid
+                  },
+                ]"
                 :required="phoneIpt.length > 8"
                 type="number"
-                class="[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] border-[#555] border-l-[#777] bg-[#fff9] py-[1.8vh] text-[18px] outline-none focus:border-black"
                 placeholder="Phone"
                 v-model="phoneIpt"
               />
             </div>
+
             <button
-              @click="cookieFound ? toggleReadOnly() : handleInfoProceedings()"
+              @click="
+                isFormValidated() && cookieFound
+                  ? toggleReadOnly()
+                  : handleInfoProceedings()
+              "
               class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black flex justify-center items-center"
             >
               <span v-show="!isLoading">{{
-                cookieFound ? "EDIT" : "SAVE"
+                isFormValidated() && cookieFound ? "EDIT" : "SAVE"
               }}</span>
-              <svg
-                v-show="isLoading"
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-[5.2vh]"
-                viewBox="0 0 24 24"
-              >
-                <circle cx="18" cy="12" r="0" fill="#222">
-                  <animate
-                    attributeName="r"
-                    begin=".67"
-                    calcMode="spline"
-                    dur="1.5s"
-                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                    repeatCount="indefinite"
-                    values="0;2;0;0"
-                  />
-                </circle>
-                <circle cx="12" cy="12" r="0" fill="#222">
-                  <animate
-                    attributeName="r"
-                    begin=".33"
-                    calcMode="spline"
-                    dur="1.5s"
-                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                    repeatCount="indefinite"
-                    values="0;2;0;0"
-                  />
-                </circle>
-                <circle cx="6" cy="12" r="0" fill="#222">
-                  <animate
-                    attributeName="r"
-                    begin="0"
-                    calcMode="spline"
-                    dur="1.5s"
-                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                    repeatCount="indefinite"
-                    values="0;2;0;0"
-                  />
-                </circle>
-              </svg>
+              <LoadingIcon v-show="isLoading" />
             </button>
           </div>
         </div>
@@ -194,6 +140,7 @@
 </template>
 
 <script setup>
+import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
 import { ref } from "vue";
 const userPreference = useCookie("userPreference");
@@ -224,30 +171,77 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
   cookieFound.value = true;
 }
-function handleInfoProceedings() {
-  scrollBy(800);
+const isNameInvalid = ref(false);
+const isMailInvalid = ref(false);
+const isPhoneInvalid = ref(false);
 
+function handleInfoProceedings() {
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
   );
-  const isValid = validateInputs(
+  const validationResults = validateInputs(
     mailIpt.value,
     `${phoneWithCode}`,
     nameIpt.value
   );
+  const isValid =
+    validationResults.isEmailValid &&
+    validationResults.isPhoneValid &&
+    validationResults.isNameValid;
   if (!isValid) {
-    handleTempAnimation("iptErrMsg_Wooden");
+    if (!validationResults.isEmailValid) {
+      // Handle invalid email
+      isMailInvalid.value = true;
+    }
+
+    if (!validationResults.isPhoneValid) {
+      isPhoneInvalid.value = true;
+      // Handle invalid phone
+    }
+
+    if (!validationResults.isNameValid) {
+      // Handle invalid name
+      isNameInvalid.value = true;
+    }
+    userStore.isFormValidated = false;
     return;
   }
 
-  userStore.userData.name = nameIpt.value;
-  userStore.userData.email = mailIpt.value;
-  userStore.userData.phone = phoneWithCode;
-  setUserPreferenceCookie();
-  userStore.updateCart();
+  if (!isValid) {
+    userStore.isFormValidated = false;
+    return;
+  } else {
+    isNameInvalid.value = false;
+    isPhoneInvalid.value = false;
+    isMailInvalid.value = false;
+    userStore.userData.name = nameIpt.value;
+    userStore.userData.email = mailIpt.value;
+    userStore.userData.phone = phoneWithCode;
+    setUserPreferenceCookie();
+    userStore.updateCart();
+    userStore.isFormValidated = true;
+    scrollBy(800);
+  }
 }
-
+function isFormValidated() {
+  return (
+    isFieldValidated("name") &&
+    isFieldValidated("email") &&
+    isFieldValidated("phone")
+  );
+}
+function isFieldValidated(field) {
+  if (field === "name") {
+    return userStore.userData.name.trim().length > 0;
+  } else if (field === "email") {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(userStore.userData.email);
+  } else if (field === "phone") {
+    return userStore.userData.phone.trim().length > 8;
+  }
+  return false;
+}
 onMounted(() => {
   if (userPreference.value && typeof userPreference.value === "object") {
     const { name = "", phone = "", email = "" } = toRaw(userPreference.value);

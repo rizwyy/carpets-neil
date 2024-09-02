@@ -23,25 +23,30 @@ export function getColorHex(color) {
 }
 export function validateInputs(emailIpt, phoneIpt, nameIpt) {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   const phonePattern =
     /^\+?(9733\d{7}|9715\d{8}|9665\d{8}|965[569]\d{6}|974[3456]\d{7})$/;
+
   const isEmailValid = emailPattern.test(emailIpt.trim());
+  const isPhoneValid = phonePattern.test(phoneIpt.trim());
+  const isNameValid = nameIpt.trim().length >= 2;
+
+  const validationResult = {
+    isEmailValid,
+    isPhoneValid,
+    isNameValid,
+  };
+
   if (!isEmailValid) {
     console.log("Invalid email format");
   }
-
-  const isPhoneValid = phonePattern.test(phoneIpt.trim());
   if (!isPhoneValid) {
     console.log("Invalid phone number format");
   }
-
-  const isNameValid = nameIpt.trim().length >= 2;
   if (!isNameValid) {
     console.log("Name must be at least 2 characters long");
   }
 
-  return isEmailValid && isPhoneValid && isNameValid;
+  return validationResult;
 }
 
 export function addCountryCode(phoneNumber, country) {

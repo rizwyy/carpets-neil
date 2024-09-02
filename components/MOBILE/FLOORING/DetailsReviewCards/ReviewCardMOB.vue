@@ -7,7 +7,9 @@
       userStore.preference.color.length > 0 &&
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
-      userStore.userData.name !== ''
+      userStore.userData.name !== '' &&
+      userStore.isFormValidated &&
+      userStore.isFormValidated
     "
     class="h-max w-full px-[4.2vw] text-detailsContainer_heading_MOB"
   >
@@ -22,7 +24,8 @@
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== '' &&
-        userStore.userData.name !== ''
+        userStore.userData.name !== '' &&
+        userStore.isFormValidated
       "
       class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh]"
     >
@@ -48,7 +51,8 @@
       userStore.preference.color.length > 0 &&
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
-      userStore.userData.name !== ''
+      userStore.userData.name !== '' &&
+      userStore.isFormValidated
     "
     class="h-max w-full flex justify-evenly pb-[2vh]"
   >
@@ -68,7 +72,8 @@
       userStore.preference.color.length > 0 &&
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
-      userStore.userData.name !== ''
+      userStore.userData.name !== '' &&
+      userStore.isFormValidated
     "
     class="h-max w-full flex flex-col items-center py-[8vh] border-t-[2px] border-dotted border-[#999] gap-[4vh]"
   >
