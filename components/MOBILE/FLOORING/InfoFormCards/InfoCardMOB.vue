@@ -30,8 +30,13 @@
               >Your Contact Information</span
             >
             <span
-              class="InfoMOB-HEADING opacity-0 translate-y-[20%] text-[#999] text-[2.2vh] font-[450]"
+              class="InfoMOB-HEADING opacity-0 mb-[1vh] translate-y-[20%] text-[#999] text-[2.2vh] font-[450]"
               >Enter your contact information</span
+            >
+            <span
+              v-show="isNameInvalid || isMailInvalid || isPhoneInvalid"
+              class="text-red-400 text-[2vh] font-[450]"
+              >Something went wrong!</span
             >
           </div>
 
