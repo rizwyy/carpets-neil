@@ -61,7 +61,8 @@
 
 <script setup>
 import gsap from "gsap";
-import CloseIcon from "~/public/icons/CloseIcon";
+import CloseIcon from "~/public/icons/closeIcon.vue";
+
 const isMenuOpen = ref(false);
 
 import SpecCounter from "./SpecCounter.vue";
