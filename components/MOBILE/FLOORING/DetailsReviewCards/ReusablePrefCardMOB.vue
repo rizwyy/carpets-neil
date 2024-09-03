@@ -38,7 +38,7 @@
           <div class="h-max w-max flex items-center justify-end gap-[2vw]">
             <div class="h-max w-max flex gap-[2vw] items-center justify-end">
               <button
-                class="px-[4vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600]"
+                class="px-[4vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600] text-red-700"
                 @click.stop="confirmDelete"
               >
                 CONFIRM

@@ -1,5 +1,27 @@
 <template>
   <div
+    v-if="isFlooringVisible"
+    class="h-screen w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
+  >
+    <div
+      class="h-[100svh] w-screen gap-[2vh] bg-inherit flex flex-col items-center justify-start gap-[8vh]"
+    >
+      <div
+        class="h-max w-full flex justify-between items-center px-[7.6vw] pt-[6vh]"
+      >
+        <span class="text-[3.8vh] text-[#333] font-[400]"
+          >Flooring Options</span
+        >
+        <span
+          @click="handleCancelAddMoreFlooring"
+          class="flex items-center text-[3.8vh] text-[#222]"
+          ><ClearAllIcon
+        /></span>
+      </div>
+      <FlooringGridOverlayMOB />
+    </div>
+  </div>
+  <div
     v-show="
       userStore.preference.flooring === `${flooring}` &&
       userStore.preference.spec_1 !== '' &&
@@ -116,6 +138,9 @@ import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
 import FooterMOB from "../../FooterMOB.vue";
+import FlooringGridMOB from "../FlooringGridMOB.vue";
+import FlooringGridOverlayMOB from "../FlooringGridOverlayMOB.vue";
+import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
 const userPreference = useCookie("userPreference");
@@ -123,6 +148,7 @@ const isAddMoreLoading = ref(false);
 const isConfirmationLoading = ref(false);
 const isRefreshLoading = ref(false);
 const historyFound = ref(true);
+const isFlooringVisible = ref(false);
 
 const { flooring, link } = defineProps(["flooring", "link"]);
 const firstName = computed(() => {
@@ -334,7 +360,8 @@ const insertLog = (isOrderConfirmed) => {
       userStore.userData.id = logData.id;
 
       // Redirect to /flooring after successful log insertion
-      router.push("/flooring");
+      isFlooringVisible.value = true;
+      DISABLE_SCROLL();
       isAddMoreLoading.value = false;
     })
     .catch((err) => {
@@ -347,6 +374,11 @@ const HandleAddMore = () => {
   isAddMoreLoading.value = true;
   // Call the insertLog function
   insertLog(false);
+};
+
+const handleCancelAddMoreFlooring = () => {
+  isFlooringVisible.value = false;
+  ENABLE_SCROLL();
 };
 
 //
