@@ -30,7 +30,6 @@
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
       userStore.userData.name !== '' &&
-      userStore.isFormValidated &&
       userStore.isFormValidated
     "
     class="h-max w-full px-[4.2vw] text-detailsContainer_heading_MOB"
@@ -138,8 +137,8 @@ import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
 import FooterMOB from "../../FooterMOB.vue";
-import FlooringGridMOB from "../FlooringGridMOB.vue";
-import FlooringGridOverlayMOB from "../FlooringGridOverlayMOB.vue";
+import FlooringGridMOB from "../FLOORING-ITEMS/FlooringGridMOB.vue";
+import FlooringGridOverlayMOB from "../FLOORING-ITEMS/FlooringGridOverlayMOB.vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");

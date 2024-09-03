@@ -21,7 +21,7 @@
         <div
           class="h-max w-full flex items-center justify-center gap-[4vw] px-[4vw] mt-[4vh]"
         >
-          <OrderMethodButton
+          <OrderMethodButtonMOB
             label="WhatsApp"
             :selected="userStore.preference.orderMethod === 'whatsapp'"
             @click="toggleOrderMethod('whatsapp')"
@@ -31,7 +31,7 @@
             textColor="#f1f1f1"
             logo-color="#f1f1f1"
           />
-          <OrderMethodButton
+          <OrderMethodButtonMOB
             label="Mail"
             :selected="userStore.preference.orderMethod === 'email'"
             @click="toggleOrderMethod('email')"
@@ -54,8 +54,8 @@
 
 <script setup>
 import useUserStore from "~/stores/user";
-import OrderMethodButton from "./OrderMethodButton.vue";
-import WarningModal from "./WarningModal.vue";
+import OrderMethodButtonMOB from "./OrderMethodButtonMOB.vue";
+import WarningModal from "./WarningModalMOB.vue";
 
 const userStore = useUserStore();
 const userPreference = useCookie("userPreference");

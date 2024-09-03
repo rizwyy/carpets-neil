@@ -26,21 +26,10 @@
           <button
             @click="clearColorSelections"
             v-show="userStore.preference.color.length"
-            class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[2.8vh] rounded-md flex gap-[.4vw] items-center"
           >
             <!-- DESKTOP -->
-            <span class="text-[2.2vh]">Clear All</span
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-              />
-            </svg>
+            <span class="text-[2.2vh]">Clear All</span><ClearAllIcon />
           </button>
         </div>
 
@@ -446,44 +435,29 @@
 </template>
 <script setup>
 import { ref } from "vue";
-
+import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 // PINIA
 import useUserStore from "~/stores/user";
 
+const { existingUser } = defineProps(["existingUser"]);
 const userStore = useUserStore();
 const customColor = ref("");
+const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
 const customColorArray = ref([]);
-const isMultiColoredOpted = ref(false);
+
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
   isMultiColoredOpted.value = false;
 }
-
-function clearCustomColorValue() {
-  customColor.value = "";
-}
 const removeCustomColor = () => {
   return userStore.preference.color.filter((color) => color !== "CustomColor");
 };
 const toggleSelect = (color, added) => {
-  if (color.length < 3) {
-    return;
-  }
   if (color === "done") {
-    const customColorValue = customColor.value.trim(); // Trim to remove any leading/trailing whitespace
-
-    if (
-      customColorValue !== "" &&
-      !userStore.preference.color.includes(customColorValue)
-    ) {
-      userStore.preference.color.push(customColorValue);
-    }
-    customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToBottom();
-    return;
+    existingUser ? scrollBy(800) : scrollToBottom();
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -496,12 +470,14 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      existingUser ? scrollBy(800) : scrollToBottom();
     }
     selectedColors.value.push(color);
   }
 
   userStore.preference.color = toRaw(selectedColors.value);
+  userStore.updateCart();
+
   if (added !== "addMore") {
     isMultiColoredOpted.value = false;
   }

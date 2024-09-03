@@ -29,13 +29,13 @@
 </template>
 
 <script setup>
-import FlooringLayoutMOB from "../../components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
+import FlooringLayoutMOB from "~/components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
 
 import FlooringLayoutPC from "~/components/DESKTOP/FlooringLayoutPC.vue";
-import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
-import SearchBarMOB from "../../components/SearchBar/SearchBarMOB.vue";
+import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
+import SearchBarMOB from "~/components/SearchBar/SearchBarMOB.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
-import BannerYouWin from "./../../components/BannerYouWin.vue";
+import BannerYouWin from "./~/components/BannerYouWin.vue";
 
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";

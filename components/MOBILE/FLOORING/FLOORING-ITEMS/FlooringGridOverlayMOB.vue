@@ -81,7 +81,7 @@
 import { defineAsyncComponent } from "vue";
 
 const FlooringCategoryItem = defineAsyncComponent(() =>
-  import("./FlooringCategoryOverlayItem.vue")
+  import("./FlooringCategoryOverlayItemMOB.vue")
 );
 </script>
 

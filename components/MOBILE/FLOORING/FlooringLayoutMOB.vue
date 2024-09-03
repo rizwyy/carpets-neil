@@ -1,11 +1,6 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
-import FlooringGridMOB from "./FlooringGridMOB.vue";
-
-// Lazy-load the FlooringCategoryItem component
-const FlooringCategoryItem = defineAsyncComponent(() =>
-  import("./FlooringCategoryItem.vue")
-);
+import FlooringGridMOB from "./FLOORING-ITEMS/FlooringGridMOB.vue";
 
 // Lazy-load the ComingSoonItem component
 const ComingSoonItem = defineAsyncComponent(() =>

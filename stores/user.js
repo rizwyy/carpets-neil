@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 
 const useUserStore = defineStore("user", {
   state: () => ({
+    specCount: 0,
     isFormValidate: false,
     customPreference: {
       category: "",
@@ -51,27 +52,36 @@ const useUserStore = defineStore("user", {
       }
     },
 
-    // Action to update the cart
+    // Action to update the cart and specCount
     updateCart() {
+      const { spec_1, spec_2, spec_3, spec_4, spec_5, budget, color } =
+        this.preference;
+
+      // Calculate specCount based on selected preferences
+      this.specCount = [spec_1, spec_2, spec_3, spec_4, spec_5, budget]
+        .concat(color.length > 0 ? "color" : [])
+        .filter(Boolean).length;
+
+      // Check if all required fields are filled
       if (
-        this.preference.spec_1 !== "" &&
-        this.preference.spec_2 !== "" &&
-        this.preference.budget !== "" &&
-        this.preference.color.length > 0 &&
-        this.userData.name !== ""
+        spec_1 &&
+        spec_2 &&
+        budget &&
+        color.length > 0 &&
+        this.userData.name
       ) {
         const newCartItem = {
-          budget: this.preference.budget,
-          color: this.preference.color || [],
+          budget,
+          color: color || [],
           country: this.preference.country || "Bahrain",
           flooring: this.preference.flooring,
           isOrderConfirmed: false,
           orderMethod: this.preference.orderMethod,
-          spec_1: this.preference.spec_1,
-          spec_2: this.preference.spec_2,
-          spec_3: this.preference.spec_3 || "",
-          spec_4: this.preference.spec_4 || "",
-          spec_5: this.preference.spec_5 || "",
+          spec_1,
+          spec_2,
+          spec_3: spec_3 || "",
+          spec_4: spec_4 || "",
+          spec_5: spec_5 || "",
           id: "PINIA", // Ensure the id is always "PINIA"
         };
 

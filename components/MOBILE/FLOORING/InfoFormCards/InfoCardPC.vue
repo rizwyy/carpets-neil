@@ -36,50 +36,17 @@
                 class="InfoCardPC-HEADING opacity-0 translate-y-[20%] text-[#999] text-[1.4vw] font-[450]"
                 >Enter your contact information</span
               >
+              <span
+                v-show="isNameInvalid || isMailInvalid || isPhoneInvalid"
+                class="text-red-400 text-[2vh] font-[450]"
+                >Something went wrong!</span
+              >
             </div>
 
             <div
               class="invisible opacity-0 InfoCardPC-CONTAINER h-full w-full absolute top-0 left-0 flex items-center justify-center bg-[#fff1] backdrop-blur-[8px] z-[1]"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-[6vh]"
-                viewBox="0 0 24 24"
-              >
-                <circle cx="18" cy="12" r="0" fill="#222">
-                  <animate
-                    attributeName="r"
-                    begin=".67"
-                    calcMode="spline"
-                    dur="1.5s"
-                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                    repeatCount="indefinite"
-                    values="0;2;0;0"
-                  />
-                </circle>
-                <circle cx="12" cy="12" r="0" fill="#222">
-                  <animate
-                    attributeName="r"
-                    begin=".33"
-                    calcMode="spline"
-                    dur="1.5s"
-                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                    repeatCount="indefinite"
-                    values="0;2;0;0"
-                  />
-                </circle>
-                <circle cx="6" cy="12" r="0" fill="#222">
-                  <animate
-                    attributeName="r"
-                    begin="0"
-                    calcMode="spline"
-                    dur="1.5s"
-                    keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-                    repeatCount="indefinite"
-                    values="0;2;0;0"
-                  />
-                </circle>
-              </svg>
+              <LoadingIcon />
             </div>
             <div
               class="checkout_Overlay h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
@@ -90,10 +57,10 @@
               >
               <input
                 :class="{
-                  'bg-[#e9e9e9]': cookieFound,
-                  'bg-white': !cookieFound,
+                  'bg-gray-300': isFormValidated() && cookieFound,
+                  'bg-white': !(isFormValidated() && cookieFound),
                 }"
-                :readonly="cookieFound"
+                :readonly="isFormValidated() && cookieFound"
                 class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
                 placeholder="Name"
                 v-model="nameIpt"
@@ -106,13 +73,15 @@
                 >
                 <input
                   :class="{
-                    'bg-[#e9e9e9]': cookieFound,
-                    'bg-white': !cookieFound,
+                    'bg-gray-300': isFormValidated() && cookieFound,
+                    'bg-white': !(isFormValidated() && cookieFound),
+                    'border-red-500 focus:border-red-300': isNameInvalid,
+                    'border-[#555] focus:border-black': !isNameInvalid,
                   }"
-                  :readonly="cookieFound"
+                  :readonly="isFormValidated() && cookieFound"
                   :required="mailIpt.length > 8"
                   type="email"
-                  class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
+                  class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] py-[2.4vh] outline-none focus:border-black"
                   placeholder="Mail"
                   v-model="mailIpt"
                 />
@@ -124,8 +93,10 @@
                 <div class="h-max w-full flex">
                   <select
                     :class="{
-                      'bg-[#e9e9e9]': cookieFound,
-                      'bg-white': !cookieFound,
+                      'bg-gray-300': isFormValidated() && cookieFound,
+                      'bg-white': !(isFormValidated() && cookieFound),
+                      'border-red-500 focus:border-red-300': isNameInvalid,
+                      'border-[#555] focus:border-black': !isNameInvalid,
                     }"
                     v-model="userStore.preference.country"
                     class="w-max rounded-l-md border-[2px] border-r-[0px] border-[#555] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoCardPC-CONTAINER opacity-0"
@@ -137,14 +108,16 @@
                     <option value="Qatar">+974</option>
                   </select>
                   <input
-                    :readonly="cookieFound"
+                    :readonly="isFormValidated() && cookieFound"
                     :class="{
-                      'bg-[#e9e9e9]': cookieFound,
-                      'bg-white': !cookieFound,
+                      'bg-gray-300': isFormValidated() && cookieFound,
+                      'bg-white': !(isFormValidated() && cookieFound),
+                      'border-red-500 focus:border-red-300': isNameInvalid,
+                      'border-[#555] focus:border-black': !isNameInvalid,
                     }"
                     :required="phoneIpt.length > 8"
                     type="number"
-                    class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[1.2vw] border-[#555] border-l-[#777] bg-[#fff9] py-[2.4vh] text-[2vh] outline-none focus:border-black"
+                    class="[appearance:textfield] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-r-md px-[1.2vw] bg-[#fff9] py-[2.4vh] text-[2vh] outline-none"
                     placeholder="Phone"
                     v-model="phoneIpt"
                   />
@@ -156,10 +129,10 @@
                 @click="
                   cookieFound ? toggleReadOnly() : handleInfoProceedings()
                 "
-                class="bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none focus:border-black"
+                class="bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none"
               >
                 <span v-show="!isLoading">{{
-                  cookieFound ? "EDIT" : "SAVE"
+                  cookieFound ? "EDIT" : "PROCEED"
                 }}</span>
               </button>
             </div>
@@ -171,6 +144,7 @@
 </template>
 
 <script setup>
+import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
 import { ref } from "vue";
 const userPreference = useCookie("userPreference");
@@ -201,53 +175,88 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
   cookieFound.value = true;
 }
-function handleInfoProceedings() {
-  scrollBy(800);
+const isNameInvalid = ref(false);
+const isMailInvalid = ref(false);
+const isPhoneInvalid = ref(false);
 
+function handleInfoProceedings() {
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
   );
-  const isValid = validateInputs(
+  const validationResults = validateInputs(
     mailIpt.value,
     `${phoneWithCode}`,
     nameIpt.value
   );
+  const isValid =
+    validationResults.isEmailValid &&
+    validationResults.isPhoneValid &&
+    validationResults.isNameValid;
   if (!isValid) {
-    handleTempAnimation("iptErrMsg_Wooden");
+    if (!validationResults.isEmailValid) {
+      // Handle invalid email
+      isMailInvalid.value = true;
+    }
+
+    if (!validationResults.isPhoneValid) {
+      isPhoneInvalid.value = true;
+      // Handle invalid phone
+    }
+
+    if (!validationResults.isNameValid) {
+      // Handle invalid name
+      isNameInvalid.value = true;
+    }
+    userStore.isFormValidated = false;
     return;
   }
 
-  userStore.userData.name = nameIpt.value;
-  userStore.userData.email = mailIpt.value;
-  userStore.userData.phone = phoneWithCode;
-  setUserPreferenceCookie();
+  if (!isValid) {
+    userStore.isFormValidated = false;
+    return;
+  } else {
+    isNameInvalid.value = false;
+    isPhoneInvalid.value = false;
+    isMailInvalid.value = false;
+    userStore.userData.name = nameIpt.value;
+    userStore.userData.email = mailIpt.value;
+    userStore.userData.phone = phoneWithCode;
+    setUserPreferenceCookie();
+    userStore.updateCart();
+    userStore.isFormValidated = true;
+    scrollBy(800);
+  }
 }
-
+function isFormValidated() {
+  return (
+    isFieldValidated("name") &&
+    isFieldValidated("email") &&
+    isFieldValidated("phone")
+  );
+}
+function isFieldValidated(field) {
+  if (field === "name") {
+    return userStore.userData.name.trim().length > 0;
+  } else if (field === "email") {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(userStore.userData.email);
+  } else if (field === "phone") {
+    return userStore.userData.phone.trim().length > 8;
+  }
+  return false;
+}
 onMounted(() => {
-  const userPreferenceCookie = toRaw(userPreference.value);
+  if (userPreference.value && typeof userPreference.value === "object") {
+    const { name = "", phone = "", email = "" } = toRaw(userPreference.value);
 
-  // Check if userPreferenceCookie exists and has the required properties
-  if (
-    userPreferenceCookie &&
-    typeof userPreferenceCookie.name === "string" &&
-    (typeof userPreferenceCookie.phone === "string" ||
-      typeof userPreferenceCookie.email === "string")
-  ) {
-    // Safely assign name, phone, and email values
-    userStore.userData.name = nameIpt.value = userPreferenceCookie.name;
-    userStore.userData.phone = phoneIpt.value = userPreferenceCookie.phone
-      ? userPreferenceCookie.phone.substring(4)
-      : "";
-    userStore.userData.email = mailIpt.value = userPreferenceCookie.email || "";
+    userStore.userData.name = nameIpt.value = name || "";
+    userStore.userData.phone = phoneIpt.value = phone ? phone.substring(4) : "";
+    userStore.userData.email = mailIpt.value = email || "";
 
-    // If the name exists, set cookieFound to true
     if (userStore.userData.name) {
       cookieFound.value = true;
     }
-  } else {
-    // If userPreferenceCookie doesn't exist or is invalid, just return
-    return;
   }
 });
 </script>

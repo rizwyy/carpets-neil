@@ -1,5 +1,5 @@
 <template>
-  <div class="h-max w-screen flex flex-col gap-[1.8vh]">
+  <div class="min-[990px]:hidden h-max w-screen flex flex-col gap-[1.8vh]">
     <div
       class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[1]"
     >
@@ -81,7 +81,7 @@
 import { defineAsyncComponent } from "vue";
 
 const FlooringCategoryItem = defineAsyncComponent(() =>
-  import("./FlooringCategoryItem.vue")
+  import("../FLOORING-ITEMS/FlooringCategoryItem.vue")
 );
 </script>
 

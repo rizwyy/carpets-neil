@@ -27,9 +27,7 @@
     >
       WOLTIZ
     </a>
-    <a href="/designer" class="h-max w-max block text-[2vh] font-[500]"
-      >DESIGNER</a
-    >
+    <div class="h-max w-max"><SpecCounter /></div>
   </div>
   <div
     v-if="isMenuOpen"
@@ -42,23 +40,14 @@
       >
         WOLTIZ
       </a>
-      <span
-        ><svg
-          fill="#333"
-          @click="closeMenu"
-          height="32"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275z"
-          ></path></svg
-      ></span>
+      <span class="text-[5vh]">
+        <CloseIcon @click="closeMenu" />
+      </span>
     </div>
     <div
       class="h-[66vh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
     >
-      <a href="/">Home</a><a href="/about">About</a><span>Contact</span
+      <a href="/">Designer</a><a href="/about">About</a><span>Contact</span
       ><a href="/privacy">Privacy Policy</a>
     </div>
     <div class="h-[20vh] w-screen flex flex-col justify-start">
@@ -72,7 +61,10 @@
 
 <script setup>
 import gsap from "gsap";
+import CloseIcon from "~/public/icons/CloseIcon";
 const isMenuOpen = ref(false);
+
+import SpecCounter from "./SpecCounter.vue";
 
 function openMenu() {
   isMenuOpen.value = true;
