@@ -5,7 +5,6 @@
       v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== ''
@@ -224,8 +223,8 @@ function handleInfoProceedings() {
     userStore.userData.email = mailIpt.value;
     userStore.userData.phone = phoneWithCode;
     setUserPreferenceCookie();
-    userStore.updateCart();
     userStore.isFormValidated = true;
+    userStore.updateCart();
     scrollBy(800);
   }
 }

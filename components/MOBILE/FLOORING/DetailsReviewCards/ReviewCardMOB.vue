@@ -25,7 +25,6 @@
     v-show="
       userStore.preference.flooring === `${flooring}` &&
       userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
       userStore.preference.color.length > 0 &&
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
@@ -41,7 +40,6 @@
       v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== '' &&
@@ -68,7 +66,6 @@
     v-show="
       userStore.preference.flooring === `${flooring}` &&
       userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
       userStore.preference.color.length > 0 &&
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
@@ -95,7 +92,6 @@
     v-show="
       userStore.preference.flooring === `${flooring}` &&
       userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
       userStore.preference.color.length > 0 &&
       userStore.preference.budget !== '' &&
       userStore.preference.orderMethod !== '' &&
@@ -304,7 +300,8 @@ const insertLog = (isOrderConfirmed) => {
   const orderMethod = userStore.preference.orderMethod;
   let contact;
 
-  if (orderMethod === "whatsapp") {
+  //CHANGE THIS LATER
+  if (orderMethod === "whatsapp" || orderMethod === "email") {
     // Check if the phone number starts with a "+" indicating a country code
     if (userStore.userData.phone.startsWith("+")) {
       contact = userStore.userData.phone;
@@ -321,7 +318,7 @@ const insertLog = (isOrderConfirmed) => {
 
   const userData = {
     name,
-    phone: orderMethod === "whatsapp" ? contact : "",
+    phone: orderMethod === "whatsapp" ? contact : contact,
     email: orderMethod === "email" ? contact : "",
     preference: userStore.preference,
     isOrderConfirmed: isOrderConfirmed,

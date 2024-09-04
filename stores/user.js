@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
+import { preferenceAbbreviations } from "./../utils/abbreviations.js";
 
 const useUserStore = defineStore("user", {
   state: () => ({
     specCount: 0,
-    isFormValidate: false,
+    isFormValidated: false,
     customPreference: {
       category: "",
     },
@@ -54,22 +55,12 @@ const useUserStore = defineStore("user", {
 
     // Action to update the cart and specCount
     updateCart() {
+      console.log("HH:", this.isFormValidated);
       const { spec_1, spec_2, spec_3, spec_4, spec_5, budget, color } =
         this.preference;
 
-      // Calculate specCount based on selected preferences
-      this.specCount = [spec_1, spec_2, spec_3, spec_4, spec_5, budget]
-        .concat(color.length > 0 ? "color" : [])
-        .filter(Boolean).length;
-
       // Check if all required fields are filled
-      if (
-        spec_1 &&
-        spec_2 &&
-        budget &&
-        color.length > 0 &&
-        this.userData.name
-      ) {
+      if (this.isFormValidated) {
         const newCartItem = {
           budget,
           color: color || [],
@@ -78,7 +69,6 @@ const useUserStore = defineStore("user", {
           isOrderConfirmed: false,
           orderMethod: this.preference.orderMethod,
           spec_1,
-          spec_2,
           spec_3: spec_3 || "",
           spec_4: spec_4 || "",
           spec_5: spec_5 || "",
@@ -92,9 +82,37 @@ const useUserStore = defineStore("user", {
         this.cart.unshift(newCartItem);
 
         console.log("CART UPDATED::", this.cart);
+        this.updateCookie();
       } else {
         console.log("-");
       }
+    },
+    // Action to update Cookie
+    updateCookie() {
+      const pref = useCookie("pref");
+
+      const p = this.preference;
+
+      // Helper function to get abbreviation by finding the key in the preferenceAbbreviations object
+      const getAbbreviation = (value) =>
+        Object.keys(preferenceAbbreviations).find(
+          (key) => preferenceAbbreviations[key] === value
+        ) || value;
+
+      // Create preference string with abbreviations, including colors
+      const preferenceString = `${getAbbreviation(
+        p.flooring
+      )}|${getAbbreviation(p.spec_1)}|${getAbbreviation(
+        p.spec_2
+      )}|${getAbbreviation(p.spec_3)}|${getAbbreviation(
+        p.spec_4
+      )}|${getAbbreviation(p.spec_5)}|${p.color
+        .map((color) => getAbbreviation(color))
+        .join(",")}|${getAbbreviation(p.budget)}`;
+
+      pref.value = preferenceString;
+
+      console.log(`Updated cookie: ${preferenceString}`);
     },
   },
 });

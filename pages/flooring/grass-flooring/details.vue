@@ -8,17 +8,15 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 // Eager-loaded component (for both mobile and desktop)
-import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
+import GrassThicknessDetails from "../../../components/MOBILE/FLOORING/GRASS/GrassThicknessDetails.vue";
 
 // Lazy-loaded components
-const LazySportsFlooringDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue")
+
+const LazyGrassColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/GRASS/GrassColorDetails.vue")
 );
-const LazySportsColorDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue")
-);
-const LazySportsBudgetDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue")
+const LazyGrassBudgetDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/GRASS/GrassBudgetDetails.vue")
 );
 const LazyOrderMethod = defineAsyncComponent(() =>
   import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
@@ -66,20 +64,19 @@ onMounted(() => {
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Sports Flooring >
+          Grass Flooring >
           <!-- DESKTOP -->
           {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <SportsTypesDetails />
-      <LazySportsFlooringDetails />
-      <LazySportsColorDetails />
-      <LazySportsBudgetDetails />
-      <LazyOrderMethod flooring="sports" />
-      <LazyInfoForm flooring="sports" />
-      <LazyReviewCard flooring="sports" link="sports" />
+      <GrassThicknessDetails />
+      <LazyGrassColorDetails />
+      <LazyGrassBudgetDetails />
+      <LazyOrderMethod flooring="grass" />
+      <LazyInfoForm flooring="grass" />
+      <LazyReviewCard flooring="grass" link="grass" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -87,7 +84,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
-    <FloatingBarMOB flooring="SPORTS" link="/" />
+    <FloatingBarMOB flooring="GRASS" link="/" />
 
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -101,20 +98,19 @@ onMounted(() => {
             href="/flooring"
             class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
           >
-            Sports Flooring
+            Grass Flooring
           </a>
           <CurrencyDetails />
         </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin :existingUser="existingUser" />
-      <SportsTypesDetails :existingUser="existingUser" />
-      <LazySportsFlooringDetails :existingUser="existingUser" />
-      <LazySportsColorDetails :existingUser="existingUser" />
-      <LazySportsBudgetDetails :existingUser="existingUser" />
-      <LazyOrderMethod flooring="sports" />
-      <LazyInfoForm flooring="sports" />
-      <LazyReviewCard flooring="sports" link="sports" />
+      <GrassThicknessDetails :existingUser="existingUser" />
+      <LazyGrassColorDetails :existingUser="existingUser" />
+      <LazyGrassBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="grass" />
+      <LazyInfoForm flooring="grass" />
+      <LazyReviewCard flooring="grass" link="grass" />
     </div>
   </section>
 </template>

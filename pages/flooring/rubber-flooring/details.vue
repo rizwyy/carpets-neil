@@ -8,17 +8,18 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 // Eager-loaded component (for both mobile and desktop)
-import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
+import RubberThicknessDetails from "./../../../components/MOBILE/FLOORING/RUBBER/RubberThicknessDetails.vue";
 
 // Lazy-loaded components
-const LazySportsFlooringDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue")
+
+const LazyRubberFinishDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RUBBER/RubberFinishDetails.vue")
 );
-const LazySportsColorDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue")
+const LazyRubberColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RUBBER/RubberColorDetails.vue")
 );
-const LazySportsBudgetDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue")
+const LazyRubberBudgetDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RUBBER/RubberBudgetDetails.vue")
 );
 const LazyOrderMethod = defineAsyncComponent(() =>
   import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
@@ -73,13 +74,13 @@ onMounted(() => {
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <SportsTypesDetails />
-      <LazySportsFlooringDetails />
-      <LazySportsColorDetails />
-      <LazySportsBudgetDetails />
-      <LazyOrderMethod flooring="sports" />
-      <LazyInfoForm flooring="sports" />
-      <LazyReviewCard flooring="sports" link="sports" />
+      <RubberThicknessDetails :existingUser="existingUser" />
+      <RubberFinishDetails :existingUser="existingUser" />
+      <LazyRubberColorDetails :existingUser="existingUser" />
+      <LazyRubberBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="rubber" />
+      <LazyInfoForm flooring="rubber" />
+      <LazyReviewCard flooring="rubber" link="rubber" />>
     </div>
     <!-- DESKTOP -->
   </section>
@@ -87,7 +88,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
-    <FloatingBarMOB flooring="SPORTS" link="/" />
+    <FloatingBarMOB flooring="RUBBER" link="/" />
 
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -108,13 +109,13 @@ onMounted(() => {
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin :existingUser="existingUser" />
-      <SportsTypesDetails :existingUser="existingUser" />
-      <LazySportsFlooringDetails :existingUser="existingUser" />
-      <LazySportsColorDetails :existingUser="existingUser" />
-      <LazySportsBudgetDetails :existingUser="existingUser" />
-      <LazyOrderMethod flooring="sports" />
-      <LazyInfoForm flooring="sports" />
-      <LazyReviewCard flooring="sports" link="sports" />
+      <RubberThicknessDetails :existingUser="existingUser" />
+      <LazyRubberFinishDetails :existingUser="existingUser" />
+      <LazyRubberColorDetails :existingUser="existingUser" />
+      <LazyRubberBudgetDetails :existingUser="existingUser" />
+      <LazyOrderMethod flooring="rubber" />
+      <LazyInfoForm flooring="rubber" />
+      <LazyReviewCard flooring="rubber" link="rubber" />
     </div>
   </section>
 </template>

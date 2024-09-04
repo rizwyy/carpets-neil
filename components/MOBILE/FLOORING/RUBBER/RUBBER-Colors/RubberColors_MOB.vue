@@ -1,38 +1,45 @@
 <template>
-  <transition
-    @before-enter="handleDetailsDOMEntry('carpets_Color_Details_Mob')"
-  >
+  <!-- MOBILE SPORTS COLOR DETAILS-->
+  <transition @before-enter="handleDetailsDOMEntry('rubber_Color_Details_Mob')">
     <div
       v-show="
+        userStore.preference.flooring === 'rubber' &&
         userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
-        userStore.preference.spec_3 !== ''
+        userStore.preference.spec_2 !== ''
       "
-      class="h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
-      <!-- MOBILE CARPETS-->
       <div
-        class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[4vh] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
+        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between"
+          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between rubber_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
         >
-          <span
-            class="text-left text-balance carpets_Color_Details_Mob-HEADING opacity-0 translate-x-[40%] text-detailsHeadCLR"
-          >
-            Choose Your Color
-          </span>
+          Choose Your Color
           <button
             @click="clearColorSelections"
-            v-show="userStore.preference.color.length"
+            v-show="
+              isMultiColoredOpted || userStore.preference.color.length > 0
+            "
             class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
-            Clear All<ClearAllIcon />
+            Clear All<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+              />
+              <!-- MOBILE -->
+            </svg>
           </button>
         </div>
         <div
-          v-show="userStore.preference.flooring === 'Carpets'"
+          v-show="userStore.preference.flooring === 'rubber'"
           class="h-max w-full flex flex-col gap-[2vh] relative"
         >
           <div
@@ -88,30 +95,30 @@
               </transition>
               <transition
                 @beforeEnter="
-                  bringOpacity('carpet_details_colors_mob_done_BTN')
+                  bringOpacity('rubber_details_colors_mob_done_BTN')
                 "
                 @beforeLeave="
-                  removeOpacity('carpet_details_colors_mob_done_BTN')
+                  removeOpacity('rubber_details_colors_mob_done_BTN')
                 "
               >
                 <button
                   v-show="userStore.preference.color.length > 0"
                   @click="toggleSelect(customColor, 'done')"
-                  class="carpet_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="rubber_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
                 >
                   Done
                 </button>
               </transition>
               <transition
-                @beforeEnter="bringOpacity('carpet_details_colors_mob_add_BTN')"
+                @beforeEnter="bringOpacity('rubber_details_colors_mob_add_BTN')"
                 @beforeLeave="
-                  removeOpacity('carpet_details_colors_mob_add_BTN')
+                  removeOpacity('rubber_details_colors_mob_add_BTN')
                 "
               >
                 <button
                   v-show="customColor.length > 2"
                   @click="toggleSelect(customColor, 'addMore')"
-                  class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="rubber_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
                 >
                   Add More +
                 </button>
@@ -120,32 +127,34 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
-              :class="{
-                selected: userStore.preference.color.includes('CustomColor'),
-              }"
+              class="color-box CustomColor h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              :class="{ selected: selectedColors.includes('CustomColor') }"
               @click="toggleSelect('CustomColor')"
             >
               <!-- MOBILE -->
-              <span v-show="!userStore.preference.color.includes('CustomColor')"
+              <span v-show="!selectedColors.includes('CustomColor')"
                 >Custom Color</span
               >
-              <div v-show="userStore.preference.color.includes('CustomColor')">
+              <div v-show="selectedColors.includes('CustomColor')">
                 <span class="h-full w-full text-[2vh]">Add More +</span>
               </div>
             </div>
 
             <!-- MOBILE -->
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{
-                selected: userStore.preference.color.includes('Beige'),
-              }"
+              v-show="userStore.preference.spec_2 !== 'Artificial Grass'"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{ selected: selectedColors.includes('Beige') }"
               @click="toggleSelect('Beige')"
             >
               <NuxtImg
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/snow.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/beige-wood.webp"
               />
               <span v-show="!userStore.preference.color.includes('Beige')"
                 >Beige</span
@@ -159,7 +168,7 @@
               </div>
             </div>
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -167,8 +176,19 @@
             >
               <!-- MOBILE -->
               <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/brown.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-brown.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/wooden/wood-Brown.webp"
               />
               <span v-show="!userStore.preference.color.includes('Brown')"
                 >Brown</span
@@ -184,13 +204,23 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
               <NuxtImg
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/silver.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/grey-wood.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-grey.webp"
               />
               <span v-show="!userStore.preference.color.includes('Grey')"
                 >Grey</span
@@ -204,15 +234,23 @@
               </div>
             </div>
             <div
-              v-show="userStore.preference.spec_3 === 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] bg-[gold] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: userStore.preference.color.includes('Gold') }"
-              @click="toggleSelect('Gold')"
+              v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{
+                selected: userStore.preference.color.includes('Dark Brown'),
+              }"
+              @click="toggleSelect('Dark Brown')"
             >
-              <span v-show="!userStore.preference.color.includes('Gold')"
-                >Gold</span
+              <!-- MOBILE -->
+              <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Cork Floor'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/darkBrown-wood.webp"
+              />
+              <span v-show="!userStore.preference.color.includes('Dark Brown')"
+                >Dark Brown</span
               >
-              <div v-show="userStore.preference.color.includes('Gold')">
+              <div v-show="userStore.preference.color.includes('Dark Brown')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -221,8 +259,8 @@
               <!-- MOBILE -->
             </div>
             <div
-              v-show="userStore.preference.spec_3 !== 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] selectedColors_MOB h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -232,6 +270,11 @@
               <NuxtImg
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/green.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-green.webp"
               />
               <span v-show="!userStore.preference.color.includes('Green')"
                 >Green</span
@@ -245,13 +288,19 @@
               <!-- MOBILE -->
             </div>
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
               <NuxtImg
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/blue.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-blue.webp"
               />
               <!-- MOBILE -->
               <span v-show="!userStore.preference.color.includes('Blue')"
@@ -268,15 +317,26 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
               @click="toggleSelect('White')"
             >
               <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/polarBear.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-white.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/white-wood.webp"
               />
               <!-- MOBILE -->
               <span v-show="!userStore.preference.color.includes('White')"
@@ -290,7 +350,7 @@
               </div>
             </div>
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -298,8 +358,19 @@
             >
               <!-- MOBILE -->
               <NuxtImg
+                v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/black.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/black-wood.webp"
+              />
+              <NuxtImg
+                v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-black.webp"
               />
               <span v-show="!userStore.preference.color.includes('Black')"
                 >Black</span
@@ -312,15 +383,21 @@
               </div>
             </div>
             <div
-              v-show="userStore.preference.spec_3 === 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] bg-[tan] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: userStore.preference.color.includes('Tan') }"
-              @click="toggleSelect('Tan')"
+              v-show="userStore.preference.spec_2 === 'Artificial Grass'"
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{ selected: userStore.preference.color.includes('Red') }"
+              @click="toggleSelect('Red')"
             >
-              <span v-show="!userStore.preference.color.includes('Tan')"
-                >Tan</span
+              <!-- MOBILE -->
+              <NuxtImg
+                class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                src="/colors/artificialGrass-red.webp"
+              />
+
+              <span v-show="!userStore.preference.color.includes('Red')"
+                >Red</span
               >
-              <div v-show="userStore.preference.color.includes('Tan')">
+              <div v-show="userStore.preference.color.includes('Red')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -328,8 +405,11 @@
               </div>
             </div>
             <div
-              v-show="userStore.preference.spec_3 !== 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              v-show="
+                userStore.preference.spec_2 !== 'Artificial Grass' &&
+                userStore.preference.spec_2 !== 'Wooden Sprung'
+              "
+              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Rose') }"
               @click="toggleSelect('Rose')"
             >
@@ -338,6 +418,7 @@
                 class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
                 src="/colors/rose.webp"
               />
+
               <span v-show="!userStore.preference.color.includes('Rose')"
                 >Rose</span
               >
@@ -391,9 +472,6 @@
               Add More
             </button>
           </div>
-          <!--  -->
-
-          <!--  -->
         </div>
       </div>
     </div>
@@ -401,18 +479,15 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 // PINIA
 import useUserStore from "~/stores/user";
 
-const { existingUser } = defineProps(["existingUser"]);
 const userStore = useUserStore();
+const { existingUser } = defineProps(["existingUser"]);
+
 const customColor = ref("");
 const isMultiColoredOpted = ref(false);
 const selectedColors = ref([]);
-const customColorArray = ref([]);
-
 function clearColorSelections() {
   selectedColors.value = [];
   userStore.preference.color = [];
@@ -443,7 +518,6 @@ const toggleSelect = (color, added) => {
   }
 
   userStore.preference.color = toRaw(selectedColors.value);
-
   if (added !== "addMore") {
     isMultiColoredOpted.value = false;
   }
@@ -453,6 +527,7 @@ const toggleSelect = (color, added) => {
   userStore.updateCart();
 };
 
+const customColorArray = ref([]);
 function getColorHex(color) {
   const formattedColor = color.toLowerCase().replace(/\s+/g, "");
   return carpetColors[formattedColor] || "#000000";
@@ -473,7 +548,7 @@ function getHexCodes() {
 
 .selected {
   border-radius: 0.375rem;
-  border: 2px solid #333;
+  border: 2px solid #333; /* Example border color */
 }
 
 /* Hide text inside selected color box */

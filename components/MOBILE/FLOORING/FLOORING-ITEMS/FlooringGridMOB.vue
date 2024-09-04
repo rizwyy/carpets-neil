@@ -74,6 +74,32 @@
         loading="lazy"
       />
     </div>
+    <div
+      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+    >
+      <FlooringCategoryItem
+        href="/flooring/rubber-flooring/details"
+        title="Rubber Flooring"
+        imgSrc="/rubber-flooring.webp"
+        altText="#"
+        titleClass="flooringLayout_Rubber_Text"
+        @load="
+          handleImageLoad('flooringLayout_Rubber', 'flooringItem', true, true)
+        "
+        loading="lazy"
+      />
+      <FlooringCategoryItem
+        href="/flooring/grass-flooring/details"
+        title="Grass Flooring"
+        imgSrc="/40004.webp"
+        altText="#"
+        titleClass="flooringLayout_Grass_Text"
+        @load="
+          handleImageLoad('flooringLayout_Grass', 'flooringItem', true, true)
+        "
+        loading="lazy"
+      />
+    </div>
   </div>
 </template>
 

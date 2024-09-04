@@ -4,7 +4,6 @@
       v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== ''
       "

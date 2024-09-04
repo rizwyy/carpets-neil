@@ -1,3 +1,6 @@
+import { getCookie } from "h3";
+import { createError } from "h3";
+
 export function getColorAfterHyphen(color) {
   if (color.includes("-")) {
     return color.split("-")[1];
@@ -220,4 +223,28 @@ export function addToCartIfValid() {
   } else {
     console.log("Not all required information is present to add to cart.");
   }
+}
+
+export function parsePreferenceString(preferenceString) {
+  const parts = preferenceString.split("|");
+
+  // Helper function to get the full name by finding the value in the preferenceAbbreviations object
+  const getFullName = (abbreviation) =>
+    preferenceAbbreviations[abbreviation] || abbreviation;
+
+  // Map the parts of the string back to their full values
+  const parsedPreference = {
+    flooring: getFullName(parts[0]),
+    spec_1: getFullName(parts[1]),
+    spec_2: getFullName(parts[2]),
+    spec_3: getFullName(parts[3]),
+    spec_4: getFullName(parts[4]),
+    spec_5: getFullName(parts[5]),
+    color: parts[6]
+      ? parts[6].split(",").map((color) => getFullName(color))
+      : [],
+    budget: getFullName(parts[7]),
+  };
+
+  return parsedPreference;
 }

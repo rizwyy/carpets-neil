@@ -12,10 +12,10 @@
     </svg>
     <!-- Circle Badge -->
     <div
-      v-if="userStore.specCount > 0"
+      v-if="userStore.cart.length > 0"
       class="absolute top-[-1.8svh] right-[-2vw] bg-slate-500 text-[1.6svh] font-[500] text-white flex items-center justify-center rounded-full w-[3svh] h-[3svh]"
     >
-      {{ userStore.specCount }}
+      {{ userStore.cart.length }}
     </div>
   </div>
 </template>
@@ -27,4 +27,13 @@ import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
 const specCount = computed(() => userStore.specCount);
+
+onMounted(() => {
+  const pref = useCookie("pref").value;
+
+  if (pref && typeof toRaw(pref) === "string") {
+    const obj = parsePreferenceString(pref);
+    console.log(obj);
+  }
+});
 </script>

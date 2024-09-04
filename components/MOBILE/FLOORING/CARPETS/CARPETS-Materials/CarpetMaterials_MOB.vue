@@ -33,7 +33,7 @@
               'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'polypropylene' },
             ]"
-            @click="toggleSelectMaterials('polypropylene')"
+            @click="toggleSelect('polypropylene')"
           >
             <div
               v-show="userStore.preference.spec_3 === 'polypropylene'"
@@ -65,7 +65,7 @@
               'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Nylon' },
             ]"
-            @click="toggleSelectMaterials('Nylon')"
+            @click="toggleSelect('Nylon')"
           >
             <div
               v-show="userStore.preference.spec_3 === 'Nylon'"
@@ -101,7 +101,7 @@
               'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Sisal' },
             ]"
-            @click="toggleSelectMaterials('Sisal')"
+            @click="toggleSelect('Sisal')"
           >
             <div
               v-show="userStore.preference.spec_3 === 'Sisal'"
@@ -133,7 +133,7 @@
               'h-[14vh] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Wool' },
             ]"
-            @click="toggleSelectMaterials('Wool')"
+            @click="toggleSelect('Wool')"
           >
             <div
               v-show="userStore.preference.spec_3 === 'Wool'"
@@ -179,7 +179,7 @@ function clearMaterialSelections() {
   userStore.preference.spec_3 = "";
 }
 
-const toggleSelectMaterials = (material) => {
+const toggleSelect = (material) => {
   userStore.preference.budget = "";
 
   if (selectedMaterial.value === material) {

@@ -64,8 +64,16 @@
         class="w-full flex flex-col items-start gap-[1vh] bg-prefCard py-[2vh] rounded-xl px-[3.2vw]"
       >
         <SpecDetail :label="getLabel(item.flooring)" :value="item.spec_1" />
-        <SpecDetail label="Activity" :value="item.spec_2" />
-        <SpecDetail label="Material" :value="item.spec_3" />
+        <SpecDetail
+          v-if="item.flooring !== 'rubber' && item.flooring !== 'grass'"
+          label="Activity"
+          :value="item.spec_2"
+        />
+        <SpecDetail
+          v-if="item.flooring !== 'rubber' && item.flooring !== 'grass'"
+          label="Material"
+          :value="item.spec_3"
+        />
         <SpecDetail
           label="Finish"
           :value="
@@ -173,6 +181,8 @@ const handleDeleteItemAndUpdate = async (logId) => {
         (item) => item.addedByPinia !== true && item.id !== "PINIA"
       );
       console.log("PINIA item deleted from cart.");
+      // Trigger getHistory() after deleting the PINIA item
+      await getHistory();
       return; // Exit the function as no API call is needed
     }
 
@@ -198,6 +208,9 @@ const handleDeleteItemAndUpdate = async (logId) => {
     userStore.cart = userStore.cart.filter((item) => item.id !== logId);
 
     console.log("Item deleted from flooringHistory and cart.");
+
+    // Trigger getHistory() after successful deletion
+    await getHistory();
   } catch (error) {
     console.error("Error in handleDeleteItemAndUpdate:", error.message);
   }
@@ -212,6 +225,8 @@ function getLabel(flooringType) {
     ? "Area"
     : flooringType === "sports"
     ? "Type"
+    : ["grass", "rubber"].includes(flooringType)
+    ? "Thickness"
     : "N/A";
 }
 </script>
