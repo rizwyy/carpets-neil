@@ -614,7 +614,7 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(600) : scrollToBottom();
+    existingUser === "" ? scrollBy(600) : scrollToBottom();
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);

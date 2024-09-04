@@ -55,7 +55,6 @@ const useUserStore = defineStore("user", {
 
     // Action to update the cart and specCount
     updateCart() {
-      console.log("HH:", this.isFormValidated);
       const { spec_1, spec_2, spec_3, spec_4, spec_5, budget, color } =
         this.preference;
 

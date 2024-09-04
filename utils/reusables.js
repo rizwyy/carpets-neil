@@ -248,3 +248,37 @@ export function parsePreferenceString(preferenceString) {
 
   return parsedPreference;
 }
+
+export async function fetchPreferencesByMobile(mobile) {
+  try {
+    // Ensure the mobile number is provided
+    if (!mobile) {
+      throw new Error("Mobile number is required");
+    }
+
+    let sanitizedMobile = mobile.startsWith("+") ? mobile.slice(1) : mobile;
+
+    // Call the API endpoint to get the logs associated with the mobile number
+    const { data, error } = await useFetch(
+      `/api/get-log?mobile=${sanitizedMobile}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (error.value) {
+      throw new Error(error.value.message);
+    }
+
+    // Handle successful data retrieval
+    console.log("Preferences fetched successfully:", data.value);
+    return data.value; // Return the fetched data
+  } catch (err) {
+    // Handle errors
+    console.error("Error fetching preferences:", err.message);
+    return null;
+  }
+}

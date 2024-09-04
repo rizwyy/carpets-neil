@@ -1,25 +1,11 @@
 <template>
+  <!-- NAV BAR -->
   <div
     id="NavBarMOB"
-    class="navBarMOB bg-navBarBG opacity-[.2] min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between relative z-[99] font-outfit"
+    class="navBarMOB bg-navBarBG opacity-[.2] min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between z-[99] font-outfit relative"
   >
-    <div @click="toggleMenu" class="h-max w-max">
-      <span
-        ><svg
-          class="h-[3.8vh]"
-          @click="openMenu"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 17h18M3 12h18M3 7h18"
-          /></svg
-      ></span>
+    <div class="h-max w-max">
+      <HamburgerIcon @click="openMenu" class="text-[3.8vh]" />
     </div>
     <a
       href="/"
@@ -27,13 +13,18 @@
     >
       WOLTIZ
     </a>
-    <div class="h-max w-max"><SpecCounter /></div>
+    <div class="h-max w-max"><CartIconMOB @click="openCart" /></div>
   </div>
+  <!-- --------- -->
+  <!-- --------- -->
+  <!-- MENU -->
+  <!-- --------- -->
+  <!-- --------- -->
   <div
     v-if="isMenuOpen"
     class="menuPageMOB opacity-0 invisible font-outfit fixed top-0 left-0 h-[100dvh] w-screen bg-[#f5f3f1] z-[99]"
   >
-    <div class="h-[14vh] w-screen px-[4vw] items-center flex justify-between">
+    <div class="h-[14svh] w-screen px-[4vw] items-center flex justify-between">
       <a
         href="/"
         class="h-max w-max font-[300] text-[5vh] text-[#333] tracking-[-.1vw]"
@@ -45,35 +36,98 @@
       </span>
     </div>
     <div
-      class="h-[66vh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
+      class="h-[66svh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
     >
       <a href="/">Designer</a><a href="/about">About</a><span>Contact</span
       ><a href="/privacy">Privacy Policy</a>
     </div>
-    <div class="h-[20vh] w-screen flex flex-col justify-start">
-      <div class="flex h-full w-full justify-between px-[4vw] items-center">
+    <div class="h-[20svh] w-screen flex flex-col justify-start">
+      <div class="flex h-full w-full justify-between px-[6vw] items-center">
         <span>Under Development | Demo</span>
         <span>Woltiz</span>
       </div>
+    </div>
+  </div>
+  <!-- --------- -->
+  <!-- --------- -->
+  <!-- CART -->
+  <!-- --------- -->
+  <!-- --------- -->
+  <div
+    class="cartPageMOB invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] w-screen bg-[#f5f3f1] z-[99]"
+  >
+    <div
+      class="h-max w-full flex items-center justify-between py-[4vh] px-[4vw]"
+    >
+      <span class="text-[3svh]">Saved Items</span>
+      <span class="text-[4svh]"><CloseIcon @click="closeCart" /></span>
+    </div>
+    <div v-if="userStore.cart.length > 0" class="h-max w-full">
+      <div v-for="(item, index) in userStore.cart" :key="index">
+        <ReusablePrefNavCardMOB :item="item" :key="index" />
+      </div>
+      <div class="h-max w-full px-[4vw]">
+        <a
+          class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+          href="/flooring"
+          >PROCEED TO CHECKOUT</a
+        >
+      </div>
+    </div>
+
+    <div
+      v-else
+      class="h-max w-full flex items-center flex-col gap-[16svh] pt-[18svh] px-[4vw]"
+    >
+      <NuxtImg class="h-[16svh]" src="/icons/box.webp" />
+      <span class="text-[2.4vh] font-[300] text-center"
+        >Oops! It looks like you don't have any saved preferences yet. Start
+        exploring and add your favorite options!</span
+      >
+      <a
+        class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+        href="/flooring"
+        >EXPLORE</a
+      >
     </div>
   </div>
 </template>
 
 <script setup>
 import gsap from "gsap";
-import CloseIcon from "~/public/icons/closeIcon.vue";
+import useUserStore from "~/stores/user";
+const userStore = useUserStore();
+
+import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
+
+import CloseIcon from "./../../public/icons/closeIcon";
+import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
 
 const isMenuOpen = ref(false);
+const isCartOpen = ref(false);
 
-import SpecCounter from "./SpecCounter.vue";
+import CartIconMOB from "./CartIconMOB.vue";
 
 function openMenu() {
   isMenuOpen.value = true;
   handleAutoAlpha("menuPageMOB", 1);
+  DISABLE_SCROLL();
 }
 function closeMenu() {
-  isMenuOpen.value = false;
   handleAutoAlpha("menuPageMOB", 0);
+  ENABLE_SCROLL();
+  isMenuOpen.value = false;
+}
+
+function openCart() {
+  isCartOpen.value = true;
+  handleAutoAlpha("cartPageMOB", 1);
+  DISABLE_SCROLL();
+}
+function closeCart() {
+  handleAutoAlpha("cartPageMOB", 0);
+  ENABLE_SCROLL();
+  isMenuOpen.value = false;
 }
 
 onMounted(() => {

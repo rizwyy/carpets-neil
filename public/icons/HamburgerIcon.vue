@@ -1,0 +1,26 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 48 48"
+  >
+    <g
+      fill="none"
+      stroke="#000"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="4"
+    >
+      <path d="M7.94971 11.9497H39.9497"></path>
+      <path d="M7.94971 23.9497H39.9497"></path>
+      <path d="M7.94971 35.9497H39.9497"></path>
+    </g>
+  </svg>
+</template>
+
+<script>
+export default {
+  name: "IconParkHamburgerButton",
+};
+</script>

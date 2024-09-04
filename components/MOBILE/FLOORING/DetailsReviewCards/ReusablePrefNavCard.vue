@@ -1,38 +1,22 @@
 <template>
   <div
-    class="w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-prefCardBG rounded-xl"
+    class="w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98]"
   >
     <!-- UNEXPANDED -->
     <div
-      @click="toggleExpansion"
       :class="[
-        'flex flex-col bg-prefCard border-[#999] px-[3.2vw] rounded-xl py-[2vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none',
-        !isExpanded ? 'w-[94%] text-[2.4vh]' : 'w-[100%] text-[2.8vh]',
+        'flex flex-col bg-[#fff] border-[#999] px-[3.2vw] rounded-b-[0px] rounded-t-xl py-[1.8vh]  select-none w-[100%] text-[2.8vh]',
       ]"
     >
       <div class="w-full flex justify-between items-center text-[#444]">
         <span class="flex items-center">
           {{ item.flooring }}
-          <span v-show="isExpanded" class="ml-[1vw]">
-            <ArrowUpIcon />
-          </span>
-          <span v-show="!isExpanded" class="ml-[1vw]">
-            <ArrowDownIcon />
-          </span>
         </span>
         <div v-if="!showConfirmDelete" class="h-max w-max">
           <TrashIcon
             class="text-[#555] text-[3.2vh]"
-            v-show="!isExpanded"
             @click.stop="promptDelete(item)"
           />
-          <span
-            v-show="isExpanded"
-            class="h-full flex items-center transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.5vh] tracking-[.1vw] font-[600] text-red-700 rounded-full px-[4vw] py-[1vh] uppercase gap-[1vw] text-[2.4vh]'"
-            @click.stop="promptDelete(item)"
-          >
-            Delete
-          </span>
         </div>
         <div v-else class="h-max w-max px-[0vw]">
           <div class="h-max w-max flex items-center justify-end gap-[2vw]">
@@ -58,10 +42,10 @@
     <!-- EXPANDED -->
     <div
       v-show="isExpanded"
-      class="w-[98%] flex flex-col gap-[2vh] pt-[2vh] transition-all duration-[.2s]"
+      class="w-full flex flex-col gap-[2vh] transition-all duration-[.2s]"
     >
       <div
-        class="w-full flex flex-col items-start gap-[1vh] bg-prefCard py-[2vh] rounded-xl px-[3.2vw]"
+        class="w-full flex flex-col items-start rounded-t-[0px] rounded-b-xl gap-[1vh] bg-[#fff] py-[2vh] rounded-xl px-[3.2vw]"
       >
         <SpecDetail :label="getLabel(item.flooring)" :value="item.spec_1" />
         <SpecDetail
@@ -99,31 +83,6 @@
           :value="getPriceRange(item.budget, item.country)"
         />
       </div>
-
-      <!-- ADD ON CARD -->
-      <div
-        class="w-full bg-prefCard rounded-xl flex flex-col gap-[2.4vh] px-[3.2vw] pt-[1.4vh] pb-[2vh]"
-      >
-        <span class="text-[2.4vh] tracking-tight w-full font-[500] text-[#333]">
-          Add On's
-          <span class="text-[#777] text-[2vh] font-normal">(Optional)</span>
-        </span>
-
-        <div class="flex flex-col gap-[.6vh] text-[#555]">
-          <label for="additionalDetails" class="text-[2vh] font-medium"
-            >Provide Additional Details</label
-          >
-          <textarea
-            id="additionalDetails"
-            placeholder="Extra Info/Requirements Goes Here"
-            class="border-[2px] rounded-md px-[2vw] py-[1vh] border-[#ccc] bg-[#f9f9f9] text-[#333] outline-none focus:border-[#444]"
-          />
-        </div>
-
-        <div class="flex flex-col gap-[1.5vh] text-[#555]">
-          <UploadContainerMOB />
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -156,7 +115,7 @@ const { item } = defineProps({
   },
 });
 
-const isExpanded = ref(false);
+const isExpanded = ref(true);
 const showConfirmDelete = ref(false);
 const itemToDelete = ref(null);
 
