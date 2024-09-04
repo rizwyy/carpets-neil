@@ -1,6 +1,8 @@
 <template>
   <div
-    class="w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-prefCardBG rounded-xl"
+    :class="[
+      `w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-prefCardBG rounded-xl id-${item.id}-PrefCardItem`,
+    ]"
   >
     <!-- UNEXPANDED -->
     <div
@@ -130,6 +132,7 @@
 
 <script setup>
 import { ref, defineProps } from "vue";
+import gsap from "gsap";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 import TrashIcon from "~/public/icons/TrashIcon.vue";
@@ -168,10 +171,25 @@ function promptDelete(item) {
   showConfirmDelete.value = true;
   itemToDelete.value = item;
 }
-
+function fadeOut(id) {
+  gsap.to(`.id-${item.id}-PrefCardItem`, {
+    autoAlpha: 0, // Opacity 0 and visibility hidden
+    duration: 0.5, // 1-second duration
+    scale: 0.1,
+  });
+  gsap.to(`.id-${item.id}-PrefCardItem`, {
+    display: "hidden",
+  });
+}
 function confirmDelete() {
-  handleDeleteItemAndUpdate(itemToDelete.value.id);
-  showConfirmDelete.value = false;
+  // Perform fade-out animation
+  fadeOut(itemToDelete.value.id);
+
+  // Delay of 0.5 seconds before executing the delete operation
+  setTimeout(() => {
+    handleDeleteItemAndUpdate(itemToDelete.value.id);
+    showConfirmDelete.value = false;
+  }, 400);
 }
 
 function cancelDelete() {
@@ -215,7 +233,6 @@ const handleDeleteItemAndUpdate = async (logId) => {
     userStore.cart = userStore.cart.filter((item) => item.id !== logId);
 
     console.log("Item deleted from flooringHistory and cart.");
-
     // Trigger getHistory() after successful deletion
     await getHistory();
   } catch (error) {

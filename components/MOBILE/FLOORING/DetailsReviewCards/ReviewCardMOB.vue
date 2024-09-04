@@ -37,10 +37,17 @@
     <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
       <div
         v-if="arePreferencesFilled"
-        class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh]"
+        class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh] transition-all ease-in-out duration-300"
       >
-        <div v-if="userStore.cart.length > 0" class="w-full h-max">
-          <div v-for="(item, index) in userStore.cart" :key="index">
+        <div
+          v-if="userStore.cart.length > 0"
+          class="w-full h-max transition-all ease-in-out duration-300"
+        >
+          <div
+            class="transition-all ease-in-out duration-300"
+            v-for="(item, index) in userStore.cart"
+            :key="index"
+          >
             <ReusablePrefCardMOB :item="item" :key="index" />
           </div>
         </div>
