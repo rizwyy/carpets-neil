@@ -132,6 +132,8 @@ import UserIcon from "./../../public/icons/UserIcon.vue";
 import CloseIcon from "./../../public/icons/closeIcon";
 import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
 
+const isAccessRestricted = useCookie("isAccessRestricted");
+
 const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
 const userPreference = ref("");
@@ -193,6 +195,7 @@ async function handleConfirmation() {
   });
   if (result.success) {
     // Redirect to success page using vanilla JS
+    isAccessRestricted.value = false;
     window.location.href = result.redirectUrl;
   } else {
     // Handle error
