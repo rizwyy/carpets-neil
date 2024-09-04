@@ -282,3 +282,68 @@ export async function fetchPreferencesByMobile(mobile) {
     return null;
   }
 }
+
+export const HandleOrderConfirmation = async ({
+  cartItems,
+  userData,
+  link,
+}) => {
+  try {
+    // Step 1: Set the cookie and validate
+    const { data, error } = await useFetch("/api/set-cookie");
+    if (error?.value) {
+      throw new Error("Error setting cookie: " + error.value);
+    }
+    console.log("SET COOKIE DONE");
+
+    // Step 2: Iterate over each cart item and insert them individually
+    for (const item of cartItems) {
+      // Ensure the isOrderConfirmed property is set to true
+      const preferenceWithOrderConfirmation = {
+        ...item,
+        isOrderConfirmed: true,
+      };
+      console.log(
+        "🚀 ~ preferenceWithOrderConfirmation:",
+        preferenceWithOrderConfirmation
+      );
+
+      // Prepare the user data object for each item
+      const logUserData = {
+        name: userData.name,
+        phone: userData.phone,
+        email: userData.email,
+        preference: preferenceWithOrderConfirmation, // Include the current cart item as preference
+      };
+      console.log("🚀 ~ logUserData:", logUserData);
+
+      const response = await fetch("/api/insert-logs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(logUserData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error inserting log for item: ${item}`);
+      }
+
+      const logData = await response.json();
+      console.log("Log data for item:", logData);
+    }
+
+    // Return success result
+    return {
+      success: true,
+      message: "Order confirmed and logs inserted",
+      redirectUrl: `/flooring/${link}/success`,
+    };
+  } catch (err) {
+    console.error("Unexpected errors:", err.message);
+
+    // Return failure result
+    return {
+      success: false,
+      message: err.message,
+    };
+  }
+};
