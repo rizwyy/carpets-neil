@@ -248,17 +248,14 @@ export function parsePreferenceString(preferenceString) {
 
   return parsedPreference;
 }
-
 export async function fetchPreferencesByMobile(mobile) {
   try {
-    // Ensure the mobile number is provided
     if (!mobile) {
       throw new Error("Mobile number is required");
     }
 
     let sanitizedMobile = mobile.startsWith("+") ? mobile.slice(1) : mobile;
 
-    // Call the API endpoint to get the logs associated with the mobile number
     const { data, error } = await useFetch(
       `/api/get-log?mobile=${sanitizedMobile}`,
       {
@@ -270,16 +267,22 @@ export async function fetchPreferencesByMobile(mobile) {
     );
 
     if (error.value) {
-      throw new Error(error.value.message);
+      return { data: null, error: error.value.message };
     }
 
-    // Handle successful data retrieval
-    console.log("Preferences fetched successfully:", data.value);
-    return data.value; // Return the fetched data
+    const unconfirmedOrders = data.value.filter(
+      (item) => item.isOrderConfirmed === false
+    );
+
+    console.log(
+      "Unconfirmed preferences fetched successfully:",
+      unconfirmedOrders
+    );
+
+    return { data: unconfirmedOrders, error: null }; // Return the filtered data and no error
   } catch (err) {
-    // Handle errors
     console.error("Error fetching preferences:", err.message);
-    return null;
+    return { data: null, error: err.message }; // Return null and the error
   }
 }
 

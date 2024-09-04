@@ -92,14 +92,14 @@
       <div v-for="(item, index) in userStore.cart" :key="index">
         <ReusablePrefNavCardMOB :item="item" :key="index" />
       </div>
-      <div class="h-max w-full px-[4vw] flex justify-center">
+      <!-- <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="handleConfirmation"
           class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         >
           PROCEED TO CHECKOUT
         </button>
-      </div>
+      </div> -->
     </div>
 
     <!-- No items section -->
@@ -137,6 +137,8 @@ const isAccessRestricted = useCookie("isAccessRestricted");
 const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
 const userPreference = ref("");
+const router = useRouter();
+
 import CartIconMOB from "./CartIconMOB.vue";
 
 function openMenu() {
@@ -191,12 +193,12 @@ async function handleConfirmation() {
   const result = await HandleOrderConfirmation({
     cartItems: userStore.cart,
     userData: userData,
-    link: `${userStore.preference.flooring.toLowerCase()}`,
   });
   if (result.success) {
     // Redirect to success page using vanilla JS
+
     isAccessRestricted.value = false;
-    window.location.href = result.redirectUrl;
+    router.push("/flooring/success");
   } else {
     // Handle error
     console.error(result.message);

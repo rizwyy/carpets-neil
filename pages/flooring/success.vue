@@ -56,10 +56,12 @@ const restrictedAccess = useCookie("restrictedAccess");
 const isAccessRestricted = ref(true);
 const timer = ref(3);
 onMounted(() => {
+  console.log("SAFE");
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
     isAccessRestricted.value = true;
   } else {
     isAccessRestricted.value = false;
+    console.log("SAFE");
   }
 
   // Start countdown after 3 seconds
