@@ -152,6 +152,7 @@ const historyFound = ref(true);
 const isFlooringVisible = ref(false);
 
 const { flooring, link } = defineProps(["flooring", "link"]);
+
 const firstName = computed(() => {
   if (!userStore.userData.name) return "";
   const name = userStore.userData.name.trim().split(" ")[0];
@@ -191,11 +192,12 @@ async function fetchPreferencesByMobile(mobile) {
     return null;
   }
 }
+
+// GET ALL CART ITEMS
 async function getHistory() {
   isRefreshLoading.value = true;
 
   try {
-    // Remove the plus sign from the phone number if it exists and ensure the country code is included
     let sanitizedPhone = userStore.userData.phone.startsWith("+")
       ? userStore.userData.phone.slice(1)
       : addCountryCode(
@@ -210,14 +212,10 @@ async function getHistory() {
         const preferenceData = pref.preference;
         const id = pref.id;
 
-        // Check if the preference with this id is already in the cart
         const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
 
         if (!isAlreadyInCart) {
-          // Add the id to the preference object
           const preferenceWithId = { ...preferenceData, id: id };
-
-          // Push the new object into the cart
           userStore.cart.push(preferenceWithId);
         }
       });
@@ -225,11 +223,9 @@ async function getHistory() {
       console.log("Preferences added to cart:", userStore.cart);
     } else {
       console.log("No preferences found.");
-      // Optionally handle the case where no preferences are found
     }
   } catch (error) {
     console.error("Failed to fetch or process preferences:", error);
-    // Optionally handle errors, such as clearing the cart or showing an error message
   } finally {
     setTimeout(() => {
       isRefreshLoading.value = false;
@@ -237,7 +233,7 @@ async function getHistory() {
   }
 }
 
-// ACTIONS
+// ORDER CONFIRMATION
 const HandleOrderConfirmation = () => {
   isConfirmationLoading.value = true;
 
@@ -295,10 +291,11 @@ const HandleOrderConfirmation = () => {
     .catch((err) => {
       isConfirmationLoading.value = false;
       restrictedAccess.value = true;
-      handleTempAnimation("errOverlayPC");
+      handleTempAnimation("errOverlayMOB");
       console.error("Unexpected errors:", err.message);
     });
 };
+// ------------------
 
 const insertLog = (isOrderConfirmed) => {
   const phoneWithCode = addCountryCode(userStore);
@@ -371,25 +368,46 @@ const insertLog = (isOrderConfirmed) => {
     });
 };
 
+// ------------------
+// HANDLE CLICK ON ADD MORE BUTTON
 const HandleAddMore = () => {
   isAddMoreLoading.value = true;
-  // Call the insertLog function
-  insertLog(false);
+  setTimeout(() => {
+    isFlooringVisible.value = true;
+    DISABLE_SCROLL();
+    isAddMoreLoading.value = false;
+  }, 2000);
 };
-
+// ------------------
+// ------------------
+// HANDLE CLICK ON CANCEL ADD MORE BUTTON
 const handleCancelAddMoreFlooring = () => {
   isFlooringVisible.value = false;
   ENABLE_SCROLL();
 };
+// ------------------
 
-//
+// REACTIVE ACTIONS
 watch(
-  () => userStore.userData.name,
-  (newValue) => {
-    if (newValue !== "") {
-      setTimeout(async () => {
+  () => userStore.userData.id, // Watch for changes in userStore.userData.id
+  async (newValue) => {
+    // Check if the newValue is a valid integer (positive number)
+    if (Number.isInteger(newValue) && newValue > 0) {
+      // Define a recursive function to fetch history until the cart is populated
+      const fetchUntilCartIsPopulated = async () => {
         await getHistory();
-      }, 2000);
+
+        // If there are no items in the cart, repeat the process
+        if (userStore.cart.length === 0) {
+          console.log("Cart is still empty, fetching again...");
+          setTimeout(fetchUntilCartIsPopulated, 1000); // Retry after 1 second
+        } else {
+          console.log("Cart is populated.");
+        }
+      };
+
+      // Start the recursive fetching
+      fetchUntilCartIsPopulated();
     }
   }
 );
