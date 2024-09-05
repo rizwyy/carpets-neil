@@ -1,5 +1,14 @@
 <template>
-  <div class="min-[990px]:hidden h-max w-screen flex flex-col gap-[1.8vh]">
+  <div
+    v-if="!pageLoaded"
+    class="min-[990px]:hidden h-[50vh] w-screen text-[4vh] flex items-center justify-center"
+  >
+    <loadingIcon />
+  </div>
+  <div
+    v-else
+    class="min-[990px]:hidden h-max w-screen flex flex-col gap-[1.8vh]"
+  >
     <div
       class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[1]"
     >
@@ -105,10 +114,17 @@
 
 <script setup>
 import { defineAsyncComponent } from "vue";
+import loadingIcon from "~/public/icons/loadingIcon.vue";
 
+const pageLoaded = ref(false);
 const FlooringCategoryItem = defineAsyncComponent(() =>
   import("../FLOORING-ITEMS/FlooringCategoryItem.vue")
 );
+onMounted(() => {
+  setTimeout(() => {
+    pageLoaded.value = true;
+  }, 2000);
+});
 </script>
 
 <style>
