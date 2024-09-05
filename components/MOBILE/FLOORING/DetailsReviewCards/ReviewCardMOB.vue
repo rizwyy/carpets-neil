@@ -157,7 +157,7 @@ const arePreferencesFilled = computed(() => {
   );
 });
 
-// Fetch preferences history
+// GET ALL CART ITEMS
 async function getHistory() {
   isRefreshLoading.value = true;
 
@@ -197,7 +197,8 @@ async function getHistory() {
   }
 }
 
-// Other actions and handlers
+// ------------------
+// ORDER CONFIRMATION
 const HandleOrderConfirmation = () => {
   isConfirmationLoading.value = true;
 
@@ -259,7 +260,10 @@ const HandleOrderConfirmation = () => {
       console.error("Unexpected errors:", err.message);
     });
 };
+// ------------------
 
+// ------------------
+// HANDLE CLICK ON ADD MORE BUTTON
 const HandleAddMore = () => {
   isAddMoreLoading.value = true;
   setTimeout(() => {
@@ -268,12 +272,17 @@ const HandleAddMore = () => {
     isAddMoreLoading.value = false;
   }, 2000);
 };
+// ------------------
 
+// ------------------
+// HANDLE CLICK ON CANCEL ADD MORE BUTTON
 const handleCancelAddMoreFlooring = () => {
   isFlooringVisible.value = false;
   ENABLE_SCROLL();
 };
+// ------------------
 
+// REACTIVE ACTIONS
 watch(
   () => userStore.userData.id, // Watch for changes in userStore.userData.id
   async (newValue) => {
