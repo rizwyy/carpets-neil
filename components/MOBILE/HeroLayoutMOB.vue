@@ -1,5 +1,6 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
+import loadingIcon from "~/public/icons/loadingIcon.vue";
 
 // Lazy-load components
 const HeroItem = defineAsyncComponent(() =>
@@ -11,10 +12,23 @@ const ContentBanner = defineAsyncComponent(() =>
 const FaqSection = defineAsyncComponent(() =>
   import("./../HomePage/FaqSection.vue")
 );
+const pageLoaded = ref(false);
+
+onMounted(() => {
+  setTimeout(() => {
+    pageLoaded.value = true;
+  }, 2000);
+});
 </script>
 
 <template>
-  <section class="h-max w-max min-[990px]:hidden font-outfit">
+  <div
+    v-if="!pageLoaded"
+    class="min-[990px]:hidden h-[42vh] w-screen text-[4vh] flex items-center justify-center"
+  >
+    <loadingIcon />
+  </div>
+  <section v-else class="h-max w-max min-[990px]:hidden font-outfit">
     <div
       class="h-max w-screen py-[2vh] text-[#333] px-[2.4vw] font-[400] text-[3.2vh]"
     >
