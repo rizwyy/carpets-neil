@@ -146,6 +146,8 @@
 <script setup>
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
+import { fetchLogById } from "./../../../../utils/reusables";
+
 import { ref } from "vue";
 const userPreference = useCookie("userPreference");
 const { flooring } = defineProps(["flooring"]);
@@ -185,9 +187,8 @@ const insertLog = (isOrderConfirmed) => {
   const orderMethod = userStore.preference.orderMethod;
   let contact;
 
-  //CHANGE THIS LATER
+  // Determine the contact method (either phone or email based on the order method)
   if (orderMethod === "whatsapp" || orderMethod === "email") {
-    // Check if the phone number starts with a "+" indicating a country code
     if (userStore.userData.phone.startsWith("+")) {
       contact = userStore.userData.phone;
     } else {
@@ -211,18 +212,21 @@ const insertLog = (isOrderConfirmed) => {
 
   console.log("Sending userData:", userData);
 
+  // Validate name and contact
   if (!name || !contact) {
     console.error("Name and contact details are required.");
     return;
   }
 
-  // Call API route to insert logs
+  // Call API route to set the cookie, and then insert the logs
   useFetch("/api/set-cookie")
     .then(({ data, error }) => {
       if (error?.value) {
         throw new Error("Error setting cookie: " + error.value);
       }
       console.log("SET COOKIE DONE");
+
+      // Insert logs after the cookie is set
       return fetch("/api/insert-logs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -237,11 +241,46 @@ const insertLog = (isOrderConfirmed) => {
     })
     .then((logData) => {
       console.log("SUCCESS");
+      // REMOVE PINIA OBJ
       console.log("Log data:", logData);
+
+      // Update userStore with the fetched logData.id
       userStore.userData.id = logData.id;
+
+      // Now call fetchLogById after the id has been set
+      return fetchLogById(logData.id); // This returns a promise, so chain another .then
     })
-    .catch((err) => {
-      console.error("Unexpected errors:", err.message);
+    .then((fetchedLog) => {
+      console.log("Fetched log by ID:", fetchedLog);
+      const itemIndex = userStore.cart.findIndex((item) => item.id === "PINIA");
+
+      if (itemIndex !== -1) {
+        // If the item exists, remove it from the cart
+        userStore.cart.splice(itemIndex, 1);
+        console.log(`Item with id ${"PINIA"} removed from cart.`);
+      } else {
+        console.log(`No item with id ${"PINIA"} found in the cart.`);
+      }
+      // If the fetched log contains preference data, add it to the cart
+      if (fetchedLog && fetchedLog.preference) {
+        const isAlreadyInCart = userStore.cart.some(
+          (item) => item.id === fetchedLog.id
+        );
+
+        // If the item is not already in the cart, add it
+        if (!isAlreadyInCart) {
+          userStore.cart.push({
+            ...fetchedLog.preference, // Add the preference details
+            id: fetchedLog.id, // Ensure the log ID is stored as well
+          });
+          console.log("Preference added to cart:", userStore.cart);
+        } else {
+          console.log("Item is already in the cart.");
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error occurred:", error);
     });
 };
 

@@ -347,3 +347,29 @@ export const HandleOrderConfirmation = async ({
     };
   }
 };
+
+export async function fetchLogById(id) {
+  const userId = id;
+
+  if (!userId) {
+    console.error("User ID is missing");
+    return;
+  }
+
+  try {
+    // Send a request to the API endpoint with the user ID as a query parameter
+    const response = await fetch(`/api/get-currentItem?id=${userId}`); // Call the new API
+
+    if (!response.ok) {
+      throw new Error(`Error fetching log: ${response.statusText}`);
+    }
+
+    // Parse the JSON response
+    const result = await response.json();
+    console.log("Log data:", result.data);
+
+    return result.data; // Return the log data
+  } catch (error) {
+    console.error("Failed to fetch log by ID:", error.message);
+  }
+}

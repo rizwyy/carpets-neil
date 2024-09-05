@@ -275,10 +275,25 @@ const handleCancelAddMoreFlooring = () => {
 };
 
 watch(
-  () => userStore.userData.name,
+  () => userStore.isFormValidated, // Watch for changes in isFormValidated
   async (newValue) => {
-    if (newValue !== "") {
-      await getHistory();
+    // Trigger when isFormValidated becomes true
+    if (newValue === true) {
+      // Define a recursive function to fetch history until the cart is populated
+      const fetchUntilCartIsPopulated = async () => {
+        await getHistory();
+
+        // If there are no items in the cart, repeat the process
+        if (userStore.cart.length === 0) {
+          console.log("Cart is still empty, fetching again...");
+          setTimeout(fetchUntilCartIsPopulated, 1000); // Retry after 1 second
+        } else {
+          console.log("Cart is populated.");
+        }
+      };
+
+      // Start the recursive fetching
+      fetchUntilCartIsPopulated();
     }
   }
 );
