@@ -275,10 +275,10 @@ const handleCancelAddMoreFlooring = () => {
 };
 
 watch(
-  () => userStore.isFormValidated, // Watch for changes in isFormValidated
+  () => userStore.userData.id, // Watch for changes in userStore.userData.id
   async (newValue) => {
-    // Trigger when isFormValidated becomes true
-    if (newValue === true) {
+    // Check if the newValue is a valid integer (positive number)
+    if (Number.isInteger(newValue) && newValue > 0) {
       // Define a recursive function to fetch history until the cart is populated
       const fetchUntilCartIsPopulated = async () => {
         await getHistory();

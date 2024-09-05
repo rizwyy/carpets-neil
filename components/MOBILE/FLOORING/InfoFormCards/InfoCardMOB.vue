@@ -181,6 +181,21 @@ const isNameInvalid = ref(false);
 const isMailInvalid = ref(false);
 const isPhoneInvalid = ref(false);
 
+const removeItemFromCart = (idToRemove) => {
+  const userStore = useUserStore(); // Access the user store
+
+  // Check if an item with the given id exists in the cart
+  const itemIndex = userStore.cart.findIndex((item) => item.id === idToRemove);
+
+  if (itemIndex !== -1) {
+    // If the item exists, remove it from the cart
+    userStore.cart.splice(itemIndex, 1);
+    console.log(`Item with id ${idToRemove} removed from cart.`);
+  } else {
+    console.log(`No item with id ${idToRemove} found in the cart.`);
+  }
+};
+
 const insertLog = (isOrderConfirmed) => {
   const phoneWithCode = addCountryCode(userStore);
   const name = userStore.userData.name;
@@ -251,16 +266,8 @@ const insertLog = (isOrderConfirmed) => {
       return fetchLogById(logData.id); // This returns a promise, so chain another .then
     })
     .then((fetchedLog) => {
+      removeItemFromCart("PINIA");
       console.log("Fetched log by ID:", fetchedLog);
-      const itemIndex = userStore.cart.findIndex((item) => item.id === "PINIA");
-
-      if (itemIndex !== -1) {
-        // If the item exists, remove it from the cart
-        userStore.cart.splice(itemIndex, 1);
-        console.log(`Item with id ${"PINIA"} removed from cart.`);
-      } else {
-        console.log(`No item with id ${"PINIA"} found in the cart.`);
-      }
       // If the fetched log contains preference data, add it to the cart
       if (fetchedLog && fetchedLog.preference) {
         const isAlreadyInCart = userStore.cart.some(
