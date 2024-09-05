@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!pageLoaded"
-    class="min-[990px]:hidden h-[50vh] w-screen text-[4vh] flex items-center justify-center"
+    class="min-[990px]:hidden h-[42vh] w-screen text-[4vh] flex items-center justify-center"
   >
     <loadingIcon />
   </div>
