@@ -166,21 +166,23 @@ const itemToDelete = ref(null);
 function toggleExpansion() {
   isExpanded.value = !isExpanded.value;
 }
-
-function promptDelete(item) {
-  showConfirmDelete.value = true;
-  itemToDelete.value = item;
-}
 function fadeOut(id) {
   gsap.to(`.id-${item.id}-PrefCardItem`, {
     autoAlpha: 0, // Opacity 0 and visibility hidden
     duration: 0.5, // 1-second duration
     scale: 0.1,
+    ease: "back.in",
   });
   gsap.to(`.id-${item.id}-PrefCardItem`, {
     display: "hidden",
   });
 }
+
+function promptDelete(item) {
+  showConfirmDelete.value = true;
+  itemToDelete.value = item;
+}
+
 function confirmDelete() {
   // Perform fade-out animation
   fadeOut(itemToDelete.value.id);

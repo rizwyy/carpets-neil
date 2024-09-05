@@ -1,6 +1,8 @@
 <template>
   <div
-    class="w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98]"
+    :class="[
+      `id-${item.id}-PrefCardItem w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98]`,
+    ]"
   >
     <!-- UNEXPANDED -->
     <div
@@ -89,6 +91,8 @@
 
 <script setup>
 import { ref, defineProps } from "vue";
+import gsap from "gsap";
+
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 import TrashIcon from "~/public/icons/TrashIcon.vue";
@@ -122,6 +126,17 @@ const itemToDelete = ref(null);
 function toggleExpansion() {
   isExpanded.value = !isExpanded.value;
 }
+function fadeOut(id) {
+  gsap.to(`.id-${item.id}-PrefCardItem`, {
+    autoAlpha: 0, // Opacity 0 and visibility hidden
+    duration: 0.5, // 1-second duration
+    y: 100,
+    ease: "back.in",
+  });
+  gsap.to(`.id-${item.id}-PrefCardItem`, {
+    display: "hidden",
+  });
+}
 
 function promptDelete(item) {
   showConfirmDelete.value = true;
@@ -129,8 +144,14 @@ function promptDelete(item) {
 }
 
 function confirmDelete() {
-  handleDeleteItemAndUpdate(itemToDelete.value.id);
-  showConfirmDelete.value = false;
+  // Perform fade-out animation
+  fadeOut(itemToDelete.value.id);
+
+  // Delay of 0.5 seconds before executing the delete operation
+  setTimeout(() => {
+    handleDeleteItemAndUpdate(itemToDelete.value.id);
+    showConfirmDelete.value = false;
+  }, 400);
 }
 
 function cancelDelete() {

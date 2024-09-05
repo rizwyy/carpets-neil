@@ -79,8 +79,14 @@
     </div>
     <div
       v-else
-      class="h-max w-full flex justify-end pt-[4vh] pr-[6vw] text-[4vh]"
+      class="h-max w-full flex justify-between items-center pt-[4vh] px-[6vw] text-[4vh]"
     >
+      <a
+        href="/"
+        class="h-max w-max font-[300] text-[4.2vh] text-[#333] tracking-[-.1vw]"
+      >
+        WOLTIZ
+      </a>
       <CloseIcon @click="closeCart" />
     </div>
 
