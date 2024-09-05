@@ -157,7 +157,7 @@ const arePreferencesFilled = computed(() => {
   );
 });
 
-// GET ALL CART ITEMS
+sdf; // GET ALL CART ITEMS
 async function getHistory() {
   isRefreshLoading.value = true;
 
