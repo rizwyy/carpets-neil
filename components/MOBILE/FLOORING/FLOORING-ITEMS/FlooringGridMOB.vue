@@ -128,7 +128,7 @@ onMounted(() => {
   setTimeout(() => {
     handleAutoAlpha("FlooringGridLoadingContainer_MOB", 0);
     pageLoaded.value = true;
-  }, 1000);
+  }, 1500);
 });
 </script>
 
