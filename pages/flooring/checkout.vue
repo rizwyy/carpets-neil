@@ -4,45 +4,7 @@
     <Unavailable />
   </div>
   <div v-else>
-    <NavBarMOB />
-    <NavBarPC />
-    <div
-      class="h-[78vh] w-screen flex flex-col justify-center items-center font-outfit gap-[10.8vh] px-[4vw]"
-    >
-      <div
-        class="h-max w-max flex flex-col justify-center items-center gap-[4.8vh]"
-      >
-        <svg
-          class="checkmark"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 52 52"
-        >
-          <circle
-            class="checkmark__circle"
-            cx="26"
-            cy="26"
-            r="25"
-            fill="none"
-          />
-          <path
-            class="checkmark__check"
-            fill="none"
-            d="M14.1 27.2l7.1 7.2 16.7-16.8"
-          />
-        </svg>
-        <span class="text-[2.8vh] text-center">Thank you!</span>
-      </div>
-      <span
-        class="h-max w-full bg-[#ececec] py-[1.8vh] px-[4vw] rounded-md shadow-lg text-[2.2vh] flex flex-col items-start justify-center gap-[2vh] text-[#333]"
-      >
-        <span class="font-[500]">Please note:</span>
-        <span class="">
-          You will be redirected to WhatsApp in {{ timer }} seconds with a
-          predefined message.
-        </span>
-        <span>Simply hit the "Send" button to confirm your order.</span>
-      </span>
-    </div>
+    <SuccessContainerMOB />
   </div>
 </template>
 
@@ -50,6 +12,7 @@
 import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "./../../../components/DESKTOP/NavBarPC.vue";
 import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
+import SuccessContainerMOB from "~/components/MOBILE/FLOORING/SuccessContainerMOB.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -57,7 +20,7 @@ const isAccessRestricted = ref(true);
 const timer = ref(3);
 onMounted(() => {
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
-    isAccessRestricted.value = true;
+    isAccessRestricted.value = false;
   } else {
     isAccessRestricted.value = false;
   }

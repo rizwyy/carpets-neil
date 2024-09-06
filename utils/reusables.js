@@ -181,49 +181,6 @@ export function DISABLE_SCROLL() {
 export function ENABLE_SCROLL() {
   document.body.style.overflow = "";
 }
-export function addToCartIfValid() {
-  if (
-    userStore.userData.name &&
-    userStore.preference.flooring &&
-    userStore.preference.spec_1 &&
-    userStore.preference.spec_2 &&
-    userStore.preference.budget &&
-    userStore.preference.orderMethod
-  ) {
-    const newCartItem = {
-      budget: userStore.preference.budget,
-      color: userStore.preference.color || [],
-      country: userStore.preference.country || "Bahrain",
-      flooring: userStore.preference.flooring,
-      isOrderConfirmed: false,
-      orderMethod: userStore.preference.orderMethod,
-      spec_1: userStore.preference.spec_1,
-      spec_2: userStore.preference.spec_2,
-      spec_3: userStore.preference.spec_3 || "",
-      spec_4: userStore.preference.spec_4 || "",
-      spec_5: userStore.preference.spec_5 || "",
-    };
-
-    // Check if a similar item already exists in the cart
-    const alreadyExists = userStore.cart.some(
-      (item) =>
-        item.budget === newCartItem.budget &&
-        item.flooring === newCartItem.flooring &&
-        item.spec_1 === newCartItem.spec_1 &&
-        item.spec_2 === newCartItem.spec_2 &&
-        JSON.stringify(item.color) === JSON.stringify(newCartItem.color)
-    );
-
-    if (!alreadyExists) {
-      userStore.cart.unshift(newCartItem);
-      console.log("New item added to cart:", newCartItem);
-    } else {
-      console.log("A similar item already exists in the cart.");
-    }
-  } else {
-    console.log("Not all required information is present to add to cart.");
-  }
-}
 
 export function parsePreferenceString(preferenceString) {
   const parts = preferenceString.split("|");
@@ -331,11 +288,11 @@ export const HandleOrderConfirmation = async ({
       console.log("Log data for item:", logData);
     }
 
-    // Return success result
+    // Return checkout result
     return {
       success: true,
       message: "Order confirmed and logs inserted",
-      redirectUrl: `/flooring/${link}/success`,
+      redirectUrl: `/flooring/checkout`,
     };
   } catch (err) {
     console.error("Unexpected errors:", err.message);

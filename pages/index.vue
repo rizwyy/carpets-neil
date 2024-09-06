@@ -1,7 +1,7 @@
 <template>
   <div class="h-max w-max">
-    <HeroMOB v-if="isMobile" />
-    <HeroPC v-else />
+    <!-- <HeroMOB v-if="isMobile" />
+    <HeroPC v-else /> -->
   </div>
 </template>
 
@@ -9,12 +9,15 @@
 import HeroPC from "./../components/HomePage/HeroLayoutPC.vue";
 import HeroMOB from "./../components/HomePage/HeroLayoutMOB.vue";
 
+const router = useRouter();
+
 const isMobile = ref(false);
 onMounted(() => {
-  if (window.innerWidth < 990) {
-    isMobile.value = true;
-  } else {
-    isMobile.value = false;
-  }
+  router.push("/flooring");
+  // if (window.innerWidth < 990) {
+  //   isMobile.value = true;
+  // } else {
+  //   isMobile.value = false;
+  // }
 });
 </script>

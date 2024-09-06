@@ -4,7 +4,8 @@
   <div
     v-show="
       userStore.preference.flooring == 'rubber' &&
-      userStore.preference.spec_1 !== ''
+      userStore.preference.spec_1 !== '' &&
+      userStore.preference.spec_2 !== ''
     "
     class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
   >
@@ -17,7 +18,7 @@
 
         <button
           @click="clearSurfaceFinish"
-          v-if="userStore.preference.spec_2"
+          v-show="userStore.preference.spec_3"
           class="h-max bg-white text-gray-500 px-[1.2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All<svg
@@ -39,12 +40,12 @@
         <div
           :class="[
             'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: userStore.preference.spec_2 === 'Matt Finish' },
+            { selected: userStore.preference.spec_3 === 'Matt Finish' },
           ]"
           @click="toggleSelect('Matt Finish')"
         >
           <div
-            v-if="userStore.preference.spec_2 === 'Matt Finish'"
+            v-show="userStore.preference.spec_3 === 'Matt Finish'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -71,12 +72,12 @@
         <div
           :class="[
             'h-[14vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: userStore.preference.spec_2 === 'Gloss Finish' },
+            { selected: userStore.preference.spec_3 === 'Gloss Finish' },
           ]"
           @click="toggleSelect('Gloss Finish')"
         >
           <div
-            v-if="userStore.preference.spec_2 === 'Gloss Finish'"
+            v-show="userStore.preference.spec_3 === 'Gloss Finish'"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <!-- Selected indicator without text -->
@@ -112,18 +113,18 @@ import useUserStore from "~/stores/user";
 const selectedThickness = ref("");
 function clearSurfaceFinish() {
   selectedThickness.value = "";
-  userStore.preference.spec_2 = "";
+  userStore.preference.spec_3 = "";
 }
 
 const toggleSelect = (surface) => {
   if (selectedThickness.value === surface) {
     selectedThickness.value = "";
-    userStore.preference.spec_2 = "";
+    userStore.preference.spec_3 = "";
   } else {
     existingUser ? scrollBy(500) : scrollToBottom();
 
     selectedThickness.value = surface;
-    userStore.preference.spec_2 = toRaw(selectedThickness.value);
+    userStore.preference.spec_3 = toRaw(selectedThickness.value);
   }
   userStore.updateCart();
 };

@@ -157,7 +157,7 @@ const arePreferencesFilled = computed(() => {
   );
 });
 
-sdf; // GET ALL CART ITEMS
+// GET ALL CART ITEMS
 async function getHistory() {
   isRefreshLoading.value = true;
 
@@ -250,7 +250,7 @@ const HandleOrderConfirmation = () => {
       restrictedAccess.value = false;
 
       isConfirmationLoading.value = false;
-      router.push(`/flooring/${link}/success`);
+      router.push(`/flooring/checkout`);
       console.log("SUCCESS");
     })
     .catch((err) => {

@@ -38,8 +38,9 @@
     <div
       class="h-[66svh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
     >
-      <a href="/">Designer</a><a href="/about">About</a><span>Contact</span
+      <a href="/">Home</a><a href="/about">About</a><span>Contact</span
       ><a href="/privacy">Privacy Policy</a>
+      <a href="/designer">Designer Login</a>
     </div>
     <div class="h-[20svh] w-screen flex flex-col justify-start">
       <div class="flex h-full w-full justify-between px-[6vw] items-center">
@@ -204,7 +205,7 @@ async function handleConfirmation() {
     // Redirect to success page using vanilla JS
 
     isAccessRestricted.value = false;
-    router.push("/flooring/success");
+    router.push("/flooring/checkout");
   } else {
     // Handle error
     console.error(result.message);

@@ -8,10 +8,13 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 // Eager-loaded component (for both mobile and desktop)
-import RubberThicknessDetails from "./../../../components/MOBILE/FLOORING/RUBBER/RubberThicknessDetails.vue";
+import RubberApplicationDetails from "./../../../components/MOBILE/FLOORING/RUBBER/RubberApplicationDetails.vue";
 
 // Lazy-loaded components
 
+const LazyRubberThicknessDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/RUBBER/RubberThicknessDetails.vue")
+);
 const LazyRubberFinishDetails = defineAsyncComponent(() =>
   import("~/components/MOBILE/FLOORING/RUBBER/RubberFinishDetails.vue")
 );
@@ -67,20 +70,21 @@ onMounted(() => {
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Sports Flooring >
+          Rubber Flooring >
           <!-- DESKTOP -->
           {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <RubberThicknessDetails :existingUser="existingUser" />
-      <RubberFinishDetails :existingUser="existingUser" />
+      <RubberApplicationDetails :existingUser="existingUser" />
+      <LazyRubberThicknessDetails :existingUser="existingUser" />
+      <LazyRubberFinishDetails :existingUser="existingUser" />
       <LazyRubberColorDetails :existingUser="existingUser" />
       <LazyRubberBudgetDetails :existingUser="existingUser" />
       <LazyOrderMethod flooring="rubber" />
       <LazyInfoForm flooring="rubber" />
-      <LazyReviewCard flooring="rubber" link="rubber" />>
+      <LazyReviewCard flooring="rubber" link="rubber" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -102,14 +106,15 @@ onMounted(() => {
             href="/flooring"
             class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
           >
-            Sports Flooring
+            Rubber Flooring
           </a>
           <CurrencyDetails />
         </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin :existingUser="existingUser" />
-      <RubberThicknessDetails :existingUser="existingUser" />
+      <RubberApplicationDetails :existingUser="existingUser" />
+      <LazyRubberThicknessDetails :existingUser="existingUser" />
       <LazyRubberFinishDetails :existingUser="existingUser" />
       <LazyRubberColorDetails :existingUser="existingUser" />
       <LazyRubberBudgetDetails :existingUser="existingUser" />
