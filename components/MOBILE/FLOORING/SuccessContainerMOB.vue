@@ -4,7 +4,7 @@
   >
     <div class="h-max w-[100%] px-[4vw] flex justify-between">
       <h2
-        class="h-max w-max font-[300] text-[5.4svh] text-[#555] leading-[4.8svh] tracking-[-.1vw]"
+        class="txt_Text opacity-0 h-max w-max font-[300] text-[5.4svh] text-[#555] leading-[4.8svh] tracking-[-.1vw]"
       >
         WOLTIZ
       </h2>
@@ -17,15 +17,17 @@
     <div
       class="h-max w-[75%] px-[4vw] flex flex-col items-start gap-[2svh] pt-[1svh]"
     >
-      <DoubleTickIcon class="text-[12svh] text-[#666] max-[320px]:hidden" />
+      <DoubleTickIcon
+        class="el_Img text-[12svh] text-[#666] max-[320px]:hidden"
+      />
       <h2
-        class="h-max w-full font-[300] text-[4.2svh] text-[#222] leading-[4.8svh]"
+        class="txt_Text opacity-0 h-max w-full font-[300] text-[4.2svh] text-[#222] leading-[4.8svh]"
       >
         Thanks, {{ firstName }}! You're ready to go.
       </h2>
     </div>
     <div class="h-max w-[90%] px-[4vw]">
-      <p class="h-max w-[100%] text-[2svh] text-[#666]">
+      <p class="txt_Text opacity-0 h-max w-[100%] text-[2svh] text-[#666]">
         One of our representatives will contact you soon to confirm the details.
         Please make sure to keep your phone line or email active to avoid any
         delays in communication. We appreciate your trust in us, and we look
@@ -34,7 +36,7 @@
     </div>
     <div class="h-max w-full px-[4vw]">
       <div
-        class="h-max w-[100%] py-[1.6svh] rounded-2xl px-[2.8vw] flex flex-col gap-[1.6svh] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
+        class="txt_Text opacity-0 h-max w-[100%] py-[1.6svh] rounded-2xl px-[2.8vw] flex flex-col gap-[1.6svh] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
       >
         <div
           class="flex items-center h-max w-full gap-[3vw] text-[#999] tracking-[.4vw] text-[1.8svh] font-[500]"
@@ -74,6 +76,10 @@ const firstName = computed(() => {
   // Proceed with the name extraction and formatting if everything is defined
   const name = userPreference.value.name.trim().split(" ")[0];
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+});
+
+onMounted(() => {
+  handleImageLoad("el", "txt");
 });
 </script>
 
