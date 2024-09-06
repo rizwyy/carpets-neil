@@ -158,6 +158,40 @@ function cancelDelete() {
   showConfirmDelete.value = false;
 }
 
+// GET ALL CART ITEMS
+async function getHistory() {
+  try {
+    let sanitizedPhone = userStore.userData.phone.startsWith("+")
+      ? userStore.userData.phone.slice(1)
+      : addCountryCode(
+          userStore.userData.phone,
+          userStore.preference.country
+        ).slice(1);
+
+    const preferences = await fetchPreferencesByMobile(sanitizedPhone);
+
+    if (preferences && preferences.data && preferences.data.length > 0) {
+      preferences.data.forEach((pref) => {
+        const preferenceData = pref.preference;
+        const id = pref.id;
+
+        const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
+
+        if (!isAlreadyInCart) {
+          const preferenceWithId = { ...preferenceData, id: id };
+          userStore.cart.push(preferenceWithId);
+        }
+      });
+
+      console.log("Preferences added to cart:", userStore.cart);
+    } else {
+      console.log("No preferences found.");
+    }
+  } catch (error) {
+    console.error("Failed to fetch or process preferences:", error);
+  } finally {
+  }
+}
 const handleDeleteItemAndUpdate = async (logId) => {
   try {
     // Step 1: Check if the logId is 'PINIA'

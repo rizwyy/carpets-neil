@@ -2,7 +2,7 @@
   <!-- MOBILE -->
   <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
     <div
-      class="h-max w-[96vw] text-center py-[2vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      class="h-max w-[96vw] text-center py-[2vh] flex flex-col gap-[4vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
         class="h-max w-full flex items-center justify-between text-[3.2vh] tracking-[-.07vw] z-[9]"
@@ -28,86 +28,33 @@
         </button>
       </div>
 
-      <!--THICKNESS -->
-
-      <!-- SLIDE 1 -->
-      <div class="h-max w-[90vw] flex flex-col gap-[1.8vh] py-[4vh]">
-        <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-          <!-- MOBILE -->
-          <div
-            :class="[
-              'h-[14vh]  translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-              { selected: spec_1.includes('20-30mm') },
-            ]"
-            @click="toggleSelect('20-30mm')"
-          >
-            <div
-              v-show="spec_1.includes('20-30mm')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-            >
-              <!-- Selected indicator without text -->
-              <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                >Selected</span
-              >
-            </div>
-            <div
-              class="h-full w-full bg-green-600 bg-opacity-[.9] from-[60%] absolute bottom-0 left-0 z-[-1]"
-            ></div>
-
-            <span>20-30mm</span>
-          </div>
-
-          <!-- MOBILE -->
-          <!-- 30-40mm -->
-          <div
-            :class="[
-              'h-[14vh]  translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-              { selected: spec_1.includes('30-40mm') },
-            ]"
-            @click="toggleSelect('30-40mm')"
-          >
-            <div
-              v-show="spec_1.includes('30-40mm')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-            >
-              <!-- Selected indicator without text -->
-              <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                >Selected</span
-              >
-            </div>
-            <div
-              class="h-full w-full bg-green-600 bg-opacity-[.9] from-[60%] absolute bottom-0 left-0 z-[-1]"
-            ></div>
-
-            <span>30-40mm</span>
-          </div>
-        </div>
-        <!-- MOBILE -->
-        <!-- 40-50mm -->
+      <!--THICKNESS OPTIONS IN FLEX-COL WITH GAP-->
+      <div class="flex flex-col gap-[1.8vh]">
+        <!-- Iterate over thickness options -->
         <div
+          v-for="thickness in thicknessOptions"
+          :key="thickness"
           :class="[
-            'h-[14vh] translate-y-[20%] rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w-full flex items-center  justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-            { selected: spec_1.includes('40-50mm') },
+            'h-[10vh] overflow-hidden bg-slate-500 rounded-full text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+            { selected: spec_1.includes(thickness) },
           ]"
-          @click="toggleSelect('40-50mm')"
+          @click="toggleSelect(thickness)"
         >
           <div
-            v-show="spec_1.includes('40-50mm')"
+            v-show="spec_1.includes(thickness)"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
-            <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
+              class="absolute top-[1vh] right-[6vw] bg-white text-gray-500 px-[2vw] py-[.2vh] text-[1.8vh] rounded-md"
             >
+              Selected
+            </span>
           </div>
           <div
             class="h-full w-full bg-green-600 bg-opacity-[.9] from-[60%] absolute bottom-0 left-0 z-[-1]"
           ></div>
 
-          <span>40-50mm</span>
+          <span>{{ thickness }}</span>
         </div>
       </div>
     </div>
@@ -123,6 +70,19 @@ const userStore = useUserStore();
 const customActivity = ref("");
 const spec_1 = ref("");
 const isCustomActivityOpted = ref(false);
+
+// Define thickness options
+const thicknessOptions = [
+  "12mm",
+  "15mm",
+  "20mm",
+  "30mm",
+  "35mm",
+  "40mm",
+  "45mm",
+  "50mm",
+];
+
 function clearAllSelections_spec1() {
   spec_1.value = "";
   userStore.preference.spec_1 = "";
@@ -148,8 +108,7 @@ const toggleSelect = (type) => {
 
 <style scoped>
 .selected {
-  border-radius: 0px; /* Adjust this value as needed */
-  border-radius: 0.375rem;
+  border-radius: 100px;
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>
