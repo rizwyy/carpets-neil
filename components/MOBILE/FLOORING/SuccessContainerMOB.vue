@@ -18,7 +18,7 @@
       class="h-max w-[75%] px-[4vw] flex flex-col items-start gap-[2svh] pt-[1svh]"
     >
       <DoubleTickIcon
-        class="el_Img text-[12svh] text-[#666] max-[320px]:hidden"
+        class="txt_Text opacity-0 text-[12svh] text-[#666] max-[320px]:hidden"
       />
       <h2
         class="txt_Text opacity-0 h-max w-full font-[300] text-[4.2svh] text-[#222] leading-[4.8svh]"
