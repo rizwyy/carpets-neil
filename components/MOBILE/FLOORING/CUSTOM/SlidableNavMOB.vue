@@ -151,7 +151,6 @@ function getElementDistanceFromLeft(element) {
   if (element) {
     // Get the distance from the left of the viewport
     const rect = element.getBoundingClientRect();
-    console.log(rect);
     return rect.left; // This returns the distance from the left of the viewport
   }
   return 0;

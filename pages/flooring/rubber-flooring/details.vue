@@ -79,7 +79,6 @@ onMounted(() => {
       <!-- DESKTOP -->
       <RubberApplicationDetails :existingUser="existingUser" />
       <LazyRubberThicknessDetails :existingUser="existingUser" />
-      <LazyRubberFinishDetails :existingUser="existingUser" />
       <LazyRubberColorDetails :existingUser="existingUser" />
       <LazyRubberBudgetDetails :existingUser="existingUser" />
       <LazyOrderMethod flooring="rubber" />
@@ -115,7 +114,6 @@ onMounted(() => {
       <BannerYouWin :existingUser="existingUser" />
       <RubberApplicationDetails :existingUser="existingUser" />
       <LazyRubberThicknessDetails :existingUser="existingUser" />
-      <LazyRubberFinishDetails :existingUser="existingUser" />
       <LazyRubberColorDetails :existingUser="existingUser" />
       <LazyRubberBudgetDetails :existingUser="existingUser" />
       <LazyOrderMethod flooring="rubber" />

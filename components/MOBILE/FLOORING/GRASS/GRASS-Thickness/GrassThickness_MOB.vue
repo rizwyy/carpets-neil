@@ -35,7 +35,7 @@
           v-for="thickness in thicknessOptions"
           :key="thickness"
           :class="[
-            'h-[10vh] overflow-hidden bg-slate-500 rounded-full text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+            'h-[10vh] overflow-hidden bg-[#222] rounded-full text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
             { selected: spec_1.includes(thickness) },
           ]"
           @click="toggleSelect(thickness)"

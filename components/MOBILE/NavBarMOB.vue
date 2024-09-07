@@ -27,20 +27,24 @@
     <div class="h-[14svh] w-screen px-[4vw] items-center flex justify-between">
       <a
         href="/"
-        class="h-max w-max font-[300] text-[5vh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[5svh] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
-      <span class="text-[5vh]">
+      <span class="text-[5svh]">
         <CloseIcon @click="closeMenu" />
       </span>
     </div>
     <div
-      class="h-[66svh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
+      class="h-[66svh] w-screen flex flex-col justify-center gap-[2svh] items-start px-[4vw] text-[3.8svh]"
     >
-      <a href="/">Home</a><a href="/about">About</a><span>Contact</span
+      <a href="/">Flooring</a><a href="/about">About</a><span>Contact</span
       ><a href="/privacy">Privacy Policy</a>
-      <a href="/designer">Designer Login</a>
+      <a
+        class="bg-[#333] px-[6vw] rounded-sm text-[#f1f1f1] text-[3.4svh] py-[1svh] mt-[5svh]"
+        href="/designer"
+        >Designer Login</a
+      >
     </div>
     <div class="h-[20svh] w-screen flex flex-col justify-start">
       <div class="flex h-full w-full justify-between px-[6vw] items-center">
@@ -63,7 +67,7 @@
     >
       <div class="h-max w-max flex flex-col">
         <span class="text-[2.8svh] flex items-center gap-[2vw]">
-          <UserIcon class="text-[4vh]" />
+          <UserIcon class="text-[4svh]" />
           <span class="flex flex-col items-start">
             {{ capitalizeName(userPreference.name) }}
             <button
