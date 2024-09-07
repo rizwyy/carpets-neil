@@ -86,7 +86,7 @@
                     <a
                       target="_blank"
                       href="https://api.whatsapp.com/send?phone=97333008801"
-                      class="px-[4vw] py-[1vh] border-[2px] border-[#fff9] text-[#e9e9e9] rounded-full text-[1.8vh] shadow-lg"
+                      class="px-[4vw] py-[.8vh] border-[2px] tracking-[.2vw] font-[500] border-[#fff9] text-[#e9e9e9] rounded-full text-[1.6vh] shadow-lg"
                     >
                       CHAT
                     </a>

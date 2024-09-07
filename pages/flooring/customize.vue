@@ -3,7 +3,9 @@
     <NavBarMOB />
     <SlidableNavMOB />
     <BannerYouWin />
-    <UploadContainer />
+    <div class="h-max w-full py-[4vh]">
+      <UploadContainerMOB />
+    </div>
     <WoltizWorkFlow />
     <FaqMOB />
     <FooterMOB />
@@ -12,7 +14,7 @@
     <NavBarPC />
     <BannerYouWin />
     <SlidableNavPC />
-    <UploadContainer />
+    <UploadContainerPC />
     <WoltizWorkFlow />
     <FaqPC />
 
@@ -30,7 +32,8 @@ import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
 import SlidableNavPC from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNavPC.vue";
 import SlidableNavMOB from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNavMOB.vue";
-import UploadContainer from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainer.vue";
+import UploadContainerMOB from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainerMOB.vue";
+import UploadContainerPC from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainerPC.vue";
 import WoltizWorkFlow from "~/components/MOBILE/FLOORING/CUSTOM/WoltizWorkFlow.vue";
 
 const isMobile = ref(false);
