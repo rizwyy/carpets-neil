@@ -1,9 +1,9 @@
 <template>
-  <div class="h-max w-full flex justify-center">
+  <div class="h-max w-full flex justify-center font-outfit">
     <div class="h-max w-full bg-white py-[0vh] rounded-xl px-[3.2vw]">
       <div
         ref="dropArea"
-        class="border-2 border-dotted border-[#999] rounded-md px-[2vw] py-[4.2vh] w-full h-full flex flex-col gap-[1vh] items-center bg-[#ededed]"
+        class="border-2 border-dotted border-[#999] rounded-md px-[2vw] py-[5.2vh] w-full h-full flex flex-col gap-[1vh] items-center bg-[#f2f2f2]"
         @drop.prevent="handleDrop"
         @dragover.prevent="handleDragOver"
       >
@@ -15,12 +15,13 @@
           class="hidden"
           @change="handleFileSelect"
         />
-        <button
-          @click="triggerFileInput"
-          class="bg-[#555] text-white font-medium text-[1.6vh] py-[1.2vh] px-[4vw] rounded-3xl flex items-center gap-2 hover:bg-[#333] transition-colors"
+        <a
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=97333008801"
+          class="bg-[#555] text-white font-medium text-[1.6vh] py-[1.2vh] px-[4vw] rounded-3xl shadow-lg flex items-center gap-2 hover:bg-[#333] transition-colors tracking-[.4vw]"
         >
-          Upload Manually
-        </button>
+          CHAT WITH US
+        </a>
       </div>
     </div>
   </div>
