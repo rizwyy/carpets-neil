@@ -1,6 +1,6 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
-import loadingIcon from "~/public/icons/loadingIcon.vue";
+import loadingIcon from "~/public/icons/loadingIcon";
 
 // Lazy-load components
 const HeroItem = defineAsyncComponent(() =>
