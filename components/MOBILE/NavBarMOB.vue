@@ -109,7 +109,7 @@
           class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         >
           <loadingIcon v-if="isConfirmLoading" class="text-white" />
-          <span v-else> PROCEED TO CHECKOUT </span>
+          <span class="text-[2svh]" v-else> PROCEED TO CHECKOUT </span>
         </button>
       </div>
     </div>

@@ -1,11 +1,11 @@
 <template>
   <a
     :href="href"
-    class="h-[16vh] w-[42%] rounded-[10px] overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh] shadow-xl"
+    class="h-[16vh] w-[42%] rounded-[8px] overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh] shadow-xl"
   >
     <span
       :class="titleClass"
-      class="w-[100%] h-max flooringItem_Text opacity-0 text-[2.8vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+      class="w-[100%] h-max text-[2.8vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
     >
       <slot name="title">{{ title }}</slot>
     </span>
@@ -14,23 +14,20 @@
     >
       SELECT
     </button> -->
-    <span
-      class="flooringItem_Text opacity-0 h-max w-full flex justify-end text-[3vh] text-[#f1f1f1]"
-    >
+    <span class="h-max w-full flex justify-end text-[3vh] text-[#f1f1f1]">
       <ArrowGoIcon />
     </span>
     <div
-      class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-[#000] bg-opacity-[1]"
+      class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-[#000] bg-opacity-[.5]"
     ></div>
     <NuxtImg
       preload
-      @load="onLoad"
       :src="imgSrc"
       :alt="altText"
       :loading="loading"
       :quality="quality"
       placeholder
-      class="flooringItem_Img absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
+      class="absolute object-cover bottom-0 left-0 h-full w-full z-[-99]"
     />
   </a>
 </template>
