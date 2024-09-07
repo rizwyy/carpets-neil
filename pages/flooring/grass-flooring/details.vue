@@ -4,7 +4,7 @@ const userStore = useUserStore();
 
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
-import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
+import FloatingBarGrassMOB from "~/components/MOBILE/FLOORING/FloatingBarGrassMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 // Eager-loaded component (for both mobile and desktop)
@@ -84,7 +84,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
-    <FloatingBarMOB flooring="GRASS" link="/" />
+    <FloatingBarGrassMOB flooring="GRASS" />
 
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
