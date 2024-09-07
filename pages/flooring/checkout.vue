@@ -15,12 +15,16 @@ import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
 import SuccessContainerMOB from "~/components/MOBILE/FLOORING/SuccessContainerMOB.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
+const pref = useCookie("pref");
 
 const isAccessRestricted = ref(true);
 const timer = ref(3);
 onMounted(() => {
+  // Decode the preference string from the cookie
+  const decodedPreferences = decodePreferenceString(pref.value);
+
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
-    isAccessRestricted.value = false;
+    isAccessRestricted.value = true;
   } else {
     isAccessRestricted.value = false;
   }
@@ -33,18 +37,18 @@ onMounted(() => {
       } else {
         clearInterval(countdown); // Stop countdown
 
-        // Generate WhatsApp link
+        // Generate WhatsApp link using decoded preferences
         const link = generateWhatsAppLink(
           "97333008801",
           `Hello, I would like to confirm my order. Please proceed with the following details:
 
-Product Specifications: ${toRaw(userPreference.value.spec_1)},${toRaw(
-            userPreference.value.spec_2
-          )},${toRaw(userPreference.value.spec_3)}, ${toRaw(
-            userPreference.value.spec_4
-          )}, ${toRaw(userPreference.value.color)}, ${toRaw(
-            userPreference.value.budget
-          )}
+Product Specifications: ${decodedPreferences.spec_1}, ${
+            decodedPreferences.spec_2
+          }, ${decodedPreferences.spec_3}, ${
+            decodedPreferences.spec_4
+          }, Colors: ${decodedPreferences.color.join(", ")}, Budget: ${
+            decodedPreferences.budget
+          }
 Thank you! Looking forward to your confirmation.`
         );
 

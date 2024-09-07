@@ -11,6 +11,7 @@
     </div>
 
     <div
+      id="scrollableContainer"
       class="relative w-full overflow-x-auto no-scrollbar select-none transition-all duration-[.2s] ease-in-out"
     >
       <div
@@ -22,7 +23,7 @@
           <button
             @click="selectCategory(category.name)"
             :class="[
-              `relative origin-center transition-all duration-[.4s] ease-in-out rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80]  text-white px-[3.8vw] py-[.8vh] ${
+              `relative slidableItem origin-center transition-all duration-[.4s] ease-in-out rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80]  text-white px-[3.8vw] py-[.8vh] ${
                 userStore.customPreference.category.includes(category.name)
                   ? 'slidableNavItemActive w-[88vw] h-[24vh]'
                   : 'slidableNavItem w-[58vw]  h-[14vh]'
@@ -87,7 +88,7 @@
                       href="https://api.whatsapp.com/send?phone=97333008801"
                       class="px-[4vw] py-[1vh] border-[2px] border-[#fff9] text-[#e9e9e9] rounded-full text-[1.8vh] shadow-lg"
                     >
-                      ENQUIRE
+                      CHAT
                     </a>
                   </div>
                 </div>
@@ -146,8 +147,27 @@ const categories = ref([
     image: "/rubber-flooring.webp",
   },
 ]);
-
+function getElementDistanceFromLeft(element) {
+  if (element) {
+    // Get the distance from the left of the viewport
+    const rect = element.getBoundingClientRect();
+    console.log(rect);
+    return rect.left; // This returns the distance from the left of the viewport
+  }
+  return 0;
+}
+function scrollContainer(container, scrollAmount) {
+  if (container && container.scrollBy) {
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  }
+}
 function selectCategory(category) {
+  const container = document.getElementById("scrollableContainer");
+  setTimeout(() => {
+    const activeItem = document.querySelector(".slidableNavItemActive");
+    const scrollAmount = getElementDistanceFromLeft(activeItem);
+    scrollContainer(container, scrollAmount - 40);
+  }, 100);
   userStore.customPreference.category = category;
 }
 </script>

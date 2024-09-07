@@ -330,3 +330,25 @@ export async function fetchLogById(id) {
     console.error("Failed to fetch log by ID:", error.message);
   }
 }
+const getAbbreviation = (abbreviation) =>
+  Object.keys(preferenceAbbreviations).find(
+    (key) => preferenceAbbreviations[key] === abbreviation
+  ) || abbreviation;
+
+export const decodePreferenceString = (encodedString) => {
+  // Split the encoded string by '|' to get each part
+  const values = encodedString.split("|");
+
+  return {
+    flooring: preferenceAbbreviations[values[0]] || values[0], // Decode flooring
+    spec_1: preferenceAbbreviations[values[1]] || values[1], // Decode spec_1
+    spec_2: preferenceAbbreviations[values[2]] || values[2], // Decode spec_2
+    spec_3: preferenceAbbreviations[values[3]] || values[3], // Decode spec_3
+    spec_4: preferenceAbbreviations[values[4]] || values[4], // Decode spec_4
+    spec_5: preferenceAbbreviations[values[5]] || values[5], // Decode spec_5
+    color: values[6]
+      .split(",")
+      .map((color) => preferenceAbbreviations[color] || color), // Decode color array
+    budget: preferenceAbbreviations[values[7]] || values[7], // Decode budget
+  };
+};

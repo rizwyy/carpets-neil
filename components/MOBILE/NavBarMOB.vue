@@ -99,14 +99,15 @@
       <div v-for="(item, index) in userStore.cart" :key="index">
         <ReusablePrefNavCardMOB :item="item" :key="index" />
       </div>
-      <!-- <div class="h-max w-full px-[4vw] flex justify-center">
+      <div class="h-max w-full px-[4vw] flex justify-center">
         <button
-          @click="handleConfirmation"
+          @click="HandleOrderConfirmation"
           class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         >
-          PROCEED TO CHECKOUT
+          <loadingIcon v-if="isConfirmLoading" class="text-white" />
+          <span v-else> PROCEED TO CHECKOUT </span>
         </button>
-      </div> -->
+      </div>
     </div>
 
     <!-- No items section -->
@@ -133,13 +134,15 @@ import gsap from "gsap";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
+import loadingIcon from "~/public/icons/HamburgerIcon.vue";
+
 import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
 
 import UserIcon from "./../../public/icons/UserIcon.vue";
 import CloseIcon from "./../../public/icons/closeIcon";
 import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
 
-const isAccessRestricted = useCookie("isAccessRestricted");
+const restrictedAccess = useCookie("restrictedAccess");
 
 const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
@@ -147,7 +150,7 @@ const userPreference = ref("");
 const router = useRouter();
 
 import CartIconMOB from "./CartIconMOB.vue";
-
+const isConfirmLoading = ref(false);
 function openMenu() {
   isMenuOpen.value = true;
   handleAutoAlpha("menuPageMOB", 1);
@@ -175,42 +178,67 @@ function capitalizeName(name) {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 }
 
-async function handleConfirmation() {
-  // Check if userData exists and has name, phone, and email
-  let { name, phone, email } = userStore.userData;
+const HandleOrderConfirmation = () => {
+  isConfirmLoading.value = true;
 
-  // If any of the fields are empty, fetch from userPreference cookie
-  if (!name || !phone || !email) {
-    const userPreference = useCookie("userPreference").value;
+  // Step 1: Set the cookie and validate
+  useFetch("/api/set-cookie")
+    .then(({ data, error }) => {
+      if (error?.value) {
+        throw new Error("Error setting cookie: " + error.value);
+      }
+      console.log("SET COOKIE DONE");
+    })
+    .then(async () => {
+      // Step 2: Iterate over each cart item and insert them individually
+      for (const item of userStore.cart) {
+        // Ensure the isOrderConfirmed property is set to true
+        item.isOrderConfirmed = true;
 
-    if (userPreference) {
-      name = name || userPreference.name;
-      phone = phone || userPreference.phone;
-      email = email || userPreference.email;
-    }
-  }
+        // Prepare the user data object for each item
+        const userData = {
+          name: userStore.userData.name,
+          phone: userStore.userData.phone,
+          email: userStore.userData.email,
+          preference: item, // Include the current cart item as preference
+          isOrderConfirmed: true,
+        };
 
-  // Create userData object to pass to HandleOrderConfirmation
-  const userData = {
-    name: name || "Unknown", // Default to "Unknown" if still empty
-    phone: phone || "0000000000", // Default to a placeholder phone number
-    email: email || "unknown@example.com", // Default to a placeholder email
-  };
+        const response = await fetch("/api/insert-logs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        });
 
-  const result = await HandleOrderConfirmation({
-    cartItems: userStore.cart,
-    userData: userData,
-  });
-  if (result.success) {
-    // Redirect to success page using vanilla JS
+        if (!response.ok) {
+          throw new Error(`Error inserting log for item: ${item}`);
+        }
 
-    isAccessRestricted.value = false;
-    router.push("/flooring/checkout");
-  } else {
-    // Handle error
-    console.error(result.message);
-  }
-}
+        const logData = await response.json();
+        console.log("Log data for item:", logData);
+      }
+    })
+    .then(() => {
+      // Step 3: Clear user data and cart after successful insertion
+      userStore.userData.email = "";
+      userStore.userData.name = "";
+      userStore.userData.phone = "";
+      userStore.cart = []; // Clear the cart
+
+      userPreference.value = null;
+      restrictedAccess.value = false;
+
+      isConfirmLoading.value = false;
+      router.push(`/flooring/checkout`);
+      console.log("SUCCESS");
+    })
+    .catch((err) => {
+      isConfirmLoading.value = false;
+      restrictedAccess.value = true;
+      handleTempAnimation("errOverlayMOB");
+      console.error("Unexpected errors:", err.message);
+    });
+};
 
 onMounted(() => {
   handleDOMEntry("navBarMOB");
