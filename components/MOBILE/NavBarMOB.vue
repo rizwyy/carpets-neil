@@ -97,6 +97,7 @@
 
     <!-- Scrollable content section -->
     <div
+      :key="userStore.cartKey"
       v-if="userStore.cart.length > 0"
       class="h-[70vh] w-full test overflow-y-auto px-[4vw] pb-[6vh]"
     >

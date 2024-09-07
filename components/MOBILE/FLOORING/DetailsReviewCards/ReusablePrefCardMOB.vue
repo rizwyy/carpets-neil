@@ -162,6 +162,41 @@ const { item } = defineProps({
 const isExpanded = ref(false);
 const showConfirmDelete = ref(false);
 const itemToDelete = ref(null);
+const emit = defineEmits(["refreshCart"]);
+async function getHistory() {
+  try {
+    let sanitizedPhone = userStore.userData.phone.startsWith("+")
+      ? userStore.userData.phone.slice(1)
+      : addCountryCode(
+          userStore.userData.phone,
+          userStore.preference.country
+        ).slice(1);
+
+    const preferences = await fetchPreferencesByMobile(sanitizedPhone);
+
+    if (preferences && preferences.data && preferences.data.length > 0) {
+      preferences.data.forEach((pref) => {
+        const preferenceData = pref.preference;
+        const id = pref.id;
+
+        const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
+
+        if (!isAlreadyInCart) {
+          const preferenceWithId = { ...preferenceData, id: id };
+          userStore.cart.push(preferenceWithId);
+        }
+      });
+      // Increment the cartKey to force re-render the cart component
+      emit("refreshCart");
+      console.log("Preferences added to cart:", userStore.cart);
+    } else {
+      console.log("No preferences found.");
+    }
+  } catch (error) {
+    console.error("Failed to fetch or process preferences:", error);
+  } finally {
+  }
+}
 
 function toggleExpansion() {
   isExpanded.value = !isExpanded.value;

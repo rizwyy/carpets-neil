@@ -41,6 +41,7 @@
       >
         <div
           v-if="userStore.cart.length > 0"
+          :key="userStore.cartKey"
           class="w-full h-max transition-all ease-in-out duration-300"
         >
           <div
@@ -48,7 +49,11 @@
             v-for="(item, index) in userStore.cart"
             :key="index"
           >
-            <ReusablePrefCardMOB :item="item" :key="index" />
+            <ReusablePrefCardMOB
+              :item="item"
+              :key="index"
+              @refreshCart="handleCartRefresh"
+            />
           </div>
         </div>
         <div
@@ -132,7 +137,6 @@ const isConfirmationLoading = ref(false);
 const isRefreshLoading = ref(false);
 const historyFound = ref(true);
 const isFlooringVisible = ref(false);
-
 // Props
 const { flooring, link } = defineProps(["flooring", "link"]);
 
@@ -196,7 +200,12 @@ async function getHistory() {
     }, 1000);
   }
 }
-
+// AT REFRESH
+function handleCartRefresh() {
+  console.log("CART REFRESHED");
+  // Update the cartKey to force re-render of the entire cart container
+  userStore.cartKey = Date.now();
+}
 // ------------------
 // ORDER CONFIRMATION
 const HandleOrderConfirmation = () => {

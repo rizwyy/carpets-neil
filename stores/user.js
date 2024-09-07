@@ -10,6 +10,7 @@ const useUserStore = defineStore("user", {
     },
     flooringHistory: [],
     cart: [],
+    cartKey: Date.now(),
 
     preference: {
       flooring: "",
