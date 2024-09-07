@@ -4,7 +4,7 @@
   >
     <div class="h-max w-[100%] px-[4vw] flex justify-between">
       <h2
-        class="txt_Text opacity-0 h-max w-max font-[300] text-[5.4svh] text-[#555] leading-[4.8svh] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[5.4svh] text-[#555] leading-[4.8svh] tracking-[-.1vw]"
       >
         WOLTIZ
       </h2>
