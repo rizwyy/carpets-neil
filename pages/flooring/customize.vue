@@ -1,7 +1,7 @@
 <template>
   <div v-if="isMobile" class="min-[990px]:hidden">
     <NavBarMOB />
-    <SlidableNav />
+    <SlidableNavMOB />
     <BannerYouWin />
     <UploadContainer />
     <WoltizWorkFlow />
@@ -11,7 +11,7 @@
   <div v-else class="max-[990px]:hidden">
     <NavBarPC />
     <BannerYouWin />
-    <SlidableNav />
+    <SlidableNavPC />
     <UploadContainer />
     <WoltizWorkFlow />
     <FaqPC />
@@ -28,7 +28,8 @@ import FaqPC from "~/components/DESKTOP/FaqPC.vue";
 import BannerYouWin from "~/components/BannerYouWin.vue";
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";
 import FooterMOB from "~/components/MOBILE/FooterMOB.vue";
-import SlidableNav from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNav.vue";
+import SlidableNavPC from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNavPC.vue";
+import SlidableNavMOB from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNavMOB.vue";
 import UploadContainer from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainer.vue";
 import WoltizWorkFlow from "~/components/MOBILE/FLOORING/CUSTOM/WoltizWorkFlow.vue";
 
