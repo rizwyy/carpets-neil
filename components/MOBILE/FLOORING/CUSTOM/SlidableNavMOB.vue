@@ -107,7 +107,7 @@ import circleBold from "~/public/icons/circleBold.vue";
 import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();
-
+const amount = ref(70);
 // Define categories with name, label, desc1, desc2, desc3, desc4, and image
 const categories = ref([
   {
@@ -147,26 +147,42 @@ const categories = ref([
     image: "/rubber-flooring.webp",
   },
 ]);
-function getElementDistanceFromLeft(element) {
-  if (element) {
-    // Get the distance from the left of the viewport
-    const rect = element.getBoundingClientRect();
-    return rect.left; // This returns the distance from the left of the viewport
+
+function getElementDistanceFromContainerLeft(element, container) {
+  if (element && container) {
+    const elementRect = element.getBoundingClientRect(); // Get element's position in the viewport
+    const containerRect = container.getBoundingClientRect(); // Get container's position in the viewport
+
+    // Calculate the element's distance from the container's left
+    return elementRect.left - containerRect.left;
   }
   return 0;
 }
+
 function scrollContainer(container, scrollAmount) {
   if (container && container.scrollBy) {
     container.scrollBy({ left: scrollAmount, behavior: "smooth" });
   }
 }
+
 function selectCategory(category) {
   const container = document.getElementById("scrollableContainer");
   setTimeout(() => {
     const activeItem = document.querySelector(".slidableNavItemActive");
-    const scrollAmount = getElementDistanceFromLeft(activeItem);
-    scrollContainer(container, scrollAmount - 40);
-  }, 100);
+
+    // Calculate the distance of the active item from the left of the container
+    const elementDistance = getElementDistanceFromContainerLeft(
+      activeItem,
+      container
+    );
+
+    // Calculate how much to scroll to make the element 10px from the left
+    const scrollAmount = elementDistance - 10;
+
+    // Scroll the container by the calculated amount
+    scrollContainer(container, scrollAmount);
+  }, 500);
+
   userStore.customPreference.category = category;
 }
 </script>
