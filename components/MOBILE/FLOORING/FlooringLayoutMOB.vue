@@ -1,5 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
+import FaqMOB from "./FaqMOB.vue";
+import WhyWoltizMOB from "./WhyWoltiz.vue";
 import FlooringGridMOB from "./FLOORING-ITEMS/FlooringGridMOB.vue";
 </script>
 
@@ -10,8 +12,10 @@ import FlooringGridMOB from "./FLOORING-ITEMS/FlooringGridMOB.vue";
         >Shop By Category</span
       >
     </div>
-    <div class="h-max w-screen flex flex-col gap-[1.8vh]">
+    <div class="h-max w-screen flex flex-col gap-[5.8vh]">
       <FlooringGridMOB />
+      <FaqMOB />
+      <WhyWoltizMOB />
     </div>
   </section>
 </template>
