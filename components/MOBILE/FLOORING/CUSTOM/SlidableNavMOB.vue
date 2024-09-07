@@ -181,7 +181,7 @@ function selectCategory(category) {
 
     // Scroll the container by the calculated amount
     scrollContainer(container, scrollAmount);
-  }, 500);
+  }, 300);
 
   userStore.customPreference.category = category;
 }
