@@ -56,7 +56,7 @@
     </div>
     <a
       href="/"
-      class="h-max w-[92vw] text-[2.4svh] tracking-[.4vw] rounded-md py-[2.4svh] text-[#ededed] bg-[#222] text-center fixed bottom-[2vh] left-[4vw] shadow-xl mt-[6svh] z-[99]"
+      class="txt_Text opacity-0 h-max w-[92vw] text-[2.4svh] tracking-[.4vw] rounded-md py-[2.4svh] text-[#ededed] bg-[#222] text-center fixed bottom-[2vh] left-[4vw] shadow-xl mt-[6svh] z-[99]"
     >
       GOT IT
     </a>

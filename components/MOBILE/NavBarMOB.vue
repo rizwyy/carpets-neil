@@ -107,9 +107,12 @@
       <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="HandleOrderConfirmation"
-          class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+          class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl flex items-center justify-center"
         >
-          <loadingIcon v-if="isConfirmLoading" class="text-white" />
+          <loadingIcon
+            v-if="isConfirmLoading"
+            class="text-white text-[2.6vh]"
+          />
           <span class="text-[2svh]" v-else> PROCEED TO CHECKOUT </span>
         </button>
       </div>
@@ -139,7 +142,7 @@ import gsap from "gsap";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
-import loadingIcon from "~/public/icons/HamburgerIcon.vue";
+import loadingIcon from "~/public/icons/loadingIcon.vue";
 
 import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
 
