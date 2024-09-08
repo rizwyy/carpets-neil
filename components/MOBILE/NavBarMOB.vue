@@ -198,13 +198,14 @@ const HandleOrderConfirmation = () => {
       console.log("SET COOKIE DONE");
     })
     .then(async () => {
-      // Step 2: Iterate over each cart item and insert them individually
+      // Step 2: Iterate over each cart item and update them individually
       for (const item of userStore.cart) {
         // Ensure the isOrderConfirmed property is set to true
         item.isOrderConfirmed = true;
 
         // Prepare the user data object for each item
         const userData = {
+          id: item.id, // Make sure the id is included for updating the log
           name: userStore.userData.name,
           phone: addCountryCode(
             userStore.userData.phone,
@@ -215,22 +216,23 @@ const HandleOrderConfirmation = () => {
           isOrderConfirmed: true,
         };
 
-        const response = await fetch("/api/insert-logs", {
+        // Call the update-logs API instead of insert-logs
+        const response = await fetch("/api/update-logs", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(userData),
         });
 
         if (!response.ok) {
-          throw new Error(`Error inserting log for item: ${item}`);
+          throw new Error(`Error updating log for item: ${item.id}`);
         }
 
         const logData = await response.json();
-        console.log("Log data for item:", logData);
+        console.log("Log updated for item:", logData);
       }
     })
     .then(() => {
-      // Step 3: Clear user data and cart after successful insertion
+      // Step 3: Clear user data and cart after successful update
       userStore.userData.email = "";
       userStore.userData.name = "";
       userStore.userData.phone = "";
