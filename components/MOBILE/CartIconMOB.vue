@@ -45,7 +45,7 @@ async function getHistory(phone, country) {
     return null; // Return null in case of failure
   }
 }
-const isMobile = ref(false);
+const isMobile = ref(true);
 onMounted(async () => {
   if (window.innerWidth < 990) {
     isMobile.value = true;

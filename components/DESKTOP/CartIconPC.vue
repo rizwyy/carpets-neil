@@ -47,6 +47,8 @@ async function getHistory(phone, country) {
   }
 }
 
+const isMobile = ref(true);
+
 onMounted(async () => {
   if (window.innerWidth < 990) {
     isMobile.value = true;
