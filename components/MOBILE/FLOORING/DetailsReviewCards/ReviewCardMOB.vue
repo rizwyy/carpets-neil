@@ -3,15 +3,15 @@
   <div v-if="userStore.isFormValidated" class="h-max w-max">
     <div
       v-if="isFlooringVisible"
-      class="h-screen w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
+      class="h-[120vh] w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
     >
       <div
-        class="h-[100svh] w-screen gap-[2vh] bg-inherit flex flex-col items-center justify-start gap-[8vh]"
+        class="h-[120svh] w-screen gap-[1vh] bg-inherit flex flex-col items-center justify-start gap-[3.2vh]"
       >
         <div
-          class="h-max w-full flex justify-between items-center px-[7.6vw] pt-[6vh]"
+          class="h-max w-full flex justify-between items-center px-[7.6vw] pt-[3.2vh]"
         >
-          <span class="text-[3.8vh] text-[#333] font-[400]"
+          <span class="text-[2.8vh] uppercase text-[#333] font-[500]"
             >Flooring Options</span
           >
           <span
