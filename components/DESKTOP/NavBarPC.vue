@@ -165,7 +165,7 @@ import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/Reus
 import UserIcon from "./../../public/icons/UserIcon.vue";
 import CloseIcon from "./../../public/icons/closeIcon";
 import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
-import loadingIcon from "~/public/icons/LoadingIcon.vue";
+import loadingIcon from "~/public/icons/loadingIcon.vue";
 import arowTopRightIcon from "~/public/icons/arowTopRightIcon.vue";
 
 const restrictedAccess = useCookie("restrictedAccess");
