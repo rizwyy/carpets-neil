@@ -3,7 +3,7 @@
     class="max-[990px]:hidden h-max w-full flex items-center justify-center mt-[8vh]"
   >
     <div
-      class="h-[38vh] w-[90%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
+      class="h-[38vh] w-[70%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
         class="absolute flooring_Banner_Overlay backdrop-blur-[14px] opacity-0 h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#2333] opacity-[.6]"
