@@ -2,7 +2,11 @@
   <div
     class="h-full w-full faq-container mx-auto pt-[4vh] pb-[8vh] px-[4vw] max-w-xl font-outfit"
   >
-    <h2 class="text-3xl font-[400] mb-[5.2vh]">Frequently Asked Questions</h2>
+    <h2
+      class="text-[3.8vh] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[5.2vh]"
+    >
+      Frequently Asked Questions
+    </h2>
 
     <!-- Show the first 5 FAQs initially and toggle between view more/less -->
     <div v-for="(faq, index) in visibleFaqs" :key="index" class="mb-[2vh]">
