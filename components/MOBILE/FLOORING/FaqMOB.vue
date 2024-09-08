@@ -4,7 +4,8 @@
   >
     <h2 class="text-3xl font-[400] mb-[5.2vh]">Frequently Asked Questions</h2>
 
-    <div v-for="(faq, index) in faqs" :key="index" class="mb-[2vh]">
+    <!-- Show the first 5 FAQs initially and toggle between view more/less -->
+    <div v-for="(faq, index) in visibleFaqs" :key="index" class="mb-[2vh]">
       <!-- Question -->
       <button
         class="w-full text-left bg-gray-200 px-[2.4vw] py-[1.8vh] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
@@ -28,15 +29,24 @@
         {{ faq.answer }}
       </div>
     </div>
+
+    <!-- View More / View Less Button -->
+    <button
+      v-if="faqs.length > 5"
+      @click="toggleViewMore"
+      class="w-full mt-[2vh] py-[1.8vh] px-[2vw] bg-[#999] text-white rounded-md shadow-lg"
+    >
+      {{ showMore ? "View Less" : "View More" }}
+    </button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import arrowUpIcon from "~/public/icons/arrowUpIcon.vue";
 import arrowDownIcon from "~/public/icons/arrowDownIcon.vue";
 
-// Define the FAQ data for Woltiz based on the PDF content
+// FAQ data
 const faqs = ref([
   {
     question: "What types of flooring does Woltiz offer?",
@@ -233,10 +243,23 @@ const faqs = ref([
   },
 ]);
 
-// Reactive variable to track expanded questions
+// Reactive variable to track expanded FAQs
 const expandedIndex = ref(-1);
 
-// Toggle the expanded state
+// Tracks whether the "View More" button is toggled
+const showMore = ref(false);
+
+// Computed property to control which FAQs are visible
+const visibleFaqs = computed(() => {
+  return showMore.value ? faqs.value : faqs.value.slice(0, 5);
+});
+
+// Toggle between viewing more and less FAQs
+function toggleViewMore() {
+  showMore.value = !showMore.value;
+}
+
+// Toggle the expanded state for FAQs
 function toggleFAQ(index) {
   expandedIndex.value = expandedIndex.value === index ? -1 : index;
 }
@@ -247,4 +270,6 @@ function isExpanded(index) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Optional: Add your custom styles here */
+</style>

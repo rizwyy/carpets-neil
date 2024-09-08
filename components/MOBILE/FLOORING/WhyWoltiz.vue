@@ -5,7 +5,7 @@
     <h2
       class="text-[3.8vh] font-[400] mb-[5vh] text-gray-800 h-max w-full text-start px-[4vw]"
     >
-      Why Woltiz?
+      Why Woltiz
     </h2>
     <div class="grid grid-cols-2 gap-[4vh] mx-auto max-w-[90vw]">
       <!-- Free measuring and planning -->
