@@ -27,7 +27,7 @@
     <!-- Render Preferences only if all conditions are met -->
     <div
       v-if="arePreferencesFilled"
-      class="h-max w-full px-[4.2vw] text-detailsContainer_heading_PC"
+      class="h-max w-full px-[8.2vw] text-detailsContainer_heading_PC"
     >
       <span>{{ firstName }}'s Preferences:</span>
     </div>
@@ -35,7 +35,7 @@
     <!-- Transition and Preference Cards -->
     <div
       v-if="arePreferencesFilled"
-      class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh] transition-all ease-in-out duration-300"
+      class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[6vh] transition-all ease-in-out duration-300"
     >
       <!-- <PrefCardPC /> -->
       <div
@@ -66,7 +66,7 @@
     <!-- Refresh Button -->
     <div
       v-if="arePreferencesFilled"
-      class="h-max w-full flex justify-evenly pb-[2vh]"
+      class="h-max w-full flex justify-evenly py-[6vh]"
     >
       <button
         v-if="!isRefreshLoading"
@@ -110,7 +110,7 @@
 
     <!-- Footer -->
     <div class="h-max w-full">
-      <!-- <FooterPC /> -->
+      <FooterPC />
     </div>
   </div>
 </template>
@@ -124,7 +124,7 @@ import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
-import FooterMOB from "../../FooterMOB.vue";
+import FooterPC from "./../../../DESKTOP/FooterPC.vue";
 import FlooringGridOverlayMOB from "../FLOORING-ITEMS/FlooringGridOverlayMOB.vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 

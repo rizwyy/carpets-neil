@@ -42,7 +42,7 @@
             <!-- THICKNESS OPTION -->
             <div
               :class="[
-                'h-[12vh] bg-[#333] overflow-hidden w-full rounded-md text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[12vh] bg-[#333] overflow-hidden w-full rounded-full text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes(thickness) },
               ]"
               @click="toggleSelect(thickness)"
@@ -52,7 +52,7 @@
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-[1vh] right-[2vw] bg-white text-gray-500 px-2 py-[.2vh] text-[1.8vh] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -117,8 +117,7 @@ const toggleSelect = (thickness) => {
 
 <style scoped>
 .selected {
-  border-radius: 0px; /* Adjust this value as needed */
-  border-radius: 0.375rem;
+  border-radius: 40px; /* Adjust this value as needed */
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

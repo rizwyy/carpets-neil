@@ -1,20 +1,20 @@
 <template>
   <section
-    class="navBarPC max-[990px]:hidden h-max w-full max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-[#f1f1f1] font-outfit"
+    class="navBarPC max-[990px]:hidden h-max w-full max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-gradient-to-b from-[#fff] to-[#f1f1f1] font-outfit"
   >
     <div class="h-full w-[35%] flex items-center justify-start">
-      <HamburgerIcon @click="openMenu" class="text-[3.8vh]" />
+      <HamburgerIcon @click="openMenu" class="text-[3.8vh] cursor-pointer" />
     </div>
     <div class="h-full w-[25%] flex justify-center items-center">
       <a
         href="/"
-        class="h-max w-max block font-[300] text-[2.8vw] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max block font-[300] text-[3.2vw] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
     </div>
     <div class="h-full w-[35%] flex justify-end gap-[8vw] items-center">
-      <CartIconPC @click="openCart" />
+      <CartIconPC @click="openCart" class="cursor-pointer" />
     </div>
   </section>
   <!-- MENU PAGE -->
@@ -22,10 +22,12 @@
     v-if="isMenuOpen"
     class="menuPageMOB opacity-0 invisible font-outfit fixed top-0 left-0 h-screen w-screen bg-[#f5f3f1] z-[9999]"
   >
-    <div class="h-[14vh] w-screen px-[4vw] items-center flex justify-between">
+    <div
+      class="h-max w-screen px-[4vw] items-center flex justify-between pt-[4vh]"
+    >
       <a
         href="/"
-        class="h-max w-max font-[300] text-[5vh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[7.2vh] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
@@ -34,10 +36,10 @@
       </span>
     </div>
     <div
-      class="h-[66vh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[3.8vh]"
+      class="h-[66vh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[2.4vw]"
     >
-      <a href="/">Home</a><a href="/about">About</a><span>Contact</span
-      ><a href="/privacy">Privacy Policy</a>
+      <a href="/">Flooring</a><a href="/about">About</a
+      ><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a>
 
       <a
         class="bg-[#333] px-[1vw] rounded-sm text-[#f1f1f1] text-[3.4svh] py-[1svh] mt-[5svh]"
@@ -107,7 +109,7 @@
       <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="HandleOrderConfirmation"
-          class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+          class="text-[2.4svh] tracking-[.4vw] bottom-[2vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         >
           <loadingIcon v-if="isConfirmLoading" class="text-white" />
           <span class="text-[2svh]" v-else> PROCEED TO CHECKOUT </span>
@@ -120,13 +122,13 @@
       v-else
       class="h-max w-full flex items-center flex-col gap-[16svh] pt-[18svh] px-[4vw]"
     >
-      <NuxtImg class="h-[16svh]" src="/icons/box.webp" />
-      <span class="text-[2.4vh] font-[300] text-center">
-        Oops! It looks like you don't have any saved preferences yet. Start
-        exploring and add your favorite options!
+      <NuxtImg class="w-[10vw]" src="/icons/box.webp" />
+      <span class="text-[2vw] font-[300] text-center">
+        Oops! It looks like you don't have any saved preferences yet. <br />
+        Start exploring and add your favorite options!
       </span>
       <a
-        class="text-[1.2vw] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+        class="text-[1.8vw] tracking-[.4vw] px-[4vw] rounded-md py-[3.2vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
         href="/flooring"
         >EXPLORE</a
       >
@@ -138,8 +140,6 @@
 import gsap from "gsap";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
-
-import loadingIcon from "~/public/icons/HamburgerIcon.vue";
 
 import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
 

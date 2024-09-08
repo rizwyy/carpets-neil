@@ -1,9 +1,9 @@
 <template>
   <div
-    class="why-woltiz-container w-max mx-auto pt-[4vw] pb-[4vw] text-center font-outfit"
+    class="why-woltiz-container w-max mx-auto pt-[4vw] pb-[8vw] text-center font-outfit border-t-[.2vh]"
   >
     <h2
-      class="text-[2.5vw] font-[400] mb-[4vw] text-gray-800 h-max w-full text-center px-[4vw]"
+      class="text-[2.5vw] font-[400] mb-[14vh] text-gray-800 h-max w-full text-center px-[4vw]"
     >
       Why Woltiz
     </h2>

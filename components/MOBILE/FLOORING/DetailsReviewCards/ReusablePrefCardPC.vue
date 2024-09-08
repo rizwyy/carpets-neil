@@ -6,7 +6,7 @@
     <div
       @click="toggleExpansion"
       :class="[
-        'shadow-md hover:shadow-lg transition-all ease-in-out duration-300 flex flex-col bg-prefCard border-[#999] px-[3.2vw] rounded-xl py-[4vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none cursor-pointer',
+        'shadow-md hover:shadow-lg transition-all ease-in-out duration-300 flex flex-col bg-prefCard border-[#999] px-[3.2vw] rounded-xl py-[3.2vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none cursor-pointer',
         !isExpanded ? 'w-[94%] text-[2vw]' : 'w-[100%] text-[2.4vw]',
       ]"
     >
@@ -119,7 +119,7 @@ import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 import TrashIcon from "~/public/icons/TrashIcon.vue";
 import SpecDetail from "./PrefCardItems/SpecDetail.vue";
-import UploadContainerMOB from "./UploadContainerMOB.vue";
+import UploadContainerPC from "./UploadContainerPC.vue";
 import ArrowUpIcon from "~/public/icons/arrowUpIcon.vue";
 import ArrowDownIcon from "~/public/icons/arrowDownIcon.vue";
 

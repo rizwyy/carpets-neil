@@ -260,3 +260,14 @@ export function handleAutoAlpha(el, autoAlpha, x) {
     x: x,
   });
 }
+export function animateImageLOOP(el) {
+  gsap.to(`.${el}`, {
+    duration: 80,
+    ease: "power2",
+    scale: 1.4,
+    yoyo: true,
+    y: 0,
+    x: 0,
+    repeat: -1,
+  });
+}

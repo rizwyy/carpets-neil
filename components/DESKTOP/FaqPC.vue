@@ -1,14 +1,15 @@
 <template>
   <!-- Desktop Optimized FAQ Section -->
   <div
-    class="faq-container h-full w-full mx-auto pt-[4vh] pb-[8vh] px-[4vw] grid grid-cols-2 gap-[4vw] font-outfit max-w-screen-xl"
+    class="faq-container h-full w-full mx-auto pt-[14vh] pb-[8vh] px-[4vw] grid grid-cols-2 gap-[4vw] font-outfit max-w-screen-xl border-t-[.2vh]"
   >
     <h2 class="col-span-2 text-4xl font-[400] mb-[5.2vh] w-full text-center">
       Frequently Asked Questions
     </h2>
 
+    <!-- Loop through the displayedFaqs computed property -->
     <div
-      v-for="(faq, index) in faqs"
+      v-for="(faq, index) in displayedFaqs"
       :key="index"
       class="faq-item bg-gray-200 p-[2vh] rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:bg-gray-300"
       :class="{ expanded: isExpanded(index) }"
@@ -36,15 +37,23 @@
         </div>
       </transition>
     </div>
+
+    <!-- View More Button -->
+    <button
+      v-if="faqs.length > 5"
+      @click="toggleViewMore"
+      class="col-span-2 mt-[3vh] mx-auto px-4 py-2 rounded-md text-[#555] text-[1.4vw] underline underline-offset-[.8vh]"
+    >
+      {{ showMore ? "Show Less" : "View More" }}
+    </button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import arrowUpIcon from "~/public/icons/arrowUpIcon.vue";
 import arrowDownIcon from "~/public/icons/arrowDownIcon.vue";
 
-// Define the FAQ data for Woltiz
 const faqs = ref([
   {
     question: "What types of flooring does Woltiz offer?",
@@ -240,10 +249,12 @@ const faqs = ref([
       "Yes, we invite you to visit our showroom to explore our flooring options.",
   },
 ]);
-// Reactive variable to track expanded questions
-const expandedIndex = ref(-1);
 
-// Toggle the expanded state
+// Reactive variables
+const expandedIndex = ref(-1);
+const showMore = ref(false);
+
+// Toggle the expanded state for each FAQ item
 function toggleFAQ(index) {
   expandedIndex.value = expandedIndex.value === index ? -1 : index;
 }
@@ -252,23 +263,33 @@ function toggleFAQ(index) {
 function isExpanded(index) {
   return expandedIndex.value === index;
 }
+
+// Computed property to control how many FAQs are displayed
+const displayedFaqs = computed(() => {
+  return showMore.value ? faqs.value : faqs.value.slice(0, 6);
+});
+
+// Toggle between showing 5 and all FAQs
+function toggleViewMore() {
+  showMore.value = !showMore.value;
+}
 </script>
 
 <style scoped>
 .faq-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: start; /* Prevent grid items from aligning with the tallest element */
+  align-items: start;
   gap: 2rem;
 }
 
 .faq-item {
   position: relative;
-  overflow: hidden; /* Keep the unexpanded items minimal */
+  overflow: hidden;
 }
 
 .faq-item.expanded {
-  overflow: visible; /* Allow the expanded item to grow in height */
+  overflow: visible;
 }
 
 .fade-enter-active,

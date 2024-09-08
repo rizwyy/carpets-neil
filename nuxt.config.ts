@@ -34,7 +34,7 @@ export default defineNuxtConfig({
             detailsTo: "#f1f1f1",
             detailsHeadCLR: "#222",
             // REVIEW CARD
-            prefCard: "#EBF2FE",
+            prefCard: "#f1f1f1",
             prefCardBG: "#fff",
           },
         },
