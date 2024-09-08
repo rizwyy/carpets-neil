@@ -291,6 +291,7 @@ const insertLog = (isOrderConfirmed) => {
 };
 
 function handleInfoProceedings() {
+  console.log("FROM PC");
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country

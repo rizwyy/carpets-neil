@@ -181,10 +181,11 @@ async function getHistory() {
         const id = pref.id;
 
         const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
-
         if (!isAlreadyInCart) {
           const preferenceWithId = { ...preferenceData, id: id };
           userStore.cart.push(preferenceWithId);
+        } else {
+          userStore.cart = removeDuplicates(userStore.cart);
         }
       });
 

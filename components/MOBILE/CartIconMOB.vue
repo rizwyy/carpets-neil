@@ -40,7 +40,6 @@ async function getHistory(phone, country) {
 
     // Unwrap the reactive `data`
     const preferences = unref(data);
-
     return preferences; // Return unwrapped preferences
   } catch (error) {
     console.error("Failed to fetch or process preferences:", error.message);
@@ -58,7 +57,7 @@ onMounted(async () => {
   // Ensure the cookie and phone field are valid
   if (
     userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).phone === "string" && // Ensure you're accessing .phone
+    typeof toRaw(userPreferenceCookie).phone === "string" &&
     ctry
   ) {
     try {
@@ -81,6 +80,7 @@ onMounted(async () => {
             // Push the updated object into the userStore.cart array
             userStore.cart.push(updatedPreference);
           });
+          userStore.cart = toRaw(removeDuplicates(userStore.cart));
 
           // Log the updated cart for confirmation
         } else {
@@ -95,5 +95,9 @@ onMounted(async () => {
   } else {
     console.warn("Invalid userPreferenceCookie or country value.");
   }
+
+  setTimeout(() => {
+    userStore.cart = toRaw(removeDuplicates(userStore.cart));
+  }, 1000);
 });
 </script>

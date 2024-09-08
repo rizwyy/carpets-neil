@@ -216,6 +216,7 @@ function cancelDelete() {
 }
 
 const handleDeleteItemAndUpdate = async (logId) => {
+  console.log("PC");
   try {
     // Step 1: Check if the logId is 'PINIA'
     if (logId === "PINIA") {

@@ -352,3 +352,33 @@ export const decodePreferenceString = (encodedString) => {
     budget: preferenceAbbreviations[values[7]] || values[7], // Decode budget
   };
 };
+
+export function removeDuplicates(arr) {
+  // Create a Set to track unique IDs
+  const uniqueIds = new Set();
+  let hasDuplicates = false;
+
+  // Filter the array to remove duplicates
+  const filteredArr = arr.filter((item) => {
+    console.log(`Processing item with ID: ${item.id}`);
+
+    if (uniqueIds.has(item.id)) {
+      // Duplicate found, set the flag to true
+      console.log(`Duplicate found for ID: ${item.id}`);
+      hasDuplicates = true;
+      return false; // Filter out the duplicate
+    } else {
+      // Add the id to the set and keep the item
+      uniqueIds.add(item.id);
+      return true;
+    }
+  });
+
+  // Log a message if no duplicates are found
+  if (!hasDuplicates) {
+    console.log("No duplicates found");
+  }
+
+  // Return the filtered array
+  return filteredArr;
+}

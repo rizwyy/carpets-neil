@@ -197,7 +197,7 @@ const removeItemFromCart = (idToRemove) => {
 };
 
 const insertLog = (isOrderConfirmed) => {
-  const phoneWithCode = addCountryCode(userStore);
+  // const phoneWithCode = addCountryCode(userStore);
   const name = userStore.userData.name;
   const orderMethod = userStore.preference.orderMethod;
   let contact;
@@ -220,7 +220,7 @@ const insertLog = (isOrderConfirmed) => {
   const userData = {
     name,
     phone: orderMethod === "whatsapp" ? contact : contact,
-    email: orderMethod === "email" ? contact : "",
+    email: orderMethod === "email" ? contact : userStore.userData.email,
     preference: userStore.preference,
     isOrderConfirmed: isOrderConfirmed,
   };
