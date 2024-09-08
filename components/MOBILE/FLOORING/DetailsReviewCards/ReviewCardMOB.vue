@@ -185,7 +185,7 @@ async function getHistory() {
           const preferenceWithId = { ...preferenceData, id: id };
           userStore.cart.push(preferenceWithId);
         } else {
-          userStore.cart = removeDuplicates(userStore.cart);
+          userStore.cart = toRaw(removeDuplicates(userStore.cart));
         }
       });
 
