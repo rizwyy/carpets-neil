@@ -44,7 +44,7 @@
           <!-- Matt Finish -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Finish_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Finish_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_4 === 'Matt Finish' },
             ]"
             @click="toggleSelect('Matt Finish')"
@@ -75,7 +75,7 @@
           <!-- Gloss Finish -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Finish_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Finish_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_4 === 'Gloss Finish' },
             ]"
             @click="toggleSelect('Gloss Finish')"

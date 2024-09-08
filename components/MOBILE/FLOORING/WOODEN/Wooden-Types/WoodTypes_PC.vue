@@ -45,7 +45,7 @@
             <!-- Solid Wood Floor -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Solid Wood Floor'),
@@ -84,7 +84,7 @@
             <!-- Engineered Wood  -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Engineered Wood'),
@@ -121,7 +121,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Bamboo Wood Floor'),
@@ -160,7 +160,7 @@
             <!-- Cork Floor -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 {
                   selected: userStore.preference.spec_2.includes('Cork Floor'),
                 },
@@ -201,7 +201,7 @@
             <!-- Laminated Floor -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Laminated Floor'),
@@ -238,7 +238,7 @@
             <!-- SPC Floor -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes('SPC Floor') },
               ]"
               @click="toggleSelect('SPC Floor')"
@@ -272,7 +272,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden wooden_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes('WPC Floor') },
               ]"
               @click="toggleSelect('WPC Floor')"

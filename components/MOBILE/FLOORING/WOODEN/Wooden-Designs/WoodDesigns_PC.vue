@@ -45,7 +45,7 @@
           <!-- Plain Planks -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Plain Planks' },
             ]"
             @click="toggleSelect('Plain Planks')"
@@ -76,7 +76,7 @@
           <!-- Herringbone -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Herringbone' },
             ]"
             @click="toggleSelect('Herringbone')"
@@ -113,7 +113,7 @@
           <!-- Plain Planks -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Plain Planks' },
             ]"
             @click="toggleSelect('Plain Planks')"
@@ -144,7 +144,7 @@
           <!-- Herringbone -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Herringbone' },
             ]"
             @click="toggleSelect('Herringbone')"
@@ -181,7 +181,7 @@
           <!-- Chevron -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Chevron' },
             ]"
             @click="toggleSelect('Chevron')"
@@ -214,7 +214,7 @@
           <!-- Basket Weave -->
           <div
             :class="[
-              'materialItem_PC rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Basket Weave' },
             ]"
             @click="toggleSelect('Basket Weave')"
