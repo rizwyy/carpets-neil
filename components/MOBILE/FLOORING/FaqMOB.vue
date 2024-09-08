@@ -7,7 +7,7 @@
     <div v-for="(faq, index) in faqs" :key="index" class="mb-[2vh]">
       <!-- Question -->
       <button
-        class="w-full text-left bg-gray-100 px-[2.4vw] py-[1.8vh] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
+        class="w-full text-left bg-gray-200 px-[2.4vw] py-[1.8vh] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
         @click="toggleFAQ(index)"
       >
         <div class="flex justify-between items-center">
@@ -23,7 +23,7 @@
       <!-- Answer (conditionally rendered) -->
       <div
         v-show="isExpanded(index)"
-        class="mt-[2vh] pt-[2vh] px-[3vw] py-[2vh] bg-gray-50 rounded-lg text-[#666] transition-all duration-300 ease-in-out"
+        class="mt-[1.2vh] pt-[2vh] px-[3vw] py-[2vh] bg-gray-50 rounded-lg text-[#666] transition-all duration-300 ease-in-out"
       >
         {{ faq.answer }}
       </div>
