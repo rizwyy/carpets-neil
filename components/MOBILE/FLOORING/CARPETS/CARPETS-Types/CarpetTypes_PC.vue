@@ -28,7 +28,7 @@
           <!-- Solid -->
           <div
             :class="[
-              'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'carpets_Types_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Plain') },
             ]"
             @click="toggleSelect('Plain')"
@@ -63,7 +63,7 @@
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
-              'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'carpets_Types_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Textured') },
             ]"
             @click="toggleSelect('Textured')"
@@ -97,7 +97,7 @@
           <!-- DESKTOP -->
           <div
             :class="[
-              'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'carpets_Types_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] h-[28vh] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Patterned') },
             ]"
             @click="toggleSelect('Patterned')"
@@ -131,7 +131,7 @@
           <!-- Customized -->
           <div
             :class="[
-              'carpets_Types_Details_PC-CONTAINER opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'carpets_Types_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Stripped') },
             ]"
             @click="toggleSelect('Stripped')"

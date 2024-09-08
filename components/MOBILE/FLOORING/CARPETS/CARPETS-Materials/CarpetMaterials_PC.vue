@@ -30,7 +30,7 @@
           <!-- Poly Propene Carpets -->
           <div
             :class="[
-              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'polypropylene' },
             ]"
             @click="toggleSelectMaterials('polypropylene')"
@@ -61,7 +61,7 @@
           <!-- nylon carpets -->
           <div
             :class="[
-              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Nylon' },
             ]"
             @click="toggleSelectMaterials('Nylon')"
@@ -99,7 +99,7 @@
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
-              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Sisal' },
             ]"
             @click="toggleSelectMaterials('Sisal')"
@@ -133,7 +133,7 @@
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
-              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Wool' },
             ]"
             @click="toggleSelectMaterials('Wool')"
