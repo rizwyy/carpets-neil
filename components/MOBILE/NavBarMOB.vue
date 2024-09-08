@@ -206,7 +206,10 @@ const HandleOrderConfirmation = () => {
         // Prepare the user data object for each item
         const userData = {
           name: userStore.userData.name,
-          phone: userStore.userData.phone,
+          phone: addCountryCode(
+            userStore.userData.phone,
+            userStore.preference.country
+          ), // Add country code if missing
           email: "",
           preference: item, // Include the current cart item as preference
           isOrderConfirmed: true,
