@@ -71,7 +71,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[84%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
@@ -112,7 +112,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[74%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
@@ -153,7 +153,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[64%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <!-- DESKTOP -->
@@ -195,7 +195,7 @@
             </div>
             <!-- DESKTOP -->
             <div
-              class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[54%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
@@ -238,7 +238,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[26%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
