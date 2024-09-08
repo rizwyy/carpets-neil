@@ -18,53 +18,53 @@
       <!-- Product Section -->
       <div class="h-full w-max flex flex-col px-[1vw] gap-[.8vh]">
         <p class="mb-[2.4vh] text-[1.2vw] font-[500] text-[#555]">Product</p>
-        <span class="text-[1.2vw]">Overview</span>
-        <span class="text-[1.2vw]">Features</span>
-        <span class="text-[1.2vw]">Solutions</span>
-        <span class="text-[1.2vw]">Tutorials</span>
-        <span class="text-[1.2vw]">Pricing</span>
-        <span class="text-[1.2vw]">Releases</span>
+        <a href="/about" class="text-[1.2vw]">Overview</a>
+        <a href="/about" class="text-[1.2vw]">Features</a>
+        <a href="/about" class="text-[1.2vw]">Solutions</a>
+        <a href="/about" class="text-[1.2vw]">Tutorials</a>
+        <a href="/about" class="text-[1.2vw]">Pricing</a>
+        <a href="/about" class="text-[1.2vw]">Releases</a>
       </div>
 
       <!-- Company Section -->
       <div class="h-full w-max flex flex-col px-[1vw] gap-[.8vh]">
         <p class="mb-[2.4vh] text-[1.2vw] font-[500] text-[#555]">Company</p>
-        <span class="text-[1.2vw]">About Us</span>
-        <span class="text-[1.2vw]">Careers</span>
-        <span class="text-[1.2vw]">Press</span>
-        <span class="text-[1.2vw]">News</span>
-        <span class="text-[1.2vw]">Media Kit</span>
-        <span class="text-[1.2vw]">Contact</span>
+        <a href="/about" class="text-[1.2vw]">About Us</a>
+        <a href="/about" class="text-[1.2vw]">Careers</a>
+        <a href="/about" class="text-[1.2vw]">Press</a>
+        <a href="/about" class="text-[1.2vw]">News</a>
+        <a href="/about" class="text-[1.2vw]">Media Kit</a>
+        <a href="/about" class="text-[1.2vw]">Contact</a>
       </div>
 
       <!-- Resources Section -->
       <div class="h-full w-max flex flex-col px-[1vw] gap-[.8vh]">
         <p class="mb-[2.4vh] text-[1.2vw] font-[500] text-[#555]">Resources</p>
-        <span class="text-[1.2vw]">Blog</span>
-        <span class="text-[1.2vw]">Newsletter</span>
-        <span class="text-[1.2vw]">Events</span>
-        <span class="text-[1.2vw]">Help Center</span>
-        <span class="text-[1.2vw]">Support</span>
+        <a href="/about" class="text-[1.2vw]">Blog</a>
+        <a href="/about" class="text-[1.2vw]">Newsletter</a>
+        <a href="/about" class="text-[1.2vw]">Events</a>
+        <a href="/about" class="text-[1.2vw]">Help Center</a>
+        <a href="/about" class="text-[1.2vw]">Support</a>
       </div>
 
       <!-- Social Section -->
       <div class="h-full w-max flex flex-col px-[1vw] gap-[.8vh]">
         <p class="mb-[2.4vh] text-[1.2vw] font-[500] text-[#555]">Social</p>
-        <span class="text-[1.2vw]">Twitter</span>
-        <span class="text-[1.2vw]">LinkedIn</span>
-        <span class="text-[1.2vw]">Facebook</span>
-        <span class="text-[1.2vw]">GitHub</span>
-        <span class="text-[1.2vw]">Dribbble</span>
+        <a href="/about" class="text-[1.2vw]">Twitter</a>
+        <a href="/about" class="text-[1.2vw]">LinkedIn</a>
+        <a href="/about" class="text-[1.2vw]">Facebook</a>
+        <a href="/about" class="text-[1.2vw]">GitHub</a>
+        <a href="/about" class="text-[1.2vw]">Dribbble</a>
       </div>
 
       <!-- Legal Section -->
       <div class="h-full w-max flex flex-col px-[1vw] gap-[.8vh]">
         <p class="mb-[2.4vh] text-[1.2vw] font-[500] text-[#555]">Legal</p>
-        <span class="text-[1.2vw]">Terms</span>
-        <span class="text-[1.2vw]">Privacy</span>
-        <span class="text-[1.2vw]">Cookies</span>
-        <span class="text-[1.2vw]">Licenses</span>
-        <span class="text-[1.2vw]">Settings</span>
+        <a href="/about" class="text-[1.2vw]">Terms</a>
+        <a href="/about" class="text-[1.2vw]">Privacy</a>
+        <a href="/about" class="text-[1.2vw]">Cookies</a>
+        <a href="/about" class="text-[1.2vw]">Licenses</a>
+        <a href="/about" class="text-[1.2vw]">Settings</a>
       </div>
     </div>
     <div class="border-t-[.2vh] border-[#fff9] py-[6vh] flex justify-center">
