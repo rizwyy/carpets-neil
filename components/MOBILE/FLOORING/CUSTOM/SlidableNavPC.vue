@@ -13,7 +13,7 @@
 
     <div class="relative w-full overflow-x-hidden select-none">
       <div
-        class="w-full h-full bg-[#00000] grid grid-cols-3 gap-[4vw] py-[2vh] items-center justify-between px-[4vw]"
+        class="w-full h-full bg-[#00000] grid grid-cols-4 gap-[4vw] py-[2vh] items-center justify-between px-[4vw]"
       >
         <div v-for="(category, index) in categories" :key="index">
           <button
@@ -86,25 +86,19 @@ const categories = ref([
   {
     name: "PVC",
     label: "PVC",
-    description: "Option | Option | Option & more",
-    image: "/pvc-flooring.webp",
+    description: "Vinyl Options | Flexible Install | Option & more",
+    image: "/pvc/vinyl-cover.webp",
   },
   {
     name: "Wooden",
     label: "Wooden",
-    description: "Option | Option | Option & more",
+    description: "Solid Hardwood | Easy Maintenance & more",
     image: "/50002.jpg",
   },
   {
     name: "Rubber",
     label: "Rubber",
-    description: "Option | Option | Option & more",
-    image: "/raised-flooring.webp",
-  },
-  {
-    name: "Grass",
-    label: "Rubber",
-    description: "Option | Option | Option & more",
+    description: "Shock Absorbent | Slip Resistant & more",
     image: "/raised-flooring.webp",
   },
 ]);

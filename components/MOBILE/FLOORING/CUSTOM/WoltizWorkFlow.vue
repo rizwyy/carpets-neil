@@ -22,7 +22,7 @@
             Catalog.</span
           >
           <a
-            class="h-max w-max px-[2.4vw] py-[1.8vh] rounded-sm shadow-md bg-[#6CB4EE] text-[#fff] text-[2.6vh] font-[500]"
+            class="h-max w-max px-[2.4vw] py-[1.8vh] rounded-sm shadow-md bg-blue-300 text-[#fff] text-[2.6vh] font-[500]"
             href="#"
             >Chat with us</a
           >
