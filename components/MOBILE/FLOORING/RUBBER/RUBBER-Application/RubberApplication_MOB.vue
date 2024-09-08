@@ -237,8 +237,8 @@
                 placeholder
                 loading="eager"
                 class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/rubber/poolRubber.webp"
-                alt="gymRubber"
+                src="/rubber/deckRubber.webp"
+                alt="Deck Rubber"
               />
               <span>Deck Rubber</span>
             </div>
