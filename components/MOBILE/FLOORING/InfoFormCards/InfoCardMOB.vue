@@ -220,7 +220,7 @@ const insertLog = (isOrderConfirmed) => {
   const userData = {
     name,
     phone: orderMethod === "whatsapp" ? contact : contact,
-    email: orderMethod === "email" ? contact : userStore.userData.email,
+    email: orderMethod === "email" ? "" : "",
     preference: userStore.preference,
     isOrderConfirmed: isOrderConfirmed,
   };
