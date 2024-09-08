@@ -52,24 +52,24 @@
       class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
     >
       <FlooringCategoryItem
-        href="/flooring/raised/details"
-        title="Raised"
-        imgSrc="/raised/raised-office.webp"
+        href="/flooring/rubber-flooring/details"
+        title="Rubber Flooring"
+        imgSrc="/rubber-flooring.webp"
         altText="#"
-        titleClass="flooringLayout_Raised_Text"
+        titleClass="flooringLayout_Rubber_Text"
         @load="
-          handleImageLoad('flooringLayout_Raised', 'flooringItem', true, true)
+          handleImageLoad('flooringLayout_Rubber', 'flooringItem', true, true)
         "
         loading="lazy"
       />
       <FlooringCategoryItem
-        href="/flooring/sports/details"
-        title="Sport"
-        imgSrc="/sports/outdoor.webp"
+        href="/flooring/grass-flooring/details"
+        title="Grass Flooring"
+        imgSrc="/40004.webp"
         altText="#"
-        titleClass="flooringLayout_Sports_Text"
+        titleClass="flooringLayout_Grass_Text"
         @load="
-          handleImageLoad('flooringLayout_Sports', 'flooringItem', true, true)
+          handleImageLoad('flooringLayout_Grass', 'flooringItem', true, true)
         "
         loading="lazy"
       />
