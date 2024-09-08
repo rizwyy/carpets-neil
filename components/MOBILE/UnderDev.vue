@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[88vh] w-screen overflow-hidden bg-gradient-to-b from-[#fff] via-[#f1f1f1] to-[#ececec] from-[1%] flex items-center justify-center"
+    class="h-[88vh] w-screen overflow-hidden bg-gradient-to-b from-[#fff] to-[#fff] flex items-center justify-center"
   >
     <div
       class="flex h-max w-max items-center flex flex-col justify-center gap-[2vh]"

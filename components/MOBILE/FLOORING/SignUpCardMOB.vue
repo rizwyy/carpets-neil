@@ -25,12 +25,14 @@
       />
     </div>
 
-    <!-- Sign-up Button -->
-    <button
-      class="w-full h-[7vh] shadow-lg bg-inherit text-[#333] text-[2.4vh] tracking-[.1vw] font-[500] border-[#444] border-[.2vh] rounded-md hover:bg-[#333] hover:text-[#fff] transition-colors duration-300"
-    >
-      SIGN UP
-    </button>
+    <a href="/contact">
+      <!-- Sign-up Button -->
+      <button
+        class="w-full h-[7vh] shadow-lg bg-inherit text-[#333] text-[2.4vh] tracking-[.1vw] font-[500] border-[#444] border-[.2vh] rounded-md hover:bg-[#333] hover:text-[#fff] transition-colors duration-300"
+      >
+        SIGN UP
+      </button>
+    </a>
   </section>
 </template>
 
