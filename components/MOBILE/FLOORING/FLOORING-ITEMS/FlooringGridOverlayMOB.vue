@@ -47,7 +47,32 @@
         loading="lazy"
       />
     </div>
-
+    <div
+      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+    >
+      <FlooringCategoryItem
+        href="/flooring/raised/details"
+        title="Raised"
+        imgSrc="/raised/raised-office.webp"
+        altText="#"
+        titleClass="flooringLayout_Raised_Text"
+        @load="
+          handleImageLoad('flooringLayout_Raised', 'flooringItem', true, true)
+        "
+        loading="lazy"
+      />
+      <FlooringCategoryItem
+        href="/flooring/sports/details"
+        title="Sport"
+        imgSrc="/sports/outdoor.webp"
+        altText="#"
+        titleClass="flooringLayout_Sports_Text"
+        @load="
+          handleImageLoad('flooringLayout_Sports', 'flooringItem', true, true)
+        "
+        loading="lazy"
+      />
+    </div>
     <div
       class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
     >
@@ -71,32 +96,6 @@
         titleClass="flooringLayout_Grass_Text"
         @load="
           handleImageLoad('flooringLayout_Grass', 'flooringItem', true, true)
-        "
-        loading="lazy"
-      />
-    </div>
-    <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
-    >
-      <FlooringCategoryItem
-        href="/flooring/raised/details"
-        title="Raised"
-        imgSrc="/raised/raised-office.webp"
-        altText="#"
-        titleClass="flooringLayout_Raised_Text"
-        @load="
-          handleImageLoad('flooringLayout_Raised', 'flooringItem', true, true)
-        "
-        loading="lazy"
-      />
-      <FlooringCategoryItem
-        href="/flooring/sports/details"
-        title="Sport"
-        imgSrc="/sports/outdoor.webp"
-        altText="#"
-        titleClass="flooringLayout_Sports_Text"
-        @load="
-          handleImageLoad('flooringLayout_Sports', 'flooringItem', true, true)
         "
         loading="lazy"
       />
