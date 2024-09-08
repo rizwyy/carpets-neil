@@ -25,15 +25,11 @@ import FlooringGridMOB from "./FLOORING-ITEMS/FlooringGridMOB.vue";
     <div class="h-max w-screen flex flex-col gap-[5.8vh] items-center">
       <FlooringGridMOB />
       <div class="h-max w-full flex flex flex-col gap-[4vh] mt-[4vh]">
-        <h2 class="text-[3.8vh] tracking-[-.1vw] ml-[4.8vw]">Sign Up</h2>
         <LazySignUpCardMOB />
       </div>
       <LazyPersonalAssistanceCardMOB />
 
       <div class="h-max w-full flex flex flex-col gap-[2vh]">
-        <h2 class="text-[3.8vh] tracking-[-.1vw] ml-[4.8vw]">
-          Designer Discounts
-        </h2>
         <LazyDesignerApnaBannerMOB />
       </div>
       <LazyWhyWoltizMOB />

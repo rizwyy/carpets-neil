@@ -13,7 +13,7 @@
 
     <div class="relative w-full overflow-x-hidden select-none">
       <div
-        class="w-full h-full bg-[#00000] grid grid-cols-4 gap-[4vw] py-[2vh] items-center justify-between px-[4vw]"
+        class="w-full h-full bg-[#00000] grid grid-cols-3 gap-[4vw] py-[2vh] items-center justify-between px-[4vw]"
       >
         <div v-for="(category, index) in categories" :key="index">
           <button
