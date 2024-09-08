@@ -1,6 +1,6 @@
 <template>
   <div
-    class="why-woltiz-container w-[100vw] mx-auto pt-[2vh] pb-[12vh] text-center"
+    class="why-woltiz-container w-[100vw] mx-auto pt-[6vh] pb-[6vh] text-center"
   >
     <h2
       class="text-[3.8vh] font-[400] mb-[5vh] text-gray-800 h-max w-full text-start px-[4vw]"

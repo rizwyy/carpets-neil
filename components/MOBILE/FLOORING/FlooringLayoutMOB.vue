@@ -15,8 +15,8 @@ import FlooringGridMOB from "./FLOORING-ITEMS/FlooringGridMOB.vue";
     </div>
     <div class="h-max w-screen flex flex-col gap-[5.8vh]">
       <FlooringGridMOB />
-      <LazyFaqMOB />
       <LazyWhyWoltizMOB />
+      <LazyFaqMOB />
     </div>
   </section>
 </template>
