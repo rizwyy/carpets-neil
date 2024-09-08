@@ -124,9 +124,17 @@
                 >
               </div>
               <div
-                class="h-full w-full bg-gradient-to-b from-slate-500 to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+                class="h-full w-full bg-gradient-to-b from-transparent to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/playProtec.webp"
+                alt="playProtec"
+              />
               <span>Playfall Protec +</span>
             </div>
 
@@ -150,9 +158,17 @@
                 >
               </div>
               <div
-                class="h-full w-full bg-gradient-to-b from-slate-500 to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+                class="h-full w-full bg-gradient-to-b from-transparent to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/gymRubber.webp"
+                alt="gymRubber"
+              />
               <span>Gym Rubber</span>
             </div>
           </div>
@@ -179,9 +195,17 @@
                 >
               </div>
               <div
-                class="h-full w-full bg-gradient-to-b from-slate-500 to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+                class="h-full w-full bg-gradient-to-b from-transparent to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/sportRubber.webp"
+                alt="gymRubber"
+              />
               <span>Sports Rubber</span>
             </div>
 
@@ -205,16 +229,24 @@
                 >
               </div>
               <div
-                class="h-full w-full bg-gradient-to-b from-slate-500 to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+                class="h-full w-full bg-gradient-to-b from-transparent to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/gymRubber.webp"
+                alt="gymRubber"
+              />
               <span>Pool Rubber</span>
             </div>
           </div>
         </div>
         <div
           :class="[
-            'h-[14vh] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] bg-gradient-to-b from-slate-500 to-black from-[60%] flex items-end justify-between text-[#ededed] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+            'h-[14vh] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] bg-gradient-to-b from-transparent to-black from-[60%] flex items-end justify-between text-[#ededed] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
             { selected: spec_1.includes('Others') },
           ]"
           @click="toggleSelect('Others')"

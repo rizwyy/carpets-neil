@@ -560,7 +560,7 @@ const toggleSelect = (material) => {
 
 <style scoped>
 .selected {
-  border-radius: 0px; /* Adjust this value as needed */
+  border-radius: 2px; /* Adjust this value as needed */
   border: 3px solid #333; /* Adjust border color as needed */
 }
 </style>
