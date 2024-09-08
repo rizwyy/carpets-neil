@@ -230,7 +230,7 @@ const HandleOrderConfirmation = () => {
         const userData = {
           name: userStore.userData.name,
           phone: userStore.userData.phone,
-          email: userStore.userData.email,
+          email: "",
           preference: item, // Include the current cart item as preference
           isOrderConfirmed: true,
         };
