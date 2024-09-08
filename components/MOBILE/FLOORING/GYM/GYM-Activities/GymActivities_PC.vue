@@ -46,7 +46,7 @@
             <!-- Cardio -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Cardio') },
               ]"
               @click="toggleSelect('Cardio')"
@@ -80,7 +80,7 @@
             <!-- Functional Training  -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Functional Training') },
               ]"
               @click="toggleSelect('Functional Training')"
@@ -114,7 +114,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Machine Training') },
               ]"
               @click="toggleSelect('Machine Training')"
@@ -148,7 +148,7 @@
             <!-- Free Weights -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Free Weights') },
               ]"
               @click="toggleSelect('Free Weights')"
@@ -188,7 +188,7 @@
             <!-- Dance -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Dance') },
               ]"
               @click="toggleSelect('Dance')"
@@ -222,7 +222,7 @@
             <!-- Aerobic  -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Aerobic') },
               ]"
               @click="toggleSelect('Aerobic')"
@@ -256,7 +256,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Zumba') },
               ]"
               @click="toggleSelect('Zumba')"
@@ -290,7 +290,7 @@
             <!-- Step -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Step') },
               ]"
               @click="toggleSelect('Step')"
@@ -325,7 +325,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('TRX') },
               ]"
               @click="toggleSelect('TRX')"
@@ -359,7 +359,7 @@
             <!-- Pilates -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Pilates') },
               ]"
               @click="toggleSelect('Pilates')"
@@ -399,7 +399,7 @@
             <!-- Weightlifting -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Weightlifting') },
               ]"
               @click="toggleSelect('Weightlifting')"
@@ -433,7 +433,7 @@
             <!-- Powerlifting  -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Powerlifting') },
               ]"
               @click="toggleSelect('Powerlifting')"
@@ -472,7 +472,7 @@
             <!-- Judo -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Judo') },
               ]"
               @click="toggleSelect('Judo')"
@@ -506,7 +506,7 @@
             <!-- Kickboxing  -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Kickboxing') },
               ]"
               @click="toggleSelect('Kickboxing')"
@@ -540,7 +540,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Karate') },
               ]"
               @click="toggleSelect('Karate')"
@@ -574,7 +574,7 @@
             <!-- Boxing -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Boxing') },
               ]"
               @click="toggleSelect('Boxing')"
@@ -609,7 +609,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden rounded-md gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%]  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Taekwondo') },
               ]"
               @click="toggleSelect('Taekwondo')"
@@ -643,7 +643,7 @@
             <!-- Akido -->
             <div
               :class="[
-                'h-[28vh] w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] overflow-hidden w-full gym_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: spec_2.includes('Akido') },
               ]"
               @click="toggleSelect('Akido')"

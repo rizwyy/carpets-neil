@@ -41,7 +41,7 @@
             <!-- Sheet -->
             <div
               :class="[
-                'h-[28vh] pvc_type_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] pvc_type_details_pc-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2 === 'Sheet' },
               ]"
               @click="toggleSelect('Sheet')"
@@ -85,7 +85,7 @@
             <!-- Tile -->
             <div
               :class="[
-                'h-[28vh] pvc_type_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] pvc_type_details_pc-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2 === 'Tile' },
               ]"
               @click="toggleSelect('Tile')"
@@ -130,7 +130,7 @@
             <!-- DESKTOP -->
             <div
               :class="[
-                'h-[28vh] pvc_type_details_pc-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] pvc_type_details_pc-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes('Plank') },
               ]"
               @click="toggleSelect('Plank')"
@@ -165,7 +165,7 @@
             <div
               v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
               :class="[
-                'h-[28vh] pvc_type_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] pvc_type_details_pc-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2 === 'Abstract' },
               ]"
               @click="toggleSelect('Abstract')"
@@ -198,7 +198,7 @@
             <div
               v-show="userStore.preference.spec_1 !== 'Luxury Vinyl'"
               :class="[
-                'h-[28vh] w-full pvc_type_details_pc-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[28vh] w-full pvc_type_details_pc-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2 === 'Rugs' },
               ]"
               @click="toggleSelect('Rugs')"

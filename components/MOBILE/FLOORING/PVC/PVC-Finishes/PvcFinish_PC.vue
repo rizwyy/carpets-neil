@@ -40,7 +40,7 @@
         <!-- Matt Finish -->
         <div
           :class="[
-            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'materialItem_PC overflow-hidden rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedSurfaceFinish === 'Matt Finish' },
           ]"
           @click="toggleSelect('Matt Finish')"
@@ -71,7 +71,7 @@
         <!-- Gloss Finish -->
         <div
           :class="[
-            'materialItem_PC rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'materialItem_PC overflow-hidden rounded-md h-[28vh] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: selectedSurfaceFinish === 'Gloss Finish' },
           ]"
           @click="toggleSelect('Gloss Finish')"

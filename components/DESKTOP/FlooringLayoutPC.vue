@@ -32,7 +32,7 @@
     >
       <a href="/flooring/pvc/details">
         <CategoryCardHeroPC
-          name="Vinly Flooring"
+          name="Vinyl Flooring"
           desc="Durable, stylish vinyl tiles offer sleek, resilient, and low-maintenance flooring for any modern space."
           src="/pvc/vinyl-cover.webp"
           :isAvailable="true"
