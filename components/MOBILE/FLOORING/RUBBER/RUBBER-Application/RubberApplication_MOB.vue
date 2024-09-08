@@ -210,16 +210,16 @@
             </div>
 
             <!-- MOBILE -->
-            <!-- Pool Rubber -->
+            <!-- Deck Rubber -->
             <div
               :class="[
                 'h-[14vh] overflow-hidden  w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
-                { selected: spec_1.includes('Pool Rubber') },
+                { selected: spec_1.includes('Deck Rubber') },
               ]"
-              @click="toggleSelect('Pool Rubber')"
+              @click="toggleSelect('Deck Rubber')"
             >
               <div
-                v-show="spec_1.includes('Pool Rubber')"
+                v-show="spec_1.includes('Deck Rubber')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -237,10 +237,10 @@
                 placeholder
                 loading="eager"
                 class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/rubber/gymRubber.webp"
+                src="/rubber/poolRubber.webp"
                 alt="gymRubber"
               />
-              <span>Pool Rubber</span>
+              <span>Deck Rubber</span>
             </div>
           </div>
         </div>
@@ -264,7 +264,15 @@
           <div
             class="h-full w-full bg-black absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
           ></div>
-
+          <NuxtImg
+            preload
+            quality="50"
+            placeholder
+            loading="eager"
+            class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/rubber/customRubber.webp"
+            alt="gymRubber"
+          />
           <span>Custom Application</span>
         </div>
       </div>
