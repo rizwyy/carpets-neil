@@ -1,9 +1,22 @@
 <template>
   <div
-    class="min-[990px]:hidden h-[30vh] max-w-[100vw] bg-gradient-to-t from-blue-100 to-[#fff] flex flex-col border-t-[1px] border-[#ececec] px-[6vw] py-[8vh] font-outfit text-[#666]"
+    class="min-[990px]:hidden overflow-hidden h-max max-w-[100vw] bg-gradient-to-t from-blue-200 to-[#fff] flex flex-col gap-[4vh] border-t-[1px] border-[#ececec] px-[6vw] pb-[4vh] pt-[4vh] font-outfit text-[#666]"
   >
-    <div class="h-1/2 w-full">
-      <div class="h-max w-max flex items-center gap-[4vw]">
+    <div class="h-1/2 w-full flex justify-between flex-col gap-[8vh]">
+      <div class="h-max w-max flex flex-col gap-[1vh]">
+        <a href="/" class="text-[3.8vh] text-[#666] uppercase tracking-[-.4vw]"
+          >Woltiz</a
+        >
+        <span class="text-[1.8vh] text-[#999] w-[40%]"
+          >Delivering quality flooring solutions that bring comfort and elegance
+          to every space.</span
+        >
+      </div>
+    </div>
+    <div
+      class="h-1/2 w-full flex flex-col gap-[6.2vh] text-[1.4vh] justify-between items-center"
+    >
+      <div class="h-max w-full flex justify-start gap-[4vw]">
         <a href="/about">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,13 +57,8 @@
           </svg>
         </a>
       </div>
-    </div>
-    <div class="h-1/2 w-full flex justify-between items-end">
-      <div class="h-max w-max flex flex-col text-[1.8vh]">
-        <a href="/about">Terms and Condition</a>
-        <a href="/about">Privacy Policy</a>
-      </div>
-      <span>Woltiz</span>
+      <span class="font-bold">Under Dev | Demo</span>
+      <span>© 2024 Woltiz. All rights reserved.</span>
     </div>
   </div>
 </template>
