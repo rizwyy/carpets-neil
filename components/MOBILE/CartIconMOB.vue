@@ -33,7 +33,6 @@ async function getHistory(phone, country) {
 
     // Fetch preferences
     const { data, error } = await fetchPreferencesByMobile(sanitizedPhone); // Assuming fetchPreferencesByMobile returns {data, error}
-
     if (error) {
       throw new Error("Error fetching preferences.");
     }
@@ -46,58 +45,60 @@ async function getHistory(phone, country) {
     return null; // Return null in case of failure
   }
 }
-
+const isMobile = ref(false);
 onMounted(async () => {
-  await nextTick(); // Wait for DOM updates to complete
-
-  const userPreferenceCookie = useCookie("userPreference").value;
-  const ctry = useCookie("ctry").value;
-  const userStore = useUserStore(); // Access the store
-
-  // Ensure the cookie and phone field are valid
-  if (
-    userPreferenceCookie &&
-    typeof toRaw(userPreferenceCookie).phone === "string" &&
-    ctry
-  ) {
-    try {
-      // Fetch the history in an async way
-      const history = await getHistory(userPreferenceCookie.phone, ctry);
-
-      if (history) {
-        // Unwrap `history` if it is reactive
-        const unwrappedHistory = toRaw(history) || unref(history);
-
-        // Ensure unwrappedHistory is an array and push each item to the cart
-        if (Array.isArray(unwrappedHistory)) {
-          unwrappedHistory.forEach((item) => {
-            // Create a new object by copying the preference and adding the id
-            const updatedPreference = {
-              ...toRaw(item).preference, // Copy the preference object
-              id: item.id, // Add the id property
-            };
-
-            // Push the updated object into the userStore.cart array
-            userStore.cart.push(updatedPreference);
-          });
-          userStore.cart = toRaw(removeDuplicates(userStore.cart));
-
-          // Log the updated cart for confirmation
-        } else {
-          console.warn("History is not an array.");
-        }
-      } else {
-        console.warn("No history found for this phone number.");
-      }
-    } catch (error) {
-      console.error("Error while fetching history:", error.message);
-    }
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
   } else {
-    console.warn("Invalid userPreferenceCookie or country value.");
+    isMobile.value = false;
   }
+  if (isMobile) {
+    await nextTick(); // Wait for DOM updates to complete
 
-  setTimeout(() => {
-    userStore.cart = toRaw(removeDuplicates(userStore.cart));
-  }, 1000);
+    const userPreferenceCookie = useCookie("userPreference").value;
+    const ctry = useCookie("ctry").value;
+    const userStore = useUserStore(); // Access the store
+
+    // Ensure the cookie and phone field are valid
+    if (
+      userPreferenceCookie &&
+      typeof toRaw(userPreferenceCookie).phone === "string" &&
+      ctry
+    ) {
+      try {
+        // Fetch the history in an async way
+        const history = await getHistory(userPreferenceCookie.phone, ctry);
+        if (history) {
+          // Unwrap `history` if it is reactive
+          const unwrappedHistory = toRaw(history) || unref(history);
+          console.log(unwrappedHistory);
+          // Ensure unwrappedHistory is an array and push each item to the cart
+          if (Array.isArray(unwrappedHistory)) {
+            unwrappedHistory.forEach((item) => {
+              // Create a new object by copying the preference and adding the id
+              const updatedPreference = {
+                ...toRaw(item).preference, // Copy the preference object
+                id: item.id, // Add the id property
+              };
+
+              // Push the updated object into the userStore.cart array
+              userStore.cart.push(updatedPreference);
+            });
+            // userStore.cart = toRaw(removeDuplicates(userStore.cart));
+
+            // Log the updated cart for confirmation
+          } else {
+            console.warn("History is not an array.");
+          }
+        } else {
+          console.warn("No history found for this phone number.");
+        }
+      } catch (error) {
+        console.error("Error while fetching history:", error.message);
+      }
+    } else {
+      console.warn("Invalid userPreferenceCookie or country value.");
+    }
+  }
 });
 </script>

@@ -153,6 +153,7 @@ const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
 const userPreference = ref("");
 const router = useRouter();
+const isMobile = ref(false);
 
 import CartIconPC from "./CartIconPC.vue";
 const isConfirmLoading = ref(false);
