@@ -3,14 +3,9 @@
   <div
     class="max-[990px]:hidden h-max w-screen px-[6vw] flex flex-col items-center gap-[4vh] justify-center"
   >
-    <transition
-      @beforeEnter="handleDetailsDOMEntry('sports_Colors_Details_PC')"
-    >
+    <transition @beforeEnter="handleDetailsDOMEntry('grass_Colors_Details_PC')">
       <div
-        v-show="
-          userStore.preference.spec_1 !== '' &&
-          userStore.preference.spec_2 !== ''
-        "
+        v-show="userStore.preference.spec_1 !== ''"
         class="container relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
       >
         <div
@@ -18,7 +13,7 @@
         >
           <span
             v-show="!isMultiColoredOpted"
-            class="text-left text-detailsContainer_heading_PC text-balance sports_Colors_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
+            class="text-left text-detailsContainer_heading_PC text-balance grass_Colors_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
           >
             Choose Your Color</span
           >
@@ -44,7 +39,7 @@
         </div>
 
         <div
-          v-show="userStore.preference.flooring === 'sports'"
+          v-show="userStore.preference.flooring === 'grass'"
           class="h-max w-full flex flex-col gap-[4vh]"
         >
           <div
@@ -110,23 +105,23 @@
                 </span>
                 <transition
                   @beforeEnter="
-                    bringOpacity('sports_details_colors_mob_add_BTN')
+                    bringOpacity('grass_details_colors_mob_add_BTN')
                   "
                   @beforeLeave="
-                    removeOpacity('sports_details_colors_mob_add_BTN')
+                    removeOpacity('grass_details_colors_mob_add_BTN')
                   "
                 >
                   <button
                     v-show="customColor.length > 2"
                     @click="toggleSelect(customColor, 'addMore')"
-                    class="sports_details_colors_mob_add_BTN text-[1.4vw] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[2vh]"
+                    class="grass_details_colors_mob_add_BTN text-[1.4vw] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[2vh]"
                   >
                     Add More
                   </button>
                 </transition>
                 <transition
                   @beforeEnter="
-                    bringOpacity('sports_details_colors_mob_done1_BTN')
+                    bringOpacity('grass_details_colors_mob_done1_BTN')
                   "
                 >
                   <button
@@ -135,7 +130,7 @@
                       customColor.length > 2
                     "
                     @click="toggleSelect('done')"
-                    class="sports_details_colors_mob_done1_BTN text-[1.4vw] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[1vh]"
+                    class="grass_details_colors_mob_done1_BTN text-[1.4vw] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] hover:border-[#f1f1f1] border-[#fff9] py-[1vh]"
                   >
                     Done
                   </button>
@@ -153,7 +148,7 @@
 
           <div class="color-selection flex justify-between gap-[2.8vw] z-[9]">
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('CustomColor'),
               }"
@@ -174,7 +169,7 @@
 
             <!-- DESKTOP -->
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#333] bg-[#F5F5DC] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#333] bg-[#F5F5DC] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Beige'),
               }"
@@ -194,7 +189,7 @@
             </div>
             <!-- DESKTOP -->
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-[brown] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-[brown] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -214,7 +209,7 @@
             </div>
             <!--  -->
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gray-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gray-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -233,7 +228,7 @@
             </div>
             <!--  -->
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-orange-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-orange-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Orange'),
               }"
@@ -256,7 +251,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[2.8vw] z-[9]">
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-green-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -276,7 +271,7 @@
               </div>
             </div>
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-blue-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-blue-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
@@ -294,7 +289,7 @@
               </div>
             </div>
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-black rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-black rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -314,7 +309,7 @@
               </div>
             </div>
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Pink') }"
               @click="toggleSelect('Pink')"
             >
@@ -333,7 +328,7 @@
               </div>
             </div>
             <div
-              class="color_box_PC h-[18vh] sports_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] bg-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] grass_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] bg-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"

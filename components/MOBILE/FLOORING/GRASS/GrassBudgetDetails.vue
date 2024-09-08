@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <GrassBudgets_MOB v-if="isMobile" />
-    <SportsBudgets_PC v-else />
+    <GrassBudgets_PC v-else />
   </div>
 </template>
 
