@@ -88,12 +88,12 @@
     <!-- Add More and Confirm Buttons -->
     <div
       v-if="arePreferencesFilled"
-      class="h-max w-full flex justify-center py-[8vh] border-t-[2px] border-dotted border-[#999] px-[4vw]"
+      class="h-max w-full flex justify-center pb-[22vh] pt-[14vh] border-t-[2px] border-dotted border-[#999] px-[4vw]"
     >
       <button
         v-if="userStore.cart.length > 0"
         @click="HandleAddMore"
-        class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
+        class="border-[2px] rounded-md w-[40%] pt-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2vw] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
       >
         <span v-if="!isAddMoreLoading">BROWSE OTHER PRODUCTS</span>
         <LoadingIcon class="text-[4.2vh]" v-else />
@@ -101,7 +101,7 @@
       <button
         v-if="userStore.cart.length > 0"
         @click="HandleOrderConfirmation"
-        class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
+        class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2vw] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
       >
         <span v-if="!isConfirmationLoading">CONFIRM</span>
         <LoadingIcon class="text-[4.2vh]" v-else />

@@ -36,10 +36,10 @@
     </div>
     <div class="h-max w-full px-[4vw]">
       <div
-        class="txt_Text opacity-0 h-max w-[100%] py-[1.6svh] rounded-2xl px-[2.8vw] flex flex-col gap-[1.6svh] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
+        class="txt_Text opacity-0 h-max w-[100%] min-[990px]:w-[60%] py-[1.6svh] rounded-2xl px-[2.8vw] flex flex-col gap-[1.6svh] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
       >
         <div
-          class="flex items-center h-max w-full gap-[3vw] text-[#999] tracking-[.4vw] text-[1.8svh] font-[500]"
+          class="flex items-center h-max w-full min-[990px]:tracking-[.2vw] gap-[3vw] text-[#999] tracking-[.4vw] text-[1.8svh] font-[500]"
         >
           <span>WHAT NEXT</span>
         </div>

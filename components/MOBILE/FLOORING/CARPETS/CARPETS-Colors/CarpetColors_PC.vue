@@ -327,7 +327,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 === 'Sisal'"
-              class="color_box_PC h-[18vh] bg-[tan] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color_box_PC h-[18vh] bg-[tan] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-tan-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Tan') }"
               @click="toggleSelect('Tan')"
             >
@@ -347,17 +347,17 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 !== 'Sisal'"
-              class="color_box_PC h-[18vh] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-pink-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
-              :class="{ selected: userStore.preference.color.includes('Pink') }"
-              @click="toggleSelect('Pink')"
+              class="color_box_PC h-[18vh] carpets_Colors_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-red-500 rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              :class="{ selected: userStore.preference.color.includes('Red') }"
+              @click="toggleSelect('Red')"
             >
               <!-- DESKTOP -->
               <span
                 class="text-[2.8vh]"
-                v-show="!userStore.preference.color.includes('Pink')"
-                >Pink</span
+                v-show="!userStore.preference.color.includes('Red')"
+                >Red</span
               >
-              <div v-show="userStore.preference.color.includes('Pink')">
+              <div v-show="userStore.preference.color.includes('Red')">
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span

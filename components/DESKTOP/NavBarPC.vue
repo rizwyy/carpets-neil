@@ -32,27 +32,45 @@
         WOLTIZ
       </a>
       <span>
-        <CloseIcon class="text-[2.8vw] cursor-pointer" @click="closeMenu" />
+        <CloseIcon
+          class="text-[2.8vw] cursor-pointer text-[#333]"
+          @click="closeMenu"
+        />
       </span>
     </div>
     <div
-      class="h-[66vh] w-screen flex flex-col justify-center gap-[2vh] items-start px-[4vw] text-[2.4vw]"
+      class="h-[66vh] w-screen flex flex-col justify-center gap-[3.2vh] items-start px-[4.2vw] text-[2.8vw] text-[#666]"
     >
-      <a href="/">Flooring</a><a href="/about">About</a
-      ><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a>
+      <a
+        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+        href="/"
+        >Flooring <arowTopRightIcon /></a
+      ><a
+        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+        href="/about"
+        >About <arowTopRightIcon /></a
+      ><a
+        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+        href="/contact"
+        >Contact <arowTopRightIcon /></a
+      ><a
+        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+        href="/privacy"
+        >Privacy Policy <arowTopRightIcon
+      /></a>
 
       <a
-        class="bg-[#333] px-[1vw] rounded-sm text-[#f1f1f1] text-[3.4svh] py-[1svh] mt-[5svh]"
+        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
         href="/designer"
-        >Designer Login</a
-      >
+        >Designer Login <arowTopRightIcon
+      /></a>
     </div>
     <div class="h-[20vh] w-screen flex flex-col">
       <div
         class="flex h-full w-full justify-between px-[4vw] items-center"
       ></div>
       <div
-        class="flex h-full w-full justify-between px-[4vw] text-[1.2vw] items-center"
+        class="flex h-full w-full justify-between px-[4vw] py-[4vh] text-[1.4vw] items-center"
       >
         <span>Under Development | Demo</span>
         <span>Woltiz</span>
@@ -141,11 +159,14 @@ import gsap from "gsap";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
+import CartIconPC from "./CartIconPC.vue";
 import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
 
 import UserIcon from "./../../public/icons/UserIcon.vue";
 import CloseIcon from "./../../public/icons/closeIcon";
 import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
+import loadingIcon from "~/public/icons/LoadingIcon.vue";
+import arowTopRightIcon from "~/public/icons/arowTopRightIcon.vue";
 
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -155,7 +176,6 @@ const userPreference = ref("");
 const router = useRouter();
 const isMobile = ref(false);
 
-import CartIconPC from "./CartIconPC.vue";
 const isConfirmLoading = ref(false);
 function openMenu() {
   isMenuOpen.value = true;
