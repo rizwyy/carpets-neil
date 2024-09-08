@@ -15,6 +15,7 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
     <NuxtImg
       class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"
       :src="`/${src || '#'}`"
+      quality="60"
       alt="#"
     />
     <div class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"></div>

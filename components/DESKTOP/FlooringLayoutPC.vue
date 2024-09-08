@@ -102,7 +102,9 @@
 </template>
 
 <script setup>
-import CategoryCardHeroPC from "./CategoryCard-HeroPC.vue";
+const CategoryCardHeroPC = defineAsyncComponent(() =>
+  import("./CategoryCard-HeroPC.vue")
+);
 import { useCookie } from "#app";
 const userPreference = useCookie("userPreference");
 
