@@ -217,7 +217,7 @@ const HandleOrderConfirmation = () => {
         };
 
         // Call the update-logs API instead of insert-logs
-        const response = await fetch("/api/update-logs", {
+        const response = await fetch("/api/update-log", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(userData),
