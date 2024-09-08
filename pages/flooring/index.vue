@@ -22,6 +22,8 @@
       <div class="min-[1590px]:w-[75%]">
         <BannerYouWin />
         <FlooringLayoutPC />
+        <FaqPC />
+        <WhyWoltizPC />
       </div>
     </div>
     <FooterPC />
@@ -30,7 +32,8 @@
 
 <script setup>
 import FlooringLayoutMOB from "~/components/MOBILE/FLOORING/FlooringLayoutMOB.vue";
-
+import FaqPC from "./../../components/DESKTOP/FaqPC.vue";
+import WhyWoltizPC from "./../../components/DESKTOP/WhyWoltizPC.vue";
 import FlooringLayoutPC from "~/components/DESKTOP/FlooringLayoutPC.vue";
 import NavBarMOB from "~/components/MOBILE/NavBarMOB.vue";
 import SearchBarMOB from "~/components/SearchBar/SearchBarMOB.vue";

@@ -572,19 +572,18 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(600) : scrollToBottom();
+    existingUser === "" ? scrollBy(600) : scrollToBottom();
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
-    userStore.updateCart();
   }
+  userStore.updateCart();
 };
 </script>
 
 <style scoped>
 .selected {
   border-radius: full; /* Adjust this value as needed */
-  border-radius: 0.375rem;
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

@@ -1,59 +1,58 @@
 <template>
-  <div
-    v-if="isFlooringVisible"
-    class="h-screen w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
-  >
+  <!-- Render only if the form is validated -->
+  <div v-if="userStore.isFormValidated" class="h-max w-max">
     <div
-      class="h-[100svh] w-screen gap-[2vh] bg-inherit flex flex-col items-center justify-start gap-[8vh]"
+      v-if="isFlooringVisible"
+      class="h-screen w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
     >
       <div
-        class="h-max w-full flex justify-between items-center px-[7.6vw] pt-[6vh]"
+        class="h-[100svh] w-screen gap-[2vh] bg-inherit flex flex-col items-center justify-start gap-[8vh]"
       >
-        <span class="text-[3.8vh] text-[#333] font-[400]"
-          >Flooring Options</span
+        <div
+          class="h-max w-full flex justify-between items-center px-[7.6vw] pt-[6vh]"
         >
-        <span
-          @click="handleCancelAddMoreFlooring"
-          class="flex items-center text-[3.8vh] text-[#222]"
-          ><ClearAllIcon
-        /></span>
+          <span class="text-[3.8vh] text-[#333] font-[400]"
+            >Flooring Options</span
+          >
+          <span
+            @click="handleCancelAddMoreFlooring"
+            class="flex items-center text-[3.8vh] text-[#222]"
+            ><ClearAllIcon
+          /></span>
+        </div>
+        <FlooringGridOverlayPC />
       </div>
-      <FlooringGridOverlayPC />
     </div>
-  </div>
-  <div
-    v-show="
-      userStore.preference.flooring === `${flooring}` &&
-      userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
-      userStore.preference.color.length > 0 &&
-      userStore.preference.budget !== '' &&
-      userStore.preference.orderMethod !== '' &&
-      userStore.userData.name !== '' &&
-      userStore.isFormValidated
-    "
-    class="h-max w-full px-[4.2vw] text-detailsContainer_heading_PC"
-  >
-    <span>{{ firstName }}'s Preferences:</span>
-  </div>
-  <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
+
+    <!-- Render Preferences only if all conditions are met -->
     <div
-      v-show="
-        userStore.preference.flooring === `${flooring}` &&
-        userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
-        userStore.preference.color.length > 0 &&
-        userStore.preference.budget !== '' &&
-        userStore.preference.orderMethod !== '' &&
-        userStore.userData.name !== '' &&
-        userStore.isFormValidated
-      "
-      class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh]"
+      v-if="arePreferencesFilled"
+      class="h-max w-full px-[4.2vw] text-detailsContainer_heading_PC"
+    >
+      <span>{{ firstName }}'s Preferences:</span>
+    </div>
+
+    <!-- Transition and Preference Cards -->
+    <div
+      v-if="arePreferencesFilled"
+      class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh] transition-all ease-in-out duration-300"
     >
       <!-- <PrefCardPC /> -->
-      <div class="w-full h-max" v-if="userStore.cart.length > 0">
-        <div v-for="(item, index) in userStore.cart" :key="index">
-          <ReusablePrefCardPC :item="item" :key="index" />
+      <div
+        class="w-full h-max transition-all ease-in-out duration-300"
+        v-if="userStore.cart.length > 0"
+        :key="userStore.cartKey"
+      >
+        <div
+          class="transition-all ease-in-out duration-300"
+          v-for="(item, index) in userStore.cart"
+          :key="index"
+        >
+          <ReusablePrefCardPC
+            :item="item"
+            :key="index"
+            @refreshCart="handleCartRefresh"
+          />
         </div>
       </div>
       <div
@@ -63,68 +62,56 @@
         <span> No saved preferences found :( </span>
       </div>
     </div>
-  </transition>
-  <div
-    v-show="
-      userStore.preference.flooring === `${flooring}` &&
-      userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
-      userStore.preference.color.length > 0 &&
-      userStore.preference.budget !== '' &&
-      userStore.preference.orderMethod !== '' &&
-      userStore.userData.name !== '' &&
-      userStore.isFormValidated
-    "
-    class="h-max w-full flex justify-evenly pb-[2vh]"
-  >
-    <button
-      v-if="!isRefreshLoading"
-      @click="() => getHistory()"
-      class="h-max w-max text-[#555] rounded-full"
+
+    <!-- Refresh Button -->
+    <div
+      v-if="arePreferencesFilled"
+      class="h-max w-full flex justify-evenly pb-[2vh]"
     >
-      <div
-        class="h-max w-max flex items-center gap-[1vw] text-[2.8vh] border-[2px] px-[2vw] py-[2vh] rounded-full border-[#999] shadow-md hover:shadow-xl transition-all ease-in-out duration-300"
+      <button
+        v-if="!isRefreshLoading"
+        @click="getHistory"
+        class="h-max w-max text-[#555] rounded-full"
       >
-        <span class="text-[2vh]">Refresh</span>
-        <RefreshIcon />
+        <div
+          class="h-max w-max flex items-center gap-[1vw] text-[2.8vh] border-[2px] px-[2vw] py-[2vh] rounded-full border-[#999] shadow-md hover:shadow-xl transition-all ease-in-out duration-300"
+        >
+          <span class="text-[2vh]">Refresh</span>
+          <RefreshIcon />
+        </div>
+      </button>
+      <div v-else class="text-[3.2vh] px-[4vw]">
+        <LoadingIcon2 />
       </div>
-    </button>
-    <div v-else class="text-[3.2vh] px-[4vw]">
-      <LoadingIcon2 />
     </div>
-  </div>
-  <div
-    v-show="
-      userStore.preference.flooring === `${flooring}` &&
-      userStore.preference.spec_1 !== '' &&
-      userStore.preference.spec_2 !== '' &&
-      userStore.preference.color.length > 0 &&
-      userStore.preference.budget !== '' &&
-      userStore.preference.orderMethod !== '' &&
-      userStore.userData.name !== '' &&
-      userStore.isFormValidated
-    "
-    class="h-max w-full flex justify-center py-[8vh] border-t-[2px] border-dotted border-[#999] px-[4vw]"
-  >
-    <button
-      v-if="userStore.cart.length > 0"
-      @click="HandleAddMore"
-      class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
+
+    <!-- Add More and Confirm Buttons -->
+    <div
+      v-if="arePreferencesFilled"
+      class="h-max w-full flex justify-center py-[8vh] border-t-[2px] border-dotted border-[#999] px-[4vw]"
     >
-      <span v-if="!isAddMoreLoading">BROWSE OTHER PRODUCTS</span>
-      <LoadingIcon class="text-[4.2vh]" v-else />
-    </button>
-    <button
-      v-if="userStore.cart.length > 0"
-      @click="HandleOrderConfirmation"
-      class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
-    >
-      <span v-if="!isConfirmationLoading">CONFIRM</span>
-      <LoadingIcon class="text-[4.2vh]" v-else />
-    </button>
-  </div>
-  <div class="h-max w-full">
-    <!-- <FooterPC /> -->
+      <button
+        v-if="userStore.cart.length > 0"
+        @click="HandleAddMore"
+        class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
+      >
+        <span v-if="!isAddMoreLoading">BROWSE OTHER PRODUCTS</span>
+        <LoadingIcon class="text-[4.2vh]" v-else />
+      </button>
+      <button
+        v-if="userStore.cart.length > 0"
+        @click="HandleOrderConfirmation"
+        class="border-[2px] rounded-md w-[40%] py-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
+      >
+        <span v-if="!isConfirmationLoading">CONFIRM</span>
+        <LoadingIcon class="text-[4.2vh]" v-else />
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="h-max w-full">
+      <!-- <FooterPC /> -->
+    </div>
   </div>
 </template>
 
@@ -133,15 +120,14 @@ import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
 import { useRouter } from "vue-router";
-
 import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
-// import FooterPC from "../../FooterPC.vue";
-// import FlooringGridPC from "../FlooringGridPC.vue";
-// import FlooringGridOverlayPC from "../FlooringGridOverlayPC.vue";
+import FooterMOB from "../../FooterMOB.vue";
+import FlooringGridOverlayMOB from "../FLOORING-ITEMS/FlooringGridOverlayMOB.vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
+
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
 const userPreference = useCookie("userPreference");
@@ -150,48 +136,29 @@ const isConfirmationLoading = ref(false);
 const isRefreshLoading = ref(false);
 const historyFound = ref(true);
 const isFlooringVisible = ref(false);
-
+// Props
 const { flooring, link } = defineProps(["flooring", "link"]);
 
+// Computed for first name extraction
 const firstName = computed(() => {
   if (!userStore.userData.name) return "";
   const name = userStore.userData.name.trim().split(" ")[0];
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 });
-async function fetchPreferencesByMobile(mobile) {
-  try {
-    // Ensure the mobile number is provided
-    if (!mobile) {
-      throw new Error("Mobile number is required");
-    }
 
-    let sanitizedMobile = mobile.startsWith("+") ? mobile.slice(1) : mobile;
-
-    // Call the API endpoint to get the logs associated with the mobile number
-    const { data, error } = await useFetch(
-      `/api/get-log?mobile=${sanitizedMobile}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    if (error.value) {
-      throw new Error(error.value.message);
-    }
-
-    // Handle successful data retrieval
-    console.log("Preferences fetched successfully:", data.value);
-    return data.value; // Return the fetched data
-  } catch (err) {
-    // Handle errors
-    console.error("Error fetching preferences:", err.message);
-    historyFound.value = false;
-    return null;
-  }
-}
+// Computed for repeated condition
+const arePreferencesFilled = computed(() => {
+  return (
+    userStore.preference.flooring === `${flooring}` &&
+    userStore.preference.spec_1 !== "" &&
+    Array.isArray(userStore.preference.color) &&
+    userStore.preference.color.length > 0 && // Ensure color is an array
+    userStore.preference.budget !== "" &&
+    userStore.preference.orderMethod !== "" &&
+    userStore.userData.name !== "" &&
+    userStore.isFormValidated
+  );
+});
 
 // GET ALL CART ITEMS
 async function getHistory() {
@@ -232,7 +199,13 @@ async function getHistory() {
     }, 1000);
   }
 }
-
+// AT REFRESH
+function handleCartRefresh() {
+  console.log("CART REFRESHED");
+  // Update the cartKey to force re-render of the entire cart container
+  userStore.cartKey = Date.now();
+}
+// ------------------
 // ORDER CONFIRMATION
 const HandleOrderConfirmation = () => {
   isConfirmationLoading.value = true;
@@ -297,77 +270,6 @@ const HandleOrderConfirmation = () => {
 };
 // ------------------
 
-const insertLog = (isOrderConfirmed) => {
-  const phoneWithCode = addCountryCode(userStore);
-  const name = userStore.userData.name;
-  const orderMethod = userStore.preference.orderMethod;
-  let contact;
-
-  if (orderMethod === "whatsapp") {
-    // Check if the phone number starts with a "+" indicating a country code
-    if (userStore.userData.phone.startsWith("+")) {
-      contact = userStore.userData.phone;
-    } else {
-      // Add the country code if it's not present
-      contact = addCountryCode(
-        userStore.userData.phone,
-        userStore.preference.country
-      );
-    }
-  } else {
-    contact = userStore.userData.email;
-  }
-
-  const userData = {
-    name,
-    phone: orderMethod === "whatsapp" ? contact : "",
-    email: orderMethod === "email" ? contact : "",
-    preference: userStore.preference,
-    isOrderConfirmed: isOrderConfirmed,
-  };
-
-  console.log("Sending userData:", userData);
-
-  if (!name || !contact) {
-    console.error("Name and contact details are required.");
-    return;
-  }
-
-  // Call API route to insert logs
-  useFetch("/api/set-cookie")
-    .then(({ data, error }) => {
-      if (error?.value) {
-        throw new Error("Error setting cookie: " + error.value);
-      }
-      console.log("SET COOKIE DONE");
-      return fetch("/api/insert-logs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error inserting logs");
-      }
-      return response.json();
-    })
-    .then((logData) => {
-      console.log("SUCCESS");
-      console.log("Log data:", logData);
-      userStore.userData.id = logData.id;
-
-      // Redirect to /flooring after successful log insertion
-      isFlooringVisible.value = true;
-      DISABLE_SCROLL();
-      isAddMoreLoading.value = false;
-    })
-    .catch((err) => {
-      isAddMoreLoading.value = false;
-      console.error("Unexpected errors:", err.message);
-    });
-};
-
 // ------------------
 // HANDLE CLICK ON ADD MORE BUTTON
 const HandleAddMore = () => {
@@ -379,6 +281,7 @@ const HandleAddMore = () => {
   }, 2000);
 };
 // ------------------
+
 // ------------------
 // HANDLE CLICK ON CANCEL ADD MORE BUTTON
 const handleCancelAddMoreFlooring = () => {

@@ -5,7 +5,6 @@
       v-show="
         userStore.preference.flooring === `${flooring}` &&
         userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
         userStore.preference.color.length > 0 &&
         userStore.preference.budget !== '' &&
         userStore.preference.orderMethod !== ''
@@ -146,6 +145,8 @@
 <script setup>
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
+import { fetchLogById } from "./../../../../utils/reusables";
+
 import { ref } from "vue";
 const userPreference = useCookie("userPreference");
 const { flooring } = defineProps(["flooring"]);
@@ -178,6 +179,116 @@ function setUserPreferenceCookie() {
 const isNameInvalid = ref(false);
 const isMailInvalid = ref(false);
 const isPhoneInvalid = ref(false);
+
+const removeItemFromCart = (idToRemove) => {
+  const userStore = useUserStore(); // Access the user store
+
+  // Check if an item with the given id exists in the cart
+  const itemIndex = userStore.cart.findIndex((item) => item.id === idToRemove);
+
+  if (itemIndex !== -1) {
+    // If the item exists, remove it from the cart
+    userStore.cart.splice(itemIndex, 1);
+    console.log(`Item with id ${idToRemove} removed from cart.`);
+  } else {
+    console.log(`No item with id ${idToRemove} found in the cart.`);
+  }
+};
+
+const insertLog = (isOrderConfirmed) => {
+  const phoneWithCode = addCountryCode(userStore);
+  const name = userStore.userData.name;
+  const orderMethod = userStore.preference.orderMethod;
+  let contact;
+
+  // Determine the contact method (either phone or email based on the order method)
+  if (orderMethod === "whatsapp" || orderMethod === "email") {
+    if (userStore.userData.phone.startsWith("+")) {
+      contact = userStore.userData.phone;
+    } else {
+      // Add the country code if it's not present
+      contact = addCountryCode(
+        userStore.userData.phone,
+        userStore.preference.country
+      );
+    }
+  } else {
+    contact = userStore.userData.email;
+  }
+
+  const userData = {
+    name,
+    phone: orderMethod === "whatsapp" ? contact : contact,
+    email: orderMethod === "email" ? contact : "",
+    preference: userStore.preference,
+    isOrderConfirmed: isOrderConfirmed,
+  };
+
+  console.log("Sending userData:", userData);
+
+  // Validate name and contact
+  if (!name || !contact) {
+    console.error("Name and contact details are required.");
+    return;
+  }
+
+  // Call API route to set the cookie, and then insert the logs
+  useFetch("/api/set-cookie")
+    .then(({ data, error }) => {
+      if (error?.value) {
+        throw new Error("Error setting cookie: " + error.value);
+      }
+      console.log("SET COOKIE DONE");
+
+      // Insert logs after the cookie is set
+      return fetch("/api/insert-logs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error inserting logs");
+      }
+      return response.json();
+    })
+    .then((logData) => {
+      console.log("SUCCESS");
+      // REMOVE PINIA OBJ
+      console.log("Log data:", logData);
+
+      // Update userStore with the fetched logData.id
+      userStore.userData.id = logData.id;
+
+      // Now call fetchLogById after the id has been set
+      return fetchLogById(logData.id); // This returns a promise, so chain another .then
+    })
+    .then((fetchedLog) => {
+      removeItemFromCart("PINIA");
+      console.log("Fetched log by ID:", fetchedLog);
+      // If the fetched log contains preference data, add it to the cart
+      if (fetchedLog && fetchedLog.preference) {
+        const isAlreadyInCart = userStore.cart.some(
+          (item) => item.id === fetchedLog.id
+        );
+
+        // If the item is not already in the cart, add it
+        if (!isAlreadyInCart) {
+          userStore.cart.push({
+            ...fetchedLog.preference, // Add the preference details
+            id: fetchedLog.id, // Ensure the log ID is stored as well
+          });
+          console.log("Preference added to cart:", userStore.cart);
+        } else {
+          console.log("Item is already in the cart.");
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error occurred:", error);
+    });
+};
 
 function handleInfoProceedings() {
   const phoneWithCode = addCountryCode(
@@ -223,8 +334,9 @@ function handleInfoProceedings() {
     userStore.userData.email = mailIpt.value;
     userStore.userData.phone = phoneWithCode;
     setUserPreferenceCookie();
-    userStore.updateCart();
+    insertLog(false);
     userStore.isFormValidated = true;
+    userStore.updateCart();
     scrollBy(800);
   }
 }
@@ -246,6 +358,7 @@ function isFieldValidated(field) {
   }
   return false;
 }
+
 onMounted(() => {
   if (userPreference.value && typeof userPreference.value === "object") {
     const { name = "", phone = "", email = "" } = toRaw(userPreference.value);

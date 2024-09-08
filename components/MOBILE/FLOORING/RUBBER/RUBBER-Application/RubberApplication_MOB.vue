@@ -85,7 +85,7 @@
               />
             </div>
             <div
-              class="h-max w-full flex-col flex items-center pt-[1vh] pb-[4vh] justify-start"
+              class="h-max w-full flex-col flex items-center pt-[2.4vh] pb-[2vh] justify-start"
             >
               <transition
                 @beforeEnter="

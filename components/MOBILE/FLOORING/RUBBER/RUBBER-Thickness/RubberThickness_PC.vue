@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <transition
-    @beforeEnter="handleDetailsDOMEntry('sports_Activity_Details_PC')"
+    @beforeEnter="handleDetailsDOMEntry('raised_Thickness_Details_PC')"
   >
     <div
       v-show="userStore.preference.spec_1 !== ''"
@@ -14,50 +14,43 @@
           class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
         >
           <span
-            class="sports_Activity_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
+            class="raised_Thickness_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
           >
-            Choose Your Activity
+            Choose Your Thickness
           </span>
           <!-- DESKTOP -->
           <button
-            @click="clearAllSelections"
+            @click="clearAllSelections_spec2()"
             v-show="userStore.preference.spec_2.length"
             class="h-max w-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
           >
-            <span class="text-[2.2vh]">Clear All</span
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-              />
-            </svg>
+            <span class="text-[2.2vh]">Clear All</span>
+            <ClearAllIcon />
           </button>
           <!-- DESKTOP -->
         </div>
-        <!-- FITNESS -->
+        <!-- THICKNESS OPTIONS -->
         <div
-          v-show="userStore.preference.spec_1 === 'Fitness'"
+          v-show="selectedThicknessOptions.length > 0"
           class="h-max w-full flex flex-col gap-[2vh]"
         >
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Cardio -->
+          <div
+            v-for="(thickness, index) in selectedThicknessOptions"
+            :key="index"
+            class="h-max w-full flex justify-between gap-[2vw] z-[9]"
+          >
+            <!-- THICKNESS OPTION -->
             <div
               :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Cardio') },
+                'h-[12vh] bg-[#333] overflow-hidden w-full rounded-md text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                { selected: userStore.preference.spec_2.includes(thickness) },
               ]"
-              @click="toggleSelect('Cardio')"
+              @click="toggleSelect(thickness)"
             >
               <div
-                v-show="userStore.preference.spec_2.includes('Cardio')"
+                v-show="userStore.preference.spec_2.includes(thickness)"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
-                <!-- Selected indicator without text -->
                 <span
                   class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
                   >Selected</span
@@ -66,635 +59,7 @@
               <div
                 class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-              <!-- DESKTOP -->
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/cardio.webp"
-                alt="cardio"
-              />
-              <span class="text-[3.4vh]">Cardio</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Functional Training  -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                {
-                  selected: userStore.preference.spec_2.includes(
-                    'Functional Training'
-                  ),
-                },
-              ]"
-              @click="toggleSelect('Functional Training')"
-            >
-              <div
-                v-show="
-                  userStore.preference.spec_2.includes('Functional Training')
-                "
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/functionalTraining.webp"
-                alt="Functional Training"
-              />
-              <span class="text-[3.4vh]">Functional Training</span>
-            </div>
-          </div>
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Machine Training -->
-            <!-- DESKTOP -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                {
-                  selected:
-                    userStore.preference.spec_2.includes('Machine Training'),
-                },
-              ]"
-              @click="toggleSelect('Machine Training')"
-            >
-              <div
-                v-show="
-                  userStore.preference.spec_2.includes('Machine Training')
-                "
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                preload
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/machineTraining.webp"
-                alt=""
-              />
-              <span class="text-[3.4vh]">Machine Training</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Free Weights -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                {
-                  selected:
-                    userStore.preference.spec_2.includes('Free Weights'),
-                },
-              ]"
-              @click="toggleSelect('Free Weights')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Free Weights')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/freeWeights.webp"
-                alt="freeWeights"
-              />
-              <!-- DESKTOP -->
-              <span class="text-[3.4vh]">Free Weights</span>
-            </div>
-          </div>
-        </div>
-        <!-- GROUP TRAINING -->
-        <div
-          v-show="userStore.preference.spec_1 === 'Group Training'"
-          class="h-max w-full flex flex-col gap-[2vh]"
-        >
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Dance -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Dance') },
-              ]"
-              @click="toggleSelect('Dance')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Dance')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <!-- DESKTOP -->
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/dance.webp"
-                alt="dance"
-              />
-              <span class="text-[3.4vh]">Dance</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Aerobic  -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Aerobic') },
-              ]"
-              @click="toggleSelect('Aerobic')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Aerobic')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/fitness.webp"
-                alt="Aerobic"
-              />
-              <span class="text-[3.4vh]">Aerobic</span>
-            </div>
-          </div>
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Zumba -->
-            <!-- DESKTOP -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Zumba') },
-              ]"
-              @click="toggleSelect('Zumba')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Zumba')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                preload
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/zumba.webp"
-                alt="groupTraining"
-              />
-              <span class="text-[3.4vh]">Zumba</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Step -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Step') },
-              ]"
-              @click="toggleSelect('Step')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Step')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/steps.webp"
-                alt=""
-              />
-              <!-- DESKTOP -->
-              <span class="text-[3.4vh]">Step</span>
-            </div>
-          </div>
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- TRX -->
-            <!-- DESKTOP -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('TRX') },
-              ]"
-              @click="toggleSelect('TRX')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('TRX')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                preload
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/trxTraining.webp"
-                alt=""
-              />
-              <span class="text-[3.4vh]">TRX</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Pilates -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Pilates') },
-              ]"
-              @click="toggleSelect('Pilates')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Pilates')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/pilates.webp"
-                alt=""
-              />
-              <!-- DESKTOP -->
-              <span class="text-[3.4vh]">Pilates</span>
-            </div>
-          </div>
-        </div>
-        <!-- STRENGTH & CONDITIONING -->
-        <div
-          v-show="userStore.preference.spec_1 === 'Strength'"
-          class="h-max w-full flex flex-col gap-[2vh]"
-        >
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Weightlifting -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                {
-                  selected:
-                    userStore.preference.spec_2.includes('Weightlifting'),
-                },
-              ]"
-              @click="toggleSelect('Weightlifting')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Weightlifting')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <!-- DESKTOP -->
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/weightLifting.webp"
-                alt=""
-              />
-              <span class="text-[3.4vh]">Weightlifting</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Powerlifting  -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                {
-                  selected:
-                    userStore.preference.spec_2.includes('Powerlifting'),
-                },
-              ]"
-              @click="toggleSelect('Powerlifting')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Powerlifting')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/powerLifting.webp"
-                alt="Powerlifting"
-              />
-              <span class="text-[3.4vh]">Powerlifting</span>
-            </div>
-          </div>
-        </div>
-        <!-- MARTIAL ARTS -->
-        <div
-          v-show="userStore.preference.spec_1 === 'Martial Arts'"
-          class="h-max w-full flex flex-col gap-[2vh]"
-        >
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Judo -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Judo') },
-              ]"
-              @click="toggleSelect('Judo')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Judo')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <!-- DESKTOP -->
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/judo.webp"
-                alt=""
-              />
-              <span class="text-[3.4vh]">Judo</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Kickboxing  -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                {
-                  selected: userStore.preference.spec_2.includes('Kickboxing'),
-                },
-              ]"
-              @click="toggleSelect('Kickboxing')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Kickboxing')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/kickBoxing.webp"
-                alt="Kickboxing"
-              />
-              <span class="text-[3.4vh]">Kickboxing</span>
-            </div>
-          </div>
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Karate -->
-            <!-- DESKTOP -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Karate') },
-              ]"
-              @click="toggleSelect('Karate')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Karate')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                preload
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/karate.webp"
-                alt=""
-              />
-              <span class="text-[3.4vh]">Karate</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Boxing -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Boxing') },
-              ]"
-              @click="toggleSelect('Boxing')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Boxing')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/boxing.webp"
-                alt=""
-              />
-              <!-- DESKTOP -->
-              <span class="text-[3.4vh]">Boxing</span>
-            </div>
-          </div>
-          <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-            <!-- Taekwondo -->
-            <!-- DESKTOP -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Taekwondo') },
-              ]"
-              @click="toggleSelect('Taekwondo')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Taekwondo')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                preload
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/taekwondo.webp"
-                alt=""
-              />
-              <span class="text-[3.4vh]">Taekwondo</span>
-            </div>
-
-            <!-- DESKTOP -->
-            <!-- Akido -->
-            <div
-              :class="[
-                'h-[28vh] sports_Activity_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: userStore.preference.spec_2.includes('Akido') },
-              ]"
-              @click="toggleSelect('Akido')"
-            >
-              <div
-                v-show="userStore.preference.spec_2.includes('Akido')"
-                class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-              >
-                <!-- Selected indicator without text -->
-                <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-                  >Selected</span
-                >
-              </div>
-              <div
-                class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
-              ></div>
-              <NuxtImg
-                quality="50"
-                placeholder
-                loading="eager"
-                class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/gym/akido.webp"
-                alt="akido"
-              />
-              <!-- DESKTOP -->
-              <span class="text-[3.4vh]">Akido</span>
+              <span class="text-[3.4vh]">{{ thickness }}</span>
             </div>
           </div>
         </div>
@@ -704,34 +69,50 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed, toRaw } from "vue";
+import ClearAllIcon from "./../../public/icons/clearAllIcon.vue";
 
 // PINIA
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
-// COOKIES
-import { useCookie } from "#app";
-
-const userPreference = useCookie("userPreference");
 const spec_2 = ref("");
 
-function clearAllSelections() {
+const thicknessOptions = {
+  "Playfall Protec +": [
+    "40mm",
+    "45mm",
+    "50mm",
+    "70mm",
+    "75mm",
+    "90mm",
+    "110mm",
+  ],
+  "Gym Rubber": ["5mm", "7mm", "10mm", "15mm", "20mm", "30mm", "50mm"],
+  "Sports Rubber": ["5mm", "6mm", "7mm", "8mm", "9mm", "10mm", "12mm", "14mm"],
+  "Pool Rubber": ["35mm"],
+  Others: [], // Holds any category not listed above
+};
+
+// Computed property to return the thickness options based on selected category
+const selectedThicknessOptions = computed(() => {
+  return thicknessOptions[userStore.preference.spec_1] || [];
+});
+
+function clearAllSelections_spec2() {
   spec_2.value = "";
   userStore.preference.spec_2 = "";
 }
 
-const toggleSelect = (type) => {
-  if (spec_2.value === type) {
+const toggleSelect = (thickness) => {
+  if (spec_2.value === thickness) {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
-    spec_2.value = type;
+    spec_2.value = thickness;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }
+  userStore.updateCart();
 };
-
-onMounted(() => {});
 </script>
 
 <style scoped>

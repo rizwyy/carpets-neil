@@ -76,15 +76,27 @@
       </a>
     </div>
     <div
-      class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[4vw]"
+      class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[2.4vw]"
     >
-      <CategoryCardHeroPC name="Raised Flooring" link="/carpets/details" />
+      <a href="/flooring/rubber-flooring/details">
+        <CategoryCardHeroPC
+          name="Rubber Flooring"
+          desc="Durable and slip-resistant, rubber flooring offers excellent shock absorption and easy maintenance, making it ideal for high-traffic areas, gyms, and playrooms."
+          :isAvailable="true"
+          src="/rubber-flooring.webp"
+          link="/flooring/rubber-flooring/details"
+        />
+      </a>
 
-      <CategoryCardHeroPC
-        name="Flooring Accessories"
-        src=""
-        link="/carpets/details"
-      />
+      <a href="/flooring/grass-flooring/details">
+        <CategoryCardHeroPC
+          name="Grass Flooring"
+          desc="Lush and low-maintenance, grass flooring provides a natural look and feel, perfect for outdoor spaces & patios with the added benefit of weather resistance."
+          :isAvailable="true"
+          src="/40004.webp"
+          link="/flooring/grass-flooring/details"
+        />
+      </a>
     </div>
   </section>
 </template>

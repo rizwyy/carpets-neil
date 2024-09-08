@@ -112,14 +112,14 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref, defineProps } from "vue";
+import gsap from "gsap";
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 import TrashIcon from "~/public/icons/TrashIcon.vue";
 import SpecDetail from "./PrefCardItems/SpecDetail.vue";
-import UploadContainerPC from "./UploadContainerPC.vue";
+import UploadContainerMOB from "./UploadContainerMOB.vue";
 import ArrowUpIcon from "~/public/icons/arrowUpIcon.vue";
 import ArrowDownIcon from "~/public/icons/arrowDownIcon.vue";
 
@@ -144,9 +144,55 @@ const { item } = defineProps({
 const isExpanded = ref(false);
 const showConfirmDelete = ref(false);
 const itemToDelete = ref(null);
+const emit = defineEmits(["refreshCart"]);
+async function getHistory() {
+  try {
+    let sanitizedPhone = userStore.userData.phone.startsWith("+")
+      ? userStore.userData.phone.slice(1)
+      : addCountryCode(
+          userStore.userData.phone,
+          userStore.preference.country
+        ).slice(1);
+
+    const preferences = await fetchPreferencesByMobile(sanitizedPhone);
+
+    if (preferences && preferences.data && preferences.data.length > 0) {
+      preferences.data.forEach((pref) => {
+        const preferenceData = pref.preference;
+        const id = pref.id;
+
+        const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
+
+        if (!isAlreadyInCart) {
+          const preferenceWithId = { ...preferenceData, id: id };
+          userStore.cart.push(preferenceWithId);
+        }
+      });
+      // Increment the cartKey to force re-render the cart component
+      emit("refreshCart");
+      console.log("Preferences added to cart:", userStore.cart);
+    } else {
+      console.log("No preferences found.");
+    }
+  } catch (error) {
+    console.error("Failed to fetch or process preferences:", error);
+  } finally {
+  }
+}
 
 function toggleExpansion() {
   isExpanded.value = !isExpanded.value;
+}
+function fadeOut(id) {
+  gsap.to(`.id-${item.id}-PrefCardItem`, {
+    autoAlpha: 0, // Opacity 0 and visibility hidden
+    duration: 0.5, // 1-second duration
+    scale: 0.1,
+    ease: "back.in",
+  });
+  gsap.to(`.id-${item.id}-PrefCardItem`, {
+    display: "hidden",
+  });
 }
 
 function promptDelete(item) {
@@ -155,8 +201,14 @@ function promptDelete(item) {
 }
 
 function confirmDelete() {
-  handleDeleteItemAndUpdate(itemToDelete.value.id);
-  showConfirmDelete.value = false;
+  // Perform fade-out animation
+  fadeOut(itemToDelete.value.id);
+
+  // Delay of 0.5 seconds before executing the delete operation
+  setTimeout(() => {
+    handleDeleteItemAndUpdate(itemToDelete.value.id);
+    showConfirmDelete.value = false;
+  }, 400);
 }
 
 function cancelDelete() {
@@ -173,6 +225,8 @@ const handleDeleteItemAndUpdate = async (logId) => {
         (item) => item.addedByPinia !== true && item.id !== "PINIA"
       );
       console.log("PINIA item deleted from cart.");
+      // Trigger getHistory() after deleting the PINIA item
+      await getHistory();
       return; // Exit the function as no API call is needed
     }
 
@@ -198,6 +252,8 @@ const handleDeleteItemAndUpdate = async (logId) => {
     userStore.cart = userStore.cart.filter((item) => item.id !== logId);
 
     console.log("Item deleted from flooringHistory and cart.");
+    // Trigger getHistory() after successful deletion
+    await getHistory();
   } catch (error) {
     console.error("Error in handleDeleteItemAndUpdate:", error.message);
   }
@@ -212,10 +268,11 @@ function getLabel(flooringType) {
     ? "Area"
     : flooringType === "sports"
     ? "Type"
+    : ["grass", "rubber"].includes(flooringType)
+    ? "Thickness"
     : "N/A";
 }
 </script>
-
 <style scoped>
 .font-outfit {
   font-family: "Outfit", sans-serif;

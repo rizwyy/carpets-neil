@@ -185,11 +185,10 @@ const toggleSelect = (category) => {
     userStore.preference.flooring = "Carpets";
     userStore.preference.budget = "";
     userStore.preference.spec_3 = "";
-    userStore.updateCart();
   }
+  userStore.updateCart();
 };
 </script>
-
 <style scoped>
 .selected {
   border-radius: 0px; /* Adjust this value as needed */

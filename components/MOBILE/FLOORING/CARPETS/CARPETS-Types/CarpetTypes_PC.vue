@@ -199,6 +199,7 @@ const toggleSelect = (type) => {
   }
 };
 </script>
+
 <style scoped>
 .selected {
   border-radius: 0px; /* Adjust this value as needed */
