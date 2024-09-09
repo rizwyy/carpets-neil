@@ -68,12 +68,16 @@ import DoubleTickIcon from "./../../public/icons/DoubleTickIcon.vue";
 import TickIcon from "./../../public/icons/TickIcon.vue";
 const userPreference = useCookie("userPreference");
 const firstName = computed(() => {
-  // Check if userPreference and userPreference.value are defined
-  if (!userPreference || !userPreference.value || !userPreference.value.name) {
+  // Check if userPreference, userPreference.value, and userPreference.value.name are defined and valid
+  if (
+    !userPreference ||
+    !userPreference.value ||
+    typeof userPreference.value.name !== "string"
+  ) {
     return "";
   }
 
-  // Proceed with the name extraction and formatting if everything is defined
+  // Proceed with the name extraction and formatting if it's a valid string
   const name = userPreference.value.name.trim().split(" ")[0];
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 });
