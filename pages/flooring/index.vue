@@ -25,7 +25,6 @@
         <div
           class="h-max w-full pb-[12vh] pt-[8vh] flex flex-col items-center gap-[8vh]"
         >
-          <h2 class="text-[2.4vw]">Newsletter</h2>
           <SignUpCardPC />
         </div>
 
@@ -37,7 +36,6 @@
         <div
           class="h-max w-full pb-[12vh] pt-[8vh] flex flex-col items-center gap-[8vh] border-t-[.2vh]"
         >
-          <h2 class="text-[2.4vw]">Privileges</h2>
           <DesignerApnaBannerPC />
         </div>
         <WhyWoltizPC />
