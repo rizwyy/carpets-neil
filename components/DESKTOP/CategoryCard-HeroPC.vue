@@ -15,7 +15,8 @@ const { name, desc, src, isAvailable, link, loading } = defineProps([
     <NuxtImg
       class="h-full w-full absolute top-0 left-0 object-cover z-[-1]"
       :src="`/${src || '#'}`"
-      loading="lazy"
+      loading="eager"
+      quality="60"
       preload
       placeholder
       alt="#"
