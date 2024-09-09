@@ -46,7 +46,7 @@
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/wall-to-wall.webp"
-            alt=""
+            alt="carpet"
           />
           <span class="text-[3.4vh]">Wall to Wall</span>
         </div>
@@ -144,7 +144,7 @@
             loading="eager"
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
             src="/runners.webp"
-            alt=""
+            alt="carpet"
           />
           <span class="text-[3.4vh]">Runners</span>
         </div>
