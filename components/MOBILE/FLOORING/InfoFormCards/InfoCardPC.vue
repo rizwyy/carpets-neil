@@ -123,16 +123,28 @@
                 </div>
               </div>
             </div>
-            <div class="h-max w-full flex flex-col gap-[8vh] pb-[6.2vh]">
+            <div class="h-max w-full flex gap-[4.8vw] py-[6.2vh]">
               <button
-                @click="
-                  cookieFound ? toggleReadOnly() : handleInfoProceedings()
-                "
-                class="bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none"
+                @click="cookieFound && toggleReadOnly()"
+                :disabled="!cookieFound"
+                :class="[
+                  'bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
+                  !cookieFound
+                    ? 'opacity-50 cursor-not-allowed'
+                    : 'opacity-100',
+                ]"
               >
-                <span v-show="!isLoading">{{
-                  cookieFound ? "EDIT" : "PROCEED"
-                }}</span>
+                <span v-show="!isLoading">{{ "EDIT" }}</span>
+              </button>
+              <button
+                @click="!cookieFound && handleInfoProceedings()"
+                :disabled="cookieFound"
+                :class="[
+                  'bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
+                  cookieFound ? 'bg-[#999] cursor-not-allowed' : ' bg-white',
+                ]"
+              >
+                <span v-show="!isLoading">{{ "PROCEED" }}</span>
               </button>
             </div>
           </div>
@@ -291,11 +303,23 @@ const insertLog = (isOrderConfirmed) => {
 };
 
 function handleInfoProceedings() {
-  console.log("FROM PC");
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
   );
+  // Check if the form values have changed
+  const hasChanges =
+    userStore.userData.name !== nameIpt.value ||
+    userStore.userData.email !== mailIpt.value ||
+    userStore.userData.phone !== phoneWithCode;
+
+  // If no changes are detected, exit early to prevent redundant operations
+  if (!hasChanges) {
+    console.log("No changes detected, skipping form submission.");
+    scrollBy(600);
+    return;
+  }
+
   const validationResults = validateInputs(
     mailIpt.value,
     `${phoneWithCode}`,
@@ -341,6 +365,97 @@ function handleInfoProceedings() {
     scrollBy(800);
   }
 }
+//
+/* async function handleInfoProceedings() {
+  const phoneWithCode = addCountryCode(
+    phoneIpt.value,
+    userStore.preference.country
+  );
+
+  // Check if the form values have changed
+  const hasNameChanged = userStore.userData.name !== nameIpt.value;
+  const hasChanges =
+    hasNameChanged ||
+    userStore.userData.email !== mailIpt.value ||
+    userStore.userData.phone !== phoneWithCode;
+
+  // If no changes are detected, exit early to prevent redundant operations
+  if (!hasChanges) {
+    console.log("No changes detected, skipping form submission.");
+    return;
+  }
+
+  const validationResults = validateInputs(
+    mailIpt.value,
+    `${phoneWithCode}`,
+    nameIpt.value
+  );
+  const isValid =
+    validationResults.isEmailValid &&
+    validationResults.isPhoneValid &&
+    validationResults.isNameValid;
+
+  // Validation check
+  if (!isValid) {
+    if (!validationResults.isEmailValid) {
+      isMailInvalid.value = true;
+    }
+
+    if (!validationResults.isPhoneValid) {
+      isPhoneInvalid.value = true;
+    }
+
+    if (!validationResults.isNameValid) {
+      isNameInvalid.value = true;
+    }
+    userStore.isFormValidated = false;
+    return;
+  }
+
+  // If form is valid and changes are detected, proceed with updates
+  isNameInvalid.value = false;
+  isPhoneInvalid.value = false;
+  isMailInvalid.value = false;
+
+  // Update user data
+  userStore.userData.name = nameIpt.value;
+  userStore.userData.email = mailIpt.value;
+  userStore.userData.phone = phoneWithCode;
+
+  // If name has changed, call the updateLog API for the phone number
+  if (hasNameChanged) {
+    try {
+      const response = await fetch('/api/update-log', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          phone: phoneWithCode,
+          name: nameIpt.value
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Error updating log');
+      }
+
+      console.log("Log updated successfully:", result.data);
+    } catch (error) {
+      console.error("Error updating log:", error);
+    }
+  }
+
+  // Proceed with other updates
+  setUserPreferenceCookie();
+  insertLog(false);
+  userStore.isFormValidated = true;
+  userStore.updateCart();
+  scrollBy(800);
+}
+*/
 function isFormValidated() {
   return (
     isFieldValidated("name") &&

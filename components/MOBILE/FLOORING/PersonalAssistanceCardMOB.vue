@@ -102,6 +102,37 @@
           </svg>
         </div>
       </a>
+      <!-- Card 4: Request a Sample -->
+      <a
+        href="/contact"
+        class="flex items-center px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
+      >
+        <div class="pr-[4vw]">
+          <sampleIcon class="text-[4.8vh] text-[#333]" />
+        </div>
+        <div class="flex-1">
+          <h3 class="text-[#333] font-[500] text-[5vw] leading-[3.2vh]">
+            Request a Sample
+          </h3>
+          <p class="text-[#777] text-[4vw]">Free delivery nationwide</p>
+        </div>
+        <div class="ml-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-[6vw] w-[6vw] text-[#777]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+      </a>
     </div>
   </section>
 </template>
@@ -110,6 +141,7 @@
 import storeIcon from "~/public/icons/storeIcon.vue";
 import homeIcon from "~/public/icons/homeIcon.vue";
 import chatIcon from "~/public/icons/chatIcon.vue";
+import sampleIcon from "~/public/icons/sampleIcon.vue";
 </script>
 
 <style scoped>
