@@ -30,7 +30,7 @@ defineProps({
 
 <template>
   <div
-    class="hover:shadow-2xl hover:scale-[1.01] active:scale-[1] hover:translate-y-[-2%] flex flex-col justify-start items-start transition-all duration-300 ease-in-out overflow-auto relative rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
+    class="hover:shadow-2xl hover:scale-[1.0001] active:scale-[1] hover:translate-y-[-2%] flex flex-col justify-start items-start transition-all duration-300 ease-in-out overflow-auto relative rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
   >
     <!-- Optimized Image with lazy loading and quality control -->
     <NuxtImg
