@@ -255,7 +255,7 @@
         </div>
         <div
           :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: spec_1.includes('Others') },
           ]"
           @click="toggleSelect('Others')"
@@ -280,7 +280,7 @@
             quality="100"
             placeholder
             loading="eager"
-            class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[1]"
             src="/rubber/customRubber1.webp"
             alt="gymRubber"
           />
