@@ -56,10 +56,10 @@
               >
               <input
                 :class="{
-                  'bg-gray-300': isFormValidated() && cookieFound,
-                  'bg-white': !(isFormValidated() && cookieFound),
+                  'bg-gray-300': formValidated,
+                  'bg-white': !formValidated,
                 }"
-                :readonly="isFormValidated() && cookieFound"
+                :readonly="formValidated"
                 class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
                 placeholder="Name"
                 v-model="nameIpt"
@@ -72,12 +72,12 @@
                 >
                 <input
                   :class="{
-                    'bg-gray-300': isFormValidated() && cookieFound,
-                    'bg-white': !(isFormValidated() && cookieFound),
+                    'bg-gray-300': formValidated,
+                    'bg-white': !formValidated,
                     'border-red-500 focus:border-red-300': isNameInvalid,
                     'border-[#555] focus:border-black': !isNameInvalid,
                   }"
-                  :readonly="isFormValidated() && cookieFound"
+                  :readonly="formValidated"
                   :required="mailIpt.length > 8"
                   type="email"
                   class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] py-[2.4vh] outline-none focus:border-black"
@@ -92,8 +92,8 @@
                 <div class="h-max w-full flex">
                   <select
                     :class="{
-                      'bg-gray-300': isFormValidated() && cookieFound,
-                      'bg-white': !(isFormValidated() && cookieFound),
+                      'bg-gray-300': formValidated,
+                      'bg-white': !formValidated,
                       'border-red-500 focus:border-red-300': isNameInvalid,
                       'border-[#555] focus:border-black': !isNameInvalid,
                     }"
@@ -107,10 +107,10 @@
                     <option value="Qatar">+974</option>
                   </select>
                   <input
-                    :readonly="isFormValidated() && cookieFound"
+                    :readonly="formValidated"
                     :class="{
-                      'bg-gray-300': isFormValidated() && cookieFound,
-                      'bg-white': !(isFormValidated() && cookieFound),
+                      'bg-gray-300': formValidated,
+                      'bg-white': !formValidated,
                       'border-red-500 focus:border-red-300': isNameInvalid,
                       'border-[#555] focus:border-black': !isNameInvalid,
                     }"
@@ -125,26 +125,31 @@
             </div>
             <div class="h-max w-full flex gap-[4.8vw] py-[6.2vh]">
               <button
-                @click="cookieFound && toggleReadOnly()"
-                :disabled="!cookieFound"
+                @click="
+                  () =>
+                    !formValidated
+                      ? handleInfoProceedings('SAVE')
+                      : handleClickOnEdit()
+                "
                 :class="[
                   'bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
-                  !cookieFound
-                    ? 'opacity-50 cursor-not-allowed'
-                    : 'opacity-100',
+                  !cookieFound ? '' : '',
                 ]"
               >
-                <span v-show="!isLoading">{{ "EDIT" }}</span>
+                <span v-if="formValidated">EDIT</span>
+                <span v-else>SAVE</span>
               </button>
               <button
-                @click="!cookieFound && handleInfoProceedings()"
-                :disabled="cookieFound"
+                @click="formValidated && handleInfoProceedings()"
+                :disabled="!formValidated"
                 :class="[
-                  'bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
-                  cookieFound ? 'bg-[#999] cursor-not-allowed' : ' bg-white',
+                  ' InfoCardPC-CONTAINER  border-[#666] active:scale-[.93]  w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
+                  !formValidated
+                    ? 'bg-[#e9e9e9] text-[#999] cursor-not-allowed'
+                    : 'bg-white hover:shadow-lg ',
                 ]"
               >
-                <span v-show="!isLoading">{{ "PROCEED" }}</span>
+                <span v-show="!isLoading">PROCEED</span>
               </button>
             </div>
           </div>
@@ -166,7 +171,7 @@ const { flooring } = defineProps(["flooring"]);
 const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
-
+const formValidated = ref(false);
 const cookieFound = ref(false);
 
 const isLoading = ref(false);
@@ -175,7 +180,9 @@ const userStore = useUserStore();
 function toggleReadOnly() {
   cookieFound.value = false;
 }
-
+function handleClickOnEdit() {
+  formValidated.value = false;
+}
 function setUserPreferenceCookie() {
   const obj = {
     name: userStore.userData.name,
@@ -302,7 +309,7 @@ const insertLog = (isOrderConfirmed) => {
     });
 };
 
-function handleInfoProceedings() {
+function handleInfoProceedings(el) {
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
@@ -352,6 +359,16 @@ function handleInfoProceedings() {
     userStore.isFormValidated = false;
     return;
   } else {
+    if (el === "SAVE") {
+      isNameInvalid.value = false;
+      isPhoneInvalid.value = false;
+      isMailInvalid.value = false;
+      formValidated.value = true;
+      return;
+    }
+    if (!formValidated.value) {
+      return;
+    }
     isNameInvalid.value = false;
     isPhoneInvalid.value = false;
     isMailInvalid.value = false;
