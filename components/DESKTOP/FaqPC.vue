@@ -294,7 +294,7 @@ function toggleViewMore() {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .fade-enter-from,
