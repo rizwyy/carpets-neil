@@ -36,7 +36,6 @@ defineProps({
       class="absolute top-0 left-0 h-full w-full object-cover z-[-1]"
       :src="src || '#'"
       :loading="loading"
-      quality="60"
       preload
       placeholder
       alt="Image description"
