@@ -12,7 +12,7 @@
       <!-- Card 1: Book a home visit -->
       <a
         href="/contact"
-        class="active:scale-[1] hover:translate-x-[2%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
+        class="active:scale-[1] hover:translate-x-[1%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
       >
         <div class="mr-[2vw]">
           <homeIcon class="text-[2.5vw] text-[#333]" />
@@ -42,7 +42,7 @@
       <!-- Card 2: Book a store appointment -->
       <a
         href="/contact"
-        class="active:scale-[1] hover:translate-x-[2%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
+        class="active:scale-[1] hover:translate-x-[1%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
       >
         <div class="mr-[2vw]">
           <storeIcon class="text-[2.5vw] text-[#333]" />
@@ -74,7 +74,7 @@
       <!-- Card 3: Chat with experts -->
       <a
         href="/contact"
-        class="active:scale-[1] hover:translate-x-[2%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
+        class="active:scale-[1] hover:translate-x-[1%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
       >
         <div class="mr-[2vw]">
           <chatIcon class="text-[2.5vw] text-[#333]" />
@@ -105,7 +105,7 @@
       <!-- Card 4: Request a Sample -->
       <a
         href="/contact"
-        class="active:scale-[1] hover:translate-x-[2%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
+        class="active:scale-[1] hover:translate-x-[1%] transition-all duration-[.2s] ease-in-out flex items-center px-[3vw] py-[2vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[8px] border-blue-200"
       >
         <div class="mr-[2vw]">
           <sampleIcon class="text-[2.5vw] text-[#333]" />

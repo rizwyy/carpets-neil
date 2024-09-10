@@ -30,7 +30,7 @@ defineProps({
 
 <template>
   <div
-    class="hover:shadow-2xl hover:scale-[1.0001] active:scale-[1] hover:translate-y-[-2%] flex flex-col justify-start items-start transition-all duration-300 ease-in-out overflow-auto relative rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
+    class="hover:shadow-2xl hover:translate-y-[-2%] flex flex-col justify-start items-start transition-all duration-300 ease-in-out overflow-auto relative rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
   >
     <!-- Optimized Image with lazy loading and quality control -->
     <NuxtImg
@@ -44,7 +44,7 @@ defineProps({
 
     <!-- Content Overlay -->
     <div
-      class="overlay bg-gradient-to-t from-black to-transparent h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw]"
+      class="overlay bg-gradient-to-t from-black hover:to-[70%] to-transparent transition-all duration-[.4s] ease-in-out h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw]"
     >
       <span
         class="text-[2.4vw] font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[2vw]"
