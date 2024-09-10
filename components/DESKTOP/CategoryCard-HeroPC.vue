@@ -1,4 +1,5 @@
 <script setup>
+import arrowRightIcon from "./../../public/icons/arrowRightIcon.vue";
 defineProps({
   name: {
     type: String,
@@ -29,7 +30,7 @@ defineProps({
 
 <template>
   <div
-    class="pc-container relative overflow-hidden rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
+    class="hover:shadow-2xl hover:scale-[1.01] active:scale-[1] hover:translate-y-[-2%] flex flex-col justify-start items-start transition-all duration-300 ease-in-out overflow-auto relative rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
   >
     <!-- Optimized Image with lazy loading and quality control -->
     <NuxtImg
@@ -43,23 +44,19 @@ defineProps({
 
     <!-- Content Overlay -->
     <div
-      class="overlay bg-gradient-to-r from-black to-transparent absolute inset-0 flex flex-col justify-center px-[2vw] gap-[2vh]"
+      class="overlay bg-gradient-to-t from-black to-transparent h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw]"
     >
       <span
-        class="name-text text-[.8vw] font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[1.5vw]"
+        class="text-[2.4vw] font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[2vw]"
       >
         {{ name }}
       </span>
-      <span
-        class="description-text text-[1.8vh] text-[#ececec] leading-snug min-[1590px]:text-[1.5vh] w-[60%]"
-      >
-        {{ desc }}
-      </span>
+
       <a
         :href="link"
-        class="view-link text-[1.8vh] text-[#fff] font-[400] underline underline-offset-[0.5vh]"
+        class="text-[1.2vw] text-[#fff9] font-[500] flex items-center"
       >
-        View all
+        View All <arrowRightIcon class="text-[2vw]" />
       </a>
     </div>
 
@@ -78,33 +75,11 @@ defineProps({
 </template>
 
 <style scoped>
-.pc-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
 .pc-container:hover {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.overlay {
-  z-index: 1;
-  padding: 2vw;
-}
-
-.name-text {
-  font-size: clamp(1.8vw, 2vw, 2vw);
-}
-
 .description-text {
-  font-size: clamp(1.5vh, 2vh, 2vh);
-}
-
-.view-link {
   font-size: clamp(1.5vh, 2vh, 2vh);
 }
 
