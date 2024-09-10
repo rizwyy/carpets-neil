@@ -146,7 +146,7 @@
         Start exploring and add your favorite options!
       </span>
       <a
-        class="text-[1.8vw] tracking-[.4vw] px-[4vw] rounded-md py-[3.2vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
+        class="text-[1.8vw] tracking-[.4vw] hover:shadow-2xl duration-300 transition-all ease-in-out px-[4vw] rounded-md py-[2.8vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
         href="/flooring"
         >EXPLORE</a
       >
