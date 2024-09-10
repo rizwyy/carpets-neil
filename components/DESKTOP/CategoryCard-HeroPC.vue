@@ -47,7 +47,7 @@ defineProps({
       class="overlay bg-gradient-to-r from-black to-transparent absolute inset-0 flex flex-col justify-center px-[2vw] gap-[2vh]"
     >
       <span
-        class="name-text text-[1.8vw] font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[1.5vw]"
+        class="name-text text-[.8vw] font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[1.5vw]"
       >
         {{ name }}
       </span>
@@ -98,15 +98,15 @@ defineProps({
 }
 
 .name-text {
-  font-size: clamp(1.5vw, 1.8vw, 1.8vw);
+  font-size: clamp(1.8vw, 2vw, 2vw);
 }
 
 .description-text {
-  font-size: clamp(1.5vh, 1.8vh, 1.8vh);
+  font-size: clamp(1.5vh, 2vh, 2vh);
 }
 
 .view-link {
-  font-size: clamp(1.5vh, 1.8vh, 1.8vh);
+  font-size: clamp(1.5vh, 2vh, 2vh);
 }
 
 .not-available {
