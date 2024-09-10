@@ -246,7 +246,7 @@
         </div>
         <div
           :class="[
-            'h-[14vh] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] bg-gradient-to-b from-transparent to-black from-[60%] flex items-end justify-between text-[#ededed] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+            'h-[14vh] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  flex items-end justify-between text-[#ededed] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
             { selected: spec_1.includes('Others') },
           ]"
           @click="toggleSelect('Others')"
@@ -269,11 +269,11 @@
             quality="50"
             placeholder
             loading="eager"
-            class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/rubber/customRubber.webp"
+            class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[1]"
+            src="/rubber/customRubber1.webp"
             alt="gymRubber"
           />
-          <span>Custom Application</span>
+          <span class="z-[2]">Custom Application</span>
         </div>
       </div>
     </div>

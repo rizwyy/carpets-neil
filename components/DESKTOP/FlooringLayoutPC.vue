@@ -95,7 +95,7 @@ const flooringCategories = [
   [
     {
       name: "Rubber Flooring",
-      desc: "Durable and slip-resistant, rubber flooring offers excellent shock absorption and easy maintenance, ideal for high-traffic areas, gyms, and playrooms.",
+      desc: "Durable and slip-resistant, rubber flooring offers excellent shock absorption and easy maintenance, ideal for gym & playrooms",
       isAvailable: true,
       src: "/rubber-flooring.webp",
       link: "/flooring/rubber-flooring/details",

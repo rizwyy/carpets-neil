@@ -89,13 +89,35 @@ const thicknessOptions = {
   ],
   "Gym Rubber": ["5mm", "7mm", "10mm", "15mm", "20mm", "30mm", "50mm"],
   "Sports Rubber": ["5mm", "6mm", "7mm", "8mm", "9mm", "10mm", "12mm", "14mm"],
-  "Pool Rubber": ["35mm"],
-  Others: [], // Holds any category not listed above
+  "Deck Rubber": ["35mm"],
+  Others: [
+    "5mm",
+    "6mm",
+    "7mm",
+    "8mm",
+    "9mm",
+    "10mm",
+    "12mm",
+    "14mm",
+    "15mm",
+    "20mm",
+    "30mm",
+    "35mm",
+    "40mm",
+    "45mm",
+    "50mm",
+    "70mm",
+    "75mm",
+    "90mm",
+    "110mm",
+  ], // Holds any category not listed above
 };
 
 // Computed property to return the thickness options based on selected category
 const selectedThicknessOptions = computed(() => {
-  return thicknessOptions[userStore.preference.spec_1] || [];
+  return (
+    thicknessOptions[userStore.preference.spec_1] || thicknessOptions["Others"]
+  );
 });
 
 function clearAllSelections_spec2() {
@@ -110,6 +132,7 @@ const toggleSelect = (thickness) => {
   } else {
     spec_2.value = thickness;
     userStore.preference.spec_2 = toRaw(spec_2.value);
+    scrollToBottom();
   }
   userStore.updateCart();
 };
@@ -117,7 +140,7 @@ const toggleSelect = (thickness) => {
 
 <style scoped>
 .selected {
-  border-radius: 40px; /* Adjust this value as needed */
+  border-radius: full; /* Adjust this value as needed */
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

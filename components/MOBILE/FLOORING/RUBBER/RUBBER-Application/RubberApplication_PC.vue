@@ -5,29 +5,11 @@
       class="max-[990px]:hidden h-max w-full px-[3vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6]"
     >
       <div
-        class="raisedApplication_temp_div opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed bottom-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
+        class="raisedApplication_temp_div opacity-0 flex gap-[.2vw] items-center invisible translate-y-[50%] h-max w-max py-[2.4vh] bg-black text-[#f1f1f1] fixed bottom-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[2vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px] text-[1.4vw]"
       >
         <span>
           {{ userStore.preference.spec_1 }} is added as an Application
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 14 14"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="m4 8l2.05 1.64a.48.48 0 0 0 .4.1a.5.5 0 0 0 .34-.24L10 4"
-            />
-            <circle cx="7" cy="7" r="6.5" />
-          </g>
-        </svg>
       </div>
       <div
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pb-[4vh]"
@@ -62,10 +44,12 @@
       </div>
       <!-- SPECIFY OVERLAY -->
       <div class="h-max w-full relative flex flex-col gap-[1vh]">
-        <transition @beforeEnter="bringOpacity('customApplicationOverlay')">
+        <transition
+          @beforeEnter="bringOpacity('customApplicationOverlayRubber')"
+        >
           <div
-            v-show="userStore.preference.spec_1 === 'Others'"
-            class="customApplicationOverlay opacity-0 h-full w-full bg-black bg-opacity-[.8] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[8vh]"
+            v-show="spec_1 === 'Others'"
+            class="customApplicationOverlayRubber opacity-0 h-full w-full bg-black bg-opacity-[.8] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[8vh]"
           >
             <div
               class="h-max w-[75%] flex-[2.4] flex justify-center items-center gap-[2vw] pt-[2vh]"
@@ -149,6 +133,15 @@
               <div
                 class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/playProtec.webp"
+                alt="playProtec"
+              />
               <!-- DESKTOP -->
 
               <span class="text-[3.4vh]">Playfall Protec +</span>
@@ -176,7 +169,15 @@
               <div
                 class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/gymRubber.webp"
+                alt="gymRubber"
+              />
               <span class="text-[3.4vh]">Gym Rubber</span>
             </div>
           </div>
@@ -186,12 +187,12 @@
             <div
               :class="[
                 'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-                { selected: spec_1.includes('Pool Rubber') },
+                { selected: spec_1.includes('Deck Rubber') },
               ]"
-              @click="toggleSelect('Pool Rubber')"
+              @click="toggleSelect('Deck Rubber')"
             >
               <div
-                v-show="spec_1.includes('Pool Rubber')"
+                v-show="spec_1.includes('Deck Rubber')"
                 class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
               >
                 <!-- Selected indicator without text -->
@@ -203,9 +204,18 @@
               <div
                 class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/deckRubber.webp"
+                alt="Deck Rubber"
+              />
               <!-- DESKTOP -->
 
-              <span class="text-[3.4vh]">Pool Rubber</span>
+              <span class="text-[3.4vh]">Deck Rubber</span>
             </div>
 
             <!-- DESKTOP -->
@@ -230,14 +240,22 @@
               <div
                 class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
               ></div>
-
+              <NuxtImg
+                preload
+                quality="50"
+                placeholder
+                loading="eager"
+                class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+                src="/rubber/sportRubber.webp"
+                alt="gymRubber"
+              />
               <span class="text-[3.4vh]">Sports Rubber</span>
             </div>
           </div>
         </div>
         <div
           :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: spec_1.includes('Others') },
           ]"
           @click="toggleSelect('Others')"
@@ -248,17 +266,25 @@
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              class="absolute top-[2vh] right-[1vw] bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
               >Selected</span
             >
           </div>
 
           <!-- DESKTOP -->
           <div
-            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 z-[-1]"
+            class="h-full w-full bg-gradient-to-b from-transparent to-black from-[60%] absolute bottom-0 left-0 z-[-1]"
           ></div>
-
-          <span class="text-[3.4vh]">Custom Application</span>
+          <NuxtImg
+            preload
+            quality="100"
+            placeholder
+            loading="eager"
+            class="h-full object-bottom w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            src="/rubber/customRubber1.webp"
+            alt="gymRubber"
+          />
+          <span class="z-[2] text-[2vw]">Custom Application</span>
         </div>
       </div>
     </div>
@@ -280,7 +306,11 @@ function clearAllSelections_spec2() {
   userStore.preference.spec_1 = "";
   customApplication.value = "";
 }
-
+function cancelCustomApplication() {
+  spec_1.value = "";
+  isCustomAreaOpted.value = false;
+  userStore.preference.spec_1 = "";
+}
 const toggleSelect = (type, msg) => {
   if (msg === "showAddedMsg") {
     handleTempAnimation("raisedApplication_temp_div");

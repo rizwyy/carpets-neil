@@ -1,5 +1,5 @@
 <template>
-  <!-- DESKTOP CARPETS-->
+  <!-- DESKTOP RUBBER-->
   <div
     class="max-[990px]:hidden h-max w-screen px-[6vw] flex flex-col items-center gap-[4vh] justify-center"
   >
