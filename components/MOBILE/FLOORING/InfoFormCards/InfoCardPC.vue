@@ -56,7 +56,7 @@
               >
               <input
                 :class="{
-                  'bg-gray-300': formValidated,
+                  'bg-gray-300 cursor-not-allowed ': formValidated,
                   'bg-white': !formValidated,
                 }"
                 :readonly="formValidated"
@@ -72,7 +72,7 @@
                 >
                 <input
                   :class="{
-                    'bg-gray-300': formValidated,
+                    'bg-gray-300  cursor-not-allowed': formValidated,
                     'bg-white': !formValidated,
                     'border-red-500 focus:border-red-300': isNameInvalid,
                     'border-[#555] focus:border-black': !isNameInvalid,
@@ -92,7 +92,7 @@
                 <div class="h-max w-full flex">
                   <select
                     :class="{
-                      'bg-gray-300': formValidated,
+                      'bg-gray-300 cursor-not-allowed': formValidated,
                       'bg-white': !formValidated,
                       'border-red-500 focus:border-red-300': isNameInvalid,
                       'border-[#555] focus:border-black': !isNameInvalid,
@@ -109,7 +109,7 @@
                   <input
                     :readonly="formValidated"
                     :class="{
-                      'bg-gray-300': formValidated,
+                      'bg-gray-300 cursor-not-allowed': formValidated,
                       'bg-white': !formValidated,
                       'border-red-500 focus:border-red-300': isNameInvalid,
                       'border-[#555] focus:border-black': !isNameInvalid,
