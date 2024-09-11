@@ -1,5 +1,10 @@
 <template>
   <section class="w-[90vw] mx-auto mt-[6vh] mb-[8vh]">
+    <PersonalAssistanceFormMOB
+      @close="handleCloseForm"
+      :formType="selectedFormType"
+      v-if="isFormActive"
+    />
     <!-- Title -->
     <h2 class="text-[#333] text-[3.8vh] tracking-[-.1vw] font-[400] mb-[4vh]">
       Personal assistance
@@ -8,18 +13,18 @@
     <!-- Assistance options -->
     <div class="space-y-[4vh]">
       <!-- Card 1: Book a home visit -->
-      <a
-        href="/contact"
-        class="flex items-center px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
+      <button
+        @click="bringForm('homeVisit')"
+        class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
         <div class="mr-[4vw]">
           <homeIcon class="text-[4.8vh] text-[#333]" />
         </div>
-        <div class="flex-1">
+        <div class="flex-[8] text-start">
           <h3 class="text-[#333] font-[500] text-[2.6vh]">Book a home visit</h3>
           <p class="text-[#777] text-[2vh]">Bring our collection to you.</p>
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto flex-[1]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[6vw] w-[6vw] text-[#777]"
@@ -35,23 +40,23 @@
             />
           </svg>
         </div>
-      </a>
+      </button>
 
       <!-- Card 2: Book a store appointment -->
-      <a
-        href="/contact"
-        class="flex items-center px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
+      <button
+        @click="bringForm('storeVisit')"
+        class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
-        <div class="pr-[4vw]">
+        <div class="pr-[4vw] flex-[1]">
           <storeIcon class="text-[4.8vh] text-[#333]" />
         </div>
-        <div class="flex-1">
+        <div class="flex-[8] text-start">
           <h3 class="text-[#333] font-[500] text-[2.6vh]">
             Book a store appointment
           </h3>
           <p class="text-[#777] text-[2vh]">Book your appointment now</p>
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto flex-[1]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[6vw] w-[6vw] text-[#777]"
@@ -67,23 +72,23 @@
             />
           </svg>
         </div>
-      </a>
+      </button>
 
       <!-- Card 3: Chat with experts -->
-      <a
-        href="/contact"
-        class="flex items-center px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
+      <button
+        @click="bringForm('chat')"
+        class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
-        <div class="pr-[4vw]">
+        <div class="pr-[4vw] flex-[1]">
           <chatIcon class="text-[4.8vh] text-[#333]" />
         </div>
-        <div class="flex-1">
+        <div class="flex-[8] text-start">
           <h3 class="text-[#333] font-[500] text-[2.6vh] leading-[3.2vh]">
             Chat with our expert advisors
           </h3>
           <p class="text-[#777] text-[2vh]">For instant advice</p>
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto flex-[1]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[6vw] w-[6vw] text-[#777]"
@@ -99,22 +104,23 @@
             />
           </svg>
         </div>
-      </a>
+      </button>
+
       <!-- Card 4: Request a Sample -->
-      <a
-        href="/contact"
-        class="flex items-center px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
+      <button
+        @click="bringForm('sampleDelivery')"
+        class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
-        <div class="pr-[4vw]">
+        <div class="pr-[4vw] flex-[1]">
           <sampleIcon class="text-[4.8vh] text-[#333]" />
         </div>
-        <div class="flex-1">
+        <div class="flex-[8] text-start">
           <h3 class="text-[#333] font-[500] text-[2.6vh] leading-[3.2vh]">
             Request a Sample
           </h3>
           <p class="text-[#777] text-[2vh]">See, Feel, Decide</p>
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto flex-[1]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[6vw] w-[6vw] text-[#777]"
@@ -130,7 +136,7 @@
             />
           </svg>
         </div>
-      </a>
+      </button>
     </div>
   </section>
 </template>
@@ -140,6 +146,21 @@ import storeIcon from "~/public/icons/storeIcon.vue";
 import homeIcon from "~/public/icons/homeIcon.vue";
 import chatIcon from "~/public/icons/chatIcon.vue";
 import sampleIcon from "~/public/icons/sampleIcon.vue";
+import PersonalAssistanceFormMOB from "./PersonalAssistanceFormMOB.vue";
+
+const isFormActive = ref(false);
+const selectedFormType = ref("");
+
+function handleCloseForm() {
+  isFormActive.value = false;
+  ENABLE_SCROLL();
+}
+
+const bringForm = (type) => {
+  selectedFormType.value = type; // Set the form type
+  isFormActive.value = true;
+  DISABLE_SCROLL();
+};
 </script>
 
 <style scoped>
