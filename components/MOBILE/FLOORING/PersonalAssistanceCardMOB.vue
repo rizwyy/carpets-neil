@@ -42,7 +42,7 @@
         </div>
       </button>
 
-      <!-- Card 2: Book a store appointment -->
+      <!-- Card 2: Book a store Visit -->
       <button
         @click="bringForm('storeVisit')"
         class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
@@ -52,7 +52,7 @@
         </div>
         <div class="flex-[8] text-start">
           <h3 class="text-[#333] font-[500] text-[2.6vh]">
-            Book a store appointment
+            Book a store Visit
           </h3>
           <p class="text-[#777] text-[2vh]">Book your appointment now</p>
         </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="flex-[8] text-start">
           <h3 class="text-[#333] font-[500] text-[2.6vh] leading-[3.2vh]">
-            Chat with our expert advisors
+            Chat with our Experts
           </h3>
           <p class="text-[#777] text-[2vh]">For instant advice</p>
         </div>
