@@ -260,11 +260,11 @@ export function handleAutoAlpha(el, autoAlpha, x) {
     x: x,
   });
 }
-export function animateImageLOOP(el) {
+export function animateImageLOOP(el, scale) {
   gsap.to(`.${el}`, {
     duration: 70,
     ease: "power2",
-    scale: 1.4,
+    scale: scale,
     yoyo: true,
     y: -40,
     x: 0,

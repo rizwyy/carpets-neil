@@ -13,7 +13,8 @@
     <NuxtImg
       src="./apnaBannerIMG.webp"
       alt="#"
-      class="h-full w-full object-cover z-[-9] absolute top-0 left-0 object-bottom"
+      fit="cover"
+      class="apnaBannerIMG_PC h-full w-full z-[-9] absolute top-0 left-0"
     />
     <div
       class="h-full w-full absolute top-0 left-0 bg-gradient-to-br from-black opacity-[.6] z-[-1]"
@@ -41,7 +42,7 @@
 </template>
 
 <script setup>
-// Static display, no extra functionality needed
+// Static display, no extra functionality needed\
 </script>
 
 <style scoped>

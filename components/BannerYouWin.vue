@@ -152,7 +152,7 @@ const userStore = useUserStore();
 onMounted(() => {
   handleDOMEntry("bannerYouWin_MOB");
   setTimeout(() => {
-    animateImageLOOP("currentImg");
+    animateImageLOOP("currentImg", 1.4);
   }, 1200);
 });
 </script>

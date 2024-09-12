@@ -7,7 +7,8 @@
       loading="lazy"
       decoding="async"
       alt="#"
-      class="h-full w-full object-cover z-[-9] absolute top-0 left-0"
+      fit="contain"
+      class="apnaBannerIMG h-full w-full z-[-9] absolute top-0 left-0"
     />
     <div
       class="h-full w-full absolute top-0 left-0 bg-gradient-to-br from-black opacity-[.6] z-[-1]"
