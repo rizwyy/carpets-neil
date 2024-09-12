@@ -4,6 +4,8 @@
   >
     <NuxtImg
       src="./apnaBanner.webp"
+      loading="lazy"
+      decoding="async"
       alt="#"
       class="h-full w-full object-cover z-[-9] absolute top-0 left-0"
     />
