@@ -3,7 +3,7 @@
     class="w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[5.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[4.2vh]"
   >
     <NuxtImg
-      src="./apnaBanner.webp"
+      src="./apnaBannerIMG.webp"
       loading="lazy"
       decoding="async"
       alt="#"

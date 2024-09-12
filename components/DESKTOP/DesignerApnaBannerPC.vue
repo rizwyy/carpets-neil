@@ -11,7 +11,7 @@
     </div>
 
     <NuxtImg
-      src="./apnaBanner.webp"
+      src="./apnaBannerIMG.webp"
       alt="#"
       class="h-full w-full object-cover z-[-9] absolute top-0 left-0 object-bottom"
     />
