@@ -5,8 +5,8 @@
     <NuxtImg
       src="/bannerImage.png"
       decoding="async"
-      quality="50"
       alt="#"
+      loading="lazy"
       class="apnaBannerIMG h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
 
@@ -36,7 +36,7 @@
     >
       <a
         href="/contact"
-        class="border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[1.8vh] shadow-xl rounded-full transition-colors duration-300 text-[2.4vh] font-[500]"
+        class="border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[1.8vh] shadow-md rounded-full transition-colors duration-300 text-[2.4vh] font-[500]"
       >
         Sign up
       </a>
