@@ -28,7 +28,7 @@
         </button>
       </div>
 
-      <div class="h-max w-full flex flex-wrap gap-[2vw] z-[9]">
+      <div class="h-max w-full grid grid-cols-2 gap-[2vw] z-[9]">
         <div
           v-for="accessory in accessories"
           :key="accessory"
