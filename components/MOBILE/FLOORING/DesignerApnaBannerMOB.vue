@@ -5,7 +5,6 @@
     <img
       src="./../../../public/bannerImage.png"
       alt="#"
-      loading="lazy"
       class="apnaBannerIMG h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
 

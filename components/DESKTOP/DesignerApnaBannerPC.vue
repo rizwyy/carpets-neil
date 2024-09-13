@@ -12,7 +12,6 @@
 
     <img
       src="./../../public/group54.png"
-      loading="lazy"
       alt="#"
       class="apnaBannerIMG_PC h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
