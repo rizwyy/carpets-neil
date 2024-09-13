@@ -11,8 +11,10 @@
     </div>
 
     <NuxtImg
-      src="./group54.png"
+      src="/group54.png"
       alt="#"
+      decoding="async"
+      quality="50"
       class="apnaBannerIMG_PC h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
 

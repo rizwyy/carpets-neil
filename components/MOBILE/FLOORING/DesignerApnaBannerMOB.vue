@@ -3,7 +3,9 @@
     class="w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
   >
     <NuxtImg
-      src="./bannerImage.png"
+      src="/bannerImage.png"
+      decoding="async"
+      quality="50"
       alt="#"
       class="apnaBannerIMG h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
