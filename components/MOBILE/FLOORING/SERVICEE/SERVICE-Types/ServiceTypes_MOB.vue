@@ -28,12 +28,12 @@
         </button>
       </div>
 
-      <div class="h-max w-full flex flex-wrap gap-[2vw] z-[9]">
+      <div class="h-max w-full grid grid-cols-2 gap-[2vw] z-[9]">
         <div
           v-for="service in services"
           :key="service"
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] w-full rounded-md border-[2px] border-[#555] flex items-end justify-between text-[#333] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: spec_4.includes(service) },
           ]"
           @click="toggleSelect(service)"
@@ -98,7 +98,7 @@ const toggleSelect = (service) => {
     // Remove from the selection if it's already selected
     spec_4.value.splice(index, 1);
   }
-
+  userStore.preference.flooring = "services";
   userStore.preference.spec_4 = toRaw(spec_4.value);
   existingUser ? scrollBy(500) : scrollToBottom();
 };

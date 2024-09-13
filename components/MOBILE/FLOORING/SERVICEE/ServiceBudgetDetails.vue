@@ -1,13 +1,13 @@
 <template>
   <div class="">
-    <SportsBudgets_MOB v-if="isMobile" />
-    <SportsBudgets_PC v-else />
+    <ServiceBudgets_MOB v-if="isMobile" />
+    <ServiceBudgets_PC v-else />
   </div>
 </template>
 
 <script setup>
-import SportsBudgets_MOB from "./SPORTS-Budgets/SportBudgets_MOB.vue";
-import SportsBudgets_PC from "./SPORTS-Budgets/SportBudgets_PC.vue";
+import ServiceBudgets_MOB from "./SERVICE-Budgets/ServiceBudgets_MOB.vue";
+import ServiceBudgets_PC from "./SERVICE-Budgets/ServiceBudgets_PC.vue";
 
 const isMobile = ref(false);
 onMounted(() => {

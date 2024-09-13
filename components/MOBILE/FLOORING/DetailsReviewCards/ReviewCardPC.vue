@@ -107,11 +107,6 @@
         <LoadingIcon class="text-[4.2vh]" v-else />
       </button>
     </div>
-
-    <!-- Footer -->
-    <div class="h-max w-full">
-      <FooterPC />
-    </div>
   </div>
 </template>
 
@@ -148,6 +143,17 @@ const firstName = computed(() => {
 
 // Computed for repeated condition
 const arePreferencesFilled = computed(() => {
+  // Check if flooring is 'services' or 'accessories'
+  if (
+    (userStore.preference.flooring === "services" ||
+      userStore.preference.flooring === "accessories") &&
+    userStore.preference.orderMethod !== ""
+  ) {
+    // If flooring is 'services' or 'accessories' and orderMethod is filled, return true
+    return true;
+  }
+
+  // For other types of flooring, check the full form validation
   return (
     userStore.preference.flooring === `${flooring}` &&
     userStore.preference.spec_1 !== "" &&

@@ -3,11 +3,14 @@
   <transition @beforeEnter="handleDetailsDOMEntry('InfoCardPC')">
     <div
       v-show="
-        userStore.preference.flooring === `${flooring}` &&
-        userStore.preference.spec_1 !== '' &&
-        userStore.preference.color.length > 0 &&
-        userStore.preference.budget !== '' &&
-        userStore.preference.orderMethod !== ''
+        ((userStore.preference.flooring === 'services' ||
+          userStore.preference.flooring === 'accessories') &&
+          userStore.preference.orderMethod !== '') ||
+        (userStore.preference.flooring === `${flooring}` &&
+          userStore.preference.spec_1 !== '' &&
+          userStore.preference.color.length > 0 &&
+          userStore.preference.budget !== '' &&
+          userStore.preference.orderMethod !== '')
       "
       class="max-[990px]:hidden h-max w-screen flex justify-center pb-[4vh]"
     >

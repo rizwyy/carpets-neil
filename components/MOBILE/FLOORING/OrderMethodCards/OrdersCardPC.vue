@@ -2,11 +2,11 @@
   <transition @beforeEnter="handleDetailsDOMEntry('OrderMethods_PC')">
     <div
       v-show="
-        userStore.preference.flooring === `${flooring}` &&
-        userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
-        userStore.preference.color.length > 0 &&
-        userStore.preference.budget !== ''
+        userStore.preference.flooring === 'services' ||
+        userStore.preference.flooring === 'accessories' ||
+        (userStore.preference.spec_1 !== '' &&
+          userStore.preference.color.length > 0 &&
+          userStore.preference.budget !== '')
       "
       class="max-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >

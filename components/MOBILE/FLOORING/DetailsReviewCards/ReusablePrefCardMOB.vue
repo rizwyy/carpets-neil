@@ -77,7 +77,11 @@
           :value="item.spec_3"
         />
         <SpecDetail
-          label="Finish"
+          :label="
+            item.flooring === 'services' || item.flooring === 'accessories'
+              ? 'Type'
+              : 'Finish'
+          "
           :value="
             Array.isArray(item.spec_4)
               ? item.spec_4.length > 0

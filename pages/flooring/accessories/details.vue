@@ -8,18 +8,10 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 // Eager-loaded component (for both mobile and desktop)
-import SportsTypesDetails from "../../../components/MOBILE/FLOORING/SPORTS/SportsTypesDetails.vue";
+import AccessoriesTypesDetails from "../../../components/MOBILE/FLOORING/ACCESSORIES/AccessoriesTypesDetails.vue";
 
 // Lazy-loaded components
-const LazySportsFlooringDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsFlooringDetails.vue")
-);
-const LazySportsColorDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsColorDetails.vue")
-);
-const LazySportsBudgetDetails = defineAsyncComponent(() =>
-  import("~/components/MOBILE/FLOORING/SPORTS/SportsBudgetDetails.vue")
-);
+
 const LazyOrderMethod = defineAsyncComponent(() =>
   import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
 );
@@ -66,20 +58,19 @@ onMounted(() => {
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Sports Flooring >
+          Accessories
           <!-- DESKTOP -->
           {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <SportsTypesDetails />
-      <LazySportsFlooringDetails />
-      <LazySportsColorDetails />
+      <AccessoriesTypesDetails />
       <LazySportsBudgetDetails />
-      <LazyOrderMethod flooring="sports" />
-      <LazyInfoForm flooring="sports" />
-      <LazyReviewCard flooring="sports" link="sports" />
+
+      <LazyOrderMethod flooring="accessories" />
+      <LazyInfoForm flooring="accessories" />
+      <LazyReviewCard flooring="accessories" link="accessories" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -101,20 +92,18 @@ onMounted(() => {
             href="/flooring"
             class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
           >
-            Sports Flooring
+            Accessories
           </a>
           <CurrencyDetails />
         </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin :existingUser="existingUser" />
-      <SportsTypesDetails :existingUser="existingUser" />
-      <LazySportsFlooringDetails :existingUser="existingUser" />
-      <LazySportsColorDetails :existingUser="existingUser" />
+      <AccessoriesTypesDetails :existingUser="existingUser" />
       <LazySportsBudgetDetails :existingUser="existingUser" />
-      <LazyOrderMethod flooring="sports" />
-      <LazyInfoForm flooring="sports" />
-      <LazyReviewCard flooring="sports" link="sports" />
+      <LazyOrderMethod flooring="accessories" />
+      <LazyInfoForm flooring="accessories" />
+      <LazyReviewCard flooring="accessories" link="accessories" />
     </div>
   </section>
 </template>
