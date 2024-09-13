@@ -2,11 +2,10 @@
   <section
     class="w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
   >
-    <NuxtImg
-      src="./bannerImage.png"
-      loading="lazy"
-      decoding="async"
+    <img
+      src="./../../../public/bannerImage.png"
       alt="#"
+      loading="lazy"
       class="apnaBannerIMG h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
 
@@ -36,7 +35,7 @@
     >
       <a
         href="/contact"
-        class="border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[1.8vh] shadow-xl rounded-full transition-colors duration-300 text-[2vh] font-[500]"
+        class="border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[1.8vh] shadow-xl rounded-full transition-colors duration-300 text-[2.4vh] font-[500]"
       >
         Sign up
       </a>
