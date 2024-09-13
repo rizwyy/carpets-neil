@@ -10,8 +10,8 @@
       </span>
     </div>
 
-    <img
-      src="./../../public/group54.png"
+    <NuxtImg
+      src="./group54.png"
       alt="#"
       class="apnaBannerIMG_PC h-full w-full z-[-9] absolute top-0 left-0 object-cover"
     />
