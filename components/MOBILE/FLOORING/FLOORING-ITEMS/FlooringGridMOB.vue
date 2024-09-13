@@ -112,6 +112,37 @@
         loading="lazy"
       />
     </div>
+    <div
+      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+    >
+      <FlooringCategoryItem
+        href="/flooring/services/details"
+        title="Flooring Services"
+        imgSrc="/flooringServiceBanner.webp"
+        altText="Woltiz Flooring Services"
+        titleClass="flooring-services_Text"
+        @load="
+          handleImageLoad('flooringLayout_Services', 'flooringItem', true, true)
+        "
+        loading="lazy"
+      />
+      <FlooringCategoryItem
+        href="/flooring/accessories/details"
+        title="Flooring Accessories"
+        imgSrc="/flooringAccessories.webp"
+        altText="Woltiz Flooring Accessories"
+        titleClass="flooringLayout_Accessories_Text"
+        @load="
+          handleImageLoad(
+            'flooringLayout_Accessories',
+            'flooringItem',
+            true,
+            true
+          )
+        "
+        loading="lazy"
+      />
+    </div>
   </div>
 </template>
 

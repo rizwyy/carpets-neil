@@ -108,6 +108,23 @@ const flooringCategories = [
       link: "/flooring/grass-flooring/details",
     },
   ],
+  // Row 4
+  [
+    {
+      name: "Flooring Services",
+      desc: "Durable and slip-resistant, rubber flooring offers excellent shock absorption and easy maintenance, ideal for gym & playrooms",
+      isAvailable: true,
+      src: "/flooringServiceBanner.webp",
+      link: "/flooring/services/details",
+    },
+    {
+      name: "Flooring Accessories",
+      desc: "Lush and low-maintenance, grass flooring provides a natural look, perfect for outdoor spaces & patios with added weather resistance.",
+      isAvailable: true,
+      src: "/flooringAccessories.webp",
+      link: "/flooring/accessories/details",
+    },
+  ],
 ];
 </script>
 
