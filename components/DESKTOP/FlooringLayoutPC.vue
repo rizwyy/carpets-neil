@@ -23,6 +23,7 @@
         :altText="`Woltiz ${category.name}`"
         @load="
           handleImageLoad(
+            0.4,
             'flooringLayout_' + category.name.replace(/\s+/g, ''),
             'flooringItem',
             true,

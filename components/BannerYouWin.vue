@@ -12,7 +12,11 @@
         <NuxtImg
           placeholder
           @load="
-            handleImageLoad('flooring_Banner_DefaultPC', 'flooringBannerPC')
+            handleImageLoad(
+              0.4,
+              'flooring_Banner_DefaultPC',
+              'flooringBannerPC'
+            )
           "
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
@@ -21,7 +25,11 @@
         <NuxtImg
           placeholder
           @load="
-            handleImageLoad('flooring_Banner_DefaultPC', 'flooringBannerPC')
+            handleImageLoad(
+              0.4,
+              'flooring_Banner_DefaultPC',
+              'flooringBannerPC'
+            )
           "
           v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
@@ -30,7 +38,11 @@
         <NuxtImg
           placeholder
           @load="
-            handleImageLoad('flooring_Banner_DefaultPC', 'flooringBannerPC')
+            handleImageLoad(
+              0.4,
+              'flooring_Banner_DefaultPC',
+              'flooringBannerPC'
+            )
           "
           v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
@@ -39,7 +51,11 @@
         <NuxtImg
           placeholder
           @load="
-            handleImageLoad('flooring_Banner_DefaultPC', 'flooringBannerPC')
+            handleImageLoad(
+              0.4,
+              'flooring_Banner_DefaultPC',
+              'flooringBannerPC'
+            )
           "
           v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
@@ -48,7 +64,11 @@
         <NuxtImg
           placeholder
           @load="
-            handleImageLoad('flooring_Banner_DefaultPC', 'flooringBannerPC')
+            handleImageLoad(
+              0.4,
+              'flooring_Banner_DefaultPC',
+              'flooringBannerPC'
+            )
           "
           v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
@@ -58,7 +78,11 @@
           v-show="userStore.customPreference.category === ''"
           placeholder
           @load="
-            handleImageLoad('flooring_Banner_DefaultPC', 'flooringBannerPC')
+            handleImageLoad(
+              0.4,
+              'flooring_Banner_DefaultPC',
+              'flooringBannerPC'
+            )
           "
           src="/bannerImg.webp"
           class="currentImg h-full w-full object-cover"
@@ -133,7 +157,9 @@
         />
         <NuxtImg
           placeholder
-          @load="handleImageLoad('flooring_Banner_Default', 'flooringBanner')"
+          @load="
+            handleImageLoad(0.4, 'flooring_Banner_Default', 'flooringBanner')
+          "
           src="/runners.webp"
           class="currentImg h-full w-full object-cover flooring_Banner_Default_Img"
         />

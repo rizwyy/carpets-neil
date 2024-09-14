@@ -33,7 +33,7 @@ export function scrollUpBy(distance = 100) {
   });
 }
 
-export function handleImageLoad(el, el2) {
+export function handleImageLoad(overlayOpacity, el, el2) {
   const tl = gsap.timeline();
 
   tl.fromTo(
@@ -58,7 +58,7 @@ export function handleImageLoad(el, el2) {
   // 2:Blurry Div Goes
   tl.to(`.${el2}_Overlay`, {
     backdropFilter: "blur(0px)",
-    duration: 0.4,
+    duration: overlayOpacity,
     ease: "slide.out",
   });
   // 3:Text Comes

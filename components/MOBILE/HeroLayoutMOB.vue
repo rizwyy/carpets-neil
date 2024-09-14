@@ -42,12 +42,12 @@ onMounted(() => {
           href="/flooring"
           title="Flooring"
           imgSrc="/flooring1.webp"
-          @load="handleImageLoad('flooringLayout_Flooring', 'HeroItem')"
+          @load="handleImageLoad(0.4, 'flooringLayout_Flooring', 'HeroItem')"
         />
         <HeroItem
           title="Wall Covering"
           imgSrc="/wall-to-wall.webp"
-          @load="handleImageLoad('flooringLayout_WallToWall', 'HeroItem')"
+          @load="handleImageLoad(0.4, 'flooringLayout_WallToWall', 'HeroItem')"
         />
       </div>
     </div>

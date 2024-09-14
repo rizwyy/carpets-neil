@@ -9,7 +9,7 @@
         imgSrc="/carpets/carpetsCover.webp"
         altText="#"
         titleClass="flooringLayout_Carpet_Text"
-        @load="handleImageLoad('flooringLayout_Carpet', 'flooringItem')"
+        @load="handleImageLoad(0.4, 'flooringLayout_Carpet', 'flooringItem')"
       />
       <FlooringCategoryItem
         href="/flooring/wooden/details"
@@ -17,7 +17,7 @@
         imgSrc="/wooden-flooring.webp"
         altText="engineeredWoodenFloor"
         titleClass="flooringLayout_Wood_Text"
-        @load="handleImageLoad('flooringLayout_Wood', 'flooringItem')"
+        @load="handleImageLoad(0.4, 'flooringLayout_Wood', 'flooringItem')"
       />
     </div>
 
@@ -31,7 +31,7 @@
         altText="#"
         titleClass="flooringLayout_Pvc_Text"
         @load="
-          handleImageLoad('flooringLayout_Pvc', 'flooringItem', true, true)
+          handleImageLoad(0.4, 'flooringLayout_Pvc', 'flooringItem', true, true)
         "
         loading="lazy"
       />
@@ -42,7 +42,7 @@
         altText="#"
         titleClass="flooringLayout_Gym_Text"
         @load="
-          handleImageLoad('flooringLayout_Gym', 'flooringItem', true, true)
+          handleImageLoad(0.4, 'flooringLayout_Gym', 'flooringItem', true, true)
         "
         loading="lazy"
       />
@@ -58,7 +58,13 @@
         altText="#"
         titleClass="flooringLayout_Rubber_Text"
         @load="
-          handleImageLoad('flooringLayout_Rubber', 'flooringItem', true, true)
+          handleImageLoad(
+            0.4,
+            'flooringLayout_Rubber',
+            'flooringItem',
+            true,
+            true
+          )
         "
         loading="lazy"
       />
@@ -69,7 +75,13 @@
         altText="#"
         titleClass="flooringLayout_Grass_Text"
         @load="
-          handleImageLoad('flooringLayout_Grass', 'flooringItem', true, true)
+          handleImageLoad(
+            0.4,
+            'flooringLayout_Grass',
+            'flooringItem',
+            true,
+            true
+          )
         "
         loading="lazy"
       />

@@ -76,7 +76,7 @@ const firstName = computed(() => {
 });
 
 onMounted(() => {
-  handleImageLoad("el", "txt");
+  handleImageLoad(0.4, "el", "txt");
 });
 </script>
 
