@@ -1,5 +1,6 @@
 <script setup>
 import arrowRightIcon from "./../../public/icons/arrowRightIcon.vue";
+
 defineProps({
   name: {
     type: String,
@@ -7,23 +8,31 @@ defineProps({
   },
   desc: {
     type: String,
-    required: true,
+    default: "", // If no description is provided, we use a default empty string.
   },
   src: {
     type: String,
-    required: true,
+    required: true, // Ensure the source is required for the image.
   },
   isAvailable: {
     type: Boolean,
-    default: true,
+    default: true, // Default value to true.
   },
   link: {
     type: String,
-    required: true,
+    required: true, // The link is required.
   },
   loading: {
     type: String,
-    default: "lazy",
+    default: "lazy", // Set default to lazy for image loading optimization.
+  },
+  quality: {
+    type: [String, Number],
+    default: "100",
+  },
+  onLoad: {
+    type: Function,
+    default: () => {}, // Provide a default no-op function if onLoad is not passed.
   },
 });
 </script>
@@ -37,24 +46,29 @@ defineProps({
       class="absolute top-0 left-0 h-full w-full object-cover z-[-1]"
       :src="src || '#'"
       :loading="loading"
+      :quality="quality"
       preload
       placeholder
+      @load="onLoad"
       alt="Image description"
     />
 
     <!-- Content Overlay -->
     <div
-      class="transition-all duration-[.4s] ease-in-out bg-gradient-to-t from-black hover:to-[70%] to-transparent h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw]"
+      class="absolute h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-t from-black hover:to-[70%] to-transparent z-[-1]"
+    ></div>
+    <div
+      class="h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw] z-[1]"
     >
       <span
-        class="text-[2.4vw] font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[2vw]"
+        class="text-[2.4vw] flooringItem_Text opacity-0 font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[2vw]"
       >
         {{ name }}
       </span>
 
       <a
         :href="link"
-        class="text-[1.2vw] text-[#fff9] font-[500] flex items-center"
+        class="flooringItem_Text opacity-0 text-[1.2vw] text-[#fff9] font-[500] flex items-center"
       >
         View All <arrowRightIcon class="text-[2vw]" />
       </a>

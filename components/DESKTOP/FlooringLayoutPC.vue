@@ -12,25 +12,31 @@
       :key="index"
       class="h-max w-full flex justify-between px-[6vw] gap-[.4vw] min-[1590px]:gap-[2.4vw]"
     >
-      <a
+      <FlooringCategoryItem
         v-for="category in flooringRow"
         :key="category.name"
-        :href="category.link"
-      >
-        <CategoryCardHeroPC
-          :name="category.name"
-          :desc="category.desc"
-          :isAvailable="category.isAvailable"
-          :src="category.src"
-        />
-      </a>
+        :name="category.name"
+        :desc="category.desc"
+        :src="category.src"
+        :isAvailable="category.isAvailable"
+        :link="category.link"
+        :altText="`Woltiz ${category.name}`"
+        @load="
+          handleImageLoad(
+            'flooringLayout_' + category.name.replace(/\s+/g, ''),
+            'flooringItem',
+            true,
+            true
+          )
+        "
+        loading="lazy"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-// Asynchronous component loading with a fallback
-const CategoryCardHeroPC = defineAsyncComponent({
+const FlooringCategoryItem = defineAsyncComponent({
   loader: () => import("./CategoryCard-HeroPC.vue"),
   loadingComponent: {
     template: '<div class="text-white">Loading...</div>',
@@ -108,7 +114,7 @@ const flooringCategories = [
       link: "/flooring/grass-flooring/details",
     },
   ],
-  // Row 4
+  // Row 5
   [
     {
       name: "Flooring Services",
