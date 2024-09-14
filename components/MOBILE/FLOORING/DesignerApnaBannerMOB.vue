@@ -2,6 +2,7 @@
   <section
     class="w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
   >
+    <DesignerFormMOB @close="handleCloseForm" v-if="isFormActive" />
     <div
       class="apnaBannerItem_Overlay backdrop-blur-[8px] absolute top-0 left-0 h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-b hover:to-[70%] to-transparent z-[-1]"
     ></div>
@@ -44,18 +45,30 @@
     <div
       class="h-max w-full flex justify-end gap-[4vw] pt-[2vh] pr-[1vw] pb-[1vh]"
     >
-      <a
-        href="/contact"
+      <button
+        @click="bringForm"
         class="apnaBannerItem_Text opacity-0 border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[1.8vh] shadow-md rounded-full transition-colors duration-300 text-[2.4vh] font-[500]"
       >
         Sign up
-      </a>
+      </button>
     </div>
   </section>
 </template>
 
 <script setup>
-// No functionality needed for static display
+import DesignerFormMOB from "./DesignerFormMOB.vue";
+
+const isFormActive = ref(false);
+
+// Function to handle the 'close' event emitted by the child component
+function handleCloseForm() {
+  isFormActive.value = false; // Close the form by setting this to false
+  ENABLE_SCROLL();
+}
+const bringForm = () => {
+  isFormActive.value = true;
+  DISABLE_SCROLL();
+};
 </script>
 
 <style scoped>
