@@ -25,6 +25,7 @@ onMounted(() => {
 
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
     isAccessRestricted.value = true;
+    return;
   } else {
     isAccessRestricted.value = false;
   }

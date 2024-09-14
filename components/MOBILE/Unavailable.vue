@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="isLoading"
-    class="h-screen w-screen flex justify-center items-center bg-[#fff2] backdrop-blur-[8px]"
+    class="h-screen w-screen flex justify-center items-center bg-[#fff2] backdrop-blur-[8px] font-outfit"
   >
     <svg xmlns="http://www.w3.org/2000/svg" class="h-[6vh]" viewBox="0 0 24 24">
       <circle cx="18" cy="12" r="0" fill="currentColor">
@@ -44,7 +44,7 @@
     class="h-screen absolute w-screen overflow-hidden bg-[#ececec] from-[1%] flex items-center justify-center z-[9999]"
   >
     <div
-      class="flex h-full w-full items-center flex justify-center min-[990px]:gap-[4vh] gap-[4vh] flex-col px-[2vw] text-center max-[990px]:pb-[18vh]"
+      class="flex h-full w-full items-center flex justify-center min-[990px]:gap-[5vh] gap-[4vh] flex-col px-[2vw] text-center max-[990px]:pb-[18vh]"
     >
       <span
         class="text-[#222] min-[990px]:text-[5vh] text-[3.2vh] font-outfit flex"
@@ -57,9 +57,9 @@
         You need to fill out the Details page before accessing this content
       </span>
       <a
-        class="text-[2.4vh] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2vh] text-white bg-black"
+        class="text-[2vh] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-sm py-[2vh] text-white bg-black tracking-[.2vw] font-outfit"
         href="/"
-        >Go Home</a
+        >GO HOME</a
       >
     </div>
   </div>
