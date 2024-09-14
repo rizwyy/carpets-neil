@@ -29,7 +29,7 @@
     </h2>
 
     <!-- Description -->
-    <p class="text-center text-[#777] text-[1.5vw]">
+    <p class="text-center text-[#777] text-[1.5vw] mt-[.5vh]">
       Receive the latest offers, promotions, and news straight to your inbox.
     </p>
 
@@ -49,7 +49,7 @@
     <div class="h-max w-full flex justify-center pt-[5.4vh]">
       <button
         @click="handleAddEmailNewsletter"
-        class="w-[20vw] h-[7vh] shadow-lg bg-inherit text-[#333] text-[1.4vw] tracking-[.1vw] font-[500] border-[#444] border-[.2vh] rounded-md hover:shadow-xl transition-colors duration-300"
+        class="w-[20vw] h-[8vh] shadow-lg bg-inherit text-[#333] text-[1.4vw] tracking-[.1vw] font-[500] border-[#444] border-[.2vh] rounded-md hover:shadow-xl transition-colors duration-300"
       >
         SIGN UP
       </button>

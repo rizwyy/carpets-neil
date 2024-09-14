@@ -36,7 +36,7 @@
     </p>
 
     <!-- Email Input Field -->
-    <div class="mb-[3vh]">
+    <div class="mb-[6vh]">
       <input
         v-model="emailIpt"
         type="email"
