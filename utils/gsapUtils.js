@@ -252,12 +252,13 @@ export function checkoutPt2Animation() {
   });
 }
 
-export function handleAutoAlpha(el, autoAlpha, x) {
+export function handleAutoAlpha(el, autoAlpha, x, y) {
   gsap.to(`.${el}`, {
     autoAlpha: autoAlpha,
     duration: 0.8,
     ease: "power4.out",
     x: x,
+    y: y,
   });
 }
 export function animateImageLOOP(el, scale) {
