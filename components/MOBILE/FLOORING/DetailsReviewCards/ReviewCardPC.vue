@@ -9,16 +9,17 @@
         class="h-[100svh] w-screen gap-[2vh] bg-inherit flex flex-col items-center justify-start gap-[8vh]"
       >
         <div
-          class="h-max w-full flex justify-between items-center px-[7.6vw] pt-[6vh]"
+          class="h-max w-full flex justify-between items-center px-[3.6vw] pt-[6vh]"
         >
-          <span class="text-[3.8vh] text-[#333] font-[400]"
+          <span class="text-[3vw] text-[#333] font-[400]"
             >Flooring Options</span
           >
-          <span
+          <button
             @click="handleCancelAddMoreFlooring"
-            class="flex items-center text-[3.8vh] text-[#222]"
-            ><ClearAllIcon
-          /></span>
+            class="flex items-center flex items-center text-[1.4vw] gap-[1vw] text-[#222] hover:translate-y-[-2%] hover:scale-[1.01]"
+          >
+            CLOSE<ClearAllIcon class="text-[3.8vh]" />
+          </button>
         </div>
         <FlooringGridOverlayPC />
       </div>
@@ -93,7 +94,7 @@
       <button
         v-if="userStore.cart.length > 0"
         @click="HandleAddMore"
-        class="border-[2px] rounded-md w-[40%] pt-[4.2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2vw] flex justify-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
+        class="border-[2px] rounded-md w-[40%] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2vw] flex justify-center items-center shadow-md hover:shadow-2xl transition-all ease-in-out duration-300"
       >
         <span v-if="!isAddMoreLoading">BROWSE OTHER PRODUCTS</span>
         <LoadingIcon class="text-[4.2vh]" v-else />
@@ -120,8 +121,8 @@ import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
 import FooterPC from "./../../../DESKTOP/FooterPC.vue";
-import FlooringGridOverlayMOB from "../FLOORING-ITEMS/FlooringGridOverlayMOB.vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
+import FlooringGridOverlayPC from "../FLOORING-ITEMS/FlooringGridOverlayPC.vue";
 
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");

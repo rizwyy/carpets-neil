@@ -126,7 +126,9 @@
                 </div>
               </div>
             </div>
-            <div class="h-max w-full flex gap-[4.8vw] py-[6.2vh]">
+            <div
+              class="h-max w-full flex gap-[4.8vw] py-[6.2vh] transition-all ease-in-out duration-300"
+            >
               <button
                 @click="
                   () =>
@@ -135,7 +137,7 @@
                       : handleClickOnEdit()
                 "
                 :class="[
-                  'bg-white hover:bg-[#ececec] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
+                  'bg-white hover:shadow-lg hover:translate-y-[-2%] transition-all ease-in-out duration-[.4s] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
                   !cookieFound ? '' : '',
                 ]"
               >
@@ -146,10 +148,10 @@
                 @click="formValidated && handleInfoProceedings()"
                 :disabled="!formValidated"
                 :class="[
-                  ' InfoCardPC-CONTAINER  border-[#666] active:scale-[.93]  w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
+                  'hover:shadow-lg hover:translate-y-[-2%] transition-all ease-in-out duration-[.4s] InfoCardPC-CONTAINER  border-[#666] active:scale-[.93] hover:translate-y-[2%]  transition-all ease-in-out duration-300  w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
                   !formValidated
                     ? 'bg-[#e9e9e9] text-[#999] cursor-not-allowed'
-                    : 'bg-white hover:shadow-lg ',
+                    : 'bg-white ',
                 ]"
               >
                 <span v-show="!isLoading">PROCEED</span>

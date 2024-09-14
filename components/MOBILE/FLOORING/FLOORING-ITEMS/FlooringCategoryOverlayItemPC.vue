@@ -1,11 +1,11 @@
 <template>
   <a
     :href="href"
-    class="h-[16vh] w-[42%] rounded-[10px] overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh] shadow-xl"
+    class="h-[24vh] w-full rounded-[10px] hover:translate-y-[-2%] transition-all hover:shadow-lg ease-in-out duration-300 overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[.8vw] pt-[3vh] pb-[1.2vh] shadow-xl z-[1]"
   >
     <span
       :class="titleClass"
-      class="w-[100%] h-max flooringItem_Text_PC opacity-0 text-[2.8vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+      class="w-[100%] h-max flooringItem_Text opacity-0 text-[2.4vw] font-[400] leading-[3.2vh] z-[3] text-[#f1f1f1]"
     >
       <slot name="title">{{ title }}</slot>
     </span>
@@ -15,12 +15,12 @@
       SELECT
     </button> -->
     <span
-      class="flooringItem_Text_PC opacity-0 h-max w-full flex justify-end text-[3vh] text-[#f1f1f1]"
+      class="flooringItem_Text opacity-0 h-max w-full flex gap-[.4vw] items-center justify-end text-[1.4vw] text-[#f1f1f1] z-[3]"
     >
-      <ArrowGoIcon />
+      explore<ArrowGoIcon />
     </span>
     <div
-      class="flooringItem_Overlay absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-[#000] bg-opacity-[1]"
+      class="flooringItem_Overlay bg-black absolute object-cover bottom-0 left-0 h-full w-full z-[2] backdrop-blur-[8px]"
     ></div>
     <NuxtImg
       preload

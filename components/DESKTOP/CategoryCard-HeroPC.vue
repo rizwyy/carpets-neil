@@ -38,7 +38,8 @@ defineProps({
 </script>
 
 <template>
-  <div
+  <a
+    :href="link"
     class="hover:shadow-2xl hover:translate-y-[-1%] flex flex-col justify-start items-start transition-all duration-300 ease-in-out overflow-auto relative rounded-xl shadow-lg h-[42vh] w-[42vw] min-[1590px]:h-[36vh] min-[1590px]:w-[32vw] font-outfit"
   >
     <!-- Optimized Image with lazy loading and quality control -->
@@ -85,7 +86,7 @@ defineProps({
         NOT AVAILABLE
       </span>
     </div>
-  </div>
+  </a>
 </template>
 
 <style scoped>
