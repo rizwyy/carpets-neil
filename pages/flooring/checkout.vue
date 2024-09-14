@@ -4,7 +4,8 @@
     <Unavailable />
   </div>
   <div v-else>
-    <SuccessContainerMOB />
+    <SuccessContainerMOB v-if="isMobile" />
+    <SuccessContainerPC v-else />
   </div>
 </template>
 
@@ -13,18 +14,25 @@ import NavBarMOB from "./../../../components/MOBILE/NavBarMOB.vue";
 import NavBarPC from "./../../../components/DESKTOP/NavBarPC.vue";
 import Unavailable from "./../../../components/MOBILE/Unavailable.vue";
 import SuccessContainerMOB from "~/components/MOBILE/FLOORING/SuccessContainerMOB.vue";
+import SuccessContainerPC from "~/components/MOBILE/FLOORING/SuccesContainerPC.vue";
 const userPreference = useCookie("userPreference");
 const restrictedAccess = useCookie("restrictedAccess");
 const pref = useCookie("pref");
 
+const isMobile = ref(true);
 const isAccessRestricted = ref(true);
 const timer = ref(3);
 onMounted(() => {
+  if (window.innerWidth < 990) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
   // Decode the preference string from the cookie
   const decodedPreferences = decodePreferenceString(pref.value);
 
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
-    isAccessRestricted.value = true;
+    isAccessRestricted.value = false;
     return;
   } else {
     isAccessRestricted.value = false;
