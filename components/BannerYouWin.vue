@@ -6,8 +6,9 @@
       class="h-[38vh] w-[86%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#333] opacity-[.3]"
+        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#333] opacity-[.3] animate-[dimBright_2s_infinite]"
       ></div>
+
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
@@ -18,7 +19,7 @@
               'flooringBannerPC'
             )
           "
-          v-show="userStore.customPreference.category === 'Carpet'"
+          v-if="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover"
         />
@@ -31,7 +32,7 @@
               'flooringBannerPC'
             )
           "
-          v-show="userStore.customPreference.category === 'PVC'"
+          v-if="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
@@ -44,7 +45,7 @@
               'flooringBannerPC'
             )
           "
-          v-show="userStore.customPreference.category === 'Wooden'"
+          v-if="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
@@ -57,7 +58,7 @@
               'flooringBannerPC'
             )
           "
-          v-show="userStore.customPreference.category === 'Raised'"
+          v-if="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
@@ -70,12 +71,12 @@
               'flooringBannerPC'
             )
           "
-          v-show="userStore.customPreference.category === 'Active'"
+          v-if="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          v-show="userStore.customPreference.category === ''"
+          v-if="userStore.customPreference.category === ''"
           placeholder
           @load="
             handleImageLoad(
@@ -127,31 +128,31 @@
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
-          v-show="userStore.customPreference.category === 'Carpet'"
+          v-if="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover object-bottom"
         />
         <NuxtImg
           placeholder
-          v-show="userStore.customPreference.category === 'PVC'"
+          v-if="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
           placeholder
-          v-show="userStore.customPreference.category === 'Wooden'"
+          v-if="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
           placeholder
-          v-show="userStore.customPreference.category === 'Raised'"
+          v-if="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
           placeholder
-          v-show="userStore.customPreference.category === 'Active'"
+          v-if="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
@@ -206,5 +207,16 @@ onMounted(() => {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+@keyframes dimBright {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
 </style>
