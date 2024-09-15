@@ -6,9 +6,10 @@
       class="h-[38vh] w-[86%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] opacity-[.3] animate-[dimBright_.4s_infinite] ease-in-out transition-all"
-      ></div>
-
+        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br flex items-center justify-center from-black via-[#666] to-[#333] opacity-[.3]"
+      >
+        <LoadingIcon class="text-[4vw] text-[#ededed] loadingBannerIcon" />
+      </div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
@@ -17,9 +18,10 @@
               0.4,
               'flooring_Banner_DefaultPC',
               'flooringBannerPC'
-            )
+            );
+            handleAutoAlpha('loadingBannerIcon', 0);
           "
-          v-if="userStore.customPreference.category === 'Carpet'"
+          v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover"
         />
@@ -32,7 +34,7 @@
               'flooringBannerPC'
             )
           "
-          v-if="userStore.customPreference.category === 'PVC'"
+          v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
@@ -45,7 +47,7 @@
               'flooringBannerPC'
             )
           "
-          v-if="userStore.customPreference.category === 'Wooden'"
+          v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
@@ -58,7 +60,7 @@
               'flooringBannerPC'
             )
           "
-          v-if="userStore.customPreference.category === 'Raised'"
+          v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
@@ -71,12 +73,12 @@
               'flooringBannerPC'
             )
           "
-          v-if="userStore.customPreference.category === 'Active'"
+          v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
-          v-if="userStore.customPreference.category === ''"
+          v-show="userStore.customPreference.category === ''"
           placeholder
           @load="
             handleImageLoad(
@@ -128,31 +130,31 @@
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
-          v-if="userStore.customPreference.category === 'Carpet'"
+          v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
           class="h-full w-full object-cover object-bottom"
         />
         <NuxtImg
           placeholder
-          v-if="userStore.customPreference.category === 'PVC'"
+          v-show="userStore.customPreference.category === 'PVC'"
           src="/pvc/pvc-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
           placeholder
-          v-if="userStore.customPreference.category === 'Wooden'"
+          v-show="userStore.customPreference.category === 'Wooden'"
           src="/50002.jpg"
           class="h-full w-full object-cover"
         />
         <NuxtImg
           placeholder
-          v-if="userStore.customPreference.category === 'Raised'"
+          v-show="userStore.customPreference.category === 'Raised'"
           src="/raised-flooring.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
           placeholder
-          v-if="userStore.customPreference.category === 'Active'"
+          v-show="userStore.customPreference.category === 'Active'"
           src="/40002.jpg"
           class="h-full w-full object-cover"
         />
@@ -191,6 +193,7 @@
 </template>
 
 <script setup>
+import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
 const userStore = useUserStore();
 
@@ -207,19 +210,5 @@ onMounted(() => {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-}
-@keyframes dimBright {
-  0% {
-    background: #555;
-  }
-  25% {
-    background: #f1f1f1;
-  }
-  75% {
-    background: #555;
-  }
-  75% {
-    background: #f1f1f1;
-  }
 }
 </style>
