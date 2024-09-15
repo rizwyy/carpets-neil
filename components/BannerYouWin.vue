@@ -210,13 +210,16 @@ onMounted(() => {
 }
 @keyframes dimBright {
   0% {
-    background: #999;
+    background: #555;
   }
-  50% {
-    background: #444;
+  25% {
+    background: #f1f1f1;
   }
-  100% {
-    background: #999;
+  75% {
+    background: #555;
+  }
+  75% {
+    background: #f1f1f1;
   }
 }
 </style>
