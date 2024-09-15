@@ -6,7 +6,7 @@
       class="h-[38vh] w-[86%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br flex items-center justify-center from-black via-[#666] to-[#333] opacity-[.3]"
+        class="absolute flooringBannerPC_Overlay backdrop-blur-[4px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br flex items-center justify-center from-black via-[#666] to-[#333] opacity-[.3]"
       >
         <LoadingIcon class="text-[3vw] text-[#ededed] loadingBannerIcon" />
       </div>
