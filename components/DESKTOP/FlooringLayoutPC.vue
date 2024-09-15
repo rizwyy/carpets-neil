@@ -87,7 +87,7 @@ const flooringCategories = [
       name: "Sports Flooring",
       desc: "Durable sports flooring ensures enhanced safety and performance in sports areas.",
       isAvailable: true,
-      src: "40002.jpg",
+      src: "40002.webp",
       link: "/flooring/sports/details",
     },
     {

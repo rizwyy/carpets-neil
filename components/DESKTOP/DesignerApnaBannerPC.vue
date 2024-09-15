@@ -15,7 +15,7 @@
 
     <NuxtImg
       @load="handleImageLoad(0, 'apnaBannerIMG_PC', 'apnaBannerItem')"
-      src="/group54.png"
+      src="/group54.webp"
       alt="#"
       decoding="async"
       loading="lazy"

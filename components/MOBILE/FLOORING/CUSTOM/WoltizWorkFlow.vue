@@ -34,7 +34,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -47,7 +47,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -76,7 +76,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -89,7 +89,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -137,7 +137,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -150,7 +150,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -179,7 +179,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -192,7 +192,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -362,7 +362,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -375,7 +375,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -404,7 +404,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -417,7 +417,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -465,7 +465,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -478,7 +478,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg
@@ -507,7 +507,7 @@
           <NuxtImg
             v-if="userStore.customPreference.category === 'Active'"
             class="h-full w-full object-cover z-[-9]"
-            src="/40003.jpg"
+            src="/40003.webp"
             alt="#"
           />
           <NuxtImg
@@ -520,7 +520,7 @@
             format="webp"
             v-else-if="userStore.customPreference.category === 'Wooden'"
             class="h-full w-full object-cover z-[-9]"
-            src="/20003.jpg"
+            src="/20003.webp"
             alt="#"
           />
           <NuxtImg

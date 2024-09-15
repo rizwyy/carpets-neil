@@ -71,7 +71,7 @@
             )
           "
           v-show="userStore.customPreference.category === 'Active'"
-          src="/40002.jpg"
+          src="/40002.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg
@@ -152,7 +152,7 @@
         <NuxtImg
           placeholder
           v-show="userStore.customPreference.category === 'Active'"
-          src="/40002.jpg"
+          src="/40002.webp"
           class="h-full w-full object-cover"
         />
         <NuxtImg

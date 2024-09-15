@@ -42,7 +42,7 @@
           ></div>
           <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/10003.jpg"
+            src="/10003.webp"
             alt="#"
           />
           <span class="text-[2.8vh] text-[#f1f1f1]">Carpet Tiles</span>
@@ -62,7 +62,7 @@
           ></div>
           <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/10006.jpg"
+            src="/10006.webp"
             alt=""
           />
           <span class="text-[2.8vh] text-[#f1f1f1]">Area Rugs</span>
@@ -80,7 +80,7 @@
           ></div>
           <NuxtImg
             class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-            src="/10009.jpg"
+            src="/10009.webp"
             alt="#"
           />
           <span class="text-[2.8vh] text-[#f1f1f1]">Runners</span>
