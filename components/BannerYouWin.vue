@@ -6,7 +6,7 @@
       class="h-[38vh] w-[86%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] opacity-[.3] animate-[dimBright_.4s_infinite]"
+        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] opacity-[.3] animate-[dimBright_.4s_infinite] ease-in-out transition-all"
       ></div>
 
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
