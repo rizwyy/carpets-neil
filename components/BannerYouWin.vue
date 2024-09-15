@@ -8,7 +8,7 @@
       <div
         class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br flex items-center justify-center from-black via-[#666] to-[#333] opacity-[.3]"
       >
-        <LoadingIcon class="text-[4vw] text-[#ededed] loadingBannerIcon" />
+        <LoadingIcon class="text-[3vw] text-[#ededed] loadingBannerIcon" />
       </div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
@@ -79,7 +79,7 @@
         />
         <NuxtImg
           v-show="userStore.customPreference.category === ''"
-          placeholder
+          placeholder="/bannerImg1.webp"
           @load="
             handleImageLoad(
               0.4,
