@@ -7,9 +7,7 @@
     >
       <div
         class="absolute flooringBannerPC_Overlay backdrop-blur-[4px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br flex items-center justify-center from-black via-[#666] to-[#333] opacity-[.3]"
-      >
-        <LoadingIcon class="text-[3vw] text-[#ededed] loadingBannerIcon" />
-      </div>
+      ></div>
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
@@ -18,8 +16,7 @@
               0.4,
               'flooring_Banner_DefaultPC',
               'flooringBannerPC'
-            );
-            handleAutoAlpha('loadingBannerIcon', 0);
+            )
           "
           v-show="userStore.customPreference.category === 'Carpet'"
           src="/area-rugs.webp"
