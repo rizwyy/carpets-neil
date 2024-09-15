@@ -1,7 +1,7 @@
 <template>
   <!-- Desktop Optimized FAQ Section -->
   <div
-    class="faq-container h-full w-full mx-auto pt-[14vh] pb-[8vh] px-[4vw] grid grid-cols-2 gap-[4vw] font-outfit max-w-screen-xl border-t-[.2vh]"
+    class="faq-container opacity-0 translate-y-[6%] h-full w-full mx-auto pt-[14vh] pb-[8vh] px-[4vw] grid grid-cols-2 gap-[4vw] font-outfit max-w-screen-xl border-t-[.2vh]"
   >
     <h2 class="col-span-2 text-4xl font-[400] mb-[5.2vh] w-full text-center">
       Frequently Asked Questions
@@ -273,6 +273,10 @@ const displayedFaqs = computed(() => {
 function toggleViewMore() {
   showMore.value = !showMore.value;
 }
+
+onMounted(() => {
+  handleScrollTrigger("faq-container");
+});
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="why-woltiz-container w-max mx-auto pt-[4vw] pb-[8vw] text-center font-outfit border-t-[.2vh] border-b-[.2vh]"
+    class="why-woltiz-container opacity-0 translate-y-[6%] w-max mx-auto pt-[4vw] pb-[8vw] text-center font-outfit border-t-[.2vh] border-b-[.2vh]"
   >
     <h2
       class="text-[2.5vw] font-[400] mb-[14vh] text-gray-800 h-max w-full text-center px-[4vw]"
@@ -62,6 +62,10 @@ import fittingIcon from "~/public/icons/fittingIcon.vue";
 import customisationIcon from "~/public/icons/customisationIcon.vue";
 import deliveryIcon from "~/public/icons/deliveryIcon.vue";
 import tapIcon from "~/public/icons/tapIcon.vue";
+
+onMounted(() => {
+  handleScrollTrigger("why-woltiz-container");
+});
 </script>
 
 <style scoped>

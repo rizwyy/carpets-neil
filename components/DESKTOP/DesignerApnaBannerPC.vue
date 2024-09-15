@@ -1,6 +1,6 @@
 <template>
   <section
-    class="w-[82vw] mx-auto relative overflow-hidden rounded-xl shadow-md px-[3vw] pt-[8vh] pb-[8vh] text-center font-outfit flex items-center flex-col gap-[10vh]"
+    class="DesignerApnaPC opacity-0 translate-y-[6%] w-[82vw] mx-auto relative overflow-hidden rounded-xl shadow-md px-[3vw] pt-[8vh] pb-[8vh] text-center font-outfit flex items-center flex-col gap-[10vh]"
   >
     <DesignerFormPC @close="handleCloseForm" v-if="isFormActive" />
     <!-- First line -->
@@ -69,6 +69,9 @@ const bringForm = () => {
   isFormActive.value = true;
   DISABLE_SCROLL();
 };
+onMounted(() => {
+  handleScrollTrigger("DesignerApnaPC");
+});
 </script>
 
 <style scoped>

@@ -1,5 +1,7 @@
 <template>
-  <section class="w-[60vw] mx-auto mt-[6vh] mb-[8vh]">
+  <section
+    class="PersonalAssistancePC opacity-0 translate-y-[6%] w-[60vw] mx-auto mt-[6vh] mb-[8vh]"
+  >
     <PersonalAssistanceFormPC @close="handleCloseForm" v-if="isFormActive" />
     <!-- Title -->
     <h2
@@ -104,8 +106,10 @@ const bringForm = () => {
   isFormActive.value = true;
   DISABLE_SCROLL();
 };
+onMounted(() => {
+  handleScrollTrigger("PersonalAssistancePC");
+});
 </script>
-
 <style scoped>
 /* Add any additional custom styles if needed */
 </style>
