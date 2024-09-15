@@ -108,7 +108,7 @@
     >
       <a
         href="/"
-        class="h-max w-max font-[300] text-[4.2vh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[3vw] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
@@ -138,7 +138,7 @@
     <!-- No items section -->
     <div
       v-else
-      class="h-max w-full flex items-center flex-col gap-[16svh] pt-[18svh] px-[4vw]"
+      class="h-max w-full flex items-center flex-col gap-[16vh] pt-[12vh] px-[4vw]"
     >
       <NuxtImg class="w-[10vw]" src="/icons/box.webp" />
       <span class="text-[2vw] font-[300] text-center">
@@ -146,7 +146,7 @@
         Start exploring and add your favorite options!
       </span>
       <a
-        class="text-[1.8vw] tracking-[.4vw] hover:shadow-2xl duration-300 transition-all ease-in-out px-[4vw] rounded-md py-[2.8vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
+        class="text-[1.8vw] tracking-[.4vw] hover:shadow-2xl duration-300 transition-all ease-in-out px-[4vw] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
         href="/flooring"
         >EXPLORE</a
       >

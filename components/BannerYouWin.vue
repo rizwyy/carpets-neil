@@ -6,7 +6,7 @@
       class="h-[38vh] w-[86%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[2vh] items-center justify-center"
     >
       <div
-        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black via-[#666] to-[#333] opacity-[.3] animate-[dimBright_.4s_infinite]"
+        class="absolute flooringBannerPC_Overlay backdrop-blur-[8px] h-full w-full left-0 top-0 z-[-1] opacity-[.3] animate-[dimBright_.4s_infinite]"
       ></div>
 
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
@@ -210,13 +210,13 @@ onMounted(() => {
 }
 @keyframes dimBright {
   0% {
-    opacity: 0.2;
+    background: #999;
   }
   50% {
-    opacity: 0.5;
+    background: #444;
   }
   100% {
-    opacity: 0.2;
+    background: #999;
   }
 }
 </style>
