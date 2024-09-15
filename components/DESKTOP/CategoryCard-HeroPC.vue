@@ -56,7 +56,7 @@ defineProps({
 
     <!-- Content Overlay -->
     <div
-      class="absolute h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-t from-black hover:to-[70%] to-transparent z-[-1]"
+      class="absolute h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-t from-black hover:to-[70%] to-transparent z-[-1] opacity-[.8]"
     ></div>
     <div
       class="h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw] z-[1]"
