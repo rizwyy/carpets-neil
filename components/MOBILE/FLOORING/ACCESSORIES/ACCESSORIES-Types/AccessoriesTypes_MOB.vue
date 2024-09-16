@@ -33,7 +33,7 @@
           v-for="accessory in accessories"
           :key="accessory"
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#333] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[14vh] w-full rounded-md border-[2px]  flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: spec_4.includes(accessory) },
           ]"
           @click="toggleSelect(accessory)"
