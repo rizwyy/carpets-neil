@@ -58,7 +58,7 @@
           <NuxtImg
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            class="h-full w-full object-cover object-bottom absolute left-0 bottom-0 z-[-9]"
             :src="`/accessories/${toCamelCase(accessory)}.webp`"
             :alt="accessory"
           />

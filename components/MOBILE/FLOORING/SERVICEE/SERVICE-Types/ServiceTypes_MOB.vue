@@ -54,7 +54,7 @@
             quality="70"
             placeholder
             loading="eager"
-            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9] object-bottom"
             :src="`/serviceImg/${toCamelCase(service)}.webp`"
             :alt="service"
           />
