@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-[990px]:hidden overflow-hidden h-max max-w-[100vw] bg-gradient-to-t from-blue-200 to-[#fff] flex flex-col gap-[4vh] border-t-[1px] border-[#ececec] px-[6vw] pb-[4vh] pt-[4vh] font-outfit text-[#666]"
+    class="FooterContainerMOB opacity-0 min-[990px]:hidden overflow-hidden h-max max-w-[100vw] bg-gradient-to-t from-blue-200 to-[#fff] flex flex-col gap-[4vh] border-t-[1px] border-[#ececec] px-[6vw] pb-[4vh] pt-[4vh] font-outfit text-[#666]"
   >
     <div class="h-1/2 w-full flex justify-between flex-col gap-[8vh]">
       <div class="h-max w-max flex flex-col gap-[1vh]">
@@ -63,6 +63,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+onMounted(() => {
+  if (process.client) {
+    handleScrollTrigger("FooterContainerMOB");
+  }
+});
+</script>
 
 <style lang="scss" scoped></style>
