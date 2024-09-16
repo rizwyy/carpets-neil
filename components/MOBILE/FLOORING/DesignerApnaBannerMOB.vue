@@ -1,6 +1,6 @@
 <template>
   <section
-    class="w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
+    class="designerCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
   >
     <DesignerFormMOB @close="handleCloseForm" v-if="isFormActive" />
     <div
@@ -69,6 +69,10 @@ const bringForm = () => {
   isFormActive.value = true;
   DISABLE_SCROLL();
 };
+
+onMounted(() => {
+  handleScrollTrigger("designerCardMOB");
+});
 </script>
 
 <style scoped>

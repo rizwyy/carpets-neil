@@ -1,6 +1,6 @@
 <template>
   <section
-    class="w-[90vw] h-max mx-auto bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[5vw] py-[4.2vh] relative font-outfit"
+    class="signUpCardMOB opacity-0 translate-y-[6%] w-[90vw] h-max mx-auto bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[5vw] py-[4.2vh] relative font-outfit"
   >
     <div
       class="newsLetter_temp_div_MOB opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed top-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
@@ -76,6 +76,10 @@ function handleAddEmailNewsletter() {
     emailInvalid.value = true;
   }
 }
+
+onMounted(() => {
+  handleScrollTrigger("signUpCardMOB");
+});
 </script>
 
 <style scoped>

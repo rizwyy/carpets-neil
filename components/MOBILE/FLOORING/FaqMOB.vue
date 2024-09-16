@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full w-full faq-container mx-auto pt-[4vh] pb-[8vh] px-[4vw] max-w-xl font-outfit"
+    class="faqMOB opacity-0 translate-y-[6%] h-full w-full faq-container mx-auto pt-[4vh] pb-[8vh] px-[4vw] max-w-xl font-outfit"
   >
     <h2
       class="text-[3.8vh] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[5.2vh]"
@@ -272,6 +272,10 @@ function toggleFAQ(index) {
 function isExpanded(index) {
   return expandedIndex.value === index;
 }
+
+onMounted(() => {
+  handleScrollTrigger("faqMOB");
+});
 </script>
 
 <style scoped>

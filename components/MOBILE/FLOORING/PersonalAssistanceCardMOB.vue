@@ -1,5 +1,7 @@
 <template>
-  <section class="w-[90vw] mx-auto mt-[6vh] mb-[8vh]">
+  <section
+    class="assistanceCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[6vh] mb-[8vh]"
+  >
     <PersonalAssistanceFormMOB
       @close="handleCloseForm"
       :formType="selectedFormType"
@@ -161,6 +163,10 @@ const bringForm = (type) => {
   isFormActive.value = true;
   DISABLE_SCROLL();
 };
+
+onMounted(() => {
+  handleScrollTrigger("assistanceCardMOB");
+});
 </script>
 
 <style scoped>
