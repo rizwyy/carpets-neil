@@ -17,7 +17,6 @@
     <UploadContainerPC />
     <WoltizWorkFlow />
     <FaqPC />
-
     <FooterPC />
   </div>
 </template>
