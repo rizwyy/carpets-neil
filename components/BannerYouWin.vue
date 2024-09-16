@@ -127,41 +127,11 @@
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
-          v-show="userStore.customPreference.category === 'Carpet'"
-          src="/area-rugs.webp"
-          class="h-full w-full object-cover object-bottom"
-        />
-        <NuxtImg
-          placeholder
-          v-show="userStore.customPreference.category === 'PVC'"
-          src="/pvc/pvc-flooring.webp"
-          class="h-full w-full object-cover"
-        />
-        <NuxtImg
-          placeholder
-          v-show="userStore.customPreference.category === 'Wooden'"
-          src="/50002.jpg"
-          class="h-full w-full object-cover"
-        />
-        <NuxtImg
-          placeholder
-          v-show="userStore.customPreference.category === 'Raised'"
-          src="/raised-flooring.webp"
-          class="h-full w-full object-cover"
-        />
-        <NuxtImg
-          placeholder
-          v-show="userStore.customPreference.category === 'Active'"
-          src="/40002.webp"
-          class="h-full w-full object-cover"
-        />
-        <NuxtImg
-          placeholder
           @load="
             handleImageLoad(0.4, 'flooring_Banner_Default', 'flooringBanner')
           "
-          src="/runners.webp"
-          class="currentImg h-full w-full object-cover flooring_Banner_Default_Img"
+          src="/bannerImg.webp"
+          class="currentImg h-full w-full object-cover object-bottom flooring_Banner_Default_Img"
         />
       </div>
       <span

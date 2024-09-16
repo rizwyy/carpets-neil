@@ -267,7 +267,7 @@ export function animateImageLOOP(el, scale) {
     ease: "power2",
     scale: scale,
     yoyo: true,
-    y: -40,
+    y: -20,
     x: 0,
     repeat: -1,
   });
