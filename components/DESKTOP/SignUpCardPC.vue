@@ -1,6 +1,6 @@
 <template>
   <section
-    class="SingUpCardPC opacity-0 translate-y-[6%] w-[60vw] h-max mx-auto relative bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[4vw] py-[6vh] relative font-outfit flex flex-col items-center gap-[2vh]"
+    class="SingUpCardPC opacity-0 translate-y-[4%] w-[60vw] h-max mx-auto relative bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[4vw] py-[6vh] relative font-outfit flex flex-col items-center gap-[2vh]"
   >
     <div
       class="newsLetter_temp_div opacity-0 flex gap-[.4vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed bottom-[4vh] z-[9999] left-[50%] translate-x-[-50%] px-[1vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"

@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function handleScrollTrigger(el) {
+export function handleScrollTrigger(el) {
   // Ensure this runs only on the client-side
   if (process.client) {
     // Register the ScrollTrigger plugin with GSAP

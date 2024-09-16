@@ -59,7 +59,7 @@
 <script setup>
 import ArrowRightIcon from "~/public/icons/arrowRightIcon.vue";
 import useUserStore from "../../../stores/user"; // Pinia store
-// import { handleScrollTrigger } from "#imports";
+import { handleScrollTrigger } from "#imports";
 
 const userStore = useUserStore();
 
@@ -150,11 +150,11 @@ const getImageSource = (category, stepImage) => {
 };
 
 // On mount, trigger animations for each step
-// onMounted(() => {
-//   steps.forEach((_, index) => {
-//     handleScrollTrigger(`step-${index + 5}`);
-//   });
-// });
+onMounted(() => {
+  steps.forEach((_, index) => {
+    handleScrollTrigger(`step-${index + 5}`);
+  });
+});
 </script>
 
 <style scoped>
