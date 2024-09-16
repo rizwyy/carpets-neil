@@ -45,3 +45,11 @@ onMounted(() => {
   }
 });
 </script>
+<style>
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
