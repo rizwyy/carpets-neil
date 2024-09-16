@@ -1,10 +1,10 @@
 <template>
   <div
-    class="min-[990px]:hidden overflow-x-hidden bg-[#fff] shadow-sm py-[2vh] h-max w-screen mt-[2vh] font-outfit transition-all duration-[.2s] ease-in-out"
+    class="min-[990px]:hidden overflow-x-hidden bg-[#fff] shadow-sm py-[2svh] h-max w-screen mt-[2svh] font-outfit transition-all duration-[.2s] ease-in-out"
   >
     <div class="h-max w-full px-[4vw] pb-[2vh] text-center">
       <span
-        class="text-[3.8vh] tracking-[-.3vw] text-transparent bg-clip-text bg-gradient-to-r from-[#14213d] via-[#3d5a80] to-[#00b4d8] from-[10%] to-[90%]"
+        class="text-[3.8svh] tracking-[-.3vw] text-transparent bg-clip-text bg-gradient-to-r from-[#14213d] via-[#3d5a80] to-[#00b4d8] from-[10%] to-[90%]"
       >
         Personalize Your Order
       </span>
@@ -16,7 +16,7 @@
     >
       <div
         :class="[
-          `w-max h-full bg-[#00000] flex gap-[4vw] py-[2vh] items-center justify-between px-[4vw] transition-all duration-[.4s] ease-in-out`,
+          `w-max h-full bg-[#00000] flex gap-[4vw] py-[2svh] items-center justify-between px-[4vw] transition-all duration-[.4s] ease-in-out`,
         ]"
       >
         <div v-for="(category, index) in categories" :key="index">
@@ -25,8 +25,8 @@
             :class="[
               `relative slidableItem origin-center transition-all duration-[.4s] ease-in-out rounded-lg overflow-hidden shadow-md text-[2vh] block bg-gradient-to-t from-[#14213d] to-[#3d5a80]  text-white px-[3.8vw] py-[.8vh] ${
                 userStore.customPreference.category.includes(category.name)
-                  ? 'slidableNavItemActive w-[88vw] h-[24vh]'
-                  : 'slidableNavItem w-[58vw]  h-[14vh]'
+                  ? 'slidableNavItemActive w-[88vw] h-[24svh]'
+                  : 'slidableNavItem w-[58vw]  h-[14svh]'
               }`,
             ]"
           >
