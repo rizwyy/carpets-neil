@@ -35,7 +35,7 @@
           v-for="service in services"
           :key="service"
           :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#666]  w flex items-end justify-between text-[#222] pr-[1.6vw] pl-[.8vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md  border-[2px] w flex items-end justify-between text-[#222] pr-[1.6vw] pl-[.8vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: spec_4.includes(service) },
           ]"
           @click="toggleSelect(service)"
