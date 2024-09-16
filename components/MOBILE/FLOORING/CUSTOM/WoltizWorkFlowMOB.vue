@@ -59,7 +59,7 @@
 <script setup>
 import ArrowRightIcon from "~/public/icons/arrowRightIcon.vue";
 import useUserStore from "../../../stores/user"; // Pinia store
-import { handleScrollTrigger } from "#imports";
+// import { handleScrollTrigger } from "#imports";
 
 const userStore = useUserStore();
 
