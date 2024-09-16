@@ -144,11 +144,13 @@ const getImageSource = (category, stepImage) => {
 };
 
 // On mount, trigger animations for each step
-// onMounted(() => {
-//   steps.forEach((_, index) => {
-//     handleScrollTrigger(`step-${index + 1}`);
-//   });
-// });
+onMounted(() => {
+  if (process.client) {
+    steps.forEach((_, index) => {
+      handleScrollTrigger(`step-${index + 1}`);
+    });
+  }
+});
 </script>
 
 <style scoped>

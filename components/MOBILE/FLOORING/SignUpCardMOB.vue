@@ -78,7 +78,9 @@ function handleAddEmailNewsletter() {
 }
 
 onMounted(() => {
-  handleScrollTrigger("signUpCardMOB");
+  if (process.client) {
+    handleScrollTrigger("signUpCardMOB");
+  }
 });
 </script>
 

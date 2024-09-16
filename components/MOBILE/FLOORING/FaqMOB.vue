@@ -274,7 +274,9 @@ function isExpanded(index) {
 }
 
 onMounted(() => {
-  handleScrollTrigger("faqMOB");
+  if (process.client) {
+    handleScrollTrigger("faqMOB");
+  }
 });
 </script>
 

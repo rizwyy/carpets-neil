@@ -165,7 +165,9 @@ const bringForm = (type) => {
 };
 
 onMounted(() => {
-  handleScrollTrigger("assistanceCardMOB");
+  if (process.client) {
+    handleScrollTrigger("assistanceCardMOB");
+  }
 });
 </script>
 

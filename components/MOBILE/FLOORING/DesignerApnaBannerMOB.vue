@@ -71,7 +71,9 @@ const bringForm = () => {
 };
 
 onMounted(() => {
-  handleScrollTrigger("designerCardMOB");
+  if (process.client) {
+    handleScrollTrigger("designerCardMOB");
+  }
 });
 </script>
 

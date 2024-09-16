@@ -275,7 +275,9 @@ function toggleViewMore() {
 }
 
 onMounted(() => {
-  handleScrollTrigger("faq-container");
+  if (process.client) {
+    handleScrollTrigger("faq-container");
+  }
 });
 </script>
 

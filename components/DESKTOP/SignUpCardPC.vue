@@ -77,7 +77,9 @@ function handleAddEmailNewsletter() {
   }
 }
 onMounted(() => {
-  handleScrollTrigger("SingUpCardPC");
+  if (process.client) {
+    handleScrollTrigger("SingUpCardPC");
+  }
 });
 </script>
 

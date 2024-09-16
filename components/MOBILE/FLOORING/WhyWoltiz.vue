@@ -70,7 +70,9 @@ import deliveryIcon from "~/public/icons/deliveryIcon.vue";
 import tapIcon from "~/public/icons/tapIcon.vue";
 
 onMounted(() => {
-  handleScrollTrigger("why-woltiz-container");
+  if (process.client) {
+    handleScrollTrigger("why-woltiz-container");
+  }
 });
 </script>
 
