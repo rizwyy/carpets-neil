@@ -1,8 +1,8 @@
 <template>
+  <PersonalAssistanceFormPC @close="handleCloseForm" v-if="isFormActive" />
   <section
     class="PersonalAssistancePC opacity-0 translate-y-[6%] w-[60vw] mx-auto mt-[6vh] mb-[8vh]"
   >
-    <PersonalAssistanceFormPC @close="handleCloseForm" v-if="isFormActive" />
     <!-- Title -->
     <h2
       class="text-[#333] text-center text-[2.5vw] tracking-[-.05vw] font-[400] mb-[8vh]"

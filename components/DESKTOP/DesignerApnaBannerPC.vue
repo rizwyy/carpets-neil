@@ -1,8 +1,8 @@
 <template>
+  <DesignerFormPC @close="handleCloseForm" v-if="isFormActive" />
   <section
-    class="DesignerApnaPC opacity-0 translate-y-[6%] w-[82vw] mx-auto relative overflow-hidden rounded-xl shadow-md px-[3vw] pt-[8vh] pb-[8vh] text-center font-outfit flex items-center flex-col gap-[10vh]"
+    class="DesignerApnaPC opacity-0 translate-y-[6%] w-[82vw] mx-auto rounded-xl shadow-md px-[3vw] pt-[8vh] pb-[8vh] text-center font-outfit flex items-center flex-col gap-[10vh]"
   >
-    <DesignerFormPC @close="handleCloseForm" v-if="isFormActive" />
     <!-- First line -->
     <div
       class="apnaBannerItem_Text opacity-0 text-[#555] text-[3.8vw] tracking-[-.1vw]"

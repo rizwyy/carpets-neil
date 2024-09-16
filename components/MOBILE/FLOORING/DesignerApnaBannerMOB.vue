@@ -1,8 +1,8 @@
 <template>
+  <DesignerFormMOB @close="handleCloseForm" v-if="isFormActive" />
   <section
-    class="designerCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[2vh] relative overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
+    class="designerCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[2vh] overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
   >
-    <DesignerFormMOB @close="handleCloseForm" v-if="isFormActive" />
     <div
       class="apnaBannerItem_Overlay backdrop-blur-[8px] absolute top-0 left-0 h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-b hover:to-[70%] to-transparent z-[-1]"
     ></div>

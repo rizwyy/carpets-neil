@@ -1,12 +1,12 @@
 <template>
+  <PersonalAssistanceFormMOB
+    @close="handleCloseForm"
+    :formType="selectedFormType"
+    v-if="isFormActive"
+  />
   <section
     class="assistanceCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[6vh] mb-[8vh]"
   >
-    <PersonalAssistanceFormMOB
-      @close="handleCloseForm"
-      :formType="selectedFormType"
-      v-if="isFormActive"
-    />
     <!-- Title -->
     <h2 class="text-[#333] text-[3.8vh] tracking-[-.1vw] font-[400] mb-[4vh]">
       Personal assistance
