@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
-export function handleScrollTrigger(el) {
+export default function handleScrollTrigger(el) {
   gsap.to(`.${el}`, {
     opacity: 1,
     duration: 0.4,
