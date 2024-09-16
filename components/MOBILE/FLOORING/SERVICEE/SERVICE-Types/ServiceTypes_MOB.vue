@@ -47,7 +47,20 @@
               >Selected</span
             >
           </div>
-          <span class="text-left text-balance">{{ service }}</span>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            quality="70"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            :src="`/serviceImg/${toCamelCase(service)}.webp`"
+            :alt="service"
+          />
+          <span class="text-left text-balance text-[#f1f1f1]">{{
+            service
+          }}</span>
         </div>
       </div>
     </div>

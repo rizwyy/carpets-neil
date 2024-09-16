@@ -35,7 +35,7 @@
           v-for="service in services"
           :key="service"
           :class="[
-            'h-[28vh] w-full rounded-md  border-[2px] border-[#666]  w flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[28vh] w-full rounded-md  border-[2px] border-[#666]  w flex items-end justify-between text-[#222] pr-[1.6vw] pl-[.8vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: spec_4.includes(service) },
           ]"
           @click="toggleSelect(service)"
@@ -50,7 +50,19 @@
               >Selected</span
             >
           </div>
-          <span class="text-[3.4vh]">{{ service }}</span>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9] object-bottom"
+            :src="`/serviceImg/${toCamelCase(service)}.webp`"
+            :alt="service"
+          />
+          <span class="text-[3.4vh] text-[#f1f1f1] text-left">{{
+            service
+          }}</span>
         </div>
       </div>
     </div>

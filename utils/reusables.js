@@ -382,3 +382,9 @@ export function removeDuplicates(arr) {
   // Return the filtered array
   return filteredArr;
 }
+
+export function toCamelCase(str) {
+  return str
+    .toLowerCase() // Convert the entire string to lowercase
+    .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase()); // Remove non-alphanumeric characters and capitalize the next letter
+}

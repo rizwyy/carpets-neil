@@ -29,127 +29,40 @@
           </svg>
         </button>
       </div>
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- Profile -->
-        <div
-          :class="[
-            'h-[28vh] w-full rounded-md border-[2px] border-[#999] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_4.includes('Profile') },
-          ]"
-          @click="toggleSelect('Profile')"
-        >
-          <div
-            v-show="spec_4.includes('Profile')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <span class="text-[3.4vh]">Profile</span>
-        </div>
 
-        <!-- Skirting -->
+      <!-- Accessories List -->
+      <div class="h-max w-full grid grid-cols-2 gap-[2vw] z-[9]">
+        <!-- Loop through accessories array -->
         <div
+          v-for="accessory in accessories"
+          :key="accessory"
           :class="[
             'h-[28vh] w-full rounded-md border-[2px] border-[#999] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_4.includes('Skirting') },
+            { selected: spec_4.includes(accessory) },
           ]"
-          @click="toggleSelect('Skirting')"
+          @click="toggleSelect(accessory)"
         >
           <div
-            v-show="spec_4.includes('Skirting')"
+            v-show="spec_4.includes(accessory)"
             class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
           >
             <span
               class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
             >
+              Selected
+            </span>
           </div>
-          <span class="text-[3.4vh]">Skirting</span>
-        </div>
-      </div>
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- Adhesives -->
-        <div
-          :class="[
-            'h-[28vh] w-full rounded-md border-[2px] border-[#999] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_4.includes('Adhesives') },
-          ]"
-          @click="toggleSelect('Adhesives')"
-        >
           <div
-            v-show="spec_4.includes('Adhesives')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <span class="text-[3.4vh]">Adhesives</span>
-        </div>
-
-        <!-- Underlays -->
-        <div
-          :class="[
-            'h-[28vh] w-full rounded-md border-[2px] border-[#999] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_4.includes('Underlays') },
-          ]"
-          @click="toggleSelect('Underlays')"
-        >
-          <div
-            v-show="spec_4.includes('Underlays')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <span class="text-[3.4vh]">Underlays</span>
-        </div>
-      </div>
-      <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
-        <!-- Stain Removers -->
-        <div
-          :class="[
-            'h-[28vh] w-full rounded-md border-[2px] border-[#999] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_4.includes('Stain Removers') },
-          ]"
-          @click="toggleSelect('Stain Removers')"
-        >
-          <div
-            v-show="spec_4.includes('Stain Removers')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <span class="text-[3.4vh]">Stain Removers</span>
-        </div>
-
-        <!-- Floor Protectors -->
-        <div
-          :class="[
-            'h-[28vh] w-full rounded-md border-[2px] border-[#999] flex items-end justify-between text-[#222] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-            { selected: spec_4.includes('Floor Protectors') },
-          ]"
-          @click="toggleSelect('Floor Protectors')"
-        >
-          <div
-            v-show="spec_4.includes('Floor Protectors')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
-          >
-            <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
-              >Selected</span
-            >
-          </div>
-          <span class="text-[3.4vh]">Floor Protectors</span>
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            :src="`/accessories/${toCamelCase(accessory)}.webp`"
+            :alt="accessory"
+          />
+          <span class="text-[3.4vh] text-[#f1f1f1]">{{ accessory }}</span>
         </div>
       </div>
     </div>
@@ -160,6 +73,7 @@
 import { ref, toRaw } from "vue";
 import { scrollToBottom } from "#imports";
 import useUserStore from "~/stores/user";
+
 // PINIA
 const userStore = useUserStore();
 
@@ -185,19 +99,15 @@ const toggleSelect = (service) => {
   const index = spec_4.value.indexOf(service);
 
   if (index === -1) {
-    // Add to the selection if not already selected
-    spec_4.value.push(service);
+    spec_4.value.push(service); // Add to the selection if not already selected
   } else {
-    // Remove from the selection if it's already selected
-    spec_4.value.splice(index, 1);
+    spec_4.value.splice(index, 1); // Remove from the selection if it's already selected
   }
-  userStore.preference.flooring = "accessories";
 
+  userStore.preference.flooring = "accessories";
   userStore.preference.spec_4 = toRaw(spec_4.value);
   scrollToBottom();
 };
-
-onMounted(() => {});
 </script>
 
 <style scoped>

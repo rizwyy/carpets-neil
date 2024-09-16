@@ -7,7 +7,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
       >
-        <span class="text-left text-balance"> Choose Your Services </span>
+        <span class="text-left text-balance"> Choose Your Accessories </span>
         <button
           @click="clearAllSelections"
           v-show="spec_4.length"
@@ -47,7 +47,20 @@
               >Selected</span
             >
           </div>
-          <span class="text-left text-balance">{{ accessory }}</span>
+          <div
+            class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+          ></div>
+          <NuxtImg
+            quality="70"
+            placeholder
+            loading="eager"
+            class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+            :src="`/accessories/${toCamelCase(accessory)}.webp`"
+            :alt="accessory"
+          />
+          <span class="text-left text-balance text-[#f1f1f1]">{{
+            accessory
+          }}</span>
         </div>
       </div>
     </div>
