@@ -1,40 +1,24 @@
 <template>
-  <!-- *** DESKTOP *** -->
+  <!-- *** MOBILE *** -->
   <div
-    class="max-[990px]:hidden h-max max-w-screen overflow-x-hidden flex flex-col gap-[12vh] pt-[8vh] font-outfit"
+    class="min-[990px]:hidden h-max w-screen flex flex-col gap-[8vh] py-[6vh] font-outfit"
   >
     <div class="h-max w-full text-center items-center flex flex-col gap-[1vh]">
-      <span class="text-[2.8vw] w-[88%]">Customization Journey</span>
-      <span class="text-[1.2vw] text-[#666]">Breaking Down Our Approach.</span>
+      <span class="text-[3.5vh] w-[88%]">Customization Journey</span>
+      <span class="text-[2vh] text-[#666]">Breaking Down Our Approach.</span>
     </div>
 
-    <div class="h-max w-full flex flex-col gap-[12vh] py-[4vh] px-[4vw]">
+    <div class="h-max w-full flex flex-col gap-[8vh] py-[4vh] px-[4vw]">
       <!-- Render Steps Dynamically -->
       <div
         v-for="(step, index) in steps"
         :key="index"
-        :class="`h-[42vh] w-full overflow-hidden flex items-center gap-[2vw] opacity-0 translate-y-[4%] step-${
-          index + 1
-        } ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`"
+        :class="`h-[28vh] w-full overflow-hidden flex items-center gap-[1vw] translate-y-[4%] ${
+          index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+        }`"
       >
-        <!-- Text Section -->
-        <div
-          class="h-full w-[50%] flex flex-col items-start gap-[2vh] py-[.4vh] px-[2vw]"
-        >
-          <span class="text-[2vh] font-[500] text-[#666]"
-            >STEP {{ index + 1 }}</span
-          >
-          <span class="text-[4.8vh] font-[500]">{{ step.title }}</span>
-          <span class="text-[2.4vh]">{{ step.description }}</span>
-          <a
-            v-if="index === 0"
-            class="h-max w-max px-[2.4vw] py-[1.8vh] rounded-sm shadow-md bg-blue-300 text-[#fff] text-[2.6vh] font-[500]"
-            href="https://wa.me/917021949329"
-            >Chat with us</a
-          >
-        </div>
-        <!-- Image Section -->
-        <div class="h-full w-[50%] relative">
+        <!-- Image Section for mobile -->
+        <div class="h-full w-[60%] relative">
           <div
             class="absolute h-full w-full top-0 left-0 bg-gradient-to-b from-black to-[#0000] opacity-[.2] z-[1]"
           ></div>
@@ -46,17 +30,39 @@
             alt="#"
           />
         </div>
+
+        <!-- Text Section for mobile -->
+        <div
+          class="h-full w-[60%] flex flex-col items-start justify-between gap-[2vh] py-[1vh] px-[2vw]"
+        >
+          <span class="text-[2vh] font-[500] text-[#999]"
+            >STEP {{ index + 1 }}</span
+          >
+          <div class="h-max w-full flex flex-col gap-[1.6vh]">
+            <span class="text-[2.8vh] font-[500]">{{ step.title }}</span>
+            <span class="text-[1.8vh] w-[80%]">{{ step.description }}</span>
+          </div>
+          <div class="h-max w-full flex justify-end">
+            <a
+              v-if="index === 0"
+              class="h-max w-max rounded-full text-blue-500 text-[2vh] font-[500] flex items-center"
+              href="https://wa.me/917021949329"
+              >Chat with us <ArrowRightIcon class="text-[2.8vh]"
+            /></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import ArrowRightIcon from "~/public/icons/arrowRightIcon.vue";
 import useUserStore from "../../../stores/user"; // Pinia store
 
 const userStore = useUserStore();
 
-// Define the step data
+// Define the step data (same as the desktop version)
 const steps = [
   {
     title: "Design",

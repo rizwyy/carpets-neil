@@ -6,7 +6,7 @@
     <div class="h-max w-full py-[4vh]">
       <UploadContainerMOB />
     </div>
-    <WoltizWorkFlow />
+    <WoltizWorkFlowMOB />
     <FaqMOB />
     <FooterMOB />
   </div>
@@ -35,6 +35,7 @@ import UploadContainerMOB from "~/components/MOBILE/FLOORING/CUSTOM/UploadContai
 import UploadContainerPC from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainerPC.vue";
 import WoltizWorkFlow from "~/components/MOBILE/FLOORING/CUSTOM/WoltizWorkFlow.vue";
 import FaqMOB from "~/components/MOBILE/FLOORING/FaqMOB.vue";
+import WoltizWorkFlowMOB from "~/components/MOBILE/FLOORING/CUSTOM/WoltizWorkFlowMOB.vue";
 
 const isMobile = ref(false);
 onMounted(() => {
