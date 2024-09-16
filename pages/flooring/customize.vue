@@ -25,7 +25,6 @@
 <script setup>
 import NavBarPC from "~/components/DESKTOP/NavBarPC.vue";
 import NavBarMOB from "../../components/MOBILE/NavBarMOB.vue";
-import FaqMOB from "~/components/MOBILE/FaqMOB.vue";
 import FaqPC from "~/components/DESKTOP/FaqPC.vue";
 import BannerYouWin from "~/components/BannerYouWin.vue";
 import FooterPC from "~/components/DESKTOP/FooterPC.vue";
@@ -35,6 +34,7 @@ import SlidableNavMOB from "~/components/MOBILE/FLOORING/CUSTOM/SlidableNavMOB.v
 import UploadContainerMOB from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainerMOB.vue";
 import UploadContainerPC from "~/components/MOBILE/FLOORING/CUSTOM/UploadContainerPC.vue";
 import WoltizWorkFlow from "~/components/MOBILE/FLOORING/CUSTOM/WoltizWorkFlow.vue";
+import FaqMOB from "~/components/MOBILE/FLOORING/FaqMOB.vue";
 
 const isMobile = ref(false);
 onMounted(() => {
