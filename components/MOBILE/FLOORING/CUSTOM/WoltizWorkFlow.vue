@@ -42,7 +42,7 @@
             :src="
               getImageSource(userStore.customPreference.category, step.imageSrc)
             "
-            class="h-full w-full object-cover z-[-9]"
+            class="h-full w-full object-cover z-[-9] rounded-md"
             alt="#"
           />
         </div>
@@ -98,28 +98,28 @@ const steps = [
 const getImageSource = (category, stepImage) => {
   const images = {
     Active: {
-      design: "/40003.webp",
-      customisation: "/40003.webp",
-      sample: "/40003.webp",
-      approval: "/40003.webp",
-      production: "/customise/production.webp",
-      delivery: "/customise/delivery.webp",
+      design: "/woltizWorkFlow/design.webp",
+      customisation: "/woltizWorkFlow/customisation.webp",
+      sample: "/woltizWorkFlow/sample.webp",
+      approval: "/woltizWorkFlow/approval.webp",
+      production: "/woltizWorkFlow/production.webp",
+      delivery: "/woltizWorkFlow/delivery.webp",
     },
     PVC: {
-      design: "/pvc-flooring.webp",
-      customisation: "/pvc-flooring.webp",
-      sample: "/pvc-flooring.webp",
-      approval: "/pvc-flooring.webp",
-      production: "/customise/production.webp",
-      delivery: "/customise/delivery.webp",
+      design: "/woltizWorkFlow/design.webp",
+      customisation: "/woltizWorkFlow/customisation.webp",
+      sample: "/woltizWorkFlow/sample.webp",
+      approval: "/woltizWorkFlow/approval.webp",
+      production: "/woltizWorkFlow/production.webp",
+      delivery: "/woltizWorkFlow/delivery.webp",
     },
     Wooden: {
-      design: "/20003.webp",
-      customisation: "/20003.webp",
-      sample: "/20003.webp",
-      approval: "/20003.webp",
-      production: "/customise/production.webp",
-      delivery: "/customise/delivery.webp",
+      design: "/woltizWorkFlow/design.webp",
+      customisation: "/woltizWorkFlow/customisation.webp",
+      sample: "/woltizWorkFlow/sample.webp",
+      approval: "/woltizWorkFlow/approval.webp",
+      production: "/woltizWorkFlow/production.webp",
+      delivery: "/woltizWorkFlow/delivery.webp",
     },
     Raised: {
       design: "/raised-flooring.webp",
@@ -130,12 +130,12 @@ const getImageSource = (category, stepImage) => {
       delivery: "/customise/delivery.webp",
     },
     Default: {
-      design: "/area-rugs.webp",
-      customisation: "/area-rugs.webp",
-      sample: "/area-rugs.webp",
-      approval: "/area-rugs.webp",
-      production: "/customise/production.webp",
-      delivery: "/customise/delivery.webp",
+      design: "/woltizWorkFlow/design.webp",
+      customisation: "/woltizWorkFlow/customisation.webp",
+      sample: "/woltizWorkFlow/sample.webp",
+      approval: "/woltizWorkFlow/approval.webp",
+      production: "/woltizWorkFlow/production.webp",
+      delivery: "/woltizWorkFlow/delivery.webp",
     },
   };
 
