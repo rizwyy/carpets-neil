@@ -4,7 +4,7 @@
       <div
         @click="triggerFileInput"
         ref="dropArea"
-        class="border-[3px] border-dotted border-blue-900 rounded-md px-[2vw] py-[5.2vh] w-full h-full flex flex-col gap-[1vh] items-center bg-blue-50"
+        class="border-[3px] border-dotted border-[#999] rounded-md px-[2vw] py-[5.2vh] w-full h-full flex flex-col gap-[1vh] items-center bg-blue-50"
         @drop.prevent="handleDrop"
         @dragover.prevent="handleDragOver"
       >
