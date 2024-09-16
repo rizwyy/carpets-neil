@@ -13,9 +13,9 @@
       <div
         v-for="(step, index) in steps"
         :key="index"
-        :class="`h-[28vh] w-full overflow-hidden flex items-center gap-[1vw] translate-y-[4%] ${
-          index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-        }`"
+        :class="`h-[28vh] w-full overflow-hidden flex items-center gap-[1vw] opacity-0 translate-y-[4%] step-${
+          index + 5
+        } ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`"
       >
         <!-- Image Section for mobile -->
         <div class="h-full w-[60%] relative">
@@ -151,7 +151,7 @@ const getImageSource = (category, stepImage) => {
 // On mount, trigger animations for each step
 onMounted(() => {
   steps.forEach((_, index) => {
-    handleScrollTrigger(`step-${index + 1}`);
+    handleScrollTrigger(`step-${index + 5}`);
   });
 });
 </script>
