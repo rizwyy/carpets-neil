@@ -13,7 +13,7 @@
       <div
         v-for="(step, index) in steps"
         :key="index"
-        :class="`h-[28vh] w-full overflow-hidden flex items-center gap-[1vw] opacity-0 translate-y-[4%] step-${
+        :class="`h-[28vh] w-full overflow-hidden flex items-center gap-[1vw]  step-${
           index + 5
         } ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`"
       >
@@ -59,6 +59,7 @@
 <script setup>
 import ArrowRightIcon from "~/public/icons/arrowRightIcon.vue";
 import useUserStore from "../../../stores/user"; // Pinia store
+import { handleScrollTrigger } from "#imports";
 
 const userStore = useUserStore();
 
@@ -149,11 +150,11 @@ const getImageSource = (category, stepImage) => {
 };
 
 // On mount, trigger animations for each step
-onMounted(() => {
-  steps.forEach((_, index) => {
-    handleScrollTrigger(`step-${index + 5}`);
-  });
-});
+// onMounted(() => {
+//   steps.forEach((_, index) => {
+//     handleScrollTrigger(`step-${index + 5}`);
+//   });
+// });
 </script>
 
 <style scoped>
