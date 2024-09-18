@@ -6,8 +6,11 @@
     <div
       class="apnaBannerItem_Overlay backdrop-blur-[8px] absolute top-0 left-0 h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-b hover:to-[70%] to-transparent z-[-1]"
     ></div>
+    <div class="z-[-999] bg-blue-100 absolute top-0 left-0 h-full w-full"></div>
+
     <NuxtImg
       src="/bannerImage.png"
+      placeholder="/BannerImagePH.webp"
       decoding="async"
       alt="#"
       @load="handleImageLoad(0, 'apnaBannerIMG_PC', 'apnaBannerItem')"

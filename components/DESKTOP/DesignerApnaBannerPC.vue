@@ -3,6 +3,7 @@
   <section
     class="DesignerApnaPC opacity-0 translate-y-[6%] w-[82vw] mx-auto rounded-xl shadow-md px-[3vw] pt-[8vh] pb-[8vh] text-center font-outfit flex items-center flex-col gap-[10vh]"
   >
+    <div class="z-[-999] bg-blue-100 absolute top-0 left-0 h-full w-full"></div>
     <!-- First line -->
     <div
       class="apnaBannerItem_Text opacity-0 text-[#555] text-[3.8vw] tracking-[-.1vw]"
@@ -16,6 +17,7 @@
     <NuxtImg
       @load="handleImageLoad(0, 'apnaBannerIMG_PC', 'apnaBannerItem')"
       src="/group54.webp"
+      placeholder="/group54PH.webp"
       alt="#"
       decoding="async"
       loading="lazy"
