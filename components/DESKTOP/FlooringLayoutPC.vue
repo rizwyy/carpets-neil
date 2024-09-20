@@ -60,7 +60,7 @@ const flooringCategories = [
       name: "Wooden Flooring",
       desc: "Durable, stylish wooden flooring enhances comfort, warmth, and aesthetic appeal in any space.",
       isAvailable: true,
-      src: "60002.jpg",
+      src: "/wooden-flooring.webp",
       link: "/flooring/wooden/details",
     },
   ],
@@ -87,14 +87,14 @@ const flooringCategories = [
       name: "Sports Flooring",
       desc: "Durable sports flooring ensures enhanced safety and performance in sports areas.",
       isAvailable: true,
-      src: "40002.webp",
+      src: "sports-flooring.webp",
       link: "/flooring/sports/details",
     },
     {
       name: "Raised Flooring",
       desc: "Stylish raised flooring offers practical solutions for easy access to utilities underneath.",
       isAvailable: true,
-      src: "raised-flooring.webp",
+      src: "/raised/raised-office.webp",
       link: "/flooring/raised/details",
     },
   ],
@@ -116,6 +116,24 @@ const flooringCategories = [
     },
   ],
   // Row 5
+  [
+    {
+      name: "Epoxy Flooring",
+      desc: "Durable and slip-resistant, rubber flooring offers excellent shock absorption and easy maintenance, ideal for gym & playrooms",
+      isAvailable: true,
+      src: "/epoxy/epoxyFlooring.webp",
+      link: "/flooring/epoxy/details",
+    },
+    {
+      name: "Stone Flooring",
+      desc: "Lush and low-maintenance, grass flooring provides a natural look, perfect for outdoor spaces & patios with added weather resistance.",
+      isAvailable: true,
+      src: "/stone/stoneFlooring.webp",
+      link: "/flooring/stone/details",
+    },
+  ],
+  // Row 6
+
   [
     {
       name: "Flooring Services",

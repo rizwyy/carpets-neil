@@ -8,12 +8,17 @@ import FloatingBarMOB from "~/components/MOBILE/FLOORING/FloatingBarMOB.vue";
 import CurrencyDetails from "~/components/MOBILE/FLOORING/CountryDetails.vue";
 
 // Eager-loaded component (for both mobile and desktop)
-import AccessoriesTypesDetails from "../../../components/MOBILE/FLOORING/ACCESSORIES/AccessoriesTypesDetails.vue";
+import EpoxyFlooringDetails from "../../../components/MOBILE/FLOORING/EPOXY/EpoxyFlooringDetails.vue";
 
 // Lazy-loaded components
-
-const LazyMatBaseDetails = defineAsyncComponent(() =>
-  import("../../../components/MOBILE/FLOORING/ACCESSORIES/MatBaseDetails.vue")
+const LazyEpoxyTypeDetails = defineAsyncComponent(() =>
+  import("./../../../components/MOBILE/FLOORING/EPOXY/EpoxyTypesDetails.vue")
+);
+const LazyEpoxyColorDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/EPOXY/EpoxyColorDetails.vue")
+);
+const LazyEpoxyBudgetDetails = defineAsyncComponent(() =>
+  import("~/components/MOBILE/FLOORING/EPOXY/EpoxyBudgetDetails.vue")
 );
 const LazyOrderMethod = defineAsyncComponent(() =>
   import("../../../components/MOBILE/FLOORING/OrderMethod.vue")
@@ -61,24 +66,20 @@ onMounted(() => {
           href="/flooring"
           class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
         >
-          Accessories
+          Epoxy Flooring
           <!-- DESKTOP -->
           {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
       <!-- DESKTOP -->
-      <AccessoriesTypesDetails />
-      <LazyMatBaseDetails />
-      <LazyOrderMethod
-        v-if="
-          userStore.preference.spec_4.includes('Mat Floors') &&
-          userStore.preference.spec_2 !== ''
-        "
-        flooring="accessories"
-      />
-      <LazyInfoForm flooring="accessories" />
-      <LazyReviewCard flooring="accessories" link="accessories" />
+      <EpoxyFlooringDetails />
+      <LazyEpoxyTypeDetails />
+      <LazyEpoxyColorDetails />
+      <LazyEpoxyBudgetDetails />
+      <LazyOrderMethod flooring="epoxy" />
+      <LazyInfoForm flooring="epoxy" />
+      <LazyReviewCard flooring="epoxy" link="epoxy" />
     </div>
     <!-- DESKTOP -->
   </section>
@@ -86,7 +87,7 @@ onMounted(() => {
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">
     <NavBarMOB />
-    <FloatingBarMOB flooring="SPORTS" link="/" />
+    <!-- <FloatingBarMOB flooring="EPOXY" link="/" /> -->
 
     <div
       class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
@@ -100,19 +101,20 @@ onMounted(() => {
             href="/flooring"
             class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
           >
-            Accessories
+            Epoxy Flooring
           </a>
           <CurrencyDetails />
         </div>
         <span class="text-[3.8vh]"> Specify Your Needs </span>
       </div>
       <BannerYouWin :existingUser="existingUser" />
-      <AccessoriesTypesDetails :existingUser="existingUser" />
-      <LazyMatBaseDetails />
-
-      <LazyOrderMethod flooring="accessories" />
-      <LazyInfoForm flooring="accessories" />
-      <LazyReviewCard flooring="accessories" link="accessories" />
+      <EpoxyFlooringDetails :existingUser="existingUser" />
+      <LazyEpoxyTypeDetails />
+      <LazyEpoxyColorDetails />
+      <LazyEpoxyBudgetDetails />
+      <LazyOrderMethod flooring="epoxy" />
+      <LazyInfoForm flooring="epoxy" />
+      <LazyReviewCard flooring="epoxy" link="epoxy" />
     </div>
   </section>
 </template>

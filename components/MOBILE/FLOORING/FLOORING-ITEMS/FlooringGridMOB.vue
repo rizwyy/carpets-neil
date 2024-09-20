@@ -83,7 +83,7 @@
       <FlooringCategoryItem
         href="/flooring/sports/details"
         title="Sports Flooring"
-        imgSrc="/sports/outdoor.webp"
+        imgSrc="sports-flooring.webp"
         altText="#"
         titleClass="flooringLayout_Sports_Text"
         @load="
@@ -128,6 +128,44 @@
           handleImageLoad(
             0.4,
             'flooringLayout_Grass',
+            'flooringItem',
+            true,
+            true
+          )
+        "
+        loading="lazy"
+      />
+    </div>
+    <div
+      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+    >
+      <FlooringCategoryItem
+        href="/flooring/epoxy/details"
+        title="Epoxy Flooring"
+        imgSrc="/epoxy/epoxyFlooring.webp"
+        altText="Woltiz Epoxy Flooring"
+        titleClass="flooring-epoxy_Text"
+        @load="
+          handleImageLoad(
+            0.4,
+            'flooringLayout_epoxy',
+            'flooringItem',
+            true,
+            true
+          )
+        "
+        loading="lazy"
+      />
+      <FlooringCategoryItem
+        href="/flooring/stone/details"
+        title="Stone Flooring"
+        imgSrc="/stone/stoneFlooring.webp"
+        altText="Woltiz Stone Flooring"
+        titleClass="flooringLayout_stone_Text"
+        @load="
+          handleImageLoad(
+            0.4,
+            'flooringLayout_stone',
             'flooringItem',
             true,
             true

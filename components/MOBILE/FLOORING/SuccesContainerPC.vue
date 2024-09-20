@@ -9,7 +9,7 @@
         WOLTIZ
       </h2>
     </div>
-    <div class="h-max w-max px-[4vw] flex items-center gap-[.2vw] pt-[1vw]">
+    <div class="h-max w-max px-[4vw] flex items-center gap-[.2vw]">
       <h2
         class="txt_Text opacity-0 h-max w-full font-[300] text-[3.2vw] text-[#222] leading-[4vw]"
       >

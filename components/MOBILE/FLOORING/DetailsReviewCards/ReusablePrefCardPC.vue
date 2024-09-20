@@ -265,7 +265,7 @@ const handleDeleteItemAndUpdate = async (logId) => {
 };
 
 function getLabel(flooringType) {
-  return ["Carpets", "Wooden", "PVC"].includes(flooringType)
+  return ["Carpets", "Wooden", "PVC", "epoxy", "stone"].includes(flooringType)
     ? "Category"
     : flooringType === "gym"
     ? "Application"

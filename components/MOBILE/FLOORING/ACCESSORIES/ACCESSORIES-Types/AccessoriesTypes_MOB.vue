@@ -86,6 +86,7 @@ const accessories = [
   "Underlays",
   "Stain Removers",
   "Floor Protectors",
+  "Mat Floors",
 ];
 
 // Clear all selections
