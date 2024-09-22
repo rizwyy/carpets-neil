@@ -3,16 +3,6 @@
     class="min-[990px]:hidden h-max w-screen flex flex-col gap-[1.8vh] relative"
   >
     <div
-      :class="[
-        `min-[990px]:hidden h-full FlooringGridLoadingContainer_MOB w-screen overflow-x-hidden max-w-[100vw] text-[7.2vh] bg-white flex pt-[16svh] text-[#222] justify-center absolute z-[999] ${
-          pageLoaded ? 'hidden' : ''
-        }}`,
-      ]"
-    >
-      <loadingIcon />
-    </div>
-
-    <div
       class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[1]"
     >
       <FlooringCategoryItem
@@ -219,17 +209,9 @@
 import { defineAsyncComponent } from "vue";
 import loadingIcon from "~/public/icons/loadingIcon.vue";
 
-const pageLoaded = ref(false);
 const FlooringCategoryItem = defineAsyncComponent(() =>
   import("../FLOORING-ITEMS/FlooringCategoryItem.vue")
 );
-
-onMounted(() => {
-  setTimeout(() => {
-    handleAutoAlpha("FlooringGridLoadingContainer_MOB", 0);
-    pageLoaded.value = true;
-  }, 1500);
-});
 </script>
 
 <style>
