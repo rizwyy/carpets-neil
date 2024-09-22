@@ -65,7 +65,7 @@ onMounted(() => {
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
     >
       <div
-        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[1.9rem] gap-[2vh]"
       >
         <!-- DESKTOP -->
         <a
@@ -98,22 +98,22 @@ onMounted(() => {
     <NavBarMOB />
     <FloatingBarMOB flooring="WOODEN" link="/" />
     <div
-      class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
+      class="h-max w-screen font-outfit flex flex-col gap-[.5rem] flex flex-col gap-[.5rem] items-center z-[2]"
     >
       <div
-        class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+        class="h-max px-[4vw] pt-[.7rem] pb-[.2rem] w-full flex flex-col items-start text-[1.9rem] gap-[1rem]"
       >
         <!-- MOBILE -->
         <div class="h-max w-full flex justify-between">
           <a
             href="/flooring"
-            class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
+            class="text-[1.2rem] underline underline-offset-[.8vh] text-[#666] flex"
           >
             Wooden Flooring
           </a>
           <CurrencyDetails />
         </div>
-        <span class="text-[3.8vh]"> Specify Your Needs </span>
+        <span class="text-[1.9rem]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
       <WoodenCategoryDetails :existingUser="existingUser" />
