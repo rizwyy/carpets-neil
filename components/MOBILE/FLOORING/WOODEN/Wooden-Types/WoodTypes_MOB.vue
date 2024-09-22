@@ -9,7 +9,7 @@
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+          class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
         >
           <span class="text-left text-balance wooden_Type_Details_Mob-HEADING">
             Choose Your Type
@@ -42,7 +42,7 @@
             <!-- Solid Wood Floor -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Solid Wood Floor'),
@@ -81,7 +81,7 @@
             <!-- Engineered Wood Floor  -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                 {
                   selected: userStore.preference.spec_2.includes(
                     'Engineered Wood Floor'
@@ -122,7 +122,7 @@
             <!-- Bamboo -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Bamboo Wood Floor'),
@@ -161,7 +161,7 @@
             <!-- Customized -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                 {
                   selected: userStore.preference.spec_2.includes('Cork Floor'),
                 },
@@ -203,7 +203,7 @@
             <!-- Laminated Floor -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Laminated Floor'),
@@ -240,7 +240,7 @@
             <!-- SPC Floor -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes('SPC Floor') },
               ]"
               @click="toggleSelect('SPC Floor')"
@@ -276,7 +276,7 @@
             <!-- WPC Floor -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes('WPC Floor') },
               ]"
               @click="toggleSelect('WPC Floor')"
@@ -309,7 +309,7 @@
             <!-- Hard Laminated -->
             <div
               :class="[
-                'h-[14vh] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[7.2rem] wooden_Type_Details_Mob-CONTAINER overflow-hidden  rounded-md  border-[2px] border-[#f1f1f1] w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 {
                   selected:
                     userStore.preference.spec_2.includes('Hard Laminated'),

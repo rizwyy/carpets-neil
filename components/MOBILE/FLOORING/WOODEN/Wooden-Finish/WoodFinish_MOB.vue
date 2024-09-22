@@ -16,7 +16,7 @@
       <div
         class="min-[990px]:hidden h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
-        <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
+        <div class="h-max w-full flex justify-between text-[1.5rem] z-[9]">
           <!-- MOBILE -->
           <span class="text-left text-balance wooden_Finish_Details_Mob-HEADING"
             >Choose your Finish</span
@@ -44,7 +44,7 @@
           <!-- Matt Finish -->
           <div
             :class="[
-              'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.spec_4.includes('Matt Finish') },
             ]"
             @click="toggleSelect('Matt Finish')"
@@ -76,7 +76,7 @@
           <!-- Gloss Finish -->
           <div
             :class="[
-              'h-[14vh] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] wooden_Finish_Details_Mob-CONTAINER overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
               {
                 selected: userStore.preference.spec_4.includes('Gloss Finish'),
               },

@@ -14,7 +14,7 @@
       <div
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
-        <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
+        <div class="h-max w-full flex justify-between text-[1.5rem] z-[9]">
           <!-- MOBILE -->
           <span class="text-left text-balance wooden_Design_Details_Mob-HEADING"
             >Choose your Design</span
@@ -46,7 +46,7 @@
             <!-- Planks -->
             <div
               :class="[
-                'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_3 === 'Planks' },
               ]"
               @click="toggleSelect('Planks')"
@@ -87,7 +87,7 @@
             <!-- Tiles -->
             <div
               :class="[
-                'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_3 === 'Tiles' },
               ]"
               @click="toggleSelect('Tiles')"
@@ -127,7 +127,7 @@
               <!-- Plain Planks -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Plain Planks' },
                 ]"
                 @click="toggleSelect('Plain Planks')"
@@ -159,7 +159,7 @@
               <!-- Herringbone -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Herringbone' },
                 ]"
                 @click="toggleSelect('Herringbone')"
@@ -192,7 +192,7 @@
               <!-- Chevron -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Chevron' },
                 ]"
                 @click="toggleSelect('Chevron')"
@@ -224,7 +224,7 @@
               <!-- Basket Weave -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Basket Weave' },
                 ]"
                 @click="toggleSelect('Basket Weave')"
@@ -262,7 +262,7 @@
               <!-- Custom I -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom I' },
                 ]"
                 @click="toggleSelect('Custom I')"
@@ -294,7 +294,7 @@
               <!-- Custom II -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom II' },
                 ]"
                 @click="toggleSelect('Custom II')"
@@ -327,7 +327,7 @@
               <!-- Custom III -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom III' },
                 ]"
                 @click="toggleSelect('Custom III')"
@@ -359,7 +359,7 @@
               <!-- Custom IV -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom IV' },
                 ]"
                 @click="toggleSelect('Custom IV')"
@@ -397,7 +397,7 @@
               <!-- Custom V -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom V' },
                 ]"
                 @click="toggleSelect('Custom V')"
@@ -429,7 +429,7 @@
               <!-- Custom VI -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom VI' },
                 ]"
                 @click="toggleSelect('Custom VI')"
@@ -462,7 +462,7 @@
               <!-- Custom VII -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom VII' },
                 ]"
                 @click="toggleSelect('Custom VII')"
@@ -494,7 +494,7 @@
               <!-- Custom VIII -->
               <div
                 :class="[
-                  'h-[14vh]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem]  wooden_Design_Details_Mob-CONTAINER overflow-hidden w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: userStore.preference.spec_3 === 'Custom VIII' },
                 ]"
                 @click="toggleSelect('Custom VIII')"

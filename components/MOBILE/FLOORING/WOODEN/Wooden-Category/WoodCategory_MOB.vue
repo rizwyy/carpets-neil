@@ -5,7 +5,7 @@
       class="carpets_Category_Details_Mob h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
-        class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
+        class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
       >
         <span class="text-left text-balance">Choose Your Category</span>
         <button
@@ -30,7 +30,7 @@
         <!-- Real Wood Floor -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes('Real Wood Floor'),
             },
@@ -65,7 +65,7 @@
         <!-- Wood Artificial Floor -->
         <div
           :class="[
-            'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes(
                 'Wood Artificial Floor'

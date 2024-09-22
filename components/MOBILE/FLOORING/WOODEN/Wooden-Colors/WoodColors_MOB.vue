@@ -13,7 +13,7 @@
         class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[4vh] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between"
+          class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between"
         >
           <span class="text-left text-balance wooden_Color_Details_Mob-HEADING">
             Choose Your Color
@@ -128,7 +128,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
               :class="{
                 selected: userStore.preference.color.includes('CustomColor'),
               }"
@@ -146,7 +146,7 @@
             <!-- MOBILE -->
             <div
               v-show="userStore.preference.spec_2 === 'Cork Floor'"
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Charcoal'),
               }"
@@ -169,7 +169,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 !== 'Cork Floor'"
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Beige'),
               }"
@@ -191,7 +191,7 @@
               </div>
             </div>
             <div
-              class="selectedColors_MOB_Wooden color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="selectedColors_MOB_Wooden color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -221,7 +221,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -247,7 +247,7 @@
               </div>
             </div>
             <div
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Dark Brown'),
               }"
@@ -279,7 +279,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
@@ -309,7 +309,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 !== 'Cork Floor'"
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -331,7 +331,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 === 'Cork Floor'"
-              class="color-box wooden_Color_Details_Mob-CONTAINER h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box wooden_Color_Details_Mob-CONTAINER h-[5rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Orange'),
               }"
