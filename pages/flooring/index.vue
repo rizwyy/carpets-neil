@@ -1,6 +1,10 @@
 <template>
   <!-- MOBILE -->
-  <section v-if="isMobile" class="h-max w-max min-[990px]:hidden">
+  <section
+    v-auto-animate
+    v-if="isMobile"
+    class="h-max w-max min-[990px]:hidden"
+  >
     <NavBarMOB />
     <SearchBarMOB />
     <BannerYouWin />
@@ -11,6 +15,7 @@
   <!-- DESKTOP -->
 
   <section
+    v-auto-animate
     v-else
     class="min-[1590px]:h-max min-[1590px]:w-screen min-[1590px]:max-w-[99vw] h-max max-w-screen overflow-x-hidden max-[990px]:hidden font-outfit"
   >

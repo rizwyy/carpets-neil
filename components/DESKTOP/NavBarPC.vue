@@ -126,7 +126,7 @@
       <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="HandleOrderConfirmation"
-          class="text-[2rem] tracking-[.4vw] bottom-[2vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+          class="text-[2rem] fixed bottom-0 left-[50%] translate-x-[-50%] tracking-[.4vw] bottom-[2vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         >
           <loadingIcon v-if="isConfirmLoading" class="text-white" />
           <span class="text-[2rem]" v-else> PROCEED TO CHECKOUT </span>
