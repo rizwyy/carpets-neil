@@ -3,10 +3,10 @@
   <transition @before-enter="handleDetailsDOMEntry('stone_Type_Details_Mob')">
     <div
       v-show="userStore.preference.spec_2 === 'Porcelain'"
-      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]"
     >
       <div
-        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+        class="h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
           class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
@@ -19,32 +19,22 @@
           <button
             @click="clearAllSelections"
             v-show="spec_3.length"
-            class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[1vw] py-[.4rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
-            Clear All<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-              />
-            </svg>
+            Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
           </button>
         </div>
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
           <div
             :class="[
-              'h-[14vh] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
+              'h-[7.8rem] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_3.includes('Marble') },
             ]"
             @click="toggleSelect('Marble')"
           >
             <div
               v-show="spec_3.includes('Marble')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <span
@@ -69,14 +59,14 @@
 
           <div
             :class="[
-              'h-[14vh] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
+              'h-[7.8rem] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_3.includes('Concrete') },
             ]"
             @click="toggleSelect('Concrete')"
           >
             <div
               v-show="spec_3.includes('Concrete')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <span
@@ -102,14 +92,14 @@
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
           <div
             :class="[
-              'h-[14vh] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
+              'h-[7.8rem] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_3.includes('Solid') },
             ]"
             @click="toggleSelect('Solid')"
           >
             <div
               v-show="spec_3.includes('Solid')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <span
@@ -133,14 +123,14 @@
           </div>
           <div
             :class="[
-              'h-[14vh] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
+              'h-[7.8rem] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_3.includes('Wood') },
             ]"
             @click="toggleSelect('Wood')"
           >
             <div
               v-show="spec_3.includes('Wood')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <span
@@ -166,14 +156,14 @@
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
           <div
             :class="[
-              'h-[14vh] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
+              'h-[7.8rem] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_3.includes('Stone') },
             ]"
             @click="toggleSelect('Stone')"
           >
             <div
               v-show="spec_3.includes('Stone')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <span
@@ -197,14 +187,14 @@
           </div>
           <div
             :class="[
-              'h-[14vh] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
+              'h-[7.8rem] stone_Type_Details_Mob-CONTAINER overflow-hidden opacity-0 w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_3.includes('Custom') },
             ]"
             @click="toggleSelect('Custom')"
           >
             <div
               v-show="spec_3.includes('Custom')"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <span
@@ -237,6 +227,7 @@ const { existingUser } = defineProps(["existingUser"]);
 
 // PINIA
 const userStore = useUserStore();
+import { Icon } from "@iconify/vue/dist/iconify.js";
 // COOKIES
 import useUserStore from "~/stores/user";
 

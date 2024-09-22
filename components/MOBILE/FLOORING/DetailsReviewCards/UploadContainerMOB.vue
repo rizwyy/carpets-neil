@@ -1,9 +1,9 @@
 <template>
   <div class="h-max w-full flex justify-center">
-    <div class="h-max w-full bg-white py-[0vh] rounded-xl">
+    <div class="h-max w-full bg-white rounded-xl">
       <div
         ref="dropArea"
-        class="border-2 border-dotted border-[#999] rounded-md px-[2vw] py-[1.2vh] w-full h-full flex flex-col gap-[1vh] items-center"
+        class="border-2 border-dotted border-[#999] rounded-md px-[2vw] py-[1.2rem] w-full h-full flex flex-col gap-[.5rem] items-center"
         @drop.prevent="handleDrop"
         @dragover.prevent="handleDragOver"
       >
@@ -17,7 +17,7 @@
         />
         <button
           @click="triggerFileInput"
-          class="bg-[#555] text-white font-medium text-[1.6vh] py-[1.2vh] px-[4vw] rounded-3xl flex items-center gap-2 hover:bg-[#333] transition-colors"
+          class="bg-[#555] text-white font-medium text-[.8rem] py-[.6rem] px-[4vw] rounded-3xl flex items-center gap-2 hover:bg-[#333] transition-colors"
         >
           Upload Manually
         </button>

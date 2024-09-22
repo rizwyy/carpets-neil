@@ -1,8 +1,8 @@
 <template>
   <!-- MOBILE -->
-  <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
+  <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]">
     <div
-      class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      class="h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
         class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
@@ -11,10 +11,10 @@
         <button
           @click="clearAllSelections"
           v-show="spec_1.length"
-          class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+          class="h-max bg-white text-gray-500 px-[1vw] py-[.4rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
         >
           Clear All
-          <ClearAllIcon />
+          <Icon icon="material-symbols:cancel-outline-rounded" />
         </button>
       </div>
 
@@ -27,14 +27,14 @@
         >
           <div
             :class="[
-              'h-[16vh] w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.8rem] w-full rounded-md border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.4rem]  relative cursor-pointer',
               { selected: spec_1.includes(floor.name) },
             ]"
             @click="toggleSelect(floor.name)"
           >
             <div
               v-show="spec_1.includes(floor.name)"
-              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <span
                 class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
@@ -67,6 +67,7 @@
 // Props
 const { existingUser } = defineProps(["existingUser"]);
 
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 // PINIA Store
 import useUserStore from "~/stores/user";

@@ -24,18 +24,7 @@
             v-show="userStore.preference.budget !== ''"
             class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
-            Clear All<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-            >
-              <!-- MOBILE -->
-              <path
-                fill="currentColor"
-                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-              />
-            </svg>
+            Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
           </button>
         </div>
 
@@ -47,7 +36,7 @@
           <!-- VALUE -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: budget === 'Value' },
             ]"
             @click="toggleSelect('Value')"
@@ -73,12 +62,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Value </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -94,7 +83,7 @@
           <!-- ESSENTIAL -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: budget === 'Essential' },
             ]"
             @click="toggleSelect('Essential')"
@@ -121,12 +110,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Essential </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -143,7 +132,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: budget === 'Premier' },
             ]"
             @click="toggleSelect('Premier')"
@@ -170,12 +159,12 @@
             <!-- MOBILE -->
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Premier </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -194,7 +183,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: budget === 'Signature' },
             ]"
             @click="toggleSelect('Signature')"
@@ -220,12 +209,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Signature </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -240,7 +229,7 @@
           </div>
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: budget === 'Elite' },
             ]"
             @click="toggleSelect('Elite')"
@@ -265,12 +254,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Elite </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 Over
@@ -289,6 +278,7 @@
 <script setup>
 const { existingUser } = defineProps(["existingUser"]);
 
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();

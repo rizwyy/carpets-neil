@@ -8,10 +8,10 @@
         (userStore.preference.spec_2 !== 'Porcelain' ||
           userStore.preference.spec_3 !== '')
       "
-      class="h-max w-screen flex justify-center pb-[10vh]"
+      class="h-max w-screen flex justify-center pb-[5rem]"
     >
       <div
-        class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[4vh] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
+        class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[4vh] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[1rem]"
       >
         <div
           class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between stone_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -25,18 +25,7 @@
             class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
-            Clear All<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-              />
-              <!-- MOBILE -->
-            </svg>
+            Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
           </button>
         </div>
         <div
@@ -144,7 +133,7 @@
 
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER bg-black overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER bg-black overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
                 :class="{ selected: selectedColors.includes('Black') }"
                 @click="toggleSelect('Black')"
               >
@@ -156,14 +145,14 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Black')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer bg-[brown] relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer bg-[brown] relative px-[1.6vw] py-[.8vh]"
                 :class="{
                   selected: userStore.preference.color.includes('Brown'),
                 }"
@@ -176,7 +165,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Brown')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -185,7 +174,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh] bg-[#999]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh] bg-[#999]"
                 :class="{
                   selected: userStore.preference.color.includes('Grey'),
                 }"
@@ -199,14 +188,14 @@
                 <div v-show="userStore.preference.color.includes('Grey')">
                   <!-- MOBILE -->
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-green-500"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-green-500"
                 :class="{
                   selected: userStore.preference.color.includes('Green'),
                 }"
@@ -219,14 +208,14 @@
                 >
                 <div v-show="userStore.preference.color.includes('Green')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
                 <!-- MOBILE -->
               </div>
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-blue-500"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-blue-500"
                 :class="{
                   selected: userStore.preference.color.includes('Blue'),
                 }"
@@ -240,7 +229,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Blue')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -249,7 +238,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER bg-white overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER bg-white overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
                 :class="{
                   selected: userStore.preference.color.includes('White'),
                 }"
@@ -262,14 +251,14 @@
                 >
                 <div v-show="userStore.preference.color.includes('White')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-red-500"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-red-500"
                 :class="{
                   selected: userStore.preference.color.includes('Red'),
                 }"
@@ -282,13 +271,13 @@
                 >
                 <div v-show="userStore.preference.color.includes('Red')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-[pink]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-[pink]"
                 :class="{
                   selected: userStore.preference.color.includes('Rose'),
                 }"
@@ -303,7 +292,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Rose')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -360,6 +349,7 @@
 
 <script setup>
 // PINIA
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import useUserStore from "~/stores/user";
 
 const userStore = useUserStore();

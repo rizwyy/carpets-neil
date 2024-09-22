@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[
-      `w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-prefCardBG rounded-xl id-${item.id}-PrefCardItem`,
+      `w-[99%] mx-auto relative px-[4vw] py-[1.6rem] font-outfit flex flex-col items-center justify-center bg-prefCardBG rounded-xl id-${item.id}-PrefCardItem`,
     ]"
   >
     <!-- UNEXPANDED -->
@@ -9,7 +9,7 @@
       @click="toggleExpansion"
       :class="[
         'flex flex-col bg-prefCard border-[#999] px-[3.2vw] rounded-xl py-[2vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none',
-        !isExpanded ? 'w-[94%] text-[2.4vh]' : 'w-[100%] text-[2.8vh]',
+        !isExpanded ? 'w-[94%] text-[1.2rem]' : 'w-[100%] text-[1.4rem]',
       ]"
     >
       <div class="w-full flex justify-between items-center text-[#444]">
@@ -30,7 +30,7 @@
           />
           <span
             v-show="isExpanded"
-            class="h-full flex items-center transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.5vh] tracking-[.1vw] font-[600] text-red-700 rounded-full px-[4vw] py-[1vh] uppercase gap-[1vw] text-[2.4vh]'"
+            class="h-full flex items-center transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.5vh] tracking-[.1vw] font-[600] text-red-700 rounded-full px-[4vw] py-[.5rem] uppercase gap-[1vw] text-[1.2rem]'"
             @click.stop="promptDelete(item)"
           >
             Delete
@@ -40,13 +40,13 @@
           <div class="h-max w-max flex items-center justify-end gap-[2vw]">
             <div class="h-max w-max flex gap-[2vw] items-center justify-end">
               <button
-                class="px-[4vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600] text-red-700"
+                class="px-[4vw] py-[.5rem] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[.8rem] font-[600] text-red-700"
                 @click.stop="confirmDelete"
               >
                 CONFIRM
               </button>
               <button
-                class="px-[4vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600]"
+                class="px-[4vw] py-[.5rem] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[.8rem] font-[600]"
                 @click.stop="cancelDelete"
               >
                 CANCEL
@@ -60,10 +60,10 @@
     <!-- EXPANDED -->
     <div
       v-show="isExpanded"
-      class="w-[98%] flex flex-col gap-[2vh] pt-[2vh] transition-all duration-[.2s]"
+      class="w-[98%] flex flex-col gap-[1rem] pt-[1rem] transition-all duration-[.2s]"
     >
       <div
-        class="w-full flex flex-col items-start gap-[1vh] bg-prefCard py-[2vh] rounded-xl px-[3.2vw]"
+        class="w-full flex flex-col items-start gap-[.5rem] bg-prefCard py-[1rem] rounded-xl px-[3.2vw]"
       >
         <SpecDetail :label="getLabel(item.flooring)" :value="item.spec_1" />
         <SpecDetail
@@ -108,25 +108,27 @@
 
       <!-- ADD ON CARD -->
       <div
-        class="w-full bg-prefCard rounded-xl flex flex-col gap-[2.4vh] px-[3.2vw] pt-[1.4vh] pb-[2vh]"
+        class="w-full bg-prefCard rounded-xl flex flex-col gap-[1.2rem] px-[3.2vw] pt-[.7rem] pb-[1rem]"
       >
-        <span class="text-[2.4vh] tracking-tight w-full font-[500] text-[#333]">
+        <span
+          class="text-[1.4rem] tracking-tight w-full font-[500] text-[#333]"
+        >
           Add On's
-          <span class="text-[#777] text-[2vh] font-normal">(Optional)</span>
+          <span class="text-[#777] text-[1rem] font-normal">(Optional)</span>
         </span>
 
-        <div class="flex flex-col gap-[.6vh] text-[#555]">
-          <label for="additionalDetails" class="text-[2vh] font-medium"
+        <div class="flex flex-col gap-[.3rem] text-[#555]">
+          <label for="additionalDetails" class="text-[1rem] font-medium"
             >Provide Additional Details</label
           >
           <textarea
             id="additionalDetails"
             placeholder="Extra Info/Requirements Goes Here"
-            class="border-[2px] rounded-md px-[2vw] py-[1vh] border-[#ccc] bg-[#f9f9f9] text-[#333] outline-none focus:border-[#444]"
+            class="border-[2px] rounded-md px-[2vw] py-[.5rem] border-[#ccc] bg-[#f9f9f9] text-[#333] outline-none focus:border-[#444]"
           />
         </div>
 
-        <div class="flex flex-col gap-[1.5vh] text-[#555]">
+        <div class="flex flex-col gap-[.8rem] text-[#555]">
           <UploadContainerMOB />
         </div>
       </div>

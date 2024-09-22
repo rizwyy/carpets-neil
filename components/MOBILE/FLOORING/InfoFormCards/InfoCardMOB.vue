@@ -15,29 +15,29 @@
       class="h-max w-screen flex justify-center"
     >
       <div
-        class="iptErrMsg opacity-0 invisible h-max py-[2.4vh] px-[2vw] left-[50%] translate-x-[-50%] top-[2.4vh] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
+        class="iptErrMsg opacity-0 invisible h-max py-[1.2rem] px-[2vw] left-[50%] translate-x-[-50%] top-[1rem] rounded-md w-[72vw] flex justify-center items-center fixed gap-[2vw] bottom-0 bg-[#000] bg-opacity-[.7] backdrop-blur-[8px] z-[999]"
       >
         <span
           class="text-white font-[500] tracking-[.2vw] uppercase text-center"
           >Please fill out all fields correctly before proceeding</span
         >
       </div>
-      <div class="h-max w-screen pt-[2vh] pb-[6vh] flex justify-center">
+      <div class="h-max w-screen pt-[1rem] pb-[3rem] flex justify-center">
         <div
-          class="h-max w-[94%] flex flex-col gap-[5.8vh] overflow-hidden px-[3.8vw] pt-[3.2vh] rounded-md relative bg-gradient-to-br from-detailsFrom to-detailsTo"
+          class="h-max w-[94%] flex flex-col gap-[3rem] overflow-hidden px-[3.8vw] pt-[1.6rem] rounded-md relative bg-gradient-to-br from-detailsFrom to-detailsTo"
         >
           <div class="h-max w-max flex flex-col gap-[.4vh] items-start">
             <span
-              class="InfoMOB-HEADING opacity-0 translate-y-[20%] w-max text-[3.8vh] tracking-[-.2vw] font-[400] text-[#444]"
+              class="InfoMOB-HEADING opacity-0 translate-y-[20%] w-max text-[1.9rem] tracking-[-.2vw] font-[400] text-[#444]"
               >Your Contact Information</span
             >
             <span
-              class="InfoMOB-HEADING opacity-0 mb-[1vh] translate-y-[20%] text-[#999] text-[2.2vh] font-[450]"
+              class="InfoMOB-HEADING opacity-0 mb-[1vh] translate-y-[20%] text-[#999] text-[1.1rem] font-[450]"
               >Enter your contact information</span
             >
             <span
               v-show="isNameInvalid || isMailInvalid || isPhoneInvalid"
-              class="text-red-400 text-[2vh] font-[450]"
+              class="text-red-400 text-[1rem] font-[450]"
               >Something went wrong!</span
             >
           </div>
@@ -51,10 +51,10 @@
             class="checkout_Overlay h-full w-full absolute top-0 left-0 bg-[#fff4] backdrop-blur-[.2px] z-[-1]"
           ></div>
 
-          <div class="h-max w-full flex flex-col gap-[vh]">
+          <div class="h-max w-full flex flex-col">
             <input
               :class="[
-                'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[1.8vh] outline-none ',
+                'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[.9rem] outline-none ',
                 {
                   'bg-gray-300': isFormValidated() && cookieFound,
                   'bg-white': !(isFormValidated() && cookieFound),
@@ -71,7 +71,7 @@
           <div class="h-max w-full flex flex-col">
             <input
               :class="[
-                'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[1.8vh] outline-none ',
+                'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[.9rem] outline-none ',
                 {
                   'bg-gray-300': isFormValidated() && cookieFound,
                   'bg-white': !(isFormValidated() && cookieFound),
@@ -86,11 +86,11 @@
               v-model="mailIpt"
             />
           </div>
-          <div class="h-max w-full flex flex-col gap-[6.2vh] pb-[6.2vh]">
+          <div class="h-max w-full flex flex-col gap-[3.2rem] pb-[3.2rem]">
             <div class="h-max w-full flex">
               <select
                 :class="[
-                  'w-max rounded-l-md border-[2px] border-r-[0px] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[2vh] outline-none InfoMOB-CONTAINER opacity-0',
+                  'w-max rounded-l-md border-[2px] border-r-[0px] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[1rem] outline-none InfoMOB-CONTAINER opacity-0',
                   {
                     'bg-gray-300': isFormValidated() && cookieFound,
                     'bg-white': !(isFormValidated() && cookieFound),
@@ -110,7 +110,7 @@
               <input
                 :readonly="isFormValidated() && cookieFound"
                 :class="[
-                  '[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] py-[1.8vh] text-[18px] outline-none',
+                  '[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] py-[.9rem] text-[1rem] outline-none',
                   {
                     'bg-gray-300': isFormValidated() && cookieFound,
                     'bg-white': !(isFormValidated() && cookieFound),
@@ -132,7 +132,7 @@
                   ? toggleReadOnly()
                   : handleInfoProceedings()
               "
-              class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[2.4vh] uppercase font-[400] text-[2.4vh] px-[2vw] outline-none focus:border-black flex justify-center items-center"
+              class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[1.2rem] uppercase font-[400] text-[1.2rem] px-[2vw] outline-none focus:border-black flex justify-center items-center"
             >
               <span v-show="!isLoading">{{
                 isFormValidated() && cookieFound ? "EDIT" : "PROCEED"

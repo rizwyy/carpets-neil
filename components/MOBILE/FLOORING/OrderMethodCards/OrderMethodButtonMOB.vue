@@ -7,19 +7,19 @@
       borderColor: selected ? selectedBorderColor : '#777',
       color: textColor,
     }"
-    class="relative w-[80vw] min-w-[150px] max-w-[300px] h-[8vh] min-h-[48px] max-h-[60px] rounded-lg text-[2.2vh] font-medium border-[2.8px] border-[#333] z-[999] text-white px-[4vw] flex items-center justify-between shadow-xl transition-all duration-300 ease-in-out"
+    class="relative w-[80vw] min-w-[150px] max-w-[300px] h-[4.2rem] min-h-[48px] max-h-[60px] rounded-lg text-[2.2vh] font-medium border-[2.8px] border-[#333] z-[999] text-white px-[4vw] flex items-center justify-between shadow-xl transition-all duration-300 ease-in-out"
     aria-label="button"
   >
     <!-- Tick Icon in the top-right corner when selected -->
     <div
       v-show="selected"
-      class="absolute right-0 top-0 mt-[0.5vh] mr-[0.5vw] flex items-center justify-center z-[99]"
+      class="absolute right-0 top-0 mt-[0.2rem] mr-[0.5vw] flex items-center justify-center z-[99]"
     >
       <span
         :style="{ color: selectedBorderColor }"
-        class="font-semibold text-[2.6vh]"
+        class="font-semibold text-[1.2rem]"
       >
-        <TickCircleIcon />
+        <Icon icon="octicon:check-circle-16" />
       </span>
     </div>
 
@@ -36,7 +36,7 @@
       <!-- Text Section -->
       <div
         :style="{ color: textColor }"
-        class="flex-1 text-start font-[500] text-[2.4vh]"
+        class="flex-1 text-start font-[500] text-[1.2rem]"
         aria-label="button text"
       >
         {{ label }}
@@ -46,8 +46,8 @@
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import MailIcon from "~/public/icons/mailIcon.vue";
-import TickCircleIcon from "~/public/icons/tickCircleIcon.vue";
 import WhatsappIcon from "~/public/icons/whatsappIcon.vue";
 
 defineProps({

@@ -3,13 +3,13 @@
   <div v-if="userStore.isFormValidated" class="h-max w-max">
     <div
       v-if="isFlooringVisible"
-      class="h-[120vh] w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
+      class="h-[62rem] w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
     >
       <div
-        class="h-[120svh] w-screen gap-[1vh] bg-inherit flex flex-col items-center justify-start gap-[3.2vh]"
+        class="h-[120svh] w-screen gap-[1vh] bg-inherit flex flex-col items-center justify-start gap-[1.5rem]"
       >
         <div
-          class="h-max w-full flex justify-between items-center px-[2.6vw] pt-[4vh] pb-[2vh]"
+          class="h-max w-full flex justify-between items-center px-[2.6vw] pt-[2rem] pb-[1rem]"
         >
           <span class="text-[2rem] text-[#333] font-[400]"
             >Flooring Options</span
@@ -37,7 +37,7 @@
     <transition @beforeEnter="handleDetailsDOMEntry('revCard')">
       <div
         v-if="arePreferencesFilled"
-        class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[2vh] transition-all ease-in-out duration-300"
+        class="h-max w-screen flex flex-col justify-center items-center gap-[2rem] py-[1rem] transition-all ease-in-out duration-300"
       >
         <ul
           v-auto-animate
@@ -59,7 +59,7 @@
         </ul>
         <div
           v-else
-          class="text-center py-[2vh] flex flex-col gap-[3.2vh] items-center"
+          class="text-center py-[1rem] flex flex-col gap-[1.6rem] items-center"
         >
           <span>No saved preferences found :(</span>
         </div>
@@ -69,14 +69,14 @@
     <!-- Refresh Button -->
     <div
       v-if="arePreferencesFilled"
-      class="h-max w-full flex justify-evenly pb-[2vh]"
+      class="h-max w-full flex justify-evenly pb-[1rem]"
     >
       <button
         v-if="!isRefreshLoading"
         @click="getHistory"
         class="h-max w-max text-[#555] rounded-full"
       >
-        <div class="h-max w-max flex items-center gap-[1vw] text-[2.8vh]">
+        <div class="h-max w-max flex items-center gap-[1vw] text-[1.4rem]">
           <span class="text-[2vh]">Refresh</span>
           <RefreshIcon />
         </div>
@@ -89,23 +89,23 @@
     <!-- Add More and Confirm Buttons -->
     <div
       v-if="arePreferencesFilled"
-      class="h-max w-full flex flex-col items-center py-[8vh] border-t-[2px] border-dotted border-[#999] gap-[4vh]"
+      class="h-max w-full flex flex-col items-center py-[4rem] border-t-[2px] border-dotted border-[#999] gap-[2rem]"
     >
       <button
         v-if="userStore.cart.length > 0"
         @click="HandleAddMore"
-        class="border-[2px] rounded-md w-[90%] py-[2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center"
+        class="border-[2px] rounded-md w-[90%] py-[1rem] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[1.2rem] flex justify-center"
       >
         <span v-if="!isAddMoreLoading">BROWSE OTHER PRODUCTS</span>
-        <LoadingIcon class="text-[4.2vh]" v-else />
+        <LoadingIcon class="text-[2rem]" v-else />
       </button>
       <button
         v-if="userStore.cart.length > 0"
         @click="HandleOrderConfirmation"
-        class="border-[2px] rounded-md w-[90%] py-[2vh] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[2.4vh] flex justify-center"
+        class="border-[2px] rounded-md w-[90%] py-[1rem] border-[#333] mx-auto font-[500] tracking-[.1vw] text-[1.2rem] flex justify-center"
       >
         <span v-if="!isConfirmationLoading">CONFIRM</span>
-        <LoadingIcon class="text-[4.2vh]" v-else />
+        <LoadingIcon class="text-[2rem]" v-else />
       </button>
     </div>
   </div>
