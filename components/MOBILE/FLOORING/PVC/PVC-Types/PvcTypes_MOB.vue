@@ -9,7 +9,7 @@
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+          class="h-max w-full flex items-center justify-between text-[1.6rem] z-[9]"
         >
           <span
             class="text-left text-balance pvc_Type_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -40,7 +40,7 @@
             <!-- Sheet -->
             <div
               :class="[
-                'h-[14vh] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                'h-[7.2rem] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                 { selected: selectedType.includes('Sheet') },
               ]"
               @click="toggleSelect('Sheet')"
@@ -85,7 +85,7 @@
             <!-- Tile  -->
             <div
               :class="[
-                'h-[14vh] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                'h-[7.2rem] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
                 { selected: selectedType.includes('Tile ') },
               ]"
               @click="toggleSelect('Tile ')"
@@ -130,7 +130,7 @@
             <!-- Plank -->
             <div
               :class="[
-                'h-[14vh] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                'h-[7.2rem] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                 { selected: selectedType.includes('Plank') },
               ]"
               @click="toggleSelect('Plank')"
@@ -165,7 +165,7 @@
             <div
               v-show="userStore.preference.spec_1 === 'Luxury Vinyl'"
               :class="[
-                'h-[14vh] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                'h-[7.2rem] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                 { selected: selectedType.includes('Multicolor') },
               ]"
               @click="toggleSelect('Multicolor')"
@@ -199,7 +199,7 @@
             <div
               v-show="userStore.preference.spec_1 === 'Woven Vinyl'"
               :class="[
-                'h-[14vh] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                'h-[7.2rem] rounded-md overflow-hidden pvc_Type_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
                 { selected: selectedType.includes('Rugs') },
               ]"
               @click="toggleSelect('Rugs')"
