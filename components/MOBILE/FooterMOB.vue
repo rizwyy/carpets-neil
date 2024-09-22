@@ -1,20 +1,20 @@
 <template>
   <div
-    class="FooterContainerMOB opacity-0 min-[990px]:hidden overflow-hidden h-max max-w-[100vw] bg-gradient-to-t from-blue-200 to-[#fff] flex flex-col gap-[4vh] border-t-[1px] border-[#ececec] px-[6vw] pb-[4vh] pt-[4vh] font-outfit text-[#666]"
+    class="FooterContainerMOB opacity-0 min-[990px]:hidden overflow-hidden h-max max-w-[100vw] bg-gradient-to-t from-blue-200 to-[#fff] flex flex-col gap-[2rem] border-t-[1px] border-[#ececec] px-[6vw] pb-[2rem] pt-[2rem] font-outfit text-[#666]"
   >
-    <div class="h-1/2 w-full flex justify-between flex-col gap-[8vh]">
-      <div class="h-max w-max flex flex-col gap-[1vh]">
-        <a href="/" class="text-[3.8vh] text-[#666] uppercase tracking-[-.4vw]"
+    <div class="h-1/2 w-full flex justify-between flex-col gap-[4rem]">
+      <div class="h-max w-max flex flex-col gap-[1rem]">
+        <a href="/" class="text-[2.4rem] text-[#666] uppercase tracking-[-.4vw]"
           >Woltiz</a
         >
-        <span class="text-[1.8vh] text-[#999] w-[40%]"
+        <span class="text-[1rem] text-[#999] w-[40%]"
           >Delivering quality flooring solutions that bring comfort and elegance
           to every space.</span
         >
       </div>
     </div>
     <div
-      class="h-1/2 w-full flex flex-col gap-[6.2vh] text-[1.4vh] justify-between items-center"
+      class="h-1/2 w-full flex flex-col gap-[3rem] text-[.8rem] justify-between items-center"
     >
       <div class="h-max w-full flex justify-start gap-[4vw]">
         <a href="/about">
