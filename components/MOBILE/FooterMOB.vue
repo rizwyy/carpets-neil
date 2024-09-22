@@ -4,10 +4,10 @@
   >
     <div class="h-1/2 w-full flex justify-between flex-col gap-[4rem]">
       <div class="h-max w-max flex flex-col gap-[1rem]">
-        <a href="/" class="text-[2.4rem] text-[#666] uppercase tracking-[-.4vw]"
+        <a href="/" class="text-[2rem] text-[#666] uppercase tracking-[-.4vw]"
           >Woltiz</a
         >
-        <span class="text-[1rem] text-[#999] w-[40%]"
+        <span class="text-[.8rem] text-[#999] w-[40%]"
           >Delivering quality flooring solutions that bring comfort and elegance
           to every space.</span
         >
