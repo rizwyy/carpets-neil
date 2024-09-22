@@ -8,7 +8,7 @@
     class="assistanceCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[6vh] mb-[8vh]"
   >
     <!-- Title -->
-    <h2 class="text-[#333] text-[3.8vh] tracking-[-.1vw] font-[400] mb-[4vh]">
+    <h2 class="text-[#333] text-[1.8rem] tracking-[-.1vw] font-[400] mb-[4vh]">
       Personal assistance
     </h2>
 
@@ -20,11 +20,13 @@
         class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
         <div class="mr-[4vw]">
-          <homeIcon class="text-[4.8vh] text-[#333]" />
+          <homeIcon class="text-[2.2rem] text-[#333]" />
         </div>
         <div class="flex-[8] text-start">
-          <h3 class="text-[#333] font-[500] text-[2.6vh]">Book a home visit</h3>
-          <p class="text-[#777] text-[2vh]">Bring our collection to you.</p>
+          <h3 class="text-[#333] font-[500] text-[1.2rem]">
+            Book a home visit
+          </h3>
+          <p class="text-[#777] text-[1rem]">Bring our collection to you.</p>
         </div>
         <div class="ml-auto flex-[1]">
           <svg
@@ -50,13 +52,13 @@
         class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
         <div class="pr-[4vw] flex-[1]">
-          <storeIcon class="text-[4.8vh] text-[#333]" />
+          <storeIcon class="text-[2.2rem] text-[#333]" />
         </div>
         <div class="flex-[8] text-start">
-          <h3 class="text-[#333] font-[500] text-[2.6vh]">
+          <h3 class="text-[#333] font-[500] text-[1.2rem]">
             Book a store Visit
           </h3>
-          <p class="text-[#777] text-[2vh]">Book your appointment now</p>
+          <p class="text-[#777] text-[1rem]">Book your appointment now</p>
         </div>
         <div class="ml-auto flex-[1]">
           <svg
@@ -82,13 +84,13 @@
         class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
         <div class="pr-[4vw] flex-[1]">
-          <chatIcon class="text-[4.8vh] text-[#333]" />
+          <chatIcon class="text-[2.2rem] text-[#333]" />
         </div>
         <div class="flex-[8] text-start">
-          <h3 class="text-[#333] font-[500] text-[2.6vh] leading-[3.2vh]">
+          <h3 class="text-[#333] font-[500] text-[1.2rem] leading-[3.2vh]">
             Chat with our Experts
           </h3>
-          <p class="text-[#777] text-[2vh]">For instant advice</p>
+          <p class="text-[#777] text-[1rem]">For instant advice</p>
         </div>
         <div class="ml-auto flex-[1]">
           <svg
@@ -114,13 +116,13 @@
         class="flex items-center w-full px-[4vw] py-[1.8vh] bg-[#f1f1f1] rounded-lg shadow-md border-l-[6px] border-blue-200"
       >
         <div class="pr-[4vw] flex-[1]">
-          <sampleIcon class="text-[4.8vh] text-[#333]" />
+          <sampleIcon class="text-[2.2rem] text-[#333]" />
         </div>
         <div class="flex-[8] text-start">
-          <h3 class="text-[#333] font-[500] text-[2.6vh] leading-[3.2vh]">
+          <h3 class="text-[#333] font-[500] text-[1.2rem] leading-[3.2vh]">
             Request a Sample
           </h3>
-          <p class="text-[#777] text-[2vh]">See, Feel, Decide</p>
+          <p class="text-[#777] text-[1rem]">See, Feel, Decide</p>
         </div>
         <div class="ml-auto flex-[1]">
           <svg

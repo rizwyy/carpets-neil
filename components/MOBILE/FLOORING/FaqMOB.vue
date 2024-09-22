@@ -3,7 +3,7 @@
     class="faqMOB opacity-0 translate-y-[6%] h-full w-full faq-container mx-auto pt-[4vh] pb-[8vh] px-[4vw] max-w-xl font-outfit"
   >
     <h2
-      class="text-[1.5rem] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[5.2vh]"
+      class="text-[1.5rem] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[3rem]"
     >
       Frequently Asked Questions
     </h2>
