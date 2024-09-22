@@ -3,7 +3,7 @@
     class="faqMOB opacity-0 translate-y-[6%] h-full w-full faq-container mx-auto pt-[4vh] pb-[8vh] px-[4vw] max-w-xl font-outfit"
   >
     <h2
-      class="text-[3.8vh] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[5.2vh]"
+      class="text-[1.5rem] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[5.2vh]"
     >
       Frequently Asked Questions
     </h2>
@@ -16,7 +16,7 @@
           @click="toggleFAQ(index)"
         >
           <div class="flex justify-between items-center">
-            <span class="text-[2vh] text-[#333] font-[400]">{{
+            <span class="text-[1rem] text-[#333] font-[400]">{{
               faq.question
             }}</span>
             <span class="ml-[2vw]">
