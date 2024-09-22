@@ -1,7 +1,7 @@
 <template>
   <a
     :href="href"
-    class="h-[24vh] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+    class="h-[11.2rem] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
   >
     <span
       :class="titleClass"
