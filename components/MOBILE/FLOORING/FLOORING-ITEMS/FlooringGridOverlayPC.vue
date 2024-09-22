@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-[990px]:hidden h-max w-screen grid grid-cols-3 gap-[3.4svh] px-[3.2vw]"
+    class="max-[990px]:hidden h-max w-screen grid grid-cols-4 gap-[3.4svh] px-[3.2vw]"
   >
     <FlooringCategoryItem
       v-for="(category, index) in flooringCategoriesFlat"

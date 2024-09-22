@@ -1,28 +1,13 @@
 <template>
+  <div
+    class="newsLetter_temp_div flex gap-[.4vw] opacity-0 invisible items-center translate-x-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed top-[6vh] z-[9999] right-[1vw] px-[1vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
+  >
+    <Icon icon="material-symbols:download-done-rounded" class="text-[1.8rem]" />
+    <span>Subscription successful! We’ll be in touch soon</span>
+  </div>
   <section
     class="SingUpCardPC opacity-0 translate-y-[4%] w-[60vw] h-max mx-auto relative bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[4vw] py-[6vh] relative font-outfit flex flex-col items-center gap-[2vh]"
   >
-    <div
-      class="newsLetter_temp_div opacity-0 flex gap-[.4vw] items-center invisible translate-y-[50%] h-max w-max py-[1.8vh] bg-black text-[#f1f1f1] fixed bottom-[4vh] z-[9999] left-[50%] translate-x-[-50%] px-[1vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
-    >
-      <span>Subscription successful! We’ll be in touch soon.</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 14 14"
-      >
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="m4 8l2.05 1.64a.48.48 0 0 0 .4.1a.5.5 0 0 0 .34-.24L10 4" />
-          <circle cx="7" cy="7" r="6.5" />
-        </g>
-      </svg>
-    </div>
     <!-- Sign-up Header -->
     <h2 class="text-center text-[#333] font-[500] text-[2.5vw]">
       SIGN-UP FOR OFFERS!
@@ -58,6 +43,7 @@
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
 const emailIpt = ref("");
 const emailInvalid = ref(false);
 function isValidEmail(email) {

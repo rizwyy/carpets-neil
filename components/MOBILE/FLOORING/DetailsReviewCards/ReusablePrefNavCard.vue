@@ -2,20 +2,22 @@
   <div
     :class="[
       `id-${item.id}-PrefCardItem w-[99%] mx-auto relative  ${
-        isExpanded ? 'px-[2vw]' : 'px-[4vw]'
-      } py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98]`,
+        isExpanded ? 'px-[2vw] ' : 'px-[2vw] min-[990px]:px-[2vw]'
+      } py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98] min-[990px]:active:scale-[1] min-[990px]:cursor-pointer  `,
     ]"
   >
     <!-- UNEXPANDED -->
     <div
       @click="toggleExpansion"
       :class="[
-        'flex flex-col bg-[white] border-[#999] px-[3.2vw] rounded-xl py-[2vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none',
-        !isExpanded ? 'w-[94%] text-[2.4vh]' : 'w-[100%] text-[2.8vh]',
+        'flex flex-col bg-[white] border-[#999] px-[3.2vw] rounded-xl py-[2vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none  min-[990px]:active:bg-[#0000] min-[990px]:hover:shadow-xl',
+        !isExpanded
+          ? 'w-[94%] min-[990px]:w-full text-[2.4vh]'
+          : 'w-[100%] text-[2.8vh]',
       ]"
     >
       <div class="w-full flex justify-between items-center text-[#444]">
-        <span class="flex items-center">
+        <span class="flex items-center min-[990px]:text-[1.8rem]">
           {{ item.flooring }}
         </span>
         <div v-if="!showConfirmDelete" class="h-max w-max">
@@ -28,13 +30,13 @@
           <div class="h-max w-max flex items-center justify-end gap-[2vw]">
             <div class="h-max w-max flex gap-[2vw] items-center justify-end">
               <button
-                class="px-[4vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600] text-red-700"
+                class="px-[4vw] min-[990px]:px-[1vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600] text-red-700"
                 @click.stop="confirmDelete"
               >
                 CONFIRM
               </button>
               <button
-                class="px-[4vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600]"
+                class="px-[4vw] min-[990px]:px-[1vw] py-[1vh] rounded-full transition-all duration-[.2s] ease-in-out border-[#333] border-[1.4px] text-[1.6vh] font-[600]"
                 @click.stop="cancelDelete"
               >
                 CANCEL

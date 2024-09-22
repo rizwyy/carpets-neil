@@ -8,19 +8,24 @@
     class="h-screen w-screen fixed top-0 left-0 bg-black bg-opacity-[.6] z-[9999] backdrop-blur-[8px] flex flex-col items-center pt-[16vh]"
   >
     <div
-      class="h-[40vh] w-[60vw] bg-white rounded-md overflow-hidden flex flex-col items-center justify-start"
+      class="h-[40vh] w-[50vw] transition-all duration-300 ease-in-out bg-white rounded-2xl overflow-hidden flex flex-col items-center justify-start"
     >
       <div
         class="h-max w-full flex items-center px-[2vw] pt-[2.8vh] pb-[2vh] border-b-[1px]"
       >
         <div class="flex h-max items-center relative justify-center">
           <div v-if="query === ''" class="h-full w-full flex items-center">
-            <SearchIcon class="text-[#333] text-[1.4vw]" />
+            <Icon
+              @click="onSearch"
+              icon="mingcute:search-2-line"
+              class="text-[#333] text-[2rem] cursor-pointer"
+            />
           </div>
           <a v-else :href="selectedUrl">
-            <SearchIcon
+            <Icon
               @click="onSearch"
-              class="text-[#333] text-[1.4vw] cursor-pointer"
+              icon="mingcute:search-2-line"
+              class="text-[#333] text-[2rem] cursor-pointer"
             />
           </a>
         </div>
@@ -60,6 +65,7 @@
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import { ref } from "vue";
 import SearchIcon from "~/public/icons/searchIcon.vue";
 import { searchQueries } from "~/utils/searchQueries"; // Import the search queries

@@ -39,9 +39,19 @@
     <button
       v-if="faqs.length > 5"
       @click="toggleViewMore"
-      class="w-full mt-[2vh] py-[1.8vh] px-[2vw] bg-[#999] text-white rounded-md shadow-lg"
+      class="w-full mt-[2vh] py-[1.8vh] px-[2vw] bg-[#999] text-white rounded-md shadow-lg flex items-center justify-center"
     >
       {{ showMore ? "View Less" : "View More" }}
+      <Icon
+        v-if="showMore"
+        icon="material-symbols:expand-less-rounded"
+        class="text-[1.4rem]"
+      />
+      <Icon
+        v-else
+        icon="material-symbols:expand-more-rounded"
+        class="text-[1.4rem]"
+      />
     </button>
   </div>
 </template>
@@ -50,6 +60,7 @@
 import { ref, computed } from "vue";
 import arrowUpIcon from "~/public/icons/arrowUpIcon.vue";
 import arrowDownIcon from "~/public/icons/arrowDownIcon.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 // FAQ data
 const faqs = ref([

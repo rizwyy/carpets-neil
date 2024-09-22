@@ -1,7 +1,7 @@
 <template>
   <a
     :href="href"
-    class="h-[24vh] w-full rounded-[10px] hover:translate-y-[-2%] transition-all hover:shadow-lg ease-in-out duration-300 overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[.8vw] pt-[3vh] pb-[1.2vh] shadow-xl z-[1]"
+    class="h-[20vh] w-full rounded-[10px] hover:translate-y-[-2%] transition-all hover:shadow-lg ease-in-out duration-300 overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[.8vw] pt-[3vh] pb-[1.2vh] shadow-xl z-[1]"
   >
     <span
       :class="titleClass"

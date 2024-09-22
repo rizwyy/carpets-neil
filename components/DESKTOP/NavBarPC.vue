@@ -20,7 +20,7 @@
   </section>
   <!-- MENU PAGE -->
   <div
-    v-if="isMenuOpen"
+    v-show="isMenuOpen"
     class="menuPageMOB opacity-0 invisible font-outfit fixed top-0 left-0 h-screen w-screen bg-[#f5f3f1] z-[9999]"
   >
     <div
@@ -80,75 +80,87 @@
   </div>
   <!-- CART PAGE -->
   <div
-    class="cartPageMOB invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] w-screen bg-[#f5f3f1] z-[999999]"
+    class="cartPageMOB invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] flex justify-end w-screen bg-transparent z-[999999] backdrop-blur-[12px] bg-[#fff1]"
   >
     <div
-      v-if="userStore.cart.length > 0"
-      class="h-max w-full flex items-center justify-between py-[3.2vh] px-[4vw] bg-[#fff] rounded-b-[12vw]"
+      class="h-full w-[42%] bg-[#f1f1f1] rounded-lg flex flex-col items-start relative cartPageContainerMOB invisible opacity-0 translate-x-[50%]"
     >
-      <div class="h-max w-max flex flex-col">
-        <span class="text-[2.8svh] flex items-center gap-[2vw]">
-          <UserIcon class="text-[2rem]" />
-          <span class="flex flex-col items-start">
-            {{ capitalizeName(userPreference.name) }}
-            <button
-              class="text-[1.6svh] text-[#999] w-full text-left font-[300] tracking-[.4vw]"
-            >
-              {{ userPreference.phone }}
-            </button>
+      <div
+        v-if="userStore.cart.length > 0"
+        class="h-max w-full flex items-center justify-between py-[3.2vh] px-[2vw]"
+      >
+        <span class="text-[2rem] mr-[2vw]">
+          <Icon
+            @click="closeCart"
+            icon="material-symbols:close-small-rounded"
+            class="text-[3.2rem] text-[#777]"
+        /></span>
+        <div class="h-max w-max flex flex-col">
+          <span class="text-[2.8svh] flex items-center gap-[2vw]">
+            <span class="flex flex-col items-start">
+              Hi, {{ capitalizeName(userPreference.name) }}
+              <button
+                class="text-[1.6svh] text-[#999] w-full text-right font-[300] tracking-[.1vw]"
+              >
+                {{ userPreference.phone }}
+              </button>
+            </span>
           </span>
-        </span>
+        </div>
       </div>
-      <span class="text-[2rem] mr-[2vw]"><CloseIcon @click="closeCart" /></span>
-    </div>
-    <div
-      v-else
-      class="h-max w-full flex justify-between items-center pt-[4vh] px-[6vw] text-[3rem]"
-    >
-      <a
-        href="/"
-        class="h-max w-max font-[300] text-[3.2rem] text-[#333] tracking-[-.1vw]"
+      <div
+        v-else
+        class="h-max w-full flex justify-between items-center pt-[4vh] px-[2vw] text-[3rem]"
       >
-        WOLTIZ
-      </a>
-      <CloseIcon @click="closeCart" class="cursor-pointer" />
-    </div>
+        <Icon
+          @click="closeCart"
+          icon="material-symbols:close-small-rounded"
+          class="text-[3.2rem] text-[#777]"
+        />
+      </div>
 
-    <!-- Scrollable content section -->
-    <div
-      :key="userStore.cartKey"
-      v-if="userStore.cart.length > 0"
-      class="h-[70vh] w-full test overflow-y-auto px-[4vw] pb-[6vh]"
-    >
-      <ul v-auto-animate v-for="(item, index) in userStore.cart" :key="index">
-        <ReusablePrefNavCardMOB :item="item" :key="index" />
-      </ul>
-      <div class="h-max w-full px-[4vw] flex justify-center">
-        <button
-          @click="HandleOrderConfirmation"
-          class="text-[2rem] fixed bottom-0 left-[50%] translate-x-[-50%] tracking-[.4vw] bottom-[2vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+      <!-- Scrollable content section -->
+      <div
+        :key="userStore.cartKey"
+        v-if="userStore.cart.length > 0"
+        class="flex-grow w-full overflow-y-auto px-[0vw] pb-[12vh]"
+      >
+        <ul v-auto-animate v-for="(item, index) in userStore.cart" :key="index">
+          <ReusablePrefNavCardMOB :item="item" :key="index" />
+        </ul>
+        <div class="h-max w-full px-[4vw] flex justify-center">
+          <button
+            @click="HandleOrderConfirmation"
+            class="text-[2rem] w-full fixed bottom-0 left-[50%] translate-x-[-50%] tracking-[.2vw] px-[4vw] py-[3.2vh] text-white bg-[#222] text-center shadow-xl"
+          >
+            <loadingIcon v-if="isConfirmLoading" class="text-white" />
+            <span class="text-[2rem]" v-else> PROCEED TO CHECKOUT </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- No items section -->
+      <div
+        v-else
+        class="h-max w-full flex items-center justify-between flex-col gap-[16vh] pt-[12vh] flex-grow"
+      >
+        <div
+          class="h-max w-full px-[0vw] flex items-center justify-between flex-col gap-[2vw] flex-[4]"
         >
-          <loadingIcon v-if="isConfirmLoading" class="text-white" />
-          <span class="text-[2rem]" v-else> PROCEED TO CHECKOUT </span>
-        </button>
+          <Icon icon="mdi:cart-off" class="text-[12rem] text-[#999]" />
+          <span class="text-[1.4rem] font-[300] text-center">
+            Oops! It looks like you don't have any saved preferences yet. <br />
+            Start exploring and add your favorite options!
+          </span>
+        </div>
+        <div class="h-max w-full relative flex justify-center flex-[1]">
+          <a
+            class="text-[1.8rem] w-full bg-[#222] text-[#f1f1f1] text-center flex items-center justify-center py-[2.4vh] tracking-[.4vw]"
+            href="/flooring"
+            >EXPLORE</a
+          >
+        </div>
       </div>
-    </div>
-
-    <!-- No items section -->
-    <div
-      v-else
-      class="h-max w-full flex items-center flex-col gap-[16vh] pt-[12vh] px-[4vw]"
-    >
-      <NuxtImg class="w-[10vw]" src="/icons/box.webp" />
-      <span class="text-[1.8rem] font-[300] text-center">
-        Oops! It looks like you don't have any saved preferences yet. <br />
-        Start exploring and add your favorite options!
-      </span>
-      <a
-        class="text-[2rem] tracking-[.4vw] hover:shadow-2xl duration-300 transition-all ease-in-out px-[4vw] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
-        href="/flooring"
-        >EXPLORE</a
-      >
     </div>
   </div>
 </template>
@@ -167,6 +179,7 @@ import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
 import loadingIcon from "~/public/icons/loadingIcon.vue";
 import arowTopRightIcon from "~/public/icons/arowTopRightIcon.vue";
 import SearchBarPC from "../SearchBar/SearchBarPC.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const restrictedAccess = useCookie("restrictedAccess");
 
@@ -180,7 +193,9 @@ const isConfirmLoading = ref(false);
 function openMenu() {
   isMenuOpen.value = true;
   handleAutoAlpha("menuPageMOB", 1);
-  DISABLE_SCROLL();
+  if (isMenuOpen.value) {
+    DISABLE_SCROLL();
+  }
 }
 function closeMenu() {
   handleAutoAlpha("menuPageMOB", 0);
@@ -192,11 +207,14 @@ function openCart() {
   isCartOpen.value = true;
   handleAutoAlpha("cartPageMOB", 1);
   DISABLE_SCROLL();
+  handleAutoAlpha("cartPageContainerMOB", 1, 0, 0);
 }
 function closeCart() {
   handleAutoAlpha("cartPageMOB", 0);
   ENABLE_SCROLL();
-  isMenuOpen.value = false;
+  handleAutoAlpha("cartPageContainerMOB", 0, "50%", 0);
+
+  isCartOpen.value = false;
 }
 // Function to capitalize the first letter of the name
 function capitalizeName(name) {
