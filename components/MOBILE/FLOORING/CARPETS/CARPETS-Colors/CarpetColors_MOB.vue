@@ -15,7 +15,7 @@
         class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[4vh] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between"
+          class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between"
         >
           <span
             class="text-left text-balance carpets_Color_Details_Mob-HEADING opacity-0 translate-x-[40%] text-detailsHeadCLR"
@@ -28,7 +28,7 @@
             class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
-            Clear All<ClearAllIcon />
+            Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
           </button>
         </div>
         <div
@@ -120,7 +120,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
               :class="{
                 selected: userStore.preference.color.includes('CustomColor'),
               }"
@@ -137,7 +137,7 @@
 
             <!-- MOBILE -->
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[beige] opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-[#555] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[beige] opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-[#555] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Beige'),
               }"
@@ -155,7 +155,7 @@
               </div>
             </div>
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[brown] opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[brown] opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -175,7 +175,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] h-[10vh] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] h-[5.2rem] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -192,7 +192,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 === 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] bg-[gold] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] bg-[gold] h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Gold') }"
               @click="toggleSelect('Gold')"
             >
@@ -209,7 +209,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 !== 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-green-500 opacity-0 translate-y-[20%] selectedColors_MOB h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-green-500 opacity-0 translate-y-[20%] selectedColors_MOB h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -229,7 +229,7 @@
               <!-- MOBILE -->
             </div>
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-blue-500 opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-blue-500 opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
@@ -248,7 +248,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-white opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-white opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
@@ -266,7 +266,7 @@
               </div>
             </div>
             <div
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-black opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-black opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -284,7 +284,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 === 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] bg-[tan] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-[#999] opacity-0 translate-y-[20%] bg-[tan] h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Tan') }"
               @click="toggleSelect('Tan')"
             >
@@ -300,7 +300,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 !== 'Sisal'"
-              class="color-box carpets_Color_Details_Mob-CONTAINER bg-red-500 opacity-0 translate-y-[20%] h-[10vh] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box carpets_Color_Details_Mob-CONTAINER bg-red-500 opacity-0 translate-y-[20%] h-[5.2rem] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Red') }"
               @click="toggleSelect('Red')"
             >

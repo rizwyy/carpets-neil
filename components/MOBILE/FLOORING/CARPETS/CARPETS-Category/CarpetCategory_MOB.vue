@@ -1,11 +1,11 @@
 <template>
   <!-- MOBILE -->
-  <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
+  <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]">
     <div
-      class="carpets_Category_Details_Mob h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      class="carpets_Category_Details_Mob h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
-        class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
+        class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
       >
         <span
           class="text-left text-balance carpet_Category_Details_Mob-HEADING text-detailsHeadCLR"
@@ -15,16 +15,16 @@
         <button
           @click="clearAllSelections"
           v-show="userStore.preference.spec_1.length"
-          class="h-max bg-white text-gray-500 px-[1vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+          class="h-max bg-white text-gray-500 px-[1vw] py-[.4rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
         >
-          Clear All<ClearAllIcon />
+          Clear All <Icon icon="material-symbols:cancel-outline-rounded" />
         </button>
       </div>
       <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
         <!-- Wall To Wall -->
         <div
           :class="[
-            'h-[14vh] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes('Wall to Wall'),
             },
@@ -59,7 +59,7 @@
         <!-- Carpet Tiles -->
         <div
           :class="[
-            'h-[14vh] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes('Carpet Tiles'),
             },
@@ -95,7 +95,7 @@
         <!-- Area Rugs -->
         <div
           :class="[
-            'h-[14vh] carpet_Category_Details_Mob-CONTAINER overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Area Rugs') },
           ]"
           @click="toggleSelect('Area Rugs')"
@@ -128,7 +128,7 @@
         <!-- Customized -->
         <div
           :class="[
-            'h-[14vh] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Runners') },
           ]"
           @click="toggleSelect('Runners')"
@@ -164,6 +164,7 @@
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import { ref } from "vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 

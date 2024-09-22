@@ -3,13 +3,13 @@
   <transition @beforeEnter="handleDetailsDOMEntry('carpet_Types_Details_Mob')">
     <div
       v-show="userStore.preference.spec_1 !== ''"
-      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]"
     >
       <div
-        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+        class="h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9]"
+          class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
         >
           <span
             class="text-left text-balance carpet_Types_Details_Mob-HEADING text-detailsHeadCLR"
@@ -27,7 +27,7 @@
             class="h-max bg-white text-gray-500 text-detailsContainer_clearAllText_MOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
-            Clear All<ClearAllIcon />
+            Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
           </button>
         </div>
         <div class="h-max w-full flex justify-between gap-[2vw] z-[9]">
@@ -35,7 +35,7 @@
           <!-- Plain -->
           <div
             :class="[
-              'h-[14vh] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  overflow-hidden w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  overflow-hidden w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Plain') },
             ]"
             @click="toggleSelect('Plain')"
@@ -46,7 +46,7 @@
             >
               <!-- Selected indicator without text -->
               <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                 >Selected</span
               >
             </div>
@@ -70,7 +70,7 @@
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
-              'h-[14vh] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  overflow-hidden w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  overflow-hidden w-full  rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Textured') },
             ]"
             @click="toggleSelect('Textured')"
@@ -81,7 +81,7 @@
             >
               <!-- Selected indicator without text -->
               <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                 >Selected</span
               >
             </div>
@@ -105,7 +105,7 @@
           <!-- Textured -->
           <div
             :class="[
-              'h-[14vh] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Patterned') },
             ]"
             @click="toggleSelect('Patterned')"
@@ -116,7 +116,7 @@
             >
               <!-- Selected indicator without text -->
               <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                 >Selected</span
               >
             </div>
@@ -139,7 +139,7 @@
           <!-- Customized -->
           <div
             :class="[
-              'h-[14vh] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full  overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Types_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full  overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_2.includes('Stripped') },
             ]"
             @click="toggleSelect('Stripped')"
@@ -150,7 +150,7 @@
             >
               <!-- Selected indicator without text -->
               <span
-                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                 >Selected</span
               >
             </div>
@@ -178,7 +178,6 @@
 
 <script setup>
 import { ref } from "vue";
-import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 
 // PINIA
 
