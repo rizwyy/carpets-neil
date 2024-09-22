@@ -1,17 +1,17 @@
 <template>
   <a
     :href="href"
-    class="h-[11.2rem] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.8vh] items-start justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh]"
+    class="h-[11.2rem] w-[50%] rounded-md overflow-hidden relative flex flex-col gap-[.4rem] items-start justify-between px-[1.8vw] pt-[.8rem] pb-[.5rem]"
   >
     <span
       :class="titleClass"
-      class="w-[75%] h-max flooringItem_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+      class="w-[75%] h-max flooringItem_Text opacity-0 text-gridContainer_heading_MOB font-[400] leading-[1.6rem] z-[1] text-[#f1f1f1]"
     >
       <slot name="title">{{ title }}</slot>
     </span>
     <div class="h-max text-[#fff] w-full px-[2vw] flex justify-end">
       <span
-        class="flooringItem_Text text-[2vh] font-[500] border-b-[1px] opacity-0"
+        class="flooringItem_Text text-[1rem] font-[500] border-b-[1px] opacity-0"
       >
         view all
       </span>
