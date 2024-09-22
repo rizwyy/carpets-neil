@@ -70,12 +70,12 @@ onMounted(() => {
 <template>
   <!-- MOBILE -->
   <section v-if="isMobile" class="min-[990px]:hidden w-max h-max select-none">
-    <NavBarMOB />
     <FloatingBarMOB flooring="CARPETS" link="/" />
-
-    <div
-      class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
+    <ul
+      v-auto-animate
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
+      <NavBarMOB />
       <div
         class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
@@ -101,16 +101,17 @@ onMounted(() => {
       <LazyOrderMethod flooring="Carpets" />
       <LazyInfoForm flooring="Carpets" />
       <LazyReviewCard flooring="Carpets" link="carpets" />
-    </div>
+    </ul>
     <!-- MOBILE -->
   </section>
   <!-- -------------------------------------------- -->
   <!-- DESKTOP -->
   <section v-else class="max-[990px]:hidden max-w-screen h-max select-none">
-    <NavBarPC />
-    <div
-      class="h-max max-w-[100vw] relative overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
+    <ul
+      v-auto-animate
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
     >
+      <NavBarPC />
       <!--  -->
       <ScrollToTopBTNPC />
       <!--  -->
@@ -139,7 +140,7 @@ onMounted(() => {
       <LazyReviewCard flooring="Carpets" link="carpets" />
 
       <!-- DESKTOP -->
-    </div>
+    </ul>
     <!-- DESKTOP -->
   </section>
 </template>

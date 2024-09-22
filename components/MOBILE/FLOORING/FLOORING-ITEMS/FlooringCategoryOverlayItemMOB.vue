@@ -1,7 +1,7 @@
 <template>
   <a
     :href="href"
-    class="h-[16vh] w-[42%] rounded-[8px] overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh] shadow-xl"
+    class="h-[16vh] w-full rounded-[8px] overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh] shadow-xl"
   >
     <span
       :class="titleClass"
@@ -18,7 +18,7 @@
       <ArrowGoIcon />
     </span>
     <div
-      class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-[#000] bg-opacity-[.5]"
+      class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-[#000] bg-opacity-[.4]"
     ></div>
     <NuxtImg
       preload

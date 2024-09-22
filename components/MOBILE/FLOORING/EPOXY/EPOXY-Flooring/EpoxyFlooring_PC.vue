@@ -8,7 +8,7 @@
         class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
       >
         <span class="text-left text-balance text-detailsContainer_heading_PC">
-          Choose Your Flooring
+          Choose Your Sub Floor
         </span>
         <button
           @click="clearAllSelections"

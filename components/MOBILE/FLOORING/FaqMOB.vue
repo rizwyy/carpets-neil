@@ -7,32 +7,33 @@
     >
       Frequently Asked Questions
     </h2>
-
     <!-- Show the first 5 FAQs initially and toggle between view more/less -->
-    <div v-for="(faq, index) in visibleFaqs" :key="index" class="mb-[2vh]">
-      <!-- Question -->
-      <button
-        class="w-full text-left bg-gray-200 px-[2.4vw] py-[1.8vh] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
-        @click="toggleFAQ(index)"
-      >
-        <div class="flex justify-between items-center">
-          <span class="text-[2vh] text-[#333] font-[400]">{{
-            faq.question
-          }}</span>
-          <span class="ml-[2vw]">
-            <arrowUpIcon v-if="isExpanded(index)" /> <arrowDownIcon v-else />
-          </span>
-        </div>
-      </button>
+    <ul v-auto-animate>
+      <li v-for="(faq, index) in visibleFaqs" :key="index" class="mb-[2vh]">
+        <!-- Question -->
+        <button
+          class="w-full text-left bg-gray-200 px-[2.4vw] py-[1.8vh] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
+          @click="toggleFAQ(index)"
+        >
+          <div class="flex justify-between items-center">
+            <span class="text-[2vh] text-[#333] font-[400]">{{
+              faq.question
+            }}</span>
+            <span class="ml-[2vw]">
+              <arrowUpIcon v-if="isExpanded(index)" /> <arrowDownIcon v-else />
+            </span>
+          </div>
+        </button>
 
-      <!-- Answer (conditionally rendered) -->
-      <div
-        v-show="isExpanded(index)"
-        class="mt-[1.2vh] pt-[2vh] px-[3vw] py-[2vh] bg-gray-50 rounded-lg text-[#666] transition-all duration-300 ease-in-out"
-      >
-        {{ faq.answer }}
-      </div>
-    </div>
+        <!-- Answer (conditionally rendered) -->
+        <div
+          v-show="isExpanded(index)"
+          class="mt-[1.2vh] pt-[2vh] px-[3vw] py-[2vh] bg-gray-50 rounded-lg text-[#666] transition-all duration-300 ease-in-out"
+        >
+          {{ faq.answer }}
+        </div>
+      </li>
+    </ul>
 
     <!-- View More / View Less Button -->
     <button

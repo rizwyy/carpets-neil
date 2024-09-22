@@ -1,6 +1,6 @@
 <template>
   <div class="inline-block relative">
-    <InvoiceList class="text-[4vh]" />
+    <InvoiceList class="text-[1.8rem]" />
     <!-- Circle Badge -->
     <div
       v-if="userStore.cart.length > 0"

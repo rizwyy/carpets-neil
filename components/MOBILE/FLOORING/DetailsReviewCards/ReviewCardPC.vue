@@ -39,12 +39,13 @@
       class="h-max w-screen flex flex-col justify-center items-center gap-[4vh] py-[6vh] transition-all ease-in-out duration-300"
     >
       <!-- <PrefCardPC /> -->
-      <div
+      <ul
+        v-auto-animate
         class="w-full h-max transition-all ease-in-out duration-300"
         v-if="userStore.cart.length > 0"
         :key="userStore.cartKey"
       >
-        <div
+        <li
           class="transition-all ease-in-out duration-300"
           v-for="(item, index) in userStore.cart"
           :key="index"
@@ -54,8 +55,8 @@
             :key="index"
             @refreshCart="handleCartRefresh"
           />
-        </div>
-      </div>
+        </li>
+      </ul>
       <div
         v-else
         class="text-center py-[2vh] flex flex-col gap-[3.2vh] items-center"

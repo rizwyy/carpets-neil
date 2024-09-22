@@ -7,7 +7,7 @@
       <div
         class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
       >
-        <span class="text-left text-balance"> Choose Your Flooring </span>
+        <span class="text-left text-balance"> Choose Your Sub Floor </span>
         <button
           @click="clearAllSelections"
           v-show="spec_1.length"

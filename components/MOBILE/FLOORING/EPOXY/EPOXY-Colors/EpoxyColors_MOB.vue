@@ -307,20 +307,29 @@
           >
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <div
-                v-show="userStore.preference.spec_2 === 'Solid'"
-                class="color-box CustomColor h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
-                :class="{ selected: selectedColors.includes('CustomColor') }"
-                @click="toggleSelect('CustomColor')"
+                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                :class="{ selected: selectedColors.includes('Pearl White') }"
+                @click="toggleSelect('Pearl White')"
               >
-                <!-- MOBILE -->
-                <span v-show="!selectedColors.includes('CustomColor')"
-                  >Custom Color</span
+                <NuxtImg
+                  class="h-full w-full absolute top-0 left-0 right-0 z-[-1] rounded-md"
+                  src="/epoxy/metallic/pearlWhiteEpoxy.webp"
+                />
+                <span
+                  class="text-black"
+                  v-show="!userStore.preference.color.includes('Pearl White')"
+                  >Pearl White</span
                 >
-                <div v-show="selectedColors.includes('CustomColor')">
-                  <span class="h-full w-full text-[2vh]">Add More +</span>
+                <!-- MOBILE -->
+                <div
+                  v-show="userStore.preference.color.includes('Pearl White')"
+                >
+                  <span
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    >Selected</span
+                  >
                 </div>
               </div>
-
               <div
                 class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
                 :class="{ selected: selectedColors.includes('Black') }"

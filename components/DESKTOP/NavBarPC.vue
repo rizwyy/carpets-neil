@@ -3,18 +3,19 @@
     class="navBarPC max-[990px]:hidden h-max w-full max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-gradient-to-b from-[#fff] to-[#f1f1f1] font-outfit"
   >
     <div class="h-full w-[35%] flex items-center justify-start">
-      <HamburgerIcon @click="openMenu" class="text-[3.8vh] cursor-pointer" />
+      <HamburgerIcon @click="openMenu" class="text-[2.4rem] cursor-pointer" />
     </div>
     <div class="h-full w-[25%] flex justify-center items-center">
       <a
         href="/"
-        class="h-max w-max block font-[300] text-[3.2vw] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max block font-[300] text-[3.2rem] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
     </div>
-    <div class="h-full w-[35%] flex justify-end gap-[8vw] items-center">
-      <CartIconPC @click="openCart" class="cursor-pointer" />
+    <div class="h-full w-[35%] flex justify-end gap-[4vw] items-center">
+      <CartIconPC @click="openCart" class="cursor-pointer text-[2rem]" />
+      <SearchBarPC class="cursor-pointer text-[2rem]" />
     </div>
   </section>
   <!-- MENU PAGE -->
@@ -27,19 +28,19 @@
     >
       <a
         href="/"
-        class="h-max w-max font-[300] text-[7.2vh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[3rem] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
       <span>
         <CloseIcon
-          class="text-[2.8vw] cursor-pointer text-[#333]"
+          class="text-[2.8rem] cursor-pointer text-[#333]"
           @click="closeMenu"
         />
       </span>
     </div>
     <div
-      class="h-[66vh] w-screen flex flex-col justify-center gap-[3.2vh] items-start px-[4.2vw] text-[2.8vw] text-[#666]"
+      class="h-[66vh] w-screen flex flex-col justify-center gap-[3.2vh] items-start px-[4.2vw] text-[2.4rem] text-[#666]"
     >
       <a
         class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
@@ -70,7 +71,7 @@
         class="flex h-full w-full justify-between px-[4vw] items-center"
       ></div>
       <div
-        class="flex h-full w-full justify-between px-[4vw] py-[4vh] text-[1.4vw] items-center"
+        class="flex h-full w-full justify-between px-[4vw] py-[4vh] text-[1.8rem] items-center"
       >
         <span>Under Development | Demo</span>
         <span>Woltiz</span>
@@ -87,7 +88,7 @@
     >
       <div class="h-max w-max flex flex-col">
         <span class="text-[2.8svh] flex items-center gap-[2vw]">
-          <UserIcon class="text-[4svh]" />
+          <UserIcon class="text-[2rem]" />
           <span class="flex flex-col items-start">
             {{ capitalizeName(userPreference.name) }}
             <button
@@ -98,21 +99,19 @@
           </span>
         </span>
       </div>
-      <span class="text-[4.2svh] mr-[2vw]"
-        ><CloseIcon @click="closeCart"
-      /></span>
+      <span class="text-[2rem] mr-[2vw]"><CloseIcon @click="closeCart" /></span>
     </div>
     <div
       v-else
-      class="h-max w-full flex justify-between items-center pt-[4vh] px-[6vw] text-[4vh]"
+      class="h-max w-full flex justify-between items-center pt-[4vh] px-[6vw] text-[3rem]"
     >
       <a
         href="/"
-        class="h-max w-max font-[300] text-[3vw] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[3.2rem] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
-      <CloseIcon @click="closeCart" />
+      <CloseIcon @click="closeCart" class="cursor-pointer" />
     </div>
 
     <!-- Scrollable content section -->
@@ -121,16 +120,16 @@
       v-if="userStore.cart.length > 0"
       class="h-[70vh] w-full test overflow-y-auto px-[4vw] pb-[6vh]"
     >
-      <div v-for="(item, index) in userStore.cart" :key="index">
+      <ul v-auto-animate v-for="(item, index) in userStore.cart" :key="index">
         <ReusablePrefNavCardMOB :item="item" :key="index" />
-      </div>
+      </ul>
       <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="HandleOrderConfirmation"
-          class="text-[2.4svh] tracking-[.4vw] bottom-[2vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+          class="text-[2rem] tracking-[.4vw] bottom-[2vh] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         >
           <loadingIcon v-if="isConfirmLoading" class="text-white" />
-          <span class="text-[2svh]" v-else> PROCEED TO CHECKOUT </span>
+          <span class="text-[2rem]" v-else> PROCEED TO CHECKOUT </span>
         </button>
       </div>
     </div>
@@ -141,12 +140,12 @@
       class="h-max w-full flex items-center flex-col gap-[16vh] pt-[12vh] px-[4vw]"
     >
       <NuxtImg class="w-[10vw]" src="/icons/box.webp" />
-      <span class="text-[2vw] font-[300] text-center">
+      <span class="text-[1.8rem] font-[300] text-center">
         Oops! It looks like you don't have any saved preferences yet. <br />
         Start exploring and add your favorite options!
       </span>
       <a
-        class="text-[1.8vw] tracking-[.4vw] hover:shadow-2xl duration-300 transition-all ease-in-out px-[4vw] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
+        class="text-[2rem] tracking-[.4vw] hover:shadow-2xl duration-300 transition-all ease-in-out px-[4vw] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl fixed bottom-[6vh] left-[50vw] translate-x-[-50%] w-[40vw] shadow-xl"
         href="/flooring"
         >EXPLORE</a
       >
@@ -167,6 +166,7 @@ import CloseIcon from "./../../public/icons/closeIcon";
 import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
 import loadingIcon from "~/public/icons/loadingIcon.vue";
 import arowTopRightIcon from "~/public/icons/arowTopRightIcon.vue";
+import SearchBarPC from "../SearchBar/SearchBarPC.vue";
 
 const restrictedAccess = useCookie("restrictedAccess");
 

@@ -3,7 +3,7 @@
     class="h-max max-w-[100vw] flex flex-col gap-[4.8vh] min-[1590px]:gap-[4vh] py-[6vh] pb-[14vh] font-outfit"
   >
     <div class="h-max w-full flex justify-center min-[1590px]:py-[2vh]">
-      <span class="text-[2.8vw] font-[4000]">Shop By Flooring Category</span>
+      <span class="text-[2.8rem] font-[400]">Shop By Flooring Category</span>
     </div>
 
     <!-- Category Cards Loop -->

@@ -5,11 +5,11 @@
     class="navBarMOB bg-navBarBG opacity-[.2] min-[990px]:hidden h-[12vh] px-[6vw] w-full flex items-center justify-between z-[99] font-outfit relative"
   >
     <div class="h-max w-max">
-      <HamburgerIcon @click="openMenu" class="text-[3.8vh]" />
+      <HamburgerIcon @click="openMenu" class="text-[1.8rem]" />
     </div>
     <a
       href="/"
-      class="h-max w-max absolute top-[50%] left-[50%] translate-x-[-58%] translate-y-[-50%] font-[300] text-[5vh] text-[#333] tracking-[-.1vw]"
+      class="h-max w-max absolute top-[50%] left-[50%] translate-x-[-58%] translate-y-[-50%] font-[300] text-[2.4rem] text-[#333] tracking-[-.1vw]"
     >
       WOLTIZ
     </a>
@@ -27,16 +27,16 @@
     <div class="h-[14svh] w-screen px-[4vw] items-center flex justify-between">
       <a
         href="/"
-        class="h-max w-max font-[300] text-[5svh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[2.4rem] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
-      <span class="text-[5svh]">
+      <span class="text-[2.4rem]">
         <CloseIcon @click="closeMenu" />
       </span>
     </div>
     <div
-      class="h-[66svh] w-screen flex flex-col justify-center gap-[2svh] items-start px-[4vw] text-[3.8svh]"
+      class="h-[66svh] w-screen flex flex-col justify-center gap-[2svh] items-start px-[4vw] text-[1.8rem]"
     >
       <a href="/">Flooring</a><a href="/about">About</a><span>Contact</span
       ><a href="/privacy">Privacy Policy</a>
@@ -47,7 +47,9 @@
       >
     </div>
     <div class="h-[20svh] w-screen flex flex-col justify-start">
-      <div class="flex h-full w-full justify-between px-[6vw] items-center">
+      <div
+        class="flex h-full w-full justify-between px-[6vw] items-center text-[1rem]"
+      >
         <span>Under Development | Demo</span>
         <span>Woltiz</span>
       </div>
@@ -96,14 +98,15 @@
     </div>
 
     <!-- Scrollable content section -->
-    <div
+    <ul
+      v-auto-animate
       :key="userStore.cartKey"
       v-if="userStore.cart.length > 0"
       class="h-[70vh] w-full test overflow-y-auto px-[4vw] pb-[6vh]"
     >
-      <div v-for="(item, index) in userStore.cart" :key="index">
+      <li v-for="(item, index) in userStore.cart" :key="index">
         <ReusablePrefNavCardMOB :item="item" :key="index" />
-      </div>
+      </li>
       <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="HandleOrderConfirmation"
@@ -116,7 +119,7 @@
           <span class="text-[2svh]" v-else> PROCEED TO CHECKOUT </span>
         </button>
       </div>
-    </div>
+    </ul>
 
     <!-- No items section -->
     <div
@@ -124,12 +127,12 @@
       class="h-max w-full flex items-center flex-col gap-[16svh] pt-[18svh] px-[4vw]"
     >
       <NuxtImg class="h-[16svh]" src="/icons/box.webp" />
-      <span class="text-[2.4vh] font-[300] text-center">
+      <span class="text-[1rem] font-[300] text-center">
         Oops! It looks like you don't have any saved preferences yet. Start
         exploring and add your favorite options!
       </span>
       <a
-        class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
+        class="text-[1.2rem] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl"
         href="/flooring"
         >EXPLORE</a
       >

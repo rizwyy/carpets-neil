@@ -62,16 +62,16 @@ defineProps({
       class="h-full w-full inset-0 flex items-end justify-between pb-[2.4vh] px-[2vw] z-[1]"
     >
       <span
-        class="text-[2.4vw] flooringItem_Text opacity-0 font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[2vw]"
+        class="text-[2.4rem] flooringItem_Text opacity-0 font-[400] text-[#f1f1f1] leading-tight min-[1590px]:text-[2.4rem]"
       >
         {{ name }}
       </span>
 
       <a
         :href="link"
-        class="flooringItem_Text opacity-0 text-[1.2vw] text-[#fff9] font-[500] flex items-center"
+        class="flooringItem_Text opacity-0 text-[1.2rem] text-[#fff9] font-[500] flex items-center"
       >
-        View All <arrowRightIcon class="text-[2vw]" />
+        View All <arrowRightIcon class="text-[2rem]" />
       </a>
     </div>
 

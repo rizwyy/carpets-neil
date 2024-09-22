@@ -656,6 +656,7 @@ const metallicColors = [
   { name: "Black", image: "/epoxy/metallic/blackEpoxy.webp" },
   { name: "Caramel", image: "/epoxy/metallic/caramelEpoxy.webp" },
   { name: "Clear", image: "/epoxy/metallic/clearEpoxy.webp" },
+  { name: "Pearl White", image: "/epoxy/metallic/pearlWhiteEpoxy.webp" },
 ];
 
 const flakeColors = [

@@ -54,10 +54,12 @@ onMounted(() => {
 <template>
   <!-- DESKTOP -->
   <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
-    <NavBarPC />
-    <div
+    <ul
+      v-auto-animate
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
     >
+      <NavBarPC />
+
       <div
         class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
@@ -68,7 +70,6 @@ onMounted(() => {
         >
           Epoxy Flooring
           <!-- DESKTOP -->
-          {{ userStore.preference.spec_2 }}
         </a>
         <span class="text-[5.4vh]"> Specify Your Needs </span>
       </div>
@@ -80,18 +81,20 @@ onMounted(() => {
       <LazyOrderMethod flooring="epoxy" />
       <LazyInfoForm flooring="epoxy" />
       <LazyReviewCard flooring="epoxy" link="epoxy" />
-    </div>
+    </ul>
     <!-- DESKTOP -->
   </section>
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max">
-    <NavBarMOB />
     <!-- <FloatingBarMOB flooring="EPOXY" link="/" /> -->
 
-    <div
-      class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
+    <ul
+      v-auto-animate
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
     >
+      <NavBarMOB />
+
       <div
         class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
@@ -115,7 +118,7 @@ onMounted(() => {
       <LazyOrderMethod flooring="epoxy" />
       <LazyInfoForm flooring="epoxy" />
       <LazyReviewCard flooring="epoxy" link="epoxy" />
-    </div>
+    </ul>
   </section>
 </template>
 

@@ -17,7 +17,7 @@ const userStore = useUserStore();
     >
       <a
         href="/flooring/customize"
-        class="font-medium text-[2.2vh] flex items-center justify-center gap-[1vw] bg-gradient-to-r from-white/70 via-cyan-100 to-white/70 bg-clip-text text-transparent animate-gradient"
+        class="font-medium text-[1rem] flex items-center justify-center gap-[1vw] bg-gradient-to-r from-white/70 via-cyan-100 to-white/70 bg-clip-text text-transparent animate-gradient"
       >
         CUSTOM <span>{{ flooring }}</span>
         <svg
@@ -34,7 +34,7 @@ const userStore = useUserStore();
     </div>
     <div class="flex items-center justify-center w-1/3">
       <a
-        class="text-gray-300 font-medium text-[2vh] flex gap-[1vw] items-center justify-center"
+        class="text-gray-300 font-medium text-[1rem] flex gap-[1vw] items-center justify-center"
       >
         <span>CHAT </span>
         <svg

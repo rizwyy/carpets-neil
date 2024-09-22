@@ -1,13 +1,17 @@
 <template>
   <div
     :class="[
-      `id-${item.id}-PrefCardItem w-[99%] mx-auto relative px-[4vw] py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98]`,
+      `id-${item.id}-PrefCardItem w-[99%] mx-auto relative  ${
+        isExpanded ? 'px-[2vw]' : 'px-[4vw]'
+      } py-[3.2vh] font-outfit flex flex-col items-center justify-center bg-transparent transition-all duration-[.2s] ease-in-out active:scale-[.98]`,
     ]"
   >
     <!-- UNEXPANDED -->
     <div
+      @click="toggleExpansion"
       :class="[
-        'flex flex-col bg-[#fff] border-[#999] px-[3.2vw] rounded-b-[0px] rounded-t-xl py-[1.8vh]  select-none w-[100%] text-[2.8vh]',
+        'flex flex-col bg-[white] border-[#999] px-[3.2vw] rounded-xl py-[2vh] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none',
+        !isExpanded ? 'w-[94%] text-[2.4vh]' : 'w-[100%] text-[2.8vh]',
       ]"
     >
       <div class="w-full flex justify-between items-center text-[#444]">
@@ -44,10 +48,10 @@
     <!-- EXPANDED -->
     <div
       v-show="isExpanded"
-      class="w-full flex flex-col gap-[2vh] transition-all duration-[.2s]"
+      class="w-[98%] flex flex-col gap-[2vh] pt-[2vh] transition-all duration-[.2s]"
     >
       <div
-        class="w-full flex flex-col items-start rounded-t-[0px] rounded-b-xl gap-[1vh] bg-[#fff] py-[2vh] rounded-xl px-[3.2vw]"
+        class="w-full flex flex-col items-start gap-[1vh] bg-white py-[2vh] rounded-xl px-[3.2vw]"
       >
         <SpecDetail :label="getLabel(item.flooring)" :value="item.spec_1" />
         <SpecDetail
@@ -119,23 +123,12 @@ const { item } = defineProps({
   },
 });
 
-const isExpanded = ref(true);
+const isExpanded = ref(false);
 const showConfirmDelete = ref(false);
 const itemToDelete = ref(null);
 
 function toggleExpansion() {
   isExpanded.value = !isExpanded.value;
-}
-function fadeOut(id) {
-  gsap.to(`.id-${item.id}-PrefCardItem`, {
-    autoAlpha: 0, // Opacity 0 and visibility hidden
-    duration: 0.5, // 1-second duration
-    y: 100,
-    ease: "back.in",
-  });
-  gsap.to(`.id-${item.id}-PrefCardItem`, {
-    display: "hidden",
-  });
 }
 
 function promptDelete(item) {
@@ -144,14 +137,8 @@ function promptDelete(item) {
 }
 
 function confirmDelete() {
-  // Perform fade-out animation
-  fadeOut(itemToDelete.value.id);
-
-  // Delay of 0.5 seconds before executing the delete operation
-  setTimeout(() => {
-    handleDeleteItemAndUpdate(itemToDelete.value.id);
-    showConfirmDelete.value = false;
-  }, 400);
+  handleDeleteItemAndUpdate(itemToDelete.value.id);
+  showConfirmDelete.value = false;
 }
 
 function cancelDelete() {

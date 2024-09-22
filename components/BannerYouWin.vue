@@ -23,7 +23,7 @@
         />
       </div>
       <span
-        class="font-outfit text-[4.2vw] flooringBannerPC_Text opacity-0 min-[1590px]:text-[7.2vh] font-[400] text-[#f6f6f6]"
+        class="font-outfit text-[4.2rem] flooringBannerPC_Text opacity-0 min-[1590px]:text-[5rem] font-[400] text-[#f6f6f6]"
         >{{
           `${userStore.customPreference.category} Flooring` || "Flooring"
         }}.</span
@@ -69,7 +69,7 @@
         />
       </div>
       <span
-        class="font-outfit text-bannerContainer_heading_MOB font-[400] text-[#f1f1f1] flooringBanner_Text opacity-0"
+        class="font-outfit text-[2.8rem] font-[400] text-[#f1f1f1] flooringBanner_Text opacity-0"
         >{{
           `${userStore.customPreference.category} Flooring` || "Flooring"
         }}.</span

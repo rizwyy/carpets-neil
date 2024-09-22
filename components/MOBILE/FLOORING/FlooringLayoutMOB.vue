@@ -18,7 +18,7 @@ import FlooringGridMOB from "./FLOORING-ITEMS/FlooringGridMOB.vue";
 <template>
   <section class="h-max w-max min-[990px]:hidden font-outfit">
     <div class="h-max w-screen py-[2vh] text-[#333] px-[3.2vw]">
-      <span class="flooringLayoutHeading text-[3.8vh] tracking-[-.1vw]"
+      <span class="flooringLayoutHeading text-[1.5rem] tracking-[-.1vw]"
         >Shop By Category</span
       >
     </div>
