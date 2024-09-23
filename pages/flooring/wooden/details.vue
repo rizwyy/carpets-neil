@@ -95,11 +95,12 @@ onMounted(() => {
   <!-- -------------------------------------------- -->
   <!-- MOBILE -->
   <section v-else class="min-[990px]:hidden w-max h-max select-none">
-    <NavBarMOB />
     <FloatingBarMOB flooring="WOODEN" link="/" />
-    <div
-      class="h-max w-screen font-outfit flex flex-col gap-[.5rem] flex flex-col gap-[.5rem] items-center z-[2]"
+    <ul
+      v-auto-animate
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[.5rem] flex flex-col gap-[.5rem] items-center z-[2]"
     >
+      <NavBarMOB />
       <div
         class="h-max px-[4vw] pt-[.7rem] pb-[.2rem] w-full flex flex-col items-start text-[1.9rem] gap-[1rem]"
       >
@@ -125,7 +126,7 @@ onMounted(() => {
       <LazyOrderMethod flooring="Wooden" />
       <LazyInfoForm flooring="Wooden" />
       <LazyReviewCard flooring="Wooden" link="wooden" />
-    </div>
+    </ul>
     <!-- MOBILE -->
   </section>
 </template>

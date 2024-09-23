@@ -16,7 +16,7 @@
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between raised_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
+          class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between raised_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
         >
           Choose Your Color
           <button
@@ -128,7 +128,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box CustomColor h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              class="color-box CustomColor h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
               :class="{
                 selected: userStore.preference.color.includes('CustomColor'),
               }"
@@ -145,7 +145,7 @@
 
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Beige'),
               }"
@@ -167,7 +167,7 @@
               </div>
             </div>
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -192,7 +192,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -212,7 +212,7 @@
               </div>
             </div>
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -235,7 +235,7 @@
               <!-- MOBILE -->
             </div>
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
@@ -258,7 +258,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
@@ -280,7 +280,7 @@
               </div>
             </div>
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -302,7 +302,7 @@
               </div>
             </div>
             <div
-              class="color-box h-[10vh] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] raised_Color_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Rose') }"
               @click="toggleSelect('Rose')"
             >

@@ -16,7 +16,7 @@
       >
         <!-- MOBILE -->
         <div
-          class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
+          class="h-max w-full flex items-center justify-between text-[1.6rem] z-[9] pl-[2vw]"
         >
           <span class="gym_Budget_Details_Mob-HEADING">Choose Your Budget</span>
           <button
@@ -47,7 +47,7 @@
           <!-- VALUE -->
           <div
             :class="[
-              'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Value' },
             ]"
             @click="toggleSelect('Value')"
@@ -73,7 +73,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center text-right"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center text-right"
             >
               <span> Value </span>
             </div>
@@ -95,7 +95,7 @@
           <!-- ESSENTIAL -->
           <div
             :class="[
-              'h-[10vh] gym_Budget_Details_Mob-CONTAINER w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] gym_Budget_Details_Mob-CONTAINER w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Essential' },
             ]"
             @click="toggleSelect('Essential')"
@@ -122,7 +122,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Essential </span>
             </div>
@@ -145,7 +145,7 @@
           <!-- <div
           v-else
           :class="[
-            'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
+            'h-[5.2rem] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  text-[#f1f1f1] px-[4.8vw] py-[1.2vh] relative cursor-pointer',
           ]"
         >
           <div
@@ -161,7 +161,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Premier' },
             ]"
             @click="toggleSelect('Premier')"
@@ -188,7 +188,7 @@
             <!-- MOBILE -->
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Premier </span>
             </div>
@@ -211,7 +211,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Signature' },
             ]"
             @click="toggleSelect('Signature')"
@@ -238,7 +238,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Signature </span>
             </div>
@@ -258,7 +258,7 @@
           </div>
           <div
             :class="[
-              'h-[10vh] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] gym_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Elite' },
             ]"
             @click="toggleSelect('Elite')"
@@ -285,7 +285,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Elite </span>
             </div>

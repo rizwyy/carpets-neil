@@ -27,7 +27,7 @@
     <div class="h-[14svh] w-screen px-[4vw] items-center flex justify-between">
       <a
         href="/"
-        class="h-max w-max font-[300] text-[2.4rem] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[2.8rem] text-[#333] tracking-[-.1rem]"
       >
         WOLTIZ
       </a>
@@ -36,10 +36,23 @@
       </span>
     </div>
     <div
-      class="h-[66svh] w-screen flex flex-col justify-center gap-[2svh] items-start px-[4vw] text-[1.8rem]"
+      class="h-[66svh] w-screen flex flex-col justify-center gap-[2rem] items-start px-[4vw] text-[2.2rem]"
     >
-      <a href="/">Flooring</a><a href="/about">About</a><span>Contact</span
-      ><a href="/privacy">Privacy Policy</a>
+      <ul class="flex flex-col gap-[1rem]">
+        <li v-for="(link, index) in links" :key="index">
+          <a
+            class="flex items-center gap-[2vw]"
+            v-if="link.url"
+            :href="link.url"
+            >{{ link.label }}
+            <Icon
+              icon="ic:round-arrow-forward"
+              class="text-[1.8rem] text-[#444]"
+            />
+          </a>
+          <span v-else>{{ link.label }}</span>
+        </li>
+      </ul>
       <a
         class="bg-[#333] px-[6vw] rounded-sm text-[#f1f1f1] text-[3.4svh] py-[1svh] mt-[5svh]"
         href="/designer"
@@ -61,24 +74,24 @@
   <!-- --------- -->
   <!-- --------- -->
   <div
-    class="cartPageMOB invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] w-screen bg-[#f5f3f1] z-[999999]"
+    class="cartPageMOB invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] w-screen bg-[#fcfcfc] z-[999999] flex flex-col justify-between"
   >
     <div
       v-if="userStore.cart.length > 0"
       class="h-max w-full flex items-center justify-between py-[3.2vh] px-[4vw] bg-[#fff] rounded-b-[12vw]"
     >
       <div class="h-max w-max flex flex-col">
-        <span class="text-[2.8svh] flex items-center gap-[2vw]">
-          <UserIcon class="text-[4svh]" />
+        <span class="text-[2.8svh] flex items-start gap-[1vw]">
+          Hi,
           <span class="flex flex-col items-start">
             {{ capitalizeName(userPreference.name) }}
-            <button
-              class="text-[1.6svh] text-[#999] w-full text-left font-[300] tracking-[.4vw]"
-            >
-              {{ userPreference.phone }}
-            </button>
           </span>
         </span>
+        <button
+          class="text-[.8rem] text-[#999] w-full text-left font-[300] tracking-[.4vw]"
+        >
+          {{ userPreference.phone }}
+        </button>
       </div>
       <span class="text-[4.2svh] mr-[2vw]"
         ><CloseIcon @click="closeCart"
@@ -86,11 +99,11 @@
     </div>
     <div
       v-else
-      class="h-max w-full flex justify-between items-center pt-[4vh] px-[6vw] text-[4vh]"
+      class="h-max w-full flex justify-between items-center pt-[1.8rem] px-[6vw] text-[2rem]"
     >
       <a
         href="/"
-        class="h-max w-max font-[300] text-[4.2vh] text-[#333] tracking-[-.1vw]"
+        class="h-max w-max font-[300] text-[2rem] text-[#333] tracking-[-.1vw]"
       >
         WOLTIZ
       </a>
@@ -102,7 +115,7 @@
       v-auto-animate
       :key="userStore.cartKey"
       v-if="userStore.cart.length > 0"
-      class="h-[70vh] w-full test overflow-y-auto px-[4vw] pb-[6vh]"
+      class="flex-grow w-full test overflow-y-auto px-[4vw] pb-[6.8rem]"
     >
       <li v-for="(item, index) in userStore.cart" :key="index">
         <ReusablePrefNavCardMOB :item="item" :key="index" />
@@ -110,13 +123,13 @@
       <div class="h-max w-full px-[4vw] flex justify-center">
         <button
           @click="HandleOrderConfirmation"
-          class="text-[2.4svh] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl flex items-center justify-center"
+          class="text-[1.2rem] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl flex items-center justify-center"
         >
           <loadingIcon
             v-if="isConfirmLoading"
-            class="text-white text-[2.6vh]"
+            class="text-white text-[1.2rem]"
           />
-          <span class="text-[2svh]" v-else> PROCEED TO CHECKOUT </span>
+          <span class="text-[1.2rem]" v-else> PROCEED TO CHECKOUT </span>
         </button>
       </div>
     </ul>
@@ -124,10 +137,10 @@
     <!-- No items section -->
     <div
       v-else
-      class="h-max w-full flex items-center flex-col gap-[16svh] pt-[18svh] px-[4vw]"
+      class="h-[60rem] w-full flex items-center flex-col gap-[8rem] pt-[9rem] px-[4vw]"
     >
-      <NuxtImg class="h-[16svh]" src="/icons/box.webp" />
-      <span class="text-[1rem] font-[300] text-center">
+      <NuxtImg class="h-[8rem]" src="/icons/box.webp" />
+      <span class="text-[1.4rem] font-[300] text-center">
         Oops! It looks like you don't have any saved preferences yet. Start
         exploring and add your favorite options!
       </span>
@@ -160,7 +173,15 @@ const isCartOpen = ref(false);
 const userPreference = ref("");
 const router = useRouter();
 
+const links = [
+  { label: "Flooring", url: "/" },
+  { label: "About", url: "/about" },
+  { label: "Contact", url: "/about" }, // No URL, so will be rendered as a span
+  { label: "How Woltiz Works", url: "/privacy" },
+];
+
 import CartIconMOB from "./CartIconMOB.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 const isConfirmLoading = ref(false);
 function openMenu() {
   isMenuOpen.value = true;

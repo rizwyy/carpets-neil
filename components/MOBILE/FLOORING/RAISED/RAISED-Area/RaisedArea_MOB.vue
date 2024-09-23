@@ -5,7 +5,7 @@
       class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
-        class="h-max w-full flex items-center justify-between text-[3.2vh] z-[9]"
+        class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9]"
       >
         <span class="text-left text-balance"> Choose Your Area</span>
         <button
@@ -31,7 +31,7 @@
           <!-- Data Center -->
           <div
             :class="[
-              'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_1.includes('Data Center') },
             ]"
             @click="toggleSelect('Data Center')"
@@ -64,7 +64,7 @@
           <!-- Commercial -->
           <div
             :class="[
-              'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_1.includes('Commercial') },
             ]"
             @click="toggleSelect('Commercial')"
@@ -98,7 +98,7 @@
           <!-- Industry -->
           <div
             :class="[
-              'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_1.includes('Industry') },
             ]"
             @click="toggleSelect('Industry')"
@@ -131,7 +131,7 @@
           <!-- Healthcare -->
           <div
             :class="[
-              'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_1.includes('Healthcare') },
             ]"
             @click="toggleSelect('Healthcare')"
@@ -165,7 +165,7 @@
           <!-- Activities -->
           <div
             :class="[
-              'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_1.includes('Activities') },
             ]"
             @click="toggleSelect('Activities')"
@@ -198,7 +198,7 @@
           <!-- Others -->
           <div
             :class="[
-              'h-[14vh] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: spec_1.includes('Others') },
             ]"
             @click="toggleSelect('Others')"

@@ -388,3 +388,8 @@ export function toCamelCase(str) {
     .toLowerCase() // Convert the entire string to lowercase
     .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase()); // Remove non-alphanumeric characters and capitalize the next letter
 }
+
+export function capitalizeFirstLetter(string) {
+  if (!string) return "";
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}

@@ -11,7 +11,7 @@
       <div
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
-        <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
+        <div class="h-max w-full flex justify-between text-[1.6rem] z-[9]">
           <!-- MOBILE -->
           <span class="text-left text-balance gym_Flooring_Details_Mob-HEADING"
             >Choose your Flooring</span
@@ -39,7 +39,7 @@
           <!-- Rubber -->
           <div
             :class="[
-              'h-[14vh]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Rubber' },
             ]"
             @click="toggleSelect('Rubber')"
@@ -71,7 +71,7 @@
           <!-- PVC -->
           <div
             :class="[
-              'h-[14vh]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'PVC' },
             ]"
             @click="toggleSelect('PVC')"
@@ -104,7 +104,7 @@
           <!-- Wooden -->
           <div
             :class="[
-              'h-[14vh]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Wooden' },
             ]"
             @click="toggleSelect('Wooden')"
@@ -137,7 +137,7 @@
           <div
             v-show="!(userStore.preference.spec_1 === 'Strength')"
             :class="[
-              'h-[14vh]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem]  gym_Flooring_Details_Mob-CONTAINER  w-full rounded-md overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               {
                 selected: userStore.preference.spec_3 === 'Artificial Grass',
               },

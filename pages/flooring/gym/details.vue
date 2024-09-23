@@ -58,10 +58,10 @@ onMounted(() => {
   <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
     <NavBarPC />
     <div
-      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[1rem] flex flex-col gap-[6vh] items-center"
     >
       <div
-        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+        class="h-max px-[6vw] pt-[4vh] pb-[0vh] w-full flex flex-col items-start text-[1.9rem] gap-[1rem]"
       >
         <!-- DESKTOP -->
         <a
@@ -92,10 +92,10 @@ onMounted(() => {
     <NavBarMOB />
     <FloatingBarMOB flooring="GYM FLOORS" link="/" />
     <div
-      class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
+      class="h-max w-screen font-outfit flex flex-col gap-[.5rem] flex flex-col gap-[.5rem] items-center z-[2]"
     >
       <div
-        class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+        class="h-max px-[4vw] pt-[.7rem] pb-[.2rem] w-full flex flex-col items-start text-[1.9rem] gap-[1rem]"
       >
         <!-- MOBILE -->
         <div class="h-max w-full flex justify-between">
@@ -107,7 +107,7 @@ onMounted(() => {
           </a>
           <CurrencyDetails />
         </div>
-        <span class="text-[3.8vh]"> Specify Your Needs </span>
+        <span class="text-[1.9rem]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
       <GymApplicationDetails :existingUser="existingUser" />

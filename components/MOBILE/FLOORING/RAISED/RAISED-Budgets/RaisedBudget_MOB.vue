@@ -16,7 +16,7 @@
       >
         <!-- MOBILE -->
         <div
-          class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw]"
+          class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9] pl-[2vw]"
         >
           <span
             class="raised_Budget_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -50,7 +50,7 @@
           <!-- VALUE -->
           <div
             :class="[
-              'h-[10vh] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Value' },
             ]"
             @click="toggleSelect('Value')"
@@ -75,7 +75,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Value </span>
             </div>
@@ -97,7 +97,7 @@
           <!-- ESSENTIAL -->
           <div
             :class="[
-              'h-[10vh] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Essential' },
             ]"
             @click="toggleSelect('Essential')"
@@ -124,7 +124,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Essential </span>
             </div>
@@ -148,7 +148,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Premier' },
             ]"
             @click="toggleSelect('Premier')"
@@ -175,7 +175,7 @@
             <!-- MOBILE -->
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Premier </span>
             </div>
@@ -198,7 +198,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Signature' },
             ]"
             @click="toggleSelect('Signature')"
@@ -224,7 +224,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Signature </span>
             </div>
@@ -244,7 +244,7 @@
           </div>
           <div
             :class="[
-              'h-[10vh] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem] raised_Budget_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Elite' },
             ]"
             @click="toggleSelect('Elite')"
@@ -270,7 +270,7 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Elite </span>
             </div>

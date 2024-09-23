@@ -1,9 +1,9 @@
 <template>
   <div
-    class="min-[990px]:hidden searchBarMOB opacity-0 translate-y-[-20%] relative h-max w-screen flex flex-col items-center justify-center my-[1.8vh] px-[8vw] font-outfit"
+    class="min-[990px]:hidden searchBarMOB opacity-0 translate-y-[-20%] relative h-max w-screen flex flex-col items-center justify-center my-[.9rem] px-[8vw] font-outfit"
   >
     <div
-      class="div_searchBar h-[7.2vh] w-full flex items-center bg-[#f7f5f2] pl-[1vw] rounded-lg shadow-md overflow-hidden"
+      class="div_searchBar h-[3.2rem] w-full flex items-center bg-[#f7f5f2] pl-[1vw] rounded-lg shadow-md overflow-hidden"
     >
       <input
         v-model="query"
@@ -12,7 +12,7 @@
         @blur="onBlur"
         type="text"
         placeholder="Find your dream product..."
-        class="input_searchBar h-max w-full bg-[#f7f5f2] text-[1rem] py-[1.8vh] font-[400] flex-grow pl-[4vw] outline-none focus:outline-none"
+        class="input_searchBar h-max w-full bg-[#f7f5f2] text-[1rem] py-[.9rem] font-[400] flex-grow pl-[4vw] outline-none focus:outline-none"
       />
       <div
         @click="onSearch"

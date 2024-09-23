@@ -10,7 +10,7 @@
       <div
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
-        <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
+        <div class="h-max w-full flex justify-between text-[1.5rem] z-[9]">
           <!-- MOBILE -->
           <span
             class="text-left text-balance sport_Flooring_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -44,7 +44,7 @@
                 <!-- Artificial Grass -->
                 <div
                   :class="[
-                    'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                    'h-[7.2rem] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                     {
                       selected:
                         userStore.preference.spec_2.includes(
@@ -85,7 +85,7 @@
                 <!-- Rubber -->
                 <div
                   :class="[
-                    'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                    'h-[7.2rem] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                     {
                       selected: userStore.preference.spec_2.includes('Rubber'),
                     },
@@ -122,7 +122,7 @@
                 <!-- Wooden Sprung -->
                 <div
                   :class="[
-                    'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                    'h-[7.2rem] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                     {
                       selected:
                         userStore.preference.spec_2.includes('Wooden Sprung'),
@@ -161,7 +161,7 @@
                 <!-- PolyUrethane -->
                 <div
                   :class="[
-                    'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                    'h-[7.2rem] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                     {
                       selected:
                         userStore.preference.spec_2.includes('PolyUrethane'),
@@ -206,7 +206,7 @@
                 <!-- PVC Sports -->
                 <div
                   :class="[
-                    'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                    'h-[7.2rem] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                     {
                       selected:
                         userStore.preference.spec_2.includes('PVC Sports'),
@@ -243,7 +243,7 @@
                 <!-- Acrylic Sports -->
                 <div
                   :class="[
-                    'h-[14vh] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                    'h-[7.2rem] sport_Flooring_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                     {
                       selected:
                         userStore.preference.spec_2.includes('Acrylic Sports'),

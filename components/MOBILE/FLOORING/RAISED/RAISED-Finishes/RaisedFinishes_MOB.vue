@@ -17,7 +17,7 @@
       <div
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
-        <div class="h-max w-full flex justify-between text-[3.2vh] z-[9]">
+        <div class="h-max w-full flex justify-between text-[1.5rem] z-[9]">
           <!-- MOBILE -->
           <span
             class="text-left text-balance raised_Finishes_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -51,7 +51,7 @@
               <!-- Finish 1 -->
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 1' },
                 ]"
                 @click="toggleSelect('Finish 1')"
@@ -93,7 +93,7 @@
               <!-- Finish 3 -->
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 3' },
                 ]"
                 @click="toggleSelect('Finish 3')"
@@ -137,7 +137,7 @@
               <!-- Finish 2 -->
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 2' },
                 ]"
                 @click="toggleSelect('Finish 2')"
@@ -179,7 +179,7 @@
               <!-- Finish 4 -->
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 4' },
                 ]"
                 @click="toggleSelect('Finish 4')"
@@ -230,7 +230,7 @@
               <!-- Finish 5 -->
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 5' },
                 ]"
                 @click="toggleSelect('Finish 5')"
@@ -272,7 +272,7 @@
               <!-- MOBILE -->
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 7' },
                 ]"
                 @click="toggleSelect('Finish 7')"
@@ -315,7 +315,7 @@
             <div class="h-max w-[76vw] flex justify-between gap-[2vw] z-[9]">
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 6' },
                 ]"
                 @click="toggleSelect('Finish 6')"
@@ -355,7 +355,7 @@
               </div>
               <div
                 :class="[
-                  'h-[14vh] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] raised_Finishes_Details_Mob-CONTAINER opacity-0 translate-y-[20%]  w-full rounded-md  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: userStore.preference.spec_4 === 'Finish 8' },
                 ]"
                 @click="toggleSelect('Finish 8')"

@@ -18,7 +18,7 @@
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between gym_Color_Details_Mob-HEADING"
+          class="header text-[1.6rem] text-left z-[9] h-max w-full items-center flex justify-between gym_Color_Details_Mob-HEADING"
         >
           Choose Your Color
           <button
@@ -130,7 +130,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box CustomColor h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              class="color-box CustomColor h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
               :class="{
                 selected: userStore.preference.color.includes('CustomColor'),
               }"
@@ -148,7 +148,7 @@
             <!-- MOBILE -->
             <div
               v-show="userStore.preference.spec_3 !== 'Artificial Grass'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Beige'),
               }"
@@ -168,13 +168,13 @@
               <!-- MOBILE -->
               <div v-show="userStore.preference.color.includes('Beige')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -199,7 +199,7 @@
               >
               <div v-show="userStore.preference.color.includes('Brown')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -208,7 +208,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -232,14 +232,14 @@
               <div v-show="userStore.preference.color.includes('Grey')">
                 <!-- MOBILE -->
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
               v-show="userStore.preference.spec_3 === 'Wooden'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Dark Brown'),
               }"
@@ -256,7 +256,7 @@
               >
               <div v-show="userStore.preference.color.includes('Dark Brown')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -264,7 +264,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 !== 'Wooden'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -284,7 +284,7 @@
               >
               <div v-show="userStore.preference.color.includes('Green')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -292,7 +292,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_3 !== 'Wooden'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
@@ -310,7 +310,7 @@
               >
               <div v-show="userStore.preference.color.includes('Blue')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -319,7 +319,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
@@ -344,13 +344,13 @@
               >
               <div v-show="userStore.preference.color.includes('White')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -375,7 +375,7 @@
               >
               <div v-show="userStore.preference.color.includes('Black')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -386,7 +386,7 @@
                 userStore.preference.spec_3 !== 'Wooden' &&
                 userStore.preference.spec_3 !== 'Artificial Grass'
               "
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Rose') }"
               @click="toggleSelect('Rose')"
             >
@@ -399,7 +399,7 @@
               >
               <div v-show="userStore.preference.color.includes('Rose')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -407,7 +407,7 @@
 
             <div
               v-show="userStore.preference.spec_3 === 'Artificial Grass'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
               :class="{ selected: userStore.preference.color.includes('Red') }"
               @click="toggleSelect('Red')"
             >
@@ -423,7 +423,7 @@
               >
               <div v-show="userStore.preference.color.includes('Red')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                   >Selected</span
                 >
               </div>

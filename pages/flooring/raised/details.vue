@@ -69,7 +69,7 @@ onMounted(() => {
         <!-- DESKTOP -->
         <a
           href="/flooring"
-          class="text-[2.6vh] underline underline-offset-[.4vh] text-[#666] flex"
+          class="text-[2.6vh] underline underline-offset-[.2rem] text-[#666] flex"
         >
           Raised Flooring >
           <!-- DESKTOP -->
@@ -94,26 +94,27 @@ onMounted(() => {
 
   <!-- MOBILE -->
   <section class="min-[990px]:hidden w-max h-max">
-    <NavBarMOB />
     <FloatingBarMOB flooring="RAISED FLOORS" link="/" />
 
-    <div
-      class="h-max w-screen font-outfit flex flex-col gap-[1vh] flex flex-col gap-[1vh] items-center z-[2]"
+    <ul
+      v-auto-animate
+      class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[.5rem] flex flex-col gap-[.5rem] items-center z-[2]"
     >
+      <NavBarMOB />
       <div
-        class="h-max px-[4vw] pt-[1.4vh] pb-[.4vh] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
+        class="h-max px-[4vw] pt-[.7rem] pb-[.2rem] w-full flex flex-col items-start text-[3.8vh] gap-[2vh]"
       >
         <!-- MOBILE -->
         <div class="h-max w-full flex justify-between">
           <a
             href="/flooring"
-            class="text-[2.4vh] underline underline-offset-[.8vh] text-[#666] flex"
+            class="text-[1.2rem] underline underline-offset-[.4rem] text-[#666] flex"
           >
             Raised Flooring
           </a>
           <CurrencyDetails />
         </div>
-        <span class="text-[3.8vh]"> Specify Your Needs </span>
+        <span class="text-[1.8rem]"> Specify Your Needs </span>
       </div>
       <BannerYouWin />
       <RaisedAreaDetails :existingUser="existingUser" />
@@ -125,7 +126,7 @@ onMounted(() => {
       <LazyOrderMethod flooring="raised" />
       <LazyInfoForm flooring="raised" />
       <LazyReviewCard flooring="raised" link="raised" />
-    </div>
+    </ul>
     <!-- MOBILE -->
   </section>
 </template>

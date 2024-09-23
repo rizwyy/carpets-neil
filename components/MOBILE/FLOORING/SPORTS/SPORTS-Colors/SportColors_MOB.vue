@@ -13,7 +13,7 @@
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between sport_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
+          class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between sport_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
         >
           Choose Your Color
           <button
@@ -21,7 +21,7 @@
             v-show="
               isMultiColoredOpted || userStore.preference.color.length > 0
             "
-            class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[.4rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
             Clear All<svg
@@ -127,7 +127,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box CustomColor h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              class="color-box CustomColor h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] leading-[2.4vh]"
               :class="{ selected: selectedColors.includes('CustomColor') }"
               @click="toggleSelect('CustomColor')"
             >
@@ -143,7 +143,7 @@
             <!-- MOBILE -->
             <div
               v-show="userStore.preference.spec_2 !== 'Artificial Grass'"
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: selectedColors.includes('Beige') }"
               @click="toggleSelect('Beige')"
             >
@@ -168,7 +168,7 @@
               </div>
             </div>
             <div
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -204,7 +204,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -235,7 +235,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Dark Brown'),
               }"
@@ -260,7 +260,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -289,7 +289,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
@@ -317,7 +317,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
@@ -350,7 +350,7 @@
               </div>
             </div>
             <div
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -384,7 +384,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 === 'Artificial Grass'"
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Red') }"
               @click="toggleSelect('Red')"
             >
@@ -409,7 +409,7 @@
                 userStore.preference.spec_2 !== 'Artificial Grass' &&
                 userStore.preference.spec_2 !== 'Wooden Sprung'
               "
-              class="color-box h-[10vh] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] sport_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Rose') }"
               @click="toggleSelect('Rose')"
             >

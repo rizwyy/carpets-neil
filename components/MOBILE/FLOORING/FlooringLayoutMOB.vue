@@ -17,10 +17,12 @@ import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const pageLoaded = ref(false);
 onMounted(() => {
+  DISABLE_SCROLL();
   setTimeout(() => {
     handleAutoAlpha("FlooringGridLoadingContainer_MOB", 0);
     pageLoaded.value = true;
-  }, 1800);
+    ENABLE_SCROLL();
+  }, 2000);
 });
 </script>
 
@@ -35,10 +37,7 @@ onMounted(() => {
   >
     <Icon icon="eos-icons:three-dots-loading" class="text-[3rem] text-[#777]" />
   </div>
-  <section
-    v-show="pageLoaded"
-    class="h-max w-max min-[990px]:hidden font-outfit"
-  >
+  <section class="h-max w-max min-[990px]:hidden font-outfit">
     <div class="h-max w-screen py-[2vh] text-[#333] px-[3.2vw]">
       <span class="flooringLayoutHeading text-[1.5rem] tracking-[-.1vw]"
         >Shop By Category</span

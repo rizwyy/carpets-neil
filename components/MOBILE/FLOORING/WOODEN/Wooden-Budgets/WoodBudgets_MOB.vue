@@ -52,7 +52,7 @@
           <!-- VALUE -->
           <div
             :class="[
-              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#000] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER rounded-full  w-[100%] shadow border-[2px] border-[#fff1] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Value' },
             ]"
             @click="toggleSelect('Value')"
@@ -100,7 +100,7 @@
           <!-- ESSENTIAL -->
           <div
             :class="[
-              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#000] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER rounded-full  w-[100%] shadow border-[2px] border-[#fff1] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Essential' },
             ]"
             @click="toggleSelect('Essential')"
@@ -150,7 +150,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#000] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER rounded-full  w-[100%] shadow border-[2px] border-[#fff1] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Premier' },
             ]"
             @click="toggleSelect('Premier')"
@@ -201,7 +201,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#000] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER rounded-full  w-[100%] shadow border-[2px] border-[#fff1] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Signature' },
             ]"
             @click="toggleSelect('Signature')"
@@ -251,7 +251,7 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER  w-[100%] shadow border-[2px] border-[#000] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.2rem]  wooden_Budget_Details_Mob-CONTAINER rounded-full  w-[100%] shadow border-[2px] border-[#fff1] overflow-hidden items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
               { selected: userStore.preference.budget === 'Elite' },
             ]"
             @click="toggleSelect('Elite')"

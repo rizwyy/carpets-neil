@@ -11,7 +11,7 @@
         class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="h-max w-full flex items-center justify-between text-[3.2vh] tracking-[-.07vw] z-[9]"
+          class="h-max w-full flex items-center justify-between text-[1.5rem] tracking-[-.07vw] z-[9]"
         >
           <span
             class="text-left text-balance sport_Activity_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -104,7 +104,7 @@
                   <!-- Volleyball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                       { selected: spec_2.includes('Martial Arts') },
                     ]"
                     @click="toggleSelect('Martial Arts')"
@@ -138,7 +138,7 @@
                   <!-- Badminton -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                       { selected: spec_2.includes('Badminton') },
                     ]"
                     @click="toggleSelect('Badminton')"
@@ -173,7 +173,7 @@
                   <!-- Basketball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Basketball') },
                     ]"
                     @click="toggleSelect('Basketball')"
@@ -207,7 +207,7 @@
                   <!-- Squash -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Squash') },
                     ]"
                     @click="toggleSelect('Squash')"
@@ -245,7 +245,7 @@
                   <!-- Volleyball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Volleyball') },
                     ]"
                     @click="toggleSelect('Volleyball')"
@@ -279,7 +279,7 @@
                   <!-- Futsal -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                       { selected: spec_2.includes('Futsal') },
                     ]"
                     @click="toggleSelect('Futsal')"
@@ -314,7 +314,7 @@
                   <!-- Handball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Handball') },
                     ]"
                     @click="toggleSelect('Handball')"
@@ -348,7 +348,7 @@
                   <!-- Table Tennis -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Table Tennis') },
                     ]"
                     @click="toggleSelect('Table Tennis')"
@@ -386,7 +386,7 @@
                   <!-- Multi-Sport -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Multi-Sport') },
                     ]"
                     @click="toggleSelect('Multi-Sport')"
@@ -421,7 +421,7 @@
                   <!-- Others: Specify -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: customActivity > 2 },
                     ]"
                     @click="() => (isCustomActivityOpted = true)"
@@ -467,7 +467,7 @@
                   <!-- Tracks -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Tracks') },
                     ]"
                     @click="toggleSelect('Tracks')"
@@ -501,7 +501,7 @@
                   <!-- Football -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                       { selected: spec_2.includes('Football') },
                     ]"
                     @click="toggleSelect('Football')"
@@ -536,7 +536,7 @@
                   <!-- Tennis -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Tennis') },
                     ]"
                     @click="toggleSelect('Tennis')"
@@ -570,7 +570,7 @@
                   <!-- Basketball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md  overflow-hidden  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Basketball') },
                     ]"
                     @click="toggleSelect('Basketball')"
@@ -608,7 +608,7 @@
                   <!-- Hockey -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Hockey') },
                     ]"
                     @click="toggleSelect('Hockey')"
@@ -642,7 +642,7 @@
                   <!-- Pickleball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden  text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                       { selected: spec_2.includes('Pickleball') },
                     ]"
                     @click="toggleSelect('Pickleball')"
@@ -677,7 +677,7 @@
                   <!-- Padel -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Padel') },
                     ]"
                     @click="toggleSelect('Padel')"
@@ -711,7 +711,7 @@
                   <!-- Volleyball -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Volleyball') },
                     ]"
                     @click="toggleSelect('Volleyball')"
@@ -751,7 +751,7 @@
                   <!-- Multi-Sport -->
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full rounded-md overflow-hidden   border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: spec_2.includes('Multi-Sport') },
                     ]"
                     @click="toggleSelect('Multi-Sport')"
@@ -782,7 +782,7 @@
                   </div>
                   <div
                     :class="[
-                      'h-[14vh] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                      'h-[7.2rem] sport_Activity_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                       { selected: customActivity > 2 },
                     ]"
                     @click="() => (isCustomActivityOpted = true)"

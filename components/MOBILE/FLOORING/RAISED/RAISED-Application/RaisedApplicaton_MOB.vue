@@ -36,7 +36,7 @@
           </svg>
         </div>
         <div
-          class="h-max w-full flex items-center justify-between text-[3.2vh] tracking-[-.07vw] z-[9]"
+          class="h-max w-full flex items-center justify-between text-[1.5rem] tracking-[-.07vw] z-[9]"
         >
           <span
             class="text-left text-balance raised_Application_Details_Mob-HEADING opacity-0 translate-x-[40%] tracking-[-.1vw]"
@@ -123,7 +123,7 @@
               <!-- Server Rooms -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                   { selected: spec_2.includes('Server Rooms') },
                 ]"
                 @click="toggleSelect('Server Rooms')"
@@ -157,7 +157,7 @@
               <!-- Telecom Rooms -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: spec_2.includes('Telecom Rooms') },
                 ]"
                 @click="toggleSelect('Telecom Rooms')"
@@ -201,7 +201,7 @@
               <!-- Offices -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                   { selected: spec_2.includes('Offices') },
                 ]"
                 @click="toggleSelect('Offices')"
@@ -235,7 +235,7 @@
               <!-- Retail -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: spec_2.includes('Retail') },
                 ]"
                 @click="toggleSelect('Retail')"
@@ -270,7 +270,7 @@
               <!-- Hospitality -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                   { selected: spec_2.includes('Hospitality') },
                 ]"
                 @click="toggleSelect('Hospitality')"
@@ -304,7 +304,7 @@
               <!-- Public Area -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                   { selected: spec_2.includes('Public Area') },
                 ]"
                 @click="toggleSelect('Public Area')"
@@ -345,7 +345,7 @@
               <!-- Industrial Facilities -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                   { selected: spec_2.includes('Industrial Facilities') },
                 ]"
                 @click="toggleSelect('Industrial Facilities')"
@@ -379,7 +379,7 @@
               <!-- Food Processing -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: spec_2.includes('Food Processing') },
                 ]"
                 @click="toggleSelect('Food Processing')"
@@ -414,7 +414,7 @@
               <!-- Chemical Lab -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: spec_2.includes('Chemical Lab') },
                 ]"
                 @click="toggleSelect('Chemical Lab')"
@@ -455,7 +455,7 @@
               <!-- Clean Rooms -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw]  relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem]  relative cursor-pointer',
                   { selected: spec_2.includes('Clean Rooms') },
                 ]"
                 @click="toggleSelect('Clean Rooms')"
@@ -489,7 +489,7 @@
               <!-- Facility Rooms -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md text-left leading-[3.4vh]  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
                   { selected: spec_2.includes('Facility Rooms') },
                 ]"
                 @click="toggleSelect('Facility Rooms')"
@@ -530,7 +530,7 @@
               <!-- Schools -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: spec_2 === 'Schools' },
                 ]"
                 @click="toggleSelect('Schools')"
@@ -562,7 +562,7 @@
               <!-- Kitchens -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: spec_2 === 'Kitchens' },
                 ]"
                 @click="toggleSelect('Kitchens')"
@@ -595,7 +595,7 @@
               <!-- Basements -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: spec_2 === 'Basements' },
                 ]"
                 @click="toggleSelect('Basements')"
@@ -627,7 +627,7 @@
               <!-- Swimming -->
               <div
                 :class="[
-                  'h-[14vh] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                  'h-[7.2rem] overflow-hidden raised_Application_Details_Mob-CONTAINER opacity-0 translate-y-[20%] w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                   { selected: spec_2 === 'Swimming' },
                 ]"
                 @click="toggleSelect('Swimming')"
