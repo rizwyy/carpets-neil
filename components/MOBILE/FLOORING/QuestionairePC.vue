@@ -77,8 +77,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   selectedCountry === country.name
-                    ? 'ph:check-circle'
-                    : 'ph:circle'
+                    ? 'mingcute:checkbox-fill'
+                    : 'ri:checkbox-blank-line'
                 "
               />
             </div>
@@ -107,8 +107,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   selectedFloorings.includes(flooring.name)
-                    ? 'ph:check-circle'
-                    : 'ph:circle'
+                    ? 'mingcute:checkbox-fill'
+                    : 'ri:checkbox-blank-line'
                 "
               />
             </div>
@@ -137,8 +137,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   selectedServices.includes(service)
-                    ? 'ph:check-circle'
-                    : 'ph:circle'
+                    ? 'mingcute:checkbox-fill'
+                    : 'ri:checkbox-blank-line'
                 "
               />
             </div>
@@ -165,7 +165,11 @@
               <span class="text-[1.2rem]">{{ pos }}</span>
               <Icon
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
-                :icon="userPosition === pos ? 'ph:check-circle' : 'ph:circle'"
+                :icon="
+                  userPosition === pos
+                    ? 'mingcute:checkbox-fill'
+                    : 'ri:checkbox-blank-line'
+                "
               />
             </div>
           </div>
@@ -192,7 +196,9 @@
               <Icon
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
-                  projectStatus === status ? 'ph:check-circle' : 'ph:circle'
+                  projectStatus === status
+                    ? 'mingcute:checkbox-fill'
+                    : 'ri:checkbox-blank-line'
                 "
               />
             </div>
@@ -219,7 +225,11 @@
               <span class="text-[1.1rem]">{{ frame }}</span>
               <Icon
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
-                :icon="timeFrame === frame ? 'ph:check-circle' : 'ph:circle'"
+                :icon="
+                  timeFrame === frame
+                    ? 'mingcute:checkbox-fill'
+                    : 'ri:checkbox-blank-line'
+                "
               />
             </div>
           </div>
@@ -233,7 +243,7 @@
             class="h-full w-full flex flex-col items-start gap-[1.8rem] justify-center flex-[3] px-[4vw]"
           >
             <input
-              class="h-[3.2rem] rounded-md bg-inherit px-[1.4vw] text-[1rem] py-[.8rem] w-[40%] border-[2px] border-[#777]"
+              class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none h-[3.2rem] rounded-md bg-inherit px-[1.4vw] text-[1rem] py-[.8rem] w-[40%] border-[2px] border-[#777]"
               type="number"
               placeholder="ZIP Code"
             />
@@ -390,7 +400,7 @@ const flooringProducts = [
     description: "Image description",
   },
   {
-    name: "Wooden ",
+    name: "Parquet ",
     description: "Image description",
   },
   {

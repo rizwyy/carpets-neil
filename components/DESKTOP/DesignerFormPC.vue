@@ -2,7 +2,10 @@
   <section
     class="max-[990px]:hidden h-[100vh] w-[100vw] fixed top-0 left-0 bg-[#fff9] backdrop-blur-[8px] z-[99999]"
   >
-    <div class="h-[100svh] w-full relative flex items-center justify-center">
+    <div
+      @click.self="closeForm"
+      class="h-[100svh] w-full relative flex items-center justify-center"
+    >
       <div
         class="h-[75svh] w-[80vw] border-[2px] flex flex-col gap-[8vh] items-center justify-center rounded-md border-black py-[4vh] px-[2vw]"
       >

@@ -10,13 +10,14 @@
 
     <!-- Loop through the displayedFaqs computed property -->
     <div
+      v-auto-animate
       v-for="(faq, index) in displayedFaqs"
       :key="index"
       class="faq-item bg-gray-200 p-[2vh] rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:bg-gray-300"
       :class="{ expanded: isExpanded(index) }"
     >
       <!-- Question Button -->
-      <button class="w-full text-left" @click="toggleFAQ(index)">
+      <button v-auto-animate class="w-full text-left" @click="toggleFAQ(index)">
         <div class="flex justify-between items-center">
           <span class="text-[2.4vh] text-[#333] font-[400]">
             {{ faq.question }}
@@ -31,6 +32,7 @@
       <!-- Answer Section (conditionally rendered) -->
       <transition name="fade">
         <div
+          v-auto-animate
           v-show="isExpanded(index)"
           class="mt-[1.2vh] bg-gray-50 p-[2vh] rounded-lg text-[#666] transition-all duration-300 ease-in-out"
         >
@@ -301,7 +303,7 @@ onMounted(() => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .fade-enter-from,

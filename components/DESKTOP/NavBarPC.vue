@@ -20,70 +20,77 @@
   </section>
   <!-- MENU PAGE -->
   <div
-    v-show="isMenuOpen"
-    class="menuPageMOB opacity-0 invisible font-outfit fixed top-0 left-0 h-screen w-screen bg-[#f5f3f1] z-[9999]"
+    @click.self="closeMenu"
+    class="menuPagePC opacity-0 invisible font-outfit fixed top-0 left-0 h-[100dvh] flex flex-col justify-end w-screen bg-transparent z-[999999] backdrop-blur-[12px] bg-[#fff1]"
   >
     <div
-      class="h-max w-screen px-[4vw] items-center flex justify-between pt-[4vh]"
+      class="menuPageContainerPC translate-x-[-100%] opacity-0 invisible h-full w-[50%] bg-[#f1f1f1] flex flex-col items-start overflow-hidden rounded-r-lg"
     >
-      <a
-        href="/"
-        class="h-max w-max font-[300] text-[3rem] text-[#333] tracking-[-.1vw]"
+      <div
+        class="h-max w-full px-[4vw] items-center flex justify-between pt-[4vh]"
       >
-        WOLTIZ
-      </a>
-      <span>
-        <CloseIcon
-          class="text-[2.8rem] cursor-pointer text-[#333]"
-          @click="closeMenu"
-        />
-      </span>
-    </div>
-    <div
-      class="h-[66vh] w-screen flex flex-col justify-center gap-[3.2vh] items-start px-[4.2vw] text-[2.4rem] text-[#666]"
-    >
-      <a
-        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
-        href="/"
-        >Flooring <arowTopRightIcon /></a
-      ><a
-        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
-        href="/about"
-        >About <arowTopRightIcon /></a
-      ><a
-        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
-        href="/contact"
-        >Contact <arowTopRightIcon /></a
-      ><a
-        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
-        href="/privacy"
-        >Privacy Policy <arowTopRightIcon
-      /></a>
+        <a
+          href="/"
+          class="h-max w-max font-[300] text-[3rem] text-[#333] tracking-[-.1vw]"
+        >
+          WOLTIZ
+        </a>
+        <span>
+          <Icon
+            @click="closeMenu"
+            icon="material-symbols:close-small-rounded"
+            class="text-[3.2rem] text-[#777] cursor-pointer"
+          />
+        </span>
+      </div>
+      <div
+        class="h-[66vh] w-screen flex flex-col justify-center gap-[3.2vh] items-start px-[4.2vw] text-[2.4rem] text-[#666]"
+      >
+        <a
+          class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+          href="/"
+          >Flooring <arowTopRightIcon /></a
+        ><a
+          class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+          href="/about"
+          >About <arowTopRightIcon /></a
+        ><a
+          class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+          href="/contact"
+          >Contact <arowTopRightIcon /></a
+        ><a
+          class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+          href="/privacy"
+          >Privacy Policy <arowTopRightIcon
+        /></a>
 
-      <a
-        class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
-        href="/designer"
-        >Designer Login <arowTopRightIcon
-      /></a>
-    </div>
-    <div class="h-[20vh] w-screen flex flex-col">
-      <div
-        class="flex h-full w-full justify-between px-[4vw] items-center"
-      ></div>
-      <div
-        class="flex h-full w-full justify-between px-[4vw] py-[4vh] text-[1.8rem] items-center"
-      >
-        <span>Under Development | Demo</span>
-        <span>Woltiz</span>
+        <a
+          class="flex items-center gap-[1vw] hover:translate-x-[5%] duration-300 transition-all ease-in-out"
+          href="/designer"
+          >Designer Login <arowTopRightIcon
+        /></a>
+      </div>
+      <div class="h-[20vh] w-screen flex flex-col">
+        <div
+          class="flex h-full w-full justify-between px-[4vw] items-center"
+        ></div>
+        <div
+          class="flex h-full w-full justify-between px-[4vw] py-[4vh] text-[1.8rem] items-center"
+        >
+          <span>Under Development | Demo</span>
+          <span>Woltiz</span>
+        </div>
       </div>
     </div>
   </div>
   <!-- CART PAGE -->
   <div
-    class="cartPageMOB invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] flex justify-end w-screen bg-transparent z-[999999] backdrop-blur-[12px] bg-[#fff1]"
+    @click.self="closeCart"
+    class="cartPagePC invisible opacity-0 font-outfit fixed top-0 left-0 h-[100dvh] flex justify-end w-screen bg-transparent z-[999999] backdrop-blur-[12px] bg-[#fff1]"
   >
     <div
-      class="h-full w-[42%] bg-[#f1f1f1] rounded-lg flex flex-col items-start relative cartPageContainerMOB invisible opacity-0 translate-x-[50%]"
+      v-auto-animate
+      class="h-full w-[42%] bg-[#f1f1f1] rounded-l-lg flex flex-col items-start relative cartPageContainerPC invisible opacity-0 translate-x-[50%]"
     >
       <div
         v-if="userStore.cart.length > 0"
@@ -121,6 +128,7 @@
 
       <!-- Scrollable content section -->
       <div
+        v-auto-animate
         :key="userStore.cartKey"
         v-if="userStore.cart.length > 0"
         class="flex-grow w-full overflow-y-auto px-[0vw] pb-[12vh]"
@@ -141,6 +149,7 @@
 
       <!-- No items section -->
       <div
+        v-auto-animate
         v-else
         class="h-max w-full flex items-center justify-between flex-col gap-[16vh] pt-[12vh] flex-grow"
       >
@@ -192,27 +201,29 @@ const isMobile = ref(false);
 const isConfirmLoading = ref(false);
 function openMenu() {
   isMenuOpen.value = true;
-  handleAutoAlpha("menuPageMOB", 1);
-  if (isMenuOpen.value) {
-    DISABLE_SCROLL();
-  }
+  handleAutoAlpha("menuPagePC", 1);
+  DISABLE_SCROLL();
+  handleAutoAlpha("menuPageContainerPC", 1, 0, 0);
 }
+function openCart() {
+  isCartOpen.value = true;
+  handleAutoAlpha("cartPagePC", 1);
+  DISABLE_SCROLL();
+  handleAutoAlpha("cartPageContainerPC", 1, 0, 0);
+}
+
 function closeMenu() {
-  handleAutoAlpha("menuPageMOB", 0);
+  handleAutoAlpha("menuPagePC", 0);
   ENABLE_SCROLL();
+  handleAutoAlpha("menuPageContainerPC", 0, "-50%", 0);
+
   isMenuOpen.value = false;
 }
 
-function openCart() {
-  isCartOpen.value = true;
-  handleAutoAlpha("cartPageMOB", 1);
-  DISABLE_SCROLL();
-  handleAutoAlpha("cartPageContainerMOB", 1, 0, 0);
-}
 function closeCart() {
-  handleAutoAlpha("cartPageMOB", 0);
+  handleAutoAlpha("cartPagePC", 0);
   ENABLE_SCROLL();
-  handleAutoAlpha("cartPageContainerMOB", 0, "50%", 0);
+  handleAutoAlpha("cartPageContainerPC", 0, "50%", 0);
 
   isCartOpen.value = false;
 }
