@@ -31,7 +31,11 @@
               <span class="text-[#f1f1f1]">Done</span>
               <Icon
                 class="text-[1.2rem] text-[#f1f1f1]"
-                icon="material-symbols-light:play-arrow-rounded"
+                :icon="
+                  !isLoading
+                    ? 'material-symbols-light:play-arrow-rounded'
+                    : 'eos-icons:three-dots-loading'
+                "
               />
             </button>
 
@@ -275,7 +279,11 @@
               >
                 Submit & Finish<Icon
                   class="text-[1.8rem] text-[#333]"
-                  icon="material-symbols-light:play-arrow-rounded"
+                  :icon="
+                    !isLoading
+                      ? 'material-symbols-light:play-arrow-rounded'
+                      : 'eos-icons:three-dots-loading'
+                  "
                 />
               </button>
             </div>
@@ -309,6 +317,7 @@ const timeFrame = ref("");
 const addressIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
+const isLoading = ref(false);
 const questionnaireList = [
   {
     question: "Which country are you located in?",
@@ -501,7 +510,11 @@ function decrementQuestion() {
 }
 
 function handleQuestionaireConfirmation() {
-  closeForm();
+  isLoading.value = true;
+  setTimeout(() => {
+    closeForm();
+    isLoading.value = false;
+  }, 2000);
 }
 </script>
 
