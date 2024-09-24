@@ -1,6 +1,9 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
 const LazyFaqMOB = defineAsyncComponent(() => import("./FaqMOB.vue"));
+const QuestionarireMOB = defineAsyncComponent(() =>
+  import("./QuestionaireMOB.vue")
+);
 const LazySignUpCardMOB = defineAsyncComponent(() =>
   import("./SignUpCardMOB.vue")
 );

@@ -1,5 +1,5 @@
 <template>
-  <PersonalAssistanceFormMOB
+  <QuestionaireMOB
     @close="handleCloseForm"
     :formType="selectedFormType"
     v-if="isFormActive"
@@ -151,6 +151,7 @@ import homeIcon from "~/public/icons/homeIcon.vue";
 import chatIcon from "~/public/icons/chatIcon.vue";
 import sampleIcon from "~/public/icons/sampleIcon.vue";
 import PersonalAssistanceFormMOB from "./PersonalAssistanceFormMOB.vue";
+import QuestionaireMOB from "./QuestionaireMOB.vue";
 
 const isFormActive = ref(false);
 const selectedFormType = ref("");
