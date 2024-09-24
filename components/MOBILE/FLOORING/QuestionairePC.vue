@@ -1,10 +1,10 @@
 <template>
   <div
     @click.self="closeForm"
-    class="h-[110vh] w-screen max-w-[100vw] pb-[10vh] fixed top-0 left-0 flex flex-col justify-center bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999999] font-outfit"
+    class="h-[110vh] w-screen max-w-[100vw] pb-[10vh] fixed top-0 left-0 flex flex-col items-center justify-center bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999999] font-outfit"
   >
     <div
-      class="h-[36rem] bg-[#ededed] w-full relative rounded-lg flex flex-col overflow-hidden"
+      class="h-[36rem] bg-[#ededed] w-[60%] relative rounded-lg flex flex-col overflow-hidden"
     >
       <div
         :style="{ width: `${progressBarWidth}%` }"
@@ -397,6 +397,7 @@ const flooringProducts = [
     name: "Vinyl ",
     description: "Image description",
   },
+
   {
     name: "Raised ",
     description: "Image description",

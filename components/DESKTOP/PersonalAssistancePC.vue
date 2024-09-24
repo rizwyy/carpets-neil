@@ -1,5 +1,5 @@
 <template>
-  <PersonalAssistanceFormPC @close="handleCloseForm" v-if="isFormActive" />
+  <QuestionairePC @close="handleCloseForm" v-if="isFormActive" />
   <section
     class="PersonalAssistancePC opacity-0 translate-y-[6%] w-[60vw] mx-auto mt-[6vh] mb-[8vh]"
   >
@@ -91,7 +91,7 @@ import storeIcon from "~/public/icons/storeIcon.vue";
 import homeIcon from "~/public/icons/homeIcon.vue";
 import chatIcon from "~/public/icons/chatIcon.vue";
 import sampleIcon from "~/public/icons/sampleIcon.vue";
-import PersonalAssistanceFormPC from "./PersonalAssistanceFormPC.vue";
+import QuestionairePC from "../MOBILE/FLOORING/QuestionairePC.vue";
 import arrowDownIcon from "~/public/icons/arrowRightIcon.vue";
 
 // Define a ref variable in the parent
