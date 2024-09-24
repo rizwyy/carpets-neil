@@ -7,7 +7,7 @@
       class="h-[100svh] w-full relative flex items-center justify-center"
     >
       <div
-        class="h-[75svh] w-[80vw] border-[2px] flex flex-col gap-[8vh] items-center justify-center rounded-md border-black py-[4vh] px-[2vw]"
+        class="h-[75svh] bg-[#fff9] backdrop-blur-[22px] w-[80vw] border-[2px] flex flex-col gap-[8vh] items-center justify-center rounded-md border-black py-[4vh] px-[2vw]"
       >
         <div class="h-max w-full flex justify-between">
           <div class="h-max w-full flex flex-col items-start">

@@ -440,7 +440,7 @@ const flooringServices = [
 // #4
 const floorManagerOptions = ["Homeowner", "Contractor"];
 // #5
-const projectStatusOptions = ["Tender", "Job in Hand", "Still Bidding"];
+const projectStatusOptions = ["Tender", "Job in Hand"];
 // #6
 const timeFrameOptions = [
   "Immediate",
