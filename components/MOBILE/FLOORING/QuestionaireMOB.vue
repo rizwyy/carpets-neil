@@ -357,7 +357,7 @@ const questionnaireList = [
   },
 ];
 
-const emit = defineEmits(["close"]);
+const emit = defineEmits(["close", "success"]);
 const closeForm = () => {
   emit("close");
 };
@@ -484,13 +484,10 @@ const toggleServiceSelection = (service) => {
   }
 };
 function incrementQuestion() {
-  console.log(progressBarWidth.value);
   if (currentQuestion.value < questionnaireList.length) currentQuestion.value++;
-  console.log(currentQuestion.value);
 }
 function decrementQuestion() {
   if (currentQuestion.value > 1) currentQuestion.value--;
-  console.log(currentQuestion.value);
 }
 
 function handleQuestionaireConfirmation() {
@@ -498,6 +495,7 @@ function handleQuestionaireConfirmation() {
   setTimeout(() => {
     closeForm();
     isLoading.value = false;
+    emit("success");
   }, 2000);
 }
 </script>

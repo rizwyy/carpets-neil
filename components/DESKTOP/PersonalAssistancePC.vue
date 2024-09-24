@@ -1,5 +1,15 @@
 <template>
-  <QuestionairePC @close="handleCloseForm" v-if="isFormActive" />
+  <div
+    class="successMsgContainerPC opacity-0 translate-x-[200%] fixed bg-[#000] bg-opacity-[.4] text-[#f1f1f1] backdrop-blur-[12px] border-[0px] top-[4%] right-[1%] h-[3.4rem] w-[16vw] gap-[.4vw] flex px-[2vw] items-center rounded-md z-[99999]"
+  >
+    <span>Form submitted</span
+    ><Icon class="text-[1.2rem]" icon="lets-icons:done-all-alt-round" />
+  </div>
+  <QuestionairePC
+    @close="handleCloseForm"
+    v-if="isFormActive"
+    @success="handleSuccessMessageAnimation"
+  />
   <section
     class="PersonalAssistancePC opacity-0 translate-y-[6%] w-[60vw] mx-auto mt-[6vh] mb-[8vh]"
   >
@@ -93,6 +103,7 @@ import chatIcon from "~/public/icons/chatIcon.vue";
 import sampleIcon from "~/public/icons/sampleIcon.vue";
 import QuestionairePC from "../MOBILE/FLOORING/QuestionairePC.vue";
 import arrowDownIcon from "~/public/icons/arrowRightIcon.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 // Define a ref variable in the parent
 const isFormActive = ref(false);
@@ -102,6 +113,13 @@ function handleCloseForm() {
   isFormActive.value = false; // Close the form by setting this to false
   ENABLE_SCROLL();
 }
+function handleSuccessMessageAnimation() {
+  handleAutoAlpha("successMsgContainerPC", 1, 0, 0);
+  setTimeout(() => {
+    handleAutoAlpha("successMsgContainerPC", 0, "200%", 0);
+  }, 2400);
+}
+
 const bringForm = () => {
   isFormActive.value = true;
   DISABLE_SCROLL();

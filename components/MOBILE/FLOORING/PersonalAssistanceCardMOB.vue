@@ -1,6 +1,14 @@
 <template>
+  <div
+    class="successMsgContainer opacity-0 translate-y-[-200%] invisible fixed bg-[#000] bg-opacity-[.4] text-[#f1f1f1] backdrop-blur-[12px] border-[0px] top-[4%] left-[50%] h-[3.4rem] w-[70vw] gap-[1vw] flex justify-center items-center translate-x-[-50%] rounded-md z-[99999]"
+  >
+    <span>Form submitted</span
+    ><Icon class="text-[1.2rem]" icon="lets-icons:done-all-alt-round" />
+  </div>
+
   <QuestionaireMOB
     @close="handleCloseForm"
+    @success="handleSuccessMessageAnimation"
     :formType="selectedFormType"
     v-if="isFormActive"
   />
@@ -152,13 +160,22 @@ import chatIcon from "~/public/icons/chatIcon.vue";
 import sampleIcon from "~/public/icons/sampleIcon.vue";
 import PersonalAssistanceFormMOB from "./PersonalAssistanceFormMOB.vue";
 import QuestionaireMOB from "./QuestionaireMOB.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const isFormActive = ref(false);
 const selectedFormType = ref("");
+const successMsgActive = ref(false);
 
 function handleCloseForm() {
   isFormActive.value = false;
   ENABLE_SCROLL();
+}
+
+function handleSuccessMessageAnimation() {
+  handleAutoAlpha("successMsgContainer", 1, 0, 0);
+  setTimeout(() => {
+    handleAutoAlpha("successMsgContainer", 0, 0, "-200%");
+  }, 2400);
 }
 
 const bringForm = (type) => {
