@@ -13,7 +13,7 @@
       <!-- NAV -->
       <div v-auto-animate class="h-full w-full flex flex-col">
         <div
-          class="h-max w-full bg-[#ededed] flex justify-between py-[1rem] px-[2vw]"
+          class="h-max w-full bg-[#ededed] flex justify-between pt-[1rem] px-[2vw]"
         >
           <button
             v-show="currentQuestion > 0"
@@ -60,7 +60,7 @@
         >
           <QuestionaireCard :item="questionnaireList[0]" class="flex-[2]" />
           <div
-            class="h-full w-full flex-[3] grid grid-cols-2 pb-[2rem] gap-[2vw] px-[3.2vw]"
+            class="h-full w-full flex-[3] grid grid-cols-2 pb-[4rem] gap-[2vw] px-[3.2vw]"
           >
             <div
               v-for="(country, index) in countriesWithIcons"
@@ -85,12 +85,12 @@
           </div>
         </div>
         <div
-          class="bg-[#ededed] h-max w-full flex flex-col gap-[2rem]"
+          class="bg-[#ededed] h-max w-full flex flex-col gap-[3rem]"
           v-else-if="currentQuestion === 2"
         >
           <QuestionaireCard :item="questionnaireList[1]" class="flex-[2]" />
           <div
-            class="h-full w-full flex-[3] grid grid-cols-3 justify-items-stretch gap-[3vw] px-[2vw]"
+            class="h-full w-full flex-[3] grid grid-cols-3 justify-items-stretch gap-[3vw] px-[4vw]"
           >
             <div
               v-for="(flooring, index) in flooringProducts"
@@ -115,12 +115,12 @@
           </div>
         </div>
         <div
-          class="h-max w-full flex flex-col gap-[2rem]"
+          class="h-max w-full flex flex-col gap-[3rem]"
           v-else-if="currentQuestion === 3"
         >
           <QuestionaireCard :item="questionnaireList[2]" />
           <div
-            class="h-full w-full flex-[3] grid grid-cols-2 justify-items-stretch gap-[3vw] px-[3.2vw]"
+            class="h-full w-full flex-[3] grid grid-cols-2 justify-items-stretch gap-[2vw] px-[4vw]"
           >
             <div
               v-for="(service, index) in flooringServices"
@@ -150,7 +150,7 @@
         >
           <QuestionaireCard :item="questionnaireList[3]" />
           <div
-            class="h-full w-full flex-[3] flex flex-col justify-items-stretch gap-[1.2rem] px-[3.2vw]"
+            class="h-full w-full flex-[3] flex flex-col justify-items-stretch gap-[1.2rem] px-[4vw]"
           >
             <div
               v-for="(pos, index) in floorManagerOptions"
@@ -176,7 +176,7 @@
         >
           <QuestionaireCard :item="questionnaireList[4]" />
           <div
-            class="h-full w-full flex-[3] flex flex-col justify-items-stretch gap-[.8rem] px-[3.2vw]"
+            class="h-full w-full flex-[3] flex flex-col justify-items-stretch gap-[.8rem] px-[4vw]"
           >
             <div
               v-for="(status, index) in projectStatusOptions"
@@ -204,17 +204,17 @@
         >
           <QuestionaireCard :item="questionnaireList[5]" />
           <div
-            class="h-full w-full flex-[3] flex flex-col justify-items-stretch gap-[1rem] px-[3.2vw]"
+            class="h-full w-full flex-[3] flex flex-col justify-items-stretch gap-[1.4rem] px-[4vw]"
           >
             <div
               v-for="(frame, index) in timeFrameOptions"
               :key="index"
               @click="toggleTimeFrame(frame)"
-              :class="`h-[3.4rem] border-[2px] transition-all ease-in-out ${
+              :class="`h-[3.8rem] border-[2px] transition-all ease-in-out ${
                 timeFrame === frame
                   ? ' bg-[#d9d9d9] border-[#333]'
                   : ' bg-inherit border-[#999]'
-              } w-full rounded-md flex items-center justify-start pl-[4vw] relative cursor-pointer`"
+              } w-full rounded-md flex items-center justify-start pl-[2vw] relative cursor-pointer`"
             >
               <span class="text-[1.1rem]">{{ frame }}</span>
               <Icon
@@ -226,14 +226,14 @@
         </div>
         <div
           v-else-if="currentQuestion === 7"
-          class="h-max w-full flex flex-col gap-[2rem]"
+          class="h-max w-full flex flex-col gap-[3rem]"
         >
           <QuestionaireCard :item="questionnaireList[6]" />
           <div
-            class="h-full w-full flex flex-col items-center gap-[1rem] justify-center flex-[3] px-[3.2vw]"
+            class="h-full w-full flex flex-col items-start gap-[1.8rem] justify-center flex-[3] px-[4vw]"
           >
             <input
-              class="h-[3.2rem] rounded-md bg-inherit px-[2vw] text-[1rem] py-[.8rem] w-[100%] border-[2px] border-[#777]"
+              class="h-[3.2rem] rounded-md bg-inherit px-[1.4vw] text-[1rem] py-[.8rem] w-[40%] border-[2px] border-[#777]"
               type="number"
               placeholder="ZIP Code"
             />
@@ -255,10 +255,10 @@
             </div>
           </div>
         </div>
-        <div v-else class="h-max w-full flex flex-col gap-[2rem]">
+        <div v-else class="h-max w-full flex flex-col gap-[3rem] pt-[1rem]">
           <QuestionaireCard :item="questionnaireList[7]" />
           <div
-            class="h-full w-full flex flex-col gap-[2rem] items-center justify-center flex-[3] px-[3.2vw]"
+            class="h-full w-full flex flex-col gap-[2rem] items-center justify-center flex-[3] px-[4vw]"
           >
             <input
               type="username"
@@ -272,7 +272,7 @@
               placeholder="Phone"
               class="h-[3.8rem] rounded-md bg-inherit px-[2vw] text-[1rem] py-[.8rem] w-[100%] border-[2px] border-[#777]"
             />
-            <div class="h-max w-full px-[2vw] flex justify-end">
+            <div class="h-max w-full px-[2vw] flex justify-end pt-[2rem]">
               <button
                 @click="handleQuestionaireConfirmation"
                 class="text-[1.2rem] font-[500] flex items-center underline underline-offset-[.4rem]"
@@ -447,9 +447,6 @@ const progressBarWidth = computed(() => {
 
 const toggleCountrySelection = (countryName) => {
   selectedCountry.value = countryName;
-  setTimeout(() => {
-    incrementQuestion();
-  }, 800);
 };
 const toggleUserPosition = (pos) => {
   userPosition.value = pos;

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="successMsgContainerPC opacity-0 translate-x-[200%] fixed bg-[#000] bg-opacity-[.4] text-[#f1f1f1] backdrop-blur-[12px] border-[0px] top-[4%] right-[1%] h-[3.4rem] w-[16vw] gap-[.4vw] flex px-[2vw] items-center rounded-md z-[99999]"
+    class="successMsgContainerPC opacity-0 translate-x-[200%] fixed bg-[#000] bg-opacity-[.4] text-[#f1f1f1] backdrop-blur-[12px] border-[0px] top-[4%] right-[1%] h-[3.4rem] w-[15vw] gap-[.4vw] flex px-[2vw] items-center rounded-md z-[99999]"
   >
     <span>Form submitted</span
     ><Icon class="text-[1.2rem]" icon="lets-icons:done-all-alt-round" />
