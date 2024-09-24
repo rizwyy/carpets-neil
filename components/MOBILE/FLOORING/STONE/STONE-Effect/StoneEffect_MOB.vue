@@ -203,18 +203,20 @@
               >
             </div>
             <div
-              class="h-full w-full bg-gradient-to-b from-[#0000] to-black from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+              class="h-full w-full bg-[#d1d1d1] from-[60%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
             ></div>
-            <NuxtImg
-              preload
-              quality="50"
-              placeholder
-              loading="eager"
-              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/stone/Custom/CustomstoneFlooring.webp"
-              alt=""
+            <input
+              ref="fileInput"
+              type="file"
+              class="hidden"
+              @change="handleFileSelect"
             />
-            <span class="text-left text-balance">Custom</span>
+            <button
+              @click="triggerFileInput"
+              class="bg-[#555] text-white px-[.4vw] absolute top-[50%] translate-x-[-50%] left-[50%] font-medium text-[.8rem] py-[.6rem] w-[38vw] rounded-3xl flex items-center gap-2 hover:bg-[#333] transition-colors flex justify-center"
+            >
+              Upload Effect +
+            </button>
           </div>
         </div>
       </div>
@@ -230,9 +232,12 @@ const userStore = useUserStore();
 import { Icon } from "@iconify/vue/dist/iconify.js";
 // COOKIES
 import useUserStore from "~/stores/user";
+const fileInput = ref(null);
 
 const spec_3 = ref("");
-
+const triggerFileInput = () => {
+  fileInput.value.click();
+};
 function clearAllSelections() {
   spec_3.value = "";
   userStore.preference.spec_3 = "";

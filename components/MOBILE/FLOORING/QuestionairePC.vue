@@ -60,7 +60,7 @@
         >
           <QuestionaireCard :item="questionnaireList[0]" class="flex-[2]" />
           <div
-            class="h-full w-full flex-[3] grid grid-cols-2 pb-[4rem] gap-[2vw] px-[3.2vw]"
+            class="h-full w-full flex-[3] grid grid-cols-2 pb-[4rem] gap-[2vw] px-[4vw]"
           >
             <div
               v-for="(country, index) in countriesWithIcons"

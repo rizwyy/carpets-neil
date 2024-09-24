@@ -1,10 +1,10 @@
 <template>
   <div
     @click.self="closeForm"
-    class="h-[110vh] w-screen max-w-[100vw] pb-[10vh] fixed top-0 left-0 flex flex-col justify-center bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999999] font-outfit"
+    class="h-[110vh] w-screen max-w-[100vw] pb-[10vh] fixed top-0 left-0 flex flex-col justify-center items-center bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999999] font-outfit"
   >
     <div
-      class="h-[36rem] bg-[#ededed] w-full relative rounded-lg flex flex-col overflow-hidden"
+      class="h-[36rem] bg-[#ededed] w-[96%] relative rounded-md flex flex-col overflow-hidden"
     >
       <div
         :style="{ width: `${progressBarWidth}%` }"
@@ -13,7 +13,7 @@
       <!-- NAV -->
       <div v-auto-animate class="h-full w-full flex flex-col">
         <div
-          class="h-max w-full bg-[#ededed] flex justify-between py-[1rem] px-[2vw]"
+          class="h-max w-full bg-[#ededed] flex justify-between py-[.6rem] px-[2vw]"
         >
           <button
             v-show="currentQuestion > 0"
