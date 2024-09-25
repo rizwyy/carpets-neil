@@ -50,10 +50,10 @@
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- MOBILE -->
   <div
-    class="bannerYouWin_MOB opacity-0 min-[990px]:hidden h-max w-screen flex items-center justify-center my-[2vh] px-[3.2vw]"
+    class="bannerYouWin_MOB opacity-0 min-[990px]:hidden h-max w-screen flex items-center justify-center my-[1rem] px-[3.2vw]"
   >
     <div
-      class="h-[11rem] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[0vh] items-center justify-center pt-[.8vh] pb-[1vh]"
+      class="h-[11rem] w-[100%] relative rounded-md overflow-hidden shadow-md flex flex-col gap-[0vh] items-center justify-center pt-[.4rem] pb-[.5rem]"
     >
       <div
         class="flooringBanner_Overlay absolute h-full w-full left-0 top-0 z-[-1] bg-gradient-to-br from-black to-[#fff9] opacity-0"

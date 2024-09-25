@@ -1,7 +1,7 @@
 <template>
   <DesignerFormMOB @close="handleCloseForm" v-if="isFormActive" />
   <section
-    class="designerCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[2vh] overflow-hidden rounded-lg shadow-md px-[5vw] pt-[3.4vh] pb-[2.8vh] text-center font-outfit flex items-center flex-col gap-[5.8vh]"
+    class="designerCardMOB opacity-0 translate-y-[6%] w-[90vw] mx-auto mt-[1rem] overflow-hidden rounded-lg shadow-md px-[5vw] pt-[1.6rem] pb-[1.2rem] text-center font-outfit flex items-center flex-col gap-[2.8rem]"
   >
     <div
       class="apnaBannerItem_Overlay backdrop-blur-[8px] absolute top-0 left-0 h-full w-full transition-all duration-[.4s] ease-in-out bg-gradient-to-b hover:to-[70%] to-transparent z-[-1]"
@@ -30,7 +30,7 @@
 
     <!-- Second line -->
     <h2
-      class="apnaBannerItem_Text opacity-0 text-[#333] text-[1.4rem] font-[400] pb-[2vh]"
+      class="apnaBannerItem_Text opacity-0 text-[#333] text-[1.4rem] font-[400] pb-[1rem]"
     >
       Unlock Designer Discounts!
     </h2>
@@ -46,11 +46,11 @@
 
     <!-- Button (Sign Up) -->
     <div
-      class="h-max w-full flex justify-end gap-[4vw] pt-[2vh] pr-[1vw] pb-[1vh]"
+      class="h-max w-full flex justify-end gap-[4vw] pt-[1rem] pr-[1vw] pb-[.5rem]"
     >
       <button
         @click="bringForm"
-        class="apnaBannerItem_Text opacity-0 border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[1.8vh] shadow-md rounded-full transition-colors duration-300 text-[1rem] font-[500]"
+        class="apnaBannerItem_Text opacity-0 border-[2px] border-[#888] text-[#444] active:shadow-xl w-[45%] py-[.9rem] shadow-md rounded-full transition-colors duration-300 text-[1rem] font-[500]"
       >
         Sign up
       </button>

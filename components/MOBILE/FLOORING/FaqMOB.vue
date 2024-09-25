@@ -1,18 +1,18 @@
 <template>
   <div
-    class="faqMOB opacity-0 translate-y-[6%] h-full w-full faq-container mx-auto pt-[4vh] pb-[8vh] px-[4vw] max-w-xl font-outfit"
+    class="faqMOB opacity-0 translate-y-[6%] h-full w-full faq-container mx-auto pt-[2rem] pb-[4rem] px-[4vw] max-w-xl font-outfit"
   >
     <h2
-      class="text-[1.5rem] tracking-[-.1vw] w-[80%] leading-[4.8vh] font-[400] mb-[3rem]"
+      class="text-[1.5rem] tracking-[-.1vw] w-[80%] leading-[2.4rem] font-[400] mb-[3rem]"
     >
       Frequently Asked Questions
     </h2>
     <!-- Show the first 5 FAQs initially and toggle between view more/less -->
     <ul v-auto-animate>
-      <li v-for="(faq, index) in visibleFaqs" :key="index" class="mb-[2vh]">
+      <li v-for="(faq, index) in visibleFaqs" :key="index" class="mb-[1rem]">
         <!-- Question -->
         <button
-          class="w-full text-left bg-gray-200 px-[2.4vw] py-[1.8vh] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
+          class="w-full text-left bg-gray-200 px-[2.4vw] py-[.9rem] rounded-lg shadow-md transition-all duration-[.5] ease-in-out hover:bg-gray-200 active:shadow-lg"
           @click="toggleFAQ(index)"
         >
           <div class="flex justify-between items-center">
@@ -28,7 +28,7 @@
         <!-- Answer (conditionally rendered) -->
         <div
           v-show="isExpanded(index)"
-          class="mt-[1.2vh] pt-[2vh] px-[3vw] py-[2vh] bg-gray-50 rounded-lg text-[#666] transition-all duration-300 ease-in-out"
+          class="mt-[.6rem] pt-[1rem] px-[3vw] py-[1rem] bg-gray-50 rounded-lg text-[#666] transition-all duration-300 ease-in-out"
         >
           {{ faq.answer }}
         </div>
@@ -39,7 +39,7 @@
     <button
       v-if="faqs.length > 5"
       @click="toggleViewMore"
-      class="w-full mt-[2vh] py-[1.8vh] px-[2vw] bg-[#999] text-white rounded-md shadow-lg flex items-center justify-center"
+      class="w-full mt-[1rem] py-[.9rem] px-[2vw] bg-[#999] text-white rounded-md shadow-lg flex items-center justify-center"
     >
       {{ showMore ? "View Less" : "View More" }}
       <Icon

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="min-[990px]:hidden h-max w-screen flex flex-col gap-[1.8vh] relative"
+    class="min-[990px]:hidden h-max w-screen flex flex-col gap-[.8rem] relative"
   >
     <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[1]"
+      class="h-max w-screen flex justify-evenly gap-[.8rem] px-[3.2vw] z-[1]"
     >
       <FlooringCategoryItem
         href="/flooring/carpets/details"
@@ -24,7 +24,7 @@
     </div>
 
     <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      class="h-max w-screen flex justify-evenly gap-[.8rem] px-[3.2vw] z-[9]"
     >
       <FlooringCategoryItem
         href="/flooring/pvc/details"
@@ -51,7 +51,7 @@
     </div>
 
     <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      class="h-max w-screen flex justify-evenly gap-[.8rem] px-[3.2vw] z-[9]"
     >
       <FlooringCategoryItem
         href="/flooring/raised/details"
@@ -89,7 +89,7 @@
       />
     </div>
     <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      class="h-max w-screen flex justify-evenly gap-[.8rem] px-[3.2vw] z-[9]"
     >
       <FlooringCategoryItem
         href="/flooring/rubber-flooring/details"
@@ -127,7 +127,7 @@
       />
     </div>
     <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      class="h-max w-screen flex justify-evenly gap-[.8rem] px-[3.2vw] z-[9]"
     >
       <FlooringCategoryItem
         href="/flooring/epoxy/details"
@@ -165,7 +165,7 @@
       />
     </div>
     <div
-      class="h-max w-screen flex justify-evenly gap-[1.8vh] px-[3.2vw] z-[9]"
+      class="h-max w-screen flex justify-evenly gap-[.8rem] px-[3.2vw] z-[9]"
     >
       <FlooringCategoryItem
         href="/flooring/services/details"

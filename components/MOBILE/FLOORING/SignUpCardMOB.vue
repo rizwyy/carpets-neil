@@ -3,7 +3,7 @@
     class="signUpCardMOB opacity-0 translate-y-[6%] w-[90vw] h-max mx-auto bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[5vw] py-[2rem] relative font-outfit"
   >
     <div
-      class="newsLetter_temp_div_MOB opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[.8rem] bg-black text-[#f1f1f1] fixed top-[2vh] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
+      class="newsLetter_temp_div_MOB opacity-0 flex gap-[2vw] items-center invisible translate-y-[50%] h-max w-max py-[.8rem] bg-black text-[#f1f1f1] fixed top-[1rem] z-[999] left-[50%] translate-x-[-50%] px-[4vw] rounded-md bg-opacity-[.4] backdrop-blur-[12px]"
     >
       <span>Email Added! We’ll be in touch soon.</span>
       <svg
@@ -41,7 +41,7 @@
         v-model="emailIpt"
         type="email"
         placeholder="Enter email address"
-        :class="`w-full h-[3rem] rounded-lg px-[3vw] text-[#333] text-[1rem] border-[.2vh] focus:outline-none ${
+        :class="`w-full h-[3rem] rounded-lg px-[3vw] text-[#333] text-[1rem] border-[.1rem] focus:outline-none ${
           emailInvalid ? 'border-red-500' : 'border-[#ededed]'
         }`"
       />
