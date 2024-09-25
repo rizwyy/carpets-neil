@@ -7,13 +7,13 @@
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== ''
       "
-      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5.2rem]"
     >
       <div
-        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+        class="h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between epoxy_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
+          class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between epoxy_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
         >
           Choose Your Color
           <button
@@ -21,7 +21,7 @@
             v-show="
               isMultiColoredOpted || userStore.preference.color.length > 0
             "
-            class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[.4rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
             Clear All<svg
@@ -40,11 +40,11 @@
         </div>
         <div
           v-show="userStore.preference.flooring === 'epoxy'"
-          class="h-max w-full flex flex-col gap-[2vh] relative"
+          class="h-max w-full flex flex-col gap-[1rem] relative"
         >
           <div
             v-show="isMultiColoredOpted"
-            class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
+            class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[2rem]"
           >
             <div
               class="h-max w-full flex-[2.5] flex justify-center items-center gap-[2vw]"
@@ -65,7 +65,7 @@
             </div>
             <div class="h-max w-full flex-[1.2]">
               <input
-                class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+                class="h-[3rem] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
                 type="text"
                 v-model="customColor"
                 placeholder="Enter your Color"
@@ -88,7 +88,7 @@
                     customColor.length > 2
                   "
                   @click="toggleSelect(customColor, 'done')"
-                  class="carpet_details_colors_mob_done1_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_done1_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Done
                 </button>
@@ -104,7 +104,7 @@
                 <button
                   v-show="userStore.preference.color.length > 0"
                   @click="toggleSelect(customColor, 'done')"
-                  class="carpet_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_done_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Done
                 </button>
@@ -118,7 +118,7 @@
                 <button
                   v-show="customColor.length > 2"
                   @click="toggleSelect(customColor, 'addMore')"
-                  class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_add_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Add More +
                 </button>
@@ -128,12 +128,12 @@
           <!-- SOLID -->
           <div
             v-show="userStore.preference.spec_2 === 'Solid'"
-            class="h-max w-full flex flex-col gap-[1vh]"
+            class="h-max w-full flex flex-col gap-[.5rem]"
           >
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <div
                 v-show="userStore.preference.spec_2 === 'Solid'"
-                class="color-box CustomColor h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+                class="color-box CustomColor h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] leading-[1.2rem]"
                 :class="{ selected: selectedColors.includes('CustomColor') }"
                 @click="toggleSelect('CustomColor')"
               >
@@ -142,14 +142,14 @@
                   >Custom Color</span
                 >
                 <div v-show="selectedColors.includes('CustomColor')">
-                  <span class="h-full w-full text-[2vh]">Add More +</span>
+                  <span class="h-full w-full text-[1rem]">Add More +</span>
                 </div>
               </div>
 
               <!-- MOBILE -->
               <div
                 v-show="userStore.preference.spec_2 === 'Solid'"
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER bg-black overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER bg-black overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Black') }"
                 @click="toggleSelect('Black')"
               >
@@ -159,14 +159,14 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Black')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer bg-[brown] relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer bg-[brown] relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Brown'),
                 }"
@@ -177,7 +177,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Brown')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -186,7 +186,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh] bg-[#999]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.4rem] bg-[#999]"
                 :class="{
                   selected: userStore.preference.color.includes('Grey'),
                 }"
@@ -198,14 +198,14 @@
                 <div v-show="userStore.preference.color.includes('Grey')">
                   <!-- MOBILE -->
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-green-500"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] bg-green-500"
                 :class="{
                   selected: userStore.preference.color.includes('Green'),
                 }"
@@ -216,14 +216,14 @@
                 >
                 <div v-show="userStore.preference.color.includes('Green')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
                 <!-- MOBILE -->
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-blue-500"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] bg-blue-500"
                 :class="{
                   selected: userStore.preference.color.includes('Blue'),
                 }"
@@ -235,7 +235,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Blue')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -244,7 +244,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER bg-white overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER bg-white overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('White'),
                 }"
@@ -255,14 +255,14 @@
                 >
                 <div v-show="userStore.preference.color.includes('White')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-red-500"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] bg-red-500"
                 :class="{
                   selected: userStore.preference.color.includes('Red'),
                 }"
@@ -273,13 +273,13 @@
                 >
                 <div v-show="userStore.preference.color.includes('Red')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-[pink]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] bg-[pink]"
                 :class="{
                   selected: userStore.preference.color.includes('Rose'),
                 }"
@@ -292,7 +292,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Rose')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -303,11 +303,11 @@
           <!-- METALLIC -->
           <div
             v-show="userStore.preference.spec_2 === 'Metallic'"
-            class="h-max w-full flex flex-col gap-[1vh]"
+            class="h-max w-full flex flex-col gap-[.5rem]"
           >
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Pearl White') }"
                 @click="toggleSelect('Pearl White')"
               >
@@ -325,13 +325,13 @@
                   v-show="userStore.preference.color.includes('Pearl White')"
                 >
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Black') }"
                 @click="toggleSelect('Black')"
               >
@@ -345,13 +345,13 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Black')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Copper') }"
                 @click="toggleSelect('Copper')"
               >
@@ -365,7 +365,7 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Copper')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -374,7 +374,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Coffee'),
                 }"
@@ -391,14 +391,14 @@
                 <div v-show="userStore.preference.color.includes('Coffee')">
                   <!-- MOBILE -->
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Caramel'),
                 }"
@@ -415,14 +415,14 @@
                 >
                 <div v-show="userStore.preference.color.includes('Caramel')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
                 <!-- MOBILE -->
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Blue'),
                 }"
@@ -438,7 +438,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Blue')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -447,7 +447,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Clear'),
                 }"
@@ -464,13 +464,13 @@
                 >
                 <div v-show="userStore.preference.color.includes('Clear')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Grey'),
                 }"
@@ -487,14 +487,14 @@
                 >
                 <div v-show="userStore.preference.color.includes('Grey')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Concrete'),
                 }"
@@ -511,7 +511,7 @@
                 >
                 <div v-show="userStore.preference.color.includes('Concrete')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -522,13 +522,13 @@
           <!-- FLAKES -->
           <div
             v-show="userStore.preference.spec_2 === 'Flakes'"
-            class="h-max w-full flex flex-col gap-[1vh]"
+            class="h-max w-full flex flex-col gap-[.5rem]"
           >
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Black') }"
                 @click="toggleSelect('Black')"
               >
@@ -545,13 +545,13 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Black')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Blue') }"
                 @click="toggleSelect('Blue')"
               >
@@ -568,13 +568,13 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Blue')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Fire') }"
                 @click="toggleSelect('Fire')"
               >
@@ -591,7 +591,7 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Fire')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -600,7 +600,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Grey') }"
                 @click="toggleSelect('Grey')"
               >
@@ -617,14 +617,14 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Grey')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Sand') }"
                 @click="toggleSelect('Sand')"
               >
@@ -641,14 +641,14 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Sand')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
 
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Sand') }"
                 @click="toggleSelect('Sand')"
               >
@@ -665,7 +665,7 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Sand')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -674,7 +674,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Timber') }"
                 @click="toggleSelect('Timber')"
               >
@@ -691,13 +691,13 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Timber')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
               </div>
               <div
-                class="color-box h-[10vh] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] epoxy_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
                 :class="{ selected: selectedColors.includes('Viper') }"
                 @click="toggleSelect('Viper')"
               >
@@ -714,7 +714,7 @@
                 <!-- MOBILE -->
                 <div v-show="userStore.preference.color.includes('Viper')">
                   <span
-                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                    class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
                     >Selected</span
                   >
                 </div>
@@ -727,16 +727,16 @@
 
           <div
             v-show="userStore.preference.spec_2 === 'Printed'"
-            class="h-[40vh] w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md z-[99] flex items-center justify-center flex-col gap-[4vh]"
+            class="h-[21rem] w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md z-[99] flex items-center justify-center flex-col gap-[2rem]"
           >
             <div
               class="h-max w-full flex-[2.5] flex justify-center items-center gap-[2vw]"
             >
-              <span class="text-[#f1f1f1] text-[3.2vh]">Enter Your Color</span>
+              <span class="text-[#f1f1f1] text-[1.6rem]">Enter Your Color</span>
             </div>
             <div class="h-max w-full flex-[1.2]">
               <input
-                class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+                class="h-[3rem] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
                 type="text"
                 v-model="customColor"
                 placeholder="Enter your Color"
@@ -753,7 +753,7 @@
                 <button
                   :disabled="userStore.preference.color.length > 0"
                   @click="toggleSelect(customColor)"
-                  class="text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Add
                 </button>
@@ -763,7 +763,7 @@
         </div>
         <div
           v-show="userStore.preference.color.length > 0"
-          class="h-max w-full flex flex-col gap-[1vh] items-start"
+          class="h-max w-full flex flex-col gap-[.5rem] items-start"
         >
           <span class="text-[#444]">Selected Colors:</span>
           <div class="w-full grid grid-cols-3 gap-[2vw]">
@@ -771,19 +771,19 @@
               v-for="color in userStore.preference.color"
               :key="color"
               :style="{ backgroundColor: getColorHex(color) }"
-              class="text-center border border-black rounded-md py-[.4vh] px-[.4vw] flex justify-evenly items-center overflow-hidden"
+              class="text-center border border-black rounded-md py-[.2rem] px-[.4vw] flex justify-evenly items-center overflow-hidden"
             >
               <span
-                class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.4vh] font-[500] backdrop-blur-[8px] text-white text-[1.6vh] text-center"
+                class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.2rem] font-[500] backdrop-blur-[8px] text-white text-[1.6vh] text-center"
               >
                 {{ color }}
               </span>
               <span
                 @click="toggleSelect(color)"
-                class="h-max w-max flex items-center bg-[#000] bg-opacity-[.2] px-[.8vw] py-[.4vh] rounded-full"
+                class="h-max w-max flex items-center bg-[#000] bg-opacity-[.2] px-[.8vw] py-[.2rem] rounded-full"
               >
                 <svg
-                  class="inline-block h-[2.4vh]"
+                  class="inline-block h-[1.2rem]"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >

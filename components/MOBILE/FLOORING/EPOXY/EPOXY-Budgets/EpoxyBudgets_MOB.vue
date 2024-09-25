@@ -8,20 +8,20 @@
         userStore.preference.spec_2 !== '' &&
         userStore.preference.color.length > 0
       "
-      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[2.6rem]"
     >
       <div
-        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+        class="h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <!-- MOBILE -->
         <div
-          class="h-max w-full flex items-center justify-between text-[3.4vh] z-[9] pl-[2vw] sport_Budget_Details_Mob-HEADING opacity-0 translate-x-[40%]"
+          class="h-max w-full flex items-center justify-between text-[1.5rem] z-[9] pl-[2vw] sport_Budget_Details_Mob-HEADING opacity-0 translate-x-[40%]"
         >
           <span>Choose Your Budget</span>
           <button
             @click="clearBudgetSelections"
             v-show="userStore.preference.budget !== ''"
-            class="h-max bg-white text-gray-500 px-[2vw] py-[1.2vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[.6rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             Clear All<svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,27 +40,27 @@
 
         <!-- NEW DESIGN -->
         <div
-          class="h-max w-full flex flex-col justify-center items-center gap-[1vh] z-[9]"
+          class="h-max w-full flex flex-col justify-center items-center gap-[.5rem] z-[9]"
         >
           <!-- MOBILE -->
           <!-- VALUE -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.6rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[.6rem] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Value' },
             ]"
             @click="toggleSelect('Value')"
           >
             <div
               v-show="budget === 'Value'"
-              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <div
                 class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
               >
                 <span
-                  class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                 >
                   Selected
                 </span>
@@ -72,12 +72,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Value </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -93,14 +93,14 @@
           <!-- ESSENTIAL -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.6rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[.6rem] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Essential' },
             ]"
             @click="toggleSelect('Essential')"
           >
             <div
               v-show="budget === 'Essential'"
-              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <!-- MOBILE -->
@@ -108,7 +108,7 @@
                 class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
               >
                 <span
-                  class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                 >
                   Selected
                 </span>
@@ -120,12 +120,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Essential </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -142,21 +142,21 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.6rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[.6rem] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Premier' },
             ]"
             @click="toggleSelect('Premier')"
           >
             <div
               v-show="budget === 'Premier'"
-              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- Selected indicator without text -->
               <div
                 class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
               >
                 <span
-                  class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                 >
                   Selected
                 </span>
@@ -169,12 +169,12 @@
             <!-- MOBILE -->
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Premier </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -193,14 +193,14 @@
           <!-- MOBILE -->
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.6rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[.6rem] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Signature' },
             ]"
             @click="toggleSelect('Signature')"
           >
             <div
               v-show="budget === 'Signature'"
-              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- MOBILE -->
               <!-- Selected indicator without text -->
@@ -208,7 +208,7 @@
                 class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
               >
                 <span
-                  class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                 >
                   Selected
                 </span>
@@ -219,12 +219,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Signature </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 {{
@@ -239,21 +239,21 @@
           </div>
           <div
             :class="[
-              'h-[10vh] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[1.2vh] text-[2.4vh] relative cursor-pointer',
+              'h-[5.6rem] sport_Budget_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-[100%] shadow border-[2px] border-[#f1f1f1] overflow-hidden  rounded-full  items-center justify-between flex text-[#f1f1f1] px-[4.8vw] py-[.6rem] text-[1.2rem] relative cursor-pointer',
               { selected: budget === 'Elite' },
             ]"
             @click="toggleSelect('Elite')"
           >
             <div
               v-show="budget === 'Elite'"
-              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+              class="selectedDiv h-full w-full absolute bottom-0 left-0 bg-opacity-[.3] rounded-md z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
             >
               <!-- MOBILE -->
               <div
                 class="absolute left-0 top-0 h-full w-full flex items-center justify-center bg-[#000] bg-opacity-[.2] backdrop-blur-[1.4px] rounded-full"
               >
                 <span
-                  class="bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                 >
                   Selected
                 </span>
@@ -264,12 +264,12 @@
             ></div>
 
             <div
-              class="text-[2.4vh] h-full h-full flex-1 flex justify-start items-center"
+              class="text-[1.2rem] h-full h-full flex-1 flex justify-start items-center"
             >
               <span> Elite </span>
             </div>
             <div
-              class="font-[400] text-[2vh] text-left h-full flex-[2] flex justify-end items-center text-right"
+              class="font-[400] text-[1rem] text-left h-full flex-[2] flex justify-end items-center text-right"
             >
               <span>
                 Over

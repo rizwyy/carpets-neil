@@ -24,7 +24,7 @@
         <!-- Wall To Wall -->
         <div
           :class="[
-            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.4rem] text-[1.2rem] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes('Wall to Wall'),
             },
@@ -33,11 +33,11 @@
         >
           <div
             v-show="userStore.preference.spec_1.includes('Wall to Wall')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh] rounded-md"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem] rounded-md"
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
               >Selected</span
             >
           </div>
@@ -59,7 +59,7 @@
         <!-- Carpet Tiles -->
         <div
           :class="[
-            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.4rem] text-[1.2rem] relative cursor-pointer',
             {
               selected: userStore.preference.spec_1.includes('Carpet Tiles'),
             },
@@ -68,11 +68,11 @@
         >
           <div
             v-show="userStore.preference.spec_1.includes('Carpet Tiles')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
               >Selected</span
             >
           </div>
@@ -95,18 +95,18 @@
         <!-- Area Rugs -->
         <div
           :class="[
-            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden rounded-md  border-[2px] border-[#f1f1f1]  w-full flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.4rem] text-[1.2rem] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Area Rugs') },
           ]"
           @click="toggleSelect('Area Rugs')"
         >
           <div
             v-show="userStore.preference.spec_1.includes('Area Rugs')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
               >Selected</span
             >
           </div>
@@ -128,18 +128,18 @@
         <!-- Customized -->
         <div
           :class="[
-            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+            'h-[7.2rem] carpet_Category_Details_Mob-CONTAINER overflow-hidden w-full rounded-md border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.4rem] text-[1.2rem] relative cursor-pointer',
             { selected: userStore.preference.spec_1.includes('Runners') },
           ]"
           @click="toggleSelect('Runners')"
         >
           <div
             v-show="userStore.preference.spec_1.includes('Runners')"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.5rem]"
           >
             <!-- Selected indicator without text -->
             <span
-              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+              class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.9rem] rounded-md"
               >Selected</span
             >
           </div>

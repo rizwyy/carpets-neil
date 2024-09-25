@@ -1,19 +1,21 @@
 <template>
   <!-- *** MOBILE *** -->
   <div
-    class="min-[990px]:hidden h-max w-screen flex flex-col gap-[8vh] py-[6vh] font-outfit"
+    class="min-[990px]:hidden h-max w-screen flex flex-col gap-[4rem] py-[3rem] font-outfit"
   >
-    <div class="h-max w-full text-center items-center flex flex-col gap-[1vh]">
-      <span class="text-[3.5vh] w-[88%]">Customization Journey</span>
-      <span class="text-[2vh] text-[#666]">Breaking Down Our Approach.</span>
+    <div
+      class="h-max w-full text-center items-center flex flex-col gap-[.5rem]"
+    >
+      <span class="text-[1.9rem] w-[88%]">Customization Journey</span>
+      <span class="text-[1rem] text-[#666]">Breaking Down Our Approach.</span>
     </div>
 
-    <div class="h-max w-full flex flex-col gap-[8vh] py-[4vh] px-[4vw]">
+    <div class="h-max w-full flex flex-col gap-[4rem] py-[2rem] px-[4vw]">
       <!-- Render Steps Dynamically -->
       <div
         v-for="(step, index) in steps"
         :key="index"
-        :class="`h-[28vh] w-full overflow-hidden flex items-center gap-[1vw] opacity-0 translate-y-[5%]  step-${
+        :class="`h-[16.8rem] w-full overflow-hidden flex items-center gap-[1vw] opacity-0 translate-y-[5%]  step-${
           index + 5
         } ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`"
       >
@@ -33,21 +35,21 @@
 
         <!-- Text Section for mobile -->
         <div
-          class="h-full w-[60%] flex flex-col items-start justify-between gap-[2vh] py-[1vh] px-[2vw]"
+          class="h-full w-[60%] flex flex-col items-start justify-between gap-[2vh] py-[.5rem] px-[2vw]"
         >
-          <span class="text-[2vh] font-[500] text-[#999]"
+          <span class="text-[1rem] font-[500] text-[#999]"
             >STEP {{ index + 1 }}</span
           >
-          <div class="h-max w-full flex flex-col gap-[1.6vh]">
-            <span class="text-[2.8vh] font-[500]">{{ step.title }}</span>
-            <span class="text-[1.8vh] w-[80%]">{{ step.description }}</span>
+          <div class="h-max w-full flex flex-col gap-[.8rem]">
+            <span class="text-[1.4rem] font-[500]">{{ step.title }}</span>
+            <span class="text-[1rem] w-[80%]">{{ step.description }}</span>
           </div>
-          <div class="h-max w-full flex justify-end">
+          <div class="h-max w-full flex justify-start">
             <a
               v-if="index === 0"
-              class="h-max w-max rounded-full text-blue-500 text-[2vh] font-[500] flex items-center"
+              class="h-max w-max rounded-full text-blue-500 text-[1rem] underline underline-offset-[.4rem] font-[500] flex items-center"
               href="https://wa.me/917021949329"
-              >Chat with us <ArrowRightIcon class="text-[2.8vh]"
+              >Chat with us <ArrowRightIcon class="text-[1.4rem]"
             /></a>
           </div>
         </div>

@@ -77,8 +77,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   selectedCountry === country.name
-                    ? 'mingcute:checkbox-fill'
-                    : 'ri:checkbox-blank-line'
+                    ? 'material-symbols:check-box-outline-rounded'
+                    : 'material-symbols:check-box-outline-blank'
                 "
               />
             </div>
@@ -107,8 +107,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   selectedFloorings.includes(flooring.name)
-                    ? 'mingcute:checkbox-fill'
-                    : 'ri:checkbox-blank-line'
+                    ? 'material-symbols:check-box-outline-rounded'
+                    : 'material-symbols:check-box-outline-blank'
                 "
               />
             </div>
@@ -137,8 +137,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   selectedServices.includes(service)
-                    ? 'mingcute:checkbox-fill'
-                    : 'ri:checkbox-blank-line'
+                    ? 'material-symbols:check-box-outline-rounded'
+                    : 'material-symbols:check-box-outline-blank'
                 "
               />
             </div>
@@ -167,8 +167,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   userPosition === pos
-                    ? 'mingcute:checkbox-fill'
-                    : 'ri:checkbox-blank-line'
+                    ? 'material-symbols:check-box-outline-rounded'
+                    : 'material-symbols:check-box-outline-blank'
                 "
               />
             </div>
@@ -197,8 +197,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   projectStatus === status
-                    ? 'mingcute:checkbox-fill'
-                    : 'ri:checkbox-blank-line'
+                    ? 'material-symbols:check-box-outline-rounded'
+                    : 'material-symbols:check-box-outline-blank'
                 "
               />
             </div>
@@ -227,8 +227,8 @@
                 class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
                 :icon="
                   timeFrame === frame
-                    ? 'mingcute:checkbox-fill'
-                    : 'ri:checkbox-blank-line'
+                    ? 'material-symbols:check-box-outline-rounded'
+                    : 'material-symbols:check-box-outline-blank'
                 "
               />
             </div>
