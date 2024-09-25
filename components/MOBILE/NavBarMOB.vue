@@ -36,7 +36,7 @@
       </span>
     </div>
     <div
-      class="h-[66svh] w-screen flex flex-col justify-center gap-[2rem] items-start px-[4vw] text-[2.2rem]"
+      class="h-[66svh] w-screen flex flex-col justify-center gap-[2rem] items-start px-[4vw] text-[2rem]"
     >
       <ul class="flex flex-col gap-[1rem]">
         <li v-for="(link, index) in links" :key="index">
@@ -137,10 +137,10 @@
     <!-- No items section -->
     <div
       v-else
-      class="h-[60rem] w-full flex items-center flex-col gap-[8rem] pt-[9rem] px-[4vw]"
+      class="h-[60rem] w-full flex items-center flex-col gap-[6rem] pt-[9rem] px-[4vw]"
     >
-      <NuxtImg class="h-[8rem]" src="/icons/box.webp" />
-      <span class="text-[1.4rem] font-[300] text-center">
+      <NuxtImg class="h-[7.6rem]" src="/icons/box.webp" />
+      <span class="text-[1rem] font-[300] text-center">
         Oops! It looks like you don't have any saved preferences yet. Start
         exploring and add your favorite options!
       </span>
