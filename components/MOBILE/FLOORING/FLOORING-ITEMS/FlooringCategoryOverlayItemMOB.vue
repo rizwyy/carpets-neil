@@ -1,21 +1,17 @@
 <template>
   <a
     :href="href"
-    class="h-[16vh] w-full rounded-[8px] overflow-hidden relative flex flex-col gap-[.8vh] items-center justify-between px-[1.8vw] pt-[1.8vh] pb-[1.2vh] shadow-xl"
+    class="h-[7.6rem] w-full rounded-[8px] overflow-hidden relative flex flex-col gap-[.4rem] items-center justify-between px-[1.8vw] pt-[.9rem] pb-[.6rem] shadow-xl"
   >
     <span
       :class="titleClass"
-      class="w-[100%] h-max text-[2.8vh] font-[400] leading-[3.2vh] z-[1] text-[#f1f1f1]"
+      class="w-[100%] h-max text-[1.4rem] font-[400] leading-[1.6rem] z-[1] text-[#f1f1f1]"
     >
       <slot name="title">{{ title }}</slot>
     </span>
-    <!-- <button
-      class="text-[#ddd] border-[1px] rounded-full px-[2vw] py-[.8vh] text-[1.4vh] font-[500] tracking-[.1vw]"
-    >
-      SELECT
-    </button> -->
-    <span class="h-max w-full flex justify-end text-[3vh] text-[#f1f1f1]">
-      <ArrowGoIcon />
+
+    <span class="h-max w-full flex justify-end text-[1.5rem] text-[#f1f1f1]">
+      <Icon icon="material-symbols:arrow-outward-rounded" />
     </span>
     <div
       class="absolute object-cover bottom-0 left-0 h-full w-full z-[-9] bg-[#000] bg-opacity-[.4]"
@@ -33,6 +29,7 @@
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import ArrowGoIcon from "~/public/icons/ArrowGoIcon.vue";
 
 defineProps({

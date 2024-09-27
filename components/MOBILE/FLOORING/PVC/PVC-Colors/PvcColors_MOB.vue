@@ -13,7 +13,7 @@
         class="min-[990px]:hidden container mx-auto p-[4vh] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[2vh]"
       >
         <div
-          class="header text-[1.6rem text-left z-[9] h-max w-full items-center flex justify-between"
+          class="header text-[1.6rem] text-left z-[9] h-max w-full items-center flex justify-between"
         >
           <span
             class="text-left text-balance pvc_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"

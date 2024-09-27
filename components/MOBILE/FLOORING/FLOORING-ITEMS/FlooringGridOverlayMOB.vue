@@ -2,7 +2,7 @@
   <div class="h-max w-screen mx-auto">
     <ul
       v-auto-animate
-      class="h-max max-w-screen overflow-x-hidden w-full grid grid-cols-3 gap-[2vh] px-[2vw]"
+      class="h-max max-w-screen overflow-x-hidden w-full grid grid-cols-3 gap-[1rem] px-[2vw]"
     >
       <li
         class="h-max w-full"

@@ -6,7 +6,7 @@
       class="h-[62rem] w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"
     >
       <div
-        class="h-[120svh] w-screen gap-[1vh] bg-inherit flex flex-col items-center justify-start gap-[1.5rem]"
+        class="h-[120svh] w-screen gap-[.5rem] bg-inherit flex flex-col items-center justify-start gap-[1.5rem]"
       >
         <div
           class="h-max w-full flex justify-between items-center px-[2.6vw] pt-[2rem] pb-[1rem]"
@@ -16,7 +16,7 @@
           >
           <span
             @click="handleCancelAddMoreFlooring"
-            class="flex items-center text-[3.8vh] text-[#222]"
+            class="flex items-center text-[1.8rem] text-[#222]"
           >
             <ClearAllIcon />
           </span>
@@ -77,11 +77,11 @@
         class="h-max w-max text-[#555] rounded-full"
       >
         <div class="h-max w-max flex items-center gap-[1vw] text-[1.4rem]">
-          <span class="text-[2vh]">Refresh</span>
+          <span class="text-[1rem]">Refresh</span>
           <RefreshIcon />
         </div>
       </button>
-      <div v-else class="text-[3.2vh] px-[4vw]">
+      <div v-else class="text-[1.6rem] px-[4vw]">
         <LoadingIcon2 />
       </div>
     </div>
