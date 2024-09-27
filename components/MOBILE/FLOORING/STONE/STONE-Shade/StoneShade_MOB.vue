@@ -5,8 +5,7 @@
       v-show="
         userStore.preference.flooring === 'stone' &&
         userStore.preference.spec_1 !== '' &&
-        userStore.preference.spec_2 !== '' &&
-        userStore.preference.color.length > 0
+        userStore.preference.spec_2 !== ''
       "
       class="h-max w-screen flex justify-center pb-[10vh]"
     >

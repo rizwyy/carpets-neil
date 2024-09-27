@@ -6,7 +6,8 @@
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
         (userStore.preference.spec_2 !== 'Porcelain' ||
-          userStore.preference.spec_3 !== '')
+          userStore.preference.spec_3 !== '') &&
+        userStore.preference.spec_4 !== ''
       "
       class="h-max w-screen flex justify-center pb-[5rem]"
     >

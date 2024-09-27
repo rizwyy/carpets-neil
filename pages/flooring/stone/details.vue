@@ -83,8 +83,8 @@ onMounted(() => {
       <StoneFormatDetails />
       <LazyStoneMaterialDetails />
       <LazyStoneEffectDetails />
-      <LazyStoneColorDetails />
       <LazyStoneShadeDetails />
+      <LazyStoneColorDetails />
       <LazyStoneBudgetDetails />
       <LazyOrderMethod flooring="stone" />
       <LazyInfoForm flooring="stone" />
@@ -122,8 +122,8 @@ onMounted(() => {
       <StoneFormatDetails />
       <LazyStoneMaterialDetails />
       <LazyStoneEffectDetails />
-      <LazyStoneColorDetails />
       <LazyStoneShadeDetails />
+      <LazyStoneColorDetails />
       <LazyStoneBudgetDetails />
       <LazyOrderMethod flooring="stone" />
       <LazyInfoForm flooring="stone" />

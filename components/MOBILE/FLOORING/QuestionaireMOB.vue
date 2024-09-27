@@ -18,7 +18,7 @@
           <button
             v-show="currentQuestion > 0"
             @click="currentQuestion === 1 ? closeForm() : decrementQuestion()"
-            class="px-[2vw] py-[.4rem] active:scale-[.9] transition-all duration-100 font-[500] font-[500] text-[1.2rem] underline underline-offset-[.2rem] text-[#444]"
+            class="px-[2vw] py-[.4rem] active:scale-[.9] transition-all duration-100 font-[500] font-[500] text-[1.2rem] underline underline-offset-[.2rem] text-[#999]"
           >
             Back
           </button>
@@ -74,7 +74,7 @@
             >
               <span>{{ country.name }}</span>
               <Icon
-                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
+                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#999]"
                 :icon="
                   selectedCountry === country.name
                     ? 'material-symbols:check-box-outline-rounded'
@@ -104,7 +104,7 @@
             >
               <span>{{ flooring.name }}</span>
               <Icon
-                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
+                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#999]"
                 :icon="
                   selectedFloorings.includes(flooring.name)
                     ? 'material-symbols:check-box-outline-rounded'
@@ -134,7 +134,7 @@
             >
               <span class="text-[1.2rem]">{{ service }}</span>
               <Icon
-                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
+                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#999]"
                 :icon="
                   selectedServices.includes(service)
                     ? 'material-symbols:check-box-outline-rounded'
@@ -164,7 +164,7 @@
             >
               <span class="text-[1.2rem]">{{ pos }}</span>
               <Icon
-                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
+                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#999]"
                 :icon="
                   userPosition === pos
                     ? 'material-symbols:check-box-outline-rounded'
@@ -194,7 +194,7 @@
             >
               <span class="text-[1.2rem]">{{ status }}</span>
               <Icon
-                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
+                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#999]"
                 :icon="
                   projectStatus === status
                     ? 'material-symbols:check-box-outline-rounded'
@@ -224,7 +224,7 @@
             >
               <span class="text-[1.1rem]">{{ frame }}</span>
               <Icon
-                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#444]"
+                class="absolute top-[.2rem] right-[.5vw] text-[1.4rem] text-[#999]"
                 :icon="
                   timeFrame === frame
                     ? 'material-symbols:check-box-outline-rounded'
@@ -242,11 +242,6 @@
           <div
             class="h-full w-full flex flex-col items-center gap-[1rem] justify-center flex-[3] px-[3.2vw]"
           >
-            <input
-              class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none h-[3.2rem] rounded-md bg-inherit px-[2vw] text-[1rem] py-[.8rem] w-[100%] border-[2px] border-[#777]"
-              type="number"
-              placeholder="ZIP Code"
-            />
             <textarea
               v-model="addressIpt"
               placeholder="Your address here"
