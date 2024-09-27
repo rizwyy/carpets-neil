@@ -17,7 +17,8 @@
     <div
       class="h-max w-[75%] px-[4vw] flex flex-col items-start gap-[1rem] pt-[.4rem]"
     >
-      <DoubleTickIcon
+      <Icon
+        icon="charm:tick-double"
         class="txt_Text opacity-0 text-[6rem] text-[#666] max-[320px]:hidden"
       />
       <h2
@@ -34,26 +35,6 @@
         forward to delivering the best service!
       </p>
     </div>
-    <div class="h-max w-full px-[4vw]">
-      <div
-        class="txt_Text opacity-0 h-max w-[100%] min-[990px]:w-[60%] py-[.8rem] rounded-2xl px-[2.8vw] flex flex-col gap-[.8rem] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
-      >
-        <div
-          class="flex items-center h-max w-full min-[990px]:tracking-[.2vw] gap-[3vw] text-[#999] tracking-[.4vw] text-[.9rem] font-[500]"
-        >
-          <span>WHAT NEXT</span>
-        </div>
-        <div class="flex items-center h-max w-full gap-[3vw] text-[1rem]">
-          <span>- Our representative will contact you within 24 hours.</span>
-        </div>
-        <div class="flex items-center h-max w-full gap-[3vw] text-[1rem]">
-          <span
-            >- Please make sure your contact details are accurate and
-            reachable.</span
-          >
-        </div>
-      </div>
-    </div>
     <a
       href="/"
       class="txt_Text opacity-0 h-max w-[92vw] text-[1.2rem] tracking-[.4vw] rounded-md py-[1.2rem] text-[#ededed] bg-[#222] text-center fixed bottom-[2vh] left-[4vw] shadow-xl mt-[3rem] z-[99]"
@@ -64,22 +45,28 @@
 </template>
 
 <script setup>
-import DoubleTickIcon from "./../../public/icons/DoubleTickIcon.vue";
-import TickIcon from "./../../public/icons/TickIcon.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 const userPreference = useCookie("userPreference");
-const firstName = computed(() => {
-  // Check if userPreference, userPreference.value, and userPreference.value.name are defined and valid
-  if (
-    !userPreference ||
-    !userPreference.value ||
-    typeof userPreference.value.name !== "string"
-  ) {
-    return "";
-  }
 
-  // Proceed with the name extraction and formatting if it's a valid string
-  const name = userPreference.value.name.trim().split(" ")[0];
-  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+const firstName = computed(() => {
+  try {
+    // Check if userPreference, userPreference.value, and userPreference.value.name are defined and valid
+    if (
+      !userPreference ||
+      !userPreference.value ||
+      typeof userPreference.value.name !== "string"
+    ) {
+      return ""; // Return an empty string if the name is not valid
+    }
+
+    // Proceed with the name extraction and formatting if it's a valid string
+    const name = userPreference.value.name.trim().split(" ")[0];
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  } catch (error) {
+    // In case of any unexpected errors, handle it gracefully
+    console.error("Error computing firstName:", error);
+    return ""; // Return an empty string to prevent the app from crashing
+  }
 });
 
 onMounted(() => {

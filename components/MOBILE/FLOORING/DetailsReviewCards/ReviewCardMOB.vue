@@ -21,7 +21,7 @@
             <ClearAllIcon />
           </span>
         </div>
-        <FlooringGridOverlayMOB />
+        <FlooringGridOverlayMOB :isFlooringVisible="isFlooringVisible" />
       </div>
     </div>
 
