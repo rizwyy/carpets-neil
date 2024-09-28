@@ -6,7 +6,7 @@
     <span>Subscription successful! We’ll be in touch soon</span>
   </div>
   <section
-    class="SingUpCardPC opacity-0 translate-y-[4%] w-[60vw] h-max mx-auto relative bg-gradient-to-br from-blue-100 rounded-lg shadow-lg px-[4vw] py-[6vh] relative font-outfit flex flex-col items-center gap-[2vh]"
+    class="SingUpCardPC opacity-0 translate-y-[4%] w-[60vw] h-max mx-auto relative bg-gradient-to-br from-[#DCEDFD] rounded-lg shadow-lg px-[4vw] py-[6vh] relative font-outfit flex flex-col items-center gap-[2vh]"
   >
     <!-- Sign-up Header -->
     <h2 class="text-center text-[#333] font-[500] text-[2.5vw]">
