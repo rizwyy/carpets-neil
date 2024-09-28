@@ -242,11 +242,6 @@
           <div
             class="h-full w-full flex flex-col items-start gap-[1.8rem] justify-center flex-[3] px-[4vw]"
           >
-            <input
-              class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none h-[3.2rem] rounded-md bg-inherit px-[1.4vw] text-[1rem] py-[.8rem] w-[40%] border-[2px] border-[#777]"
-              type="number"
-              placeholder="ZIP Code"
-            />
             <textarea
               v-model="addressIpt"
               placeholder="Your address here"
@@ -280,7 +275,7 @@
               type="number"
               v-model="phoneIpt"
               placeholder="Phone"
-              class="h-[3.8rem] rounded-md bg-inherit px-[2vw] text-[1rem] py-[.8rem] w-[100%] border-[2px] border-[#777]"
+              class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none h-[3.8rem] rounded-md bg-inherit px-[2vw] text-[1rem] py-[.8rem] w-[100%] border-[2px] border-[#777]"
             />
             <div class="h-max w-full px-[2vw] flex justify-end pt-[2rem]">
               <button
@@ -317,6 +312,8 @@
 <script setup>
 import { Icon } from "@iconify/vue/dist/iconify.js";
 import QuestionaireCard from "./QuestionaireCard.vue";
+import { ref, computed } from "vue";
+
 const currentQuestion = ref(1);
 const selectedCountry = ref("");
 const selectedFloorings = ref([]);
@@ -328,6 +325,8 @@ const addressIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
 const isLoading = ref(false);
+const showError = ref(false); // Add showError ref
+
 const questionnaireList = [
   {
     question: "Which country are you located in?",
@@ -372,64 +371,27 @@ const closeForm = () => {
   emit("close");
 };
 
-// #1
+// Data
 const countriesWithIcons = [
-  {
-    name: "Bahrain",
-  },
-  {
-    name: "Qatar",
-  },
-  {
-    name: "Kuwait",
-  },
-  {
-    name: "Saudi Arabia",
-  },
-  {
-    name: "UAE",
-  },
-  {
-    name: "Oman",
-  },
+  { name: "Bahrain" },
+  { name: "Qatar" },
+  { name: "Kuwait" },
+  { name: "Saudi Arabia" },
+  { name: "UAE" },
+  { name: "Oman" },
 ];
-// #2
-const flooringProducts = [
-  {
-    name: "Carpet ",
-    description: "Image description",
-  },
-  {
-    name: "Parquet ",
-    description: "Image description",
-  },
-  {
-    name: "Vinyl ",
-    description: "Image description",
-  },
 
-  {
-    name: "Raised ",
-    description: "Image description",
-  },
-  {
-    name: "Rubber ",
-    description: "Image description",
-  },
-  {
-    name: "Grass ",
-    description: "Image description",
-  },
-  {
-    name: "Epoxy ",
-    description: "Image description",
-  },
-  {
-    name: "Stone ",
-    description: "Image description",
-  },
+const flooringProducts = [
+  { name: "Carpet " },
+  { name: "Parquet " },
+  { name: "Vinyl " },
+  { name: "Raised " },
+  { name: "Rubber " },
+  { name: "Grass " },
+  { name: "Epoxy " },
+  { name: "Stone " },
 ];
-// #3
+
 const flooringServices = [
   "Installation",
   "Maintenance",
@@ -437,17 +399,16 @@ const flooringServices = [
   "Consultation",
   "Repair",
 ];
-// #4
 const floorManagerOptions = ["Homeowner", "Contractor"];
-// #5
 const projectStatusOptions = ["Tender", "Job in Hand"];
-// #6
 const timeFrameOptions = [
   "Immediate",
   "1-3 Months",
   "3-6 Months",
   "More than 6 Months",
 ];
+
+// Progress bar width
 const progressBarWidth = computed(() => {
   return (
     (currentQuestion.value - 1) *
@@ -455,57 +416,100 @@ const progressBarWidth = computed(() => {
   ).toFixed(2);
 });
 
+// Toggle Functions
 const toggleCountrySelection = (countryName) => {
   selectedCountry.value = countryName;
 };
+
 const toggleUserPosition = (pos) => {
   userPosition.value = pos;
 };
+
 const toggleTimeFrame = (frame) => {
   timeFrame.value = frame;
 };
+
 const toggleProjectStatus = (project) => {
   projectStatus.value = project;
 };
+
 const toggleFlooringSelection = (flooring) => {
-  // Check if the country is already selected
   if (selectedFloorings.value.includes(flooring)) {
-    // If selected, remove it from the array
     selectedFloorings.value = selectedFloorings.value.filter(
-      (country) => country !== flooring
+      (item) => item !== flooring
     );
   } else {
-    // If not selected, add it to the array
     selectedFloorings.value.push(flooring);
   }
 };
+
 const toggleServiceSelection = (service) => {
-  // Check if the country is already selected
   if (selectedServices.value.includes(service)) {
-    // If selected, remove it from the array
     selectedServices.value = selectedServices.value.filter(
-      (country) => country !== service
+      (item) => item !== service
     );
   } else {
-    // If not selected, add it to the array
     selectedServices.value.push(service);
   }
 };
-function incrementQuestion() {
-  if (currentQuestion.value < questionnaireList.length) currentQuestion.value++;
-}
-function decrementQuestion() {
-  if (currentQuestion.value > 1) currentQuestion.value--;
-}
 
-function handleQuestionaireConfirmation() {
-  isLoading.value = true;
-  setTimeout(() => {
-    closeForm();
-    isLoading.value = false;
-    emit("success");
-  }, 2000);
-}
+// Validation logic for each question
+const validateCurrentQuestion = () => {
+  switch (currentQuestion.value) {
+    case 1:
+      return selectedCountry.value !== ""; // Ensure a country is selected
+    case 2:
+      return selectedFloorings.value.length > 0; // At least one flooring product selected
+    case 3:
+      return selectedServices.value.length > 0; // At least one service selected
+    case 4:
+      return userPosition.value !== ""; // User position must be selected
+    case 5:
+      return projectStatus.value !== ""; // Project status must be selected
+    case 6:
+      return timeFrame.value !== ""; // Time frame must be selected
+    case 7:
+      return addressIpt.value.length > 9; // Address must not be empty
+    case 8:
+      return nameIpt.value.length > 4 && phoneIpt.value.length > 5; // Name and phone must not be empty
+    default:
+      return true;
+  }
+};
+
+// Navigation between questions
+const incrementQuestion = () => {
+  if (
+    validateCurrentQuestion() &&
+    currentQuestion.value < questionnaireList.length
+  ) {
+    showError.value = false; // Hide error when validation passes
+    currentQuestion.value++;
+  } else {
+    showError.value = true; // Show error when validation fails
+  }
+};
+
+const decrementQuestion = () => {
+  if (currentQuestion.value > 1) {
+    currentQuestion.value--;
+    showError.value = false; // Hide error on moving back
+  }
+};
+
+// Confirmation
+const handleQuestionaireConfirmation = () => {
+  if (nameIpt.value.length > 4 && phoneIpt.value.toString().length > 6) {
+    isLoading.value = true;
+    setTimeout(() => {
+      closeForm();
+      isLoading.value = false;
+      emit("success");
+    }, 2000);
+  } else {
+    showError.value = true;
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>
