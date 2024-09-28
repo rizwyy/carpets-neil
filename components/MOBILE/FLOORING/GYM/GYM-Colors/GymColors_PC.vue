@@ -10,7 +10,7 @@
           userStore.preference.spec_2 !== '' &&
           userStore.preference.spec_3 !== ''
         "
-        class="container relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
+        class="relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
       >
         <div
           class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
