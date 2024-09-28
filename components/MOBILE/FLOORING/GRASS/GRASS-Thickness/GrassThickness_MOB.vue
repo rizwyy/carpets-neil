@@ -1,51 +1,43 @@
 <template>
   <!-- MOBILE -->
-  <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
+  <div
+    class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5.2rem]"
+  >
     <div
-      class="h-max w-[96vw] text-center py-[2vh] flex flex-col gap-[4vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+      class="h-max w-[96vw] text-center py-[1rem] flex flex-col gap-[2rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
-        class="h-max w-full flex items-center justify-between text-[3.2vh] tracking-[-.07vw] z-[9]"
+        class="h-max w-full flex items-center justify-between text-[1.6rem] tracking-[-.05vw] z-[9]"
       >
         <span class="text-left text-balance"> Choose Your Thickness </span>
         <button
           @click="clearAllSelections_spec1()"
           v-show="userStore.preference.spec_1 !== ''"
-          class="h-max bg-white text-gray-500 text-detailsContainer_clearAllText_MOB px-[2vw] py-[.8vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
+          class="h-max bg-white text-gray-500 text-detailsContainer_clearAllText_MOB px-[2vw] py-[.4rem] text-[.8rem] rounded-md flex gap-[1vw] items-center"
         >
           <!-- MOBILE -->
-          Clear All<svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-            />
-          </svg>
+          Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
         </button>
       </div>
 
       <!--THICKNESS OPTIONS IN FLEX-COL WITH GAP-->
-      <div class="flex flex-col gap-[1.8vh]">
+      <div class="grid grid-cols-2 gap-[.8rem]">
         <!-- Iterate over thickness options -->
         <div
           v-for="thickness in thicknessOptions"
           :key="thickness"
           :class="[
-            'h-[10vh] overflow-hidden bg-[#222] rounded-full text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+            'h-[5.2rem] overflow-hidden bg-[#222] bg-opacity-[.7] backdrop-blue-[9px] rounded-md text-left leading-[1.6rem] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.4rem] text-[4.6vw] relative cursor-pointer',
             { selected: spec_1.includes(thickness) },
           ]"
           @click="toggleSelect(thickness)"
         >
           <div
             v-show="spec_1.includes(thickness)"
-            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[.4rem]"
           >
             <span
-              class="absolute top-[1vh] right-[6vw] bg-white text-gray-500 px-[2vw] py-[.2vh] text-[1.8vh] rounded-md"
+              class="absolute top-[.4rem] right-[1vw] bg-white text-gray-500 px-[1.2vw] py-[.1rem] text-[.8rem] rounded-md"
             >
               Selected
             </span>
@@ -64,6 +56,7 @@
 <script setup>
 const { existingUser } = defineProps(["existingUser"]);
 
+import { Icon } from "@iconify/vue/dist/iconify.js";
 // PINIA
 import useUserStore from "~/stores/user";
 const userStore = useUserStore();
@@ -108,7 +101,7 @@ const toggleSelect = (type) => {
 
 <style scoped>
 .selected {
-  border-radius: 100px;
+  border-radius: 8px;
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
-  <!-- DESKTOP CARPETS-->
+  <!-- DESKTOP GRASS-->
   <div
-    class="max-[990px]:hidden h-max w-screen px-[6vw] flex flex-col items-center gap-[4vh] justify-center"
+    class="max-[990px]:hidden h-max w-screen flex flex-col items-center gap-[2rem] px-[6vw] justify-center"
   >
     <transition @beforeEnter="handleDetailsDOMEntry('grass_Colors_Details_PC')">
       <div
         v-show="userStore.preference.spec_1 !== ''"
-        class="container relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
+        class="h-max w-full shadow-xl py-[6vh] px-[2vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[4.2rem]"
       >
         <div
-          class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
+          class="header text-[1.8rem] text-left z-[9] h-max w-full items-center flex justify-between"
         >
           <span
             v-show="!isMultiColoredOpted"
@@ -20,21 +20,11 @@
           <button
             @click="clearColorSelections"
             v-show="userStore.preference.color.length"
-            class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[1.8vh] rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[1vh] text-[1.2rem] rounded-md flex gap-[.4vw] items-center"
           >
             <!-- DESKTOP -->
-            <span class="text-[2.2vh]">Clear All</span
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-              />
-            </svg>
+            <span class="text-[1.2rem]">Clear All</span
+            ><Icon icon="material-symbols:cancel-outline-rounded" />
           </button>
         </div>
 
@@ -396,6 +386,7 @@
   </div>
 </template>
 <script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
 import { ref } from "vue";
 
 // PINIA
