@@ -47,15 +47,16 @@ async function getHistory(phone, country) {
   }
 }
 
-const isMobile = ref(true);
+const isDesktop = ref(true);
 
 onMounted(async () => {
-  if (window.innerWidth < 990) {
-    isMobile.value = true;
+  if (window.innerWidth > 990) {
+    isDesktop.value = true;
   } else {
-    isMobile.value = false;
+    isDesktop.value = false;
   }
-  if (!isMobile) {
+  if (isDesktop) {
+    console.log("check");
     await nextTick(); // Wait for DOM updates to complete
 
     const userPreferenceCookie = useCookie("userPreference").value;

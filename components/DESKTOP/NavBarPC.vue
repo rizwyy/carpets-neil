@@ -100,7 +100,7 @@
           <Icon
             @click="closeCart"
             icon="material-symbols:close-small-rounded"
-            class="text-[3.2rem] text-[#777]"
+            class="text-[3.2rem] text-[#777] cursor-pointer"
         /></span>
         <div class="h-max w-max flex flex-col">
           <span class="text-[2.8svh] flex items-center gap-[2vw]">
@@ -122,7 +122,7 @@
         <Icon
           @click="closeCart"
           icon="material-symbols:close-small-rounded"
-          class="text-[3.2rem] text-[#777]"
+          class="text-[3.2rem] text-[#777] cursor-pointer"
         />
       </div>
 
@@ -136,10 +136,10 @@
         <ul v-auto-animate v-for="(item, index) in userStore.cart" :key="index">
           <ReusablePrefNavCardMOB :item="item" :key="index" />
         </ul>
-        <div class="h-max w-full px-[4vw] flex justify-center">
+        <div v-auto-animate class="h-max w-[42vw] fixed bottom-0 right-0">
           <button
             @click="HandleOrderConfirmation"
-            class="text-[2rem] w-full fixed bottom-0 left-[50%] translate-x-[-50%] tracking-[.2vw] px-[4vw] py-[3.2vh] text-white bg-[#222] text-center shadow-xl"
+            class="text-[2rem] w-full tracking-[.2vw] px-[4vw] py-[3.2vh] text-white bg-[#222] text-center shadow-xl"
           >
             <loadingIcon v-if="isConfirmLoading" class="text-white" />
             <span class="text-[2rem]" v-else> PROCEED TO CHECKOUT </span>
@@ -156,7 +156,10 @@
         <div
           class="h-max w-full px-[0vw] flex items-center justify-between flex-col gap-[2vw] flex-[4]"
         >
-          <Icon icon="mdi:cart-off" class="text-[12rem] text-[#999]" />
+          <Icon
+            icon="mdi:cart-off"
+            class="text-[12rem] text-[#999] cursor-pointer"
+          />
           <span class="text-[1.4rem] font-[300] text-center">
             Oops! It looks like you don't have any saved preferences yet. <br />
             Start exploring and add your favorite options!
@@ -164,7 +167,7 @@
         </div>
         <div class="h-max w-full relative flex justify-center flex-[1]">
           <a
-            class="text-[1.8rem] w-full bg-[#222] text-[#f1f1f1] text-center flex items-center justify-center py-[2.4vh] tracking-[.4vw]"
+            class="text-[1.8rem] w-full bg-[#222] text-[#f1f1f1] text-center flex items-center justify-center py-[1.2rem] tracking-[.4vw]"
             href="/flooring"
             >EXPLORE</a
           >
