@@ -168,7 +168,6 @@ const { item } = defineProps({
 const isExpanded = ref(false);
 const showConfirmDelete = ref(false);
 const itemToDelete = ref(null);
-const emit = defineEmits(["refreshCart"]);
 async function getHistory() {
   try {
     let sanitizedPhone = userStore.userData.phone.startsWith("+")
@@ -193,7 +192,7 @@ async function getHistory() {
         }
       });
       // Increment the cartKey to force re-render the cart component
-      emit("refreshCart");
+      userStore.refreshCart();
       console.log("Preferences added to cart:", userStore.cart);
     } else {
       console.log("No preferences found.");

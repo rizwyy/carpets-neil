@@ -231,7 +231,7 @@ export async function fetchPreferencesByMobile(mobile) {
     }
 
     // Handle successful data retrieval
-    console.log("Preferences fetched successfully:", data.value);
+
     return data.value; // Return the fetched data
   } catch (err) {
     // Handle errors

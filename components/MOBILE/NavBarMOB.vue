@@ -80,6 +80,13 @@
       v-if="userStore.cart.length > 0"
       class="h-max w-full flex items-center justify-between py-[3.2vh] px-[4vw] bg-[#fff] rounded-b-[12vw]"
     >
+      <button
+        @click="HandleOrderConfirmation"
+        class="text-[1.2rem] tracking-[.4vw] z-[99] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl flex items-center justify-center"
+      >
+        <loadingIcon v-if="isConfirmLoading" class="text-white text-[1.2rem]" />
+        <span class="text-[1.2rem]" v-else> PROCEED TO CHECKOUT </span>
+      </button>
       <div class="h-max w-max flex flex-col">
         <span class="text-[2.8svh] flex items-start gap-[1vw]">
           Hi,
@@ -120,18 +127,7 @@
       <li v-for="(item, index) in userStore.cart" :key="index">
         <ReusablePrefNavCardMOB :item="item" :key="index" />
       </li>
-      <div class="h-max w-full px-[4vw] flex justify-center">
-        <button
-          @click="HandleOrderConfirmation"
-          class="text-[1.2rem] tracking-[.4vw] max-[990px]:fixed bottom-[2vh] max-[990px]:w-[92vw] px-[4vw] min-[990px]:py-[2vh] rounded-md py-[2.4vh] text-white bg-[#222] text-center shadow-xl flex items-center justify-center"
-        >
-          <loadingIcon
-            v-if="isConfirmLoading"
-            class="text-white text-[1.2rem]"
-          />
-          <span class="text-[1.2rem]" v-else> PROCEED TO CHECKOUT </span>
-        </button>
-      </div>
+      <div class="h-max w-full px-[4vw] flex justify-center"></div>
     </ul>
 
     <!-- No items section -->

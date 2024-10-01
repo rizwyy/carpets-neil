@@ -1,6 +1,6 @@
 <template>
   <section
-    class="min-[990px]:hidden h-[100vh] w-[100vw] fixed top-0 left-0 bg-[#fff9] backdrop-blur-[8px] z-[99999]"
+    class="min-[990px]:hidden h-[100vh] w-[100vw] fixed top-0 left-0 bg-[#fff9] backdrop-blur-[8px] z-[99999] flex items-center justify-center"
   >
     <div
       class="h-[100svh] w-full relative flex items-start pt-[6svh] justify-center"

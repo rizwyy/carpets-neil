@@ -56,13 +56,13 @@
               :class="[
                 'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[.9rem] outline-none ',
                 {
-                  'bg-gray-300': isFormValidated() && cookieFound,
-                  'bg-white': !(isFormValidated() && cookieFound),
+                  'bg-gray-300': userStore.isFormValidated && cookieFound,
+                  'bg-white': !(userStore.isFormValidated && cookieFound),
                   'border-red-500 focus:border-red-300': isNameInvalid, // Add this line to conditionally apply the red border
                   'border-[#555] focus:border-black': !isNameInvalid, // Default border color when not invalid
                 },
               ]"
-              :readonly="isFormValidated() && cookieFound"
+              :readonly="userStore.isFormValidated && cookieFound"
               type="text"
               placeholder="Name"
               v-model="nameIpt"
@@ -73,13 +73,13 @@
               :class="[
                 'border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[2.4vw] py-[.9rem] outline-none ',
                 {
-                  'bg-gray-300': isFormValidated() && cookieFound,
-                  'bg-white': !(isFormValidated() && cookieFound),
+                  'bg-gray-300': userStore.isFormValidated && cookieFound,
+                  'bg-white': !(userStore.isFormValidated && cookieFound),
                   'border-red-500 focus:border-red-300': isMailInvalid, // Add this line to conditionally apply the red border
                   'border-[#555] focus:border-black': !isMailInvalid, // Default border color when not invalid
                 },
               ]"
-              :readonly="isFormValidated() && cookieFound"
+              :readonly="userStore.isFormValidated && cookieFound"
               :required="mailIpt.length > 8"
               type="email"
               placeholder="Mail"
@@ -92,8 +92,8 @@
                 :class="[
                   'w-max rounded-l-md border-[2px] border-r-[0px] bg-[#fff9] py-[1.4vh] px-[.8vw] text-[1rem] outline-none InfoMOB-CONTAINER opacity-0',
                   {
-                    'bg-gray-300': isFormValidated() && cookieFound,
-                    'bg-white': !(isFormValidated() && cookieFound),
+                    'bg-gray-300': userStore.isFormValidated && cookieFound,
+                    'bg-white': !(userStore.isFormValidated && cookieFound),
                     'border-red-500 focus:border-red-300': isPhoneInvalid, // Apply red border and focus state if phone is invalid
                     'border-[#555]': !isPhoneInvalid, // Default border color when valid
                   },
@@ -108,12 +108,12 @@
               </select>
 
               <input
-                :readonly="isFormValidated() && cookieFound"
+                :readonly="userStore.isFormValidated && cookieFound"
                 :class="[
                   '[appearance:textfield] text-[16.8px] w-full [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border-[2px] InfoMOB-CONTAINER opacity-0 translate-y-[20%] rounded-r-md rounded-l-[0px] px-[2.4vw] py-[.9rem] text-[1rem] outline-none',
                   {
-                    'bg-gray-300': isFormValidated() && cookieFound,
-                    'bg-white': !(isFormValidated() && cookieFound),
+                    'bg-gray-300': userStore.isFormValidated && cookieFound,
+                    'bg-white': !(userStore.isFormValidated && cookieFound),
                     'border-red-500 focus:border-red-300': isPhoneInvalid, // Apply red border and focus state if phone is invalid
                     'border-[#555] border-l-[#777] focus:border-black':
                       !isPhoneInvalid, // Default border color when valid
@@ -128,16 +128,20 @@
 
             <button
               @click="
-                isFormValidated() && cookieFound
+                userStore.isFormValidated && cookieFound
                   ? toggleReadOnly()
                   : handleInfoProceedings()
               "
               class="bg-white InfoMOB-CONTAINER active:scale-[.93] opacity-0 w-[88vw] border-[2.4px] tracking-[.2vw] border-[#333] rounded-md py-[1.2rem] uppercase font-[400] text-[1.2rem] px-[2vw] outline-none focus:border-black flex justify-center items-center"
             >
               <span v-show="!isLoading">{{
-                isFormValidated() && cookieFound ? "EDIT" : "PROCEED"
+                userStore.isFormValidated && cookieFound ? "EDIT" : "PROCEED"
               }}</span>
-              <LoadingIcon v-show="isLoading" />
+              <Icon
+                v-show="isLoading"
+                class="text-[1.6rem] text-[#333]"
+                icon="eos-icons:three-dots-loading"
+              />
             </button>
           </div>
         </div>
@@ -152,12 +156,16 @@ import useUserStore from "../../../stores/user";
 import { fetchLogById } from "./../../../../utils/reusables";
 
 import { ref } from "vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 const userPreference = useCookie("userPreference");
 const { flooring } = defineProps(["flooring"]);
 
 const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
+
+const isEditing = ref(false);
+const changesDetected = ref(false);
 
 const cookieFound = ref(false);
 
@@ -199,99 +207,116 @@ const removeItemFromCart = (idToRemove) => {
   }
 };
 
-const insertLog = (isOrderConfirmed) => {
-  // const phoneWithCode = addCountryCode(userStore);
-  const name = userStore.userData.name;
-  const orderMethod = userStore.preference.orderMethod;
-  let contact;
-
-  // Determine the contact method (either phone or email based on the order method)
-  if (orderMethod === "whatsapp" || orderMethod === "email") {
-    if (userStore.userData.phone.startsWith("+")) {
-      contact = userStore.userData.phone;
-    } else {
-      // Add the country code if it's not present
-      contact = addCountryCode(
+const getSanitizedPhone = () => {
+  return userStore.userData.phone.startsWith("+")
+    ? userStore.userData.phone.slice(1)
+    : addCountryCode(
         userStore.userData.phone,
         userStore.preference.country
-      );
+      ).slice(1);
+};
+const insertLog = async (isOrderConfirmed) => {
+  try {
+    // Helper to get the sanitized phone number
+
+    // Helper to get the contact (either phone or email)
+    const getContact = () => {
+      const { phone, email } = userStore.userData;
+      return userStore.preference.orderMethod === "whatsapp" ||
+        userStore.preference.orderMethod === "email"
+        ? phone.startsWith("+")
+          ? phone
+          : addCountryCode(phone, userStore.preference.country)
+        : email;
+    };
+
+    const sanitizedPhone = getSanitizedPhone();
+    const contact = getContact();
+    const name = userStore.userData.name;
+
+    // Validate name and contact
+    if (!name || !contact) {
+      console.error("Name and contact details are required.");
+      return;
     }
-  } else {
-    contact = userStore.userData.email;
-  }
 
-  const userData = {
-    name,
-    phone: orderMethod === "whatsapp" ? contact : contact,
-    email: orderMethod === "email" ? "" : "",
-    preference: userStore.preference,
-    isOrderConfirmed: isOrderConfirmed,
-  };
+    // Build user data object
+    const userData = {
+      name,
+      phone: contact,
+      email: userStore.preference.orderMethod === "email" ? "" : contact,
+      preference: userStore.preference,
+      isOrderConfirmed,
+    };
+    console.log(userData);
+    // Check for duplicates only if isEditing.value is true
+    if (isEditing.value) {
+      const preferences = await fetchPreferencesByMobile(sanitizedPhone);
 
-  console.log("Sending userData:", userData);
+      if (preferences && Array.isArray(preferences.data)) {
+        const preferencesArray = preferences.data;
 
-  // Validate name and contact
-  if (!name || !contact) {
-    console.error("Name and contact details are required.");
-    return;
-  }
-
-  // Call API route to set the cookie, and then insert the logs
-  useFetch("/api/set-cookie")
-    .then(({ data, error }) => {
-      if (error?.value) {
-        throw new Error("Error setting cookie: " + error.value);
-      }
-      console.log("SET COOKIE DONE");
-
-      // Insert logs after the cookie is set
-      return fetch("/api/insert-logs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error inserting logs");
-      }
-      return response.json();
-    })
-    .then((logData) => {
-      console.log("SUCCESS");
-      // REMOVE PINIA OBJ
-      console.log("Log data:", logData);
-
-      // Update userStore with the fetched logData.id
-      userStore.userData.id = logData.id;
-
-      // Now call fetchLogById after the id has been set
-      return fetchLogById(logData.id); // This returns a promise, so chain another .then
-    })
-    .then((fetchedLog) => {
-      removeItemFromCart("PINIA");
-      console.log("Fetched log by ID:", fetchedLog);
-      // If the fetched log contains preference data, add it to the cart
-      if (fetchedLog && fetchedLog.preference) {
-        const isAlreadyInCart = userStore.cart.some(
-          (item) => item.id === fetchedLog.id
-        );
-
-        // If the item is not already in the cart, add it
-        if (!isAlreadyInCart) {
-          userStore.cart.push({
-            ...fetchedLog.preference, // Add the preference details
-            id: fetchedLog.id, // Ensure the log ID is stored as well
-          });
-          console.log("Preference added to cart:", userStore.cart);
-        } else {
-          console.log("Item is already in the cart.");
+        // Check if any preferences match the current userStore preferences
+        const isDuplicate = preferencesArray.some((log) => {
+          const pref = log.preference;
+          return (
+            pref.flooring === userStore.preference.flooring &&
+            pref.spec_1 === userStore.preference.spec_1 &&
+            pref.spec_2 === userStore.preference.spec_2 &&
+            pref.spec_3 === userStore.preference.spec_3 &&
+            JSON.stringify(pref.color) ===
+              JSON.stringify(userStore.preference.color) && // Compare arrays
+            pref.budget === userStore.preference.budget
+          );
+        });
+        if (isDuplicate) {
+          console.log("Duplicate preference found. No new log will be added.");
+          return; // Exit function without inserting a new log
         }
       }
-    })
-    .catch((error) => {
-      console.error("Error occurred:", error);
+    }
+
+    // Proceed with setting the cookie and inserting the log
+    const { data: setCookieData, error: setCookieError } = await useFetch(
+      "/api/set-cookie"
+    );
+
+    if (setCookieError?.value) {
+      throw new Error("Error setting cookie: " + setCookieError.value);
+    }
+
+    console.log("SET COOKIE DONE");
+
+    // Insert the log
+    const response = await fetch("/api/insert-logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userData),
     });
+
+    if (!response.ok) {
+      throw new Error("Error inserting logs");
+    }
+
+    const logData = await response.json();
+    console.log("Log inserted successfully with id:", logData.id);
+    const fetchedData = await fetchPreferencesByMobile(sanitizedPhone);
+    toRaw(fetchedData.data).forEach((item) => {
+      if (item.preference && item.id) {
+        // Create a new object that contains both the id and the preference
+        const cartItem = {
+          id: item.id, // Add the id
+          ...item.preference, // Spread the preference object
+        };
+
+        // Push the new object into the cart
+        userStore.cart.push(cartItem);
+      }
+    });
+    isEditing.value = true;
+  } catch (error) {
+    console.error("Error occurred:", error);
+  }
 };
 
 function handleInfoProceedings() {
@@ -331,6 +356,7 @@ function handleInfoProceedings() {
     userStore.isFormValidated = false;
     return;
   } else {
+    isLoading.value = true;
     isNameInvalid.value = false;
     isPhoneInvalid.value = false;
     isMailInvalid.value = false;
@@ -340,8 +366,12 @@ function handleInfoProceedings() {
     setUserPreferenceCookie();
     insertLog(false);
     userStore.isFormValidated = true;
-    userStore.updateCart();
-    scrollBy(800);
+
+    setTimeout(() => {
+      isLoading.value = false;
+      userStore.refreshCart();
+      scrollBy(800);
+    }, 800);
   }
 }
 function isFormValidated() {
@@ -362,6 +392,48 @@ function isFieldValidated(field) {
   }
   return false;
 }
+let initialValues = {
+  spec_1: userStore.preference.spec_1,
+  spec_2: userStore.preference.spec_2,
+  spec_3: userStore.preference.spec_3,
+  color: [...userStore.preference.color], // Make a copy of the array
+  budget: userStore.preference.budget,
+};
+
+// Watch for `isEditing` to turn `true` and start monitoring changes
+watch(
+  () => isEditing.value,
+  (newValue) => {
+    if (newValue) {
+      // Watch for changes in preferences
+      watch(
+        [
+          () => userStore.preference.spec_1,
+          () => userStore.preference.spec_2,
+          () => userStore.preference.spec_3,
+          () => userStore.preference.color,
+          () => userStore.preference.budget,
+        ],
+        ([newSpec1, newSpec2, newSpec3, newColor, newBudget]) => {
+          // Compare current values with initial values
+          if (
+            newSpec1 !== initialValues.spec_1 ||
+            newSpec2 !== initialValues.spec_2 ||
+            newSpec3 !== initialValues.spec_3 ||
+            JSON.stringify(newColor) !== JSON.stringify(initialValues.color) ||
+            newBudget !== initialValues.budget
+          ) {
+            changesDetected.value = true;
+            console.log("CHANGES DETECTED🚨");
+            userStore.isFormValidated = false;
+            isEditing.value = false;
+          }
+        },
+        { deep: true }
+      );
+    }
+  }
+);
 
 onMounted(() => {
   if (userPreference.value && typeof userPreference.value === "object") {

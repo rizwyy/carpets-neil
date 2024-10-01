@@ -71,7 +71,6 @@ onMounted(async () => {
         if (history) {
           // Unwrap `history` if it is reactive
           const unwrappedHistory = toRaw(history) || unref(history);
-          console.log(unwrappedHistory);
           // Ensure unwrappedHistory is an array and push each item to the cart
           if (Array.isArray(unwrappedHistory)) {
             unwrappedHistory.forEach((item) => {

@@ -47,15 +47,8 @@ async function getHistory(phone, country) {
   }
 }
 
-const isDesktop = ref(true);
-
 onMounted(async () => {
   if (window.innerWidth > 990) {
-    isDesktop.value = true;
-  } else {
-    isDesktop.value = false;
-  }
-  if (isDesktop) {
     console.log("check");
     await nextTick(); // Wait for DOM updates to complete
 
@@ -75,7 +68,6 @@ onMounted(async () => {
         if (history) {
           // Unwrap `history` if it is reactive
           const unwrappedHistory = toRaw(history) || unref(history);
-          console.log(unwrappedHistory);
           // Ensure unwrappedHistory is an array and push each item to the cart
           if (Array.isArray(unwrappedHistory)) {
             unwrappedHistory.forEach((item) => {

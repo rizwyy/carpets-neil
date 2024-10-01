@@ -48,9 +48,9 @@ const useUserStore = defineStore("user", {
       const index = this.cart.findIndex((item) => item.id === id);
       if (index !== -1) {
         this.cart.splice(index, 1);
-        console.log(`Item with id ${id} has been removed from the cart.`);
+        // console.log(`Item with id ${id} has been removed from the cart.`);
       } else {
-        console.log(`Item with id ${id} not found in the cart.`);
+        // console.log(`Item with id ${id} not found in the cart.`);
       }
     },
 
@@ -69,6 +69,7 @@ const useUserStore = defineStore("user", {
           isOrderConfirmed: false,
           orderMethod: this.preference.orderMethod,
           spec_1,
+          spec_2: spec_2 || "",
           spec_3: spec_3 || "",
           spec_4: spec_4 || "",
           spec_5: spec_5 || "",
@@ -81,11 +82,16 @@ const useUserStore = defineStore("user", {
         // Add the new item with the id "PINIA" to the start of the cart
         this.cart.unshift(newCartItem);
 
-        console.log("CART UPDATED::", this.cart);
+        // console.log("CART UPDATED::", this.cart);
         this.updateCookie();
       } else {
-        console.log("-");
+        // console.log("-");
       }
+    },
+
+    refreshCart() {
+      this.cartKey = Date.now();
+      console.log("Cart Refreshed");
     },
     // Action to update Cookie
     updateCookie() {
@@ -112,7 +118,7 @@ const useUserStore = defineStore("user", {
 
       pref.value = preferenceString;
 
-      console.log(`Updated cookie: ${preferenceString}`);
+      // console.log(`Updated cookie: ${preferenceString}`);
     },
   },
 });

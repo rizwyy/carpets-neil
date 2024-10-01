@@ -30,7 +30,7 @@
           <!-- Poly Propene Carpets -->
           <div
             :class="[
-              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'polypropylene' },
             ]"
             @click="toggleSelect('polypropylene')"
@@ -62,7 +62,7 @@
           <!-- nylon carpets -->
           <div
             :class="[
-              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Nylon' },
             ]"
             @click="toggleSelect('Nylon')"
@@ -98,7 +98,7 @@
           <!-- Sisal -->
           <div
             :class="[
-              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Sisal' },
             ]"
             @click="toggleSelect('Sisal')"
@@ -130,7 +130,7 @@
           <!-- Wool -->
           <div
             :class="[
-              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+              'h-[7.2rem] carpet_Materials_Details_Mob-CONTAINER opacity-0 translate-y-[20%] overflow-hidden  w-full rounded-md  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[1.2rem] relative cursor-pointer',
               { selected: userStore.preference.spec_3 === 'Wool' },
             ]"
             @click="toggleSelect('Wool')"

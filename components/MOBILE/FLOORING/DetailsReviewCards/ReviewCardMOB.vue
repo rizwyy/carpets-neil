@@ -50,11 +50,7 @@
             v-for="(item, index) in userStore.cart"
             :key="index"
           >
-            <ReusablePrefCardMOB
-              :item="item"
-              :key="index"
-              @refreshCart="handleCartRefresh"
-            />
+            <ReusablePrefCardMOB :item="item" :key="index" />
           </li>
         </ul>
         <div
@@ -143,6 +139,11 @@ const firstName = computed(() => {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 });
 
+function removePiniaObj() {
+  userStore.cart = userStore.cart.filter((item) => item.id !== "PINIA");
+  console.log("REMOVED OBJECT WITH ID-PINIA");
+}
+
 const arePreferencesFilled = computed(() => {
   // Check if flooring is 'services' or 'accessories'
   if (
@@ -196,6 +197,7 @@ async function getHistory() {
       });
 
       console.log("Preferences added to cart:", userStore.cart);
+      removePiniaObj();
     } else {
       console.log("No preferences found.");
     }
@@ -209,9 +211,8 @@ async function getHistory() {
 }
 // AT REFRESH
 function handleCartRefresh() {
-  console.log("CART REFRESHED");
   // Update the cartKey to force re-render of the entire cart container
-  userStore.cartKey = Date.now();
+  userStore.refreshCart();
 }
 // ------------------
 // ORDER CONFIRMATION
@@ -301,6 +302,27 @@ const handleCancelAddMoreFlooring = () => {
 // ------------------
 
 // REACTIVE ACTIONS
+watch(
+  () => userStore.isFormValidated, // Watch the `isFormValidated` state
+  (newValue, oldValue) => {
+    if (newValue === true) {
+      console.log("Form is validated! Triggering function.");
+
+      // Set an interval to refresh the cart every 2 seconds
+      const refreshInterval = setInterval(() => {
+        console.log("Refreshing cart...");
+        getHistory();
+      }, 1000);
+
+      // Stop refreshing after 6 seconds
+      setTimeout(() => {
+        clearInterval(refreshInterval);
+        console.log("Stopped refreshing cart after 6 seconds.");
+      }, 6000); // 6 seconds (6000ms)
+    }
+  }
+);
+
 watch(
   () => userStore.userData.id, // Watch for changes in userStore.userData.id
   async (newValue) => {

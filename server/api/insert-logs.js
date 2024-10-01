@@ -63,7 +63,7 @@ export default defineEventHandler(async (event) => {
 
   // Store the id in userStore.userData.id
   const insertedId = data.id;
-  console.log("Log inserted successfully with id:", insertedId);
+  console.log("Log inserted successfully with id:", insertedId, insertData);
 
   return { id: insertedId };
 });
