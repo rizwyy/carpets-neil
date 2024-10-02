@@ -61,7 +61,7 @@
         v-else
         class="text-center py-[2vh] flex flex-col gap-[3.2vh] items-center"
       >
-        <span> No saved preferences found :( </span>
+        <Icon icon="eos-icons:three-dots-loading" />
       </div>
     </div>
 
@@ -118,6 +118,7 @@ import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
 import FlooringGridOverlayPC from "../FLOORING-ITEMS/FlooringGridOverlayPC.vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");

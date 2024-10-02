@@ -57,7 +57,7 @@
           v-else
           class="text-center py-[1rem] flex flex-col gap-[1.6rem] items-center"
         >
-          <span>No saved preferences found :(</span>
+          <Icon icon="eos-icons:three-dots-loading" />
         </div>
       </div>
     </transition>
