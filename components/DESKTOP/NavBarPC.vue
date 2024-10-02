@@ -139,10 +139,10 @@
         <div v-auto-animate class="h-max w-[42vw] fixed bottom-0 right-0">
           <button
             @click="HandleOrderConfirmation"
-            class="text-[2rem] w-full tracking-[.2vw] px-[4vw] py-[3.2vh] text-white bg-[#222] text-center shadow-xl"
+            class="text-[2rem] flex items-center justify-center w-full tracking-[.2vw] px-[4vw] py-[3.2vh] text-white bg-[#222] text-center shadow-xl rounded-bl-lg"
           >
             <loadingIcon v-if="isConfirmLoading" class="text-white" />
-            <span class="text-[2rem]" v-else> PROCEED TO CHECKOUT </span>
+            <span class="text-[1.8rem]" v-else> PROCEED TO CHECKOUT </span>
           </button>
         </div>
       </div>

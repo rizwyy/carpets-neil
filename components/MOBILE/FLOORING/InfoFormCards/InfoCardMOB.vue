@@ -153,7 +153,6 @@
 <script setup>
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
-import { fetchLogById } from "./../../../../utils/reusables";
 
 import { ref } from "vue";
 import { Icon } from "@iconify/vue/dist/iconify.js";
@@ -163,6 +162,10 @@ const { flooring } = defineProps(["flooring"]);
 const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
+
+const isNameInvalid = ref(false);
+const isMailInvalid = ref(false);
+const isPhoneInvalid = ref(false);
 
 const isEditing = ref(false);
 const changesDetected = ref(false);
@@ -188,24 +191,6 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
   cookieFound.value = true;
 }
-const isNameInvalid = ref(false);
-const isMailInvalid = ref(false);
-const isPhoneInvalid = ref(false);
-
-const removeItemFromCart = (idToRemove) => {
-  const userStore = useUserStore(); // Access the user store
-
-  // Check if an item with the given id exists in the cart
-  const itemIndex = userStore.cart.findIndex((item) => item.id === idToRemove);
-
-  if (itemIndex !== -1) {
-    // If the item exists, remove it from the cart
-    userStore.cart.splice(itemIndex, 1);
-    console.log(`Item with id ${idToRemove} removed from cart.`);
-  } else {
-    console.log(`No item with id ${idToRemove} found in the cart.`);
-  }
-};
 
 const getSanitizedPhone = () => {
   return userStore.userData.phone.startsWith("+")
@@ -374,24 +359,7 @@ function handleInfoProceedings() {
     }, 800);
   }
 }
-function isFormValidated() {
-  return (
-    isFieldValidated("name") &&
-    isFieldValidated("email") &&
-    isFieldValidated("phone")
-  );
-}
-function isFieldValidated(field) {
-  if (field === "name") {
-    return userStore.userData.name.trim().length > 0;
-  } else if (field === "email") {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(userStore.userData.email);
-  } else if (field === "phone") {
-    return userStore.userData.phone.trim().length > 8;
-  }
-  return false;
-}
+
 let initialValues = {
   spec_1: userStore.preference.spec_1,
   spec_2: userStore.preference.spec_2,

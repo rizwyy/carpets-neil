@@ -1,7 +1,7 @@
 <template>
   <div
     @click.self="closeForm"
-    class="h-[64rem] w-screen max-w-[100vw] fixed top-0 left-0 flex flex-col pt-[4.2rem] justify-start items-center bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999999] font-outfit"
+    class="h-[68rem] w-screen max-w-[100vw] fixed top-0 left-0 flex flex-col pt-[4.2rem] justify-start items-center bg-[#000] bg-opacity-[.3] backdrop-blur-[8px] z-[999999] font-outfit"
   >
     <div
       class="h-[36rem] bg-[#ededed] w-[94%] relative rounded-md flex flex-col overflow-hidden"

@@ -10,7 +10,7 @@
     <div
       @click="toggleExpansion"
       :class="[
-        'flex flex-col  px-[3.2vw] rounded-xl py-[1rem] transition-all duration-[.2s] ease-in-out active:bg-[#999] active:scale-[.98] select-none  min-[990px]:active:bg-[#0000] min-[990px]:hover:shadow-xl',
+        'flex flex-col  px-[3.2vw] rounded-xl py-[1rem] transition-all duration-[.2s] ease-in-out active:scale-[.98] select-none  min-[990px]:active:bg-[#0000] min-[990px]:hover:shadow-xl',
         !isExpanded
           ? 'w-[98%] min-[990px]:w-full text-[1.2rem] bg-[white]  border-[#999] border-[.12rem]'
           : 'w-[100%] text-[1.4rem] bg-blue-50',

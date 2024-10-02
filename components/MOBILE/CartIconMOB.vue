@@ -56,7 +56,7 @@ onMounted(async () => {
     await nextTick(); // Wait for DOM updates to complete
 
     const userPreferenceCookie = useCookie("userPreference").value;
-    const ctry = useCookie("ctry").value;
+    const ctry = useCookie("ctry").value || "Bahrain";
     const userStore = useUserStore(); // Access the store
 
     // Ensure the cookie and phone field are valid

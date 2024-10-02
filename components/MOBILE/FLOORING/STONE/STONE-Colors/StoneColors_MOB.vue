@@ -12,7 +12,7 @@
       class="h-max w-screen flex justify-center pb-[5rem]"
     >
       <div
-        class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[4vh] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[1rem]"
+        class="min-[990px]:hidden h-max w-[96vw] container mx-auto py-[2rem] px-[6vw] bg-gradient-to-br from-detailsFrom to-detailsTo bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[1rem]"
       >
         <div
           class="header text-[1.5rem] text-left z-[9] h-max w-full items-center flex justify-between stone_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
@@ -23,7 +23,7 @@
             v-show="
               isMultiColoredOpted || userStore.preference.color.length > 0
             "
-            class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[.2rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
             Clear All<Icon icon="material-symbols:cancel-outline-rounded" />
@@ -31,11 +31,11 @@
         </div>
         <div
           v-show="userStore.preference.flooring === 'stone'"
-          class="h-max w-full flex flex-col gap-[2vh] relative"
+          class="h-max w-full flex flex-col gap-[1rem] relative"
         >
           <div
             v-show="isMultiColoredOpted"
-            class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
+            class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[2rem]"
           >
             <div
               class="h-max w-full flex-[2.5] flex justify-center items-center gap-[2vw]"
@@ -56,7 +56,7 @@
             </div>
             <div class="h-max w-full flex-[1.2]">
               <input
-                class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+                class="h-[3rem] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
                 type="text"
                 v-model="customColor"
                 placeholder="Enter your Color"
@@ -79,7 +79,7 @@
                     customColor.length > 2
                   "
                   @click="toggleSelect(customColor, 'done')"
-                  class="carpet_details_colors_mob_done1_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_done1_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Done
                 </button>
@@ -95,7 +95,7 @@
                 <button
                   v-show="userStore.preference.color.length > 0"
                   @click="toggleSelect(customColor, 'done')"
-                  class="carpet_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_done_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Done
                 </button>
@@ -109,17 +109,17 @@
                 <button
                   v-show="customColor.length > 2"
                   @click="toggleSelect(customColor, 'addMore')"
-                  class="carpet_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_add_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Add More +
                 </button>
               </transition>
             </div>
           </div>
-          <div class="h-max w-full flex flex-col gap-[1vh]">
+          <div class="h-max w-full flex flex-col gap-[.5rem]">
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <div
-                class="color-box CustomColor h-[10vh] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+                class="color-box CustomColor h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem] leading-[1.2rem]"
                 :class="{ selected: selectedColors.includes('CustomColor') }"
                 @click="toggleSelect('CustomColor')"
               >
@@ -128,13 +128,13 @@
                   >Custom Color</span
                 >
                 <div v-show="selectedColors.includes('CustomColor')">
-                  <span class="h-full w-full text-[2vh]">Add More +</span>
+                  <span class="h-full w-full text-[1rem]">Add More +</span>
                 </div>
               </div>
 
               <!-- MOBILE -->
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER bg-black overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER bg-black overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem]"
                 :class="{ selected: selectedColors.includes('Black') }"
                 @click="toggleSelect('Black')"
               >
@@ -153,7 +153,7 @@
               </div>
 
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer bg-[brown] relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer bg-[brown] relative px-[1.6vw] py-[.2rem]"
                 :class="{
                   selected: userStore.preference.color.includes('Brown'),
                 }"
@@ -175,7 +175,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh] bg-[#999]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.2rem] bg-[#999]"
                 :class="{
                   selected: userStore.preference.color.includes('Grey'),
                 }"
@@ -196,7 +196,7 @@
               </div>
 
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-green-500"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem] bg-green-500"
                 :class="{
                   selected: userStore.preference.color.includes('Green'),
                 }"
@@ -216,7 +216,7 @@
                 <!-- MOBILE -->
               </div>
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-blue-500"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem] bg-blue-500"
                 :class="{
                   selected: userStore.preference.color.includes('Blue'),
                 }"
@@ -239,7 +239,7 @@
             <div class="color-selection flex justify-between gap-[4vw] z-[9]">
               <!-- MOBILE -->
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER bg-white overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER bg-white overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem]"
                 :class="{
                   selected: userStore.preference.color.includes('White'),
                 }"
@@ -259,7 +259,7 @@
               </div>
 
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-red-500"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem] bg-red-500"
                 :class="{
                   selected: userStore.preference.color.includes('Red'),
                 }"
@@ -278,7 +278,7 @@
                 </div>
               </div>
               <div
-                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] bg-[pink]"
+                class="color-box h-[5.2rem] stone_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.2rem] bg-[pink]"
                 :class="{
                   selected: userStore.preference.color.includes('Rose'),
                 }"
@@ -304,7 +304,7 @@
         </div>
         <div
           v-show="userStore.preference.color.length > 0"
-          class="h-max w-full flex flex-col gap-[1vh] items-start"
+          class="h-max w-full flex flex-col gap-[.5rem] items-start"
         >
           <span class="text-[#444]">Selected Colors:</span>
           <div class="w-full grid grid-cols-3 gap-[2vw]">
@@ -312,19 +312,19 @@
               v-for="color in userStore.preference.color"
               :key="color"
               :style="{ backgroundColor: getColorHex(color) }"
-              class="text-center border border-black rounded-md py-[.4vh] px-[.4vw] flex justify-evenly items-center overflow-hidden"
+              class="text-center border border-black rounded-md py-[.2rem] px-[.4vw] flex justify-evenly items-center overflow-hidden"
             >
               <span
-                class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.4vh] font-[500] backdrop-blur-[8px] text-white text-[1.6vh] text-center"
+                class="inline bg-[#000] bg-opacity-[.2] px-[2vw] rounded-sm py-[.2rem] font-[500] backdrop-blur-[8px] text-white text-[.8rem] text-center"
               >
                 {{ color }}
               </span>
               <span
                 @click="toggleSelect(color)"
-                class="h-max w-max flex items-center bg-[#000] bg-opacity-[.2] px-[.8vw] py-[.4vh] rounded-full"
+                class="h-max w-max flex items-center bg-[#000] bg-opacity-[.2] px-[.8vw] py-[.2rem] rounded-full"
               >
                 <svg
-                  class="inline-block h-[2.4vh]"
+                  class="inline-block h-[1.2rem]"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -337,7 +337,7 @@
             </span>
             <button
               @click="scrollUpBy(400)"
-              class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
+              class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.3rem]"
             >
               Add More
             </button>

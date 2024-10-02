@@ -1,9 +1,9 @@
 <template>
   <div class="h-max w-full flex justify-center">
-    <div class="h-max w-[100%] bg-white py-[4vh] px-[2vw] rounded-xl">
+    <div class="h-max w-[100%] bg-white py-[2rem] px-[2vw] rounded-xl">
       <div
         ref="dropArea"
-        class="border-2 rounded-md px-[2vw] py-[4rem] border-dotted border-[#999] w-full h-full flex flex-col items-center text-[1.2rem]"
+        class="border-2 rounded-md px-[2vw] py-[4rem] border-dotted border-[#999] w-full h-full flex flex-col items-center text-[1rem]"
         @drop.prevent="handleDrop"
         @dragover.prevent="handleDragOver"
       >
@@ -17,7 +17,7 @@
         />
         <button
           @click="triggerFileInput"
-          class="bg-[#555] text-white font-medium text-[1.2rem] py-[1.2rem] px-[2vw] rounded-full flex items-center gap-2 hover:bg-[#333]"
+          class="bg-[#555] text-white font-medium text-[1rem] py-[1.2rem] px-[2vw] rounded-full flex items-center gap-2 hover:bg-[#333]"
         >
           Upload manually
           <Icon icon="tabler:cloud-upload" />

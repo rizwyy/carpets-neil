@@ -59,10 +59,12 @@
               >
               <input
                 :class="{
-                  'bg-gray-300 cursor-not-allowed ': formValidated,
-                  'bg-white': !formValidated,
+                  'bg-gray-300': userStore.isFormValidated && cookieFound,
+                  'bg-white': !(userStore.isFormValidated && cookieFound),
+                  'border-red-500 focus:border-red-300': isNameInvalid,
+                  'border-[#555] focus:border-black': !isNameInvalid,
                 }"
-                :readonly="formValidated"
+                :readonly="userStore.isFormValidated && cookieFound"
                 class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] bg-[#fff9] py-[2.4vh] outline-none focus:border-black"
                 placeholder="Name"
                 v-model="nameIpt"
@@ -75,12 +77,12 @@
                 >
                 <input
                   :class="{
-                    'bg-gray-300  cursor-not-allowed': formValidated,
-                    'bg-white': !formValidated,
+                    'bg-gray-300': userStore.isFormValidated && cookieFound,
+                    'bg-white': !(userStore.isFormValidated && cookieFound),
                     'border-red-500 focus:border-red-300': isNameInvalid,
                     'border-[#555] focus:border-black': !isNameInvalid,
                   }"
-                  :readonly="formValidated"
+                  :readonly="userStore.isFormValidated && cookieFound"
                   :required="mailIpt.length > 8"
                   type="email"
                   class="border-[2px] InfoCardPC-CONTAINER opacity-0 translate-y-[20%] rounded-md px-[1.2vw] border-[#555] py-[2.4vh] outline-none focus:border-black"
@@ -95,8 +97,8 @@
                 <div class="h-max w-full flex">
                   <select
                     :class="{
-                      'bg-gray-300 cursor-not-allowed': formValidated,
-                      'bg-white': !formValidated,
+                      'bg-gray-300': userStore.isFormValidated && cookieFound,
+                      'bg-white': !(userStore.isFormValidated && cookieFound),
                       'border-red-500 focus:border-red-300': isNameInvalid,
                       'border-[#555] focus:border-black': !isNameInvalid,
                     }"
@@ -110,10 +112,10 @@
                     <option value="Qatar">+974</option>
                   </select>
                   <input
-                    :readonly="formValidated"
+                    :readonly="userStore.isFormValidated && cookieFound"
                     :class="{
-                      'bg-gray-300 cursor-not-allowed': formValidated,
-                      'bg-white': !formValidated,
+                      'bg-gray-300': userStore.isFormValidated && cookieFound,
+                      'bg-white': !(userStore.isFormValidated && cookieFound),
                       'border-red-500 focus:border-red-300': isNameInvalid,
                       'border-[#555] focus:border-black': !isNameInvalid,
                     }"
@@ -130,31 +132,25 @@
               class="h-max w-full flex gap-[4.8vw] py-[6.2vh] transition-all ease-in-out duration-300"
             >
               <button
-                @click="
-                  () =>
-                    !formValidated
-                      ? handleInfoProceedings('SAVE')
-                      : handleClickOnEdit()
-                "
+                @click="toggleReadOnly"
                 :class="[
-                  'bg-white hover:shadow-lg hover:translate-y-[-2%] transition-all ease-in-out duration-[.4s] InfoCardPC-CONTAINER border-[#666] active:scale-[.93] opacity-0 w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
-                  !cookieFound ? '' : '',
+                  'flex justify-center items-center hover:shadow-lg hover:translate-y-[-2%] transition-all ease-in-out duration-[.4s] InfoCardPC-CONTAINER  border-[#666] active:scale-[.93] hover:translate-y-[2%]  transition-all ease-in-out duration-300  w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
                 ]"
               >
-                <span v-if="formValidated">EDIT</span>
-                <span v-else>SAVE</span>
+                <span>EDIT</span>
               </button>
               <button
-                @click="formValidated && handleInfoProceedings()"
-                :disabled="!formValidated"
+                @click="handleInfoProceedings_PC"
                 :class="[
-                  'hover:shadow-lg hover:translate-y-[-2%] transition-all ease-in-out duration-[.4s] InfoCardPC-CONTAINER  border-[#666] active:scale-[.93] hover:translate-y-[2%]  transition-all ease-in-out duration-300  w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
-                  !formValidated
-                    ? 'bg-[#e9e9e9] text-[#999] cursor-not-allowed'
-                    : 'bg-white ',
+                  'flex justify-center items-center hover:shadow-lg hover:translate-y-[-2%] transition-all ease-in-out duration-[.4s] InfoCardPC-CONTAINER  border-[#666] active:scale-[.93] hover:translate-y-[2%]  transition-all ease-in-out duration-300  w-full border-[2.4px] tracking-[.2vw] rounded-md py-[2.4vh] uppercase font-[500] text-[1.6vw] px-[2vw] outline-none',
                 ]"
               >
                 <span v-show="!isLoading">PROCEED</span>
+                <Icon
+                  v-show="isLoading"
+                  class="text-[1.6rem] text-[#333]"
+                  icon="eos-icons:three-dots-loading"
+                />
               </button>
             </div>
           </div>
@@ -167,16 +163,23 @@
 <script setup>
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import useUserStore from "../../../stores/user";
-import { fetchLogById } from "./../../../../utils/reusables";
 
 import { ref } from "vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 const userPreference = useCookie("userPreference");
 const { flooring } = defineProps(["flooring"]);
 
 const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
-const formValidated = ref(false);
+
+const isNameInvalid = ref(false);
+const isMailInvalid = ref(false);
+const isPhoneInvalid = ref(false);
+
+const isEditing = ref(false);
+const changesDetected = ref(false);
+
 const cookieFound = ref(false);
 
 const isLoading = ref(false);
@@ -185,10 +188,8 @@ const userStore = useUserStore();
 function toggleReadOnly() {
   cookieFound.value = false;
 }
-function handleClickOnEdit() {
-  formValidated.value = false;
-}
-function setUserPreferenceCookie() {
+
+function setUserPreferenceCookiePC() {
   const obj = {
     name: userStore.userData.name,
     email: userStore.userData.email,
@@ -200,138 +201,124 @@ function setUserPreferenceCookie() {
   console.log("COOKIE SET::", toRaw(userPreference.value));
   cookieFound.value = true;
 }
-const isNameInvalid = ref(false);
-const isMailInvalid = ref(false);
-const isPhoneInvalid = ref(false);
 
-const removeItemFromCart = (idToRemove) => {
-  const userStore = useUserStore(); // Access the user store
-
-  // Check if an item with the given id exists in the cart
-  const itemIndex = userStore.cart.findIndex((item) => item.id === idToRemove);
-
-  if (itemIndex !== -1) {
-    // If the item exists, remove it from the cart
-    userStore.cart.splice(itemIndex, 1);
-    console.log(`Item with id ${idToRemove} removed from cart.`);
-  } else {
-    console.log(`No item with id ${idToRemove} found in the cart.`);
-  }
-};
-
-const insertLog = (isOrderConfirmed) => {
-  const phoneWithCode = addCountryCode(userStore);
-  const name = userStore.userData.name;
-  const orderMethod = userStore.preference.orderMethod;
-  let contact;
-
-  // Determine the contact method (either phone or email based on the order method)
-  if (orderMethod === "whatsapp" || orderMethod === "email") {
-    if (userStore.userData.phone.startsWith("+")) {
-      contact = userStore.userData.phone;
-    } else {
-      // Add the country code if it's not present
-      contact = addCountryCode(
+const getSanitizedPhone = () => {
+  return userStore.userData.phone.startsWith("+")
+    ? userStore.userData.phone.slice(1)
+    : addCountryCode(
         userStore.userData.phone,
         userStore.preference.country
-      );
+      ).slice(1);
+};
+const insertLog_PC = async (isOrderConfirmed) => {
+  try {
+    // Helper to get the sanitized phone number
+
+    // Helper to get the contact (either phone or email)
+    const getContact = () => {
+      const { phone, email } = userStore.userData;
+      return userStore.preference.orderMethod === "whatsapp" ||
+        userStore.preference.orderMethod === "email"
+        ? phone.startsWith("+")
+          ? phone
+          : addCountryCode(phone, userStore.preference.country)
+        : email;
+    };
+
+    const sanitizedPhone = getSanitizedPhone();
+    const contact = getContact();
+    const name = userStore.userData.name;
+
+    // Validate name and contact
+    if (!name || !contact) {
+      console.error("Name and contact details are required.");
+      return;
     }
-  } else {
-    contact = userStore.userData.email;
-  }
 
-  const userData = {
-    name,
-    phone: orderMethod === "whatsapp" ? contact : contact,
-    email: orderMethod === "email" ? "" : "",
-    preference: userStore.preference,
-    isOrderConfirmed: isOrderConfirmed,
-  };
+    // Build user data object
+    const userData = {
+      name,
+      phone: contact,
+      email: userStore.preference.orderMethod === "email" ? "" : contact,
+      preference: userStore.preference,
+      isOrderConfirmed,
+    };
+    console.log(userData);
+    // Check for duplicates only if isEditing.value is true
+    if (isEditing.value) {
+      const preferences = await fetchPreferencesByMobile(sanitizedPhone);
 
-  console.log("Sending userData:", userData);
+      if (preferences && Array.isArray(preferences.data)) {
+        const preferencesArray = preferences.data;
 
-  // Validate name and contact
-  if (!name || !contact) {
-    console.error("Name and contact details are required.");
-    return;
-  }
-
-  // Call API route to set the cookie, and then insert the logs
-  useFetch("/api/set-cookie")
-    .then(({ data, error }) => {
-      if (error?.value) {
-        throw new Error("Error setting cookie: " + error.value);
-      }
-      console.log("SET COOKIE DONE");
-
-      // Insert logs after the cookie is set
-      return fetch("/api/insert-logs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error inserting logs");
-      }
-      return response.json();
-    })
-    .then((logData) => {
-      console.log("SUCCESS");
-      // REMOVE PINIA OBJ
-      console.log("Log data:", logData);
-
-      // Update userStore with the fetched logData.id
-      userStore.userData.id = logData.id;
-
-      // Now call fetchLogById after the id has been set
-      return fetchLogById(logData.id); // This returns a promise, so chain another .then
-    })
-    .then((fetchedLog) => {
-      removeItemFromCart("PINIA");
-      console.log("Fetched log by ID:", fetchedLog);
-      // If the fetched log contains preference data, add it to the cart
-      if (fetchedLog && fetchedLog.preference) {
-        const isAlreadyInCart = userStore.cart.some(
-          (item) => item.id === fetchedLog.id
-        );
-
-        // If the item is not already in the cart, add it
-        if (!isAlreadyInCart) {
-          userStore.cart.push({
-            ...fetchedLog.preference, // Add the preference details
-            id: fetchedLog.id, // Ensure the log ID is stored as well
-          });
-          console.log("Preference added to cart:", userStore.cart);
-        } else {
-          console.log("Item is already in the cart.");
+        // Check if any preferences match the current userStore preferences
+        const isDuplicate = preferencesArray.some((log) => {
+          const pref = log.preference;
+          return (
+            pref.flooring === userStore.preference.flooring &&
+            pref.spec_1 === userStore.preference.spec_1 &&
+            pref.spec_2 === userStore.preference.spec_2 &&
+            pref.spec_3 === userStore.preference.spec_3 &&
+            JSON.stringify(pref.color) ===
+              JSON.stringify(userStore.preference.color) && // Compare arrays
+            pref.budget === userStore.preference.budget
+          );
+        });
+        if (isDuplicate) {
+          console.log("Duplicate preference found. No new log will be added.");
+          return; // Exit function without inserting a new log
         }
       }
-    })
-    .catch((error) => {
-      console.error("Error occurred:", error);
+    }
+
+    // Proceed with setting the cookie and inserting the log
+    const { data: setCookieData, error: setCookieError } = await useFetch(
+      "/api/set-cookie"
+    );
+
+    if (setCookieError?.value) {
+      throw new Error("Error setting cookie: " + setCookieError.value);
+    }
+
+    console.log("SET COOKIE DONE");
+
+    // Insert the log
+    const response = await fetch("/api/insert-logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userData),
     });
+
+    if (!response.ok) {
+      throw new Error("Error inserting logs");
+    }
+
+    const logData = await response.json();
+    console.log("Log inserted successfully with id:", logData.id);
+    const fetchedData = await fetchPreferencesByMobile(sanitizedPhone);
+    toRaw(fetchedData.data).forEach((item) => {
+      if (item.preference && item.id) {
+        // Create a new object that contains both the id and the preference
+        const cartItem = {
+          id: item.id, // Add the id
+          ...item.preference, // Spread the preference object
+        };
+
+        // Push the new object into the cart
+        userStore.cart.push(cartItem);
+      }
+    });
+    isEditing.value = true;
+  } catch (error) {
+    console.error("Error occurred:", error);
+  }
 };
 
-function handleInfoProceedings(el) {
+function handleInfoProceedings_PC() {
   const phoneWithCode = addCountryCode(
     phoneIpt.value,
     userStore.preference.country
   );
-  // Check if the form values have changed
-  const hasChanges =
-    userStore.userData.name !== nameIpt.value ||
-    userStore.userData.email !== mailIpt.value ||
-    userStore.userData.phone !== phoneWithCode;
-
-  // If no changes are detected, exit early to prevent redundant operations
-  if (!hasChanges) {
-    console.log("No changes detected, skipping form submission.");
-    scrollBy(600);
-    return;
-  }
-
   const validationResults = validateInputs(
     mailIpt.value,
     `${phoneWithCode}`,
@@ -364,138 +351,67 @@ function handleInfoProceedings(el) {
     userStore.isFormValidated = false;
     return;
   } else {
-    if (el === "SAVE") {
-      isNameInvalid.value = false;
-      isPhoneInvalid.value = false;
-      isMailInvalid.value = false;
-      formValidated.value = true;
-      return;
-    }
-    if (!formValidated.value) {
-      return;
-    }
+    isLoading.value = true;
     isNameInvalid.value = false;
     isPhoneInvalid.value = false;
     isMailInvalid.value = false;
     userStore.userData.name = nameIpt.value;
     userStore.userData.email = mailIpt.value;
     userStore.userData.phone = phoneWithCode;
-    setUserPreferenceCookie();
-    insertLog(false);
+    setUserPreferenceCookiePC();
+    insertLog_PC(false);
     userStore.isFormValidated = true;
-    userStore.updateCart();
-    scrollBy(800);
+
+    setTimeout(() => {
+      isLoading.value = false;
+      userStore.refreshCart();
+      scrollBy(800);
+    }, 800);
   }
 }
-//
-/* async function handleInfoProceedings() {
-  const phoneWithCode = addCountryCode(
-    phoneIpt.value,
-    userStore.preference.country
-  );
 
-  // Check if the form values have changed
-  const hasNameChanged = userStore.userData.name !== nameIpt.value;
-  const hasChanges =
-    hasNameChanged ||
-    userStore.userData.email !== mailIpt.value ||
-    userStore.userData.phone !== phoneWithCode;
+let initialValues = {
+  spec_1: userStore.preference.spec_1,
+  spec_2: userStore.preference.spec_2,
+  spec_3: userStore.preference.spec_3,
+  color: [...userStore.preference.color], // Make a copy of the array
+  budget: userStore.preference.budget,
+};
 
-  // If no changes are detected, exit early to prevent redundant operations
-  if (!hasChanges) {
-    console.log("No changes detected, skipping form submission.");
-    return;
-  }
-
-  const validationResults = validateInputs(
-    mailIpt.value,
-    `${phoneWithCode}`,
-    nameIpt.value
-  );
-  const isValid =
-    validationResults.isEmailValid &&
-    validationResults.isPhoneValid &&
-    validationResults.isNameValid;
-
-  // Validation check
-  if (!isValid) {
-    if (!validationResults.isEmailValid) {
-      isMailInvalid.value = true;
-    }
-
-    if (!validationResults.isPhoneValid) {
-      isPhoneInvalid.value = true;
-    }
-
-    if (!validationResults.isNameValid) {
-      isNameInvalid.value = true;
-    }
-    userStore.isFormValidated = false;
-    return;
-  }
-
-  // If form is valid and changes are detected, proceed with updates
-  isNameInvalid.value = false;
-  isPhoneInvalid.value = false;
-  isMailInvalid.value = false;
-
-  // Update user data
-  userStore.userData.name = nameIpt.value;
-  userStore.userData.email = mailIpt.value;
-  userStore.userData.phone = phoneWithCode;
-
-  // If name has changed, call the updateLog API for the phone number
-  if (hasNameChanged) {
-    try {
-      const response = await fetch('/api/update-log', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
+// Watch for `isEditing` to turn `true` and start monitoring changes
+watch(
+  () => isEditing.value,
+  (newValue) => {
+    if (newValue) {
+      // Watch for changes in preferences
+      watch(
+        [
+          () => userStore.preference.spec_1,
+          () => userStore.preference.spec_2,
+          () => userStore.preference.spec_3,
+          () => userStore.preference.color,
+          () => userStore.preference.budget,
+        ],
+        ([newSpec1, newSpec2, newSpec3, newColor, newBudget]) => {
+          // Compare current values with initial values
+          if (
+            newSpec1 !== initialValues.spec_1 ||
+            newSpec2 !== initialValues.spec_2 ||
+            newSpec3 !== initialValues.spec_3 ||
+            JSON.stringify(newColor) !== JSON.stringify(initialValues.color) ||
+            newBudget !== initialValues.budget
+          ) {
+            changesDetected.value = true;
+            console.log("CHANGES DETECTED🚨");
+            userStore.isFormValidated = false;
+            isEditing.value = false;
+          }
         },
-        body: JSON.stringify({
-          phone: phoneWithCode,
-          name: nameIpt.value
-        })
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Error updating log');
-      }
-
-      console.log("Log updated successfully:", result.data);
-    } catch (error) {
-      console.error("Error updating log:", error);
+        { deep: true }
+      );
     }
   }
-
-  // Proceed with other updates
-  setUserPreferenceCookie();
-  insertLog(false);
-  userStore.isFormValidated = true;
-  userStore.updateCart();
-  scrollBy(800);
-}
-*/
-function isFormValidated() {
-  return (
-    isFieldValidated("name") &&
-    isFieldValidated("email") &&
-    isFieldValidated("phone")
-  );
-}
-function isFieldValidated(field) {
-  if (field === "name") {
-    return userStore.userData.name.trim().length > 0;
-  } else if (field === "email") {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(userStore.userData.email);
-  } else if (field === "phone") {
-    return userStore.userData.phone.trim().length > 8;
-  }
-  return false;
-}
+);
 
 onMounted(() => {
   if (userPreference.value && typeof userPreference.value === "object") {

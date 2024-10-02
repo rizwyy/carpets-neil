@@ -70,21 +70,15 @@
       v-if="arePreferencesFilled"
       class="h-max w-full flex justify-evenly py-[6vh]"
     >
-      <button
-        v-if="!isRefreshLoading"
-        @click="getHistory"
-        class="h-max w-max text-[#555] rounded-full"
-      >
+      <button @click="getHistory" class="h-max w-max text-[#555] rounded-full">
         <div
           class="h-max w-max flex items-center gap-[1vw] text-[2.8vh] border-[2px] px-[2vw] py-[2vh] rounded-full border-[#999] shadow-md hover:shadow-xl transition-all ease-in-out duration-300"
         >
           <span class="text-[2vh]">Refresh</span>
-          <RefreshIcon />
+          <RefreshIcon v-if="!isRefreshLoading" />
+          <LoadingIcon2 v-else />
         </div>
       </button>
-      <div v-else class="text-[3.2vh] px-[4vw]">
-        <LoadingIcon2 />
-      </div>
     </div>
 
     <!-- Add More and Confirm Buttons -->
@@ -117,13 +111,13 @@ import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
 import { useRouter } from "vue-router";
-import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
-import FooterPC from "./../../../DESKTOP/FooterPC.vue";
-import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
+
 import FlooringGridOverlayPC from "../FLOORING-ITEMS/FlooringGridOverlayPC.vue";
+import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
+import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
 
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
@@ -143,7 +137,11 @@ const firstName = computed(() => {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 });
 
-// Computed for repeated condition
+function removePiniaObj() {
+  userStore.cart = userStore.cart.filter((item) => item.id !== "PINIA");
+  console.log("REMOVED OBJECT WITH ID-PINIA");
+}
+
 const arePreferencesFilled = computed(() => {
   // Check if flooring is 'services' or 'accessories'
   if (
@@ -188,14 +186,16 @@ async function getHistory() {
         const id = pref.id;
 
         const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
-
         if (!isAlreadyInCart) {
           const preferenceWithId = { ...preferenceData, id: id };
           userStore.cart.push(preferenceWithId);
+        } else {
+          userStore.cart = toRaw(removeDuplicates(userStore.cart));
         }
       });
 
       console.log("Preferences added to cart:", userStore.cart);
+      removePiniaObj();
     } else {
       console.log("No preferences found.");
     }
@@ -207,13 +207,7 @@ async function getHistory() {
     }, 1000);
   }
 }
-// AT REFRESH
-function handleCartRefresh() {
-  console.log("CART REFRESHED");
-  // Update the cartKey to force re-render of the entire cart container
-  userStore.cartKey = Date.now();
-}
-// ------------------
+
 // ORDER CONFIRMATION
 const HandleOrderConfirmation = () => {
   isConfirmationLoading.value = true;
@@ -273,12 +267,10 @@ const HandleOrderConfirmation = () => {
     .catch((err) => {
       isConfirmationLoading.value = false;
       restrictedAccess.value = true;
-      handleTempAnimation("errOverlayMOB");
+      handleTempAnimation("errOverlayPC");
       console.error("Unexpected errors:", err.message);
     });
 };
-
-// ------------------
 
 // ------------------
 // HANDLE CLICK ON ADD MORE BUTTON
@@ -301,6 +293,27 @@ const handleCancelAddMoreFlooring = () => {
 // ------------------
 
 // REACTIVE ACTIONS
+watch(
+  () => userStore.isFormValidated, // Watch the `isFormValidated` state
+  (newValue, oldValue) => {
+    if (newValue === true) {
+      console.log("Form is validated! Triggering function.");
+
+      // Set an interval to refresh the cart every 2 seconds
+      const refreshInterval = setInterval(() => {
+        console.log("Refreshing cart...");
+        getHistory();
+      }, 1000);
+
+      // Stop refreshing after 6 seconds
+      setTimeout(() => {
+        clearInterval(refreshInterval);
+        console.log("Stopped refreshing cart after 6 seconds.");
+      }, 6000); // 6 seconds (6000ms)
+    }
+  }
+);
+
 watch(
   () => userStore.userData.id, // Watch for changes in userStore.userData.id
   async (newValue) => {

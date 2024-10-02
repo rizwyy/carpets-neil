@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center w-full">
     <TickIcon />
-    <span class="ml-[1vw] w-full text-specCard_span_MOB text-[#333]">
+    <span class="ml-[1vw] w-full text-[1.1rem] text-[#333]">
       <span>{{ label }}:&nbsp;</span>{{ value }}
     </span>
   </div>

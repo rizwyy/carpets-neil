@@ -49,11 +49,13 @@ async function getHistory(phone, country) {
 
 onMounted(async () => {
   if (window.innerWidth > 990) {
-    console.log("check");
+    console.log("loading");
     await nextTick(); // Wait for DOM updates to complete
 
     const userPreferenceCookie = useCookie("userPreference").value;
-    const ctry = useCookie("ctry").value;
+    const ctry = useCookie("ctry").value || "Bahrain";
+    console.log(userPreferenceCookie);
+    console.log(ctry);
     const userStore = useUserStore(); // Access the store
 
     // Ensure the cookie and phone field are valid
@@ -84,16 +86,16 @@ onMounted(async () => {
 
             // Log the updated cart for confirmation
           } else {
-            console.warn("History is not an array.");
+            console.log("History is not an array.");
           }
         } else {
-          console.warn("No history found for this phone number.");
+          console.log("No history found for this phone number.");
         }
       } catch (error) {
         console.error("Error while fetching history:", error.message);
       }
     } else {
-      console.warn("Invalid userPreferenceCookie or country value.");
+      console.log("Invalid userPreferenceCookie or country value.");
     }
   }
 });

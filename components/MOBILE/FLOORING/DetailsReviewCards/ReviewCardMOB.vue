@@ -116,8 +116,7 @@ import ReusablePrefCardMOB from "./ReusablePrefCardMOB.vue";
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
-import FooterMOB from "../../FooterMOB.vue";
-import FlooringGridMOB from "../FLOORING-ITEMS/FlooringGridMOB.vue";
+
 import FlooringGridOverlayMOB from "../FLOORING-ITEMS/FlooringGridOverlayMOB.vue";
 import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 
@@ -209,12 +208,7 @@ async function getHistory() {
     }, 1000);
   }
 }
-// AT REFRESH
-function handleCartRefresh() {
-  // Update the cartKey to force re-render of the entire cart container
-  userStore.refreshCart();
-}
-// ------------------
+
 // ORDER CONFIRMATION
 const HandleOrderConfirmation = () => {
   isConfirmationLoading.value = true;
@@ -278,8 +272,6 @@ const HandleOrderConfirmation = () => {
       console.error("Unexpected errors:", err.message);
     });
 };
-
-// ------------------
 
 // ------------------
 // HANDLE CLICK ON ADD MORE BUTTON
