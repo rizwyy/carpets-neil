@@ -126,6 +126,7 @@ const userPreference = useCookie("userPreference");
 const isAddMoreLoading = ref(false);
 const isConfirmationLoading = ref(false);
 const isRefreshLoading = ref(false);
+const isPrefLoading = ref(true);
 const historyFound = ref(true);
 const isFlooringVisible = ref(false);
 // Props
@@ -172,30 +173,37 @@ async function getHistory() {
   isRefreshLoading.value = true;
 
   try {
-    let sanitizedPhone = userStore.userData.phone.startsWith("+")
+    // Sanitize phone number
+    const sanitizedPhone = userStore.userData.phone.startsWith("+")
       ? userStore.userData.phone.slice(1)
       : addCountryCode(
           userStore.userData.phone,
           userStore.preference.country
         ).slice(1);
 
+    // Fetch preferences
     const preferences = await fetchPreferencesByMobile(sanitizedPhone);
 
-    if (preferences && preferences.data && preferences.data.length > 0) {
-      preferences.data.forEach((pref) => {
-        const preferenceData = pref.preference;
-        const id = pref.id;
+    if (preferences?.data?.length) {
+      const cartItems = new Set(userStore.cart.map((item) => item.id)); // Use a Set for fast lookups
+      const newPreferences = [];
 
-        const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
-        if (!isAlreadyInCart) {
-          const preferenceWithId = { ...preferenceData, id: id };
-          userStore.cart.push(preferenceWithId);
-        } else {
-          userStore.cart = toRaw(removeDuplicates(userStore.cart));
+      // Process preferences
+      preferences.data.forEach((pref) => {
+        const { preference: preferenceData, id } = pref;
+
+        // Only add if not already in cart
+        if (!cartItems.has(id)) {
+          newPreferences.push({ ...preferenceData, id });
         }
       });
 
-      console.log("Preferences added to cart:", userStore.cart);
+      // Add new preferences to cart in one batch
+      if (newPreferences.length > 0) {
+        userStore.cart = [...userStore.cart, ...newPreferences];
+      }
+
+      // Perform cleanup
       removePiniaObj();
     } else {
       console.log("No preferences found.");
@@ -203,9 +211,10 @@ async function getHistory() {
   } catch (error) {
     console.error("Failed to fetch or process preferences:", error);
   } finally {
+    // Slightly reduce timeout, or debounce if frequent calls are made
     setTimeout(() => {
       isRefreshLoading.value = false;
-    }, 1000);
+    }, 500);
   }
 }
 
@@ -335,6 +344,21 @@ watch(
 
       // Start the recursive fetching
       fetchUntilCartIsPopulated();
+    }
+  }
+);
+
+watch(
+  () => userStore.isFormValidated,
+  (newVal) => {
+    if (newVal) {
+      // Start loading when isFormValidated becomes true
+      isPrefLoading.value = true;
+
+      // After 6 seconds, stop loading and show the "No preferences found" message
+      setTimeout(() => {
+        isPrefLoading.value = false;
+      }, 4000); // 6 seconds
     }
   }
 );
