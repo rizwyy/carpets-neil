@@ -24,7 +24,7 @@
       </div>
       <div class="h-max w-screen flex justify-center">
         <div
-          class="h-max w-[88%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[6vh] rounded-md items-center"
+          class="h-max w-[88%] flex flex-col gap-[4vh] bg-[#f1f1f1] py-[12vh] rounded-md items-center"
         >
           <div
             class="h-max w-[84%] flex flex-col gap-[5.8vh] overflow-hidden px-[2.8vw] pt-[4.2vh] rounded-md shadow-xl relative bg-gradient-to-br from-detailsFrom to-detailsTo"
