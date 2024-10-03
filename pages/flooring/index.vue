@@ -73,7 +73,6 @@ const userPreference = useCookie("userPreference");
 
 const isMobile = ref(false);
 onMounted(() => {
-  testPinia();
   if (window.innerWidth < 990) {
     isMobile.value = true;
   } else {
