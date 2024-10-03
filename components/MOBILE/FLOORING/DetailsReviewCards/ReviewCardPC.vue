@@ -124,13 +124,14 @@ import useUserStore from "~/stores/user";
 const userStore = useUserStore();
 
 import { useRouter } from "vue-router";
-import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
 import LoadingIcon from "~/public/icons/loadingIcon.vue";
 import RefreshIcon from "~/public/icons/refreshIcon.vue";
 import LoadingIcon2 from "~/public/icons/loadingIcon2.vue";
-import FooterPC from "./../../../DESKTOP/FooterPC.vue";
-import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
+
 import FlooringGridOverlayPC from "../FLOORING-ITEMS/FlooringGridOverlayPC.vue";
+import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
+import ReusablePrefCardPC from "./ReusablePrefCardPC.vue";
+import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const router = useRouter();
 const restrictedAccess = useCookie("restrictedAccess");
@@ -139,6 +140,7 @@ const isAddMoreLoading = ref(false);
 const isConfirmationLoading = ref(false);
 const isRefreshLoading = ref(false);
 const historyFound = ref(true);
+const isPrefLoading = ref(true);
 const isFlooringVisible = ref(false);
 // Props
 const { flooring, link } = defineProps(["flooring", "link"]);
@@ -150,7 +152,6 @@ const firstName = computed(() => {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 });
 
-// Computed for repeated condition
 const arePreferencesFilled = computed(() => {
   // Check if flooring is 'services' or 'accessories'
   if (
@@ -177,48 +178,12 @@ const arePreferencesFilled = computed(() => {
 
 // GET ALL CART ITEMS
 async function getHistory() {
-  isRefreshLoading.value = true;
-
-  try {
-    let sanitizedPhone = userStore.userData.phone.startsWith("+")
-      ? userStore.userData.phone.slice(1)
-      : addCountryCode(
-          userStore.userData.phone,
-          userStore.preference.country
-        ).slice(1);
-
-    const preferences = await fetchPreferencesByMobile(sanitizedPhone);
-
-    if (preferences && preferences.data && preferences.data.length > 0) {
-      preferences.data.forEach((pref) => {
-        const preferenceData = pref.preference;
-        const id = pref.id;
-
-        const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
-
-        if (!isAlreadyInCart) {
-          const preferenceWithId = { ...preferenceData, id: id };
-          userStore.cart.push(preferenceWithId);
-        }
-      });
-
-      console.log("Preferences added to cart:", userStore.cart);
-    } else {
-      console.log("No preferences found.");
-    }
-  } catch (error) {
-    console.error("Failed to fetch or process preferences:", error);
-  } finally {
-    setTimeout(() => {
-      isRefreshLoading.value = false;
-    }, 1000);
-  }
+  await userStore.getHistoryFromServer();
 }
 // AT REFRESH
 function handleCartRefresh() {
-  console.log("CART REFRESHED");
   // Update the cartKey to force re-render of the entire cart container
-  userStore.cartKey = Date.now();
+  userStore.refreshCart();
 }
 // ------------------
 // ORDER CONFIRMATION
@@ -309,6 +274,26 @@ const handleCancelAddMoreFlooring = () => {
 
 // REACTIVE ACTIONS
 watch(
+  () => userStore.isFormValidated, // Watch the `isFormValidated` state
+  (newValue, oldValue) => {
+    if (newValue === true) {
+      console.log("Form is validated! Triggering function.");
+
+      // Set an interval to refresh the cart every 2 seconds
+      const refreshInterval = setInterval(() => {
+        console.log("Refreshing cart...");
+        getHistory();
+      }, 1000);
+
+      // Stop refreshing after 6 seconds
+      setTimeout(() => {
+        clearInterval(refreshInterval);
+      }, 2000); //
+    }
+  }
+);
+
+watch(
   () => userStore.userData.id, // Watch for changes in userStore.userData.id
   async (newValue) => {
     // Check if the newValue is a valid integer (positive number)
@@ -328,6 +313,21 @@ watch(
 
       // Start the recursive fetching
       fetchUntilCartIsPopulated();
+    }
+  }
+);
+
+watch(
+  () => userStore.isFormValidated,
+  (newVal) => {
+    if (newVal) {
+      // Start loading when isFormValidated becomes true
+      isPrefLoading.value = true;
+
+      // After 6 seconds, stop loading and show the "No preferences found" message
+      setTimeout(() => {
+        isPrefLoading.value = false;
+      }, 9000); // 6 seconds
     }
   }
 );

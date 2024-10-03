@@ -68,7 +68,7 @@
       class="h-max w-full flex justify-evenly pb-[1rem]"
     >
       <button
-        v-if="!isRefreshLoading"
+        v-if="!userStore.isRefreshLoading"
         @click="getHistory"
         class="h-max w-max text-[#555] rounded-full"
       >
@@ -126,7 +126,6 @@ const restrictedAccess = useCookie("restrictedAccess");
 const userPreference = useCookie("userPreference");
 const isAddMoreLoading = ref(false);
 const isConfirmationLoading = ref(false);
-const isRefreshLoading = ref(false);
 const historyFound = ref(true);
 const isFlooringVisible = ref(false);
 // Props
@@ -138,11 +137,6 @@ const firstName = computed(() => {
   const name = userStore.userData.name.trim().split(" ")[0];
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 });
-
-function removePiniaObj() {
-  userStore.cart = userStore.cart.filter((item) => item.id !== "PINIA");
-  console.log("REMOVED OBJECT WITH ID-PINIA");
-}
 
 const arePreferencesFilled = computed(() => {
   // Check if flooring is 'services' or 'accessories'
@@ -170,44 +164,7 @@ const arePreferencesFilled = computed(() => {
 
 // GET ALL CART ITEMS
 async function getHistory() {
-  isRefreshLoading.value = true;
-
-  try {
-    let sanitizedPhone = userStore.userData.phone.startsWith("+")
-      ? userStore.userData.phone.slice(1)
-      : addCountryCode(
-          userStore.userData.phone,
-          userStore.preference.country
-        ).slice(1);
-
-    const preferences = await fetchPreferencesByMobile(sanitizedPhone);
-
-    if (preferences && preferences.data && preferences.data.length > 0) {
-      preferences.data.forEach((pref) => {
-        const preferenceData = pref.preference;
-        const id = pref.id;
-
-        const isAlreadyInCart = userStore.cart.some((item) => item.id === id);
-        if (!isAlreadyInCart) {
-          const preferenceWithId = { ...preferenceData, id: id };
-          userStore.cart.push(preferenceWithId);
-        } else {
-          userStore.cart = toRaw(removeDuplicates(userStore.cart));
-        }
-      });
-
-      console.log("Preferences added to cart:", userStore.cart);
-      removePiniaObj();
-    } else {
-      console.log("No preferences found.");
-    }
-  } catch (error) {
-    console.error("Failed to fetch or process preferences:", error);
-  } finally {
-    setTimeout(() => {
-      isRefreshLoading.value = false;
-    }, 1000);
-  }
+  await userStore.getHistoryFromServer();
 }
 // AT REFRESH
 function handleCartRefresh() {
@@ -317,8 +274,7 @@ watch(
       // Stop refreshing after 6 seconds
       setTimeout(() => {
         clearInterval(refreshInterval);
-        console.log("Stopped refreshing cart after 6 seconds.");
-      }, 6000); // 6 seconds (6000ms)
+      }, 2000); //
     }
   }
 );

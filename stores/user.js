@@ -11,7 +11,7 @@ const useUserStore = defineStore("user", {
     flooringHistory: [],
     cart: [],
     cartKey: Date.now(),
-
+    isRefreshLoading: false,
     preference: {
       flooring: "",
 
@@ -29,6 +29,7 @@ const useUserStore = defineStore("user", {
   }),
   actions: {
     resetPreference() {
+      // Reset all user preferences to initial state
       this.preference = {
         flooring: "",
         spec_1: "",
@@ -39,10 +40,31 @@ const useUserStore = defineStore("user", {
         color: [],
         budget: "",
         orderMethod: "",
-        country: "Bahrain",
+        country: "Bahrain", // Default country value
       };
-    },
 
+      // Reset user data (if needed)
+      this.userData = {
+        name: "",
+        email: "",
+        phone: "",
+        id: 0, // Assuming 0 is the default id
+      };
+
+      // Clear the cart
+      this.cart = [];
+
+      // Reset any other state, like form validation or spec count
+      this.isFormValidated = false;
+      this.specCount = 0;
+
+      // Optionally reset other state variables
+      this.cartKey = Date.now(); // If you use this for tracking the cart's freshness
+    },
+    // REMOVE PINIA OBJECT
+    removePiniaObj() {
+      this.cart = this.cart.filter((item) => item.id !== "PINIA");
+    },
     // Action to delete an item from the cart by id
     deleteCartItem(id) {
       const index = this.cart.findIndex((item) => item.id === id);
@@ -88,10 +110,10 @@ const useUserStore = defineStore("user", {
         // console.log("-");
       }
     },
-
+    // Action to update the Key
     refreshCart() {
       this.cartKey = Date.now();
-      console.log("Cart Refreshed");
+      console.log("Cart Refreshed", this.cartKey);
     },
     // Action to update Cookie
     updateCookie() {
@@ -119,6 +141,44 @@ const useUserStore = defineStore("user", {
       pref.value = preferenceString;
 
       // console.log(`Updated cookie: ${preferenceString}`);
+    },
+    async getHistoryFromServer() {
+      this.isRefreshLoading = true;
+
+      try {
+        let sanitizedPhone = this.userData.phone.startsWith("+")
+          ? this.userData.phone.slice(1)
+          : addCountryCode(this.userData.phone, this.preference.country).slice(
+              1
+            );
+
+        const preferences = await fetchPreferencesByMobile(sanitizedPhone);
+
+        if (preferences && preferences.data && preferences.data.length > 0) {
+          preferences.data.forEach((pref) => {
+            const preferenceData = pref.preference;
+            const id = pref.id;
+
+            const isAlreadyInCart = this.cart.some((item) => item.id === id);
+            if (!isAlreadyInCart) {
+              const preferenceWithId = { ...preferenceData, id };
+              this.cart.push(preferenceWithId);
+            } else {
+              this.cart = toRaw(removeDuplicates(this.cart));
+            }
+          });
+
+          console.log("Preferences added to cart:", this.cart);
+        } else {
+          console.log("No preferences found.");
+        }
+      } catch (error) {
+        console.error("Failed to fetch or process preferences:", error);
+      } finally {
+        setTimeout(() => {
+          this.isRefreshLoading = false;
+        }, 1000);
+      }
     },
   },
 });

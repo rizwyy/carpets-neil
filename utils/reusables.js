@@ -360,11 +360,8 @@ export function removeDuplicates(arr) {
 
   // Filter the array to remove duplicates
   const filteredArr = arr.filter((item) => {
-    console.log(`Processing item with ID: ${item.id}`);
-
     if (uniqueIds.has(item.id)) {
       // Duplicate found, set the flag to true
-      console.log(`Duplicate found for ID: ${item.id}`);
       hasDuplicates = true;
       return false; // Filter out the duplicate
     } else {
@@ -376,7 +373,6 @@ export function removeDuplicates(arr) {
 
   // Log a message if no duplicates are found
   if (!hasDuplicates) {
-    console.log("No duplicates found");
   }
 
   // Return the filtered array
