@@ -73,7 +73,7 @@
           v-else
           class="text-center py-[2vh] flex flex-col gap-[3.2vh] items-center text-[1.8rem]"
         >
-          No preferences found :(
+          <LoadingIcon class="text-[2rem]" />
         </div>
       </div>
     </div>
