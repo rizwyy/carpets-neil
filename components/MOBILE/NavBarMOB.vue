@@ -150,24 +150,28 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
-import useUserStore from "~/stores/user";
-const userStore = useUserStore();
+import { defineAsyncComponent } from "vue";
 
-import loadingIcon from "~/public/icons/loadingIcon.vue";
-
-import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
-
-import UserIcon from "./../../public/icons/UserIcon.vue";
-import CloseIcon from "./../../public/icons/closeIcon";
-import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
-
+// Lazy load components
+const CartIconMOB = defineAsyncComponent(() => import("./CartIconMOB.vue"));
+const ReusablePrefNavCardMOB = defineAsyncComponent(() =>
+  import("./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue")
+);
+const CloseIcon = defineAsyncComponent(() =>
+  import("./../../public/icons/closeIcon")
+);
+const HamburgerIcon = defineAsyncComponent(() =>
+  import("~/public/icons/HamburgerIcon.vue")
+);
 const restrictedAccess = useCookie("restrictedAccess");
 
 const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
 const userPreference = ref("");
 const router = useRouter();
+
+import useUserStore from "~/stores/user";
+const userStore = useUserStore();
 
 const links = [
   { label: "Flooring", url: "/" },
@@ -176,7 +180,6 @@ const links = [
   { label: "How Woltiz Works", url: "/privacy" },
 ];
 
-import CartIconMOB from "./CartIconMOB.vue";
 import { Icon } from "@iconify/vue/dist/iconify.js";
 const isConfirmLoading = ref(false);
 function openMenu() {

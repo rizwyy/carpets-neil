@@ -3,7 +3,11 @@
     class="navBarPC max-[990px]:hidden h-max w-full max-w-[100vw] overflow-x-hidden flex items-center justify-between py-[4vh] px-[6vw] bg-gradient-to-b from-[#fff] to-[#f1f1f1] font-outfit"
   >
     <div class="h-full w-[35%] flex items-center justify-start">
-      <HamburgerIcon @click="openMenu" class="text-[2.4rem] cursor-pointer" />
+      <Icon
+        @click="openMenu"
+        icon="pajamas:hamburger"
+        class="text-[2.2rem] cursor-pointer text-[#222]"
+      />
     </div>
     <div class="h-full w-[25%] flex justify-center items-center">
       <a
@@ -178,19 +182,20 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
 import useUserStore from "~/stores/user";
+import { defineAsyncComponent } from "vue";
 const userStore = useUserStore();
 
-import CartIconPC from "./CartIconPC.vue";
-import ReusablePrefNavCardMOB from "./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue";
+const CartIconPC = defineAsyncComponent(() => import("./CartIconPC.vue"));
 
-import UserIcon from "./../../public/icons/UserIcon.vue";
-import CloseIcon from "./../../public/icons/closeIcon";
-import HamburgerIcon from "~/public/icons/HamburgerIcon.vue";
+const ReusablePrefNavCardMOB = defineAsyncComponent(() =>
+  import("./../MOBILE/FLOORING/DetailsReviewCards/ReusablePrefNavCard.vue")
+);
+
 import loadingIcon from "~/public/icons/loadingIcon.vue";
 import arowTopRightIcon from "~/public/icons/arowTopRightIcon.vue";
 import SearchBarPC from "../SearchBar/SearchBarPC.vue";
+
 import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const restrictedAccess = useCookie("restrictedAccess");
@@ -199,7 +204,6 @@ const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
 const userPreference = ref("");
 const router = useRouter();
-const isMobile = ref(false);
 
 const isConfirmLoading = ref(false);
 function openMenu() {
