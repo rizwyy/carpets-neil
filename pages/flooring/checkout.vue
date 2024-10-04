@@ -29,10 +29,7 @@ onMounted(() => {
     isMobile.value = false;
   }
   // Decode the preference string from the cookie
-  if (pref.value || typeof pref.value === "undefined") {
-    isAccessRestricted.value = true;
-    return;
-  }
+
   const decodedPreferences = decodePreferenceString(pref.value);
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
     isAccessRestricted.value = true;
