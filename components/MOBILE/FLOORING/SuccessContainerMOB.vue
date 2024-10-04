@@ -3,11 +3,12 @@
     class="h-[100vh] w-screen overflow-x-hidden max-w-[100vw] bg-gradient-to-br from-[#f1f1f1] to-[#ededed] fixed top-0 left-0 font-outfit flex flex-col justify-start gap-[1.8rem] pt-[2rem]"
   >
     <div class="h-max w-[100%] px-[4vw] flex justify-between">
-      <h2
+      <a
+        href="/"
         class="h-max w-max font-[300] text-[2.9rem] text-[#555] leading-[2.4rem] tracking-[-.07rem]"
       >
         WOLTIZ
-      </h2>
+      </a>
       <!-- <span
         class="h-max w-max font-[300] text-[2svh] text-[#999] leading-[4.8svh]"
       >

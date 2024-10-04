@@ -20,7 +20,7 @@ const restrictedAccess = useCookie("restrictedAccess");
 const pref = useCookie("pref");
 
 const isMobile = ref(true);
-const isAccessRestricted = ref(true);
+const isAccessRestricted = ref(false);
 const timer = ref(3);
 onMounted(() => {
   if (window.innerWidth < 990) {
@@ -29,10 +29,13 @@ onMounted(() => {
     isMobile.value = false;
   }
   // Decode the preference string from the cookie
+  if (pref.value || typeof pref.value === "undefined") {
+    isAccessRestricted.value = true;
+    return;
+  }
   const decodedPreferences = decodePreferenceString(pref.value);
-
   if (restrictedAccess.value || typeof restrictedAccess.value === "undefined") {
-    isAccessRestricted.value = false;
+    isAccessRestricted.value = true;
     return;
   } else {
     isAccessRestricted.value = false;

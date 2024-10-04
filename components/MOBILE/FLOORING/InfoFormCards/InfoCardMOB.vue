@@ -362,6 +362,8 @@ async function handleInfoProceedings() {
 
     setTimeout(async () => {
       isLoading.value = false;
+
+      userStore.updateCookie();
       userStore.refreshCart();
       scrollBy(800);
 
