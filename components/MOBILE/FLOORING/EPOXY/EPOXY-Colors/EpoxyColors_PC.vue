@@ -1,7 +1,7 @@
 <template>
   <!-- DESKTOP epoxy-->
   <div
-    class="max-[990px]:hidden h-max w-[100vw] flex flex-col items-center gap-[4vh] justify-center relative"
+    class="max-[990px]:hidden h-max w-screen px-[6vw] flex flex-col items-center gap-[4vh] justify-center"
   >
     <!-- SOLID -->
     <transition @beforeEnter="handleDetailsDOMEntry('epoxy_Colors_Details_PC')">

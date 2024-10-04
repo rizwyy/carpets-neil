@@ -63,7 +63,7 @@ Thank you! Looking forward to your confirmation.`
 
         // Redirect to WhatsApp
         if (typeof window !== "undefined") {
-          window.location.assign(link);
+          // window.location.assign(link);
         }
       }
     }, 1000);

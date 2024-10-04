@@ -256,7 +256,6 @@ const HandleOrderConfirmation = () => {
       userStore.userData.email = "";
       userStore.userData.name = "";
       userStore.userData.phone = "";
-      userStore.cart = []; // Clear the cart
 
       userPreference.value = null;
       restrictedAccess.value = false;
