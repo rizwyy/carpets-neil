@@ -12,16 +12,16 @@
     </div>
     <div class="h-max w-max px-[4vw] flex items-center gap-[.2vw]">
       <h2
-        class="txt_Text opacity- h-max w-full font-[300] text-[3rem] text-[#222] leading-[4vw]"
+        class="txt_Text opacity-0 h-max w-full font-[300] text-[3rem] text-[#222] leading-[4vw]"
       >
         Thanks, {{ firstName }}! You're ready to go
       </h2>
       <DoubleTickIcon
-        class="txt_Text opacity- text-[7.2rem] text-[#666] max-[320px]:hidden"
+        class="txt_Text opacity-0 text-[7.2rem] text-[#666] max-[320px]:hidden"
       />
     </div>
     <div class="h-max w-[70%] px-[4vw]">
-      <p class="txt_Text opacity- h-max w-[100%] text-[1.4rem] text-[#666]">
+      <p class="txt_Text opacity-0 h-max w-[100%] text-[1.4rem] text-[#666]">
         One of our representatives will contact you soon to confirm the details.
         Please make sure to keep your phone line or email active to avoid any
         delays in communication. We appreciate your trust in us, and we look
@@ -30,7 +30,7 @@
     </div>
     <div class="h-max w-full px-[4vw]">
       <div
-        class="txt_Text opacity- h-max w-max py-[2.8vh] rounded-xl px-[2.4vw] flex flex-col gap-[1.6vh] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
+        class="txt_Text opacity-0 h-max w-max py-[2.8vh] rounded-xl px-[2.4vw] flex flex-col gap-[1.6vh] text-[#222] bg-[#999] bg-opacity-[.2] backdrop-blur-[8px]"
       >
         <div
           class="flex items-center h-max w-full tracking-[.2vw] text-[#999] text-[1.4rem] font-[500]"
@@ -52,7 +52,7 @@
     </div>
     <a
       href="/"
-      class="txt_Text opacity- h-max w-[92vw] text-[1.8rem] tracking-[.3vw] rounded-md py-[1.6rem] text-[#ededed] bg-[#222] text-center fixed bottom-[1.2rem] left-[50%] translate-x-[-50%] shadow-xl z-[99]"
+      class="txt_Text opacity-0 h-max w-[92vw] text-[1.8rem] tracking-[.3vw] rounded-md py-[1.6rem] text-[#ededed] bg-[#222] text-center fixed bottom-[1.2rem] left-[50%] translate-x-[-50%] shadow-xl z-[99]"
     >
       CONFIRM & GO HOME
     </a>
