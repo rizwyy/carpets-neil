@@ -22,8 +22,4 @@ defineProps({
 import TickIcon from "~/public/icons/TickIcon.vue";
 </script>
 
-<style scoped>
-.text-specCard_span_MOB {
-  /* Add specific styles here if needed */
-}
-</style>
+<style scoped></style>

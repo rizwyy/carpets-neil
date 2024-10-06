@@ -1,8 +1,0 @@
-bone = #e1e9e5
-egg shell = #f3f4e5
-pale nimbus = #ecf4e5
-off white = #f1f1f1
-unhinged white = #e1dfea
-
------
-

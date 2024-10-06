@@ -11,7 +11,7 @@
         class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9]"
+          class="h-max w-full flex items-center justify-between text-[1.9rem] z-[9]"
         >
           <span
             class="raised_Thickness_Details_PC-HEADING opacity-0 translate-x-[40%] text-detailsContainer_heading_PC"
@@ -32,7 +32,7 @@
         <!-- THICKNESS OPTIONS -->
         <div
           v-show="selectedThicknessOptions.length > 0"
-          class="h-max w-full flex flex-col gap-[2vh]"
+          class="h-max w-full grid grid-cols-4 gap-[2vw]"
         >
           <div
             v-for="(thickness, index) in selectedThicknessOptions"
@@ -42,7 +42,7 @@
             <!-- THICKNESS OPTION -->
             <div
               :class="[
-                'h-[12vh] bg-[#333] overflow-hidden w-full rounded-full text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
+                'h-[12vh] bg-[#333] overflow-hidden w-full rounded-lg text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes(thickness) },
               ]"
               @click="toggleSelect(thickness)"

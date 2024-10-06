@@ -174,11 +174,12 @@
           </span>
         </div>
         <div class="h-max w-full relative flex justify-center flex-[1]">
-          <a
+          <button
             class="text-[1.8rem] w-full bg-[#222] text-[#f1f1f1] text-center flex items-center justify-center py-[1.2rem] tracking-[.4vw]"
-            href="/flooring"
-            >EXPLORE</a
+            @click="closeCart"
           >
+            EXPLORE
+          </button>
         </div>
       </div>
     </div>
