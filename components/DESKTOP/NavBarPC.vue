@@ -145,7 +145,11 @@
             @click="HandleOrderConfirmation"
             class="text-[2rem] flex items-center justify-center w-full tracking-[.2vw] px-[4vw] py-[3.2vh] text-white bg-[#222] text-center shadow-xl rounded-bl-lg"
           >
-            <loadingIcon v-if="isConfirmLoading" class="text-white" />
+            <Icon
+              v-if="isConfirmLoading"
+              class="text-white text-[1.8rem]"
+              icon="eos-icons:three-dots-loading"
+            />
             <span class="text-[1.8rem]" v-else> PROCEED TO CHECKOUT </span>
           </button>
         </div>
@@ -261,10 +265,13 @@ const HandleOrderConfirmation = () => {
         const userData = {
           id: item.id, // Make sure the id is included for updating the log
           name: userStore.userData.name,
-          phone: addCountryCode(
-            userStore.userData.phone,
-            userStore.preference.country
-          ), // Add country code if missing
+
+          phone: userStore.userData.phone.startsWith("+")
+            ? userStore.userData.phone
+            : addCountryCode(
+                userStore.userData.phone,
+                userStore.preference.country
+              ),
           email: "",
           preference: item, // Include the current cart item as preference
           isOrderConfirmed: true,
