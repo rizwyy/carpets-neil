@@ -25,7 +25,7 @@ onMounted(() => {
     handleAutoAlpha("FlooringGridLoadingContainer_MOB", 0);
     pageLoaded.value = true;
     ENABLE_SCROLL();
-  }, 2000);
+  }, 1000);
 });
 </script>
 

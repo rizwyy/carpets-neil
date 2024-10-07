@@ -118,7 +118,8 @@ export function handleFromToEntry(el) {
 }
 
 export function handleDOMEntry(el) {
-  gsap.to(`.${el}`, {
+  const tl = gsap.timeline();
+  tl.to(`.${el}`, {
     y: 0,
     scale: 1,
     opacity: 1,
