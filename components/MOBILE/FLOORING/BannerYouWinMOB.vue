@@ -11,6 +11,8 @@
       <div class="absolute h-full w-full left-0 top-0 z-[-9]">
         <NuxtImg
           placeholder
+          loading="eager"
+          decoding="async"
           @load="
             handleImageLoad(0.4, 'flooring_Banner_Default', 'flooringBanner')
           "
