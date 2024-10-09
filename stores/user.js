@@ -64,6 +64,7 @@ const useUserStore = defineStore("user", {
     // REMOVE PINIA OBJECT
     removePiniaObj() {
       this.cart = this.cart.filter((item) => item.id !== "PINIA");
+      console.log("REMOVED PINIA OBJ 🟢");
     },
     // Action to delete an item from the cart by id
     deleteCartItem(id) {
@@ -107,13 +108,11 @@ const useUserStore = defineStore("user", {
         // console.log("CART UPDATED::", this.cart);
         this.updateCookie();
       } else {
-        // console.log("-");
       }
     },
     // Action to update the Key
     refreshCart() {
       this.cartKey = Date.now();
-      console.log("Cart Refreshed", this.cartKey);
     },
     // Action to update Cookie
     updateCookie() {
@@ -139,8 +138,6 @@ const useUserStore = defineStore("user", {
         .join(",")}|${getAbbreviation(p.budget)}`;
 
       pref.value = preferenceString;
-
-      // console.log(`Updated cookie: ${preferenceString}`);
     },
     async getHistoryFromServer() {
       this.isRefreshLoading = true;
@@ -168,7 +165,7 @@ const useUserStore = defineStore("user", {
             }
           });
 
-          console.log("Preferences added to cart:", this.cart);
+          // console.log("Preferences added to cart:", this.cart);
         } else {
           console.log("No preferences found.");
         }

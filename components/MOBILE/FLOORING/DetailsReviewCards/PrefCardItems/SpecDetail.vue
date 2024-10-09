@@ -2,7 +2,8 @@
   <div class="flex items-center w-full">
     <TickIcon />
     <span class="ml-[1vw] w-full text-[1.1rem] text-[#333]">
-      <span>{{ label }}:&nbsp;</span>{{ value }}
+      <span>{{ label.charAt(0).toUpperCase() + label.slice(1) }}:&nbsp;</span
+      >{{ value }}
     </span>
   </div>
 </template>

@@ -173,12 +173,15 @@ const mailIpt = ref("");
 const nameIpt = ref("");
 const phoneIpt = ref("");
 
+const sanitizedPhone = ref(0);
+
 const isNameInvalid = ref(false);
 const isMailInvalid = ref(false);
 const isPhoneInvalid = ref(false);
 
 const isEditing = ref(false);
 const changesDetected = ref(false);
+const isPhoneChanged = ref(false);
 
 const cookieFound = ref(false);
 
@@ -188,7 +191,6 @@ const userStore = useUserStore();
 function toggleReadOnly() {
   cookieFound.value = false;
   isEditing.value = true;
-  console.log("EDITING VALUE IS TRUE");
 }
 
 function setUserPreferenceCookie() {
@@ -200,7 +202,7 @@ function setUserPreferenceCookie() {
   };
   userPreference.value = obj;
 
-  console.log("COOKIE SET::", toRaw(userPreference.value));
+  console.log("COOKIE SET");
   cookieFound.value = true;
 }
 
@@ -227,7 +229,7 @@ const insertLog = async (isOrderConfirmed) => {
         : email;
     };
 
-    const sanitizedPhone = getSanitizedPhone();
+    sanitizedPhone.value = getSanitizedPhone();
     const contact = getContact();
     const name = userStore.userData.name;
 
@@ -245,11 +247,10 @@ const insertLog = async (isOrderConfirmed) => {
       preference: userStore.preference,
       isOrderConfirmed,
     };
-    console.log(userData);
+
     // Check for duplicates only if isEditing.value is true
     if (isEditing.value) {
-      console.log("CHECK");
-      const preferences = await fetchPreferencesByMobile(sanitizedPhone);
+      const preferences = await fetchPreferencesByMobile(sanitizedPhone.value);
 
       if (preferences && Array.isArray(preferences.data)) {
         const preferencesArray = preferences.data;
@@ -272,47 +273,42 @@ const insertLog = async (isOrderConfirmed) => {
           return; // Exit function without inserting a new log
         }
       }
-    } else {
-      // Proceed with setting the cookie and inserting the log
-      const { data: setCookieData, error: setCookieError } = await useFetch(
-        "/api/set-cookie"
-      );
-
-      if (setCookieError?.value) {
-        throw new Error("Error setting cookie: " + setCookieError.value);
-      }
-
-      console.log("SET COOKIE DONE");
-
-      // Insert the log
-      const response = await fetch("/api/insert-logs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Error inserting logs");
-      }
-
-      const logData = await response.json();
-      console.log("Log inserted successfully with id:", logData.id);
-      const fetchedData = await fetchPreferencesByMobile(sanitizedPhone);
-      toRaw(fetchedData.data).forEach((item) => {
-        if (item.preference && item.id) {
-          // Create a new object that contains both the id and the preference
-          const cartItem = {
-            id: item.id, // Add the id
-            ...item.preference, // Spread the preference object
-          };
-
-          // Push the new object into the cart
-          userStore.cart.push(cartItem);
-        }
-      });
-      userStore.removePiniaObj();
-      isEditing.value = true;
     }
+    // Proceed with setting the cookie and inserting the log
+    const { data: setCookieData, error: setCookieError } = await useFetch(
+      "/api/set-cookie"
+    );
+
+    if (setCookieError?.value) {
+      throw new Error("Error setting cookie: " + setCookieError.value);
+    }
+
+    // Insert the log
+    const response = await fetch("/api/insert-logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error inserting logs");
+    }
+
+    const logData = await response.json();
+    const fetchedData = await fetchPreferencesByMobile(sanitizedPhone.value);
+    userStore.cart = [];
+    fetchedData.data.forEach((item) => {
+      if (item.preference && item.id) {
+        const cartItem = {
+          id: item.id,
+          ...item.preference, // Spread the preference object
+        };
+        userStore.cart.push(cartItem);
+      }
+    });
+    userStore.removePiniaObj();
+    userStore.refreshCart();
+    isEditing.value = true;
   } catch (error) {
     console.error("Error occurred:", error);
   }
@@ -379,7 +375,7 @@ async function handleInfoProceedings_PC() {
       // Wait for 3 seconds, then call getHistoryFromServer
       setTimeout(async () => {
         await userStore.getHistoryFromServer(); // Await for history fetching
-      }, 3000); // 3 seconds delay
+      }, 1600); // 3 seconds delay
     }, 800);
   }
 }
@@ -388,9 +384,34 @@ let initialValues = {
   spec_1: userStore.preference.spec_1,
   spec_2: userStore.preference.spec_2,
   spec_3: userStore.preference.spec_3,
-  color: [...userStore.preference.color], // Make a copy of the array
+  color: [...userStore.preference.color], // Copy of the array
   budget: userStore.preference.budget,
+  phone: userStore.userData.phone, // Add phone here
 };
+
+// Watch for changes in phone
+watch(
+  () => userStore.userData.phone, // Watch the phone value in userStore
+  (newPhone, oldPhone) => {
+    // Add country code if missing
+    const newSanitizedPhone = newPhone.startsWith("+")
+      ? newPhone
+      : addCountryCode(newPhone, userStore.preference.country);
+
+    const oldSanitizedPhone = oldPhone.startsWith("+")
+      ? oldPhone
+      : addCountryCode(oldPhone, userStore.preference.country);
+
+    if (newSanitizedPhone !== oldSanitizedPhone) {
+      // console.log(
+      //   `Phone changed from ${oldSanitizedPhone} to ${newSanitizedPhone}`
+      // );
+      setUserPreferenceCookie();
+      // Update the phone value in initialValues
+      initialValues.phone = newSanitizedPhone;
+    }
+  }
+);
 
 // Watch for `isEditing` to turn `true` and start monitoring changes
 watch(
@@ -416,9 +437,7 @@ watch(
             newBudget !== initialValues.budget
           ) {
             changesDetected.value = true;
-            console.log("CHANGES DETECTED🚨");
             userStore.isFormValidated = false;
-            isEditing.value = false;
           }
         },
         { deep: true }
@@ -428,14 +447,23 @@ watch(
 );
 
 // Watch the cart's length
+let reloadTimeout;
+
 watch(
   () => userStore.cart.length, // Watch the length of the cart
   (newLength) => {
+    // Clear any previously set timeout to prevent multiple reloads
+    clearTimeout(reloadTimeout);
+
     if (newLength === 0) {
-      window.location.reload();
+      // Set a timeout to reload after 2 seconds
+      reloadTimeout = setTimeout(() => {
+        window.location.reload();
+      }, 2000); // 2000ms = 2 seconds
     }
   }
 );
+
 onMounted(() => {
   if (userPreference.value && typeof userPreference.value === "object") {
     const { name = "", phone = "", email = "" } = toRaw(userPreference.value);
