@@ -12,7 +12,7 @@
         </span>
       </div>
       <div
-        class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pb-[4vh]"
+        class="h-max w-full flex items-center justify-between text-[3.8vh] z-[9] pb-[2vh]"
       >
         <span class="text-detailsContainer_heading_PC">
           {{

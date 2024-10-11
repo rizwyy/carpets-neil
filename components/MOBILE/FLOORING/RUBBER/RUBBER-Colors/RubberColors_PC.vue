@@ -7,11 +7,12 @@
       @beforeEnter="handleDetailsDOMEntry('rubber_Colors_Details_PC')"
     >
       <div
+        id="rubberColorsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 !== ''
         "
-        class="relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
+        class="relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[6vh]"
       >
         <div
           class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
@@ -395,6 +396,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToEl('rubberColorsContainerPC')"
+            class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </transition>

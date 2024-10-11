@@ -12,7 +12,7 @@
     >
       <div class="w-full flex justify-between items-center text-[#444]">
         <span class="flex items-center">
-          {{ item.flooring }}
+          {{ item.flooring.charAt(0).toUpperCase() + item.flooring.slice(1) }}
           <span v-show="isExpanded" class="ml-[1vw]">
             <ArrowUpIcon />
           </span>

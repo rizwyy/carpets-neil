@@ -5,6 +5,7 @@
   >
     <transition @beforeEnter="handleDetailsDOMEntry('grass_Colors_Details_PC')">
       <div
+        id="grassColorsContainerPC"
         v-show="userStore.preference.spec_1 !== ''"
         class="h-max w-full shadow-xl py-[6vh] px-[2vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[4.2rem]"
       >
@@ -380,6 +381,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToEl('grassColorsContainerPC')"
+            class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </transition>

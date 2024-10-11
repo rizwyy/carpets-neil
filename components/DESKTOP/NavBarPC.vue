@@ -323,6 +323,7 @@ onMounted(() => {
     typeof toRaw(userPreferenceCookie).name === "string"
   ) {
     userPreference.value = userPreferenceCookie;
+    console.log(userPreference.value);
   }
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-max max-w-[100vw] flex flex-col gap-[4.8vh] min-[1590px]:gap-[4vh] py-[6vh] pb-[14vh] font-outfit"
+    class="flooringLayoutPC invisible opacity-0 h-max max-w-[100vw] flex flex-col gap-[4.8vh] min-[1590px]:gap-[4vh] py-[6vh] pb-[14vh] font-outfit"
   >
     <div class="h-max w-full flex justify-center min-[1590px]:py-[2vh]">
       <span class="text-[2.8rem] font-[400]">Shop By Flooring Category</span>
@@ -39,10 +39,6 @@
 <script setup>
 const FlooringCategoryItem = defineAsyncComponent({
   loader: () => import("./CategoryCard-HeroPC.vue"),
-  loadingComponent: {
-    template: '<div class="text-white">Loading...</div>',
-  },
-  delay: 200,
 });
 
 // Flooring categories array (DRY: Don't Repeat Yourself)
@@ -151,6 +147,10 @@ const flooringCategories = [
     },
   ],
 ];
+
+onMounted(() => {
+  handleAutoAlpha("flooringLayoutPC", 1);
+});
 </script>
 
 <style scoped>

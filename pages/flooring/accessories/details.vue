@@ -50,7 +50,8 @@ onMounted(() => {
   <!-- DESKTOP -->
   <section v-if="!isMobile" class="max-[990px]:hidden max-w-screen h-max">
     <NavBarPC />
-    <div
+    <ul
+      v-auto-animate
       class="h-max max-w-[100vw] overflow-x-hidden font-outfit flex flex-col gap-[2vh] flex flex-col gap-[6vh] items-center"
     >
       <div
@@ -69,9 +70,8 @@ onMounted(() => {
       </div>
       <!-- DESKTOP -->
       <AccessoriesTypesDetails />
-      <LazyMatBaseDetails />
       <LazyOrderMethod
-        v-if="
+        v-show="
           userStore.preference.spec_4.includes('Mat Floors') &&
           userStore.preference.spec_2 !== ''
         "
@@ -79,7 +79,7 @@ onMounted(() => {
       />
       <LazyInfoForm flooring="accessories" />
       <LazyReviewCard flooring="accessories" link="accessories" />
-    </div>
+    </ul>
     <!-- DESKTOP -->
   </section>
   <!-- -------------------------------------------- -->

@@ -461,6 +461,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToEl('pvcColorsContainerPC')"
+            class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </transition>
@@ -505,7 +511,7 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToNextElement(240, 3400);
+    scrollToEl("pvcBudgetsContainerPC");
 
     return;
   }
@@ -520,7 +526,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToNextElement(240, 3400);
+      scrollToEl("pvcBudgetsContainerPC");
     }
     selectedColors.value.push(color);
   }

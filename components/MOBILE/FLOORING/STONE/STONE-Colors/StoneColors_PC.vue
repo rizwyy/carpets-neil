@@ -6,6 +6,7 @@
     <!-- SOLID -->
     <transition @beforeEnter="handleDetailsDOMEntry('stone_Colors_Details_PC')">
       <div
+        id="stoneColorsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 !== '' &&
@@ -634,6 +635,12 @@
             </svg>
           </span>
         </span>
+        <button
+          @click="scrollToEl('stoneColorsContainerPC')"
+          class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+        >
+          Add More
+        </button>
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('raised_Application_Details_PC')"
     >
       <div
+        id="raisedApplicationContainerPC"
         v-show="userStore.preference.spec_1 !== ''"
         class="max-[990px]:hidden h-max w-full px-[3vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6]"
       >

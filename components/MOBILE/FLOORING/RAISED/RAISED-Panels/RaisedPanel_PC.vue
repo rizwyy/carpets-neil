@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @beforeEnter="handleDetailsDOMEntry('raised_Panel_Details_pc')">
     <div
+      id="raisedPanelContainerPC"
       v-show="
         userStore.preference.spec_1 !== '' && userStore.preference.spec_2 !== ''
       "
@@ -192,7 +193,9 @@ const toggleSelect = (surface) => {
     selectedThickness.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    scrollToBottom();
+    surface === "Bare" && !userStore.preference.color.includes("Grey")
+      ? scrollToEl("raisedBudgetsContainerPC")
+      : scrollToEl("raisedFinishContainerPC");
     selectedThickness.value = surface;
     userStore.preference.spec_3 = toRaw(selectedThickness.value);
   }

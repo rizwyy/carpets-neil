@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('raised_Budget_Details_pc')"
     >
       <div
+        id="raisedBudgetsContainerPC"
         v-show="
           userStore.preference.flooring === 'raised' &&
           userStore.preference.spec_1 !== '' &&
@@ -73,7 +74,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[84%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
@@ -115,9 +116,8 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[74%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
-
             <div
               class="text-[2.8vh] h-full h-full flex-1 flex justify-start items-center"
             >
@@ -156,7 +156,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[64%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <!-- DESKTOP -->
@@ -198,7 +198,7 @@
             </div>
             <!-- DESKTOP -->
             <div
-              class="h-full w-full bg-gradient-to-l rounded-full from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1]"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[54%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
@@ -240,7 +240,7 @@
             </div>
 
             <div
-              class="h-full w-full bg-gradient-to-l from-[#000] to-[#666] from-[44%] absolute bottom-0 left-0 z-[-1] rounded-full"
+              class="h-full w-full bg-gradient-to-bl from-[#111] to-[#55AAFF] from-[26%] absolute bottom-0 left-0 z-[-1] rounded-full"
             ></div>
 
             <div
@@ -281,7 +281,7 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    scrollToEl("orderCardContainerPC");
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

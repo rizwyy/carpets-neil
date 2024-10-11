@@ -429,6 +429,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToEl('carpetColorsContainerPC')"
+            class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </transition>

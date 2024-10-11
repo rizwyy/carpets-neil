@@ -202,6 +202,7 @@ function setUserPreferenceCookie() {
     orderMethod: userStore.preference.orderMethod,
   };
   userPreference.value = obj;
+  console.log(obj);
 
   console.log("COOKIE SET");
   cookieFound.value = true;
@@ -407,7 +408,7 @@ watch(
       // console.log(
       //   `Phone changed from ${oldSanitizedPhone} to ${newSanitizedPhone}`
       // );
-      setUserPreferenceCookie();
+      // setUserPreferenceCookie();
       // Update the phone value in initialValues
       initialValues.phone = newSanitizedPhone;
     }

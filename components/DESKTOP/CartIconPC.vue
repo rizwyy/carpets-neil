@@ -81,6 +81,7 @@ onMounted(async () => {
 
               // Push the updated object into the userStore.cart array
               userStore.cart.push(updatedPreference);
+              userStore.cart = removeDuplicates(userStore.cart);
             });
             // userStore.cart = toRaw(removeDuplicates(userStore.cart));
 

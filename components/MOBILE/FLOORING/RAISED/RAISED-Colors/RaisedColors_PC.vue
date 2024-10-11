@@ -3,6 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <transition @beforeEnter="handleDetailsDOMEntry('raised_Color_Details_PC')">
       <div
+        id="raisedColorsContainerPC"
         v-show="
           userStore.preference.spec_3 === 'HPL' ||
           userStore.preference.spec_3 === 'PVC'
@@ -332,7 +333,7 @@
     <transition>
       <div
         v-show="userStore.preference.color.length > 0"
-        class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
+        class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg mt-[4vh]"
       >
         <span class="text-detailsContainer_heading_PC text-[2.4vw]"
           >Selected Colors:</span
@@ -368,6 +369,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToEl('colorsContainer')"
+            class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </transition>
@@ -410,7 +417,7 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    scrollToEl("raisedBudgetsContainerPC");
     return;
   }
   // Handle "CustomColor" case
@@ -424,7 +431,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      scrollToEl("raisedBudgetsContainerPC");
     }
     selectedColors.value.push(color);
   }

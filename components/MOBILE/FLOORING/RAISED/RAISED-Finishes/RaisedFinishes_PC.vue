@@ -5,6 +5,7 @@
       @before-enter="handleDetailsDOMEntry('raised_Finishes_Details_PC')"
     >
       <div
+        id="raisedFinishContainerPC"
         v-show="
           userStore.preference.flooring === 'raised' &&
           userStore.preference.spec_1 !== '' &&
@@ -414,7 +415,7 @@ const toggleSelect = (finish) => {
     spec_4.value = "";
     userStore.preference.spec_4 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("raisedColorsContainerPC");
     spec_4.value = finish;
     userStore.preference.spec_4 = toRaw(spec_4.value);
   }

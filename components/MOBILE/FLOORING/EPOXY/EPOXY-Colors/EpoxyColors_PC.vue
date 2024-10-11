@@ -1,16 +1,15 @@
 <template>
   <!-- DESKTOP epoxy-->
-  <div
-    class="max-[990px]:hidden h-max w-screen px-[6vw] flex flex-col items-center gap-[4vh] justify-center"
-  >
+  <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <!-- SOLID -->
     <transition @beforeEnter="handleDetailsDOMEntry('epoxy_Colors_Details_PC')">
       <div
+        id="epoxyColorsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 === 'Solid'
         "
-        class="relative h-max w-full shadow-xl py-[6vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
+        class="relative h-max w-full shadow-xl py-[4vh] px-[4vw] bg-[#f1f1f1] bg-opacity-60 rounded-md shadow-lg text-center flex flex-col gap-[8vh]"
       >
         <div
           class="header text-[3.8vh] text-left z-[9] h-max w-full items-center flex justify-between"
@@ -595,7 +594,7 @@
 
     <div
       v-show="userStore.preference.color.length > 0"
-      class="h-max w-[84vw] flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
+      class="h-max w-[84vw] flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg mt-[4vh]"
     >
       <span class="text-detailsContainer_heading_PC text-[2.4vw]"
         >Selected Colors:</span
@@ -631,6 +630,12 @@
             </svg>
           </span>
         </span>
+        <button
+          @click="scrollToEl('epoxyColorsContainerPC')"
+          class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+        >
+          Add More
+        </button>
       </div>
     </div>
   </div>
