@@ -3,6 +3,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('raised_Panel_Details_Mob')">
     <div
+      id="raisedPanelContainerMOB"
       v-show="
         userStore.preference.spec_1 !== '' && userStore.preference.spec_2 !== ''
       "

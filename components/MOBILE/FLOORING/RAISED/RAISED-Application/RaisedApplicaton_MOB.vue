@@ -4,6 +4,7 @@
     @beforeEnter="handleDetailsDOMEntry('raised_Application_Details_Mob')"
   >
     <div
+      id="raisedApplicationsContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >

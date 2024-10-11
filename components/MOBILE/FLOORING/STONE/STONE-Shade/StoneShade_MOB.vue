@@ -2,6 +2,7 @@
   <transition @before-enter="handleDetailsDOMEntry('stone_Finish_Details_Mob')">
     <!-- MOBILE -->
     <div
+      id="stoneShadeContainerMOB"
       v-show="
         userStore.preference.flooring === 'stone' &&
         userStore.preference.spec_1 !== '' &&
@@ -158,7 +159,7 @@ const toggleSelect = (surface) => {
     userStore.preference.spec_4.splice(index, 1);
   } else {
     userStore.preference.spec_4.push(surface);
-    existingUser ? scrollBy(600) : scrollToBottom();
+    scrollToEl("stoneColorsContainerMOB");
   }
 };
 </script>

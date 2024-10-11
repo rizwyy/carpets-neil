@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('raised_Budget_Details_Mob')">
     <div
+      id="raisedBudgetsContainerMOB"
       v-show="
         userStore.preference.flooring === 'raised' &&
         userStore.preference.spec_1 !== '' &&
@@ -312,7 +313,7 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToBottom();
 
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);

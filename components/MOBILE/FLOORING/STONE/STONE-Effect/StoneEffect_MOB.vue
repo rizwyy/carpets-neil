@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @before-enter="handleDetailsDOMEntry('stone_Type_Details_Mob')">
     <div
+      id="stoneEffectContainerMOB"
       v-show="userStore.preference.spec_2 === 'Porcelain'"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]"
     >
@@ -249,7 +250,7 @@ const toggleSelect = (category) => {
     userStore.preference.spec_3 = "";
   } else {
     userStore.preference.color = [];
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("stoneShadeContainerMOB");
     spec_3.value = category;
     userStore.preference.spec_3 = toRaw(spec_3.value);
   }

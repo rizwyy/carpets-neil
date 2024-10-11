@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @before-enter="handleDetailsDOMEntry('epoxy_Type_Details_Mob')">
     <div
+      id="epoxyTypesContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]"
     >
@@ -190,7 +191,8 @@ const toggleSelect = (category) => {
     userStore.preference.spec_2 = "";
   } else {
     userStore.preference.color = [];
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("epoxyColorsContainerMOB");
+
     spec_2.value = category;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }

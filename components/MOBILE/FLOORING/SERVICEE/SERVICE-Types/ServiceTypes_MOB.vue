@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
     <div
+      id="serviceTypesContainerMOB"
       class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -113,7 +114,7 @@ const toggleSelect = (service) => {
   }
   userStore.preference.flooring = "services";
   userStore.preference.spec_4 = toRaw(spec_4.value);
-  existingUser ? scrollBy(500) : scrollToBottom();
+  scrollToEl("serviceBudgetsContainerMOB");
 };
 
 onMounted(() => {});
