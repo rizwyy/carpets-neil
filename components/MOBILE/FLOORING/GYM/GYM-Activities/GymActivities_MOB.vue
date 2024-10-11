@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('gym_Activity_Details_Mob')">
     <div
+      id="gymActivitiesContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
@@ -730,8 +731,7 @@ const toggleSelect = (type) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
-
+    scrollToEl("gymFlooringContainerMOB");
     spec_2.value = type;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }

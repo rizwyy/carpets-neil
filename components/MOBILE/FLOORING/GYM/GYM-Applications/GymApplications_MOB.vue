@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
     <div
+      id="gymApplicationContainerMOB"
       class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -192,7 +193,7 @@ const toggleSelect = (category) => {
     spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("gymActivitiesContainerMOB");
 
     spec_1.value = category;
     userStore.preference.spec_1 = toRaw(spec_1.value);

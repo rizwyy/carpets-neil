@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @before-appear="handleDetailsDOMEntry('gym_Budget_Details_Mob')">
     <div
+      id="gymBudgetsContainerMOB"
       v-show="
         userStore.preference.flooring === 'gym' &&
         userStore.preference.spec_1 !== '' &&

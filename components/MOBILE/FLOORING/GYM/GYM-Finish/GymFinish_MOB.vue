@@ -2,6 +2,7 @@
   <!-- -------------------------------- -->
   <!-- MOBILE -->
   <div
+    id="gymFinishContainerMOB"
     v-show="
       userStore.preference.spec_1 !== '' &&
       userStore.preference.spec_2 !== '' &&

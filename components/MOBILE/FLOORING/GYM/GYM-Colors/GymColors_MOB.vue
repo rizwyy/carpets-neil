@@ -2,6 +2,7 @@
   <!-- MOBILE GYM COLOR DETAILS-->
   <transition @beforeEnter="handleDetailsDOMEntry('gym_Color_Details_Mob')">
     <div
+      id="gymColorsContainerMOB"
       v-show="
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -500,7 +501,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (added === "done") {
     isMultiColoredOpted.value = false;
-    existingUser ? scrollBy(800) : scrollToBottom();
+    scrollToEl("gymBudgetsContainerMOB");
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -513,7 +514,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser ? scrollBy(800) : scrollToBottom();
+      scrollToEl("gymBudgetsContainerMOB");
     }
     selectedColors.value.push(color);
   }

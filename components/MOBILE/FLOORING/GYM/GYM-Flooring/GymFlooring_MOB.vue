@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('gym_Flooring_Details_Mob')">
     <div
+      id="gymFlooringContainerMOB"
       v-show="
         userStore.preference.flooring === 'gym' &&
         userStore.preference.spec_2 !== ''
@@ -193,7 +194,7 @@ const toggleSelect = (material) => {
     spec_3.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("gymColorsContainerMOB");
     spec_3.value = material;
     userStore.preference.spec_3 = toRaw(spec_3.value);
   }
