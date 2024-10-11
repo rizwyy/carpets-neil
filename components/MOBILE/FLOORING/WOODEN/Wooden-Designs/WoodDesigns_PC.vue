@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('wooden_Design_Details_PC')"
     >
       <div
+        id="woodDesignsContainerPC"
         v-show="
           userStore.preference.flooring === 'Wooden' &&
           userStore.preference.spec_1 !== '' &&
@@ -68,21 +69,21 @@
               placeholder
               loading="lazy"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/plank-wood.webp"
+              src="/wooden/cork-planks.webp"
               alt="#"
             />
             <span class="text-[3.2vh]">Plain Planks</span>
           </div>
-          <!-- Herringbone -->
+          <!-- Tiles -->
           <div
             :class="[
               'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: userStore.preference.spec_3 === 'Herringbone' },
+              { selected: userStore.preference.spec_3 === 'Tiles' },
             ]"
-            @click="toggleSelect('Herringbone')"
+            @click="toggleSelect('Tiles')"
           >
             <div
-              v-show="userStore.preference.spec_3 === 'Herringbone'"
+              v-show="userStore.preference.spec_3 === 'Tiles'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- DESKTOP -->
@@ -99,10 +100,10 @@
               placeholder
               loading="lazy"
               class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-              src="/wooden/wooden-herringbone.webp"
+              src="/wooden/wooden-cork1.webp"
               alt="#"
             />
-            <span class="text-[3.2vh]">Herringbone</span>
+            <span class="text-[3.2vh]">Tiles</span>
           </div>
           <!-- DESKTOP -->
         </div>
@@ -242,6 +243,240 @@
             />
             <span class="text-[3.2vh]">Basket Weave</span>
           </div>
+          <!-- Custom I -->
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom I' },
+            ]"
+            @click="toggleSelect('Custom I')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom I'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom1.webp"
+              alt="#"
+            />
+            <!-- DESKTOP -->
+            <span class="text-[3.2vh]">Custom I</span>
+          </div>
+          <!-- DESKTOP -->
+        </div>
+        <div
+          v-show="!(userStore.preference.spec_2 === 'Cork Floor')"
+          class="h-max w-full flex justify-between gap-[2vw] z-[9]"
+        >
+          <!-- DESKTOP -->
+          <!-- Custom II -->
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom II' },
+            ]"
+            @click="toggleSelect('Custom II')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom II'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom2.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Custom II</span>
+          </div>
+          <!-- Custom III -->
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom III' },
+            ]"
+            @click="toggleSelect('Custom III')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom III'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom3.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Custom III</span>
+          </div>
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom IV' },
+            ]"
+            @click="toggleSelect('Custom IV')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom IV'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom4.webp"
+              alt="#"
+            />
+            <!-- DESKTOP -->
+            <span class="text-[3.2vh]">Custom IV</span>
+          </div>
+          <!-- DESKTOP -->
+        </div>
+        <div
+          v-show="!(userStore.preference.spec_2 === 'Cork Floor')"
+          class="h-max w-full flex justify-between gap-[2vw] z-[9]"
+        >
+          <!-- Custom IV -->
+
+          <!-- DESKTOP -->
+          <!-- Custom V -->
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom V' },
+            ]"
+            @click="toggleSelect('Custom V')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom V'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom5.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Custom V</span>
+          </div>
+          <!-- Custom VI -->
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom VI' },
+            ]"
+            @click="toggleSelect('Custom VI')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom VI'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom6.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Custom VI</span>
+          </div>
+          <!-- Custom VII -->
+          <div
+            :class="[
+              'materialItem_PC overflow-hidden rounded-md h-[28vh] wooden_Design_Details_PC-CONTAINER opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1]  w flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
+              { selected: userStore.preference.spec_3 === 'Custom VII' },
+            ]"
+            @click="toggleSelect('Custom VII')"
+          >
+            <div
+              v-show="userStore.preference.spec_3 === 'Custom VII'"
+              class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
+            >
+              <!-- Selected indicator without text -->
+              <span
+                class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                >Selected</span
+              >
+            </div>
+            <div
+              class="h-full w-full bg-gradient-to-bl from-[#0000] to-black from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[-1]"
+            ></div>
+            <NuxtImg
+              quality="50"
+              placeholder
+              loading="lazy"
+              class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
+              src="/wooden/custom7.webp"
+              alt="#"
+            />
+            <span class="text-[3.2vh]">Custom VII</span>
+          </div>
           <!-- DESKTOP -->
         </div>
       </div>
@@ -267,7 +502,7 @@ const toggleSelect = (material) => {
     selectedmaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("woodColorsContainerPC");
     selectedmaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedmaterial.value);
   }

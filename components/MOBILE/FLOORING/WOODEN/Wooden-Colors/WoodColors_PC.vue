@@ -1,10 +1,11 @@
 <template>
   <!-- DESKTOP -->
-  <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
+  <div id="colorsContainer" class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <transition
       @beforeEnter="handleDetailsDOMEntry('wooden_Colors_Details_PC')"
     >
       <div
+        id="woodColorsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 !== '' &&
@@ -28,7 +29,7 @@
             >
               <span
                 v-show="isMultiColoredOpted"
-                class="text-detailsContainer_heading_PC customColorText_PC opacity-0 text-[5.8vw] bg-gradient-to-r from-[#68e3f9] via-[#f55a9b] to-[#4f4ed7] bg-clip-text text-transparent font-shadows"
+                class="text-[2.4vw] customColorText_PC opacity-0 text-[5.8vw] bg-gradient-to-r from-[#68e3f9] via-[#f55a9b] to-[#4f4ed7] bg-clip-text text-transparent font-shadows"
                 >Custom Colors</span
               >
             </transition>
@@ -36,7 +37,7 @@
           <div
             class="h-max w-full flex-[1.2] flex gap-[2.8vw] justify-center items-center"
           >
-            <span class="text-[#f1f1f1] text-details_Box_Heading_PC font-[400]"
+            <span class="text-[#f1f1f1] text-[1.8vw] font-[400]"
               >Enter Your Colors:</span
             >
             <input
@@ -45,7 +46,7 @@
               class="h-[6vh] w-[50%] px-[4vw] bg-inherit outline-none focus:border-[#fff] rounded-t-md border-[#fff9] text-[2vw] border-b-[2px] text-[#fff] py-[2vh]"
               type="text"
               v-model="customColor"
-              placeholder="Enter your Color"
+              placeholder="Enter your Color.."
             />
             <button @click="clearCustomColorValue">
               <svg
@@ -393,7 +394,8 @@
     <transition>
       <div
         v-show="userStore.preference.color.length > 0"
-        class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#E5E4E2] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg"
+        id="colorSummaryContainerPC"
+        class="h-max w-full flex flex-col gap-[1vh] items-start bg-[#f1f1f1] py-[4vh] px-[4vw] rounded-md bg-opacity-[.5] shadow-lg mt-[4vh]"
       >
         <span class="text-detailsContainer_heading_PC text-[2.4vw]"
           >Selected Colors:</span
@@ -429,6 +431,12 @@
               </svg>
             </span>
           </span>
+          <button
+            @click="scrollToEl('colorsContainer')"
+            class="rounded-md bg-inherit text-[1.4vw] shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[1.2vw] py-[1.2vh]"
+          >
+            Add More
+          </button>
         </div>
       </div>
     </transition>
@@ -473,7 +481,7 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    scrollToEl("woodFinishContainerPC");
     return;
   }
   // Handle "CustomColor" case
@@ -487,7 +495,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      scrollToEl("woodFinishContainerPC");
     }
     selectedColors.value.push(color);
   }

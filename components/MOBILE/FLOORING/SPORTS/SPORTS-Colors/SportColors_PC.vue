@@ -7,6 +7,7 @@
       @beforeEnter="handleDetailsDOMEntry('sports_Colors_Details_PC')"
     >
       <div
+        id="sportColorsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 !== ''
@@ -438,7 +439,8 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    scrollToEl("sportBudgetsContainerPC");
+
     return;
   }
   // Handle "CustomColor" case
@@ -452,7 +454,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      scrollToEl("sportBudgetsContainerPC");
     }
     selectedColors.value.push(color);
   }

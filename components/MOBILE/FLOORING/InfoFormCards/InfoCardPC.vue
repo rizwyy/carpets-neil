@@ -2,6 +2,7 @@
   <!--INPUT ERROR OVERLAY -->
   <transition @beforeEnter="handleDetailsDOMEntry('InfoCardPC')">
     <div
+      id="infoCardContainerPC"
       v-show="
         ((userStore.preference.flooring === 'services' ||
           userStore.preference.flooring === 'accessories') &&
@@ -370,7 +371,7 @@ async function handleInfoProceedings_PC() {
       isLoading.value = false;
       userStore.updateCookie();
       userStore.refreshCart();
-      scrollBy(800);
+      scrollToEl("revCardContainerPC");
 
       // Wait for 3 seconds, then call getHistoryFromServer
       setTimeout(async () => {

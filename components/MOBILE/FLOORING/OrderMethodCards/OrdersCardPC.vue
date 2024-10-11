@@ -1,6 +1,7 @@
 <template>
   <transition @beforeEnter="handleDetailsDOMEntry('OrderMethods_PC')">
     <div
+      id="orderCardContainerPC"
       v-show="
         userStore.preference.flooring === 'services' ||
         userStore.preference.flooring === 'accessories' ||
@@ -82,22 +83,43 @@ function handleCloseOrderMethodWarningNo() {
 }
 
 function toggleOrderMethod(method) {
-  if (cookieFound.value) {
-    if (toRaw(userPreference.value.orderMethod) !== "") {
-      orderMethodWarning.value = true;
-      handleAutoAlpha("orderMethodWarningPC", 1);
-      DISABLE_SCROLL();
-      return;
-    }
-  }
+  // if (cookieFound.value) {
+  //   if (toRaw(userPreference.value.orderMethod) !== "") {
+  //     orderMethodWarning.value = true;
+  //     handleAutoAlpha("orderMethodWarningPC", 1);
+  //     DISABLE_SCROLL();
+  //     return;
+  //   }
+  // }
   userStore.preference.orderMethod = method;
-  scrollToBottom();
+  scrollToEl("infoCardContainerPC");
 }
 
+watch(
+  () => userStore.preference, // Watch the entire preference object
+  (newPreference) => {
+    if (
+      newPreference.flooring === "services" ||
+      newPreference.flooring === "accessories" ||
+      (newPreference.spec_1 !== "" &&
+        newPreference.color.length > 0 &&
+        newPreference.budget !== "")
+    ) {
+      // Execute your desired logic here when all conditions are true
+      setTimeout(() => {
+        scrollToEl("infoCardContainerPC");
+      }, 200);
+      // Add your action here (e.g., show a modal, navigate, etc.)
+    }
+  },
+  { immediate: true, deep: true } // Watch deeply for changes and execute immediately on setup
+);
 onMounted(() => {
   if (toRaw(userPreference.value)) {
     userStore.preference.orderMethod = toRaw(userPreference.value.orderMethod);
+
     cookieFound.value = true;
+
     return;
   } else {
     cookieFound.value = false;

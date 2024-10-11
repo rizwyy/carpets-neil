@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
+      id="pvcFinishContainerPC"
       v-show="
         userStore.preference.flooring === 'Wooden' &&
         userStore.preference.category !== '' &&

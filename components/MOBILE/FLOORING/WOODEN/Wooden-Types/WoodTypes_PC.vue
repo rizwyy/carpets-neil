@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @beforeEnter="handleDetailsDOMEntry('wooden_Types_Details_PC')">
     <div
+      id="woodTypesContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="max-[990px]:hidden h-max w-screen px-[6vw]"
     >
@@ -150,7 +151,7 @@
                 preload
                 loading="eager"
                 class="h-full w-full object-bottom object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/wooden/wooden-cork1.webp"
+                src="/wooden/bambooFlooring1.webp"
                 alt=""
               />
               <span class="text-[3.4vh]">Bamboo Wood Floor</span>
@@ -185,8 +186,8 @@
                 placeholder
                 loading="eager"
                 class="h-full w-full object-cover absolute left-0 bottom-0 z-[-9]"
-                src="/wooden/wooden-laminated.webp"
-                alt=""
+                src="/wooden/wooden-cork1.webp"
+                alt="#"
               />
               <!-- DESKTOP -->
               <span class="text-[3.4vh]">Cork Floor</span>
@@ -327,7 +328,7 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("woodDesignsContainerPC");
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
   }

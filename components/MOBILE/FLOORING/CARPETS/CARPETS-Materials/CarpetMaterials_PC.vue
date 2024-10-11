@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('carpets_Materials_Details_PC')"
     >
       <div
+        id="carpetMaterialsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 !== ''
@@ -189,7 +190,8 @@ const toggleSelectMaterials = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("carpetColorsContainerPC");
+
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
     userStore.updateCart();

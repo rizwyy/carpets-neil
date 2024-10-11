@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @before-enter="handleDetailsDOMEntry('pvc_type_details_pc')">
     <div
+      id="pvcTypesContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="max-[990px]:hidden h-max w-screen px-[6vw] pvc_type_details_PC"
     >
@@ -253,7 +254,7 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToNextElement(240, 1700);
+    scrollToEl("pvcDesignsContainerPC");
 
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);

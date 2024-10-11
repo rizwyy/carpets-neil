@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @beforeEnter="handleDetailsDOMEntry('gym_Activity_Details_PC')">
     <div
+      id="gymActivitiesContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="gymActivitesPC max-[990px]:hidden h-max w-screen px-[6vw]"
     >
@@ -701,7 +702,8 @@ const toggleSelect = (type) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("gymFlooringContainerPC");
+
     spec_2.value = type;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }

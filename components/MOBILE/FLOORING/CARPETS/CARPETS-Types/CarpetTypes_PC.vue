@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @beforeEnter="handleDetailsDOMEntry('carpets_Types_Details_PC')">
     <div
+      id="carpetTypesContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="max-[990px]:hidden h-max w-screen px-[6vw]"
     >
@@ -192,7 +193,8 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("carpetMaterialsContainerPC");
+
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
     userStore.updateCart();

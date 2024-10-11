@@ -3,6 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <transition @beforeEnter="handleDetailsDOMEntry('gym_flooring_Details_PC')">
       <div
+        id="gymFlooringContainerPC"
         v-show="
           userStore.preference.flooring === 'gym' &&
           userStore.preference.spec_2 !== ''
@@ -191,7 +192,8 @@ const toggleSelect = (material) => {
     spec_3.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("gymColorsContainerPC");
+
     spec_3.value = material;
     userStore.preference.spec_3 = toRaw(spec_3.value);
   }

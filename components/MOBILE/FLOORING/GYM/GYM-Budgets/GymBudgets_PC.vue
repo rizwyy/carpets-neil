@@ -3,6 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <transition @beforeEnter="handleDetailsDOMEntry('gym_Budgets_Details_PC')">
       <div
+        id="gymBudgetsContainerPC"
         v-show="
           userStore.preference.flooring === 'gym' &&
           userStore.preference.spec_1 !== '' &&
@@ -279,7 +280,8 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    scrollToEl("orderCardContainerPC");
+
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

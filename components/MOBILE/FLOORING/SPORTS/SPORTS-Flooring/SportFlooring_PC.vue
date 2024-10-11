@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('sports_Flooring_Details_PC')"
     >
       <div
+        id="sportFlooringContainerPC"
         v-show="userStore.preference.flooring === 'sports'"
         class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#f1f1f1] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
@@ -189,7 +190,8 @@ const toggleSelect = (material) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("sportColorsContainerPC");
+
     spec_2.value = material;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }

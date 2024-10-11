@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('sports_Budgets_Details_PC')"
     >
       <div
+        id="sportBudgetsContainerPC"
         v-show="
           userStore.preference.flooring === 'sports' &&
           userStore.preference.spec_1 !== '' &&
@@ -280,7 +281,8 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    scrollToEl("orderCardContainerPC");
+
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

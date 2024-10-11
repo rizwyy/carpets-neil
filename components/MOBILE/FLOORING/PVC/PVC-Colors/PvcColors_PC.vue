@@ -3,6 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <transition @before-enter="handleDetailsDOMEntry('pvc_colors_Details_PC')">
       <div
+        id="pvcColorsContainerPC"
         v-show="
           userStore.preference.spec_1 !== '' &&
           userStore.preference.spec_2 !== '' &&

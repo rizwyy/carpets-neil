@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
+      id="carpetBudgetsContainerPC"
       v-show="
         userStore.preference.spec_2 !== '' &&
         userStore.preference.color.length > 0 &&
@@ -572,7 +573,7 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser === "" ? scrollBy(600) : scrollToBottom();
+    scrollToEl("orderCardContainerPC");
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);

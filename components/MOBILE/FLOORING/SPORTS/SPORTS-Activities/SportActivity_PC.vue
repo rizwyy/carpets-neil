@@ -4,6 +4,7 @@
     @beforeEnter="handleDetailsDOMEntry('sports_Activity_Details_PC')"
   >
     <div
+      id="sportActivityContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="gymActivitesPC max-[990px]:hidden h-max w-screen px-[6vw]"
     >

@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('wooden_Finish_Details_PC')"
     >
       <div
+        id="woodFinishContainerPC"
         v-show="
           userStore.preference.flooring === 'Wooden' &&
           userStore.preference.spec_1 !== '' &&
@@ -127,7 +128,7 @@ const toggleSelect = (surface) => {
     selectedSurfaceFinish.value = "";
     userStore.preference.spec_4 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("woodBudgetContainerPC");
     selectedSurfaceFinish.value = surface;
     userStore.preference.spec_4 = toRaw(selectedSurfaceFinish.value);
   }

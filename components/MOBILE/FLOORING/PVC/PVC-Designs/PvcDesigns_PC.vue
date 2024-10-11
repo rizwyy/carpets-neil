@@ -17,7 +17,7 @@ const toggleSelect = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("pvcColorsContainerPC");
 
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
@@ -32,6 +32,7 @@ const toggleSelect = (material) => {
   >
     <transition @before-enter="handleDetailsDOMEntry('pvc_design_details_pc')">
       <div
+        id="pvcDesignsContainerPC"
         v-show="
           userStore.preference.flooring === 'PVC' &&
           userStore.preference.spec_1 !== '' &&

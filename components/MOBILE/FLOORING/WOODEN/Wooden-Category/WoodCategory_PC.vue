@@ -127,7 +127,7 @@ const toggleSelect = (category) => {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("woodTypesContainerPC");
     selectedCategory.value = category;
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.spec_2 = "";
