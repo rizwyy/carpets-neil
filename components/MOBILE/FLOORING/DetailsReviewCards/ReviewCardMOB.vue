@@ -45,7 +45,7 @@
       >
         <ul
           v-auto-animate
-          v-if="userStore.cart.length > 0"
+          v-show="userStore.cart.length > 0"
           :key="userStore.cartKey"
           class="w-full h-max transition-all ease-in-out duration-300"
         >
@@ -58,7 +58,7 @@
           </li>
         </ul>
         <div
-          v-else
+          v-show="!(userStore.cart.length > 0)"
           class="text-center py-[1rem] flex flex-col gap-[1.6rem] items-center"
         >
           <LoadingIcon class="text-[2rem]" />
