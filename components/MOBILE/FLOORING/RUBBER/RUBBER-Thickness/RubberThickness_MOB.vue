@@ -4,6 +4,7 @@
   >
     <!-- MOBILE -->
     <div
+      id="rubberThicknessContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
@@ -31,7 +32,7 @@
         <!-- THICKNESS OPTIONS -->
         <div
           v-show="selectedThicknessOptions.length > 0"
-          class="h-max w-[90vw] flex flex-col gap-[1.8vh] py-[4vh]"
+          class="h-max w-[90vw] grid grid-cols-3 gap-[.4rem] py-[2rem]"
         >
           <div
             v-for="(thickness, index) in selectedThicknessOptions"
@@ -41,7 +42,7 @@
             <!-- MOBILE -->
             <div
               :class="[
-                'h-[10vh] rounded-full w-full overflow-hidden text-left leading-[3.4vh] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[4.6vw] relative cursor-pointer',
+                'h-[5.4rem] rounded-lg w-full overflow-hidden text-left leading-[1.7rem] border-[2px] border-[#f1f1f1] flex items-center justify-center text-[#f1f1f1] px-[1.6vw] py-[.4rem] text-[1.2rem] relative cursor-pointer',
                 { selected: userStore.preference.spec_2.includes(thickness) },
               ]"
               @click="toggleSelect(thickness)"
@@ -145,7 +146,7 @@ const toggleSelect = (type) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("rubberColorsContainerMOB");
     spec_2.value = type;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }
@@ -155,7 +156,7 @@ const toggleSelect = (type) => {
 
 <style scoped>
 .selected {
-  border-radius: 100px;
+  border-radius: 5px;
   border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

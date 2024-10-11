@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @before-enter="handleDetailsDOMEntry('sport_Budget_Details_Mob')">
     <div
+      id="rubberBudgetsContainerMOB"
       v-show="
         userStore.preference.flooring === 'rubber' &&
         userStore.preference.spec_1 !== '' &&
@@ -304,7 +305,7 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(300) : scrollToBottom();
+    scrollToEl("orderCardContainerMOB");
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

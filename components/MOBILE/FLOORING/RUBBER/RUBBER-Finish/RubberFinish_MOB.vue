@@ -2,6 +2,7 @@
   <!-- -------------------------------- -->
   <!-- MOBILE -->
   <div
+    id="rubberFinishContainerMOB"
     v-show="
       userStore.preference.flooring == 'rubber' &&
       userStore.preference.spec_1 !== '' &&

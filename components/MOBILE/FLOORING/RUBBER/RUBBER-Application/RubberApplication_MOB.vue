@@ -3,6 +3,7 @@
 
   <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
     <div
+      id="rubberApplicationsContainerMOB"
       class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -309,7 +310,7 @@ const toggleSelect = (type, msg) => {
     userStore.preference.spec_1 = "";
     spec_1.value = "";
   } else {
-    scrollToBottom();
+    scrollToEl("rubberThicknessContainerMOB");
     spec_1.value = type;
     userStore.preference.spec_2 = "";
     userStore.preference.spec_1 = toRaw(spec_1.value);

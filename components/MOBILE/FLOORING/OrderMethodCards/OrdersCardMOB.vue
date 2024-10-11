@@ -102,7 +102,8 @@ watch(
       newPreference.flooring === "accessories" ||
       (newPreference.spec_1 !== "" &&
         newPreference.color.length > 0 &&
-        newPreference.budget !== "")
+        newPreference.budget !== "" &&
+        cookieFound.value)
     ) {
       // Execute your desired logic here when all conditions are true
       setTimeout(() => {

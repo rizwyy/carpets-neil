@@ -2,6 +2,7 @@
   <!-- MOBILE SPORTS COLOR DETAILS-->
   <transition @before-enter="handleDetailsDOMEntry('sport_Color_Details_Mob')">
     <div
+      id="sportsColorsContainerMOB"
       v-show="
         userStore.preference.flooring === 'sports' &&
         userStore.preference.spec_1 !== '' &&
@@ -499,7 +500,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser ? scrollBy(800) : scrollToBottom();
+    scrollToEl("sportsBudgetsContainerMOB");
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -512,7 +513,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser ? scrollBy(800) : scrollToBottom();
+      scrollToEl("sportsBudgetsContainerMOB");
     }
     selectedColors.value.push(color);
   }

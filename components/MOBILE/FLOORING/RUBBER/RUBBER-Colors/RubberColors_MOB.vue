@@ -2,18 +2,19 @@
   <!-- MOBILE SPORTS COLOR DETAILS-->
   <transition @before-enter="handleDetailsDOMEntry('rubber_Color_Details_Mob')">
     <div
+      id="rubberColorsContainerMOB"
       v-show="
         userStore.preference.flooring === 'rubber' &&
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== ''
       "
-      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
+      class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5.2rem]"
     >
       <div
-        class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
+        class="h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
       >
         <div
-          class="header text-[3.4vh] text-left z-[9] h-max w-full items-center flex justify-between rubber_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
+          class="header text-[1.8rem] text-left z-[9] h-max w-full items-center flex justify-between rubber_Color_Details_Mob-HEADING opacity-0 translate-x-[40%]"
         >
           Choose Your Color
           <button
@@ -21,7 +22,7 @@
             v-show="
               isMultiColoredOpted || userStore.preference.color.length > 0
             "
-            class="h-max bg-white text-gray-500 px-[2vw] py-[.8vh] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
+            class="h-max bg-white text-gray-500 px-[2vw] py-[.4rem] text-detailsContainer_clearAllText_MOB rounded-md flex gap-[1vw] items-center"
           >
             <!-- MOBILE -->
             Clear All<svg
@@ -40,16 +41,16 @@
         </div>
         <div
           v-show="userStore.preference.flooring === 'rubber'"
-          class="h-max w-full flex flex-col gap-[2vh] relative"
+          class="h-max w-full flex flex-col gap-[1rem] relative pt-[.4rem]"
         >
           <div
             v-show="isMultiColoredOpted"
-            class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[4vh]"
+            class="h-full w-full bg-black bg-opacity-[.7] backdrop-blur-[8px] rounded-md absolute top-0 left-0 z-[99] flex items-center justify-center flex-col gap-[2rem]"
           >
             <div
               class="h-max w-full flex-[2.5] flex justify-center items-center gap-[2vw]"
             >
-              <span class="text-[#f1f1f1] text-[3.2vh]">Enter Your Color</span>
+              <span class="text-[#f1f1f1] text-[1.6rem]">Enter Your Color</span>
               <svg
                 @click="clearColorSelections"
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +66,7 @@
             </div>
             <div class="h-max w-full flex-[1.2]">
               <input
-                class="h-[6vh] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
+                class="h-[3rem] w-[80%] px-[4vw] bg-[#fff2] border-[2px] rounded-md text-[#fff]"
                 type="text"
                 v-model="customColor"
                 placeholder="Enter your Color"
@@ -88,7 +89,7 @@
                     customColor.length > 2
                   "
                   @click="toggleSelect(customColor, 'done')"
-                  class="carpet_details_colors_mob_done1_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="carpet_details_colors_mob_done1_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Done
                 </button>
@@ -104,7 +105,7 @@
                 <button
                   v-show="userStore.preference.color.length > 0"
                   @click="toggleSelect(customColor, 'done')"
-                  class="rubber_details_colors_mob_done_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="rubber_details_colors_mob_done_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Done
                 </button>
@@ -118,7 +119,7 @@
                 <button
                   v-show="customColor.length > 2"
                   @click="toggleSelect(customColor, 'addMore')"
-                  class="rubber_details_colors_mob_add_BTN text-[2vh] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[1vh]"
+                  class="rubber_details_colors_mob_add_BTN text-[1rem] border-[2px] rounded-md px-[4vw] text-[#f1f1f1] border-[#f1f1f1] py-[.5rem]"
                 >
                   Add More +
                 </button>
@@ -127,7 +128,7 @@
           </div>
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <div
-              class="color-box CustomColor h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh] leading-[2.4vh]"
+              class="color-box CustomColor h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white bg-gradient-to-br from-[#f44369] via-[#f4985a] to-[#b9dfee] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem] leading-[2.4vh]"
               :class="{ selected: selectedColors.includes('CustomColor') }"
               @click="toggleSelect('CustomColor')"
             >
@@ -136,14 +137,14 @@
                 >Custom Color</span
               >
               <div v-show="selectedColors.includes('CustomColor')">
-                <span class="h-full w-full text-[2vh]">Add More +</span>
+                <span class="h-full w-full text-[1rem]">Add More +</span>
               </div>
             </div>
 
             <!-- MOBILE -->
             <div
               v-show="userStore.preference.spec_2 !== 'Artificial Grass'"
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#fff] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: selectedColors.includes('Beige') }"
               @click="toggleSelect('Beige')"
             >
@@ -162,13 +163,13 @@
               <!-- MOBILE -->
               <div v-show="userStore.preference.color.includes('Beige')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Brown'),
               }"
@@ -195,7 +196,7 @@
               >
               <div v-show="userStore.preference.color.includes('Brown')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -204,7 +205,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] relative w-full flex items-center justify-center text-white rounded-md cursor-pointer px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Grey') }"
               @click="toggleSelect('Grey')"
             >
@@ -228,14 +229,14 @@
               <div v-show="userStore.preference.color.includes('Grey')">
                 <!-- MOBILE -->
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
               v-show="userStore.preference.spec_2 === 'Wooden Sprung'"
-              class="color-box h-[10vh] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] gym_Color_Details_Mob-CONTAINER w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Dark Brown'),
               }"
@@ -252,7 +253,7 @@
               >
               <div v-show="userStore.preference.color.includes('Dark Brown')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -260,7 +261,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Green'),
               }"
@@ -281,7 +282,7 @@
               >
               <div v-show="userStore.preference.color.includes('Green')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -289,7 +290,7 @@
             </div>
             <div
               v-show="userStore.preference.spec_2 !== 'Wooden Sprung'"
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Blue') }"
               @click="toggleSelect('Blue')"
             >
@@ -308,7 +309,7 @@
               >
               <div v-show="userStore.preference.color.includes('Blue')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -317,7 +318,7 @@
           <div class="color-selection flex justify-between gap-[4vw] z-[9]">
             <!-- MOBILE -->
             <div
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-[#444] rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('White'),
               }"
@@ -344,13 +345,13 @@
               >
               <div v-show="userStore.preference.color.includes('White')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{
                 selected: userStore.preference.color.includes('Black'),
               }"
@@ -377,14 +378,14 @@
               >
               <div v-show="userStore.preference.color.includes('Black')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
             </div>
             <div
               v-show="userStore.preference.spec_2 === 'Artificial Grass'"
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Red') }"
               @click="toggleSelect('Red')"
             >
@@ -399,7 +400,7 @@
               >
               <div v-show="userStore.preference.color.includes('Red')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -409,7 +410,7 @@
                 userStore.preference.spec_2 !== 'Artificial Grass' &&
                 userStore.preference.spec_2 !== 'Wooden Sprung'
               "
-              class="color-box h-[10vh] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.8vh]"
+              class="color-box h-[5.2rem] rubber_Color_Details_Mob-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full flex items-center justify-center text-white rounded-md cursor-pointer relative px-[1.6vw] py-[.4rem]"
               :class="{ selected: userStore.preference.color.includes('Rose') }"
               @click="toggleSelect('Rose')"
             >
@@ -424,7 +425,7 @@
               >
               <div v-show="userStore.preference.color.includes('Rose')">
                 <span
-                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[1.8vh] rounded-md"
+                  class="absolute top-1 right-1 bg-white text-gray-500 px-2 py-1 text-[.8rem] rounded-md"
                   >Selected</span
                 >
               </div>
@@ -434,7 +435,7 @@
         </div>
         <div
           v-show="userStore.preference.color.length > 0"
-          class="h-max w-full flex flex-col gap-[1vh] items-start"
+          class="h-max w-full flex flex-col gap-[.5rem] items-start"
         >
           <span class="text-[#444]">Selected Colors:</span>
           <div class="w-full grid grid-cols-3 gap-[2vw]">
@@ -466,8 +467,8 @@
               </span>
             </span>
             <button
-              @click="scrollUpBy(400)"
-              class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
+              @click="scrollToEl('rubberColorsContainerMOB')"
+              class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.3rem]"
             >
               Add More
             </button>
@@ -499,7 +500,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser ? scrollBy(800) : scrollToBottom();
+    scrollToEl("rubberBudgetsContainerMOB");
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -512,7 +513,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser ? scrollBy(800) : scrollToBottom();
+      scrollToEl("rubberBudgetsContainerMOB");
     }
     selectedColors.value.push(color);
   }

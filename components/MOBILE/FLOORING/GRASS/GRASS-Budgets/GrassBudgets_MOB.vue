@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @before-enter="handleDetailsDOMEntry('grass_Budget_Details_Mob')">
     <div
+      id="grassBudgetsContainerMOB"
       v-show="
         userStore.preference.flooring === 'grass' &&
         userStore.preference.spec_1 !== '' &&
@@ -303,7 +304,7 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(300) : scrollToBottom();
+    scrollToEl("orderCardContainerMOB");
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

@@ -4,6 +4,7 @@
     @before-enter="handleDetailsDOMEntry('sport_Flooring_Details_Mob')"
   >
     <div
+      id="sportsFlooringContainerMOB"
       v-show="userStore.preference.flooring === 'sports'"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
@@ -304,7 +305,7 @@ const toggleSelect = (material) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("sportsColorsContainerMOB");
 
     spec_2.value = material;
     userStore.preference.spec_2 = toRaw(spec_2.value);
