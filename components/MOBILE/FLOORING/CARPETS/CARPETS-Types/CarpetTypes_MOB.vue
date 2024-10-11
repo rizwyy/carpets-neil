@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('carpet_Types_Details_Mob')">
     <div
+      id="carpetTypesContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]"
     >
@@ -198,7 +199,7 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("carpetMaterialsContainerMOB");
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);
     userStore.updateCart();

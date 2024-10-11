@@ -2,6 +2,7 @@
   <transition @before-enter="handleDetailsDOMEntry('wooden_Type_Details_Mob')">
     <!-- MOBILE -->
     <div
+      id="woodTypesContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="h-max w-screen flex justify-center pb-[10vh]"
     >
@@ -373,7 +374,7 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("woodDesignContainerMOB");
 
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);

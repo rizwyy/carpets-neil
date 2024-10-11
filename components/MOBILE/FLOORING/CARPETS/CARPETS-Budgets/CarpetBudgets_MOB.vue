@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('carpet_Budget_Details_Mob')">
     <div
+      id="carpetBudgetsContainerMOB"
       v-show="
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -595,7 +596,6 @@
 
 <script setup>
 import { ref } from "vue";
-import ClearAllIcon from "~/public/icons/clearAllIcon.vue";
 
 const { existingUser } = defineProps(["existingUser"]);
 
@@ -614,7 +614,7 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser === "" ? scrollBy(600) : scrollToBottom();
+    scrollToEl("orderCardContainerMOB");
 
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);

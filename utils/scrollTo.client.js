@@ -5,6 +5,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 
 export function scrollToEl(id) {
+  console.log("+");
   setTimeout(() => {
     gsap.to(window, {
       duration: 0.8,

@@ -4,6 +4,7 @@
   >
     <!-- MOBILE -->
     <div
+      id="woodFinishContainerMOB"
       v-show="
         userStore.preference.flooring === 'Wooden' &&
         userStore.preference.spec_1 !== '' &&
@@ -139,7 +140,7 @@ const toggleSelect = (surface) => {
     userStore.preference.spec_4.splice(index, 1);
   } else {
     userStore.preference.spec_4.push(surface);
-    existingUser ? scrollBy(600) : scrollToBottom();
+    scrollToEl("woodBudgetContainerMOB");
   }
 };
 </script>

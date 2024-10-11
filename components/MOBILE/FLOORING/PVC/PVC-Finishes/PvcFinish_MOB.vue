@@ -1,6 +1,7 @@
 <template>
   <!-- MOBILE -->
   <div
+    id="pvcFinishContainerMOB"
     v-show="
       userStore.preference.flooring === 'Wooden' &&
       userStore.preference.category !== '' &&

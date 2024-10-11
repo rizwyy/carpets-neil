@@ -2,12 +2,13 @@
   <!-- MOBILE -->
   <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]">
     <div
+      id="pvcCategoryContainerMOB"
       class="h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
         class="h-max w-full flex items-center justify-between text-[1.6rem] z-[9]"
       >
-        <span class="text-left text-balance"> Choose Your Category </span>
+        <span class="text-left text-balance">Choose Your Category</span>
         <button
           @click="clearAllSelections"
           v-show="selectedCategory.length"
@@ -120,7 +121,7 @@ const toggleSelect = (category) => {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("pvcTypesContainerMOB");
     selectedCategory.value = category;
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.flooring = "PVC";

@@ -4,6 +4,7 @@
   >
     <!-- MOBILE WOOD DESIGNS-->
     <div
+      id="woodDesignContainerMOB"
       v-show="
         userStore.preference.flooring === 'Wooden' &&
         userStore.preference.spec_1 !== '' &&
@@ -550,7 +551,7 @@ const toggleSelect = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("woodColorsContainerMOB");
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
     userStore.updateCart();
@@ -561,6 +562,6 @@ const toggleSelect = (material) => {
 <style scoped>
 .selected {
   border-radius: 2px; /* Adjust this value as needed */
-  border: 3px solid #333; /* Adjust border color as needed */
+  border: 2px solid #333; /* Adjust border color as needed */
 }
 </style>

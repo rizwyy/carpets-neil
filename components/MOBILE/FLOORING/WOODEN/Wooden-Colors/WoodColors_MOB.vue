@@ -2,6 +2,7 @@
   <transition @before-enter="handleDetailsDOMEntry('wooden_Color_Details_Mob')">
     <!-- MOBILE -->
     <div
+      id="woodColorsContainerMOB"
       v-show="
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -389,7 +390,7 @@
               </span>
             </span>
             <button
-              @click="scrollUpBy(400)"
+              @click="scrollToEl('woodColorsContainerMOB')"
               class="rounded-md bg-inherit shadow border-[#555] text-[#444] shadow-md border-[2px] font-[500] px-[3.2vw] py-[.6vh]"
             >
               Add More
@@ -424,7 +425,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser ? scrollBy(800) : scrollToBottom();
+    scrollToEl("woodFinishContainerMOB");
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -437,7 +438,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser ? scrollBy(800) : scrollToBottom();
+      scrollToEl("woodFinishContainerMOB");
     }
     selectedColors.value.push(color);
   }

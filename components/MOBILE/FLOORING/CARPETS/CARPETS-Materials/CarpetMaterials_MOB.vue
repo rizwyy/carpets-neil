@@ -3,6 +3,7 @@
   <transition
     @beforeEnter="handleDetailsDOMEntry('carpet_Materials_Details_Mob')"
     ><div
+      id="carpetMaterialsContainerMOB"
       v-show="
         userStore.preference.spec_1 !== '' && userStore.preference.spec_2 !== ''
       "
@@ -186,7 +187,7 @@ const toggleSelect = (material) => {
     selectedMaterial.value = "";
     userStore.preference.spec_3 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("carpetColorsContainerMOB");
     selectedMaterial.value = material;
     userStore.preference.spec_3 = toRaw(selectedMaterial.value);
     userStore.updateCart();

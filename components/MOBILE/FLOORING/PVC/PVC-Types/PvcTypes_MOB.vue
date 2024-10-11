@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <transition @beforeEnter="handleDetailsDOMEntry('pvc_Type_Details_Mob')">
     <div
+      id="pvcTypesContainerMOB"
       v-show="userStore.preference.spec_1 !== ''"
       class="min-[990px]:hidden h-max w-screen flex justify-center pb-[10vh]"
     >
@@ -257,7 +258,7 @@ const toggleSelect = (type) => {
     selectedType.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("pvcDesignsContainerMOB");
 
     selectedType.value = type;
     userStore.preference.spec_2 = toRaw(selectedType.value);

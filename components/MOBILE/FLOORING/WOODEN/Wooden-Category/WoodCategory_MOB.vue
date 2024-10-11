@@ -2,6 +2,7 @@
   <!-- MOBILE WOOD CATEGORY -->
   <div class="h-max w-screen flex justify-center pb-[10vh]">
     <div
+      id="woodCategoryContainerMOB"
       class="carpets_Category_Details_Mob h-max w-[96vw] text-center py-[4vh] flex flex-col gap-[1vh] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -125,8 +126,7 @@ const toggleSelect = (category) => {
     selectedCategory.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
-
+    scrollToEl("woodTypesContainerMOB");
     selectedCategory.value = category;
     userStore.preference.spec_1 = toRaw(selectedCategory.value);
     userStore.preference.spec_2 = "";

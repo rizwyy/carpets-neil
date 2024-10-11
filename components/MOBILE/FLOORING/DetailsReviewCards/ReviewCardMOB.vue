@@ -1,6 +1,10 @@
 <template>
   <!-- Render only if the form is validated -->
-  <div v-if="userStore.isFormValidated" class="h-max w-max">
+  <div
+    id="reviewCardContainerMOB"
+    v-show="userStore.isFormValidated"
+    class="h-max w-max"
+  >
     <div
       v-if="isFlooringVisible"
       class="h-[62rem] w-screen bg-[#fff3] backdrop-blur-[8px] fixed top-0 left-0 z-[9999]"

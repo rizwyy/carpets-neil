@@ -3,6 +3,7 @@
     <!-- MOBILE -->
 
     <div
+      id="pvcBudgetsContainerMOB"
       v-show="
         userStore.preference.flooring === 'PVC' &&
         userStore.preference.spec_1 !== '' &&
@@ -320,8 +321,7 @@ const toggleSelect = (type) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
-
+    scrollToEl("orderCardContainerMOB");
     selectedBudget.value = type;
     userStore.preference.budget = toRaw(selectedBudget.value);
   }

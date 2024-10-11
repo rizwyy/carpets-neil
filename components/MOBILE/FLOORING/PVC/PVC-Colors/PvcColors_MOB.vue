@@ -2,6 +2,7 @@
   <!-- MOBILE PVC-->
   <transition @beforeEnter="handleDetailsDOMEntry('pvc_Color_Details_Mob')">
     <div
+      id="pvcColorsContainerMOB"
       v-show="
         userStore.preference.spec_1 !== '' &&
         userStore.preference.spec_2 !== '' &&
@@ -483,7 +484,7 @@ const removeCustomColor = () => {
 const toggleSelect = (color, added) => {
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("pvcBudgetsContainerMOB");
   }
   // Handle "CustomColor" case
   if (color === "CustomColor") {
@@ -496,7 +497,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      existingUser ? scrollBy(500) : scrollToBottom();
+      scrollToEl("pvcBudgetsContainerMOB");
     }
     selectedColors.value.push(color);
   }

@@ -2,6 +2,7 @@
   <!-- MOBILE -->
   <div class="min-[990px]:hidden h-max w-screen flex justify-center pb-[5rem]">
     <div
+      id="carpetCategoryContainerMOB"
       class="carpets_Category_Details_Mob h-max w-[96vw] text-center py-[2rem] flex flex-col gap-[.5rem] font-outfit font-[400] bg-gradient-to-br from-detailsFrom to-detailsTo rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -188,7 +189,7 @@ const toggleSelect = (category) => {
     spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("carpetTypesContainerMOB");
 
     spec_1.value = category;
     userStore.preference.spec_1 = toRaw(spec_1.value);

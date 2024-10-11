@@ -4,6 +4,7 @@
   >
     <!-- MOBILE WOODEN BUDGETS-->
     <div
+      id="woodBudgetContainerMOB"
       v-show="
         userStore.preference.flooring === 'Wooden' &&
         userStore.preference.spec_1 !== '' &&
@@ -316,7 +317,7 @@ const toggleSelect = (budget) => {
     selectedBudget.value = "";
     userStore.preference.budget = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("orderCardContainerMOB");
     selectedBudget.value = budget;
     userStore.preference.budget = toRaw(selectedBudget.value);
     userStore.updateCart();
