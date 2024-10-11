@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('sports_Budgets_Details_PC')"
     >
       <div
+        id="epoxyBudgetsContainerPC"
         v-show="
           userStore.preference.flooring === 'epoxy' &&
           userStore.preference.spec_1 !== '' &&
@@ -280,7 +281,8 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    scrollToEl("orderCardContainerPC");
+
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

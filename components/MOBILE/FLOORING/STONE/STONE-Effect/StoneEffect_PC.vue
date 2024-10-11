@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @before-enter="handleDetailsDOMEntry('stone_Type_Details_PC')">
     <div
+      id="stoneEffectContainerPC"
       v-show="userStore.preference.spec_2 === 'Porcelain'"
       class="max-[990px]:hidden h-max w-screen px-[6vw]"
     >

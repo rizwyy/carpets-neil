@@ -3,6 +3,7 @@
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <transition @beforeEnter="handleDetailsDOMEntry('stone_Finish_Details_PC')">
       <div
+        id="stoneShadeContainerPC"
         v-show="
           userStore.preference.flooring === 'stone' &&
           userStore.preference.spec_1 !== '' &&
@@ -154,7 +155,8 @@ const toggleSelect = (surface) => {
     selectedSurfaceFinish.value = "";
     userStore.preference.spec_4 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("stoneColorsContainerPC");
+
     selectedSurfaceFinish.value = surface;
     userStore.preference.spec_4 = toRaw(selectedSurfaceFinish.value);
   }

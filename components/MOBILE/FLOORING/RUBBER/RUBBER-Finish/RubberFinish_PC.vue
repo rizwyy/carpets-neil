@@ -1,6 +1,7 @@
 <template>
   <!-- DESKTOP -->
   <div
+    id="rubberFinishContainerPC"
     v-show="
       userStore.preference.spec_1 !== '' &&
       userStore.preference.spec_2 !== '' &&

@@ -445,7 +445,7 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    scrollToEl("rubberBudgetsContainerPC");
     return;
   }
   // Handle "CustomColor" case
@@ -459,7 +459,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      scrollToEl("rubberBudgetsContainerPC");
     }
     selectedColors.value.push(color);
   }

@@ -3,6 +3,7 @@
 
   <div class="gymActivitesPC max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
+      id="grassThicknessContainerPC"
       class="h-max w-full text-center pt-[2rem] pb-[2.4rem] flex flex-col gap-[2rem] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div class="h-max w-full flex items-center justify-between z-[9]">
@@ -89,7 +90,7 @@ const toggleSelect = (type) => {
     spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    existingUser ? scrollBy(500) : scrollToBottom();
+    scrollToEl("grassColorsContainerPC");
 
     spec_1.value = type;
     userStore.preference.spec_1 = toRaw(spec_1.value);

@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <transition @before-enter="handleDetailsDOMEntry('epoxy_Type_Details_PC')">
     <div
+      id="epoxyTypesContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="max-[990px]:hidden h-max w-screen px-[6vw]"
     >
@@ -195,7 +196,7 @@ const toggleSelect = (category) => {
     spec_2.value = "";
     userStore.preference.spec_2 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("epoxyColorsContainerPC");
     spec_2.value = category;
     userStore.preference.spec_2 = toRaw(spec_2.value);
   }

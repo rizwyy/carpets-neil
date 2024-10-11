@@ -4,6 +4,7 @@
     @beforeEnter="handleDetailsDOMEntry('raised_Thickness_Details_PC')"
   >
     <div
+      id="rubberThicknessContainerPC"
       v-show="userStore.preference.spec_1 !== ''"
       class="gymActivitesPC max-[990px]:hidden h-max w-screen px-[6vw]"
     >
@@ -132,7 +133,7 @@ const toggleSelect = (thickness) => {
   } else {
     spec_2.value = thickness;
     userStore.preference.spec_2 = toRaw(spec_2.value);
-    scrollToBottom();
+    scrollToEl("rubberColorsContainerPC");
   }
   userStore.updateCart();
 };

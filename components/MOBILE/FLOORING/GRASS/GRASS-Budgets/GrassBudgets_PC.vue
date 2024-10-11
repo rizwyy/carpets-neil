@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('grass_Budgets_Details_PC')"
     >
       <div
+        id="grassBudgetsContainerPC"
         v-show="
           userStore.preference.flooring === 'grass' &&
           userStore.preference.spec_1 !== '' &&

@@ -5,6 +5,7 @@
       @beforeEnter="handleDetailsDOMEntry('rubber_Budgets_Details_PC')"
     >
       <div
+        id="rubberBudgetsContainerPC"
         v-show="
           userStore.preference.flooring === 'rubber' &&
           userStore.preference.spec_1 !== '' &&
@@ -245,7 +246,8 @@ const toggleSelect = (type) => {
     budget.value = "";
     userStore.preference.budget = "";
   } else {
-    scrollToBottom();
+    scrollToEl("orderCardContainerPC");
+
     budget.value = type;
     userStore.preference.budget = toRaw(budget.value);
   }

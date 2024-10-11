@@ -685,7 +685,8 @@ function toggleSelect(color, added = "") {
   // Handle "done" action for multi-colored selection
   if (color === "done") {
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    scrollToEl("epoxyBudgetsContainerPC");
+
     return;
   }
 
@@ -695,7 +696,7 @@ function toggleSelect(color, added = "") {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     selectedColors.value.push(color);
-    scrollToBottom();
+    scrollToEl("epoxyBudgetsContainerPC");
   }
 
   // Update user preference and cart

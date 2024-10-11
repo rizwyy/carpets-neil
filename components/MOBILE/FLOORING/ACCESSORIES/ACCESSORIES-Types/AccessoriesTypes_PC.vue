@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
+      id="accessoriesTypesContainer"
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -106,7 +107,7 @@ const toggleSelect = (service) => {
 
   userStore.preference.flooring = "accessories";
   userStore.preference.spec_4 = toRaw(spec_4.value);
-  scrollToBottom();
+  scrollToEl("accessoriesBudgetsContainer");
 };
 </script>
 

@@ -431,7 +431,7 @@ const toggleSelect = (color, added) => {
     }
     customColor.value = "";
     isMultiColoredOpted.value = false;
-    scrollToBottom();
+    scrollToEl("grassBudgetsContainerPC");
     return;
   }
   // Handle "CustomColor" case
@@ -445,7 +445,7 @@ const toggleSelect = (color, added) => {
     selectedColors.value = selectedColors.value.filter((t) => t !== color);
   } else {
     if (!added) {
-      scrollToBottom();
+      scrollToEl("grassBudgetsContainerPC");
     }
     selectedColors.value.push(color);
   }

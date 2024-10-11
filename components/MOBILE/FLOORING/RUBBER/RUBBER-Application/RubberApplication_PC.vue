@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <div class="raisedActivitesPC h-max w-screen px-[6vw]">
     <div
+      id="rubberApplicationContainerPC"
       class="max-[990px]:hidden h-max w-full px-[3vw] text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6]"
     >
       <div
@@ -324,7 +325,7 @@ const toggleSelect = (type, msg) => {
     userStore.preference.spec_1 = "";
     spec_1.value = "";
   } else {
-    scrollToBottom();
+    scrollToEl("rubberThicknessContainerPC");
     spec_1.value = type;
     userStore.preference.spec_2 = "";
     userStore.preference.spec_1 = toRaw(spec_1.value);

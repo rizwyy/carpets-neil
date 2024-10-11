@@ -2,6 +2,7 @@
   <!-- DESKTOP -->
   <div class="max-[990px]:hidden h-max w-screen px-[6vw]">
     <div
+      id="epoxyFlooringContainerPC"
       class="h-max w-full text-center py-[4vh] flex flex-col gap-[2vh] font-outfit font-[400] bg-[#ececec] rounded-md shadow-lg bg-opacity-[.6] px-[3vw]"
     >
       <div
@@ -131,7 +132,6 @@
 
 <script setup>
 import { ref } from "vue";
-import { scrollToBottom } from "#imports";
 // PINIA
 
 const userStore = useUserStore();
@@ -152,7 +152,7 @@ const toggleSelect = (category) => {
     spec_1.value = "";
     userStore.preference.spec_1 = "";
   } else {
-    scrollToBottom();
+    scrollToEl("epoxyTypesContainerPC");
     spec_1.value = category;
     userStore.preference.spec_1 = toRaw(spec_1.value);
     userStore.preference.spec_2 = "";
