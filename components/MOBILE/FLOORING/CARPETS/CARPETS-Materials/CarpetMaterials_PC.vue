@@ -32,12 +32,12 @@
           <div
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: userStore.preference.spec_3 === 'polypropylene' },
+              { selected: userStore.preference.spec_3 === 'Economical' },
             ]"
-            @click="toggleSelectMaterials('polypropylene')"
+            @click="toggleSelectMaterials('Economical')"
           >
             <div
-              v-show="userStore.preference.spec_3 === 'polypropylene'"
+              v-show="userStore.preference.spec_3 === 'Economical'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -57,18 +57,18 @@
               src="/carpets/Polypropylene.webp"
               alt="#"
             />
-            <span class="text-[3.2vh]">Polypropylene</span>
+            <span class="text-[3.2vh]">Economical</span>
           </div>
-          <!-- nylon carpets -->
+          <!-- Durable carpets -->
           <div
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.6vw] py-[.8vh] text-[2.4vh] relative cursor-pointer',
-              { selected: userStore.preference.spec_3 === 'Nylon' },
+              { selected: userStore.preference.spec_3 === 'Durable' },
             ]"
-            @click="toggleSelectMaterials('Nylon')"
+            @click="toggleSelectMaterials('Durable')"
           >
             <div
-              v-show="userStore.preference.spec_3 === 'Nylon'"
+              v-show="userStore.preference.spec_3 === 'Durable'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- DESKTOP -->
@@ -88,7 +88,7 @@
               src="/colors/snow.webp"
               alt="#"
             />
-            <span class="text-[3.2vh]">Nylon</span>
+            <span class="text-[3.2vh]">Durable</span>
           </div>
           <!-- DESKTOP -->
         </div>
@@ -96,17 +96,17 @@
           v-show="userStore.preference.spec_1 !== 'Carpet Tiles'"
           class="h-max w-full flex justify-between gap-[2vw] z-[9]"
         >
-          <!-- Sisal -->
+          <!-- Natural -->
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-              { selected: userStore.preference.spec_3 === 'Sisal' },
+              { selected: userStore.preference.spec_3 === 'Natural' },
             ]"
-            @click="toggleSelectMaterials('Sisal')"
+            @click="toggleSelectMaterials('Natural')"
           >
             <div
-              v-show="userStore.preference.spec_3 === 'Sisal'"
+              v-show="userStore.preference.spec_3 === 'Natural'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -127,20 +127,20 @@
               alt="#"
             />
             <!-- DESKTOP -->
-            <span class="text-[3.2vh]">Sisal</span>
+            <span class="text-[3.2vh]">Natural</span>
           </div>
           <!-- DESKTOP -->
-          <!-- Wool -->
+          <!-- Luxury -->
           <div
             v-show="userStore.preference.category !== 'Carpet Tiles'"
             :class="[
               ' rounded-md h-[28vh] carpets_Materials_Details_PC-CONTAINER overflow-hidden opacity-0 translate-y-[20%] w-full  border-[2px] border-[#f1f1f1] flex items-end justify-between text-[#f1f1f1] px-[1.2vw] py-[1.4vh] text-[2.4vh] relative cursor-pointer',
-              { selected: userStore.preference.spec_3 === 'Wool' },
+              { selected: userStore.preference.spec_3 === 'Luxury' },
             ]"
-            @click="toggleSelectMaterials('Wool')"
+            @click="toggleSelectMaterials('Luxury')"
           >
             <div
-              v-show="userStore.preference.spec_3 === 'Wool'"
+              v-show="userStore.preference.spec_3 === 'Luxury'"
               class="selectedDiv h-full w-full from-[20%] absolute bottom-0 left-0 bg-opacity-[.3] z-[1] flex items-start justify-end px-[1vw] py-[1vh]"
             >
               <!-- Selected indicator without text -->
@@ -160,7 +160,7 @@
               src="/wool-carpet.webp"
               alt="#"
             />
-            <span class="text-[3.2vh]">Wool</span>
+            <span class="text-[3.2vh]">Luxury</span>
           </div>
           <!-- DESKTOP -->
         </div>
