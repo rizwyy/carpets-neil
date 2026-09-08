@@ -96,26 +96,4 @@ Open `http://localhost:3000`. Start with a viewport narrower than 990px: the cur
 
 The catalog needs the `/api/proxy` server endpoint at runtime; static output alone does not provide that endpoint. Network access is required for external catalog data.
 
-## Current limitations
-
-This source snapshot is unfinished and should be evaluated as a prototype:
-
-- The catalog page has an incorrect relative store import: `../../../stores/user` does not reach the root `stores` directory.
-- Catalog cards reference `/carpets/<color>.jpg`, but the corresponding asset directory is absent.
-- The homepage and enquiry interface have incomplete desktop coverage.
-- Some navigation and product-detail controls are placeholders.
-- Enquiry inputs are not connected to submission or persistence.
-- Cart and wishlist fields are scaffolding; there is no completed order flow.
-- Scraping and cookie handling are duplicated and experimental; error recovery and data-state handling need cleanup.
-- No automated test or lint scripts are defined. This README update was checked against source code; it does not certify a passing build or browser flow.
-
-## Next improvements
-
-1. Repair imports, routes, and image mappings so the browsing path is reliable.
-2. Consolidate catalog parsing behind one server response and add clear failure states.
-3. Complete desktop layouts and accessible form interactions.
-4. Connect the enquiry form to a validated submission endpoint if enquiry capture is required.
-5. Add focused tests for navigation, parsing, and enquiry submission.
-
-Authentication and payments would be separate additions based on product requirements.
 
